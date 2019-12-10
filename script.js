@@ -124,19 +124,18 @@ function randomLink(message) {
 
 function randomTheme(number) {
   //Pick a random theme
-  console.log(typeof number);
   if (number !== 404)
   {
     var theme = Math.floor(Math.random() * 5) + 1;
     switch (theme) {
       case 1:
-        document.getElementById("theme").innerHTML = "Brought to you by the green theme.";
+        document.getElementById("theme").innerHTML = "Brought to you by the sea green theme.";
         break;
       case 2:
         document.getElementById("theme").innerHTML = "Brought to you by the blue theme.";
         break;
       case 3:
-        document.getElementById("theme").innerHTML = "Brought to you by the purple theme.";
+        document.getElementById("theme").innerHTML = "Brought to you by the violet theme.";
         break;
       case 4:
         document.getElementById("theme").innerHTML = "Brought to you by the sand theme.";
@@ -156,16 +155,16 @@ function randomTheme(number) {
         document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
         break;
       case 6:
-        document.getElementById("theme").innerHTML = "Brought to you by the sea green theme.";
+        document.getElementById("theme").innerHTML = "Brought to you by the slate green theme.";
         break;
       case 7:
-        document.getElementById("theme").innerHTML = "Brought to you by the blue theme.";
+        document.getElementById("theme").innerHTML = "Brought to you by the purple theme.";
         break;
       case 8:
-        document.getElementById("theme").innerHTML = "Brought to you by the red theme.";
+        document.getElementById("theme").innerHTML = "Brought to you by the hot & dry theme.";
         break;
       case 9:
-        document.getElementById("theme").innerHTML = "Brought to you by the yellow theme.";
+        document.getElementById("theme").innerHTML = "Brought to you by the green theme.";
         break;
       default:
         document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
