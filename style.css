@@ -1,0 +1,70 @@
+body {
+  background-color: black;
+  font-family: Futura XBlkCnIt BT, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+#message, #genshiken {
+  font-size: 110px;
+}
+
+.space {
+  margin-bottom: 0.5em;
+}
+
+.theme1 {
+  background-color: hsl(137, 13%, 32%);
+  color: hsl(104, 22%, 87%);
+}
+
+.theme1 a {
+  color: hsl(104, 22%, 87%);
+}
+
+.theme2 {
+  background-color: hsl(227, 13%, 32%);
+  color: hsl(194, 22%, 87%);
+}
+
+.theme2 a {
+  color: hsl(194, 22%, 87%);
+}
+
+.theme3 {
+  background-color: hsl(317, 13%, 32%);
+  color: hsl(284, 22%, 87%);
+}
+
+.theme3 a {
+  color: hsl(284, 22%, 87%);
+}
+
+.theme4 {
+  background-color: hsl(47, 13%, 32%);
+  color: hsl(14, 22%, 87%);
+}
+
+.theme4 a {
+  color: hsl(14, 22%, 87%);
+}
+
+.theme5 {
+  background-color: hsl(0, 0%, 32%);
+  color: hsl(0, 0%, 87%);
+}
+
+.theme5 a {
+  color: hsl(0, 0%, 87%);
+}
+
+@media only screen and (max-width: 1135px) {
+  body {
+    font-size: 30px;
+  }
+  #message, #genshiken {
+    font-size: 60px;
+  }
+}
