@@ -109,7 +109,7 @@ function randomLink(message) {
       link = "https://www.funimation.com/shows/pani-poni-dash/there-are-no-classes-among-humans-but-there-are-in-humans-hearts/?qid=undefined";
       break;
     case 8:
-      link = "https://vrv.co/watch/GY9PJG03R/Hayate-the-Combat-Butler-Season-1-2:Our-Destination";
+      link = "https://vrv.co/watch/GRP8DMNQR/Plastic-Memories:Weve-Just-Started-Living-Together";
       break;
     default:
       link = "Blank";
