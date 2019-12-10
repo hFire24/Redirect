@@ -1,3 +1,5 @@
+var number = 0;
+
 function loadWebsite(number) {
   randomMessage();
   randomTheme(number);
@@ -122,7 +124,8 @@ function randomLink(message) {
 
 function randomTheme(number) {
   //Pick a random theme
-  if (number !== '404')
+  console.log(typeof number);
+  if (number !== 404)
   {
     var theme = Math.floor(Math.random() * 5) + 1;
     switch (theme) {
