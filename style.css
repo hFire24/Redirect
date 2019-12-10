@@ -60,6 +60,42 @@ body {
   color: hsl(0, 0%, 87%);
 }
 
+.theme6 {
+  background-color: hsl(182, 13%, 32%);
+  color: hsl(149, 22%, 87%);
+}
+
+.theme6 a {
+  color: hsl(149, 22%, 87%);
+}
+
+.theme7 {
+  background-color: hsl(272, 13%, 32%);
+  color: hsl(239, 22%, 87%);
+}
+
+.theme7 a {
+  color: hsl(239, 22%, 87%);
+}
+
+.theme8 {
+  background-color: hsl(2, 13%, 32%);
+  color: hsl(329, 22%, 87%);
+}
+
+.theme8 a {
+  color: hsl(329, 22%, 87%);
+}
+
+.theme9 {
+  background-color: hsl(92, 13%, 32%);
+  color: hsl(59, 22%, 87%);
+}
+
+.theme9 a {
+  color: hsl(59, 22%, 87%);
+}
+
 @media only screen and (max-width: 1135px) {
   body {
     font-size: 30px;
