@@ -3,6 +3,7 @@ var number = 0;
 function loadWebsite(number) {
   randomMessage();
   randomTheme(number);
+  console.log("Teehee!");
 }
 
 function loadBreak() {
