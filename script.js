@@ -20,7 +20,8 @@ function loadBreak() {
   'Change your clothes if they\'re dirty.',
   'Digitize a paragraph from your journal.',
   'Watch AFV',
-  'Say out loud the thing you need to get done.'];
+  'Say out loud the thing you need to get done.',
+  'Declutter your room.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
@@ -105,7 +106,7 @@ function randomLink(message) {
     case 4:
       linkMessage = linkMessage.concat("your anime queue spreadsheet.");
       break;
-    case 5: 
+    case 5:
       linkMessage = linkMessage.concat("your VRV watchlist.");
       break;
     case 6:
@@ -119,7 +120,7 @@ function randomLink(message) {
   //Put index value to the console
   console.log("Link " + index);
 }
-  
+
 function randomTheme() {
   //Pick a random theme
   var theme = Math.floor(Math.random() * 5) + 1;
