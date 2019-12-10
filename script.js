@@ -3,7 +3,6 @@ var number = 0;
 function loadWebsite(number) {
   randomMessage();
   randomTheme(number);
-  console.log("Teehee!");
 }
 
 function loadBreak() {
@@ -94,6 +93,7 @@ function randomLink(message) {
   //If it lands on the anime option
   /*if (index === 4)
     index = Math.floor(Math.random() * (links.length - 4)) + 4;*/
+  var link;
   switch(index) {
     case 0:
     case 1:
@@ -109,7 +109,7 @@ function randomLink(message) {
       link = "https://www.funimation.com/shows/pani-poni-dash/there-are-no-classes-among-humans-but-there-are-in-humans-hearts/?qid=undefined";
       break;
     case 8:
-      link = "https://vrv.co/watch/GY9PJG03R/Hayate-the-Combat-Butler-Season-1-2:Our-Destination"
+      link = "https://vrv.co/watch/GY9PJG03R/Hayate-the-Combat-Butler-Season-1-2:Our-Destination";
       break;
     default:
       link = "Blank";
@@ -125,9 +125,10 @@ function randomLink(message) {
 
 function randomTheme(number) {
   //Pick a random theme
+  var theme;
   if (number !== 404)
   {
-    var theme = Math.floor(Math.random() * 5) + 1;
+    theme = Math.floor(Math.random() * 5) + 1;
     switch (theme) {
       case 1:
         document.getElementById("theme").innerHTML = "Brought to you by the sea green theme.";
@@ -150,7 +151,7 @@ function randomTheme(number) {
   }
   else
   {
-    var theme = Math.floor(Math.random() * 5) + 5;
+    theme = Math.floor(Math.random() * 5) + 5;
     switch(theme) {
       case 5:
         document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
