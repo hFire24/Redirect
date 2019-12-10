@@ -67,21 +67,21 @@ function randomLink(message) {
   My VRV watchlist
   My Funimation queue
   The next anime episodes I need to watch*/
-  var links = ['breaktime.html',
-  'breaktime.html',
-  'https://tasks.gtaskd.com/?tasklistId=UUJ5MVc4Y1FHeFR0bmhpZA',
-  'https://to-do.microsoft.com/tasks/AQMkADAwATM0MDAAMS1iMWMzLWQxNWItMDACLTAwCgAuAAADUj0b481lv0e7ktgW71zIDQEAywBGqBZ2SUaX8tSzQdOhbwADw-rQHwAAAA==',
-  'https://docs.google.com/spreadsheets/d/1y0vsD1ZIG0qMVlrtJmco66f_Qm_Uq83XeS4Lsg3ScA4',
-  'https://vrv.co/watchlist/',
-  'https://www.funimation.com/#queue',
-  'https://www.funimation.com/shows/pani-poni-dash/there-are-no-classes-among-humans-but-there-are-in-humans-hearts/?qid=undefined',
-  'https://vrv.co/watch/GY9PJG03R/Hayate-the-Combat-Butler-Season-1-2:Our-Destination'];
+  var linkMessages = ["Here's how you can take a short break.",
+  "Here's how you can take a short break.",
+  "Check your gTasks list, please.",
+  "Check your repeating tasks on To-Do.",
+  "Check your anime queue spreadsheet.",
+  "Here's your VRV watchlist.",
+  "Here's your Funimation queue."];
+  for (var i = 7; i <= 8; i++)
+    linkMessages.push("Here's the anime episode you need to watch.");
   //Get random link from array
   //var index = Math.floor(Math.random() * 5);
-  var index = Math.floor(Math.random() * links.length);
+  var index = Math.floor(Math.random() * linkMessages.length);
   //For getting back on task
   if (message > 5 && message < 8)
-    index = Math.floor(Math.random() * (links.length - 2)) + 2;
+    index = Math.floor(Math.random() * (linkMessages.length - 2)) + 2;
   //For taking breaks
   if (message === 11)
     index = Math.floor(Math.random() * 2);
@@ -91,32 +91,31 @@ function randomLink(message) {
   //If it lands on the anime option
   /*if (index === 4)
     index = Math.floor(Math.random() * (links.length - 4)) + 4;*/
-  var linkMessage = "Here's ";
   switch(index) {
     case 0:
     case 1:
-      linkMessage = linkMessage.concat("how you can take a short break.");
-      break;
-    case 2:
-      linkMessage = linkMessage.concat("your gTask list for the week.");
-      break;
-    case 3:
-      linkMessage = linkMessage.concat("your list of repeating tasks.");
-      break;
-    case 4:
-      linkMessage = linkMessage.concat("your anime queue spreadsheet.");
+      link = "breaktime.html";
       break;
     case 5:
-      linkMessage = linkMessage.concat("your VRV watchlist.");
+      link = "https://vrv.co/watchlist/";
       break;
     case 6:
-      linkMessage = linkMessage.concat("your Funimation queue.");
+      link = "https://www.funimation.com/#queue";
+      break;
+    case 7:
+      link = "https://www.funimation.com/shows/pani-poni-dash/there-are-no-classes-among-humans-but-there-are-in-humans-hearts/?qid=undefined";
+      break;
+    case 8:
+      link = "https://vrv.co/watch/GY9PJG03R/Hayate-the-Combat-Butler-Season-1-2:Our-Destination"
       break;
     default:
-      linkMessage = linkMessage.concat("the anime episode you need to watch.");
+      link = "Blank";
   }
   //Put link message and to screen using the index value of the array
-  document.getElementById("link").innerHTML = "<a href=" + links[index] + ">" + linkMessage + "</a>";
+  if (link === "Blank")
+    document.getElementById("link").innerHTML = linkMessages[index];
+  else
+    document.getElementById("link").innerHTML = "<a href=" + link + ">" + linkMessages[index] + "</a>";
   //Put index value to the console
   console.log("Link " + index);
 }
