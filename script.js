@@ -106,7 +106,7 @@ function randomLink(message) {
       link = "https://www.funimation.com/#queue";
       break;
     case 7:
-      link = "https://www.funimation.com/shows/pani-poni-dash/there-are-no-classes-among-humans-but-there-are-in-humans-hearts/?qid=undefined";
+      link = "https://www.funimation.com/shows/pani-poni-dash/the-wages-of-sin-come-like-the-tip-of-a-needle";
       break;
     case 8:
       link = "https://vrv.co/watch/GRP8DMNQR/Plastic-Memories:Weve-Just-Started-Living-Together";
