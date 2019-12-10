@@ -20,6 +20,7 @@ function loadBreak() {
   'Breathe slowly.',
   'Stretch.',
   'Change your clothes if they\'re dirty.',
+  'If it\'s the evening, change to your pajamas. No socks.'
   'Digitize a paragraph from your journal.',
   'Watch AFV',
   'Say out loud the thing you need to get done.',
@@ -106,7 +107,7 @@ function randomLink(message) {
       link = "https://www.funimation.com/#queue";
       break;
     case 7:
-      link = "https://www.funimation.com/shows/pani-poni-dash/the-wages-of-sin-come-like-the-tip-of-a-needle";
+      link = "https://vrv.co/watch/GRX0J3MM6/Saki:Hand-7-Attention";
       break;
     case 8:
       link = "https://vrv.co/watch/GRP8DMNQR/Plastic-Memories:Weve-Just-Started-Living-Together";
