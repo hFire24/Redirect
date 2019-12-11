@@ -20,7 +20,7 @@ function loadBreak() {
   'Breathe slowly.',
   'Stretch.',
   'Change your clothes if they\'re dirty.',
-  'If it\'s the evening, change to your pajamas. No socks.'
+  'If it\'s the evening, change to your pajamas. No socks.',
   'Digitize a paragraph from your journal.',
   'Watch AFV',
   'Say out loud the thing you need to get done.',
