@@ -132,7 +132,7 @@ function randomTheme(number) {
     theme = Math.floor(Math.random() * 5) + 1;
     switch (theme) {
       case 1:
-        document.getElementById("theme").innerHTML = "Brought to you by the sea green theme.";
+        document.getElementById("theme").innerHTML = "Brought to you by the moss green theme.";
         break;
       case 2:
         document.getElementById("theme").innerHTML = "Brought to you by the blue theme.";
