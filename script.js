@@ -25,7 +25,7 @@ function loadBreak() {
   'Watch AFV',
   'Say out loud the thing you need to get done.',
   'Declutter your room.',
-  'Think of a long-term goal. Set that as your break message.'];
+  'Think of a goal. Any one. Set that as your break message.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
