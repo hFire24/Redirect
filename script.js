@@ -75,10 +75,8 @@ function randomLink(message) {
   The next anime episodes I need to watch*/
   var linkMessages = ["Check your gTasks list, please.",
   "Check your repeating tasks on To-Do.",
-  "Check your anime queue spreadsheet.",
-  "Here's your VRV watchlist.",
-  "Here's your Funimation queue."];
-  for (var i = 5; i <= 8; i++)
+  "Check your anime queue spreadsheet."];
+  for (var i = 3; i <= 8; i++)
     linkMessages.push("Here are some anime episodes you need to watch.");
   var onehundredten = linkMessages.length + 1;
   var onehundredeleven = linkMessages.length * 2;
@@ -95,26 +93,11 @@ function randomLink(message) {
   //For checking tasks
   if (message === 12)
     index = Math.floor(Math.random() * 2);
-  var link;
-  switch(index) {
-    case 3:
-      link = "https://vrv.co/watchlist/";
-      break;
-    case 4:
-      link = "https://www.funimation.com/#queue";
-      break;
-    case 5:
-    case 6:
-      link = "nextanime.html";
-      break;
-    default:
-      link = "Blank";
-  }
   //Put link message and to screen using the index value of the array
-  if (link === "Blank")
-    document.getElementById("link").innerHTML = linkMessages[index];
+  if (index >= 3 && index <= 8)
+    document.getElementById("link").innerHTML = "<a href=\"nextanime.html\">" + linkMessages[index] + "</a>";
   else
-    document.getElementById("link").innerHTML = "<a href=" + link + ">" + linkMessages[index] + "</a>";
+    document.getElementById("link").innerHTML = linkMessages[index];
   //Put index value to the console
   console.log("Link " + index);
 }
