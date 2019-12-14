@@ -89,7 +89,7 @@ function randomLink(message) {
     index = Math.floor(Math.random() * 7);
   //For taking breaks
   if (message === 11)
-      index = Math.floor(Math.random() * (linkMessages.length - 7)) + 7;
+      index = Math.floor(Math.random() * (linkMessages.length - 9)) + 9;
   //For checking tasks
   if (message === 12)
     index = Math.floor(Math.random() * 2);
