@@ -1,7 +1,10 @@
 var number = 0;
 
 function loadWebsite(number) {
-  randomMessage();
+  if (number !== 2)
+    randomMessage();
+  else
+    document.getElementById("message").innerHTML = loadBreak();
   randomTheme(number);
 }
 
@@ -29,10 +32,9 @@ function loadBreak() {
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
-    document.getElementById("message").innerHTML = "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
+    return = "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
   else
-    document.getElementById("message").innerHTML = messages[index];
-  randomTheme();
+    return = messages[index];
 }
 
 function randomMessage() {
@@ -71,47 +73,37 @@ function randomLink(message) {
   My VRV watchlist
   My Funimation queue
   The next anime episodes I need to watch*/
-  var linkMessages = ["Here's how you can take a short break.",
-  "Here's how you can take a short break.",
-  "Check your gTasks list, please.",
+  var linkMessages = ["Check your gTasks list, please.",
   "Check your repeating tasks on To-Do.",
   "Check your anime queue spreadsheet.",
   "Here's your VRV watchlist.",
   "Here's your Funimation queue."];
-  for (var i = 7; i <= 8; i++)
-    linkMessages.push("Here's the anime episode you need to watch.");
+  for (var i = 5; i <= 6; i++)
+    linkMessages.push("Here are some anime episodes you need to watch.");
+  for (var i = linkMessages.length + 1; i <= linkMessages.length * 3; i++)
+    linkMessages.push(loadBreak());
   //Get random link from array
-  //var index = Math.floor(Math.random() * 5);
   var index = Math.floor(Math.random() * linkMessages.length);
   //For getting back on task
   if (message > 5 && message < 8)
-    index = Math.floor(Math.random() * (linkMessages.length - 2)) + 2;
+    index = Math.floor(Math.random() * 7);
   //For taking breaks
   if (message === 11)
-    index = Math.floor(Math.random() * 2);
+      index = Math.floor(Math.random() * (linkMessages.length - 7)) + 7;
   //For checking tasks
   if (message === 12)
-    index = Math.floor(Math.random() * 2) + 2;
-  //If it lands on the anime option
-  /*if (index === 4)
-    index = Math.floor(Math.random() * (links.length - 4)) + 4;*/
+    index = Math.floor(Math.random() * 2);
   var link;
   switch(index) {
-    case 0:
-    case 1:
-      link = "breaktime.html";
-      break;
-    case 5:
+    case 3:
       link = "https://vrv.co/watchlist/";
       break;
-    case 6:
+    case 4:
       link = "https://www.funimation.com/#queue";
       break;
-    case 7:
-      link = "https://vrv.co/watch/GRX0J3MM6/Saki:Hand-7-Attention";
-      break;
-    case 8:
-      link = "https://vrv.co/watch/GRP8DMNQR/Plastic-Memories:Weve-Just-Started-Living-Together";
+    case 5:
+    case 6:
+      link = "nextanime.html";
       break;
     default:
       link = "Blank";
