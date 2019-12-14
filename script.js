@@ -78,9 +78,11 @@ function randomLink(message) {
   "Check your anime queue spreadsheet.",
   "Here's your VRV watchlist.",
   "Here's your Funimation queue."];
-  for (var i = 5; i <= 6; i++)
+  for (var i = 5; i <= 8; i++)
     linkMessages.push("Here are some anime episodes you need to watch.");
-  for (i = linkMessages.length + 1; i <= linkMessages.length * 3; i++)
+  var onehundredten = linkMessages.length + 1;
+  var onehundredeleven = linkMessages.length * 2;
+  for (i = onehundredten; i <= onehundredeleven; i++)
     linkMessages.push(loadBreak());
   //Get random link from array
   var index = Math.floor(Math.random() * linkMessages.length);
