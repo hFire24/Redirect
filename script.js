@@ -32,9 +32,9 @@ function loadBreak() {
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
-    return = "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
+    return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
   else
-    return = messages[index];
+    return messages[index];
 }
 
 function randomMessage() {
@@ -80,7 +80,7 @@ function randomLink(message) {
   "Here's your Funimation queue."];
   for (var i = 5; i <= 6; i++)
     linkMessages.push("Here are some anime episodes you need to watch.");
-  for (var i = linkMessages.length + 1; i <= linkMessages.length * 3; i++)
+  for (i = linkMessages.length + 1; i <= linkMessages.length * 3; i++)
     linkMessages.push(loadBreak());
   //Get random link from array
   var index = Math.floor(Math.random() * linkMessages.length);
