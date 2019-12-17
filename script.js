@@ -43,7 +43,7 @@ function loadBreak() {
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
   {
     getUpMessage = messages[index];
-    return "<a href=\"getup.html\">" + messages[index] " + "</a>";
+    return "<a href=\"getup.html\">" + messages[index] + "</a>";
   }
   else
     return messages[index];
