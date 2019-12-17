@@ -32,19 +32,13 @@ function loadBreak() {
   'Change your clothes if they\'re dirty.',
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
-  'Go on a journey. A Kino\'s Journey if you wish.',
-  'Get your laptop off your lap, and stand up.'];
+  'Go on a journey. A Kino\'s Journey if you wish.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
-  else if (index === messages.length - 1)
-    return "<a href=\"breaktime.html\">" + messages[index] + "</a>";
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
-  {
-    getUpMessage = messages[index];
-    return "<a href=\"getup.html\">" + messages[index] + "</a>";
-  }
+    return "Get your laptop off your lap, and stand up.<br>" + messages[index];
   else
     return messages[index];
 }
