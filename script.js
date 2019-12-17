@@ -99,21 +99,18 @@ function randomMessage() {
 }
 
 function randomLink(message) {
-  /*The links are, in order,
-  A breaktime page
-  A breaktime page
-  My gTask list for the week
-  My repeating tasks list on Microsoft To Do
-  A function for returning an anime-related task
-  My Google Sheets anime watching queue
-  My VRV watchlist
-  My Funimation queue
-  The next anime episodes I need to watch*/
+  /*The linkMessages are, in order
+  A prompt to check my gTasks list.
+  A prompt to check my repeating tasks.
+  A prompt to check my anime queue spreadsheet.
+  A link to the nextanime page containing links to episodes.
+  A randomly generated break message.*/
   var linkMessages = ["Check your gTasks list, please.",
   "Check your repeating tasks on To-Do.",
   "Check your anime queue spreadsheet."];
   for (var i = 3; i <= 8; i++)
     linkMessages.push("Here are some anime episodes you need to watch.");
+  //These variables are needed so that the loop doesn't become an infinite loop.
   var onehundredten = linkMessages.length + 1;
   var onehundredeleven = linkMessages.length * 2;
   for (i = onehundredten; i <= onehundredeleven; i++)
