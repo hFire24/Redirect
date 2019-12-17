@@ -1,39 +1,74 @@
 var number = 0;
+var getUpMessage = "Cirnoize the world.";
 
 function loadWebsite(number) {
-  if (number !== 2)
-    randomMessage();
+  if (number === 2)
+    document.getElementById("message").innerHTML = loadBreak2();
+  else if (number === 3)
+    document.getElementById("message").innerHTML = getUpMessage;
   else
-    document.getElementById("message").innerHTML = loadBreak();
+    randomMessage();
   randomTheme(number);
 }
 
 function loadBreak() {
   var messages = ['Listen to this.',
-  'Drink water.',
-  'Go up and down the stairs.',
   'Pray a short prayer.',
-  'Stare at an object 20 feet away for 20 seconds.',
   'Look away from the screen for about 30 seconds.',
+  'Compliment someone you know online.',
+  'Breathe slowly.',
+  'Digitize a paragraph from your journal.',
+  'Watch AFV',
+  'Say out loud the thing you need to get done.',
+  'Think of a goal. Any one. Set that as your break message.',
+  'Refill your bottle and drink water.',
+  'Go up and down the stairs.',
+  'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
   'Take a shower if you hadn\'t today or yesterday.',
   'Walk around for about 1-2 minutes.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
-  'Compliment someone you know in person or online.',
-  'Breathe slowly.',
   'Stretch.',
   'Change your clothes if they\'re dirty.',
   'If it\'s the evening, change to your pajamas. No socks.',
-  'Digitize a paragraph from your journal.',
-  'Watch AFV',
-  'Say out loud the thing you need to get done.',
   'Declutter your room.',
-  'Think of a goal. Any one. Set that as your break message.',
+  'Go on a journey. A Kino\'s Journey if you wish.',
   'Get your laptop off your lap, and stand up.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
+  else if (index === messages.length - 1)
+    return "<a href=\"breaktime.html\">" + messages[index] + "</a>";
+  else if (index >= messages.indexOf("Refill your bottle and drink water."))
+  {
+    getUpMessage = messages[index];
+    return "<a href=\"getup.html\">" + messages[index] " + "</a>";
+  }
+  else
+    return messages[index];
+}
+
+function loadBreak2() {
+  var messages = ['Refill your bottle and drink water.',
+  'Go up and down the stairs.',
+  'Stare at an object 20 feet away for 20 seconds.',
+  'Eat something if it has been 3 hours since you ate something.',
+  'Take a shower if you hadn\'t today or yesterday.',
+  'Walk around for about 1-2 minutes.',
+  'Listen to your own music, and don\'t be afraid to dance to it.',
+  'Compliment someone you know in person.',
+  'Stretch.',
+  'Change your clothes if they\'re dirty.',
+  'If it\'s the evening, change to your pajamas. No socks.',
+  'Declutter your room.',
+  'Go on a journey. A Kino\'s Journey if you wish.'];
+  //Get random message index from messages array
+  var index = Math.floor(Math.random() * messages.length);
+  if(index === 0)
+    return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
+  else if (index === messages.length - 1)
+    return "<a href=\"breaktime.html\">" + messages[index] + "</a>";
   else
     return messages[index];
 }
