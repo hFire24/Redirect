@@ -65,12 +65,7 @@ function loadBreak2() {
   'Go on a journey. A Kino\'s Journey if you wish.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
-  if(index === 0)
-    return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
-  else if (index === messages.length - 1)
-    return "<a href=\"breaktime.html\">" + messages[index] + "</a>";
-  else
-    return messages[index];
+  return messages[index];
 }
 
 function randomMessage() {
