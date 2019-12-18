@@ -5,6 +5,8 @@ function loadWebsite(number) {
     document.getElementById("message").innerHTML = loadBreak2();
   else if (number === 3)
     document.getElementById("message").innerHTML = "You were about to go on some dangerous website!";
+  else if (number === 4)
+    document.getElementById("message").innerHTML = "You were about to go on some dangerous website!";
   else
     randomMessage();
   randomTheme(number);
