@@ -102,8 +102,9 @@ function randomLink(message) {
   var linkMessages = ["Check your gTasks list, please.",
   "Check your repeating tasks on To-Do.",
   "Check your anime queue spreadsheet."];
-  for (var i = 3; i <= 8; i++)
-    linkMessages.push("Here are some anime episodes you need to watch.");
+  for (var i = 3; i <= 7; i++)
+    linkMessages.push("Get back to watching anime!");
+  linkMessages.push("Here are some anime episodes you need to watch.")
   //These variables are needed so that the loop doesn't become an infinite loop.
   var onehundredten = linkMessages.length + 1;
   var onehundredeleven = linkMessages.length * 2;
