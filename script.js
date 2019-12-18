@@ -129,54 +129,63 @@ function randomLink(message) {
 function randomTheme(number) {
   //Pick a random theme
   var theme;
-  if (number !== 404)
+  if (number === 4)
   {
-    theme = Math.floor(Math.random() * 5) + 1;
-    switch (theme) {
-      case 1:
-        document.getElementById("theme").innerHTML = "Brought to you by the moss green theme.";
-        break;
-      case 2:
-        document.getElementById("theme").innerHTML = "Brought to you by the blue theme.";
-        break;
-      case 3:
-        document.getElementById("theme").innerHTML = "Brought to you by the violet theme.";
-        break;
-      case 4:
-        document.getElementById("theme").innerHTML = "Brought to you by the sand theme.";
-        break;
-      case 5:
-        document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
-        break;
-      default:
-        document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
-    }
+    document.body.className = "danger";
   }
   else
   {
-    theme = Math.floor(Math.random() * 5) + 5;
-    switch(theme) {
-      case 5:
-        document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
-        break;
-      case 6:
-        document.getElementById("theme").innerHTML = "Brought to you by the slate green theme.";
-        break;
-      case 7:
-        document.getElementById("theme").innerHTML = "Brought to you by the purple theme.";
-        break;
-      case 8:
-        document.getElementById("theme").innerHTML = "Brought to you by the hot & dry theme.";
-        break;
-      case 9:
-        document.getElementById("theme").innerHTML = "Brought to you by the green theme.";
-        break;
-      default:
-        document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
+    if (number !== 404)
+    {
+      theme = Math.floor(Math.random() * 5) + 1;
+      switch (theme)
+      {
+        case 1:
+          document.getElementById("theme").innerHTML = "Brought to you by the moss green theme.";
+          break;
+        case 2:
+          document.getElementById("theme").innerHTML = "Brought to you by the blue theme.";
+          break;
+        case 3:
+          document.getElementById("theme").innerHTML = "Brought to you by the violet theme.";
+          break;
+        case 4:
+          document.getElementById("theme").innerHTML = "Brought to you by the sand theme.";
+          break;
+        case 5:
+          document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
+          break;
+        default:
+          document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
+      }
+    }
+    else
+    {
+      theme = Math.floor(Math.random() * 5) + 5;
+      switch(theme)
+      {
+        case 5:
+          document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
+          break;
+        case 6:
+          document.getElementById("theme").innerHTML = "Brought to you by the slate green theme.";
+          break;
+        case 7:
+          document.getElementById("theme").innerHTML = "Brought to you by the purple theme.";
+          break;
+        case 8:
+          document.getElementById("theme").innerHTML = "Brought to you by the hot & dry theme.";
+          break;
+        case 9:
+          document.getElementById("theme").innerHTML = "Brought to you by the green theme.";
+          break;
+        default:
+          document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
+      }
+      document.body.className = "theme" + theme.toString();
+      console.log("Theme " + theme);
     }
   }
-  document.body.className = "theme" + theme.toString();
-  console.log("Theme " + theme);
 }
 
 function getWidth() {
