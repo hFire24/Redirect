@@ -25,13 +25,13 @@ function loadBreak() {
   'Go up and down the stairs.',
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
-  'Take a shower if you hadn\'t today or yesterday.',
-  'Walk around for about 1-2 minutes.',
+  'Strip and take a shower if you hadn\'t today or yesterday.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
   'Stretch.',
   'Change your clothes if they\'re dirty.',
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
+  'Walk around for about 1-2 minutes.',
   'Go on a journey. A Kino\'s Journey if you wish.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
@@ -39,6 +39,8 @@ function loadBreak() {
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
     return "Get your laptop off your lap, and stand up.<br>" + messages[index];
+  else if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
+    return "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else
     return messages[index];
 }
@@ -48,18 +50,21 @@ function loadBreak2() {
   'Go up and down the stairs.',
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
-  'Take a shower if you hadn\'t today or yesterday.',
-  'Walk around for about 1-2 minutes.',
+  'Strip and take a shower if you hadn\'t today or yesterday.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
   'Compliment someone you know in person.',
   'Stretch.',
   'Change your clothes if they\'re dirty.',
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
+  'Walk around for about 1-2 minutes.',
   'Go on a journey. A Kino\'s Journey if you wish.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
-  return messages[index];
+  if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
+    return "Change to appropriate clothes if necessary.<br>" + messages[index];
+  else
+    return messages[index];
 }
 
 function randomMessage() {
