@@ -1,11 +1,10 @@
 var number = 0;
-var getUpMessage = "You were about to go on some dangerous website!";
 
 function loadWebsite(number) {
   if (number === 2)
     document.getElementById("message").innerHTML = loadBreak2();
   else if (number === 3)
-    document.getElementById("message").innerHTML = getUpMessage;
+    document.getElementById("message").innerHTML = "You were about to go on some dangerous website!";
   else
     randomMessage();
   randomTheme(number);
