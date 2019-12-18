@@ -15,7 +15,7 @@ function loadBreak() {
   'Pray a short prayer.',
   'Look away from the screen for about 30 seconds.',
   'Compliment someone you know online.',
-  'Breathe slowly.',
+  'Take a deep breath.',
   'Digitize a paragraph from your journal.',
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
@@ -35,8 +35,10 @@ function loadBreak() {
   'Go on a journey. A Kino\'s Journey if you wish. Go all the way if you can.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
-  if(index === 0)
+  if (index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
+  if (index === 4)
+    return "<a href=\"https://www.google.com/search?q=breathing+exercise\">" + messages[index] + "</a>";
   if (index === messages.indexOf("Learn how to make trance music."))
     return "<a href=\"trancelessons.html\">" + messages[index] + "</a>";
   if (index === messages.indexOf("Learn how to make trance music.") + 1)
