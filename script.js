@@ -20,6 +20,7 @@ function loadBreak() {
   'Digitize a paragraph from your journal.',
   'Watch AFV',
   'Say out loud the thing you need to get done.',
+  'Learn how to make trance, even if it costs you a lot in lessons, software, and sound packages.',
   'Think of a goal. Any one. Set that as your break message.',
   'Refill your bottle and drink water.',
   'Go up and down the stairs.',
