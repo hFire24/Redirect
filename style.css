@@ -110,6 +110,10 @@ ol a {
   color: red;
 }
 
+.danger #message {
+  color: yellow;
+}
+
 .danger a {
   color: red;
 }

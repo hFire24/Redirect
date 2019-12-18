@@ -3,10 +3,8 @@ var number = 0;
 function loadWebsite(number) {
   if (number === 2)
     document.getElementById("message").innerHTML = loadBreak2();
-  else if (number === 3)
-    document.getElementById("message").innerHTML = "You were about to go on some dangerous website!";
   else if (number === 4)
-    document.getElementById("message").innerHTML = "You were about to go on some dangerous website!";
+    document.getElementById("message").innerHTML = "☢THAT UNSAFE WEBSITE IS BLOCKED!☢";
   else
     randomMessage();
   randomTheme(number);
@@ -182,9 +180,9 @@ function randomTheme(number) {
         default:
           document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
       }
-      document.body.className = "theme" + theme.toString();
-      console.log("Theme " + theme);
     }
+    document.body.className = "theme" + theme.toString();
+    console.log("Theme " + theme);
   }
 }
 
