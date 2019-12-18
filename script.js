@@ -19,7 +19,8 @@ function loadBreak() {
   'Digitize a paragraph from your journal.',
   'Watch AFV',
   'Say out loud the thing you need to get done.',
-  'Learn how to make trance, even if it costs you a lot in lessons, software, and sound packages.',
+  'Learn how to make trance music.',
+  'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
   'Think of a goal. Any one. Set that as your break message.',
   'Refill your bottle and drink water.',
   'Go up and down the stairs.',
@@ -37,6 +38,8 @@ function loadBreak() {
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
+  else if (index === messages.indexOf("Learn how to make trance music."))
+    return "<a href=\"trancelessons.html\">" + messages[index] + "</a>";
   else if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     return "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else if (index >= messages.indexOf("Refill your bottle and drink water."))

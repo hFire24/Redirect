@@ -21,6 +21,11 @@ ol a {
   font-size: 110px;
 }
 
+#trance {
+  font-size: 110px;
+  font-family: Neuropool, Futura XBlkIt BT, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .space {
   margin-bottom: 0.5em;
 }
