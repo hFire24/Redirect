@@ -5,9 +5,7 @@ function loadWebsite(number) {
   if (number === 2)
     document.getElementById("message").innerHTML = loadBreak2();
   else if (number === 3)
-  {
     document.getElementById("message").innerHTML = getUpMessage;
-  }
   else
     randomMessage();
   randomTheme(number);
