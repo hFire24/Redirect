@@ -17,7 +17,6 @@ function loadBreak() {
   'Compliment someone you know online.',
   'Breathe slowly.',
   'Digitize a paragraph from your journal.',
-  'Watch AFV',
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
@@ -33,16 +32,18 @@ function loadBreak() {
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
   'Walk around for about 1-2 minutes.',
-  'Go on a journey. A Kino\'s Journey if you wish.'];
+  'Go on a journey. A Kino\'s Journey if you wish. Go all the way if you can.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
-  else if (index === messages.indexOf("Learn how to make trance music."))
+  if (index === messages.indexOf("Learn how to make trance music."))
     return "<a href=\"trancelessons.html\">" + messages[index] + "</a>";
-  else if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
+  if (index === messages.indexOf("Learn how to make trance music.") + 1)
+    return "<a href=\"https://emergency.nofap.com/redirect?religious=true&cat=em\">" + messages[index] + "</a>";
+  if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     return "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
-  else if (index >= messages.indexOf("Refill your bottle and drink water."))
+  if (index >= messages.indexOf("Refill your bottle and drink water."))
     return "Get your laptop off your lap, and stand up.<br>" + messages[index];
   else
     return messages[index];
