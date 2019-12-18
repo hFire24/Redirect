@@ -37,10 +37,10 @@ function loadBreak() {
   var index = Math.floor(Math.random() * messages.length);
   if(index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
-  else if (index >= messages.indexOf("Refill your bottle and drink water."))
-    return "Get your laptop off your lap, and stand up.<br>" + messages[index];
   else if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     return "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
+  else if (index >= messages.indexOf("Refill your bottle and drink water."))
+    return "Get your laptop off your lap, and stand up.<br>" + messages[index];
   else
     return messages[index];
 }
