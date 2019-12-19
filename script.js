@@ -9,7 +9,10 @@ function loadWebsite(number) {
     document.getElementById("message").innerHTML = "You better watch 'em all today."
   else
     randomMessage();
-  randomTheme(number);
+  if(number === 4)
+    document.body.className = "danger";
+  else if(number < 4 || number > 5)
+    randomTheme(number);
 }
 
 function loadBreak() {
@@ -103,15 +106,17 @@ function randomMessage() {
 
 function randomLink(message) {
   /*The linkMessages are, in order
+  A command to close this tab immediately.
   A prompt to check my gTasks list.
   A prompt to check my repeating tasks.
   A prompt to check my anime queue spreadsheet.
   A link to the nextanime page containing links to episodes.
   A randomly generated break message.*/
-  var linkMessages = ["Check your gTasks list, please.",
+  var linkMessages = ["Immediately close this tab.",
+  "Check your gTasks list, please.",
   "Check your repeating tasks on To-Do.",
   "Check your anime queue spreadsheet."];
-  for (var i = 3; i <= 7; i++)
+  for (var i = 4; i <= 8; i++)
     linkMessages.push("Get back to watching anime!");
   linkMessages.push("Here are some anime episodes you need to watch.")
   //These variables are needed so that the loop doesn't become an infinite loop.
@@ -123,15 +128,16 @@ function randomLink(message) {
   var index = Math.floor(Math.random() * linkMessages.length);
   //For getting back on task
   if (message > 5 && message < 8)
-    index = Math.floor(Math.random() * 7);
+    index = Math.floor(Math.random() * linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1);
   //For taking breaks
+  var break = linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1;
   if (message === 11)
-      index = Math.floor(Math.random() * (linkMessages.length - 9)) + 9;
+      index = Math.floor(Math.random() * (linkMessages.length - break)) + break;
   //For checking tasks
   if (message === 12)
-    index = Math.floor(Math.random() * 2);
+    index = Math.floor(Math.random() * 2) + 1;
   //Put link message and to screen using the index value of the array
-  if (index >= 3 && index <= 8)
+  if (index >= 4 && index <= 9)
     document.getElementById("link").innerHTML = "<a href=\"nextanime.html\">" + linkMessages[index] + "</a>";
   else
     document.getElementById("link").innerHTML = linkMessages[index];
@@ -142,63 +148,53 @@ function randomLink(message) {
 function randomTheme(number) {
   //Pick a random theme
   var theme;
-  if (number === 4)
-  {
-    document.body.className = "danger";
-  }
-  else if (number !== 5)
-  {
-    if (number !== 404)
+  if (number !== 404) {
+    theme = Math.floor(Math.random() * 5) + 1;
+    switch (theme)
     {
-      theme = Math.floor(Math.random() * 5) + 1;
-      switch (theme)
-      {
-        case 1:
-          document.getElementById("theme").innerHTML = "Brought to you by the moss green theme.";
-          break;
-        case 2:
-          document.getElementById("theme").innerHTML = "Brought to you by the blue theme.";
-          break;
-        case 3:
-          document.getElementById("theme").innerHTML = "Brought to you by the violet theme.";
-          break;
-        case 4:
-          document.getElementById("theme").innerHTML = "Brought to you by the sand theme.";
-          break;
-        case 5:
-          document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
-          break;
-        default:
-          document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
-      }
+      case 1:
+        document.getElementById("theme").innerHTML = "Brought to you by the moss green theme.";
+        break;
+      case 2:
+        document.getElementById("theme").innerHTML = "Brought to you by the blue theme.";
+        break;
+      case 3:
+        document.getElementById("theme").innerHTML = "Brought to you by the violet theme.";
+        break;
+      case 4:
+        document.getElementById("theme").innerHTML = "Brought to you by the sand theme.";
+        break;
+      case 5:
+        document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
+        break;
+      default:
+        document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
     }
-    else
+  } else {
+    theme = Math.floor(Math.random() * 5) + 5;
+    switch(theme)
     {
-      theme = Math.floor(Math.random() * 5) + 5;
-      switch(theme)
-      {
-        case 5:
-          document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
-          break;
-        case 6:
-          document.getElementById("theme").innerHTML = "Brought to you by the slate green theme.";
-          break;
-        case 7:
-          document.getElementById("theme").innerHTML = "Brought to you by the purple theme.";
-          break;
-        case 8:
-          document.getElementById("theme").innerHTML = "Brought to you by the hot & dry theme.";
-          break;
-        case 9:
-          document.getElementById("theme").innerHTML = "Brought to you by the green theme.";
-          break;
-        default:
-          document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
-      }
+      case 5:
+        document.getElementById("theme").innerHTML = "Brought to you by the gray theme.";
+        break;
+      case 6:
+        document.getElementById("theme").innerHTML = "Brought to you by the slate green theme.";
+        break;
+      case 7:
+        document.getElementById("theme").innerHTML = "Brought to you by the purple theme.";
+        break;
+      case 8:
+        document.getElementById("theme").innerHTML = "Brought to you by the hot & dry theme.";
+        break;
+      case 9:
+        document.getElementById("theme").innerHTML = "Brought to you by the green theme.";
+        break;
+      default:
+        document.getElementById("theme").innerHTML = "Brought to you by the black theme.";
     }
-    document.body.className = "theme" + theme.toString();
-    console.log("Theme " + theme);
   }
+  document.body.className = "theme" + theme.toString();
+  console.log("Theme " + theme);
 }
 
 function getWidth() {
