@@ -25,6 +25,7 @@ function loadBreak() {
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
+  'Become the man that will naturally attract GOOD women.',
   'Think of a goal. Any one. Set that as your break message.',
   'Refill your bottle and drink water.',
   'Go up and down the stairs.',
