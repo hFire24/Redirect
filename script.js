@@ -5,6 +5,8 @@ function loadWebsite(number) {
     document.getElementById("message").innerHTML = loadBreak2();
   else if (number === 4)
     document.getElementById("message").innerHTML = "☢THAT UNSAFE WEBSITE IS BLOCKED!☢";
+  else if (number === 5)
+    document.getElementById("message").innerHTML = "You better watch 'em all today."
   else
     randomMessage();
   randomTheme(number);
@@ -143,7 +145,7 @@ function randomTheme(number) {
   {
     document.body.className = "danger";
   }
-  else
+  else if (number !== 5)
   {
     if (number !== 404)
     {
