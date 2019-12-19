@@ -18,11 +18,11 @@ ol a {
 }
 
 #message {
-  font-size: 110px;
+  font-size: 100px;
 }
 
 #trance {
-  font-size: 110px;
+  font-size: 100px;
   font-family: Neuropol, Futura XBlkIt BT, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -127,7 +127,7 @@ ol a {
   body {
     font-size: 30px;
   }
-  #message, #genshiken {
+  #message, #trance {
     font-size: 60px;
   }
 }
