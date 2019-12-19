@@ -130,9 +130,9 @@ function randomLink(message) {
   if (message > 5 && message < 8)
     index = Math.floor(Math.random() * linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1);
   //For taking breaks
-  var break = linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1;
+  var breaktime = linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1;
   if (message === 11)
-      index = Math.floor(Math.random() * (linkMessages.length - break)) + break;
+      index = Math.floor(Math.random() * (linkMessages.length - breaktime)) + breaktime;
   //For checking tasks
   if (message === 12)
     index = Math.floor(Math.random() * 2) + 1;
