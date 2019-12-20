@@ -5,8 +5,6 @@ function loadWebsite(number) {
     document.getElementById("message").innerHTML = loadBreak2();
   else if (number === 4)
     document.getElementById("message").innerHTML = "☢THAT UNSAFE WEBSITE IS BLOCKED!☢";
-  else if (number === 5)
-    document.getElementById("message").innerHTML = "You better watch 'em all today."
   else
     randomMessage();
   if(number === 4)
@@ -123,7 +121,7 @@ function randomLink(message) {
   linkMessages.push("Here are some anime episodes you need to watch.")
   //These variables are needed so that the loop doesn't become an infinite loop.
   var onehundredten = linkMessages.length + 1;
-  var onehundredeleven = linkMessages.length * 2;
+  var onehundredeleven = linkMessages.length * 3;
   for (i = onehundredten; i <= onehundredeleven; i++)
     linkMessages.push(loadBreak());
   //Get random link from array
