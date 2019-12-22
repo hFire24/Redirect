@@ -36,7 +36,7 @@ function loadBreak() {
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
   'Walk around for about 1-2 minutes.',
-  'Go on a journey. A Kino\'s Journey if you wish.'];
+  'Drive for at least 20 minutes.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if (index === 0)
