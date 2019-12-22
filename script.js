@@ -94,9 +94,8 @@ function randomLink(message) {
   "Check your gTasks list, please.",
   "Check your repeating tasks on To-Do.",
   "Check your anime queue spreadsheet."];
-  for (var i = 4; i <= 8; i++)
-    linkMessages.push("Get back to watching anime!");
-  linkMessages.push("Here are some anime episodes you need to watch.")
+  for (var i = 4; i <= 9; i++)
+    linkMessages.push("Watch anime.");
   //These variables are needed so that the loop doesn't become an infinite loop.
   var onehundredten = linkMessages.length + 1;
   var onehundredeleven = linkMessages.length * 3;
@@ -173,6 +172,45 @@ function randomTheme(number) {
   }
   document.body.className = "theme" + theme.toString();
   console.log("Theme " + theme);
+}
+
+class Anime {
+  constructor(title,link) {
+    this.title = title;
+    this.link = link;
+  }
+}
+
+function getTitle(id) {
+  if (id === "24")
+    return "Pani Poni Dash! ";
+  if (id === "35")
+    return "GJ-Bu ";
+  if (id === "138-2")
+    return "Hayate the Combat Butler!! ";
+  if (id === "149")
+    return "Re:Zero ";
+  if (id === "145-2")
+    return "Saki: The Nationals ";
+  if (id === "153")
+    return "Plastic Memories ";
+}
+
+function loadAnime() {
+  var anime = [];
+  anime.push(new Anime(getTitle("153") + "Episode 9","https://vrv.co/watch/GY9P3103R/Plastic-Memories:After-the-Festival"));
+  anime.push(new Anime(getTitle("35") + "Episode 1","https://vrv.co/watch/GR8VMM18R/GJ-CLUB:I-am-the-GJ-Club"));
+  anime.push(new Anime(getTitle("145-2") + "Episode 10","https://vrv.co/watch/GYMGEP83Y/Saki:Hand-10-Friends"));
+  anime.push(new Anime(getTitle("24") + "Episode 19","https://www.funimation.com/shows/pani-poni-dash/art-causes-harm-to-the-body"));
+  anime.push(new Anime(getTitle("24") + "Episode 20","https://www.funimation.com/shows/pani-poni-dash/a-wise-man-will-know-not-to-approach-danger"));
+  anime.push(new Anime(getTitle("153") + "Episode 10","https://vrv.co/watch/GY491EJ0R/Plastic-Memories:No-Longer-Partners"));
+  anime.push(new Anime(getTitle("35") + "Episode 2","https://vrv.co/watch/G6DQVVDGR/GJ-CLUB:Friendship-Love-Her-Abnormality"));
+  anime.push(new Anime(getTitle("149") + "Episode 23","https://vrv.co/watch/GY9VK9KVR/ReZERO-Starting-Life-in-Another-World-:Nefarious-Sloth"));
+  anime.push(new Anime(getTitle("24") + "Episode 21","https://www.funimation.com/shows/pani-poni-dash/a-demon-wearing-clothes"));
+  anime.push(new Anime(getTitle("145-2") + "Episode 11","https://vrv.co/watch/GY3VKMWZR/Saki:Hand-11-Threat"));
+  var x = document.getElementById("animelist");
+  for (var i in anime)
+    x.innerHTML = x.innerHTML + "<li><a href=\"" + anime[i].link + "\">" + anime[i].title + "</a></li>";
 }
 
 function getWidth() {
