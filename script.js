@@ -2,7 +2,7 @@ var number = 0;
 
 function loadWebsite(number) {
   if (number === 2)
-    document.getElementById("message").innerHTML = loadBreak2();
+    document.getElementById("message").innerHTML = loadBreak();
   else if (number === 4)
     document.getElementById("message").innerHTML = "☢THAT UNSAFE WEBSITE IS BLOCKED!☢";
   else
@@ -23,7 +23,7 @@ function loadBreak() {
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
-  'How can you start building an everlasting romantic relationship?',
+  'How can you build an everlasting romantic relationship from scratch?',
   'Think of a goal. Any one. Set that as your break message.',
   'Refill your bottle and drink water.',
   'Go up and down the stairs.',
@@ -55,28 +55,6 @@ function loadBreak() {
     return messages[index];
 }
 
-function loadBreak2() {
-  var messages = ['Refill your bottle and drink water.',
-  'Go up and down the stairs.',
-  'Stare at an object 20 feet away for 20 seconds.',
-  'Eat something if it has been 3 hours since you ate something.',
-  'Strip and take a shower if you hadn\'t today or yesterday.',
-  'Listen to your own music, and don\'t be afraid to dance to it.',
-  'Compliment someone you know in person.',
-  'Stretch.',
-  'Change your clothes if they\'re dirty.',
-  'If it\'s the evening, change to your pajamas. No socks.',
-  'Declutter your room.',
-  'Walk around for about 1-2 minutes.',
-  'Go on a journey. A Kino\'s Journey if you wish.'];
-  //Get random message index from messages array
-  var index = Math.floor(Math.random() * messages.length);
-  if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
-    return "Change to appropriate clothes if necessary.<br>" + messages[index];
-  else
-    return messages[index];
-}
-
 function randomMessage() {
   var messages = [
   'You were redirected from a blacklisted website.',
@@ -94,7 +72,7 @@ function randomMessage() {
   'It is a good idea to check your tasks for the day.',
   'Your mind must be wandering off, isn\'t it?',
   'That website could have hurt you emotionally.',
-  'This is a webpage. And it prevented you from accessing a website.'];
+  'This is a webpage. And it intercepted you!'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
