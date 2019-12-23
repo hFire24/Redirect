@@ -107,7 +107,7 @@ function randomLink(message) {
   if (message > 5 && message < 8)
     index = Math.floor(Math.random() * linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1);
   //For taking breaks
-  var breaktime = linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1;
+  var breaktime = linkMessages.lastIndexOf("Watch anime.") + 1;
   if (message === 11)
       index = Math.floor(Math.random() * (linkMessages.length - breaktime)) + breaktime;
   //For checking tasks
@@ -198,16 +198,27 @@ function getTitle(id) {
 
 function loadAnime() {
   var anime = [];
-  anime.push(new Anime(getTitle("153") + "Episode 9","https://vrv.co/watch/GY9P3103R/Plastic-Memories:After-the-Festival"));
-  anime.push(new Anime(getTitle("35") + "Episode 1","https://vrv.co/watch/GR8VMM18R/GJ-CLUB:I-am-the-GJ-Club"));
-  anime.push(new Anime(getTitle("145-2") + "Episode 10","https://vrv.co/watch/GYMGEP83Y/Saki:Hand-10-Friends"));
-  anime.push(new Anime(getTitle("24") + "Episode 19","https://www.funimation.com/shows/pani-poni-dash/art-causes-harm-to-the-body"));
   anime.push(new Anime(getTitle("24") + "Episode 20","https://www.funimation.com/shows/pani-poni-dash/a-wise-man-will-know-not-to-approach-danger"));
-  anime.push(new Anime(getTitle("153") + "Episode 10","https://vrv.co/watch/GY491EJ0R/Plastic-Memories:No-Longer-Partners"));
-  anime.push(new Anime(getTitle("35") + "Episode 2","https://vrv.co/watch/G6DQVVDGR/GJ-CLUB:Friendship-Love-Her-Abnormality"));
   anime.push(new Anime(getTitle("149") + "Episode 23","https://vrv.co/watch/GY9VK9KVR/ReZERO-Starting-Life-in-Another-World-:Nefarious-Sloth"));
   anime.push(new Anime(getTitle("24") + "Episode 21","https://www.funimation.com/shows/pani-poni-dash/a-demon-wearing-clothes"));
+  anime.push(new Anime(getTitle("24") + "Episode 22","https://www.funimation.com/shows/pani-poni-dash/today-a-man-tomorrow-a-mouse"));
+  anime.push(new Anime(getTitle("24") + "Episode 23","https://www.funimation.com/shows/pani-poni-dash/misfortunes-never-come-one-by-one"));
+  anime.push(new Anime(getTitle("153") + "Episode 10","https://vrv.co/watch/GY491EJ0R/Plastic-Memories:No-Longer-Partners"));
+  anime.push(new Anime(getTitle("35") + "Episode 1","https://vrv.co/watch/GR8VMM18R/GJ-CLUB:I-am-the-GJ-Club"));
+  anime.push(new Anime(getTitle("153") + "Episode 11","https://vrv.co/watch/GYJQVX336/Plastic-Memories:Rice-Omelette-Day"));
   anime.push(new Anime(getTitle("145-2") + "Episode 11","https://vrv.co/watch/GY3VKMWZR/Saki:Hand-11-Threat"));
+  anime.push(new Anime(getTitle("149") + "Episode 24","https://vrv.co/watch/GY4PXWX16/ReZERO-Starting-Life-in-Another-World-:The-Self-Proclaimed-Knight-and-the-Greatest-Knight"));
+  anime.push(new Anime(getTitle("138-2") + "Episode 25","https://vrv.co/watch/GYJQ27336/Hayate-the-Combat-Butler-Season-1-2:Its-really-a-story-about-a-young-lady-and-her-butler"));
+  anime.push(new Anime("Go to bed",""));
+  anime.push(new Anime(getTitle("24") + "Episode 24","https://www.funimation.com/shows/pani-poni-dash/you-are-responsible-for-your-own-death"));
+  anime.push(new Anime(getTitle("24") + "Episode 25","https://www.funimation.com/shows/pani-poni-dash/a-time-of-crisis"));
+  anime.push(new Anime(getTitle("24") + "Episode 26","https://www.funimation.com/shows/pani-poni-dash/no-one-knows-what-may-happen-tomorrow"));
+  anime.push(new Anime(getTitle("145-2") + "Episode 12","https://vrv.co/watch/G62P4E596/Saki:Hand-12-Truth"));
+  anime.push(new Anime(getTitle("145-2") + "Episode 13","https://vrv.co/watch/G6ZXJD4MR/Saki:Hand-13-Old-Friends"));
+  anime.push(new Anime(getTitle("149") + "Episode 25","https://vrv.co/watch/GYJ0M4M26/ReZERO-Starting-Life-in-Another-World-:Thats-All-This-Story-Is-About"));
+  anime.push(new Anime(getTitle("153") + "Episode 12","https://vrv.co/watch/GYK534M8R/Plastic-Memories:Filling-Up-with-Memories"));
+  anime.push(new Anime(getTitle("35") + "Episode 2","https://vrv.co/watch/G6DQVVDGR/GJ-CLUB:Friendship-Love-Her-Abnormality"));
+  anime.push(new Anime(getTitle("153") + "Episode 13","https://vrv.co/watch/G6VN35ZPR/Plastic-Memories:I-Hope-One-Day-Youll-be-Reunited"));
   var x = document.getElementById("animelist");
   for (var i in anime)
     x.innerHTML = x.innerHTML + "<li><a href=\"" + anime[i].link + "\">" + anime[i].title + "</a></li>";
