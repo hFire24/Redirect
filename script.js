@@ -105,7 +105,7 @@ function randomLink(message) {
   var index = Math.floor(Math.random() * linkMessages.length);
   //For getting back on task
   if (message > 5 && message < 8)
-    index = Math.floor(Math.random() * linkMessages.lastIndexOf("Here are some anime episodes you need to watch.") + 1);
+    index = Math.floor(Math.random() * linkMessages.lastIndexOf("Watch anime.") + 1);
   //For taking breaks
   var breaktime = linkMessages.lastIndexOf("Watch anime.") + 1;
   if (message === 11)
@@ -198,8 +198,6 @@ function getTitle(id) {
 
 function loadAnime() {
   var anime = [];
-  anime.push(new Anime(getTitle("24") + "Episode 20","https://www.funimation.com/shows/pani-poni-dash/a-wise-man-will-know-not-to-approach-danger"));
-  anime.push(new Anime(getTitle("149") + "Episode 23","https://vrv.co/watch/GY9VK9KVR/ReZERO-Starting-Life-in-Another-World-:Nefarious-Sloth"));
   anime.push(new Anime(getTitle("24") + "Episode 21","https://www.funimation.com/shows/pani-poni-dash/a-demon-wearing-clothes"));
   anime.push(new Anime(getTitle("24") + "Episode 22","https://www.funimation.com/shows/pani-poni-dash/today-a-man-tomorrow-a-mouse"));
   anime.push(new Anime(getTitle("24") + "Episode 23","https://www.funimation.com/shows/pani-poni-dash/misfortunes-never-come-one-by-one"));
