@@ -73,7 +73,8 @@ function randomMessage() {
   'Your mind must be wandering off, isn\'t it?',
   'That website could have hurt you emotionally.',
   'This is a webpage. And it intercepted your internet access!',
-  'Stop typing in addresses of distracting websites!'];
+  'Stop typing in addresses of distracting websites!',
+  'Break unhealthy habits that aren\'t dietary.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
