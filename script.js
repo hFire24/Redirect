@@ -16,6 +16,12 @@ function loadWebsite(number) {
 function loadBreak() {
   var messages = ['Listen to this.',
   'Check your gTasks list, please.',
+  'Check your gTasks list, please.',
+  'Check your gTasks list, please.',
+  'Check your gTasks list, please.',
+  'Check your repeating tasks on To-Do.',
+  'Check your repeating tasks on To-Do.',
+  'Check your repeating tasks on To-Do.',
   'Check your repeating tasks on To-Do.',
   'Check your anime queue spreadsheet.',
   'Pray a short prayer.',
@@ -41,19 +47,19 @@ function loadBreak() {
   'Walk around for about 1-2 minutes.',
   'Drive for at least 20 minutes.'];
   for (var i = 0; i < 6; i++)
-    linkMessages.push("Watch anime.");
+    messages.push("Watch anime.");
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   if (index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
-  if (index === 7)
+  if (index === messages.indexOf("Take a deep breath."))
     return "<a href=\"https://www.google.com/search?q=breathing+exercise\">" + messages[index] + "</a>";
   if (index === messages.indexOf("Learn how to make trance music."))
     return "<a href=\"trancelessons.html\">" + messages[index] + "</a>";
   if (index === messages.indexOf("Learn how to make trance music.") + 1)
     return "<a href=\"https://emergency.nofap.com/redirect?religious=true&cat=em\">" + messages[index] + "</a>";
   if (index >= messages.indexOf("Watch anime."))
-    return "<a href=\"nextanime.html\">" + linkMessages[index] + "</a>";
+    return "<a href=\"nextanime.html\">" + messages[index] + "</a>";
   else if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     return "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
