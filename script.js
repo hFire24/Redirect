@@ -52,6 +52,8 @@ function loadBreak() {
   var index = Math.floor(Math.random() * messages.length);
   if (index === 0)
     return "<a href=\"https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD\">" + messages[index] + "</a>";
+  if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
+    return "<a href=\"https://www.google.com/search?q=30+second+timer\">" + messages[index] + "</a>";
   if (index === messages.indexOf("Take a deep breath."))
     return "<a href=\"https://www.google.com/search?q=breathing+exercise\">" + messages[index] + "</a>";
   if (index === messages.indexOf("Learn how to make trance music."))
