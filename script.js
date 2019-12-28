@@ -15,6 +15,7 @@ function loadWebsite(number) {
 
 function loadBreak() {
   var messages = ['Listen to this.',
+  'Check your tasks for the day.',
   'Check your gTasks list, please.',
   'Check your gTasks list, please.',
   'Check your gTasks list, please.',
@@ -24,6 +25,10 @@ function loadBreak() {
   'Check your repeating tasks on To-Do.',
   'Check your repeating tasks on To-Do.',
   'Check your anime queue spreadsheet.',
+  'Create tasks for today.',
+  'Make a plan for today or tomorrow.',
+  'Determine what you need to do and what you want to do today.',
+  'List everything you\'re currently doing, and order them by priority.',
   'Pray a short prayer.',
   'Look away from the screen for about 30 seconds.',
   'Compliment someone you know online.',
@@ -38,14 +43,14 @@ function loadBreak() {
   'Go up and down the stairs.',
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
-  'Strip and take a shower if you hadn\'t today or yesterday.',
+  'Take off all your clothes.<br>Take a shower if you hadn\'t today or yesterday.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
   'Stretch.',
   'Change your clothes if they\'re dirty.',
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
   'Walk around for about 1-2 minutes.',
-  'Drive for at least 20 minutes.'];
+  'Drive for as long as you want to get your mind off of things.'];
   for (var i = 0; i < 6; i++)
     messages.push("Watch anime.");
   //Get random message index from messages array
@@ -84,7 +89,7 @@ function randomMessage() {
   'Be productive! Don\'t go to time-wasting websites!',
   'No going to blocked websites. You understand?',
   'May this page suggest you take a short break?',
-  'It is a good idea to check your tasks for the day.',
+  'It is a good idea to get things done.',
   'Your mind must be wandering off, isn\'t it?',
   'That website could have hurt you emotionally.',
   'This is a webpage. And it intercepted your internet access!',
@@ -106,6 +111,8 @@ function randomLink(message) {
     linkMessages.push("Ready to do something else?");
   //Get random link from array
   var index = Math.floor(Math.random() * linkMessages.length);
+  if (message === 6)
+    index = 0;
   //Put link message and to screen using the index value of the array
   if (index > 0)
     document.getElementById("link").innerHTML = "<a href=\"breaktime.html\">" + linkMessages[index] + "</a>";
