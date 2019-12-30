@@ -4,7 +4,7 @@ function loadWebsite(number) {
   if (number === 2)
     loadBreak();
   else if (number === 4)
-    document.getElementById("message").innerHTML = "☢THAT UNSAFE WEBSITE IS BLOCKED!☢";
+    document.getElementById("message").innerHTML = "THAT UNSAFE WEBSITE IS BLOCKED";
   else
     randomMessage();
   if(number === 4)
@@ -59,7 +59,7 @@ function loadBreak() {
   'Drive for as long as you want to get your mind off of things.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
-  var message = document.getElementById("message");
+  var message = document.getElementById("break");
   if (index === 0)
     message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
   if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
@@ -78,6 +78,7 @@ function loadBreak() {
     message.innerHTML = "Get your laptop off your lap, and stand up.<br>" + messages[index];
   else
     message.innerHTML = messages[index];
+  console.log("Message " + index);
 }
 
 function randomMessage() {
@@ -119,6 +120,8 @@ function randomLink(message) {
   var index = Math.floor(Math.random() * linkMessages.length);
   if (message === 6)
     index = 0;
+  else if (message === 11)
+    index = 1;
   //Put link message and to screen using the index value of the array
   if (index > 0)
     document.getElementById("link").innerHTML = "<a href=\"breaktime.html\">" + linkMessages[index] + "</a>";
