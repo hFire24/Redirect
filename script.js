@@ -68,11 +68,11 @@ function loadBreak() {
   if (index === messages.indexOf("Take a deep breath."))
     message.href = "https://www.google.com/search?q=breathing+exercise";
   if (index === messages.indexOf("Learn how to make trance music."))
-    message.href = "trancelessons.html";
+    message.href = "trancelessons";
   if (index === messages.indexOf("Learn how to make trance music.") + 1)
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
   if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
-    message.href = "nextanime.html";
+    message.href = "nextanime";
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     message.innerHTML = "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
@@ -102,7 +102,8 @@ function randomMessage() {
   'This is a webpage. And it intercepted your internet access!',
   'Stop typing in addresses of distracting websites!',
   'Break unhealthy habits that aren\'t dietary.',
-  'You\'re wasting your time! Come on!'];
+  'You\'re wasting your time! Come on!',
+  'Ehem. You need to stop procrastinating.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
@@ -115,8 +116,10 @@ function randomMessage() {
 function randomLink(message) {
   var linkMessages = ["Immediately close this tab."];
   //These variables are needed so that the loop doesn't become an infinite loop.
-  for (i = 1; i < 30; i++)
+  for (i = 1; i <= 10; i++)
     linkMessages.push("Ready to do something else?");
+  for (i = 11; i <= 30; i++)
+    linkMessages.push("Got something you need to do?");
   //Get random link from array
   var index = Math.floor(Math.random() * linkMessages.length);
   if (message === 6)
@@ -124,8 +127,10 @@ function randomLink(message) {
   else if (message === 11)
     index = 1;
   //Put link message and to screen using the index value of the array
-  if (index > 0)
-    document.getElementById("link").innerHTML = "<a href=\"breaktime.html\">" + linkMessages[index] + "</a>";
+  if (index >= 11)
+    document.getElementById("link").innerHTML = "<a href=\"custom\">" + linkMessages[index] + "</a>";
+  else if (index > 0)
+    document.getElementById("link").innerHTML = "<a href=\"breaktime\">" + linkMessages[index] + "</a>";
   else
     document.getElementById("link").innerHTML = linkMessages[index];
   //Put index value to the console
