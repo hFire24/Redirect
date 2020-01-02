@@ -29,6 +29,7 @@ function loadBreak() {
   'Make a plan for today or tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
+  'Close tabs and programs.',
   'Pray a short prayer.',
   'Look away from the screen for about 30 seconds.',
   'Compliment someone you know online.',
