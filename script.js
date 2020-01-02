@@ -235,3 +235,24 @@ function loadAnime() {
 function getWidth() {
   document.getElementById("width").innerHTML = window.innerWidth;
 }
+
+function createMessage() {
+  var parent = document.getElementById("custom");
+  var newMessage = document.getElementById("newBreak");
+  var button = document.getElementById("messageButton");
+  var message = document.createElement("div");
+  message.id = "message";
+  message.innerHTML = newMessage.value;
+  parent.removeChild(document.getElementById("instructions"));
+  parent.removeChild(newMessage);
+  parent.removeChild(button);
+  parent.appendChild(message);
+}
+
+var input = document.getElementById("newBreak");
+input.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    createMessage();
+  }
+});
