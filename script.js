@@ -35,6 +35,7 @@ function loadBreak() {
   'Compliment someone you know online.',
   'Take a deep breath.',
   'Digitize a paragraph from your journal.',
+  'Add new songs to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
@@ -200,32 +201,26 @@ class Anime {
 function getTitle(id) {
   if (id === "24")
     return "Pani Poni Dash! ";
-  if (id === "35")
-    return "GJ-Bu ";
-  if (id === "138-2")
-    return "Hayate the Combat Butler!! ";
   if (id === "149")
     return "Re:Zero ";
   if (id === "145-2")
     return "Saki: The Nationals ";
   if (id === "153")
     return "Plastic Memories ";
+  if (id === "154")
+    return "A Certain Scientific Railgun ";
 }
 
 function loadAnime() {
   var anime = [];
-  anime.push(new Anime(getTitle("149") + "Episode 24","https://vrv.co/watch/GY4PXWX16/ReZERO-Starting-Life-in-Another-World-:The-Self-Proclaimed-Knight-and-the-Greatest-Knight"));
-  anime.push(new Anime(getTitle("153") + "Episode 11","https://vrv.co/watch/GYJQVX336/Plastic-Memories:Rice-Omelette-Day"));
-  anime.push(new Anime(getTitle("24") + "Episode 24","https://www.funimation.com/shows/pani-poni-dash/you-are-responsible-for-your-own-death"));
   anime.push(new Anime(getTitle("145-2") + "Episode 12","https://vrv.co/watch/G62P4E596/Saki:Hand-12-Truth"));
-  anime.push(new Anime(getTitle("149") + "Episode 25","https://vrv.co/watch/GYJ0M4M26/ReZERO-Starting-Life-in-Another-World-:Thats-All-This-Story-Is-About"));
-  anime.push(new Anime(getTitle("24") + "Episode 25","https://www.funimation.com/shows/pani-poni-dash/a-time-of-crisis"));
   anime.push(new Anime(getTitle("153") + "Episode 12","https://vrv.co/watch/GYK534M8R/Plastic-Memories:Filling-Up-with-Memories"));
+  anime.push(new Anime(getTitle("24") + "Episode 25","https://www.funimation.com/shows/pani-poni-dash/a-time-of-crisis"));
+  anime.push(new Anime(getTitle("154") + "Episode 2","https://www.funimation.com/shows/a-certain-scientific-railgun/when-working-under-a-hot-sun-rehydration-is-essential"));
+  anime.push(new Anime(getTitle("149") + "Episode 25","https://vrv.co/watch/GYJ0M4M26/ReZERO-Starting-Life-in-Another-World-:Thats-All-This-Story-Is-About"));
   anime.push(new Anime(getTitle("145-2") + "Episode 13","https://vrv.co/watch/G6ZXJD4MR/Saki:Hand-13-Old-Friends"));
   anime.push(new Anime(getTitle("24") + "Episode 26","https://www.funimation.com/shows/pani-poni-dash/no-one-knows-what-may-happen-tomorrow"));
   anime.push(new Anime(getTitle("153") + "Episode 13","https://vrv.co/watch/G6VN35ZPR/Plastic-Memories:I-Hope-One-Day-Youll-be-Reunited"));
-  anime.push(new Anime(getTitle("35") + "Episode 1","https://vrv.co/watch/GR8VMM18R/GJ-CLUB:I-am-the-GJ-Club"));
-  anime.push(new Anime(getTitle("35") + "Episode 2","https://vrv.co/watch/G6DQVVDGR/GJ-CLUB:Friendship-Love-Her-Abnormality"));
   var list = document.getElementById("animelist");
   for (var i in anime)
   {
