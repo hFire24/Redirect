@@ -15,6 +15,7 @@ function loadWebsite(number) {
 
 function loadBreak() {
   var messages = ['Listen to this.',
+  'Clear your mind.',
   'Check your tasks for the day.',
   'Check your gTasks list, please.',
   'Check your gTasks list, please.',
@@ -29,10 +30,10 @@ function loadBreak() {
   'Make a plan for today or tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
+  'Plan your day for today and tomorrow.',
   'Close tabs and programs.',
   'Pray a short prayer.',
   'Look away from the screen for about 30 seconds.',
-  'Compliment someone you know online.',
   'Take a deep breath.',
   'Digitize a paragraph from your journal.',
   'Add new songs to your iTunes library.',
@@ -58,11 +59,12 @@ function loadBreak() {
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
   'Walk around for about 1-2 minutes.',
+  'Now play some Stepmania.',
   'Drive for as long as you want to get your mind off of things.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   var message = document.getElementById("break");
-  if (index === 0)
+  if (index <= 1)
     message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
   if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
     message.href = "https://www.google.com/search?q=30+second+timer";
@@ -74,6 +76,8 @@ function loadBreak() {
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
   if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
     message.href = "nextanime";
+  if (index === messages.indexOf("Now do this."))
+    message.href = "stepmania";
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     message.innerHTML = "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
@@ -213,9 +217,7 @@ function getTitle(id) {
 
 function loadAnime() {
   var anime = [];
-  anime.push(new Anime(getTitle("145-2") + "Episode 12","https://vrv.co/watch/G62P4E596/Saki:Hand-12-Truth"));
   anime.push(new Anime(getTitle("153") + "Episode 12","https://vrv.co/watch/GYK534M8R/Plastic-Memories:Filling-Up-with-Memories"));
-  anime.push(new Anime(getTitle("24") + "Episode 25","https://www.funimation.com/shows/pani-poni-dash/a-time-of-crisis"));
   anime.push(new Anime(getTitle("154") + "Episode 2","https://www.funimation.com/shows/a-certain-scientific-railgun/when-working-under-a-hot-sun-rehydration-is-essential"));
   anime.push(new Anime(getTitle("149") + "Episode 25","https://vrv.co/watch/GYJ0M4M26/ReZERO-Starting-Life-in-Another-World-:Thats-All-This-Story-Is-About"));
   anime.push(new Anime(getTitle("145-2") + "Episode 13","https://vrv.co/watch/G6ZXJD4MR/Saki:Hand-13-Old-Friends"));
