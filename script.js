@@ -41,6 +41,7 @@ function loadBreak() {
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
   'How can you build an everlasting romantic relationship from scratch?',
+  'Learn how to use Pygame.',
   'Think of a goal. Any one. Set that as your break message.',
   'Watch anime.',
   'Watch anime.',
