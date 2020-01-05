@@ -2,7 +2,7 @@ var number = 0;
 
 function loadWebsite(number) {
   if (number === 2)
-    loadBreak();
+    loadBreak(-1);
   else if (number === 4)
     document.getElementById("message").innerHTML = "THAT UNSAFE WEBSITE IS BLOCKED";
   else
@@ -13,7 +13,7 @@ function loadWebsite(number) {
     randomTheme(number);
 }
 
-function loadBreak() {
+function loadBreak(index) {
   var messages = ['Listen to this.',
   'Clear your mind.',
   'Check your tasks for the day.',
@@ -63,7 +63,8 @@ function loadBreak() {
   'Now play some Stepmania.',
   'Drive for as long as you want to get your mind off of things.'];
   //Get random message index from messages array
-  var index = Math.floor(Math.random() * messages.length);
+  if (index < 0 || index >= messages.length)
+    index = Math.floor(Math.random() * messages.length);
   var message = document.getElementById("break");
   if (index <= 1)
     message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
@@ -77,7 +78,7 @@ function loadBreak() {
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
   if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
     message.href = "nextanime";
-  if (index === messages.indexOf("Now do this."))
+  if (index === messages.indexOf("Now play some Stepmania."))
     message.href = "stepmania";
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     message.innerHTML = "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
