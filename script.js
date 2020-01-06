@@ -111,8 +111,8 @@ function randomMessage() {
   'Break unhealthy habits that aren\'t dietary.',
   'You\'re wasting your time! Come on!',
   'Ehem. You need to stop procrastinating.',
-  'You won\'t complete your tasks if you sidetrack.',
-  'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Loli. Chino. Cute. Happy. I love. Blonde. Pink. Newgrounds.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'];
+  'You won\'t complete your tasks quickly if you sidetrack.',
+  'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Loli. Chino. Cute. Happy. I love. Blonde. Pink.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
