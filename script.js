@@ -27,7 +27,7 @@ function loadBreak(index) {
   'Check your repeating tasks on To-Do.',
   'Check your anime queue spreadsheet.',
   'Create tasks for today.',
-  'Make a plan for today or tomorrow.',
+  'Make a plan for today and tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
   'Plan your day for today and tomorrow.',
@@ -36,7 +36,7 @@ function loadBreak(index) {
   'Look away from the screen for about 30 seconds.',
   'Take a deep breath.',
   'Digitize a paragraph from your journal.',
-  'Add new songs to your iTunes library.',
+  'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
@@ -49,19 +49,19 @@ function loadBreak(index) {
   'Watch anime.',
   'Watch anime.',
   'Watch anime.',
+  'Stand up and stretch if you can.',
   'Refill your bottle and drink water.',
   'Go up and down the stairs.',
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
   'Take off all your clothes.<br>Take a shower if you hadn\'t today or yesterday.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
-  'Stretch.',
   'Change your clothes if they\'re dirty.',
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
   'Walk around for about 1-2 minutes.',
   'Now play some Stepmania.',
-  'Drive for as long as you want to get your mind off of things.'];
+  'Take your keys, wallet, and phone.<br>Drive to get your mind off of things.'];
   //Get random message index from messages array
   if (index < 0 || index >= messages.length)
     index = Math.floor(Math.random() * messages.length);
@@ -81,9 +81,9 @@ function loadBreak(index) {
   if (index === messages.indexOf("Now play some Stepmania."))
     message.href = "stepmania";
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
-    message.innerHTML = "Get your laptop off your lap, and stand up.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
+    message.innerHTML = "Stand up and stretch if you can.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
-    message.innerHTML = "Get your laptop off your lap, and stand up.<br>" + messages[index];
+    message.innerHTML = "Stand up and stretch if you can.<br>" + messages[index];
   else
     message.innerHTML = messages[index];
   console.log("Message " + index);
@@ -110,7 +110,9 @@ function randomMessage() {
   'Stop typing in addresses of distracting websites!',
   'Break unhealthy habits that aren\'t dietary.',
   'You\'re wasting your time! Come on!',
-  'Ehem. You need to stop procrastinating.'];
+  'Ehem. You need to stop procrastinating.',
+  'You won\'t complete your tasks if you sidetrack.',
+  'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Loli. Chino. Cute. Happy. I love. Blonde. Pink. Newgrounds.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
@@ -251,6 +253,7 @@ function createMessage() {
   parent.removeChild(document.getElementById("instructions"));
   parent.removeChild(newMessage);
   parent.removeChild(button);
+  parent.removeChild(breaklink);
   parent.appendChild(message);
 }
 

@@ -34,6 +34,16 @@ ol a {
   font-size:75px;
 }
 
+#breaklink {
+  padding-top:0.5em;
+  margin-bottom:0.5em;
+}
+
+#stress {
+  font-family: Futura XBlkIt BT, 'Arial Black', sans-serif;
+  color: red;
+}
+
 .theme1 {
   background-color: hsl(137, 13%, 32%);
   color: hsl(104, 22%, 87%);
@@ -136,7 +146,7 @@ ol a {
   body {
     font-size: 30px;
   }
-  #message, .nuclear, #trance {
+  #message, .nuclear, #trance, #stress {
     font-size: 60px;
   }
 }
