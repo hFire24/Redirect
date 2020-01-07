@@ -149,6 +149,8 @@ function randomLink(message) {
   console.log("Link " + index);
 }
 
+var messageComplete = true;
+
 function randomTheme(number) {
   //Pick a random theme
   var theme;
@@ -201,11 +203,13 @@ function randomTheme(number) {
   document.body.className = "theme" + theme.toString();
   console.log("Theme " + theme);
   if(number === 80) {
+    messageComplete = false;
     var input = document.getElementById("newBreak");
     input.addEventListener("keyup", function (event) {
       if (event.keyCode === 13) {
         event.preventDefault();
         createMessage();
+        messageComplete = true;
       }
     });
   }
@@ -256,7 +260,7 @@ function createMessage() {
   var newMessage = document.getElementById("newBreak");
   var button = document.getElementById("messageButton");
   var message = document.createElement("div");
-  message.id = "message";
+  message.id = "break";
   message.className = "space";
   message.innerHTML = newMessage.value;
   parent.removeChild(document.getElementById("instructions"));
@@ -268,7 +272,7 @@ function createMessage() {
 
 var hide = document.getElementById("hideable");
 window.addEventListener("keyup", function (event) {
-  if (event.keyCode === 72) {
+  if (event.keyCode === 72 && messageComplete) {
     event.preventDefault();
     if (hide.style.display !== "none")
       hide.style.display = "none";
