@@ -26,6 +26,10 @@ ol a {
   font-family: Neuropol, Futura XBlkIt BT, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+#survivor {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', fantasy;
+}
+
 .space {
   margin-bottom: 0.5em;
 }

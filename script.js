@@ -42,6 +42,7 @@ function loadBreak(index) {
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
   'How can you build an everlasting romantic relationship from scratch?',
   'Learn how to use Pygame.',
+  'Don\'t suck at group projects.'
   'Think of a goal. Any one. Set that as your break message.',
   'Watch anime.',
   'Watch anime.',
@@ -76,6 +77,8 @@ function loadBreak(index) {
     message.href = "trancelessons";
   if (index === messages.indexOf("Learn how to make trance music.") + 1)
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+  if (index === messages.indexOf("Don't suck at group projects."))
+    message.href = "groupprojects";
   if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
     message.href = "nextanime";
   if (index === messages.indexOf("Now play some Stepmania."))
@@ -112,7 +115,7 @@ function randomMessage() {
   'You\'re wasting your time! Come on!',
   'Ehem. You need to stop procrastinating.',
   'You won\'t complete your tasks quickly if you sidetrack.',
-  'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Loli. Chino. Cute. Happy. I love. Blonde. Pink.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'];
+  'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Chino. Cute. Happy. Blonde. Pink. Newgrounds.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
@@ -221,12 +224,8 @@ function getTitle(id) {
 
 function loadAnime() {
   var anime = [];
-  anime.push(new Anime(getTitle("153") + "Episode 12","https://vrv.co/watch/GYK534M8R/Plastic-Memories:Filling-Up-with-Memories"));
   anime.push(new Anime(getTitle("154") + "Episode 2","https://www.funimation.com/shows/a-certain-scientific-railgun/when-working-under-a-hot-sun-rehydration-is-essential"));
-  anime.push(new Anime(getTitle("149") + "Episode 25","https://vrv.co/watch/GYJ0M4M26/ReZERO-Starting-Life-in-Another-World-:Thats-All-This-Story-Is-About"));
   anime.push(new Anime(getTitle("145-2") + "Episode 13","https://vrv.co/watch/G6ZXJD4MR/Saki:Hand-13-Old-Friends"));
-  anime.push(new Anime(getTitle("24") + "Episode 26","https://www.funimation.com/shows/pani-poni-dash/no-one-knows-what-may-happen-tomorrow"));
-  anime.push(new Anime(getTitle("153") + "Episode 13","https://vrv.co/watch/G6VN35ZPR/Plastic-Memories:I-Hope-One-Day-Youll-be-Reunited"));
   var list = document.getElementById("animelist");
   for (var i in anime)
   {
@@ -249,6 +248,7 @@ function createMessage() {
   var button = document.getElementById("messageButton");
   var message = document.createElement("div");
   message.id = "message";
+  message.class = "space";
   message.innerHTML = newMessage.value;
   parent.removeChild(document.getElementById("instructions"));
   parent.removeChild(newMessage);
