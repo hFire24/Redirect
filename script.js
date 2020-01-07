@@ -248,7 +248,7 @@ function createMessage() {
   var button = document.getElementById("messageButton");
   var message = document.createElement("div");
   message.id = "message";
-  message.class = "space";
+  message.className = "space";
   message.innerHTML = newMessage.value;
   parent.removeChild(document.getElementById("instructions"));
   parent.removeChild(newMessage);
