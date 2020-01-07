@@ -264,3 +264,14 @@ input.addEventListener("keyup", function (event) {
     createMessage();
   }
 });
+
+var hide = document.getElementById("hideable");
+window.addEventListener("keyup", function (event) {
+  if (event.keyCode === 72) {
+    event.preventDefault();
+    if (hide.style.display !== "none")
+      hide.style.display = "none";
+    else
+      hide.style.display = "inline";
+  }
+});
