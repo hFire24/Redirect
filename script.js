@@ -42,7 +42,7 @@ function loadBreak(index) {
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
   'How can you build an everlasting romantic relationship from scratch?',
   'Learn how to use Pygame.',
-  'Don\'t suck at group projects.'
+  'Don\'t suck at group projects.',
   'Think of a goal. Any one. Set that as your break message.',
   'Watch anime.',
   'Watch anime.',
