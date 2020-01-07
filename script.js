@@ -200,6 +200,15 @@ function randomTheme(number) {
   }
   document.body.className = "theme" + theme.toString();
   console.log("Theme " + theme);
+  if(number === 80) {
+    var input = document.getElementById("newBreak");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        createMessage();
+      }
+    });
+  }
 }
 
 class Anime {
@@ -256,14 +265,6 @@ function createMessage() {
   parent.removeChild(breaklink);
   parent.appendChild(message);
 }
-
-var input = document.getElementById("newBreak");
-input.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    createMessage();
-  }
-});
 
 var hide = document.getElementById("hideable");
 window.addEventListener("keyup", function (event) {
