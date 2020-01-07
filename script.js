@@ -35,7 +35,7 @@ function loadBreak(index) {
   'Pray a short prayer.',
   'Look away from the screen for about 30 seconds.',
   'Take a deep breath.',
-  'Digitize a paragraph from your journal.',
+  'Digitize at least two days of events from your journal.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
