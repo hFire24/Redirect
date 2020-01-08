@@ -70,11 +70,16 @@ permalink: /404.html
         color: hsl(59, 22%, 87%);
       }
 
+      #stress {
+        font-family: Futura XBlkIt BT, 'Arial Black', sans-serif;
+        color: red;
+      }
+
       @media only screen and (max-width: 1135px) {
         body {
           font-size: 30px;
         }
-        #message, .nuclear, #trance, #stress {
+        #message, #stress {
           font-size: 60px;
         }
       }
@@ -134,9 +139,9 @@ permalink: /404.html
         linkIndex = 1;
       //Put link message and to screen using the index value of the array
       if (linkIndex >= 11)
-        document.getElementById("link").innerHTML = "<a href=\"custom\">" + linkMessages[linkIndex] + "</a>";
+        document.getElementById("link").innerHTML = "<a href=\"https://cfreeze9.github.io/Redirect/custom\">" + linkMessages[linkIndex] + "</a>";
       else if (linkIndex > 0)
-        document.getElementById("link").innerHTML = "<a href=\"breaktime\">" + linkMessages[linkIndex] + "</a>";
+        document.getElementById("link").innerHTML = "<a href=\"https://cfreeze9.github.io/Redirect/breaktime\">" + linkMessages[linkIndex] + "</a>";
       else
         document.getElementById("link").innerHTML = linkMessages[linkIndex];
       //Put index value to the console
@@ -169,7 +174,7 @@ permalink: /404.html
 
       var hide = document.getElementById("hideable");
       window.addEventListener("keyup", function (event) {
-        if (event.keyCode === 66 && messageComplete) {
+        if (event.keyCode === 66) {
           event.preventDefault();
           if (hide.style.display !== "none")
             hide.style.display = "none";
