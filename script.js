@@ -116,7 +116,8 @@ function randomMessage() {
   'Ehem. You need to stop procrastinating.',
   'You won\'t complete your tasks quickly if you sidetrack.',
   'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Chino. Cute. Happy. Blonde. Pink. Newgrounds.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
-  'There\'s nothing beneficial to see there.'];
+  'There\'s nothing beneficial to see there.',
+  'Drop all your distracting habits.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
@@ -273,7 +274,7 @@ function createMessage() {
 
 var hide = document.getElementById("hideable");
 window.addEventListener("keyup", function (event) {
-  if (event.keyCode === 72 && messageComplete) {
+  if (event.keyCode === 66 && messageComplete) {
     event.preventDefault();
     if (hide.style.display !== "none")
       hide.style.display = "none";
