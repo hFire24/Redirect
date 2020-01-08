@@ -48,6 +48,11 @@ ol a {
   color: red;
 }
 
+td {
+  padding: 7px;
+  font-size: 30px;
+}
+
 .theme1 {
   background-color: hsl(137, 13%, 32%);
   color: hsl(104, 22%, 87%);
