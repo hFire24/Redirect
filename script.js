@@ -215,8 +215,12 @@ function getTitle(id) {
 
 function loadAnime() {
   var anime = [];
-  anime.push(new Anime(getTitle("154") + "Episode 2","https://www.funimation.com/shows/a-certain-scientific-railgun/when-working-under-a-hot-sun-rehydration-is-essential"));
-  anime.push(new Anime(getTitle("145-2") + "Episode 13","https://vrv.co/watch/G6ZXJD4MR/Saki:Hand-13-Old-Friends"));
+  anime.push("Odd-number episodes are in English; even-number episodes are in Japanese.")
+  anime.push(new Anime(getTitle("154") + "Episode 3","https://www.funimation.com/shows/a-certain-scientific-railgun/tokiwadai-is-targeted/uncut/?lang=english"));
+  anime.push(new Anime(getTitle("154") + "Episode 4","https://www.funimation.com/shows/a-certain-scientific-railgun/urban-legends/?lang=japanese"));
+  anime.push(new Anime(getTitle("154") + "Episode 5","https://www.funimation.com/shows/a-certain-scientific-railgun/a-certain-pair-of-new-trainees/?lang=english"));
+  anime.push(new Anime(getTitle("154") + "Episode 6","https://www.funimation.com/shows/a-certain-scientific-railgun/everyone-is-proactive-when-it-comes-to-this/?lang=japanese"));
+  anime.push(new Anime(getTitle("154") + "Episode 7","https://www.funimation.com/shows/a-certain-scientific-railgun/abilities-and-powers/?lang=english"))
   var list = document.getElementById("animelist");
   for (var i in anime)
   {
