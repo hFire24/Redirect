@@ -157,50 +157,26 @@ function randomTheme(number) {
   //Pick a random theme
   var theme;
   var themeText = document.getElementById("theme");
-  if (number !== 404) {
-    theme = Math.floor(Math.random() * 5) + 1;
-    switch (theme)
-    {
-      case 1:
-        themeText.innerHTML = "Brought to you by the moss green theme.";
-        break;
-      case 2:
-        themeText.innerHTML = "Brought to you by the blue theme.";
-        break;
-      case 3:
-        themeText.innerHTML = "Brought to you by the violet theme.";
-        break;
-      case 4:
-        themeText.innerHTML = "Brought to you by the sand theme.";
-        break;
-      case 5:
-        themeText.innerHTML = "Brought to you by the gray theme.";
-        break;
-      default:
-        themeText.innerHTML = "Brought to you by the black theme.";
-    }
-  } else {
-    theme = Math.floor(Math.random() * 5) + 5;
-    switch(theme)
-    {
-      case 5:
-        themeText.innerHTML = "Brought to you by the gray theme.";
-        break;
-      case 6:
-        themeText.innerHTML = "Brought to you by the slate green theme.";
-        break;
-      case 7:
-        themeText.innerHTML = "Brought to you by the purple theme.";
-        break;
-      case 8:
-        themeText.innerHTML = "Brought to you by the hot & dry theme.";
-        break;
-      case 9:
-        themeText.innerHTML = "Brought to you by the green theme.";
-        break;
-      default:
-        themeText.innerHTML = "Brought to you by the black theme.";
-    }
+  theme = Math.floor(Math.random() * 5) + 1;
+  switch (theme)
+  {
+    case 1:
+      themeText.innerHTML = "Brought to you by the moss green theme.";
+      break;
+    case 2:
+      themeText.innerHTML = "Brought to you by the blue theme.";
+      break;
+    case 3:
+      themeText.innerHTML = "Brought to you by the violet theme.";
+      break;
+    case 4:
+      themeText.innerHTML = "Brought to you by the sand theme.";
+      break;
+    case 5:
+      themeText.innerHTML = "Brought to you by the gray theme.";
+      break;
+    default:
+      themeText.innerHTML = "Brought to you by the black theme.";
   }
   document.body.className = "theme" + theme.toString();
   console.log("Theme " + theme);

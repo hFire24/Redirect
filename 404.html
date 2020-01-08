@@ -7,15 +7,176 @@ permalink: /404.html
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      body {
+        background-color: black;
+        font-family: Futura XBlkCnIt BT, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: white;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      #message {
+        font-size: 100px;
+      }
+
+      .space {
+        margin-bottom: 0.5em;
+
+      }
+      .theme5 {
+        background-color: hsl(0, 0%, 32%);
+        color: hsl(0, 0%, 87%);
+      }
+
+      .theme5 a {
+        color: hsl(0, 0%, 87%);
+      }
+
+      .theme6 {
+        background-color: hsl(182, 13%, 32%);
+        color: hsl(149, 22%, 87%);
+      }
+
+      .theme6 a {
+        color: hsl(149, 22%, 87%);
+      }
+
+      .theme7 {
+        background-color: hsl(272, 13%, 32%);
+        color: hsl(239, 22%, 87%);
+      }
+
+      .theme7 a {
+        color: hsl(239, 22%, 87%);
+      }
+
+      .theme8 {
+        background-color: hsl(2, 13%, 32%);
+        color: hsl(329, 22%, 87%);
+      }
+
+      .theme8 a {
+        color: hsl(329, 22%, 87%);
+      }
+
+      .theme9 {
+        background-color: hsl(92, 13%, 32%);
+        color: hsl(59, 22%, 87%);
+      }
+
+      .theme9 a {
+        color: hsl(59, 22%, 87%);
+      }
+
+      @media only screen and (max-width: 1135px) {
+        body {
+          font-size: 30px;
+        }
+        #message, .nuclear, #trance, #stress {
+          font-size: 60px;
+        }
+      }
+    </style>
     <link rel="shortcut icon" href="icon.ico">
   </head>
-  <body onLoad="loadWebsite(404)">
-    <div id='message' class='space'></div>
+  <body>
+    <div id='message' class='space'>This website is blocked.</div>
     <div id='hideable'>
       <div id='link' class='space'></div>
       <div id='theme'></div>
     </div>
-    <script src="script.js"></script>
+    <script>
+      var messages = [
+      'You were redirected from a blacklisted website.',
+      'You shouldn\'t access that website now.',
+      'This website is blocked.',
+      'Don\'t waste time getting distracted on blocked websites.',
+      'Hey! You aren\'t supposed to do that!',
+      'Don\'t you have anything better to do with your time?',
+      'Get back to whatever you should be doing!',
+      'Today will be a great day to catch up with your schedule and tasks.',
+      'You might regret visiting that blocked website.',
+      'Be productive! Don\'t go to time-wasting websites!',
+      'No going to blocked websites. You understand?',
+      'May this page suggest you take a short break?',
+      'It is a good idea to get things done.',
+      'Your mind must be wandering off, isn\'t it?',
+      'That website could have hurt you emotionally.',
+      'This is a webpage. And it intercepted your internet access!',
+      'Stop typing in addresses of distracting websites!',
+      'Break unhealthy habits that aren\'t dietary.',
+      'You\'re wasting your time! Come on!',
+      'Ehem. You need to stop procrastinating.',
+      'You won\'t complete your tasks quickly if you sidetrack.',
+      'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Chino. Cute. Happy. Blonde. Pink. Newgrounds.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+      'There\'s nothing beneficial to see there.',
+      'Drop all your distracting habits.'];
+      //Get random message index from messages array
+      var index = Math.floor(Math.random() * messages.length);
+      //Put message to screen using the index value of the array
+      document.getElementById("message").innerHTML = messages[index];
+      //Put index value to the console
+      console.log("Message " + index);
+
+      var linkMessages = ["Immediately close this tab."];
+      //These variables are needed so that the loop doesn't become an infinite loop.
+      for (i = 1; i <= 10; i++)
+        linkMessages.push("Ready to do something else?");
+      for (i = 11; i <= 30; i++)
+        linkMessages.push("Got something you need to do?");
+      //Get random link from array
+      var linkIndex = Math.floor(Math.random() * linkMessages.length);
+      if (index === 6)
+        linkIndex = 0;
+      else if (index === 11)
+        linkIndex = 1;
+      //Put link message and to screen using the index value of the array
+      if (linkIndex >= 11)
+        document.getElementById("link").innerHTML = "<a href=\"custom\">" + linkMessages[linkIndex] + "</a>";
+      else if (linkIndex > 0)
+        document.getElementById("link").innerHTML = "<a href=\"breaktime\">" + linkMessages[linkIndex] + "</a>";
+      else
+        document.getElementById("link").innerHTML = linkMessages[linkIndex];
+      //Put index value to the console
+      console.log("Link " + linkIndex);
+
+      var theme = Math.floor(Math.random() * 5) + 5;
+      var themeText = document.getElementById("theme");
+      switch(theme)
+      {
+        case 5:
+          themeText.innerHTML = "Brought to you by the gray theme.";
+          break;
+        case 6:
+          themeText.innerHTML = "Brought to you by the slate green theme.";
+          break;
+        case 7:
+          themeText.innerHTML = "Brought to you by the purple theme.";
+          break;
+        case 8:
+          themeText.innerHTML = "Brought to you by the hot & dry theme.";
+          break;
+        case 9:
+          themeText.innerHTML = "Brought to you by the green theme.";
+          break;
+        default:
+          themeText.innerHTML = "Brought to you by the black theme.";
+      }
+      document.body.className = "theme" + theme.toString();
+      console.log("Theme " + theme);
+
+      var hide = document.getElementById("hideable");
+      window.addEventListener("keyup", function (event) {
+        if (event.keyCode === 66 && messageComplete) {
+          event.preventDefault();
+          if (hide.style.display !== "none")
+            hide.style.display = "none";
+          else
+            hide.style.display = "inline";
+        }
+      });
+    </script>
   </body>
 </html>
