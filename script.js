@@ -201,26 +201,14 @@ class Anime {
 }
 
 function getTitle(id) {
-  if (id === "24")
-    return "Pani Poni Dash! ";
-  if (id === "149")
-    return "Re:Zero ";
-  if (id === "145-2")
-    return "Saki: The Nationals ";
-  if (id === "153")
-    return "Plastic Memories ";
   if (id === "154")
     return "A Certain Scientific Railgun ";
 }
 
 function loadAnime() {
   var anime = [];
-  anime.push("Odd-number episodes are in English; even-number episodes are in Japanese.")
-  anime.push(new Anime(getTitle("154") + "Episode 3","https://www.funimation.com/shows/a-certain-scientific-railgun/tokiwadai-is-targeted/uncut/?lang=english"));
-  anime.push(new Anime(getTitle("154") + "Episode 4","https://www.funimation.com/shows/a-certain-scientific-railgun/urban-legends/?lang=japanese"));
-  anime.push(new Anime(getTitle("154") + "Episode 5","https://www.funimation.com/shows/a-certain-scientific-railgun/a-certain-pair-of-new-trainees/?lang=english"));
-  anime.push(new Anime(getTitle("154") + "Episode 6","https://www.funimation.com/shows/a-certain-scientific-railgun/everyone-is-proactive-when-it-comes-to-this/?lang=japanese"));
-  anime.push(new Anime(getTitle("154") + "Episode 7","https://www.funimation.com/shows/a-certain-scientific-railgun/abilities-and-powers/?lang=english"))
+  anime.push(new Anime("It's empty. Go watch RailDex on Funimation.","https://www.funimation.com/shows/a-certain-scientific-railgun/"));
+  anime.push(new Anime("Here's Index. Stop when you get to Season 1 Episode 17.","https://www.funimation.com/shows/a-certain-magical-index/"))
   var list = document.getElementById("animelist");
   for (var i in anime)
   {
