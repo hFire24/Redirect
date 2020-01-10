@@ -158,4 +158,8 @@ td {
   #message, .nuclear, #trance, #stress {
     font-size: 60px;
   }
+
+  #break {
+    font-size: 37.5px;
+  }
 }

@@ -69,20 +69,22 @@ function loadBreak(index) {
   var message = document.getElementById("break");
   if (index <= 1)
     message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
-  if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
+  else if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
     message.href = "https://www.google.com/search?q=30+second+timer";
-  if (index === messages.indexOf("Take a deep breath."))
+  else if (index === messages.indexOf("Take a deep breath."))
     message.href = "https://www.google.com/search?q=breathing+exercise";
-  if (index === messages.indexOf("Learn how to make trance music."))
+  else if (index === messages.indexOf("Learn how to make trance music."))
     message.href = "trancelessons";
-  if (index === messages.indexOf("Learn how to make trance music.") + 1)
+  else if (index === messages.indexOf("Learn how to make trance music.") + 1)
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
-  if (index === messages.indexOf("Don't suck at group projects."))
+  else if (index === messages.indexOf("Don't suck at group projects."))
     message.href = "groupprojects";
-  if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
+  else if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
     message.href = "nextanime";
-  if (index === messages.indexOf("Now play some Stepmania."))
+  else if (index === messages.indexOf("Now play some Stepmania."))
     message.href = "stepmania";
+  else
+    message.href = "";
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     message.innerHTML = "Stand up and stretch if you can.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
