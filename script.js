@@ -84,7 +84,7 @@ function loadBreak(index) {
   else if (index === messages.indexOf("Now play some Stepmania."))
     message.href = "stepmania";
   else
-    message.href = "";
+    message.removeAttribute("href");
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
     message.innerHTML = "Stand up and stretch if you can.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
   else if (index >= messages.indexOf("Refill your bottle and drink water."))
