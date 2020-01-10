@@ -7,11 +7,40 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
   </head>
-  <body onLoad="loadAnime()" onResize="getWidth()">
+  <body>
     <div id='message'>Your anime queue with links</div>
     <ol id='animelist'>
     </ol>
-    <div id='width'></div>
-    <script src="script.js"></script>
+    <script>
+      class Anime {
+        constructor(title,link) {
+          this.title = title;
+          this.link = link;
+        }
+      }
+
+      function getTitle(id) {
+        if (id === "154")
+          return "A Certain Scientific Railgun ";
+      }
+
+      var anime = [];
+      anime.push(new Anime("It's empty. Go watch RailDex on Funimation.","https://www.funimation.com/shows/a-certain-scientific-railgun/"));
+      anime.push(new Anime("Here's Index. Stop when you get to Season 1 Episode 17.","https://www.funimation.com/shows/a-certain-magical-index/"));
+      anime.push(new Anime("If you forget the watch order, here it is.","raildex"));
+      anime.push(new Anime("Start watching this on January 11.","https://www.funimation.com/shows/nekopara"));
+      anime.push(new Anime("Start watching this on January 13.","https://www.funimation.com/shows/hatena-illusion"));
+      anime.push(new Anime("Start watching this on January 14.","https://www.funimation.com/shows/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense/"));
+      var list = document.getElementById("animelist");
+      for (var i in anime)
+      {
+        var y = document.createElement("li");
+        var z = document.createElement("a");
+        z.innerHTML = anime[i].title;
+        z.href = anime[i].link;
+        y.appendChild(z);
+        list.appendChild(y);
+      }
+    </script>
   </body>
 </html>

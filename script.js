@@ -115,9 +115,11 @@ function randomMessage() {
   'You\'re wasting your time! Come on!',
   'Ehem. You need to stop procrastinating.',
   'You won\'t complete your tasks quickly if you sidetrack.',
-  'YouTube. DeviantArt. Reddit. Cirno. Rem. Nanahira. Chino. Cute. Happy. Blonde. Pink. Newgrounds.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+  'YouTube. DeviantArt. Reddit. Newgrounds. Gelbooru. Cute. Cirno. Rem. Nanahira. Chino. Happy. Blonde. Pink.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
   'There\'s nothing beneficial to see there.',
-  'Drop all your distracting habits.'];
+  'Drop all your distracting habits.',
+  'All distracting thoughts need to go away.',
+  'You thought about something you shouldn\'t think of.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
@@ -187,37 +189,8 @@ function randomTheme(number) {
       if (event.keyCode === 13) {
         event.preventDefault();
         createMessage();
-        messageComplete = true;
       }
     });
-  }
-}
-
-class Anime {
-  constructor(title,link) {
-    this.title = title;
-    this.link = link;
-  }
-}
-
-function getTitle(id) {
-  if (id === "154")
-    return "A Certain Scientific Railgun ";
-}
-
-function loadAnime() {
-  var anime = [];
-  anime.push(new Anime("It's empty. Go watch RailDex on Funimation.","https://www.funimation.com/shows/a-certain-scientific-railgun/"));
-  anime.push(new Anime("Here's Index. Stop when you get to Season 1 Episode 17.","https://www.funimation.com/shows/a-certain-magical-index/"))
-  var list = document.getElementById("animelist");
-  for (var i in anime)
-  {
-    var y = document.createElement("li");
-    var z = document.createElement("a");
-    z.innerHTML = anime[i].title;
-    z.href = anime[i].link;
-    y.appendChild(z);
-    list.appendChild(y);
   }
 }
 
@@ -238,6 +211,7 @@ function createMessage() {
   parent.removeChild(button);
   parent.removeChild(breaklink);
   parent.appendChild(message);
+  messageComplete = true;
 }
 
 var hide = document.getElementById("hideable");
