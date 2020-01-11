@@ -122,7 +122,7 @@ function randomMessage() {
   'There\'s nothing beneficial to see there.',
   'Drop all your distracting habits.',
   'All distracting thoughts need to go away.',
-  'You thought about something you shouldn\'t think of.'
+  'You thought about something you shouldn\'t think of.',
   'Don\'t procrastinate and fail the semester.',
   'Do you want to fail your classes or not?'];
   //Get random message index from messages array
