@@ -40,7 +40,8 @@ function loadBreak(index) {
   'Say out loud the thing you need to get done.',
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
-  'How can you build an everlasting romantic relationship from scratch?',
+  //'How can you build an everlasting romantic relationship from scratch?',
+  'Make some friends in real life. Institute is the best starting point.',
   'Learn how to use Pygame.',
   'Don\'t suck at group projects.',
   'Think of a goal. Any one. Set that as your break message.',
@@ -121,7 +122,9 @@ function randomMessage() {
   'There\'s nothing beneficial to see there.',
   'Drop all your distracting habits.',
   'All distracting thoughts need to go away.',
-  'You thought about something you shouldn\'t think of.'];
+  'You thought about something you shouldn\'t think of.'
+  'Don\'t procrastinate and fail the semester.',
+  'Do you want to fail your classes or not?'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
@@ -138,6 +141,8 @@ function randomLink(message) {
     linkMessages.push("Ready to do something else?");
   for (i = 11; i <= 30; i++)
     linkMessages.push("Got something you need to do?");
+  for (i = 31; i <= 33; i++)
+    linkMessages.push("How about multiple ways to take a break?");
   //Get random link from array
   var index = Math.floor(Math.random() * linkMessages.length);
   if (message === 6)
@@ -145,12 +150,15 @@ function randomLink(message) {
   else if (message === 11)
     index = 1;
   //Put link message and to screen using the index value of the array
-  if (index >= 11)
-    document.getElementById("link").innerHTML = "<a href=\"custom\">" + linkMessages[index] + "</a>";
+  var link = document.getElementById("link");
+  if (index >= 31)
+    link.innerHTML = "<a href='multiple'>" + linkMessages[index] + "</a>";
+  else if (index >= 11)
+    link.innerHTML = "<a href='custom'>" + linkMessages[index] + "</a>";
   else if (index > 0)
-    document.getElementById("link").innerHTML = "<a href=\"breaktime\">" + linkMessages[index] + "</a>";
+    link.innerHTML = "<a href='breaktime'>" + linkMessages[index] + "</a>";
   else
-    document.getElementById("link").innerHTML = linkMessages[index];
+    link.innerHTML = linkMessages[index];
   //Put index value to the console
   console.log("Link " + index);
 }

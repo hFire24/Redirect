@@ -28,6 +28,7 @@ ol a {
 
 #survivor {
   font-family: Impact, Haettenschweiler, 'Futura Condensed ExtraBold', 'Arial Narrow Bold', fantasy;
+  font-size: 100px;
 }
 
 .space {
@@ -152,10 +153,10 @@ td {
 }
 
 @media only screen and (max-width: 1135px) {
-  body {
+  body, ol {
     font-size: 30px;
   }
-  #message, .nuclear, #trance, #stress {
+  #message, .nuclear, #trance, #stress, #survivor {
     font-size: 60px;
   }
 
