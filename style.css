@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, 'Futura Condensed ExtraBold', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: white;
   font-size: 60px;
   text-align: center;
@@ -23,11 +23,11 @@ ol a {
 
 #trance {
   font-size: 100px;
-  font-family: Neuropol, Futura XBlkIt BT, 'Futura Condensed ExtraBold', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Neuropol, AvenirNext-Heavy, 'Arial Black', sans-serif;
 }
 
 #survivor {
-  font-family: Impact, Haettenschweiler, 'Futura Condensed ExtraBold', 'Arial Narrow Bold', fantasy;
+  font-family: Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, 'Arial Narrow Bold', fantasy;
   font-size: 100px;
 }
 
@@ -45,7 +45,7 @@ ol a {
 }
 
 #stress {
-  font-family: Futura XBlkIt BT, 'Futura Bold', 'Arial Black', sans-serif;
+  font-family: Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
 }
 
