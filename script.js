@@ -124,7 +124,8 @@ function randomMessage() {
   'All distracting thoughts need to go away.',
   'You thought about something you shouldn\'t think of.',
   'Don\'t procrastinate and fail the semester.',
-  'Do you want to fail your classes or not?'];
+  'Do you want to fail your classes or not?',
+  'Control yourself, or else you will lose in life.'];
   //Get random message index from messages array
   var index = Math.floor(Math.random() * messages.length);
   //Put message to screen using the index value of the array
