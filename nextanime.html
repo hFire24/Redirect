@@ -23,14 +23,20 @@
       function getTitle(id) {
         if (id === "154")
           return "A Certain Scientific Railgun ";
+        if (id === "155")
+          return "Nekopara ";
+        if (id === "156")
+          return "A Certain Magical Index ";
+        if (id === "157")
+          return "BOFURI ";
       }
 
       var anime = [];
       anime.push(new Anime("It's empty. Go watch RailDex on Funimation.","https://www.funimation.com/shows/a-certain-scientific-railgun/"));
       anime.push(new Anime("Here's Index. Stop when you get to Season 1 Episode 17.","https://www.funimation.com/shows/a-certain-magical-index/"));
       anime.push(new Anime("If you forget the watch order, here it is.","raildex"));
-      anime.push(new Anime("Start watching this on January 11.","https://www.funimation.com/shows/nekopara"));
-      anime.push(new Anime("Start watching this on January 13.","https://www.funimation.com/shows/hatena-illusion"));
+      anime.push(new Anime("Nekopara! 😍","https://www.funimation.com/shows/nekopara"));
+      anime.push(new Anime("Rewatch this. It's highly appealing and extremely memorable!","https://www.funimation.com/shows/gonna-be-the-twin-tail"));
       anime.push(new Anime("Start watching this on January 14.","https://www.funimation.com/shows/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense/"));
       var list = document.getElementById("animelist");
       for (var i in anime)
