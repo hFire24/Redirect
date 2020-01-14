@@ -38,11 +38,14 @@ function loadBreak(index) {
   'Digitize at least two days of events from your journal.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
+  'Remember what happened on January 13? Don\'t drive around just for fun. Buy a racing game for the Switch.',
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
   //'How can you build an everlasting romantic relationship from scratch?',
   'Make some friends in real life. Institute is the best starting point.',
   'Learn how to use Pygame.',
+  'Go to Skillshare, and learn programming.',
+  'Host a website for free that supports FileZilla.',
   'Don\'t suck at group projects.',
   'Think of a goal. Any one. Set that as your break message.',
   'Watch anime.',
@@ -62,8 +65,7 @@ function loadBreak(index) {
   'If it\'s the evening, change to your pajamas. No socks.',
   'Declutter your room.',
   'Walk around for about 1-2 minutes.',
-  'Now play some Stepmania.',
-  'Take your keys, wallet, and phone.<br>Drive to get your mind off of things.'];
+  'Now play some Stepmania.'];
   //Get random message index from messages array
   if (index < 0 || index >= messages.length)
     index = Math.floor(Math.random() * messages.length);
