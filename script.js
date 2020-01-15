@@ -242,11 +242,14 @@ function createMessage() {
   var message = document.createElement("div");
   message.id = "break";
   message.className = "space";
+  if(document.getElementById("size").checked)
+    message.classList.add("big");
   message.innerHTML = newMessage.value;
   parent.removeChild(document.getElementById("instructions"));
   parent.removeChild(newMessage);
   parent.removeChild(button);
   parent.removeChild(breaklink);
+  parent.removeChild(sizeselecter);
   parent.appendChild(message);
   messageComplete = true;
 }
