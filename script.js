@@ -14,8 +14,13 @@ function loadWebsite(number) {
 }
 
 function loadBreak(index) {
-  var messages = ['Listen to this.',
+  var messages = [//Relaxation
+  'Listen to this.',
   'Clear your mind.',
+  'Pray a short prayer.',
+  'Look away from the screen for about 30 seconds.',
+  'Take a deep breath.',
+  //Task checking
   'Check your tasks for the day.',
   'Check your gTasks list, please.',
   'Check your gTasks list, please.',
@@ -25,20 +30,27 @@ function loadBreak(index) {
   'Check your repeating tasks on To-Do.',
   'Check your repeating tasks on To-Do.',
   'Check your repeating tasks on To-Do.',
-  'Check your anime queue spreadsheet.',
-  'Create tasks for today.',
+  //Day planning
+  'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
   'Plan your day for today and tomorrow.',
+  //Homework
+  'Do homework.',
+  'Get assignments done.',
+  'If you\'re struggling with homework, then do a different assignment.',
+  'Check Blackboard for assignments, then do one of them.',
+  //Anime watching
+  'Watch anime.',
+  'Watch anime.',
+  //Miscellaneous
   'Close tabs and programs.',
-  'Pray a short prayer.',
-  'Look away from the screen for about 30 seconds.',
-  'Take a deep breath.',
   'Digitize at least two days of events from your journal.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Remember what happened on January 13? Don\'t drive around just for fun. Buy a racing game for the Switch.',
+  //Goals
   'Learn how to make trance music.',
   'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
   //'How can you build an everlasting romantic relationship from scratch?',
@@ -48,22 +60,20 @@ function loadBreak(index) {
   'Host a website for free that supports FileZilla.',
   'Don\'t suck at group projects.',
   'Think of a goal. Any one. Set that as your break message.',
-  'Watch anime.',
-  'Watch anime.',
-  'Watch anime.',
-  'Watch anime.',
-  'Watch anime.',
-  'Watch anime.',
+  //Health and fitness
   'Stand up and stretch if you can.',
   'Refill your bottle and drink water.',
-  'Go up and down the stairs.',
+  'Go up and down the stairs for one minute.',
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
-  'Take off all your clothes.<br>Take a shower if you hadn\'t today or yesterday.',
+  'Use the seven app.',
+  'Declutter your room.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
+  //Personal hygiene
   'Change your clothes if they\'re dirty.',
   'If it\'s the evening, change to your pajamas. No socks.',
-  'Declutter your room.',
+  'Strip, even if it\'s cold.<br>Take a shower if you hadn\'t today.',
+  //Health and fitness part 2
   'Walk around for about 1-2 minutes.',
   'Now play some Stepmania.'];
   //Get random message index from messages array
@@ -120,7 +130,7 @@ function randomMessage() {
   'You\'re wasting your time! Come on!',
   'Ehem. You need to stop procrastinating.',
   'You won\'t complete your tasks quickly if you sidetrack.',
-  'YouTube. DeviantArt. Reddit. Newgrounds. Gelbooru. Cute. Cirno. Rem. Nanahira. Chino. Happy. Blonde. Pink.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+  'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Nanahira. Chino. Happy. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
   'There\'s nothing beneficial to see there.',
   'Drop all your distracting habits.',
   'All distracting thoughts need to go away.',
@@ -129,7 +139,13 @@ function randomMessage() {
   'Don\'t procrasturbate and be a loser.',
   'Do you want to fail your classes or not?',
   'Control yourself, or else you will lose in life.',
-  'Forget about things that are currently distracting you.'];
+  'Forget about things that are currently distracting you.',
+  'Please get things done. I mean it.',
+  'Time is a precious resource. Don\t waste it.',
+  'Why would you do this? You stupid idiot!',
+  'Seriously? You got stuff to do!',
+  'You need to do something else to become better.',
+  'Mindlessness is a bad thing.'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
   {
