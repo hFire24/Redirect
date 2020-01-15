@@ -141,11 +141,12 @@ function randomMessage() {
   'Control yourself, or else you will lose in life.',
   'Forget about things that are currently distracting you.',
   'Please get things done. I mean it.',
-  'Time is a precious resource. Don\t waste it.',
+  'Time is a precious resource. Don\'t waste it.',
   'Why would you do this? You stupid idiot!',
   'Seriously? You got stuff to do!',
   'You need to do something else to become better.',
-  'Mindlessness is a bad thing.'];
+  'Mindlessness is a bad thing.',
+  'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
   {
