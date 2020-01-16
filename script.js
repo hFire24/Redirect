@@ -41,8 +41,11 @@ function loadBreak(index) {
   'Get assignments done.',
   'If you\'re struggling with homework, then do a different assignment.',
   'Check Blackboard for assignments, then do one of them.',
+  'Finish a piece of homework early.',
+  'Make progress on a big project.',
   //Anime watching
   'Watch anime.',
+  'If you\'re watching anime, watch a different anime.',
   'Watch anime.',
   //Miscellaneous
   'Close tabs and programs.',
@@ -146,7 +149,8 @@ function randomMessage() {
   'Seriously? You got stuff to do!',
   'You need to do something else to become better.',
   'Mindlessness is a bad thing.',
-  'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>'];
+  'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
+  'Drifting away leads to an unproductive day. That\'s a bad thing.'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
   {
