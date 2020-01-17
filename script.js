@@ -20,6 +20,7 @@ function loadBreak(index) {
   'Pray a short prayer.',
   'Look away from the screen for about 30 seconds.',
   'Take a deep breath.',
+  'Put on some focus/relaxation music.',
   //Task checking
   'Check your tasks for the day.',
   'Check your gTasks list, please.',
@@ -89,6 +90,8 @@ function loadBreak(index) {
     message.href = "https://www.google.com/search?q=30+second+timer";
   else if (index === messages.indexOf("Take a deep breath."))
     message.href = "https://www.google.com/search?q=breathing+exercise";
+  else if (index === messages.indexOf("Put on some focus/relaxation music."))
+    message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
   else if (index === messages.indexOf("Learn how to make trance music."))
     message.href = "trancelessons";
   else if (index === messages.indexOf("Learn how to make trance music.") + 1)
