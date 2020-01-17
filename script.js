@@ -150,7 +150,8 @@ function randomMessage() {
   'You need to do something else to become better.',
   'Mindlessness is a bad thing.',
   'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
-  'Drifting away leads to an unproductive day. That\'s a bad thing.'];
+  'Don\'t have a lazy, unproductive day.',
+  'Get out of the drift, and get on the road to productivity.'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
   {
