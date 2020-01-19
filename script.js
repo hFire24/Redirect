@@ -103,7 +103,7 @@ function loadBreak(index) {
   else if (index === messages.indexOf("Don't suck at group projects."))
     message.href = "groupprojects";
   else if (index === messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
-    messages.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
+    message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
   else if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
     message.href = "nextanime";
   else if (index === messages.indexOf("Now play some Stepmania."))
