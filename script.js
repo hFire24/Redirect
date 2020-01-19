@@ -1,4 +1,5 @@
 var number = 0;
+var d = new Date();
 
 function loadWebsite(number) {
   if (number === 2)
@@ -36,7 +37,7 @@ function loadBreak(index) {
   //Homework
   'Do homework.',
   'Get assignments done.',
-  'If you\'re struggling with homework, then do a different assignment.',
+  'If you\'re struggling with homework, do a different assignment.',
   'Check Blackboard for assignments, then do one of them.',
   'Finish a piece of homework early.',
   'Make progress on a big project.',
@@ -71,14 +72,19 @@ function loadBreak(index) {
   'Listen to your own music, and don\'t be afraid to dance to it.',
   //Personal hygiene
   'Change your clothes if they\'re dirty.',
-  'If it\'s the evening, change to your pajamas. No socks.',
+  'Change to your pajamas. No socks.',
   'Strip, even if it\'s cold.<br>Take a shower if you hadn\'t today.',
   //Health and fitness part 2
   'Walk around for about 1-2 minutes.',
   'Now play some Stepmania.'];
+  if(d.getHours() <= 6 || d.getHours() >= 22)
+    for(var i = 0; i < messages.length / 4; i ++)
+      messages.push('Go to bed.');
   //Get random message index from messages array
   if (index < 0 || index >= messages.length)
-    index = Math.floor(Math.random() * messages.length);
+    do
+      index = Math.floor(Math.random() * messages.length);
+    while (index === messages.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
   var message = document.getElementById("break");
   if (index <= 1)
     message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
@@ -109,7 +115,7 @@ function loadBreak(index) {
   console.log("Message " + index);
 }
 
-function randomMessage(number) {
+function randomMessage(index) {
   var messages = [
   'You were redirected from a blacklisted website.',
   'You shouldn\'t access that website now.',
@@ -155,15 +161,13 @@ function randomMessage(number) {
   'Take back the control you\'re losing.'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
-  {
     messages.push('Use the forest app! Trust me.');
-  }
+  if (d.getHours() <= 6 || d.getHours() >= 22)
+    for(var i = 0; i < messages.length / 5; i ++)
+      messages.push('You should be asleep by now.');
   //Get random message index from messages array
-  var index;
-  if (number < 0 || number >= messages.length)
+  if (index < 0 || index >= messages.length)
     index = Math.floor(Math.random() * messages.length);
-  else
-    index = number;
   //Put message to screen using the index value of the array
   document.getElementById("message").innerHTML = messages[index];
   //Put index value to the console
