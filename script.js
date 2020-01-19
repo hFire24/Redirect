@@ -18,42 +18,44 @@ function loadBreak(index) {
   'Look away from the screen for about 30 seconds.',
   'Take a deep breath.',
   'Put on some focus/relaxation music.',
-  //Task checking
+    //Task checking
   'Check your tasks for the day.',
-  'Check your gTasks list, please.',
-  'Check your gTasks list, please.',
-  'Check your gTasks list, please.',
-  'Check your gTasks list, please.',
-  'Check your repeating tasks on To-Do.',
-  'Check your repeating tasks on To-Do.',
-  'Check your repeating tasks on To-Do.',
-  'Check your repeating tasks on To-Do.',
-  //Day planning
+  'Check your gTasks list, please.<br>Do the first unfinished task.',
+  'Check your gTasks list, please.<br>Do the first unfinished task.',
+  'Check your gTasks list, please.<br>Do the first unfinished task.',
+  'Check your gTasks list, please.<br>Do the first unfinished task.',
+  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
+  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
+  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
+  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
+    //Day planning
   'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
   'Plan your day for today and tomorrow.',
-  //Homework
+    //Homework
   'Do homework.',
   'Get assignments done.',
   'If you\'re struggling with homework, do a different assignment.',
   'Check Blackboard for assignments, then do one of them.',
-  'Finish a piece of homework early.',
-  'Make progress on a big project.',
-  //Anime watching
+  //'Make progress on a big project.',
+  'Finish a piece of homework, even if the deadline is far.',
+  'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
+    //Anime watching
   'Watch anime.',
   'If you\'re watching anime, watch a different anime.',
   'Watch anime.',
-  //Miscellaneous
+    //Miscellaneous
   'Close tabs and programs.',
   'Digitize at least two days of events from your journal.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Remember what happened on January 13? Don\'t drive around just for fun. Buy a racing game for the Switch.',
-  //Goals
+    //Goals
   'Learn how to make trance music.',
   'Click here.',
+  'Learn how to use FL Studio.',
   //'How can you build an everlasting romantic relationship from scratch?',
   'Make some friends in real life. Institute is the best starting point.',
   'Learn how to use Pygame.',
@@ -61,7 +63,7 @@ function loadBreak(index) {
   'Host a website for free that supports FileZilla.',
   'Don\'t suck at group projects.',
   'Think of a goal. Any one. Set that as your break message.',
-  //Health and fitness
+    //Health and fitness
   'Stand up and stretch if you can.',
   'Refill your bottle and drink water.',
   'Go up and down the stairs for one minute.',
@@ -70,11 +72,11 @@ function loadBreak(index) {
   'Use the seven app.',
   'Declutter your room.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
-  //Personal hygiene
+    //Personal hygiene
   'Change your clothes if they\'re dirty.',
   'Change to your pajamas. No socks.',
   'Strip, even if it\'s cold.<br>Take a shower if you hadn\'t today.',
-  //Health and fitness part 2
+    //Health and fitness part 2
   'Walk around for about 1-2 minutes.',
   'Now play some Stepmania.'];
   if(d.getHours() <= 6 || d.getHours() >= 22)
@@ -94,12 +96,14 @@ function loadBreak(index) {
     message.href = "https://www.google.com/search?q=breathing+exercise";
   else if (index === messages.indexOf("Put on some focus/relaxation music."))
     message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
-  else if (index === messages.indexOf("Learn how to make trance music."))
+  else if (index === messages.indexOf("Learn how to make trance music.") || index === messages.indexOf("Learn how to use FL Studio."))
     message.href = "trancelessons";
   else if (index === messages.indexOf("Learn how to make trance music.") + 1)
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
   else if (index === messages.indexOf("Don't suck at group projects."))
     message.href = "groupprojects";
+  else if (index === messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
+    messages.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
   else if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
     message.href = "nextanime";
   else if (index === messages.indexOf("Now play some Stepmania."))
