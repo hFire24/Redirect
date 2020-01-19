@@ -8,12 +8,47 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body onLoad="loadWebsite(4)">
-    <div class='nuclear'>☢☢☢☢☢☢CAUTION☢☢☢☢☢☢</div>
-    <div id='message' class='nuclear'>THAT UNSAFE WEBSITE IS BLOCKED</div>
-    <div class='nuclear'>☢☢☢☢☢☢CAUTION☢☢☢☢☢☢</div><br>
+  <body>
+    <div id='message' class='space'></div>
     <div class='space'><a href="https://emergency.nofap.com/redirect?religious=true&cat=em">Click here</a> and
     <a href="trancelessons.html">DON'T give up.</a>
-    <script src="script.js"></script>
+    <script>
+      document.body.className = "danger";
+      var messages = ['DO NOT FAP',
+      'DO NOT GO TO HELL',
+      'REPENT IMMEDIATELY',
+      'DO NOT FORSAKE GOD',
+      'DO NOT COMMIT DEADLY SINS',
+      'ERADICATE THE SIN OF LUST',
+      'ERADICATE THE SIN OF SLOTH',
+      'DO NOT SIN ON CERTAIN WEBSITES',
+      'DO NOT GO AGAINST THE TEACHINGS OF JESUS',
+      'DO NOT SEVERELY DISAPPOINT YOUR PARENTS',
+      'DO NOT MESS WITH TIME',
+      'DO NOT FALL INTO OBLIVION',
+      'DO NOT DO SHAMEFUL THINGS',
+      'DO NOT BE A SICK DEGENERATE',
+      'DO NOT INDULGE IN TABOO PLEASURES',
+      'DO NOT EVEN THINK ABOUT RELAPSING',
+      'YOU MUST TAKE NOFAP SERIOUSLY',
+      'YOU WERE REDIRECTED FROM A DANGEROUS WEBSITE',
+      'YOU SHOULD NEVER VISIT THAT WEBSITE',
+      'UNCLEAN WEBSITE HAS BEEN CONTAINED',
+      'THAT UNSAFE WEBSITE IS BLOCKED',
+      'HARMFUL STUFF IS BLOCKED',
+      'GOING THERE IS FORBIDDEN',
+      'THIS IS UNACCEPTABLE',
+      'STOP IT AND GET SOME HELP',
+      'OBLITERATE THAT BAD HABIT',
+      'WHAT IF 14-YEAR OLD YOU SAW YOU NOW?',
+      'NUKE ALL YOUR BAD THOUGHTS',
+      'GET THAT TABOO THOUGHT OUT OF YOUR MIND',
+      'YOU LOST CONTROL.<br>GET IT BACK',
+      'YOU MUST SNAP OUT OF IT',
+      'GET BACK TO REALITY',
+      '<span id="stress">WIFE</span>, NOT <del>WAIFUS</del>'];
+      var index = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").innerHTML = '☢' + messages[index] + '☢';
+    </script>
   </body>
 </html>

@@ -155,20 +155,19 @@ td {
   color: red;
 }
 
-.nuclear {
+.danger #message {
   color: yellow;
-  font-size:99px;
 }
 
-#message.nuclear {
-  font-size:99px;
+.danger #stress {
+  color: white;
 }
 
 @media only screen and (max-width: 1135px) {
   body, ol {
     font-size: 30px;
   }
-  #message, .nuclear, #trance, #stress, #survivor, #break.big {
+  #message, #trance, #stress, #survivor, #break.big {
     font-size: 60px;
   }
 

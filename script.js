@@ -3,13 +3,9 @@ var number = 0;
 function loadWebsite(number) {
   if (number === 2)
     loadBreak(-1);
-  else if (number === 4)
-    document.getElementById("message").innerHTML = "THAT UNSAFE WEBSITE IS BLOCKED";
   else
-    randomMessage();
-  if(number === 4)
-    document.body.className = "danger";
-  else if(number < 4 || number > 5)
+    randomMessage(-1);
+  if(number !== 5)
     randomTheme(number);
 }
 
@@ -56,7 +52,7 @@ function loadBreak(index) {
   'Remember what happened on January 13? Don\'t drive around just for fun. Buy a racing game for the Switch.',
   //Goals
   'Learn how to make trance music.',
-  'Try not to fap for 30 days straight, even if you stream all kinds of anime.',
+  'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
   'Make some friends in real life. Institute is the best starting point.',
   'Learn how to use Pygame.',
@@ -113,7 +109,7 @@ function loadBreak(index) {
   console.log("Message " + index);
 }
 
-function randomMessage() {
+function randomMessage(number) {
   var messages = [
   'You were redirected from a blacklisted website.',
   'You shouldn\'t access that website now.',
@@ -154,14 +150,20 @@ function randomMessage() {
   'Mindlessness is a bad thing.',
   'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
   'Don\'t have a lazy, unproductive day.',
-  'Get out of the drift, and get on the road to productivity.'];
+  'Get out of the drift, and get on the road to productivity.',
+  'Make sure you stay on task.',
+  'Take back the control you\'re losing.'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
   {
     messages.push('Use the forest app! Trust me.');
   }
   //Get random message index from messages array
-  var index = Math.floor(Math.random() * messages.length);
+  var index;
+  if (number < 0 || number >= messages.length)
+    index = Math.floor(Math.random() * messages.length);
+  else
+    index = number;
   //Put message to screen using the index value of the array
   document.getElementById("message").innerHTML = messages[index];
   //Put index value to the console
