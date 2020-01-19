@@ -51,7 +51,7 @@ function loadBreak(index) {
   'Digitize at least two days of events from your journal.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
-  'Remember what happened on January 13? Don\'t drive around just for fun. Buy a racing game for the Switch.',
+  'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
     //Goals
   'Learn how to make trance music.',
   'Click here.',
