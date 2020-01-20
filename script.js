@@ -48,7 +48,6 @@ function loadBreak(index) {
   'Watch anime.',
     //Miscellaneous
   'Close tabs and programs.',
-  'Digitize at least two days of events from your journal.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
@@ -69,8 +68,8 @@ function loadBreak(index) {
   'Go up and down the stairs for one minute.',
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
-  'Use the seven app.',
   'Declutter your room.',
+  'Digitize at least two days of events from your journal.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
     //Personal hygiene
   'Change your clothes if they\'re dirty.',
@@ -148,7 +147,6 @@ function randomMessage(index) {
   'All distracting thoughts need to go away.',
   'You thought about something you shouldn\'t think of.',
   'Don\'t procrastinate and fail the semester.',
-  'Don\'t procrasturbate and be a loser.',
   'Do you want to fail your classes or not?',
   'Control yourself, or else you will lose in life.',
   'Forget about things that are currently distracting you.',
