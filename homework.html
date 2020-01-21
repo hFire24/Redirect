@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body id="parent">
+    <div id='message' class='space'></div>
+    <script>
+      var messages = ["May this page suggest you take a short break?"];
+      for (var i = 1; i < 50; i++)
+        messages.push("Do your homework!");
+      //Get random message index from messages array
+      var index = Math.floor(Math.random() * messages.length);
+      //Put message to screen using the index value of the array
+      document.getElementById("message").innerHTML = messages[index];
+      if (index === 0)
+      {
+        var link = document.createElement("a");
+        link.href = "breaktime.html";
+        link.innerHTML = "Ready to do something else?";
+        link.style.color = "white";
+        document.getElementById("parent").appendChild(link);
+      }
+    </script>
+  </body>
+</html>
