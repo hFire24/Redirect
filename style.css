@@ -7,6 +7,19 @@ body {
   margin-top: 25px;
 }
 
+.morning {
+  background-color: white;
+  color: black;
+  position: relative;
+  animation-name: rise;
+  animation-duration: 2s;
+}
+
+@keyframes rise {
+  from {color: white; top:100px;}
+  to {color: black; top:0px;}
+}
+
 ol {
   font-size: 40px;
   text-align: left;
