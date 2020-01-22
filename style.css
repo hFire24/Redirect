@@ -184,7 +184,7 @@ td {
   body, ol {
     font-size: 30px;
   }
-  #message, #trance, #stress, #survivor, #break.big {
+  #message, #trance, #stress, #survivor, #break.big, #stress a {
     font-size: 60px;
   }
 
