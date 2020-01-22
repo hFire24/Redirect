@@ -160,7 +160,8 @@ function randomMessage(index) {
   'Don\'t have a lazy, unproductive day.',
   'Get out of the drift, and get on the road to productivity.',
   'Make sure you stay on task.',
-  'Take back the control you\'re losing.'];
+  'Cute or fun things are good, but they are distractions.',
+  'You were about to be distracted, but please stay on track.'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     messages.push('Use the forest app! Trust me.');
