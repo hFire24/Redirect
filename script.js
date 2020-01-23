@@ -48,6 +48,7 @@ function loadBreak(index) {
   'Watch anime.',
     //Miscellaneous
   'Close tabs and programs.',
+  'Listen to your own music.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
