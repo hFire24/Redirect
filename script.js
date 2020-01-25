@@ -4,10 +4,11 @@ var d = new Date();
 function loadWebsite(number) {
   if (number === 2)
     loadBreak(-1);
+  else if (number === 3)
+    randomMessage(-2);
   else
     randomMessage(-1);
-  if(number !== 5)
-    randomTheme(number);
+  randomTheme(number);
 }
 
 function loadBreak(index) {
@@ -130,6 +131,7 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'This is a webpage. And it intercepted your internet access!',
 'You won\'t complete your tasks quickly if you sidetrack.',
 'There\'s nothing beneficial to see there.',
+'Please get things done. I mean it.',
 'Time is a precious resource. Don\'t waste it.',
 'Get out of the drift, and get on the road to productivity.',
 'Make sure you stay on task.',
@@ -141,6 +143,8 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 
 function randomMessage(index) {
   var father = true;
+  if (index === -2)
+    father = false;
   if (father)
     redirectMessages.push('Today will be a great day to catch up with your schedule and tasks.',
     'May this page suggest you take a short break?',
@@ -185,14 +189,13 @@ function randomMessage(index) {
     'Do you want to fail your classes or not?',
     'Control yourself, or else you will lose in life.',
     'Forget about things that are currently distracting you.',
-    'Please get things done. I mean it.',
     'Why would you do this? You stupid idiot!',
     'Seriously? You got stuff to do!',
     'You need to do something else to become better.',
     'Mindlessness is a bad thing.',
     'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
     'Don\'t have a lazy, unproductive day.',
-    'You must catch up on your schedule and tasks!');
+    'You\'re behind on your schedule and tasks! Hurry up!');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');

@@ -105,6 +105,7 @@ permalink: /404.html
       'This is a webpage. And it intercepted your internet access!',
       'You won\'t complete your tasks quickly if you sidetrack.',
       'There\'s nothing beneficial to see there.',
+      'Please get things done. I mean it.',
       'Time is a precious resource. Don\'t waste it.',
       'Get out of the drift, and get on the road to productivity.',
       'Make sure you stay on task.',
@@ -113,7 +114,7 @@ permalink: /404.html
       'You\'re the type of person who values fun things!',
       'Be productive! Do something good!',
       'Life is hard. Distractions are everywhere. God will help you.'];
-      var father = true;
+      var father = Math.floor(Math.random() * 2);
       if (father)
         messages.push('Today will be a great day to catch up with your schedule and tasks.',
         'May this page suggest you take a short break?',
@@ -158,14 +159,13 @@ permalink: /404.html
         'Do you want to fail your classes or not?',
         'Control yourself, or else you will lose in life.',
         'Forget about things that are currently distracting you.',
-        'Please get things done. I mean it.',
         'Why would you do this? You stupid idiot!',
         'Seriously? You got stuff to do!',
         'You need to do something else to become better.',
         'Mindlessness is a bad thing.',
         'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
         'Don\'t have a lazy, unproductive day.',
-        'You must catch up on your schedule and tasks!');
+        'You\'re behind on your schedule and tasks! Hurry up!');
       /*var messages = [
       'You were redirected from a blacklisted website.',
       'You shouldn\'t access that website now.',
