@@ -39,6 +39,11 @@ ol a {
   font-family: Neuropol, AvenirNext-Heavy, 'Arial Black', sans-serif;
 }
 
+#chiptune {
+  font-size: 75px;
+  font-family: Early GameBoy, 'Arial Black', sans-serif;
+}
+
 #survivor {
   font-family: Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, 'Arial Narrow Bold', fantasy;
   font-size: 100px;
@@ -188,7 +193,7 @@ td {
     font-size: 60px;
   }
 
-  #break {
+  #chiptune, #break {
     font-size: 44px;
   }
 

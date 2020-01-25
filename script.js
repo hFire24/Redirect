@@ -53,7 +53,7 @@ function loadBreak(index) {
   'Say out loud the thing you need to get done.',
   'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
     //Goals
-  'Learn how to make trance music.',
+  'Learn how to make chiptune music.',
   'Click here.',
   'Learn how to use FL Studio.',
   //'How can you build an everlasting romantic relationship from scratch?',
@@ -96,9 +96,9 @@ function loadBreak(index) {
     message.href = "https://www.google.com/search?q=breathing+exercise";
   else if (index === messages.indexOf("Put on some focus/relaxation music."))
     message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
-  else if (index === messages.indexOf("Learn how to make trance music.") || index === messages.indexOf("Learn how to use FL Studio."))
-    message.href = "trancelessons";
-  else if (index === messages.indexOf("Learn how to make trance music.") + 1)
+  else if (index === messages.indexOf("Learn how to make chiptune music.") || index === messages.indexOf("Learn how to use FL Studio."))
+    message.href = "chiptunelessons";
+  else if (index === messages.indexOf("Learn how to make chiptune music.") + 1)
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
   else if (index === messages.indexOf("Don't suck at group projects."))
     message.href = "groupprojects";
@@ -195,11 +195,11 @@ function randomMessage(index) {
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
   if (d.getHours() <= 6 || d.getHours() >= 22)
-    for(var i = 0; i < messages.length / 5; i ++)
+    for(var i = 0; i < redirectMessages.length / 5; i ++)
       redirectMessages.push('You should be asleep by now.');
   //Get random message index from messages array
-  if (index < 0 || index >= messages.length)
-    index = Math.floor(Math.random() * messages.length);
+  if (index < 0 || index >= redirectMessages.length)
+    index = Math.floor(Math.random() * redirectMessages.length);
   //Put message to screen using the index value of the array
   document.getElementById("message").innerHTML = redirectMessages[index];
   //Put index value to the console
