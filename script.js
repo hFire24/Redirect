@@ -122,7 +122,6 @@ function loadBreak(index) {
 var redirectMessages = ['You were redirected from a blacklisted website.',
 'You shouldn\'t access that website now.',
 'This website is blocked.',
-'Don\'t waste time getting distracted on blocked websites.',
 'Return to your previous task.',
 'You might regret visiting that blocked website.',
 'Time to take a break.',
@@ -165,9 +164,11 @@ function randomMessage(index) {
     'You\'ve made it this far to code this webpage.',
     'You figured out a way to redirect distracting websites. You\'re clever!',
     'If you keep doing great things, you\'ll eventually get a Tesla!',
-    'What makes you very happy? Think about it for a bit.');
+    'What makes you very happy? Think about it for a bit.',
+    'Your mind must be like a carnival inside!');
   else
-    redirectMessages.push('Hey! You aren\'t supposed to do that!',
+    redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
+    'Hey! You aren\'t supposed to do that!',
     'Don\'t you have anything better to do with your time?',
     'GET OUT OF HERE!',
     'Be productive! Don\'t go to time-wasting websites!',
@@ -190,7 +191,8 @@ function randomMessage(index) {
     'You need to do something else to become better.',
     'Mindlessness is a bad thing.',
     'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
-    'Don\'t have a lazy, unproductive day.');
+    'Don\'t have a lazy, unproductive day.',
+    'You must catch up on your schedule and tasks!');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
