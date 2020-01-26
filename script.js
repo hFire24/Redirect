@@ -166,7 +166,7 @@ function randomMessage(index) {
     'Having a waifu is great, because she won\'t get mad about anything you do.',
     'There sure are a lot of fun things to do.',
     'You\'ve made it this far to code this webpage.',
-    'You figured out a way to redirect distracting websites. You\'re clever!',
+    'You figured out a way to redirect from distracting websites.',
     'If you keep doing great things, you\'ll eventually get a Tesla!',
     'What makes you very happy? Think about it for a bit.',
     'Your mind must be like a carnival inside!');
