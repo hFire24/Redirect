@@ -139,7 +139,8 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'You were about to be distracted, but please stay on track.',
 'You\'re the type of person who values fun things!',
 'Be productive! Do something good!',
-'Life is hard. Distractions are everywhere. God will help you.'];
+'Life is hard. Distractions are everywhere. God will help you.',
+'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago'];
 
 function randomMessage(index) {
   var father = true;
@@ -174,7 +175,7 @@ function randomMessage(index) {
     redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
     'Hey! You aren\'t supposed to do that!',
     'Don\'t you have anything better to do with your time?',
-    'GET OUT OF HERE!',
+    'Get back to whatever you should be doing!',
     'Be productive! Don\'t go to time-wasting websites!',
     'No going to blocked websites. You understand?',
     'Stop typing in addresses of distracting websites!',
@@ -195,7 +196,8 @@ function randomMessage(index) {
     'Mindlessness is a bad thing.',
     'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
     'Don\'t have a lazy, unproductive day.',
-    'You\'re behind on your schedule and tasks! Hurry up!');
+    'You\'re behind on your schedule and tasks! Hurry up!',
+    'Temptations are not good things.');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
