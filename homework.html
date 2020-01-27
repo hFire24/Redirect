@@ -8,8 +8,10 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body id="parent">
+  <body>
     <div id='message' class='space'></div>
+    <div id='hideable'>
+    </div>
     <script>
       var messages = ["May this page suggest you take a short break?"];
       for (var i = 1; i < 50; i++)
@@ -24,7 +26,24 @@
         link.href = "breaktime.html";
         link.innerHTML = "Ready to do something else?";
         link.style.color = "white";
-        document.getElementById("parent").appendChild(link);
+        document.getElementById("hideable").appendChild(link);
+        var advice = document.createElement("div");
+        advice.id = "advice";
+        advice.className = "space";
+        advice.innerHTML = "Make sure you stand up and are ready to change clothes.";
+        advice.style.display = "none";
+        parent.appendChild(advice);
+        link.onmouseover = function() {mouseOver()};
+        link.onmouseout = function() {mouseOut()};
+        document.getElementById("hideable").appendChild(advice);
+      }
+
+      function mouseOver() {
+        document.getElementById("advice").style.display = "block";
+      }
+
+      function mouseOut() {
+        document.getElementById("advice").style.display = "none";
       }
     </script>
   </body>

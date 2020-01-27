@@ -236,7 +236,7 @@ function randomLink(message) {
     var advice = document.createElement("div");
     advice.id = "advice";
     advice.className = "space";
-    advice.innerHTML = "Make sure you're standing up and ready to change clothes.";
+    advice.innerHTML = "Make sure you stand up and are ready to change clothes.";
     advice.style.display = "none";
     parent.appendChild(advice);
     link.onmouseover = function() {mouseOver()};
