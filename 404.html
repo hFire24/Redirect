@@ -94,8 +94,6 @@ permalink: /404.html
   <body>
     <div id='message' class='space'>This website is blocked.</div>
     <div id='hideable'>
-      <div id='link' class='space'></div>
-      <div id='theme'></div>
     </div>
     <script>
       var messages = ['You were redirected from a blacklisted website.',
@@ -214,6 +212,10 @@ permalink: /404.html
       'Make sure you stay on task.',
       'Cute or fun things are good, but they are distractions.',
       'You were about to be distracted, but please stay on track.'];*/
+      var d = new Date();
+      if (d.getHours() <= 6 || d.getHours() >= 22)
+        for(var i = 0; i < messages.length / 5; i ++)
+          messages.push('You should be asleep by now.');
       //Get random message index from messages array
       var index = Math.floor(Math.random() * messages.length);
       //Put message to screen using the index value of the array
