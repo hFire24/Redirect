@@ -48,10 +48,12 @@ function loadBreak(index) {
   'If you\'re watching anime, watch a different anime.',
   'Watch anime.',
     //Miscellaneous
+  'Declutter your room.',
   'Close tabs and programs.',
   'Listen to your own music.',
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
+  'Digitize at least two days of events from your journal.',
   'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
     //Goals
   'Learn how to make chiptune music.',
@@ -70,8 +72,6 @@ function loadBreak(index) {
   'Go up and down the stairs for one minute.',
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat something if it has been 3 hours since you ate something.',
-  'Declutter your room.',
-  'Digitize at least two days of events from your journal.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
     //Personal hygiene
   'Change your clothes if they\'re dirty.',
@@ -112,9 +112,7 @@ function loadBreak(index) {
   else
     message.removeAttribute("href");
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
-    message.innerHTML = "Stand up and stretch if you can.<br>Change to appropriate clothes if necessary.<br>" + messages[index];
-  else if (index >= messages.indexOf("Refill your bottle and drink water."))
-    message.innerHTML = "Stand up and stretch if you can.<br>" + messages[index];
+    message.innerHTML = "Change to appropriate clothes if necessary.<br>" + messages[index];
   else
     message.innerHTML = messages[index];
   console.log("Message " + index);
@@ -137,10 +135,9 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'Make sure you stay on task.',
 'Cute or fun things are good, but they are distractions.',
 'You were about to be distracted, but please stay on track.',
-'You\'re the type of person who values fun things!',
 'Be productive! Do something good!',
 'Life is hard. Distractions are everywhere. God will help you.',
-'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago'];
+'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.'];
 
 function randomMessage(index) {
   var father = true;
@@ -151,7 +148,7 @@ function randomMessage(index) {
     'May this page suggest you take a short break?',
     'It is a good idea to get things done.',
     'I hope you have a good day today.',
-    'There are so many other fun things to do.',
+    'There sure are so many other fun things to do.',
     'I know you got a desire to do better, and that\'s OK.',
     'I know you can become a better person! Just don\'t rush it.',
     'With God, nothing is impossible.',
@@ -164,13 +161,13 @@ function randomMessage(index) {
     'You are a really good person. Did you know that?',
     'Aren\'t distractions supposed to be fun?',
     'Isn\'t laziness supposed to feel good?',
-    'Having a waifu is great, because she won\'t get mad about anything you do.',
-    'There sure are a lot of fun things to do.',
+    'Having a waifu is great. She will never get mad at you.',
     'You\'ve made it this far to code this webpage.',
-    'You figured out a way to redirect from distracting websites.',
+    'You figured out a way to redirect away from distracting websites.',
     'If you keep doing great things, you\'ll eventually get a Tesla!',
     'What makes you very happy? Think about it for a bit.',
-    'Your mind must be like a carnival inside!');
+    'Your mind must be like a carnival inside!',
+    'You\'re the type of person who values fun things!');
   else
     redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
     'Hey! You aren\'t supposed to do that!',
@@ -197,7 +194,7 @@ function randomMessage(index) {
     'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
     'Don\'t have a lazy, unproductive day.',
     'You\'re behind on your schedule and tasks! Hurry up!',
-    'Temptations are not good things.');
+    'Temptations aren\'t good things.');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
@@ -216,31 +213,55 @@ function randomMessage(index) {
 
 function randomLink(message) {
   var linkMessages = ["Immediately close this tab."];
-  //These variables are needed so that the loop doesn't become an infinite loop.
-  for (i = 1; i <= 10; i++)
-    linkMessages.push("Ready to do something else?");
-  for (i = 11; i <= 30; i++)
+  for (i = 1; i <= 20; i++)
     linkMessages.push("Got something you need to do?");
+  for (i = 21; i <= 30; i++)
+    linkMessages.push("Ready to do something else?");
   for (i = 31; i <= 33; i++)
     linkMessages.push("How about multiple ways to take a break?");
   //Get random link from array
-  var index = Math.floor(Math.random() * linkMessages.length);
-  if (message === "Return to your previous task." || message === "GET OUT OF HERE!")
-    index = 0;
+  var linkIndex = Math.floor(Math.random() * linkMessages.length);
+  if (message === "Return to your previous task." || message === "Get back to whatever you should be doing!")
+    linkIndex = 0;
   else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
-    index = 1;
+    linkIndex = 21;
   //Put link message and to screen using the index value of the array
-  var link = document.getElementById("link");
-  if (index >= 31)
-    link.innerHTML = "<a href='multiple'>" + linkMessages[index] + "</a>";
-  else if (index >= 11)
-    link.innerHTML = "<a href='custom'>" + linkMessages[index] + "</a>";
-  else if (index > 0)
-    link.innerHTML = "<a href='breaktime'>" + linkMessages[index] + "</a>";
+  var parent = document.getElementById("hideable");
+  var link = document.createElement("div");
+  link.id = "link";
+  link.className = "space";
+  parent.appendChild(link);
+  if (linkIndex >= 21)
+  {
+    var advice = document.createElement("div");
+    advice.id = "advice";
+    advice.className = "space";
+    advice.innerHTML = "Make sure you're standing up and ready to change clothes.";
+    advice.style.display = "none";
+    parent.appendChild(advice);
+    link.onmouseover = function() {mouseOver()};
+    link.onmouseout = function() {mouseOut()};
+    if (linkIndex >= 31)
+      link.innerHTML = "<a href='multiple'>" + linkMessages[linkIndex] + "</a>";
+    else
+      link.innerHTML = "<a href='breaktime'>" + linkMessages[linkIndex] + "</a>";
+  }
+  else if (linkIndex > 0)
+    link.innerHTML = "<a href='custom'>" + linkMessages[linkIndex] + "</a>";
   else
-    link.innerHTML = linkMessages[index];
+    link.innerHTML = linkMessages[linkIndex];
   //Put index value to the console
-  console.log("Link " + index);
+  console.log("Link " + linkIndex);
+}
+
+function mouseOver() {
+  document.getElementById("advice").style.display = "block";
+  document.getElementById("theme").style.display = "none";
+}
+
+function mouseOut() {
+  document.getElementById("advice").style.display = "none";
+  document.getElementById("theme").style.display = "block";
 }
 
 var messageComplete = true;
@@ -248,7 +269,9 @@ var messageComplete = true;
 function randomTheme(number) {
   //Pick a random theme
   var theme;
-  var themeText = document.getElementById("theme");
+  var parent = document.getElementById("hideable");
+  var themeText = document.createElement("div");
+  themeText.id = "theme";
   theme = Math.floor(Math.random() * 5) + 1;
   switch (theme)
   {
@@ -270,6 +293,7 @@ function randomTheme(number) {
     default:
       themeText.innerHTML = "Brought to you by the black theme.";
   }
+  parent.appendChild(themeText);
   document.body.className = "theme" + theme.toString();
   console.log("Theme " + theme);
   if(number === 80) {

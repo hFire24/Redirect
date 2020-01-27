@@ -34,6 +34,10 @@ ol a {
   font-size: 100px;
 }
 
+#advice {
+  font-size: 40px;
+}
+
 #trance {
   font-size: 100px;
   font-family: Neuropol, AvenirNext-Heavy, 'Arial Black', sans-serif;
@@ -186,7 +190,7 @@ td {
 }
 
 @media only screen and (max-width: 1135px) {
-  body, ol {
+  body, ol, #advice {
     font-size: 30px;
   }
   #message, #trance, #stress, #survivor, #break.big, #stress a {
