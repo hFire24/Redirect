@@ -231,17 +231,17 @@ function randomLink(message) {
   link.id = "link";
   link.className = "space";
   parent.appendChild(link);
-  if (linkIndex >= 21)
+  if (linkIndex >= 4)
   {
     var advice = document.createElement("div");
     advice.id = "advice";
     advice.className = "space";
-    advice.innerHTML = "Make sure you stand up and are ready to change clothes.";
+    advice.innerHTML = "Be prepared to stand up.";
     advice.style.display = "none";
     parent.appendChild(advice);
     link.onmouseover = function() {mouseOver()};
     link.onmouseout = function() {mouseOut()};
-    if (linkIndex >= 31)
+    if (linkIndex >= 24)
       link.innerHTML = "<a href='multiple'>" + linkMessages[linkIndex] + "</a>";
     else
       link.innerHTML = "<a href='breaktime'>" + linkMessages[linkIndex] + "</a>";
