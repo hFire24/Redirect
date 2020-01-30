@@ -213,11 +213,11 @@ function randomMessage(index) {
 
 function randomLink(message) {
   var linkMessages = ["Immediately close this tab."];
-  for (i = 1; i <= 20; i++)
+  for (i = 1; i <= 3; i++)
     linkMessages.push("Got something you need to do?");
-  for (i = 21; i <= 30; i++)
+  for (i = 4; i <= 23; i++)
     linkMessages.push("Ready to do something else?");
-  for (i = 31; i <= 33; i++)
+  for (i = 24; i <= 33; i++)
     linkMessages.push("How about multiple ways to take a break?");
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);

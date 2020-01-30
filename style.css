@@ -30,7 +30,7 @@ ol a {
   color: yellowgreen;
 }
 
-#message, #break.big {
+#message, #break.big, h1 {
   font-size: 100px;
 }
 
@@ -193,11 +193,11 @@ td {
   body, ol, #advice {
     font-size: 30px;
   }
-  #message, #trance, #stress, #survivor, #break.big, #stress a {
+  #message, #trance, #stress, #survivor, #break.big, {
     font-size: 60px;
   }
 
-  #chiptune, #break {
+  #chiptune, #break, #stress a {
     font-size: 44px;
   }
 
