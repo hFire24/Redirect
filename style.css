@@ -193,7 +193,7 @@ td {
   body, ol, #advice {
     font-size: 30px;
   }
-  #message, #trance, #stress, #survivor, #break.big, {
+  #message, #trance, #stress, #survivor, #break.big, h1 {
     font-size: 60px;
   }
 
