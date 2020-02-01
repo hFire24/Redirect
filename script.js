@@ -204,6 +204,8 @@ function randomMessage(index) {
   'How can you forget things that are currently distracting you?',
   'How can you drop distracting habits?',
   'How can you break unhealthy habits?',
+  'How can you replace a bad rabbit with a good one?',
+  'How can you pick up a new, good habit?',
   'How can you control yourself?',
   'When you are procrastinating, how can you get back?',
   'How can you stop procrastinating?',
