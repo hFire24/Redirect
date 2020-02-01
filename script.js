@@ -195,6 +195,41 @@ function randomMessage(index) {
     'Don\'t have a lazy, unproductive day.',
     'You\'re behind on your schedule and tasks! Hurry up!',
     'Temptations aren\'t good things.');
+  //How messages
+  redirectMessages.push('What is a good way to take a break?',
+  'How can you focus your mind and not wander it off?',
+  'How do you not sidetrack?',
+  'Why is time so precious?',
+  'When you are drifting off, how can you get back?',
+  'How can you stay on task?',
+  'How can you do something good?',
+  'How can you get things done?',
+  'How can you have a good day?',
+  'How can you choose which fun thing is most worth your time?',
+  'How can you do better things?',
+  'How can you maintain Purdue\'s good reputation?',
+  'What more website coding skills can be learned?',
+  'How can you do great things?',
+  'How can you better spend your time?',
+  'How can you do the things you\'re supposed to to?',
+  'How can you be productive?',
+  'How can you stop going to blocked websites when necessary?',
+  'How can you break unhealthy habits?',
+  'How can you stop procrastinating?',
+  'How can you drop distracting habits?',
+  'How can you make distracting thoughts go away? Humor?',
+  'How can you avoid thinking of something you shouldn\'t think of?',
+  'How can you pass the semester?',
+  'How can you pass your college classes?',
+  'How can you control yourself?',
+  'How can you forget things that are currently distracting you?',
+  'How can you do things you need to do?',
+  'How can you do something else to become better?',
+  'How can you avoid mindlessness?',
+  'How can you not be like an idiot?',
+  'How can you have an active, productive day?',
+  'How can you catch up with your schedule and tasks?',
+  'How can you deal with temptations?');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
@@ -223,7 +258,7 @@ function randomLink(message) {
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   if (message === "Return to your previous task." || message === "Get back to whatever you should be doing!")
     linkIndex = 0;
-  else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
+  else if (message === "May this page suggest you take a short break?" || message === "Time to take a break." || message == "What is a good way to take a break?")
     linkIndex = 21;
   //Put link message and to screen using the index value of the array
   var parent = document.getElementById("hideable");
@@ -236,7 +271,7 @@ function randomLink(message) {
     var advice = document.createElement("div");
     advice.id = "advice";
     advice.className = "space";
-    advice.innerHTML = "Be prepared to stand up.";
+    advice.innerHTML = "Get your laptop off your lap, stand up, and stretch.";
     advice.style.display = "none";
     parent.appendChild(advice);
     link.onmouseover = function() {mouseOver()};
