@@ -137,7 +137,8 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'You were about to be distracted, but please stay on track.',
 'Be productive! Do something good!',
 'Life is hard. Distractions are everywhere. God will help you.',
-'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.'];
+'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
+'No routine? Form one.'];
 
 function randomMessage(index) {
   var father = true;
@@ -207,6 +208,7 @@ function randomMessage(index) {
   'How can you break unhealthy habits?',
   'How can you replace a bad rabbit with a good one?',
   'How can you pick up a new, good habit?',
+  'What routines are the best for you?',
   'How can you control yourself?',
   'When you are procrastinating, how can you get back?',
   'How can you stop procrastinating?',
