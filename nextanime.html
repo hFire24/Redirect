@@ -9,57 +9,23 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body>
-    <div id='message'>Your anime queue with links</div>
-    <ol id='animelist'>
-    </ol>
+    <div id='message' class='space'>Your anime queue with links</div>
+    <div class='anime-list'>
+      <a id='a0' class='anime-link' href="https://www.funimation.com/shows/a-certain-scientific-railgun/">A Certain Scientific Railgun</a>
+      <a id='a1' class='anime-link' href="https://www.funimation.com/shows/nekopara/">Nekopara</a>
+      <a id='a2' class='anime-link' href="https://www.funimation.com/shows/a-certain-magical-index/">A Certain Magical Index</a>
+      <a id='a3' class='anime-link' href="https://www.funimation.com/shows/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense/">BOFURI</a>
+      <a id='a4' class='anime-link' href="https://www.funimation.com/shows/toilet-bound-hanako-kun/">Toilet-Bound Hanako-kun</a>
+      <a id='a5' class='anime-link' href="https://www.funimation.com/shows/after-school-dice-club/">After School Dice Club</a>
+    </div>
     <script>
-      class Anime {
-        constructor(title,link) {
-          this.title = title;
-          this.link = link;
-        }
-      }
-
-      function getTitle(id) {
-        if (id === "154")
-          return "A Certain Scientific Railgun";
-        if (id === "155")
-          return "Nekopara";
-        if (id === "156")
-          return "A Certain Magical Index";
-        if (id === "157")
-          return "BOFURI";
-        if (id === "158")
-          return "Toilet-Bound Hanako-kun";
-        if (id === "159")
-          return "After School Dice Club";
-      }
-
-      var anime = [];
-      /*
-      "https://www.funimation.com/shows/a-certain-scientific-railgun"
-      "https://www.funimation.com/shows/a-certain-magical-index"
-      "https://www.funimation.com/shows/nekopara"
-      "https://www.funimation.com/shows/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense"
-      "https://www.funimation.com/shows/toilet-bound-hanako-kun"
-      "https://www.funimation.com/shows/after-school-dice-club"
-      */
-      anime.push(new Anime(getTitle("154"),"https://www.funimation.com/shows/a-certain-scientific-railgun"));
-      anime.push(new Anime(getTitle("155"),"https://www.funimation.com/shows/nekopara"));
-      anime.push(new Anime(getTitle("156"),"https://www.funimation.com/shows/a-certain-magical-index"));
-      anime.push(new Anime("RailDex Watch Order","raildex.html"));
-      anime.push(new Anime(getTitle("157"),"https://www.funimation.com/shows/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense"));
-      anime.push(new Anime(getTitle("158"),"https://www.funimation.com/shows/toilet-bound-hanako-kun"));
-      anime.push(new Anime(getTitle("159"),"https://www.funimation.com/shows/after-school-dice-club"));
-      var list = document.getElementById("animelist");
-      for (var i in anime)
+      for(var i = 0; i < 6; i++)
       {
-        var y = document.createElement("li");
-        var z = document.createElement("a");
-        z.innerHTML = anime[i].title;
-        z.href = anime[i].link;
-        y.appendChild(z);
-        list.appendChild(y);
+        var x = Math.floor(Math.random() * 128);
+        var y = Math.floor(Math.random() * 128);
+        var z = Math.floor(Math.random() * 32) + 96;
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
       }
     </script>
   </body>

@@ -92,6 +92,17 @@ td {
   font-size: 30px;
 }
 
+.anime-list {
+  display:grid;
+  grid-template-columns:auto auto auto;
+}
+
+.anime-link {
+  color:white;
+  text-decoration:none;
+  padding: 20px;
+}
+
 .theme1 {
   background-color: hsl(137, 13%, 32%);
   color: hsl(104, 22%, 87%);

@@ -116,6 +116,8 @@ function loadBreak(index) {
   else
     message.innerHTML = messages[index];
   console.log("Message " + index);
+  if(index >= messages.indexOf("Do Homework") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
+    message.addEventListener("click",noooo);
 }
 
 var redirectMessages = ['You were redirected from a blacklisted website.',
@@ -218,7 +220,7 @@ function randomMessage(index) {
   'How can you catch up with your schedule and tasks?',
   'How can you stay on task?',
   'How can you get things done?',
-  'How can you do the things you\'re supposed to to?',
+  'How can you do the things you\'re supposed to do?',
   'How can you be productive?',
   'How can you have an active, productive day?',
   'Why is time so precious?',
@@ -276,7 +278,6 @@ function randomLink(message) {
   {
     var advice = document.createElement("div");
     advice.id = "advice";
-    advice.className = "space";
     advice.innerHTML = "Get your laptop off your lap, stand up, and stretch.";
     advice.style.display = "none";
     parent.appendChild(advice);
@@ -303,6 +304,21 @@ function mouseOver() {
 function mouseOut() {
   document.getElementById("advice").style.display = "none";
   document.getElementById("theme").style.display = "block";
+}
+
+function noooo() {
+  var exists = document.getElementById("vader");
+  if (!exists)
+  {
+    var video = document.createElement("video");
+    video.id = "vader";
+    var source = document.createElement("source");
+    source.src = "media/NOOOO!.mp4";
+    source.type = "video/mp4";
+    video.appendChild(source);
+    document.body.appendChild(video);
+  }
+  document.getElementById("vader").play();
 }
 
 var messageComplete = true;
