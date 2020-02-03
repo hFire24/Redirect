@@ -217,3 +217,10 @@ td {
     height:20px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .anime-list {
+    display:grid;
+    grid-template-columns:auto auto;
+  }
+}
