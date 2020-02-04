@@ -24,6 +24,8 @@
       linkOuter.className = "space";
       var link = document.createElement("a");
       link.style.color = "white";
+      linkOuter.appendChild(link);
+      document.getElementById("hideable").appendChild(linkOuter);
       if (index === 0)
       {
         link.href = "breaktime.html";
@@ -41,8 +43,6 @@
         link.innerHTML = "Here are the anime you need to watch.";
         link.href = "nextanime.html";
       }
-      linkOuter.appendChild(link);
-      document.getElementById("hideable").appendChild(linkOuter);
 
       function mouseOver() {
         document.getElementById("advice").style.display = "block";
