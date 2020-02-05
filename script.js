@@ -54,7 +54,8 @@ function loadBreak(index) {
   'Add a new song to your iTunes library.',
   'Say out loud the thing you need to get done.',
   'Digitize at least two days of events from your journal.',
-  'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
+  //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
+  'Drive around how you want in Need for Speed: Hot Pursuit.',
     //Goals
   'Learn how to make chiptune music.',
   'Click here.',
@@ -82,7 +83,7 @@ function loadBreak(index) {
   'Now play some Stepmania.'];
   if(d.getHours() <= 6 || d.getHours() >= 22)
     for(var i = 0; i < messages.length / 4; i ++)
-      messages.push('Go to bed.');
+      messages.push('Lie in bed and play something soothing.');
   //Get random message index from messages array
   if (index < 0 || index >= messages.length)
     do
@@ -98,17 +99,17 @@ function loadBreak(index) {
   else if (index === messages.indexOf("Put on some focus/relaxation music."))
     message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
   else if (index === messages.indexOf("Learn how to make chiptune music.") || index === messages.indexOf("Learn how to use FL Studio."))
-    message.href = "chiptunelessons";
+    message.href = "chiptunelessons.html";
   else if (index === messages.indexOf("Learn how to make chiptune music.") + 1)
     message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
   else if (index === messages.indexOf("Don't suck at group projects."))
-    message.href = "groupprojects";
+    message.href = "groupprojects.html";
   else if (index === messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
     message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
   else if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
-    message.href = "nextanime";
+    message.href = "nextanime.html";
   else if (index === messages.indexOf("Now play some Stepmania."))
-    message.href = "stepmania";
+    message.href = "stepmania.html";
   else
     message.removeAttribute("href");
   if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
@@ -116,8 +117,18 @@ function loadBreak(index) {
   else
     message.innerHTML = messages[index];
   console.log("Message " + index);
-  if(index >= messages.indexOf("Do Homework") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
-    message.addEventListener("click",noooo);
+  if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
+    message.addEventListener("click",function() {var exists = document.getElementById("vader");
+      if (!exists) {
+        var video = document.createElement("video");
+        video.id = "vader";
+        var source = document.createElement("source");
+        source.src = "media/NOOOO!.mp4";
+        source.type = "video/mp4";
+        video.appendChild(source);
+        document.body.appendChild(video);
+      }
+    document.getElementById("vader").play();});
 }
 
 var redirectMessages = ['You were redirected from a blacklisted website.',
@@ -140,7 +151,26 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'Be productive! Do something good!',
 'Life is hard. Distractions are everywhere. God will help you.',
 'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-'No routine? Form one.'];
+'No routine? Form one.',
+'How can you focus your mind?',
+'How can you replace a bad rabbit with a good one?',
+'What routines are the best for you?',
+'How can you do things you need to do?',
+'How can you catch up with your schedule and tasks?',
+'How can you stay on task?',
+'How can you get things done?',
+'How can you do the things you\'re supposed to do?',
+'How can you be productive?',
+'How can you have an active, productive day?',
+'Why is time so precious?',
+'How can you better spend your time?',
+'What can you do to become better?',
+'How can you maintain Purdue\'s good reputation?',
+'How can you pass the semester?',
+'How can you pass your college classes?',
+'What more website coding skills can be learned?',
+'How can you deal with temptations?',
+'Without fraud or pure luck, how can you become a millionaire?'];
 
 function randomMessage(index) {
   var father = true;
@@ -170,7 +200,16 @@ function randomMessage(index) {
     'If you keep doing great things, you\'ll eventually get a Tesla!',
     'What makes you very happy? Think about it for a bit.',
     'Your mind must be like a carnival inside!',
-    'You\'re the type of person who values fun things!');
+    'You\'re the type of person who values fun things!',
+    'How can you make distracting thoughts go away? Humor?',
+    'How can you pick up a new, good habit?',
+    'What are some good things you can do?',
+    'What are some fun things you can do?',
+    'What are some better things you can do?',
+    'How can you do great things?',
+    'What is a good way to take a break?',
+    'How can you choose which fun thing is most worth your time?',
+    'Win a million dollars! It\'s harder to do than earning $1000000.');
   else
     redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
     'Hey! You aren\'t supposed to do that!',
@@ -182,7 +221,7 @@ function randomMessage(index) {
     'Break unhealthy habits.',
     'You\'re wasting your time! Come on!',
     'Ehem. You need to stop procrastinating.',
-    'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Nanahira. Chino. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+    'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Chino. Tiny. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
     'Drop all your distracting habits.',
     'All distracting thoughts need to go away.',
     'You thought about something you shouldn\'t think of.',
@@ -198,46 +237,20 @@ function randomMessage(index) {
     'Don\'t have a lazy, unproductive day.',
     'You\'re behind on your schedule and tasks! Hurry up!',
     'Temptations aren\'t good things.',
-    'Erase a distracting habit, and find a new one.');
-  //How messages
-  redirectMessages.push('How can you focus your mind?',
-  'How can you not let your mind wander off?',
-  'How can you avoid mindlessness?',
-  'How can you avoid thinking of something you shouldn\'t think of?',
-  'How can you make distracting thoughts go away? Humor?',
-  'How can you forget things that are currently distracting you?',
-  'How can you drop distracting habits?',
-  'How can you break unhealthy habits?',
-  'How can you replace a bad rabbit with a good one?',
-  'How can you pick up a new, good habit?',
-  'What routines are the best for you?',
-  'How can you control yourself?',
-  'When you are procrastinating, how can you get back?',
-  'How can you stop procrastinating?',
-  'How can you stop going to blocked websites when necessary?',
-  'How do you not sidetrack?',
-  'How can you do things you need to do?',
-  'How can you catch up with your schedule and tasks?',
-  'How can you stay on task?',
-  'How can you get things done?',
-  'How can you do the things you\'re supposed to do?',
-  'How can you be productive?',
-  'How can you have an active, productive day?',
-  'Why is time so precious?',
-  'How can you better spend your time?',
-  'What can you do to become better?',
-  'What are some good things you can do?',
-  'How can you have a good day?',
-  'What are some better things you can do?',
-  'How can you do great things?',
-  'What is a good way to take a break?',
-  'How can you choose which fun thing is most worth your time?',
-  'How can you maintain Purdue\'s good reputation?',
-  'How can you pass the semester?',
-  'How can you pass your college classes?',
-  'What more website coding skills can be learned?',
-  'How can you not be like an idiot?',
-  'How can you deal with temptations?');
+    'Erase a distracting habit, and find a new one.',
+    'How can you not let your mind wander off?',
+    'How can you avoid mindlessness?',
+    'How can you avoid thinking of something you shouldn\'t think of?',
+    'How can you forget things that are currently distracting you?',
+    'How can you drop distracting habits?',
+    'How can you break unhealthy habits?',
+    'How can you control yourself?',
+    'When you are procrastinating, how can you get back?',
+    'How can you stop procrastinating?',
+    'How can you stop going to blocked websites when necessary?',
+    'How do you not sidetrack?',
+    'How could you possibly have a good day?',
+    'How can you not be like an idiot?');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
@@ -270,55 +283,55 @@ function randomLink(message) {
     linkIndex = 21;
   //Put link message and to screen using the index value of the array
   var parent = document.getElementById("hideable");
-  var link = document.createElement("div");
-  link.id = "link";
-  link.className = "space";
-  parent.appendChild(link);
-  if (linkIndex >= 4)
-  {
+  var link = document.getElementById("link");
+  if(!link) {
+    link = document.createElement("div");
+    link.id = "link";
+    link.className = "space";
+    parent.appendChild(link);
+  }
+  if (linkIndex >= 4) {
     var advice = document.createElement("div");
     advice.id = "advice";
     advice.innerHTML = "Get your laptop off your lap, stand up, and stretch.";
     advice.style.display = "none";
     parent.appendChild(advice);
-    link.onmouseover = function() {mouseOver()};
-    link.onmouseout = function() {mouseOut()};
+    link.onmouseover = function() {mouseOver(1)};
+    link.onmouseout = function() {mouseOut(1)};
     if (linkIndex >= 24)
-      link.innerHTML = "<a href='multiple'>" + linkMessages[linkIndex] + "</a>";
+      link.innerHTML = "<a href='multiple.html'>" + linkMessages[linkIndex] + "</a>";
     else
-      link.innerHTML = "<a href='breaktime'>" + linkMessages[linkIndex] + "</a>";
+      link.innerHTML = "<a href='breaktime.html'>" + linkMessages[linkIndex] + "</a>";
   }
-  else if (linkIndex > 0)
-    link.innerHTML = "<a href='custom'>" + linkMessages[linkIndex] + "</a>";
   else
-    link.innerHTML = linkMessages[linkIndex];
+  {
+    if(document.getElementById("advice"))
+    {
+      parent.removeChild(document.getElementById("advice"));
+      link.onmouseover = function() {mouseOver(0)};
+      link.onmouseout = function() {mouseOut(0)};
+    }
+    if (linkIndex > 0)
+      link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a>";
+    else
+      link.innerHTML = linkMessages[linkIndex];
+  }
   //Put index value to the console
   console.log("Link " + linkIndex);
 }
 
-function mouseOver() {
-  document.getElementById("advice").style.display = "block";
-  document.getElementById("theme").style.display = "none";
-}
-
-function mouseOut() {
-  document.getElementById("advice").style.display = "none";
-  document.getElementById("theme").style.display = "block";
-}
-
-function noooo() {
-  var exists = document.getElementById("vader");
-  if (!exists)
-  {
-    var video = document.createElement("video");
-    video.id = "vader";
-    var source = document.createElement("source");
-    source.src = "media/NOOOO!.mp4";
-    source.type = "video/mp4";
-    video.appendChild(source);
-    document.body.appendChild(video);
+function mouseOver(advice) {
+  if (advice) {
+    document.getElementById("advice").style.display = "block";
+    document.getElementById("theme").style.display = "none";
   }
-  document.getElementById("vader").play();
+}
+
+function mouseOut(advice) {
+  if (advice) {
+    document.getElementById("advice").style.display = "none";
+    document.getElementById("theme").style.display = "block";
+  }
 }
 
 var messageComplete = true;

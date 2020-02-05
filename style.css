@@ -16,8 +16,8 @@ body {
 }
 
 @keyframes rise {
-  from {color: white; top:100px;}
-  to {color: black; top:0px;}
+  from {opacity: 0; top:100px;}
+  to {opacity: 1; top:0px;}
 }
 
 ol {

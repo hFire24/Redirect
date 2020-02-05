@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id='message' class='space'></div>
-    <div class='space'><a href="https://emergency.nofap.com/redirect?religious=true&cat=em">Click here</a> and
+    <div class='space'><a id='link' href="https://emergency.nofap.com/redirect?religious=true&cat=em">Click here</a> and
     <a href="chiptunelessons.html">DON'T give up.</a></div>
     <script>
       document.body.className = "danger";
@@ -54,9 +54,20 @@
       'PLAY FURY OF THE STORM',
       'PLAY NOT AFRAID',
       'GET OUT OF HERE',
-      'LEARN WHAT PAMPHLET MEANS'];
+      'LEARN THE DEFINITION OF PAMPHLET'];
       var index = Math.floor(Math.random() * messages.length);
-      document.getElementById("message").innerHTML = '☢' + messages[index] + '☢';
+      var message = document.getElementById("message");
+      if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
+      {
+        message.innerHTML = '✝' + messages[index] + '✝';
+        link.href = "https://www.thetabernaclechoir.org/listen.html";
+      }
+      else
+        message.innerHTML = '☢' + messages[index] + '☢';
+      if (index === messages.indexOf("PLAY FURY OF THE STORM"))
+        link.href = "https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8";
+      else if (index === messages.indexOf("PLAY NOT AFRAID"))
+        link.href = "https://youtu.be/SLE166_Oz_4";        
     </script>
   </body>
 </html>
