@@ -170,7 +170,8 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'How can you pass your college classes?',
 'What more website coding skills can be learned?',
 'How can you deal with temptations?',
-'Without fraud or pure luck, how can you become a millionaire?'];
+'Without fraud or pure luck, how can you become a millionaire?',
+'Put on some music to help you do things.'];
 
 function randomMessage(index) {
   var father = true;
@@ -209,7 +210,8 @@ function randomMessage(index) {
     'How can you do great things?',
     'What is a good way to take a break?',
     'How can you choose which fun thing is most worth your time?',
-    'Win a million dollars! It\'s harder to do than earning $1000000.');
+    'Win a million dollars! It\'s harder to do than earning $1000000.',
+    'Some music can help you focus.');
   else
     redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
     'Hey! You aren\'t supposed to do that!',
@@ -250,7 +252,8 @@ function randomMessage(index) {
     'How can you stop going to blocked websites when necessary?',
     'How do you not sidetrack?',
     'How could you possibly have a good day?',
-    'How can you not be like an idiot?');
+    'How can you not be like an idiot?',
+    'You need to suppress those thoughts.');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
