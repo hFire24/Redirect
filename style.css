@@ -57,7 +57,7 @@ ol a {
   margin-bottom: 0.5em;
 }
 
-#break {
+#break, #question {
   font-size:75px;
 }
 
@@ -204,7 +204,7 @@ td {
   body, ol, #advice {
     font-size: 30px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1 {
+  #message, #trance, #stress, #survivor, #break.big, #question, h1 {
     font-size: 60px;
   }
 

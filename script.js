@@ -6,6 +6,8 @@ function loadWebsite(number) {
     loadBreak(-1);
   else if (number === 3)
     randomMessage(-2);
+  else if (number === 4)
+    randomQuestion(-1);
   else
     randomMessage(-1);
   randomTheme(number);
@@ -152,25 +154,6 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'Life is hard. Distractions are everywhere. God will help you.',
 'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
 'No routine? Form one.',
-'How can you focus your mind?',
-'How can you replace a bad rabbit with a good one?',
-'What routines are the best for you?',
-'How can you do things you need to do?',
-'How can you catch up with your schedule and tasks?',
-'How can you stay on task?',
-'How can you get things done?',
-'How can you do the things you\'re supposed to do?',
-'How can you be productive?',
-'How can you have an active, productive day?',
-'Why is time so precious?',
-'How can you better spend your time?',
-'What can you do to become better?',
-'How can you maintain Purdue\'s good reputation?',
-'How can you pass the semester?',
-'How can you pass your college classes?',
-'What more website coding skills can be learned?',
-'How can you deal with temptations?',
-'Without fraud or pure luck, how can you become a millionaire?',
 'Put on some music to help you do things.'];
 
 function randomMessage(index) {
@@ -202,14 +185,6 @@ function randomMessage(index) {
     'What makes you very happy? Think about it for a bit.',
     'Your mind must be like a carnival inside!',
     'You\'re the type of person who values fun things!',
-    'How can you make distracting thoughts go away? Humor?',
-    'How can you pick up a new, good habit?',
-    'What are some good things you can do?',
-    'What are some fun things you can do?',
-    'What are some better things you can do?',
-    'How can you do great things?',
-    'What is a good way to take a break?',
-    'How can you choose which fun thing is most worth your time?',
     'Win a million dollars! It\'s harder to do than earning $1000000.',
     'Some music can help you focus.');
   else
@@ -240,19 +215,6 @@ function randomMessage(index) {
     'You\'re behind on your schedule and tasks! Hurry up!',
     'Temptations aren\'t good things.',
     'Erase a distracting habit, and find a new one.',
-    'How can you not let your mind wander off?',
-    'How can you avoid mindlessness?',
-    'How can you avoid thinking of something you shouldn\'t think of?',
-    'How can you forget things that are currently distracting you?',
-    'How can you drop distracting habits?',
-    'How can you break unhealthy habits?',
-    'How can you control yourself?',
-    'When you are procrastinating, how can you get back?',
-    'How can you stop procrastinating?',
-    'How can you stop going to blocked websites when necessary?',
-    'How do you not sidetrack?',
-    'How could you possibly have a good day?',
-    'How can you not be like an idiot?',
     'You need to suppress those thoughts.');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
@@ -321,6 +283,54 @@ function randomLink(message) {
   }
   //Put index value to the console
   console.log("Link " + linkIndex);
+}
+
+function randomQuestion(index) {
+  var questions = ['How can you focus your mind?',
+  'How can you replace a bad rabbit with a good one?',
+  'What routines are the best for you?',
+  'How can you do things you need to do?',
+  'How can you catch up with your schedule and tasks?',
+  'How can you stay on task?',
+  'How can you get things done?',
+  'How can you do the things you\'re supposed to do?',
+  'How can you be productive?',
+  'How can you have an active, productive day?',
+  'Why is time so precious?',
+  'How can you better spend your time?',
+  'What can you do to become better?',
+  'How can you maintain Purdue\'s good reputation?',
+  'How can you pass the semester?',
+  'How can you pass your college classes?',
+  'What more website coding skills can be learned?',
+  'How can you deal with temptations?',
+  'Without fraud or pure luck, how can you become a millionaire?',
+  'How can you make distracting thoughts go away? Humor?',
+  'How can you pick up a new, good habit?',
+  'What are some good things you can do?',
+  'What are some fun things you can do?',
+  'What are some better things you can do?',
+  'How can you do great things?',
+  'What is a good way to take a break?',
+  'How can you choose which fun thing is most worth your time?',
+  'How can you not let your mind wander off?',
+  'How can you avoid mindlessness?',
+  'How can you avoid thinking of something you shouldn\'t think of?',
+  'How can you forget things that are currently distracting you?',
+  'How can you drop distracting habits?',
+  'How can you break unhealthy habits?',
+  'How can you control yourself?',
+  'When you are procrastinating, how can you get back?',
+  'How can you stop procrastinating?',
+  'How can you stop going to blocked websites when necessary?',
+  'How do you not sidetrack?',
+  'How can you have a good day?',
+  'How can you not be like an idiot?'];
+  if (index < 0 || index >= questions.length)
+    index = Math.floor(Math.random() * questions.length);
+  document.getElementById("question").innerHTML = questions[index];
+  //Put index value to the console
+  console.log("Question " + index);
 }
 
 function mouseOver(advice) {
