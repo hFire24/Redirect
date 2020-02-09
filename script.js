@@ -94,12 +94,6 @@ function loadBreak(index) {
     standup.push("Change to appropriate clothes if necessary.");
   for(i = 0; i < standup.length; i++)
     messages.push('Stand up and stretch if you can.');
-  if(d.getHours() <= 5 || d.getHours() >= 22)
-    for(i = 0; i < messages.length / 4; i++)
-    {
-      messages.push('Stand up and stretch if you can.');
-      standup.push('Wear your pajamas and go to bed.');
-    }
   //Get random message index from messages array
   if (index < 0 || index >= messages.length)
     do
@@ -137,6 +131,12 @@ function loadBreak(index) {
       standupMessage.href = "stepmania.html";
     else
       standupMessage.removeAttribute("href");
+  }
+  if(d.getHours() <= 5 || d.getHours() >= 22 && Math.floor(Math.random() * 4))
+  {
+    message.innerHTML = 'Stand up and stretch if you can.';
+    standup.innerHTML = 'Wear your pajamas and go to bed.';
+    index = messages.length + 1;
   }
   console.log("Message " + index);
   if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
@@ -246,18 +246,24 @@ function randomMessage(index) {
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
-  if (d.getHours() <= 5 || d.getHours() >= 22)
-    for(var i = 0; i < redirectMessages.length / 5; i ++)
-      redirectMessages.push('You should be asleep by now.');
+
   //Get random message index from messages array
   if (index < 0 || index >= redirectMessages.length)
     index = Math.floor(Math.random() * redirectMessages.length);
   //Put message to screen using the index value of the array
   document.getElementById("message").innerHTML = redirectMessages[index];
+  if(d.getDay() === 0 && d.getHours() >= 6 && (d.getHours() <= 9 && d.getMinutes() <= 20))
+  {
+    document.getElementById("message").innerHTML = "Get ready for church!";
+    index = redirectMessages.length + 2;
+  }
+  if (d.getHours() <= 5 || d.getHours() >= 22 && Math.floor(Math.random() * 5))
+  {
+    document.getElementById("message").innerHTML = 'You should be asleep by now.';
+    index = redirectMessages.length + 1;
+  }
   //Put index value to the console
   console.log("Message " + index);
-  if(d.getDay() === 0 && d.getHours() >= 6 && (d.getHours() <= 9 && d.getMinutes() <= 20))
-    document.getElementById("message").innerHTML = "Get ready for church!";
   randomLink(document.getElementById("message").innerHTML);
 }
 
