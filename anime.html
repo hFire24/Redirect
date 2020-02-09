@@ -30,26 +30,11 @@
       {
         link.href = "breaktime.html";
         link.innerHTML = "Ready to do something else?";
-        var advice = document.createElement("div");
-        advice.id = "advice";
-        advice.innerHTML = "Get your laptop off your lap, stand up, and stretch.";
-        advice.style.display = "none";
-        link.onmouseover = function() {mouseOver()};
-        link.onmouseout = function() {mouseOut()};
-        document.getElementById("hideable").appendChild(advice);
       }
       else
       {
-        link.innerHTML = "Here are the anime you need to watch.";
         link.href = "nextanime.html";
-      }
-
-      function mouseOver() {
-        document.getElementById("advice").style.display = "block";
-      }
-
-      function mouseOut() {
-        document.getElementById("advice").style.display = "none";
+        link.innerHTML = "Here are the anime you need to watch.";
       }
     </script>
   </body>

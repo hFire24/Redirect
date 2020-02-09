@@ -31,20 +31,6 @@
         linkOuter.appendChild(link);
         document.getElementById("hideable").appendChild(linkOuter);
         var advice = document.createElement("div");
-        advice.id = "advice";
-        advice.innerHTML = "Get your laptop off your lap, stand up, and stretch.";
-        advice.style.display = "none";
-        link.onmouseover = function() {mouseOver()};
-        link.onmouseout = function() {mouseOut()};
-        document.getElementById("hideable").appendChild(advice);
-      }
-
-      function mouseOver() {
-        document.getElementById("advice").style.display = "block";
-      }
-
-      function mouseOut() {
-        document.getElementById("advice").style.display = "none";
       }
     </script>
   </body>
