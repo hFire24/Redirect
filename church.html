@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Get ready for church!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="morning">
+    <div id='message'>Get Ready for Church</div>
+    <ol id='list'>
+      <li>Get up from bed.</li>
+      <li>Eat breakfast.</li>
+      <li>Go back to your room.</li>
+      <li>Can you take a shower?</li>
+    </ol>
+    <div id='question' style="text-align:left;"><span style="margin-left:100px; color:green;" onclick="reveal(1)">YES</span> <span style="margin-left:100px; color:red;"onclick="reveal(0)">NO</span></div>
+    <ol start='5' id='yes' style='display:none; animation-name:rise; animation-duration:2s;'>
+      <li>Take off all your clothes.</li>
+      <li>Take a shower.</li>
+      <li>Wash face, including eyes and nose.</li>
+      <li>Brush teeth.</li>
+      <li>Shave.</li>
+      <li>Comb hair.</li>
+      <li>Dress up.</li>
+      <li>If you had done everything on this list, then congratulations.</li>
+    </ol>
+    <ol start='5' id='no' style='display:none; animation-name:rise; animation-duration:2s;'>
+      <li>Go back downstairs</li>
+      <li>Wash face, including eyes and nose.</li>
+      <li>Brush teeth.</li>
+      <li>Shave.</li>
+      <li>Comb hair.</li>
+      <li>Go back upstairs.</li>
+      <li>Apply deodorant.</li>
+      <li>Change to appropriate clothes.</li>
+      <li>If you had done everything on this list, then congratulations.</li>
+    </ol>
+  </body>
+  <script>
+    function reveal(shower)
+    {
+      var list = document.getElementById("list");
+      document.getElementById('question').style.display = 'none';
+      if(shower)
+        document.getElementById('yes').style.display = 'block';
+      else
+        document.getElementById('no').style.display = 'block';
+    }
+  </script>
+</html>

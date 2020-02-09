@@ -12,7 +12,6 @@
     <div id='message'></div>
     <script>
       var messages = ["Stretch.",
-      "Breakfast: The most important meal of the day.",
       "Sit up.",
       "Gently sit up.",
       "Sit up and then stand up.",
@@ -23,7 +22,6 @@
       "Rise.",
       "Get up.",
       "Get off your bed.",
-      "Think of your favorite breakfast food.",
       "Awake and arise.",
       "It's a brand new day!",
       "What are you waiting for?",
@@ -41,8 +39,8 @@
       var index = Math.floor(Math.random() * messages.length);
       document.getElementById("message").innerHTML = messages[index];
       var d = new Date();
-      if (d.getDay() === 0 && Math.floor(Math.random * 2))
-        document.getElementById("message").innerHTML = "Get ready for church.";
+      if (d.getDay() === 0 && Math.floor(Math.random() * 2))
+        document.getElementById("message").innerHTML = "<a href='church.html'>Get ready for church.</a>";
     </script>
   </body>
 </html>

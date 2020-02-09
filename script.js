@@ -111,12 +111,6 @@ function loadBreak(index) {
   var standIndex = index - (messages.length - standup.length);
   var changeIndex = standIndex - (standup.length - changeclothes.length);
   message.innerHTML = messages[index];
-  if (messages[index] === 'Stand up and stretch if you can.')
-  {
-    standupMessage.innerHTML = standup[standIndex];
-    if (standup[standIndex] === 'Change to appropriate clothes if necessary.')
-      changeMessage.innerHTML = changeclothes[changeIndex];
-  }
   if (index <= 1)
     message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
   else if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
@@ -160,10 +154,12 @@ function loadBreak(index) {
   if(message.innerHTML === 'Stand up and stretch if you can.')
   {
     console.log("Standup " + standIndex);
+    standupMessage.innerHTML = standup[standIndex];
     message.addEventListener("click",function() {document.getElementById("standup").style.display = 'block';});
     if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.')
     {
       console.log("Change Clothes " + changeIndex);
+      changeMessage.innerHTML = changeclothes[changeIndex];
       standupMessage.addEventListener("click",function() {document.getElementById("changeclothes").style.display = 'block';});
     }
   }
@@ -262,8 +258,7 @@ function randomMessage(index) {
   console.log("Message " + index);
   if(d.getDay() === 0 && d.getHours() >= 6 && (d.getHours() <= 9 && d.getMinutes() <= 20))
     document.getElementById("message").innerHTML = "Get ready for church!";
-  else
-    randomLink(redirectMessages[index]);
+  randomLink(document.getElementById("message").innerHTML);
 }
 
 function randomLink(message) {
@@ -291,7 +286,9 @@ function randomLink(message) {
     link.className = "space";
     parent.appendChild(link);
   }
-  if (linkIndex >= 34)
+  if (message === "Get ready for church!")
+    link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
+  else if (linkIndex >= 34)
     link.innerHTML = "<a href='question.html'>" + linkMessages[linkIndex] + "</a>";
   else if (linkIndex >= 24)
     link.innerHTML = "<a href='multiple.html'>" + linkMessages[linkIndex] + "</a>";

@@ -15,6 +15,10 @@ body {
   animation-duration: 2s;
 }
 
+.morning a {
+  color:black;
+}
+
 @keyframes rise {
   from {opacity: 0; top:100px;}
   to {opacity: 1; top:0px;}
