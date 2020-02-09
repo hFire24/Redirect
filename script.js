@@ -54,7 +54,7 @@ function loadBreak(index) {
   //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'No routine? Form one.',
-  'Increase your spirituality.'
+  'Increase your spirituality.',
     //Goals
   'Learn how to make chiptune music.',
   'Click here.',
@@ -264,7 +264,10 @@ function randomMessage(index) {
   document.getElementById("message").innerHTML = redirectMessages[index];
   //Put index value to the console
   console.log("Message " + index);
-  randomLink(redirectMessages[index]);
+  if(d.getDay() === 0 && d.getHours() >= 6 && (d.getHours() <= 9 && d.getMinutes() <= 20))
+    document.getElementById("message").innerHTML = "Get ready for church!";
+  else
+    randomLink(redirectMessages[index]);
 }
 
 function randomLink(message) {

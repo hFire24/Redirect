@@ -40,6 +40,9 @@
       "There's more to life than your phone."];
       var index = Math.floor(Math.random() * messages.length);
       document.getElementById("message").innerHTML = messages[index];
+      var d = new Date();
+      if (d.getDay() === 0 && Math.floor(Math.random * 2))
+        document.getElementById("message").innerHTML = "Get ready for church.";
     </script>
   </body>
 </html>
