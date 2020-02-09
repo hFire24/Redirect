@@ -54,6 +54,7 @@ function loadBreak(index) {
   //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'No routine? Form one.',
+  'Increase your spirituality.'
     //Goals
   'Learn how to make chiptune music.',
   'Click here.',
@@ -127,6 +128,8 @@ function loadBreak(index) {
     message.href = "https://www.google.com/search?q=breathing+exercise";
   else if (index === messages.indexOf("Put on some focus/relaxation music."))
     message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
+  else if (index === messages.indexOf("Increase your spirituality."))
+    message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
   else if (index === messages.indexOf("Learn how to make chiptune music.") || index === messages.indexOf("Learn how to use FL Studio."))
     message.href = "chiptunelessons.html";
   else if (index === messages.indexOf("Learn how to make chiptune music.") + 1)
