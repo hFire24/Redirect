@@ -82,6 +82,7 @@ function loadBreak(index) {
   'Change to your pajamas. No socks.',
     //Miscellaneous Part 2
   'Declutter your room.',
+  'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
   'Strip, even if it\'s cold.']
 
