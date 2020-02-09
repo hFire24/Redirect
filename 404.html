@@ -109,15 +109,12 @@ permalink: /404.html
       'There\'s nothing beneficial to see there.',
       'Please get things done. I mean it.',
       'Time is a precious resource. Don\'t waste it.',
-      'Get out of the drift, and get on the road to productivity.',
       'Make sure you stay on task.',
       'Cute or fun things are good, but they are distractions.',
       'You were about to be distracted, but please stay on track.',
-      'Be productive! Do something good!',
       'Life is hard. Distractions are everywhere. God will help you.',
       'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-      'No routine? Form one.',
-      'Put on some music to help you do things.'];
+      'You should try to suppress some thoughts.'];
       var father = Math.floor(Math.random() * 2);
       if (father)
         redirectMessages.push('Today will be a great day to catch up with your schedule and tasks.',
@@ -140,18 +137,16 @@ permalink: /404.html
         'Having a waifu is great. She will never get mad at you.',
         'You\'ve made it this far to code this webpage.',
         'You figured out a way to redirect away from distracting websites.',
-        'If you keep doing great things, you\'ll eventually get a Tesla!',
-        'What makes you very happy? Think about it for a bit.',
+        'Your dream car is a Tesla! Would you like one?',
         'Your mind must be like a carnival inside!',
         'You\'re the type of person who values fun things!',
-        'Win a million dollars! It\'s harder to do than earning $1000000.',
-        'Some music can help you focus.');
+        'Win a million dollars! It\'s harder to do than earning $1000000.');
       else
         redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
         'Hey! You aren\'t supposed to do that!',
         'Don\'t you have anything better to do with your time?',
         'Get back to whatever you should be doing!',
-        'Be productive! Don\'t go to time-wasting websites!',
+        'Don\'t go to time-wasting websites!',
         'No going to blocked websites. You understand?',
         'Stop typing in addresses of distracting websites!',
         'Break unhealthy habits.',
@@ -167,14 +162,14 @@ permalink: /404.html
         'Forget about things that are currently distracting you.',
         'Why would you do this? You stupid idiot!',
         'Seriously? You got stuff to do!',
-        'You need to do something else to become better.',
         'Mindlessness is a bad thing.',
         'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
         'Don\'t have a lazy, unproductive day.',
         'You\'re behind on your schedule and tasks! Hurry up!',
         'Temptations aren\'t good things.',
         'Erase a distracting habit, and find a new one.',
-        'You need to suppress those thoughts.');
+        'You must suppress those thoughts.',
+        'Do not be an idiot.');
       /*var messages = [
       'You were redirected from a blacklisted website.',
       'You shouldn\'t access that website now.',
@@ -219,7 +214,7 @@ permalink: /404.html
       'Cute or fun things are good, but they are distractions.',
       'You were about to be distracted, but please stay on track.'];*/
       var d = new Date();
-      if (d.getHours() <= 6 || d.getHours() >= 22)
+      if (d.getHours() <= 5 || d.getHours() >= 22)
         for(var i = 0; i < redirectMessages.length / 5; i ++)
           redirectMessages.push('You should be asleep by now.');
       //Get random message index from messages array
@@ -231,17 +226,19 @@ permalink: /404.html
       console.log("Message " + index);
 
       var linkMessages = ["Immediately close this tab."];
-      for (i = 1; i <= 3; i++)
+      for (var i = 1; i <= 3; i++)
         linkMessages.push("Got something you need to do?");
       for (i = 4; i <= 23; i++)
         linkMessages.push("Ready to do something else?");
       for (i = 24; i <= 33; i++)
         linkMessages.push("How about multiple ways to take a break?");
+      for (i = 34; i <= 53; i++)
+        linkMessages.push("Can you try to answer this question?");
       //Get random link from array
       var linkIndex = Math.floor(Math.random() * linkMessages.length);
       if (message === "Return to your previous task." || message === "Get back to whatever you should be doing!")
         linkIndex = 0;
-      else if (message === "May this page suggest you take a short break?" || message === "Time to take a break." || message === "What is a good way to take a break?")
+      else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
         linkIndex = 21;
       //Put link message and to screen using the index value of the array
       var parent = document.getElementById("hideable");
@@ -253,32 +250,16 @@ permalink: /404.html
         parent.appendChild(link);
       }
       parent.appendChild(link);
-      if (linkIndex >= 4) {
-        var advice = document.createElement("div");
-        advice.id = "advice";
-        advice.innerHTML = "Get your laptop off your lap, stand up, and stretch.";
-        advice.style.display = "none";
-        parent.appendChild(advice);
-        link.onmouseover = function() {mouseOver(1)};
-        link.onmouseout = function() {mouseOut(1)};
-        if (linkIndex >= 24)
-          link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/multiple.html'>" + linkMessages[linkIndex] + "</a>";
-        else
-          link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/breaktime.html'>" + linkMessages[linkIndex] + "</a>";
-      }
+      if (linkIndex >= 34)
+        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/question.html'>" + linkMessages[linkIndex] + "</a>";
+      else if (linkIndex >= 24)
+        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/multiple.html'>" + linkMessages[linkIndex] + "</a>";
+      else if (linkIndex >= 4)
+        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/breaktime.html'>" + linkMessages[linkIndex] + "</a>";
+      else if (linkIndex > 0)
+        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a>";
       else
-      {
-        if(document.getElementById("advice"))
-        {
-          parent.removeChild(document.getElementById("advice"));
-          link.onmouseover = function() {mouseOver(0)};
-          link.onmouseout = function() {mouseOut(0)};
-        }
-        if (linkIndex > 0)
-          link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a>";
-        else
-          link.innerHTML = linkMessages[linkIndex];
-      }
+        link.innerHTML = linkMessages[linkIndex];
       //Put index value to the console
       console.log("Link " + linkIndex);
 

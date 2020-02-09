@@ -57,8 +57,12 @@ ol a {
   margin-bottom: 0.5em;
 }
 
-#break, #question {
+#break, #question, #standup, #changeclothes {
   font-size:75px;
+}
+
+#standup, #changeclothes {
+  display:none;
 }
 
 #breaklink {
@@ -204,11 +208,11 @@ td {
   body, ol, #advice {
     font-size: 30px;
   }
-  #message, #trance, #stress, #survivor, #break.big, #question, h1 {
+  #message, #trance, #stress, #survivor, #break.big, h1 {
     font-size: 60px;
   }
 
-  #chiptune, #break, #stress a {
+  #chiptune, #break, #stress a, #standup, #changeclothes, #question {
     font-size: 44px;
   }
 
@@ -222,5 +226,23 @@ td {
   .anime-list {
     display:grid;
     grid-template-columns:auto auto;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  body, ol, #advice {
+    font-size: 16px;
+  }
+  #message, #trance, #stress, #survivor, #break.big, h1 {
+    font-size: 30px;
+  }
+
+  #chiptune, #break, #stress a, #standup, #changeclothes, #question {
+    font-size: 22px;
+  }
+
+  input[type='checkbox'] {
+    width:12px;
+    height:12px;
   }
 }

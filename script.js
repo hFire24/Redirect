@@ -25,10 +25,6 @@ function loadBreak(index) {
   'Check your tasks for the day.',
   'Check your gTasks list, please.<br>Do the first unfinished task.',
   'Check your gTasks list, please.<br>Do the first unfinished task.',
-  'Check your gTasks list, please.<br>Do the first unfinished task.',
-  'Check your gTasks list, please.<br>Do the first unfinished task.',
-  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
-  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
   'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
   'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
     //Day planning
@@ -36,7 +32,6 @@ function loadBreak(index) {
   'Make a plan for today and tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
-  'Plan your day for today and tomorrow.',
     //Homework
   'Do homework.',
   'Get assignments done.',
@@ -49,28 +44,34 @@ function loadBreak(index) {
   'Watch anime.',
   'If you\'re watching anime, watch a different anime.',
   'Watch anime.',
-    //Miscellaneous
-  'Declutter your room.',
-  'Close tabs and programs.',
+    //Vague messages
+  'Get out of the drift, and get on the road to productivity.',
+  'Be productive! Do something good!',
+  'Keep doing great things and get a Tesla!',
+  'To become better, you need to do something else.',
+    //Music
   'Listen to your own music.',
   'Add a new song to your iTunes library.',
+  'Put on some music to help you do things.',
+  'Some music can help you focus.',
+    //Miscellaneous
+  'Close tabs and programs.',
   'Say out loud the thing you need to get done.',
-  'Digitize at least two days of events from your journal.',
   //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
   'Drive around how you want in Need for Speed: Hot Pursuit.',
+  'No routine? Form one.',
     //Goals
   'Learn how to make chiptune music.',
   'Click here.',
   'Learn how to use FL Studio.',
   //'How can you build an everlasting romantic relationship from scratch?',
   'Make some friends in real life. Institute is the best starting point.',
-  'Learn how to use Pygame.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
   'Don\'t suck at group projects.',
-  'Think of a goal. Any one. Set that as your break message.',
-    //Health and fitness
-  'Stand up and stretch if you can.',
+  'Think of a goal. Any one. Set that as your break message.'];
+
+  var standup = [//Health and fitness
   'Refill your bottle and drink water.',
   'Go up and down the stairs for one minute.',
   'Stare at an object 20 feet away for 20 seconds.',
@@ -79,19 +80,44 @@ function loadBreak(index) {
     //Personal hygiene
   'Change your clothes if they\'re dirty.',
   'Change to your pajamas. No socks.',
-  'Strip, even if it\'s cold.<br>Take a shower if you hadn\'t today.',
+    //Miscellaneous Part 2
+  'Declutter your room.',
+  'Learn how to use Pygame by reading that book.',
+  'Strip, even if it\'s cold.']
+
+  var changeclothes = [//Personal hygiene 2
+  'Take a shower if you hadn\'t today.',
     //Health and fitness part 2
   'Walk around for about 1-2 minutes.',
   'Now play some Stepmania.'];
-  if(d.getHours() <= 6 || d.getHours() >= 22)
-    for(var i = 0; i < messages.length / 4; i ++)
-      messages.push('Lie in bed and play something soothing.');
+  for(var i = 1; i < changeclothes.length; i++)
+    standup.push("Change to appropriate clothes if necessary.");
+  for(i = 0; i < standup.length; i++)
+    messages.push('Stand up and stretch if you can.');
+  if(d.getHours() <= 5 || d.getHours() >= 22)
+    for(i = 0; i < messages.length / 4; i++)
+    {
+      messages.push('Stand up and stretch if you can.');
+      standup.push('Change to appropriate clothes if necessary.');
+      changeclothes.push('Lie in bed and play something soothing.');
+    }
   //Get random message index from messages array
   if (index < 0 || index >= messages.length)
     do
       index = Math.floor(Math.random() * messages.length);
-    while (index === messages.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
+    while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
   var message = document.getElementById("break");
+  var standupMessage = document.getElementById("standup");
+  var changeMessage = document.getElementById("changeclothes");
+  var standIndex = index - (messages.length - standup.length);
+  var changeIndex = standIndex - (standup.length - changeclothes.length);
+  message.innerHTML = messages[index];
+  if (messages[index] === 'Stand up and stretch if you can.')
+  {
+    standupMessage.innerHTML = standup[standIndex];
+    if (standup[standIndex] === 'Change to appropriate clothes if necessary.' || standup[standIndex] === 'Strip, even if it\'s cold.')
+      changeMessage.innerHTML = changeclothes[changeIndex];
+  }
   if (index <= 1)
     message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
   else if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
@@ -110,14 +136,14 @@ function loadBreak(index) {
     message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
   else if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
     message.href = "nextanime.html";
-  else if (index === messages.indexOf("Now play some Stepmania."))
-    message.href = "stepmania.html";
-  else
+  else {
     message.removeAttribute("href");
-  if (index >= messages.indexOf("Walk around for about 1-2 minutes."))
-    message.innerHTML = "Change to appropriate clothes if necessary.<br>" + messages[index];
-  else
-    message.innerHTML = messages[index];
+    standupMessage.removeAttribute("href");
+    if (changeIndex === changeclothes.indexOf("Now play some Stepmania."))
+      changeMessage.href = "stepmania.html";
+    else
+      changeMessage.removeAttribute("href");
+  }
   console.log("Message " + index);
   if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
     message.addEventListener("click",function() {var exists = document.getElementById("vader");
@@ -131,6 +157,16 @@ function loadBreak(index) {
         document.body.appendChild(video);
       }
     document.getElementById("vader").play();});
+  if(message.innerHTML === 'Stand up and stretch if you can.')
+  {
+    console.log("Standup " + standIndex);
+    message.addEventListener("click",function() {document.getElementById("standup").style.display = 'block';});
+    if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.')
+    {
+      console.log("Change Clothes " + changeIndex);
+      standupMessage.addEventListener("click",function() {document.getElementById("changeclothes").style.display = 'block';});
+    }
+  }
 }
 
 var redirectMessages = ['You were redirected from a blacklisted website.',
@@ -146,15 +182,12 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'There\'s nothing beneficial to see there.',
 'Please get things done. I mean it.',
 'Time is a precious resource. Don\'t waste it.',
-'Get out of the drift, and get on the road to productivity.',
 'Make sure you stay on task.',
 'Cute or fun things are good, but they are distractions.',
 'You were about to be distracted, but please stay on track.',
-'Be productive! Do something good!',
 'Life is hard. Distractions are everywhere. God will help you.',
 'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-'No routine? Form one.',
-'Put on some music to help you do things.'];
+'You should try to suppress some thoughts.'];
 
 function randomMessage(index) {
   var father = true;
@@ -181,18 +214,16 @@ function randomMessage(index) {
     'Having a waifu is great. She will never get mad at you.',
     'You\'ve made it this far to code this webpage.',
     'You figured out a way to redirect away from distracting websites.',
-    'If you keep doing great things, you\'ll eventually get a Tesla!',
-    'What makes you very happy? Think about it for a bit.',
+    'Your dream car is a Tesla! Would you like one?',
     'Your mind must be like a carnival inside!',
     'You\'re the type of person who values fun things!',
-    'Win a million dollars! It\'s harder to do than earning $1000000.',
-    'Some music can help you focus.');
+    'Win a million dollars! It\'s harder to do than earning $1000000.');
   else
     redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
     'Hey! You aren\'t supposed to do that!',
     'Don\'t you have anything better to do with your time?',
     'Get back to whatever you should be doing!',
-    'Be productive! Don\'t go to time-wasting websites!',
+    'Don\'t go to time-wasting websites!',
     'No going to blocked websites. You understand?',
     'Stop typing in addresses of distracting websites!',
     'Break unhealthy habits.',
@@ -208,18 +239,18 @@ function randomMessage(index) {
     'Forget about things that are currently distracting you.',
     'Why would you do this? You stupid idiot!',
     'Seriously? You got stuff to do!',
-    'You need to do something else to become better.',
     'Mindlessness is a bad thing.',
     'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
     'Don\'t have a lazy, unproductive day.',
     'You\'re behind on your schedule and tasks! Hurry up!',
     'Temptations aren\'t good things.',
     'Erase a distracting habit, and find a new one.',
-    'You need to suppress those thoughts.');
+    'You must suppress those thoughts.',
+    'Do not be an idiot.');
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
-  if (d.getHours() <= 6 || d.getHours() >= 22)
+  if (d.getHours() <= 5 || d.getHours() >= 22)
     for(var i = 0; i < redirectMessages.length / 5; i ++)
       redirectMessages.push('You should be asleep by now.');
   //Get random message index from messages array
@@ -234,17 +265,19 @@ function randomMessage(index) {
 
 function randomLink(message) {
   var linkMessages = ["Immediately close this tab."];
-  for (i = 1; i <= 3; i++)
+  for (var i = 1; i <= 3; i++)
     linkMessages.push("Got something you need to do?");
   for (i = 4; i <= 23; i++)
     linkMessages.push("Ready to do something else?");
   for (i = 24; i <= 33; i++)
     linkMessages.push("How about multiple ways to take a break?");
+  for (i = 34; i <= 53; i++)
+    linkMessages.push("Can you try to answer this question?");
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   if (message === "Return to your previous task." || message === "Get back to whatever you should be doing!")
     linkIndex = 0;
-  else if (message === "May this page suggest you take a short break?" || message === "Time to take a break." || message == "What is a good way to take a break?")
+  else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
     linkIndex = 21;
   //Put link message and to screen using the index value of the array
   var parent = document.getElementById("hideable");
@@ -255,32 +288,16 @@ function randomLink(message) {
     link.className = "space";
     parent.appendChild(link);
   }
-  if (linkIndex >= 4) {
-    var advice = document.createElement("div");
-    advice.id = "advice";
-    advice.innerHTML = "Get your laptop off your lap, stand up, and stretch.";
-    advice.style.display = "none";
-    parent.appendChild(advice);
-    link.onmouseover = function() {mouseOver(1)};
-    link.onmouseout = function() {mouseOut(1)};
-    if (linkIndex >= 24)
-      link.innerHTML = "<a href='multiple.html'>" + linkMessages[linkIndex] + "</a>";
-    else
-      link.innerHTML = "<a href='breaktime.html'>" + linkMessages[linkIndex] + "</a>";
-  }
+  if (linkIndex >= 34)
+    link.innerHTML = "<a href='question.html'>" + linkMessages[linkIndex] + "</a>";
+  else if (linkIndex >= 24)
+    link.innerHTML = "<a href='multiple.html'>" + linkMessages[linkIndex] + "</a>";
+  else if (linkIndex >= 4)
+    link.innerHTML = "<a href='breaktime.html'>" + linkMessages[linkIndex] + "</a>";
+  else if (linkIndex > 0)
+    link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a>";
   else
-  {
-    if(document.getElementById("advice"))
-    {
-      parent.removeChild(document.getElementById("advice"));
-      link.onmouseover = function() {mouseOver(0)};
-      link.onmouseout = function() {mouseOut(0)};
-    }
-    if (linkIndex > 0)
-      link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a>";
-    else
-      link.innerHTML = linkMessages[linkIndex];
-  }
+    link.innerHTML = linkMessages[linkIndex];
   //Put index value to the console
   console.log("Link " + linkIndex);
 }
@@ -325,26 +342,13 @@ function randomQuestion(index) {
   'How can you stop going to blocked websites when necessary?',
   'How do you not sidetrack?',
   'How can you have a good day?',
-  'How can you not be like an idiot?'];
+  'How can you not be like an idiot?',
+  'What makes you very happy? Think about it for a bit.'];
   if (index < 0 || index >= questions.length)
     index = Math.floor(Math.random() * questions.length);
   document.getElementById("question").innerHTML = questions[index];
   //Put index value to the console
   console.log("Question " + index);
-}
-
-function mouseOver(advice) {
-  if (advice) {
-    document.getElementById("advice").style.display = "block";
-    document.getElementById("theme").style.display = "none";
-  }
-}
-
-function mouseOut(advice) {
-  if (advice) {
-    document.getElementById("advice").style.display = "none";
-    document.getElementById("theme").style.display = "block";
-  }
 }
 
 var messageComplete = true;
