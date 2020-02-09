@@ -81,18 +81,16 @@ function loadBreak(index) {
     //Personal hygiene
   'Change your clothes if they\'re dirty.',
   'Change to your pajamas. No socks.',
+  'Take a shower if you hadn\'t today, even if it\'s cold in your room.',
     //Miscellaneous Part 2
   'Declutter your room.',
   'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
-  'Strip, even if it\'s cold.']
+  'Walk around for about 1-2 minutes. You may need to change clothes.',
+  'Play some Stepmania. You may need to change clothes first.']
 
-  var changeclothes = [//Personal hygiene 2
-  'Take a shower if you hadn\'t today.',
-    //Health and fitness part 2
-  'Walk around for about 1-2 minutes.',
-  'Now play some Stepmania.'];
-  for(var i = 1; i < changeclothes.length; i++)
+  var changeclothes = [];
+  for(var i = 0; i < changeclothes.length; i++)
     standup.push("Change to appropriate clothes if necessary.");
   for(i = 0; i < standup.length; i++)
     messages.push('Stand up and stretch if you can.');
@@ -100,8 +98,7 @@ function loadBreak(index) {
     for(i = 0; i < messages.length / 4; i++)
     {
       messages.push('Stand up and stretch if you can.');
-      standup.push('Change to appropriate clothes if necessary.');
-      changeclothes.push('Lie in bed and play something soothing.');
+      standup.push('Wear your pajamas and go to bed.');
     }
   //Get random message index from messages array
   if (index < 0 || index >= messages.length)
@@ -117,7 +114,7 @@ function loadBreak(index) {
   if (messages[index] === 'Stand up and stretch if you can.')
   {
     standupMessage.innerHTML = standup[standIndex];
-    if (standup[standIndex] === 'Change to appropriate clothes if necessary.' || standup[standIndex] === 'Strip, even if it\'s cold.')
+    if (standup[standIndex] === 'Change to appropriate clothes if necessary.')
       changeMessage.innerHTML = changeclothes[changeIndex];
   }
   if (index <= 1)
@@ -142,11 +139,10 @@ function loadBreak(index) {
     message.href = "nextanime.html";
   else {
     message.removeAttribute("href");
-    standupMessage.removeAttribute("href");
-    if (changeIndex === changeclothes.indexOf("Now play some Stepmania."))
-      changeMessage.href = "stepmania.html";
+    if (changeIndex === changeclothes.indexOf("Play some Stepmania. You may need to change clothes first."))
+      standupMessage.href = "stepmania.html";
     else
-      changeMessage.removeAttribute("href");
+      standupMessage.removeAttribute("href");
   }
   console.log("Message " + index);
   if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
