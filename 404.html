@@ -214,14 +214,16 @@ permalink: /404.html
       'Cute or fun things are good, but they are distractions.',
       'You were about to be distracted, but please stay on track.'];*/
       var d = new Date();
-      if (d.getHours() <= 5 || d.getHours() >= 22)
-        for(var i = 0; i < redirectMessages.length / 5; i ++)
-          redirectMessages.push('You should be asleep by now.');
       //Get random message index from messages array
       var index = Math.floor(Math.random() * redirectMessages.length);
       //Put message to screen using the index value of the array
       var message = redirectMessages[index];
       document.getElementById("message").innerHTML = message;
+      if (d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 5))
+      {
+        document.getElementById("message").innerHTML = 'You should be asleep by now.';
+        index = redirectMessages.length + 1;
+      }
       //Put index value to the console
       console.log("Message " + index);
 

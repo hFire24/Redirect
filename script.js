@@ -132,7 +132,7 @@ function loadBreak(index) {
     else
       standupMessage.removeAttribute("href");
   }
-  if(d.getHours() <= 5 || d.getHours() >= 22 && Math.floor(Math.random() * 4))
+  if(d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 4))
   {
     message.innerHTML = 'Stand up and stretch if you can.';
     standup.innerHTML = 'Wear your pajamas and go to bed.';
@@ -257,7 +257,7 @@ function randomMessage(index) {
     document.getElementById("message").innerHTML = "Get ready for church!";
     index = redirectMessages.length + 2;
   }
-  if (d.getHours() <= 5 || d.getHours() >= 22 && Math.floor(Math.random() * 5))
+  if (d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 5))
   {
     document.getElementById("message").innerHTML = 'You should be asleep by now.';
     index = redirectMessages.length + 1;
