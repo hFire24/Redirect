@@ -135,7 +135,9 @@ function loadBreak(index) {
   if(d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 4))
   {
     message.innerHTML = 'Stand up and stretch if you can.';
+    message.removeAttribute("href");
     standupMessage.innerHTML = 'Wear your pajamas and go to bed.';
+    standupMessage.removeAttribute("href");
     index = messages.length + 1;
     standIndex = standup.length + 1;
   }
