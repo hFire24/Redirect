@@ -135,8 +135,9 @@ function loadBreak(index) {
   if(d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 4))
   {
     message.innerHTML = 'Stand up and stretch if you can.';
-    standup.innerHTML = 'Wear your pajamas and go to bed.';
+    standupMessage.innerHTML = 'Wear your pajamas and go to bed.';
     index = messages.length + 1;
+    standIndex = standup.length + 1;
   }
   console.log("Message " + index);
   if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
