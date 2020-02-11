@@ -32,6 +32,12 @@
         document.getElementById("hideable").appendChild(linkOuter);
         var advice = document.createElement("div");
       }
+      var d = new Date();
+      if (d.getHours() < 6 || d.getHours() >= 22)
+      {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+      }
     </script>
   </body>
 </html>
