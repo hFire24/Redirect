@@ -65,6 +65,7 @@ function loadBreak(index) {
   'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
+  'Double your social skills.',
   'Don\'t suck at group projects.',
   'Think of a goal. Any one. Set that as your break message.'];
 
@@ -106,43 +107,78 @@ function loadBreak(index) {
   var changeMessage = document.getElementById("changeclothes");
   var standIndex = index - (messages.length - standup.length);
   var changeIndex = standIndex - (standup.length - changeclothes.length);
-  message.innerHTML = messages[index];
-  if (index <= 1)
-    message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
-  else if (index === messages.indexOf("Look away from the screen for about 30 seconds."))
-    message.href = "https://www.google.com/search?q=30+second+timer";
-  else if (index === messages.indexOf("Take a deep breath."))
-    message.href = "https://www.google.com/search?q=breathing+exercise";
-  else if (index === messages.indexOf("Put on some focus/relaxation music."))
-    message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
-  else if (index === messages.indexOf("Increase your spirituality."))
-    message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
-  else if (index === messages.indexOf("Learn how to make chiptune music.") || index === messages.indexOf("Learn how to use FL Studio."))
-    message.href = "chiptunelessons.html";
-  else if (index === messages.indexOf("Learn how to make chiptune music.") + 1)
-    message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
-  else if (index === messages.indexOf("Don't suck at group projects."))
-    message.href = "groupprojects.html";
-  else if (index === messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
-    message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
-  else if (index >= messages.indexOf("Watch anime.") && index <= messages.lastIndexOf("Watch anime."))
-    message.href = "nextanime.html";
-  else {
-    message.removeAttribute("href");
-    if (changeIndex === changeclothes.indexOf("Play some Stepmania. You may need to change clothes first."))
-      standupMessage.href = "stepmania.html";
-    else
-      standupMessage.removeAttribute("href");
+  switch(index)
+  {
+    case 0:
+    case 1:
+      message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
+      break;
+    case messages.indexOf("Look away from the screen for about 30 seconds."):
+      message.href = "https://www.google.com/search?q=30+second+timer";
+      break;
+    case messages.indexOf("Take a deep breath."):
+      message.href = "https://www.google.com/search?q=breathing+exercise";
+      break;
+    case messages.indexOf("Put on some focus/relaxation music."):
+      message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
+      break;
+    case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
+      message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
+      break;
+    case messages.indexOf("Watch anime."):
+    case messages.indexOf("Watch anime.") + 1:
+    case messages.lastIndexOf("Watch anime."):
+      message.href = "nextanime.html";
+      break;
+    case messages.indexOf("Increase your spirituality."):
+      message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
+      break;
+    case messages.indexOf("Learn how to make chiptune music."):
+    case messages.indexOf("Learn how to use FL Studio."):
+      message.href = "chiptunelessons.html";
+      break;
+    case messages.indexOf("Learn how to make chiptune music.") + 1:
+      message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+      break;
+    case messages.indexOf("Go to Skillshare, and learn programming."):
+      message.href = "https://skl.sh/38rV6DT";
+      break;
+    case messages.indexOf("Double your social skills."):
+      message.href = "https://skl.sh/37ueYoA";
+      break;
+    case messages.indexOf("Don't suck at group projects."):
+      message.href = "groupprojects.html";
+      break;
+    default:
+      message.removeAttribute("href");
   }
+  if (standIndex === standup.indexOf("Play some Stepmania. You may need to change clothes first."))
+    standupMessage.href = "stepmania.html";
+  else
+    standupMessage.removeAttribute("href");
   if(d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 4))
   {
-    message.innerHTML = 'Stand up and stretch if you can.';
-    message.removeAttribute("href");
-    standupMessage.removeAttribute("href");
     index = messages.length;
+    messages.push('Stand up and stretch if you can.');
+    message.removeAttribute("href");
     standIndex = standup.length;
+    standup.push('Wear your pajamas and go to bed.');
+    standupMessage.removeAttribute("href");
   }
   console.log("Message " + index);
+  message.innerHTML = messages[index];
+  if(message.innerHTML === 'Stand up and stretch if you can.')
+  {
+    console.log("Standup " + standIndex);
+    message.addEventListener("click",function() {document.getElementById("standup").style.display = 'block';});
+    standupMessage.innerHTML = standup[standIndex];
+    if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.')
+    {
+      console.log("Change Clothes " + changeIndex);
+      changeMessage.innerHTML = changeclothes[changeIndex];
+      standupMessage.addEventListener("click",function() {document.getElementById("changeclothes").style.display = 'block';});
+    }
+  }
   if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
     message.addEventListener("click",function() {var exists = document.getElementById("vader");
       if (!exists) {
@@ -155,19 +191,6 @@ function loadBreak(index) {
         document.body.appendChild(video);
       }
     document.getElementById("vader").play();});
-  if(message.innerHTML === 'Stand up and stretch if you can.')
-  {
-    console.log("Standup " + standIndex);
-    standup.push('Wear your pajamas and go to bed.')
-    standupMessage.innerHTML = standup[standIndex];
-    message.addEventListener("click",function() {document.getElementById("standup").style.display = 'block';});
-    if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.')
-    {
-      console.log("Change Clothes " + changeIndex);
-      changeMessage.innerHTML = changeclothes[changeIndex];
-      standupMessage.addEventListener("click",function() {document.getElementById("changeclothes").style.display = 'block';});
-    }
-  }
 }
 
 var redirectMessages = ['You were redirected from a blacklisted website.',
@@ -240,7 +263,8 @@ var negativeMessages = ['Don\'t waste time getting distracted on blocked website
 'Temptations aren\'t good things.',
 'Erase a distracting habit, and find a new one.',
 'You must suppress those thoughts.',
-'Do not be an idiot.'];
+'Do not be an idiot.',
+'You didn\'t come to Earth to be entertained.'];
 
 var firstTime = true;
 
@@ -368,7 +392,11 @@ function randomQuestion(index) {
   'How do you not sidetrack?',
   'How can you have a good day?',
   'How can you not be like an idiot?',
-  'What makes you very happy? Think about it for a bit.'];
+  'What makes you very happy? Think about it for a bit.',
+  'What compels you to look at anime pictures?',
+  'How can you overcome addictions?',
+  'Why do certain things appeal to you?',
+  'Where do you see yourself in 2 years?'];
   if (index < 0 || index >= questions.length)
     index = Math.floor(Math.random() * questions.length);
   document.getElementById("question").innerHTML = questions[index];
