@@ -8,8 +8,10 @@ function loadWebsite(number) {
     randomMessage(-2);
   else if (number === 4)
     randomQuestion(-1);
-  else
+  else if (number === 5)
     randomMessage(-1);
+  else
+    randomMessage(-3);
   randomTheme(number);
 }
 
@@ -138,8 +140,8 @@ function loadBreak(index) {
     message.removeAttribute("href");
     standupMessage.innerHTML = 'Wear your pajamas and go to bed.';
     standupMessage.removeAttribute("href");
-    index = messages.length + 1;
-    standIndex = standup.length + 1;
+    index = messages.length;
+    standIndex = standup.length;
   }
   console.log("Message " + index);
   if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
@@ -187,65 +189,79 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'Life is hard. Distractions are everywhere. God will help you.',
 'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
 'You should try to suppress some thoughts.'];
+var positiveMessages = ['Today will be a great day to catch up with your schedule and tasks.',
+'May this page suggest you take a short break?',
+'It is a good idea to get things done.',
+'I hope you have a good day today.',
+'There sure are so many other fun things to do.',
+'I know you got a desire to do better, and that\'s OK.',
+'I know you can become a better person! Just don\'t rush it.',
+'With God, nothing is impossible.',
+'There are so many happy thoughts in your mind right now!',
+'Make John Purdue proud!',
+'When you get things done, you feel happy and accomplished!',
+'You like YouTube, games, Cirno, and pictures of cute anime girls, but you also like anime, creating tasks, learning, and music.',
+'Feel free to do things you want and need to do.',
+'Go do something you want to do the most.',
+'You are a really good person. Did you know that?',
+'Aren\'t distractions supposed to be fun?',
+'Isn\'t laziness supposed to feel good?',
+'Having a waifu is great. She will never get mad at you.',
+'You\'ve made it this far to code this webpage.',
+'You figured out a way to redirect away from distracting websites.',
+'Your dream car is a Tesla! Would you like one?',
+'Your mind must be like a carnival inside!',
+'You\'re the type of person who values fun things!',
+'Win a million dollars! It\'s harder to do than earning $1000000.'];
+var negativeMessages = ['Don\'t waste time getting distracted on blocked websites.',
+'Hey! You aren\'t supposed to do that!',
+'Don\'t you have anything better to do with your time?',
+'Get back to whatever you should be doing!',
+'Don\'t go to time-wasting websites!',
+'No going to blocked websites. You understand?',
+'Stop typing in addresses of distracting websites!',
+'Break unhealthy habits.',
+'You\'re wasting your time! Come on!',
+'Ehem. You need to stop procrastinating.',
+'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Chino. Tiny. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+'Drop all your distracting habits.',
+'All distracting thoughts need to go away.',
+'You thought about something you shouldn\'t think of.',
+'Don\'t procrastinate and fail the semester.',
+'Do you want to fail your classes or not?',
+'Control yourself, or else you will lose in life.',
+'Forget about things that are currently distracting you.',
+'Why would you do this? You stupid idiot!',
+'Seriously? You got stuff to do!',
+'Mindlessness is a bad thing.',
+'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
+'Don\'t have a lazy, unproductive day.',
+'You\'re behind on your schedule and tasks! Hurry up!',
+'Temptations aren\'t good things.',
+'Erase a distracting habit, and find a new one.',
+'You must suppress those thoughts.',
+'Do not be an idiot.'];
+
+var firstTime = true;
 
 function randomMessage(index) {
-  var father = true;
-  if (index === -2)
+  var father;
+  if (index === -1)
+    father = true;
+  else if (index === -2)
     father = false;
-  if (father)
-    redirectMessages.push('Today will be a great day to catch up with your schedule and tasks.',
-    'May this page suggest you take a short break?',
-    'It is a good idea to get things done.',
-    'I hope you have a good day today.',
-    'There sure are so many other fun things to do.',
-    'I know you got a desire to do better, and that\'s OK.',
-    'I know you can become a better person! Just don\'t rush it.',
-    'With God, nothing is impossible.',
-    'There are so many happy thoughts in your mind right now!',
-    'Make John Purdue proud!',
-    'When you get things done, you feel happy and accomplished!',
-    'You like YouTube, games, Cirno, and pictures of cute anime girls, but you also like anime, creating tasks, learning, and music.',
-    'Feel free to do things you want and need to do.',
-    'Go do something you want to do the most.',
-    'You are a really good person. Did you know that?',
-    'Aren\'t distractions supposed to be fun?',
-    'Isn\'t laziness supposed to feel good?',
-    'Having a waifu is great. She will never get mad at you.',
-    'You\'ve made it this far to code this webpage.',
-    'You figured out a way to redirect away from distracting websites.',
-    'Your dream car is a Tesla! Would you like one?',
-    'Your mind must be like a carnival inside!',
-    'You\'re the type of person who values fun things!',
-    'Win a million dollars! It\'s harder to do than earning $1000000.');
   else
-    redirectMessages.push('Don\'t waste time getting distracted on blocked websites.',
-    'Hey! You aren\'t supposed to do that!',
-    'Don\'t you have anything better to do with your time?',
-    'Get back to whatever you should be doing!',
-    'Don\'t go to time-wasting websites!',
-    'No going to blocked websites. You understand?',
-    'Stop typing in addresses of distracting websites!',
-    'Break unhealthy habits.',
-    'You\'re wasting your time! Come on!',
-    'Ehem. You need to stop procrastinating.',
-    'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Chino. Tiny. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
-    'Drop all your distracting habits.',
-    'All distracting thoughts need to go away.',
-    'You thought about something you shouldn\'t think of.',
-    'Don\'t procrastinate and fail the semester.',
-    'Do you want to fail your classes or not?',
-    'Control yourself, or else you will lose in life.',
-    'Forget about things that are currently distracting you.',
-    'Why would you do this? You stupid idiot!',
-    'Seriously? You got stuff to do!',
-    'Mindlessness is a bad thing.',
-    'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
-    'Don\'t have a lazy, unproductive day.',
-    'You\'re behind on your schedule and tasks! Hurry up!',
-    'Temptations aren\'t good things.',
-    'Erase a distracting habit, and find a new one.',
-    'You must suppress those thoughts.',
-    'Do not be an idiot.');
+    father = Math.floor(Math.random() * 2);
+  if(firstTime)
+  {
+    if (father)
+      for (var i = 0; i < positiveMessages.length; i++)
+        redirectMessages.push(positiveMessages[i]);
+    else
+      for (var i = 0; i < negativeMessages.length; i++)
+        redirectMessages.push(negativeMessages[i]);
+  }
+  firstTime = false;
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
@@ -263,7 +279,7 @@ function randomMessage(index) {
   if (d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 5))
   {
     document.getElementById("message").innerHTML = 'You should be asleep by now.';
-    index = redirectMessages.length + 1;
+    index = redirectMessages.length;
   }
   //Put index value to the console
   console.log("Message " + index);

@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Do your homework!</title>
+    <title>You got redirected!</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body>
-    <div id='message' class='space'>On your phone, go to blackboard and read things you should read.</div>
+  <body onLoad="loadWebsite(5)">
+    <div id='message' class='space'></div>
+    <div id='hideable'>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
