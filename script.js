@@ -138,7 +138,6 @@ function loadBreak(index) {
   {
     message.innerHTML = 'Stand up and stretch if you can.';
     message.removeAttribute("href");
-    standupMessage.innerHTML = 'Wear your pajamas and go to bed.';
     standupMessage.removeAttribute("href");
     index = messages.length;
     standIndex = standup.length;
@@ -159,6 +158,7 @@ function loadBreak(index) {
   if(message.innerHTML === 'Stand up and stretch if you can.')
   {
     console.log("Standup " + standIndex);
+    standup.push('Wear your pajamas and go to bed.')
     standupMessage.innerHTML = standup[standIndex];
     message.addEventListener("click",function() {document.getElementById("standup").style.display = 'block';});
     if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.')
