@@ -193,8 +193,6 @@ function loadBreak(index) {
     document.getElementById("vader").play();});
 }
 
-
-
 function randomMessage(index) {
   var redirectMessages = ['You were redirected from a blacklisted website.',
   'You shouldn\'t access that website now.',
