@@ -214,7 +214,7 @@ function randomMessage(index) {
   'You\'re wasting your time! Come on!',
   'Ehem. You need to stop procrastinating.',
   'You won\'t complete your tasks quickly if you sidetrack.',
-  'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Nanahira. Chino. Happy. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+  'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Chino. Tiny. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
   'There\'s nothing beneficial to see there.',
   'Please get things done. I mean it.',
   'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
