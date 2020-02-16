@@ -16,7 +16,8 @@ var redirectMessages = ['You were redirected from a blacklisted website.',
 'You were about to be distracted, but please stay on track.',
 'Life is hard. Distractions are everywhere. God will help you.',
 'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-'You should try to suppress some thoughts.'];
+'You should try to suppress some thoughts.',
+'Life is hard. Play hard to win.'];
 var positiveMessages = ['Today will be a great day to catch up with your schedule and tasks.',
 'May this page suggest you take a short break?',
 'It is a good idea to get things done.',
