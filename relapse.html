@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sorry.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class='relapse'>
+    <div id='message' class='space'></div>
+    <div class='space'><a id='link' href="https://emergency.nofap.com/redirect?religious=true&cat=rel">Click here</a> and
+    <a href="breaktime.html">DON'T give up.</a></div>
+    <script>
+      var messages = ['Never ever do that again. You understand?',
+      'Repent immediately.',
+      'Please stop fapping.',
+      'You must take NoFap seriously.',
+      'You\'ve sinned. Don\'t do it again.',
+      'Clean yourself up.',
+      'Cleanse your body, mind, and soul.',
+      'Do not feel like you\'ve lost. The battle still rages.',
+      'No more fapping.',
+      'Hopefully today will be your last fap.',
+      'Make your future brighter.',
+      'It will get better next time.',
+      'Make sure you get important things done.',
+      'Take a shower.',
+      'Do not feel pathethic. You are stronger than you think.',
+      'You are capable of doing great things.',
+      'Become a better person.',
+      'After you quickly recover, do some tasks.',
+      'Learn from that mistake you made earlier.',
+      'How will you not repeat the things you just did?'];
+      var index = Math.floor(Math.random() * messages.length);
+      var message = document.getElementById("message");
+      message.innerHTML = messages[index];
+    </script>
+  </body>
+</html>
