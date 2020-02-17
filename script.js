@@ -250,20 +250,18 @@ function randomMessage(index) {
 
 function randomLink(message) {
   var linkMessages = ["Immediately close this tab."];
-  for (var i = 1; i <= 3; i++)
+  for (var i = 1; i <= 30; i++)
     linkMessages.push("Got something you need to do?");
-  for (i = 4; i <= 23; i++)
+  /*for (i = 4; i <= 23; i++)
     linkMessages.push("Ready to do something else?");
   for (i = 24; i <= 33; i++)
     linkMessages.push("How about multiple ways to take a break?");
   for (i = 34; i <= 53; i++)
-    linkMessages.push("Can you try to answer this question?");
+    linkMessages.push("Can you try to answer this question?");*/
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   if (message === "Get back to whatever you should be doing!")
     linkIndex = 0;
-  else if (message === "May this page suggest you take a short break?")
-    linkIndex = 21;
   //Put link message and to screen using the index value of the array
   var parent = document.getElementById("hideable");
   var link = document.getElementById("link");
@@ -275,18 +273,25 @@ function randomLink(message) {
   }
   if (message === "Get ready for church!")
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
-  else if (linkIndex >= 34)
-    link.innerHTML = "<a href='question.html'>" + linkMessages[linkIndex] + "</a>";
-  else if (linkIndex >= 24)
-    link.innerHTML = "<a href='multiple.html'>" + linkMessages[linkIndex] + "</a>";
-  else if (linkIndex >= 4)
-    link.innerHTML = "<a href='breaktime.html'>" + linkMessages[linkIndex] + "</a>";
+  else if (message === "May this page suggest you take a short break?")
+  {
+    link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+  }
   else if (linkIndex > 0)
-    link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a>";
+  {
+    link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+  }
   else
     link.innerHTML = linkMessages[linkIndex];
   //Put index value to the console
   console.log("Link " + linkIndex);
+}
+
+function rejectSomething(time) {
+  if(time === 1)
+    link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+  else
+    location.href = "cyoa/1.html";
 }
 
 function randomQuestion(index) {
