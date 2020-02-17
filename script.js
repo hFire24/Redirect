@@ -57,6 +57,8 @@ function loadBreak(index) {
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'No routine? Form one.',
   'Increase your spirituality.',
+  'Try answering this question.',
+  'How about multiple ways to take a break?',
     //Goals
   'Learn how to make chiptune music.',
   'Click here.',
@@ -132,6 +134,12 @@ function loadBreak(index) {
       break;
     case messages.indexOf("Increase your spirituality."):
       message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
+      break;
+    case messages.indexOf("Try answering this question."):
+      message.href = "question.html";
+      break;
+    case messages.indexOf("How about multiple ways to take a break?"):
+      message.href = "multiple.html";
       break;
     case messages.indexOf("Learn how to make chiptune music."):
     case messages.indexOf("Learn how to use FL Studio."):
@@ -252,12 +260,6 @@ function randomLink(message) {
   var linkMessages = ["Immediately close this tab."];
   for (var i = 1; i <= 30; i++)
     linkMessages.push("Got something you need to do?");
-  /*for (i = 4; i <= 23; i++)
-    linkMessages.push("Ready to do something else?");
-  for (i = 24; i <= 33; i++)
-    linkMessages.push("How about multiple ways to take a break?");
-  for (i = 34; i <= 53; i++)
-    linkMessages.push("Can you try to answer this question?");*/
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   if (message === "Get back to whatever you should be doing!")
@@ -274,13 +276,9 @@ function randomLink(message) {
   if (message === "Get ready for church!")
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
   else if (message === "May this page suggest you take a short break?")
-  {
     link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
-  }
   else if (linkIndex > 0)
-  {
     link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-  }
   else
     link.innerHTML = linkMessages[linkIndex];
   //Put index value to the console

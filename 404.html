@@ -132,6 +132,11 @@ permalink: /404.html
       var message = redirectMessages[index];
       document.getElementById("message").innerHTML = message;
       var d = new Date();
+      if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 9 && Math.floor(Math.random() * 3))
+      {
+        document.getElementById("message").innerHTML = "Get ready for church!";
+        index = redirectMessages.length + 2;
+      }
       if (d.getHours() <= 5 || d.getHours() >= 22 && !Math.floor(Math.random() * 5))
       {
         document.getElementById("message").innerHTML = 'You should be asleep by now.';
@@ -141,20 +146,12 @@ permalink: /404.html
       console.log("Message " + index);
 
       var linkMessages = ["Immediately close this tab."];
-      for (var i = 1; i <= 3; i++)
+      for (var i = 1; i <= 30; i++)
         linkMessages.push("Got something you need to do?");
-      for (i = 4; i <= 23; i++)
-        linkMessages.push("Ready to do something else?");
-      for (i = 24; i <= 33; i++)
-        linkMessages.push("How about multiple ways to take a break?");
-      for (i = 34; i <= 53; i++)
-        linkMessages.push("Can you try to answer this question?");
       //Get random link from array
       var linkIndex = Math.floor(Math.random() * linkMessages.length);
       if (message === "Get back to whatever you should be doing!")
         linkIndex = 0;
-      else if (message === "May this page suggest you take a short break?")
-        linkIndex = 21;
       //Put link message and to screen using the index value of the array
       var parent = document.getElementById("hideable");
       var link = document.getElementById("link");
@@ -164,15 +161,12 @@ permalink: /404.html
         link.className = "space";
         parent.appendChild(link);
       }
-      parent.appendChild(link);
-      if (linkIndex >= 34)
-        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/question.html'>" + linkMessages[linkIndex] + "</a>";
-      else if (linkIndex >= 24)
-        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/multiple.html'>" + linkMessages[linkIndex] + "</a>";
-      else if (linkIndex >= 4)
-        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/breaktime.html'>" + linkMessages[linkIndex] + "</a>";
+      if (message === "Get ready for church!")
+        link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
+      else if (message === "May this page suggest you take a short break?")
+        link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
       else if (linkIndex > 0)
-        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a>";
+        link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else
         link.innerHTML = linkMessages[linkIndex];
       //Put index value to the console
@@ -216,18 +210,11 @@ permalink: /404.html
         }
       });
 
-      function mouseOver(advice) {
-        if (advice) {
-          document.getElementById("advice").style.display = "block";
-          document.getElementById("theme").style.display = "none";
-        }
-      }
-
-      function mouseOut(advice) {
-        if (advice) {
-          document.getElementById("advice").style.display = "none";
-          document.getElementById("theme").style.display = "block";
-        }
+      function rejectSomething(time) {
+        if(time === 1)
+          link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+        else
+          location.href = "https://cfreeze9.github.io/Redirect/cyoa/1.html";
       }
     </script>
   </body>

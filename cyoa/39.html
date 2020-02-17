@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme3">
+    <div id="custom">
+      <div id="instructions">Type in a video title, and press "Submit" or Enter when done.</div>
+      <input id="video" type="text"><button id="messageButton" onClick="createMessage()">Submit</button>
+      <div id="sizeselecter"><input type="checkbox" id="size">Bigger Font</div>
+    </div>
+    <script>
+    messageComplete = false;
+    var input = document.getElementById("video");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        createMessage();
+      }
+    });
+
+    function createMessage() {
+      var parent = document.getElementById("custom");
+      var newMessage = document.getElementById("video");
+      var button = document.getElementById("messageButton");
+      var message = document.createElement("div");
+      message.id = "break";
+      message.className = "space";
+      if(document.getElementById("size").checked)
+        message.classList.add("big");
+      message.innerHTML = newMessage.value;
+      parent.removeChild(document.getElementById("instructions"));
+      parent.removeChild(newMessage);
+      parent.removeChild(button);
+      parent.removeChild(sizeselecter);
+      parent.appendChild(message);
+      messageComplete = true;
+    }
+    </script>
+  </body>
+</html>
