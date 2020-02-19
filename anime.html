@@ -30,6 +30,10 @@
       {
         link.href = "breaktime.html";
         link.innerHTML = "Ready to do something else?";
+        var no = document.createElement("span");
+        no.innerHTML = " NO";
+        no.addEventListener("click",function() {location.href = "cyoa/1.html";});
+        linkOuter.appendChild(no);
       }
       else
       {

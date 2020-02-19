@@ -20,6 +20,7 @@
       var index = Math.floor(Math.random() * messages.length);
       //Put message to screen using the index value of the array
       document.getElementById("message").innerHTML = messages[index];
+      var d = new Date();
       if (index === 0)
       {
         var linkOuter = document.createElement("div");
@@ -27,12 +28,23 @@
         var link = document.createElement("a");
         link.href = "breaktime.html";
         link.innerHTML = "Ready to do something else?";
-        link.style.color = "white";
         linkOuter.appendChild(link);
+        var no = document.createElement("span");
+        no.innerHTML = " NO";
+        no.addEventListener("click",function() {location.href = "cyoa/1.html";});
+        linkOuter.appendChild(no);
         document.getElementById("hideable").appendChild(linkOuter);
-        var advice = document.createElement("div");
+        if (d.getHours() < 6 || d.getHours() >= 22)
+        {
+          link.style.color = "black";
+          no.style.color = 'red';
+        }
+        else
+        {
+          link.style.color = "white";
+          no.style.color = 'white';
+        }
       }
-      var d = new Date();
       if (d.getHours() < 6 || d.getHours() >= 22)
       {
         document.body.style.backgroundColor = "white";
