@@ -276,7 +276,7 @@ function randomLink(message) {
   if (message === "Get ready for church!")
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
   else if (message === "May this page suggest you take a short break?")
-    link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
   else if (linkIndex > 0)
     link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
   else
@@ -288,6 +288,8 @@ function randomLink(message) {
 function rejectSomething(time) {
   if(time === 1)
     link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+  else if(time === 3)
+    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else
     location.href = "cyoa/1.html";
 }
