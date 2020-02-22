@@ -10,27 +10,60 @@
   </head>
   <body class="theme3">
     <div id='break' class='space'>OK, fine. Solve some math problems.</div>
-    <div id='bringit' class='animelink' onclick=startMath()>Bring it on!</div>
+    <div id='bringit' class='space'>Choose a level! I'd start with 1 if I were new.</div>
     <div id='math' style='display:none;'>
       <div class='space'><span id="mathproblem" class='number'></span> = <span id="mathanswer" class='number'></span></div>
-      <div id='mathpad'>
+      <div class='mathpad'>
         <div class='number' onclick='type(7)'>7</div> <div class='number' onclick='type(8)'>8</div> <div class='number' onclick='type(9)'>9</div>
         <div class='number' onclick='type(4)'>4</div> <div class='number' onclick='type(5)'>5</div> <div class='number' onclick='type(6)'>6</div>
         <div class='number' onclick='type(1)'>1</div> <div class='number' onclick='type(2)'>2</div> <div class='number' onclick='type(3)'>3</div>
-        <div class='number' onclick='type(0)'>0</div> <div class='number' onclick='type("-")'>←</div> <div id='enter' class='number' style='color:#0F0;'>↵</div>
+        <div class='number' onclick='type(0)'>0</div> <div class='number' onclick='type("-")'>◀</div> <div id='enter' class='number' style='color:#0F0;'>↵</div>
       </div>
     </div>
+    <div id='choicepad' class='mathpad'>
+      <div class='number' onclick='choose(7)'>7</div> <div class='number' onclick='choose(8)'>8</div> <div class='number' onclick='choose(9)'>9</div>
+      <div class='number' onclick='choose(4)'>4</div> <div class='number' onclick='choose(5)'>5</div> <div class='number' onclick='choose(6)'>6</div>
+      <div class='number' onclick='choose(1)'>1</div> <div class='number' onclick='choose(2)'>2</div> <div class='number' onclick='choose(3)'>3</div>
+    </div>
     <script>
-    var difficulty = 6;
-    var correctStreak = 0;
-    var incorrectStreak = 0;
+    var difficulty = 0;
+    var numProblems = 0;
+    var correct = 0;
+    var incorrect = 0;
     var number1;
     var number2;
     var number3;
 
+    function choose(number) {
+      if(difficulty === 0)
+      {
+        difficulty = number;
+        document.getElementById("bringit").innerHTML = "Pick 5. If you guess 5 right, you level up.<br>Get 3 wrong, and you level down.";
+      }
+      else if(numProblems === 0)
+        numProblems = number;
+      if(numProblems !== 0)
+        startMath();
+    }
+
     function startMath() {
       document.getElementById("bringit").style.display = "none";
+      document.getElementById("choicepad").style.display = "none";
       document.getElementById("math").style.display = "block";
+      var goodTally = document.createElement("div");
+      goodTally.id = 'correctTally';
+      goodTally.style.position = 'absolute';
+      goodTally.style.top = 0;
+      goodTally.style.left = 0;
+      goodTally.style.textAlign = 'left';
+      var badTally = document.createElement("div");
+      badTally.id = 'incorrectTally';
+      badTally.style.position = 'absolute';
+      badTally.style.top = 0;
+      badTally.style.right = 0;
+      badTally.style.textAlign = 'right';
+      document.body.appendChild(goodTally);
+      document.body.appendChild(badTally);
       loadMath();
     }
 
@@ -39,6 +72,7 @@
       answer.style.color = "hsl(284, 22%, 87%)";
       answer.innerHTML = "";
       document.getElementById("enter").addEventListener("click",submit);
+      window.addEventListener("keyup", keyType);
       switch (difficulty)
       {
         case 1:
@@ -69,7 +103,7 @@
         case 5:
           document.getElementById("break").innerHTML = "Level 5: Hard";
           number1 = getNumber(2);
-          number2 = getNumber(1);
+          number2 = getNumber(1) + 1;
           number3 = 0;
           document.getElementById("mathproblem").innerHTML = number1 + " × " + number2;
           break;
@@ -95,7 +129,7 @@
           document.getElementById("mathproblem").innerHTML = number1 + " × " + number2 + " + " + number3;
           break;
         case 9:
-          document.getElementById("break").innerHTML = "Level 9: Impossible";
+          document.getElementById("break").innerHTML = "Level 9: Sadistic";
           number1 = getNumber(3);
           number2 = getNumber(2);
           number3 = getNumber(4);
@@ -126,24 +160,56 @@
         answer.innerHTML = answer.innerHTML + number.toString();
     }
 
+    function keyType(event) {
+      if(event.keyCode >= 48 && event.keyCode <= 57)
+      {
+        event.preventDefault();
+        type(event.keyCode - 48);
+      }
+      else if(event.keyCode >= 96 && event.keyCode <= 105)
+      {
+        event.preventDefault();
+        type(event.keyCode - 96);
+      }
+      else if(event.keyCode === 8)
+      {
+        event.preventDefault();
+        type("-");
+      }
+      else if(event.keyCode === 13)
+      {
+        event.preventDefault();
+        submit();
+      }
+    }
+
     async function submit() {
       document.getElementById("enter").removeEventListener("click",submit);
+      window.removeEventListener("keyup", keyType);
       var mathAnswer = document.getElementById("mathanswer");
       var answer = parseInt(mathAnswer.innerHTML);
       var message = document.getElementById("break");
+      var checks = document.getElementById("correctTally");
+      var crossMarks = document.getElementById("incorrectTally");
       if(number1 + number2 === answer && difficulty < 4 ||
         number1 + number2 + number3 === answer && difficulty === 4 ||
         number1 * number2 + number3 === answer) {
-        incorrectStreak = 0;
-        correctStreak++;
+        correct++;
+        var checkmarks = '';
+        for(var i = 0; i < correct; i++)
+          checkmarks = checkmarks.concat('✔️<br>');
+        checks.innerHTML = checkmarks;
         message.innerHTML = generatePraiseMessage();
         mathAnswer.style.color = "#0F0";
       }
       else {
-        correctStreak = 0;
-        incorrectStreak++;
+        incorrect++;
+        var crosses = '';
+        for(var i = 0; i < incorrect; i++)
+          crosses = crosses.concat('❌<br>');
+        crossMarks.innerHTML = crosses;
         message.innerHTML = generateWrongMessage();
-        mathAnswer.style.color = "#F00";
+        mathAnswer.style.color = "red";
         if(difficulty < 4)
           answer = number1 + number2;
         else if(difficulty === 4)
@@ -152,21 +218,25 @@
           answer = number1 * number2 + number3;
         mathAnswer.innerHTML = answer.toString();
       }
-      if(correctStreak >= 3 && difficulty < 9) {
-        correctStreak = 0;
+      if(correct >= numProblems && difficulty < 9) {
+        correct = 0;
+        incorrect = 0;
         difficulty++;
       }
-      else if(incorrectStreak >= 3 && difficulty > 1) {
-        incorrectStreak = 0;
+      else if(incorrect >= 3 && difficulty > 1) {
+        correct = 0;
+        incorrect = 0;
         difficulty--;
       }
-      console.log("correctStreak: " + correctStreak);
-      console.log("incorrectStreak: " + incorrectStreak);
-      if(difficulty > 4)
+      console.log("correct answers: " + correct);
+      console.log("incorrect answers: " + incorrect);
+      if (difficulty === 9)
+        await sleep(5000);
+      else if(difficulty > 4)
         await sleep(2500);
       else
         await sleep(1500);
-      if(incorrectStreak > 0)
+      if(mathAnswer.style.color === "red")
         switch(difficulty)
         {
           case 1:
@@ -193,17 +263,24 @@
           case 8:
             await sleep(1000);
             break;
-          case 9:
-            await sleep(1500);
-            break;
         }
       loadMath();
+      if(correct === 0 && incorrect === 0)
+      {
+        checks.innerHTML = '';
+        crossMarks.innerHTML = '';
+      }
     }
 
     function generatePraiseMessage() {
       var messages = ["You're on fire!"];
       var index = Math.floor(Math.random() * messages.length);
-      return messages[index];
+      if (document.getElementById("mathanswer").innerHTML === "69" || document.getElementById("mathanswer").innerHTML === "420")
+        return "Nice!";
+      else if (document.getElementById("mathanswer").innerHTML === "666")
+        return "Wicked!";
+      else
+        return messages[index];
     }
 
     function generateWrongMessage() {
