@@ -107,6 +107,22 @@ input[type='radio']:checked {
   color: red;
 }
 
+#mathpad {
+  display:grid;
+  grid-template-columns:auto auto auto;
+  width: 40%;
+  margin:auto;
+  border: 1px solid #000;
+}
+
+.number {
+  font-family: Futura XBlk BT, AvenirNext-Heavy, 'Arial Black', sans-serif;
+}
+
+#mathpad .number {
+  border: 1px solid #000;
+}
+
 td {
   padding: 7px;
   font-size: 30px;
