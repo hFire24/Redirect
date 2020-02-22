@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme3">
+  <body class="theme4">
     <div id='break' class='space'>OK, fine. Solve some math problems.</div>
     <div id='bringit' class='space'>Choose a level! I'd start with 1 if I were new.</div>
     <div id='math' style='display:none;'>
@@ -38,7 +38,8 @@
       if(difficulty === 0)
       {
         difficulty = number;
-        document.getElementById("bringit").innerHTML = "Pick 5. If you guess 5 right, you level up.<br>Get 3 wrong, and you level down.";
+        var random = Math.floor(Math.random() * 8) + 1;
+        document.getElementById("bringit").innerHTML = "Pick " + random + ". If you guess " + random + " right, you level up.<br>Get 3 wrong, and you level down.";
       }
       else if(numProblems === 0)
         numProblems = number;
@@ -69,7 +70,7 @@
 
     function loadMath() {
       var answer = document.getElementById("mathanswer");
-      answer.style.color = "hsl(284, 22%, 87%)";
+      answer.style.color = "hsl(14, 22%, 87%)";
       answer.innerHTML = "";
       document.getElementById("enter").addEventListener("click",submit);
       window.addEventListener("keyup", keyType);
