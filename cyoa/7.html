@@ -24,7 +24,7 @@
       <div class='number' onclick='choose(7)'>7</div> <div class='number' onclick='choose(8)'>8</div> <div class='number' onclick='choose(9)'>9</div>
       <div class='number' onclick='choose(4)'>4</div> <div class='number' onclick='choose(5)'>5</div> <div class='number' onclick='choose(6)'>6</div>
       <div class='number' onclick='choose(1)'>1</div> <div class='number' onclick='choose(2)'>2</div> <div class='number' onclick='choose(3)'>3</div>
-      <div class='number' onclick='zoom(5)'>+</div> <div class='number' onclick='zoom(-5)'>-</div>
+      <div class='number' onclick='zoom(10)'>+</div> <div class='number' onclick='zoom(-10)'>-</div>
     </div>
     <script>
     var difficulty = 0;
@@ -49,9 +49,9 @@
     }
 
     function zoom(amount) {
-      var current = document.getElementById("choicepad").style.width;
-      document.getElementById("choicepad").style.width = current + amount;
-      document.getElementById("numberpad").style.width = current + amount;
+      var current = document.getElementById("choicepad").innerWidth;
+      document.getElementById("choicepad").innerWidth = current + amount;
+      document.getElementById("numberpad").innerWidth = current + amount;
     }
 
     function startMath() {
