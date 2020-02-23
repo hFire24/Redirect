@@ -9,6 +9,10 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme2">
+    <div id='hydrate' width='100%' height='100%' class='theme7 space'>
+      <h2 class='space'>Stand up and stretch if you can.<br>Refill your bottle and drink water.</h1>
+      <a class='anime-link' onclick='disappear()'>OK</a>
+    </div>
     <div id='break' class='space'>Check your gTasks list, please.<br>Does the first unfinished task require standing up?</div>
     <div class='three-list'>
       <a class='anime-link' href="3.html">Yes</a>
@@ -17,10 +21,13 @@
     </div>
     <a class='anime-link' href="5.html">Don't feel like checking</a>
     <script>
-      var hydrate = Math.floor(Math.random() * 8);
+      var hydrate = Math.floor(Math.random() * 10);
       console.log(hydrate);
       if (hydrate === 1)
-        location.href = "52.html";
+        document.getElementById("hydrate").style.display = "block";
+      function disappear() {
+        document.getElementById("hydrate").style.display = "none";
+      }
     </script>
   </body>
 </html>

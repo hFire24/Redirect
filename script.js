@@ -15,6 +15,10 @@ function loadWebsite(number) {
   randomTheme(number);
 }
 
+function $(x) {
+  return document.getElementById(x);
+}
+
 function loadBreak(index) {
   var messages = [//Relaxation
   'Listen to this.',
@@ -35,8 +39,8 @@ function loadBreak(index) {
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
     //Homework
-  'Do homework.<br>You may need to stand up and stretch.',
-  'Get assignments done.<br>You may need to stand up and stretch.',
+  'Do homework.<br>You may need to stand up and stretch and change clothes.',
+  'Get assignments done.<br>You may need to stand up and stretch and change clothes.',
   'If you\'re struggling with homework, do a different assignment.',
   'Check Blackboard for assignments, then do one of them.',
   //'Make progress on a big project.',
@@ -104,9 +108,9 @@ function loadBreak(index) {
     do
       index = Math.floor(Math.random() * messages.length);
     while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
-  var message = document.getElementById("break");
-  var standupMessage = document.getElementById("standup");
-  var changeMessage = document.getElementById("changeclothes");
+  var message = $("break");
+  var standupMessage = $("standup");
+  var changeMessage = $("changeclothes");
   var standIndex = index - (messages.length - standup.length);
   var changeIndex = standIndex - (standup.length - changeclothes.length);
   switch(index)
@@ -178,17 +182,17 @@ function loadBreak(index) {
   if(message.innerHTML === 'Stand up and stretch if you can.')
   {
     console.log("Standup " + standIndex);
-    message.addEventListener("click",function() {document.getElementById("standup").style.display = 'block';});
+    message.addEventListener("click",function() {$("standup").style.display = 'block';});
     standupMessage.innerHTML = standup[standIndex];
     if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.')
     {
       console.log("Change Clothes " + changeIndex);
       changeMessage.innerHTML = changeclothes[changeIndex];
-      standupMessage.addEventListener("click",function() {document.getElementById("changeclothes").style.display = 'block';});
+      standupMessage.addEventListener("click",function() {$("changeclothes").style.display = 'block';});
     }
   }
-  if(index >= messages.indexOf("Do homework.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
-    message.addEventListener("click",function() {var exists = document.getElementById("vader");
+  if(index >= messages.indexOf("Do homework.<br>You may need to stand up and stretch and change clothes.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
+    message.addEventListener("click",function() {var exists = $("vader");
       if (!exists) {
         var video = document.createElement("video");
         video.id = "vader";
@@ -198,7 +202,7 @@ function loadBreak(index) {
         video.appendChild(source);
         document.body.appendChild(video);
       }
-    document.getElementById("vader").play();});
+    $("vader").play();});
 }
 
 function randomMessage(index) {
@@ -240,20 +244,20 @@ function randomMessage(index) {
   if (index < 0 || index >= redirectMessages.length)
     index = Math.floor(Math.random() * redirectMessages.length);
   //Put message to screen using the index value of the array
-  document.getElementById("message").innerHTML = redirectMessages[index];
+  $("message").innerHTML = redirectMessages[index];
   if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 9 && Math.floor(Math.random() * 3))
   {
-    document.getElementById("message").innerHTML = "Get ready for church!";
+    $("message").innerHTML = "Get ready for church!";
     index = redirectMessages.length + 2;
   }
   if ((d.getHours() <= 5 || d.getHours() >= 22) && !Math.floor(Math.random() * 5))
   {
-    document.getElementById("message").innerHTML = 'You should be asleep by now.';
+    $("message").innerHTML = 'You should be asleep by now.';
     index = redirectMessages.length;
   }
   //Put index value to the console
   console.log("Message " + index);
-  randomLink(document.getElementById("message").innerHTML);
+  randomLink($("message").innerHTML);
 }
 
 function randomLink(message) {
@@ -265,8 +269,8 @@ function randomLink(message) {
   if (message === "Get back to whatever you should be doing!")
     linkIndex = 0;
   //Put link message and to screen using the index value of the array
-  var parent = document.getElementById("hideable");
-  var link = document.getElementById("link");
+  var parent = $("hideable");
+  var link = $("link");
   if(!link) {
     link = document.createElement("div");
     link.id = "link";
@@ -342,7 +346,7 @@ function randomQuestion(index) {
   'Where do you see yourself in 2 years?'];
   if (index < 0 || index >= questions.length)
     index = Math.floor(Math.random() * questions.length);
-  document.getElementById("question").innerHTML = questions[index];
+  $("question").innerHTML = questions[index];
   //Put index value to the console
   console.log("Question " + index);
 }
@@ -352,7 +356,7 @@ var messageComplete = true;
 function randomTheme(number) {
   //Pick a random theme
   var theme;
-  var parent = document.getElementById("hideable");
+  var parent = $("hideable");
   var themeText = document.createElement("div");
   themeText.id = "theme";
   theme = Math.floor(Math.random() * 5) + 1;
@@ -381,7 +385,7 @@ function randomTheme(number) {
   console.log("Theme " + theme);
   if(number === 80) {
     messageComplete = false;
-    var input = document.getElementById("newBreak");
+    var input = $("newBreak");
     input.addEventListener("keyup", function (event) {
       if (event.keyCode === 13) {
         event.preventDefault();
@@ -392,20 +396,20 @@ function randomTheme(number) {
 }
 
 function getWidth() {
-  document.getElementById("width").innerHTML = window.innerWidth;
+  $("width").innerHTML = window.innerWidth;
 }
 
 function createMessage() {
-  var parent = document.getElementById("custom");
-  var newMessage = document.getElementById("newBreak");
-  var button = document.getElementById("messageButton");
+  var parent = $("custom");
+  var newMessage = $("newBreak");
+  var button = $("messageButton");
   var message = document.createElement("div");
   message.id = "break";
   message.className = "space";
-  if(document.getElementById("size").checked)
+  if($("size").checked)
     message.classList.add("big");
   message.innerHTML = newMessage.value;
-  parent.removeChild(document.getElementById("instructions"));
+  parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
   parent.removeChild(button);
   parent.removeChild(breaklink);
@@ -414,7 +418,7 @@ function createMessage() {
   messageComplete = true;
 }
 
-var hide = document.getElementById("hideable");
+var hide = $("hideable");
 window.addEventListener("keyup", function (event) {
   if (event.keyCode === 66 && messageComplete) {
     event.preventDefault();

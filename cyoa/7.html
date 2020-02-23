@@ -8,9 +8,15 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme4">
+  <body class="theme9">
     <div id='break' class='space'>OK, fine. Solve some math problems.</div>
-    <div id='bringit' class='space'>Choose a level! I'd start with 1 if I were new.</div>
+    <div id='choicepad' class='mathpad space'>
+      <div class='number' onclick='choose(7)'>7</div> <div class='number' onclick='choose(8)'>8</div> <div class='number' onclick='choose(9)'>9</div>
+      <div class='number' onclick='choose(4)'>4</div> <div class='number' onclick='choose(5)'>5</div> <div class='number' onclick='choose(6)'>6</div>
+      <div class='number' onclick='choose(1)'>1</div> <div class='number' onclick='choose(2)'>2</div> <div class='number' onclick='choose(3)'>3</div>
+      <div class='number' style='grid-column: span 3;' onclick='choose(0)'>0</div>
+    </div>
+    <div id='bringit' style='margin-top:0.5em;'>Choose a level! I'd start with 1 if I were new.</div>
     <div id='math' style='display:none;'>
       <div class='space'><span id="mathproblem" class='number'></span> = <span id="mathanswer" class='number'></span></div>
       <div id='numberpad' class='mathpad'>
@@ -20,15 +26,9 @@
         <div class='number' onclick='type(0)'>0</div> <div class='number' onclick='type("-")'>◀</div> <div id='enter' class='number' style='color:#0F0;'>↵</div>
       </div>
     </div>
-    <div id='choicepad' class='mathpad'>
-      <div class='number' onclick='choose(7)'>7</div> <div class='number' onclick='choose(8)'>8</div> <div class='number' onclick='choose(9)'>9</div>
-      <div class='number' onclick='choose(4)'>4</div> <div class='number' onclick='choose(5)'>5</div> <div class='number' onclick='choose(6)'>6</div>
-      <div class='number' onclick='choose(1)'>1</div> <div class='number' onclick='choose(2)'>2</div> <div class='number' onclick='choose(3)'>3</div>
-      <div class='number' onclick='zoom(10)'>+</div> <div class='number' onclick='zoom(-10)'>-</div>
-    </div>
     <script>
-    var difficulty = 0;
-    var numProblems = 0;
+    var difficulty = -1;
+    var numProblems = -1;
     var correct = 0;
     var incorrect = 0;
     var number1;
@@ -36,22 +36,16 @@
     var number3;
 
     function choose(number) {
-      if(difficulty === 0)
+      if(difficulty === -1)
       {
         difficulty = number;
         var random = Math.floor(Math.random() * 8) + 1;
-        document.getElementById("bringit").innerHTML = "Pick " + random + ". If you guess " + random + " right, you level up.<br>Get 3 wrong, and you level down.";
+        document.getElementById("bringit").innerHTML = "Pick " + random + ". If you guess " + random + " right, you level up.<br>Get 3 wrong, and you level down.<br>Don't want leveling up? Press 0.";
       }
-      else if(numProblems === 0)
+      else if(numProblems === -1)
         numProblems = number;
-      if(numProblems !== 0)
+      if(numProblems !== -1)
         startMath();
-    }
-
-    function zoom(amount) {
-      var current = document.getElementById("choicepad").innerWidth;
-      document.getElementById("choicepad").innerWidth = current + amount;
-      document.getElementById("numberpad").innerWidth = current + amount;
     }
 
     function startMath() {
@@ -77,12 +71,18 @@
 
     function loadMath() {
       var answer = document.getElementById("mathanswer");
-      answer.style.color = "hsl(14, 22%, 87%)";
+      answer.style.color = "hsl(59, 22%, 87%)";
       answer.innerHTML = "";
       document.getElementById("enter").addEventListener("click",submit);
       window.addEventListener("keyup", keyType);
       switch (difficulty)
       {
+        case 0:
+          document.getElementById("break").innerHTML = "Level 0: Toddler";
+          number1 = getNumber(0);
+          number2 = 0;
+          document.getElementById("mathproblem").innerHTML = "Press " + number1 + ". Then press ↵";
+          break;
         case 1:
           document.getElementById("break").innerHTML = "Level 1: Noob";
           number1 = getNumber(1);
@@ -148,7 +148,9 @@
 
     function getNumber(digits)
     {
-      if(digits === 1)
+      if(digits === 0)
+        return Math.floor(Math.random() * 10);
+      else if(digits === 1)
         return Math.floor(Math.random() * 9) + 1;
       else if(digits === 2)
         return Math.floor(Math.random() * 90) + 10;
@@ -204,8 +206,11 @@
         number1 * number2 + number3 === answer) {
         correct++;
         var checkmarks = '';
-        for(var i = 0; i < correct; i++)
-          checkmarks = checkmarks.concat('✅<br>');
+        if(difficulty !== 9 && numProblems !== 0)
+          for(var i = 0; i < correct; i++)
+            checkmarks = checkmarks.concat('✅<br>');
+        else
+          checkmarks = '✅' + correct;
         checks.innerHTML = checkmarks;
         message.innerHTML = generatePraiseMessage();
         mathAnswer.style.color = "#0F0";
@@ -213,8 +218,11 @@
       else {
         incorrect++;
         var crosses = '';
-        for(var i = 0; i < incorrect; i++)
-          crosses = crosses.concat('❌<br>');
+        if(numProblems !== 0)
+          for(var i = 0; i < incorrect; i++)
+            crosses = crosses.concat('❌<br>');
+        else
+          crosses = incorrect + '❌';
         crossMarks.innerHTML = crosses;
         message.innerHTML = generateWrongMessage();
         mathAnswer.style.color = "red";
@@ -264,12 +272,12 @@
         incorrect = 0;
         crossMarks.innerHTML = '';
       }
-      if(correct >= numProblems && difficulty < 9) {
+      if(correct >= numProblems && difficulty < 9 && numProblems !== 0) {
         correct = 0;
         incorrect = 0;
         difficulty++;
       }
-      else if(incorrect >= 3 && difficulty > 1) {
+      else if(incorrect >= 3 && difficulty > 1 && numProblems !== 0) {
         correct = 0;
         incorrect = 0;
         difficulty--;
