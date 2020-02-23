@@ -275,6 +275,10 @@ td {
     width:20px;
     height:20px;
   }
+
+  .mathpad {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -299,5 +303,9 @@ td {
   input[type='checkbox'], input[type='radio'] {
     width:15px;
     height:15px;
+  }
+
+  .mathpad {
+    width: 50%;
   }
 }
