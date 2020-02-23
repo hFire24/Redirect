@@ -226,18 +226,6 @@
           answer = number1 * number2 + number3;
         mathAnswer.innerHTML = answer.toString();
       }
-      if(correct >= numProblems && difficulty < 9) {
-        correct = 0;
-        incorrect = 0;
-        difficulty++;
-      }
-      else if(incorrect >= 3 && difficulty > 1) {
-        correct = 0;
-        incorrect = 0;
-        difficulty--;
-      }
-      console.log("correct answers: " + correct);
-      console.log("incorrect answers: " + incorrect);
       if (difficulty === 9)
         await sleep(5000);
       else if(difficulty > 4)
@@ -272,6 +260,22 @@
             await sleep(1000);
             break;
         }
+      if(correct%numProblems === 0 && difficulty === 9 && mathAnswer.style.color !== "red") {
+        incorrect = 0;
+        crossMarks.innerHTML = '';
+      }
+      if(correct >= numProblems && difficulty < 9) {
+        correct = 0;
+        incorrect = 0;
+        difficulty++;
+      }
+      else if(incorrect >= 3 && difficulty > 1) {
+        correct = 0;
+        incorrect = 0;
+        difficulty--;
+      }
+      console.log("correct answers: " + correct);
+      console.log("incorrect answers: " + incorrect);
       loadMath();
       if(correct === 0 && incorrect === 0)
       {
