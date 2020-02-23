@@ -23,14 +23,20 @@ function loadBreak(index) {
   'Look away from the screen for about 30 seconds.',
   'Take a deep breath.',
   'Put on some focus/relaxation music.',
+    //Task checking
+  'Check your tasks for the day.',
+  'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+  'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+  'Check your repeating tasks on To Do.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+  'Check your repeating tasks on To Do.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
     //Homework
-  'Do homework.',
-  'Get assignments done.',
+  'Do homework.<br>You may need to stand up and stretch.',
+  'Get assignments done.<br>You may need to stand up and stretch.',
   'If you\'re struggling with homework, do a different assignment.',
   'Check Blackboard for assignments, then do one of them.',
   //'Make progress on a big project.',
@@ -71,13 +77,7 @@ function loadBreak(index) {
   'Don\'t suck at group projects.',
   'Think of a goal. Any one. Set that as your break message.'];
 
-  var standup = [//Task checking
-  'Check your tasks for the day.',
-  'Check your gTasks list, please.<br>Do the first unfinished task.',
-  'Check your gTasks list, please.<br>Do the first unfinished task.',
-  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
-  'Check your repeating tasks on To Do.<br>Do the first unfinished task.',
-    //Health and fitness
+  var standup = [//Health and fitness
   'Refill your bottle and drink water.',
   'Go up and down the stairs for one minute.',
   'Stare at an object 20 feet away for 20 seconds.',
@@ -92,7 +92,7 @@ function loadBreak(index) {
   'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
   'Walk around for about 1-2 minutes. You may need to change clothes.',
-  'Play some Stepmania. You may need to change clothes first.']
+  'Play some Stepmania.'];
 
   var changeclothes = [];
   for(var i = 0; i < changeclothes.length; i++)
@@ -160,7 +160,7 @@ function loadBreak(index) {
     default:
       message.removeAttribute("href");
   }
-  if (standIndex === standup.indexOf("Play some Stepmania. You may need to change clothes first."))
+  if (standIndex === standup.indexOf("Play some Stepmania."))
     standupMessage.href = "stepmania.html";
   else
     standupMessage.removeAttribute("href");
