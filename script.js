@@ -409,6 +409,8 @@ function createMessage() {
   if($("size").checked)
     message.classList.add("big");
   message.innerHTML = newMessage.value;
+  if(newMessage.value.indexOf("Cirno") >= 0)
+    location.href = "cyoa/9.html";
   parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
   parent.removeChild(button);
