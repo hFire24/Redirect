@@ -162,11 +162,11 @@ permalink: /404.html
         parent.appendChild(link);
       }
       if (message === "Get ready for church!")
-        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/church.html'>Here's how to get ready.</a>";
+        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/church.html'>Here's how to get ready.</a>";
       else if (message === "May this page suggest you take a short break?")
-        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
       else if (linkIndex > 0)
-        link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else
         link.innerHTML = linkMessages[linkIndex];
       //Put index value to the console
@@ -212,11 +212,11 @@ permalink: /404.html
 
       function rejectSomething(time) {
         if(time === 1)
-          link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
         else if(time === 3)
-          link.innerHTML = "<a href='https://cfreeze9.github.io/Redirect/breaktime.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/breaktime.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
         else
-          location.href = "https://cfreeze9.github.io/Redirect/cyoa/1.html";
+          location.href = "https://hfire24.github.io/Redirect/cyoa/1.html";
       }
     </script>
   </body>
