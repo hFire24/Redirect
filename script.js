@@ -310,7 +310,7 @@ function randomLink(message) {
 
 function rejectSomething(time) {
   if(time === 1)
-    link.innerHTML = "<a href='breaktime.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='time.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 3)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else
@@ -429,7 +429,7 @@ function createMessage() {
     message.classList.add("big");
   message.innerHTML = newMessage.value;
   if(newMessage.value.indexOf("Cirno") >= 0)
-    location.href = "cyoa/9.html";
+    location.href = "cirno.html";
   parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
   parent.removeChild(button);
