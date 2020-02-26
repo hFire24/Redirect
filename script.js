@@ -2,10 +2,14 @@ var number = 0;
 var d = new Date();
 
 function loadWebsite(number) {
+  if(number >= 2 && number <= 3)
+  {
   if (number === 2)
-    loadBreak(-1);
+    loadSmallBreak();
   else if (number === 3)
-    randomMessage(-2);
+    loadBigBreak();
+  loadBreak(-1);
+  }
   else if (number === 4)
     randomQuestion(-1);
   else if (number === 5)
@@ -19,8 +23,12 @@ function $(x) {
   return document.getElementById(x);
 }
 
-function loadBreak(index) {
-  var messages = [//Relaxation
+var messages;
+var standup;
+var changeclothes = [];
+
+function loadSmallBreak(index) {
+  messages = [//Relaxation
   'Listen to this.',
   'Clear your mind.',
   'Pray a short prayer.',
@@ -30,14 +38,48 @@ function loadBreak(index) {
     //Task checking
   'Check your tasks for the day.',
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
-  'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
-  'Check your repeating tasks on To Do.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
   'Check your repeating tasks on To Do.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
+    //Music
+  'Add a new song to your iTunes library.',
+  'Put on some music to help you focus.',
+    //Miscellaneous
+  'Close tabs and programs.',
+  'Say out loud the thing you need to get done.',
+  //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
+  'Increase your spirituality.',
+  'Try answering this question.',
+    //Goals
+  'Click here.',
+  //'How can you build an everlasting romantic relationship from scratch?',
+  'Double your social skills.',
+  'Think of a goal. Any one. Set that as your break message.'];
+
+  standup = [//Health and fitness
+  'Refill your bottle and drink water.',
+  'Go up and down the stairs for one minute.',
+  'Stare at an object 20 feet away for 20 seconds.',
+  'Eat a snack if it has been 3 hours since you ate something.',
+  'Listen to your own music, and don\'t be afraid to dance to it.',
+    //Personal hygiene
+  'Change your clothes if they\'re dirty.',
+  'Change to your pajamas. No socks.',
+    //Miscellaneous Part 2
+  'Digitize at least one paragraph from your journal.',
+  'Walk around for about 1-2 minutes. You may need to change clothes.'];
+}
+
+function loadBigBreak() {
+  messages = [//Task checking
+  'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+  'Check your repeating tasks on To Do.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+    //Day planning
+  'Create tasks for today and tomorrow.',
+  'Make a plan for today and tomorrow.',
     //Homework
   'Do homework.<br>You may need to stand up and stretch and change clothes.',
   'Get assignments done.<br>You may need to stand up and stretch and change clothes.',
@@ -46,59 +88,35 @@ function loadBreak(index) {
   //'Make progress on a big project.',
   'Finish a piece of homework, even if the deadline is far.',
   'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
+  'Don\'t suck at group projects.',
     //Anime watching
   'Watch anime.',
   'If you\'re watching anime, watch a different anime.',
   'Watch anime.',
-    //Vague messages
-  'Get out of the drift, and get on the road to productivity.',
-  'Be productive! Do something good!',
-  'Keep doing great things and get a Tesla!',
-  'To become better, you need to do something else.',
-    //Music
-  'Listen to your own music.',
-  'Add a new song to your iTunes library.',
-  'Put on some music to help you do things.',
-  'Some music can help you focus.',
     //Miscellaneous
-  'Close tabs and programs.',
-  'Say out loud the thing you need to get done.',
-  //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
   'Drive around how you want in Need for Speed: Hot Pursuit.',
+  'Play Island (Visual Novel).',
   'No routine? Form one.',
-  'Increase your spirituality.',
-  'Try answering this question.',
   'How about multiple ways to take a break?',
     //Goals
   'Learn how to make chiptune music.',
-  'Click here.',
   'Learn how to use FL Studio.',
-  //'How can you build an everlasting romantic relationship from scratch?',
   'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
-  'Host a website for free that supports FileZilla.',
-  'Double your social skills.',
-  'Don\'t suck at group projects.',
-  'Think of a goal. Any one. Set that as your break message.'];
+  'Host a website for free that supports FileZilla.'];
 
-  var standup = [//Health and fitness
-  'Refill your bottle and drink water.',
-  'Go up and down the stairs for one minute.',
-  'Stare at an object 20 feet away for 20 seconds.',
-  'Eat something if it has been 3 hours since you ate something.',
-  'Listen to your own music, and don\'t be afraid to dance to it.',
+  standup = [//Health and fitness
+  'Eat a meal if it has been 3 hours since you ate something.',
     //Personal hygiene
-  'Change your clothes if they\'re dirty.',
-  'Change to your pajamas. No socks.',
   'Take a shower if you hadn\'t today, even if it\'s cold in your room.',
     //Miscellaneous Part 2
   'Declutter your room.',
   'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
-  'Walk around for about 1-2 minutes. You may need to change clothes.',
   'Play some Stepmania.'];
+}
 
-  var changeclothes = [];
+function loadBreak(index) {
   for(var i = 0; i < changeclothes.length; i++)
     standup.push("Change to appropriate clothes if necessary.");
   for(i = 0; i < standup.length; i++)
@@ -107,7 +125,8 @@ function loadBreak(index) {
   if (index < 0 || index >= messages.length)
     do
       index = Math.floor(Math.random() * messages.length);
-    while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
+    while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20 ||
+    index - (messages.length - standup.length) === standup.indexOf("Walk around for about 1-2 minutes. You may need to change clothes.") && (d.getHours() < 7 || d.getHours() > 19));
   var message = $("break");
   var standupMessage = $("standup");
   var changeMessage = $("changeclothes");
@@ -115,8 +134,8 @@ function loadBreak(index) {
   var changeIndex = standIndex - (standup.length - changeclothes.length);
   switch(index)
   {
-    case 0:
-    case 1:
+    case messages.indexOf("Listen to this."):
+    case messages.indexOf("Clear your mind."):
       message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
       break;
     case messages.indexOf("Look away from the screen for about 30 seconds."):
@@ -149,7 +168,7 @@ function loadBreak(index) {
     case messages.indexOf("Learn how to use FL Studio."):
       message.href = "chiptunelessons.html";
       break;
-    case messages.indexOf("Learn how to make chiptune music.") + 1:
+    case messages.indexOf("Click here."):
       message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
       break;
     case messages.indexOf("Go to Skillshare, and learn programming."):
