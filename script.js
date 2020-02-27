@@ -38,7 +38,7 @@ function loadSmallBreak(index) {
     //Task checking
   'Check your tasks for the day.',
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
-  'Check your repeating tasks on To Do.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+  'Check your To Do spreadsheet.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
@@ -76,7 +76,7 @@ function loadSmallBreak(index) {
 function loadBigBreak() {
   messages = [//Task checking
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
-  'Check your repeating tasks on To Do.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+  'Check your To Do spreadsheet.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
