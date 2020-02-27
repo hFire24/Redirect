@@ -362,7 +362,8 @@ function randomQuestion(index) {
   'What compels you to look at anime pictures?',
   'How can you overcome addictions?',
   'Why do certain things appeal to you?',
-  'Where do you see yourself in 2 years?'];
+  'Where do you see yourself in 2 years?',
+  'Why do you love and seek out cute things?'];
   if (index < 0 || index >= questions.length)
     index = Math.floor(Math.random() * questions.length);
   $("question").innerHTML = questions[index];
