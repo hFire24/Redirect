@@ -21,6 +21,8 @@
       'ERADICATE THE SIN OF LUST',
       'DO NOT SIN ON CERTAIN WEBSITES',
       'DO NOT GO AGAINST THE TEACHINGS OF JESUS',
+      'YOU NEED MORE JESUS',
+      'LEARN THE DEFINITION OF PAMPHLET',
       'DO NOT SEVERELY DISAPPOINT YOUR PARENTS',
       'DO NOT BE A LOSER',
       'DO NOT ABANDON GOALS',
@@ -43,9 +45,7 @@
       'YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣',
       'YOU ARE NOT SUPPOSED TO SEE BAD THINGS',
       'YOU SHOULD NEVER VISIT THAT WEBSITE',
-      'YOU LOST CONTROL.<br>GET IT BACK',
       'YOU MUST SNAP OUT OF IT',
-      'YOU NEED MORE JESUS',
       'UNCLEAN WEBSITE HAS BEEN CONTAINED',
       'THAT UNSAFE WEBSITE IS BLOCKED',
       'HARMFUL STUFF IS BLOCKED',
@@ -59,7 +59,6 @@
       'PLAY FURY OF THE STORM',
       'PLAY NOT AFRAID',
       'GET OUT OF HERE',
-      'LEARN THE DEFINITION OF PAMPHLET',
       'FANTASIZING IS AWFUL',
       'THINK OF SOMETHING ELSE',
       'ANYTHING SEXUALLY AROUSING IS TERRIBLE'];
@@ -81,6 +80,8 @@
         link.href = "https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8";
       else if (index === messages.indexOf("PLAY NOT AFRAID"))
         link.href = "https://youtu.be/SLE166_Oz_4";
+      else if(index >= messages.indexOf('DO NOT GO AGAINST THE TEACHINGS OF JESUS') && index <= messages.indexOf('LEARN THE DEFINITION OF PAMPHLET'))
+        link.href = "https://www.churchofjesuschrist.org/bc/content/ldsorg/content/english/manual/missionary/pdf/36951_the-gospel-of-jesus-christ-eng.pdf?lang=eng";
     </script>
   </body>
 </html>
