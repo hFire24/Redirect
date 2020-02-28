@@ -362,7 +362,8 @@ function randomQuestion(index) {
   'How can you overcome addictions?',
   'Why do certain things appeal to you?',
   'Where do you see yourself in 2 years?',
-  'Why do you love and seek out cute things?'];
+  'Why do you love and seek out cute things?',
+  'How can you be consistent with your moral values?'];
   if (index < 0 || index >= questions.length)
     index = Math.floor(Math.random() * questions.length);
   $("question").innerHTML = questions[index];
