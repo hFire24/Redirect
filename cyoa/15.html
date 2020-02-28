@@ -24,14 +24,44 @@
       "If you keep doing great things, you'll get a Tesla!",
       "Win a million dollars! It's harder to do than earning $1000000.",
       "The road to productivity. Take it, and you'll be successful.",
-      "Be productive! Do something good!",
-      "Make John Purdue proud!"];
-      for(var i = messages.length; i < 30; i++)
+      "Be a productive human being! Do something good!",
+      "Make John Purdue proud!",
+      //Quotes for lazy 1-10
+      '"Inspiration is a guest that does not willingly visit the lazy." – Tchaikovsky',
+      '"Laziness is a secret ingredient that goes into failure. But it’s only kept a secret from the person who fails." – Robert Half',
+      '"If we don’t start today, it will be too late for tomorrow." – Anthony T.Hincks',
+      '"Luck is always the last refuge of laziness and incompetence." – James Cash Penney',
+      '"The trouble with the world is that laziness is seldom curable and never fatal." – Evan Esar',
+      '"Laziness will stop your progress in your spiritual practice." – Renuka Singh',
+      '"Failure is not our only punishment for laziness, there is also the success of others." – Jules Renard',
+      '"If you wait for the mango fruits to fall, you’d be wasting your time while others are learning how to climb the tree" – Michael Bassey Johnson',
+      '"Stay away from lazy parasites, who perch on you just to satisfy their needs, they do not come to alleviate your burdens, hence, their mission is to distract, detract and extract, and make you live in abject poverty." – Michael Bassey Johnson',
+      '"Offer the lazy an egg, and they’ll want you to peel it for them." – Unknown'];
+      for(var i = messages.length; i < 40; i++)
         messages.push("<a href='https://www.inc.com/lolly-daskal/100-motivational-quotes-that-will-inspire-you-to-succeed.html' target='_blank'>Here. Try reading some quotes from this page.</a>");
       for(i = messages.length; i < 100; i++)
         messages.push("<a href='https://www.quotesweekly.com/motivational-quotes-on-laziness-to-overcome-it/' target='_blank'>Here. Try reading these quotes from this page.</a>");
       var index = Math.floor(Math.random() * messages.length);
-      document.getElementById("break").innerHTML = messages[index];
+      var quote = document.getElementById("break");
+      quote.innerHTML = messages[index];
+
+      if(quote.innerHTML.length > 200)
+      {
+        var x = window.matchMedia("(max-width: 567px)");
+        var y = window.matchMedia("(max-width: 1135px)");
+        resizeText(x,y);
+        x.addListener(myFunction);
+        y.addListener(myFunction);
+      }
+
+      function resizeText(verySmall,small) {
+        if (x.matches)
+          quote.style.fontSize = "20px";
+        else if (y.matches)
+          quote.style.fontSize = "30px";
+        else
+          quote.style.fontSize = "60px";
+      }
     </script>
   </body>
 </html>
