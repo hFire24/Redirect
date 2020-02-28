@@ -70,7 +70,7 @@ function loadSmallBreak(index) {
   'Change to your pajamas. No socks.',
     //Miscellaneous Part 2
   'Digitize at least one paragraph from your journal.',
-  'Walk around for about 1-2 minutes. You may need to change clothes.'];
+  'Get on the treadmill.'];
 }
 
 function loadBigBreak() {
@@ -125,8 +125,7 @@ function loadBreak(index) {
   if (index < 0 || index >= messages.length)
     do
       index = Math.floor(Math.random() * messages.length);
-    while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20 ||
-    index - (messages.length - standup.length) === standup.indexOf("Walk around for about 1-2 minutes. You may need to change clothes.") && (d.getHours() < 7 || d.getHours() > 19));
+    while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
   var message = $("break");
   var standupMessage = $("standup");
   var changeMessage = $("changeclothes");
