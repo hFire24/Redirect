@@ -15,24 +15,14 @@
     <a href='cyoa/1.html'>Feeling stuck?</a>
     <script>
       var messages = ['DO NOT FAP',
-      'DO NOT GO TO HELL',
-      'DO NOT FORSAKE GOD',
-      'DO NOT COMMIT DEADLY SINS',
       'ERADICATE THE SIN OF LUST',
       'DO NOT SIN ON CERTAIN WEBSITES',
       'DO NOT GO AGAINST THE TEACHINGS OF JESUS',
       'YOU NEED MORE JESUS',
-      'LEARN THE DEFINITION OF PAMPHLET',
-      'DO NOT SEVERELY DISAPPOINT YOUR PARENTS',
-      'DO NOT BE A LOSER',
-      'DO NOT ABANDON GOALS',
       'DO NOT MESS WITH TIME',
       'DO NOT PROCRASTURBATE',
-      'DON\'T YOU DARE DO IT',
-      'DO NOT BE A LAZY P.O.S.',
       'DO NOT DO SHAMEFUL THINGS',
       'DO NOT DESTROY YOUR FUTURE',
-      'DO NOT FALL INTO TEMPTATION',
       'DO NOT BE A SICK DEGENERATE',
       'DO NOT BE DOOMED INTO OBLIVION',
       'DO NOT FURTHER CORRUPT YOURSELF',
@@ -40,29 +30,20 @@
       'DO NOT EVEN THINK ABOUT RELAPSING',
       'DO NOT THINK OF IMMORAL FANTASIES',
       'DO NOT LET YOUR URGES DICTATE YOU',
-      'DO NOT FEEL DEPRIVED.<br>FEEL LIBERATED',
       'DO NOT SEEK FOR SEXUALLY PLEASING THINGS',
       'YOU WERE REDIRECTED FROM A DANGEROUS WEBSITE',
       'YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣',
-      'YOU ARE NOT SUPPOSED TO SEE BAD THINGS',
-      'YOU SHOULD NEVER VISIT THAT WEBSITE',
       'YOU MUST SNAP OUT OF IT',
       'UNCLEAN WEBSITE HAS BEEN CONTAINED',
       'THAT UNSAFE WEBSITE IS BLOCKED',
       'HARMFUL STUFF IS BLOCKED',
-      'GOING THERE IS FORBIDDEN',
-      'THIS IS UNACCEPTABLE',
-      'STOP IT AND GET SOME HELP',
-      'OBLITERATE THAT BAD HABIT',
-      'NUKE ALL YOUR BAD THOUGHTS',
-      'GET THAT TABOO THOUGHT OUT OF YOUR MIND',
       'PLAY TABERNACLE CHOIR MUSIC',
       'PLAY FURY OF THE STORM',
-      'PLAY NOT AFRAID',
-      'GET OUT OF HERE',
       'FANTASIZING IS AWFUL',
       'THINK OF SOMETHING ELSE',
-      'ANYTHING SEXUALLY AROUSING IS TERRIBLE'];
+      'ANYTHING SEXUALLY AROUSING IS TERRIBLE',
+      'STOP TYPING IN ADDRESSES OF SINFUL WEBSITES',
+      'NO MORE OF THIS BS.<br>YOU UNDERSTAND?'];
       var index = Math.floor(Math.random() * messages.length);
       var message = document.getElementById("message");
       if(index === messages.indexOf('YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣'))
@@ -79,9 +60,7 @@
         message.innerHTML = '☢' + messages[index] + '☢';
       if (index === messages.indexOf("PLAY FURY OF THE STORM"))
         link.href = "https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8";
-      else if (index === messages.indexOf("PLAY NOT AFRAID"))
-        link.href = "https://youtu.be/SLE166_Oz_4";
-      else if(index >= messages.indexOf('DO NOT GO AGAINST THE TEACHINGS OF JESUS') && index <= messages.indexOf('LEARN THE DEFINITION OF PAMPHLET'))
+      else if(index >= messages.indexOf('DO NOT GO AGAINST THE TEACHINGS OF JESUS') && index <= messages.indexOf('YOU NEED MORE JESUS'))
         link.href = "https://www.churchofjesuschrist.org/bc/content/ldsorg/content/english/manual/missionary/pdf/36951_the-gospel-of-jesus-christ-eng.pdf?lang=eng";
     </script>
   </body>
