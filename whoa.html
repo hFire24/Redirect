@@ -12,6 +12,7 @@
     <div id='message' class='space'></div>
     <div class='space'><a id='link' href="https://emergency.nofap.com/redirect?religious=true&cat=em">Click here</a> and
     <a href="chiptunelessons.html">DON'T give up.</a></div>
+    <a href='cyoa/1.html'>Feeling stuck?</a>
     <script>
       var messages = ['DO NOT FAP',
       'DO NOT GO TO HELL',
@@ -39,6 +40,7 @@
       'DO NOT FEEL DEPRIVED.<br>FEEL LIBERATED',
       'DO NOT SEEK FOR SEXUALLY PLEASING THINGS',
       'YOU WERE REDIRECTED FROM A DANGEROUS WEBSITE',
+      'YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣',
       'YOU ARE NOT SUPPOSED TO SEE BAD THINGS',
       'YOU SHOULD NEVER VISIT THAT WEBSITE',
       'YOU LOST CONTROL.<br>GET IT BACK',
@@ -63,7 +65,12 @@
       'ANYTHING SEXUALLY AROUSING IS TERRIBLE'];
       var index = Math.floor(Math.random() * messages.length);
       var message = document.getElementById("message");
-      if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
+      if(index === messages.indexOf('YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣'))
+      {
+        message.innerHTML = messages[index];
+        message.color = '#90F';
+      }
+      else if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
       {
         message.innerHTML = '✝' + messages[index] + '✝';
         link.href = "https://www.thetabernaclechoir.org/listen.html";
