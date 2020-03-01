@@ -135,7 +135,7 @@ function loadBreak(index) {
   {
     case messages.indexOf("Listen to this."):
     case messages.indexOf("Clear your mind."):
-      message.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
+      message.href = "https://www.dropbox.com/sh/6pw78gq1vty860o/AABxsvUAWPsWw29v7dxiSYT7a?dl=0";
       break;
     case messages.indexOf("Look away from the screen for about 30 seconds."):
       message.href = "https://www.google.com/search?q=30+second+timer";
