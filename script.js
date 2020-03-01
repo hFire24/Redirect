@@ -238,7 +238,6 @@ function randomMessage(index) {
   'May this page suggest you take a short break?',
   'It is a good idea to get things done.',
   'Your mind must be wandering off, isn\'t it?',
-  'What other important things do you need to get done?',
   'This is a webpage. And it intercepted your internet access!',
   'Stop typing in addresses of distracting websites!',
   'You\'re wasting your time! Come on!',
@@ -253,7 +252,8 @@ function randomMessage(index) {
   'Make sure you stay on task.',
   'You\'ve made it this far to code this webpage.',
   'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-  'You may need to switch your thought patterns.'];
+  'You may need to switch your thought patterns.',
+  'What other important things do you need to get done?'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
@@ -363,7 +363,8 @@ function randomQuestion(index) {
   'Why do certain things appeal to you?',
   'Where do you see yourself in 2 years?',
   'Why do you love and seek out cute things?',
-  'How can you be consistent with your moral values?'];
+  'How can you be consistent with your moral values?',
+  'What other important things do you need to get done?'];
   if (index < 0 || index >= questions.length)
     index = Math.floor(Math.random() * questions.length);
   $("question").innerHTML = questions[index];
