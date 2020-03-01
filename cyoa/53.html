@@ -8,62 +8,9 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme2">
-    <div id="break">This may come in handy.<br></div>
-    <div class="space"><span onclick="moveTime(-1)">⬅️</span> <span id="time">I don't know</span> <span onclick="moveTime(1)">➡️</span></div>
-    <div class='space'>Did you fap recently?
-      <input type="radio" id="size" name="fap" onclick="setFap(1)">Yes <input type="radio" id="size" name="fap" onclick="setFap(0)" checked="true">No
-    </div>
-    <div class='space'>Is the shower occupied?
-      <input type="radio" id="size" name="check" onclick="setCheck(2)">Yes <input type="radio" id="size" name="check" onclick="setCheck(1)">No
-    </div>
-    <div class='anime-link' onclick='showerResults()'>Submit</div>
-    <script>
-      var time = 3;
-      var fap = 0;
-      var check = 0;
-      function moveTime(distance)
-      {
-        var times = ["Today","Yesterday","At least 2 days ago","I don't know"];
-        time = time + distance;
-        if(time === 4)
-          time = 0;
-        else if(time === -1)
-          time = 3;
-        console.log(time);
-        document.getElementById("time").innerHTML = times[time];
-      }
-      function setFap(number)
-      {
-        var yesNo = ["No","Yes"];
-        fap = number;
-        console.log(fap);
-      }
-      function setCheck(number)
-      {
-        var checks = ["Too lazy to check.","No","Yes"];
-        check = number;
-        console.log(check);
-      }
-      function showerResults()
-      {
-        var needShower = false;
-        //You need a shower if you fapped or haven't showered today or yesterday.
-        if (fap === 1 || time > 1)
-          needShower = true;
-        //The submit link will redirect to page 14 if you don't need to take a shower, or you need to take a shower and you didn't check and didn't fap.
-        if (!needShower || needShower && check === 0 && fap === 0)
-          location.href = "14.html";
-        //The submit link will redirect to page 11 (take a shower) if you checked that the shower is available and you need to take a shower.
-        else if (check === 1 && needShower)
-          location.href = "11.html";
-        //The submit link will redirect to page 13 if you fapped recently and either didn't check the shower or the shower is occupied.
-        else if (fap === 1)
-          location.href = "13.html";
-        //The submit link will redirect to page 12 if you did not fap, need to take a shower, and the shower is occupied.
-        else
-          location.href = "12.html";
-      }
-    </script>
+  <body class="theme4">
+    <div id='break' class='space'>Harness the music, and turn that energy into productivity!</div>
+    <a class='anime-link' href="2.html">Continue</a>
+    <script></script>
   </body>
 </html>
