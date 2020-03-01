@@ -209,7 +209,7 @@ function loadBreak(index) {
       standupMessage.addEventListener("click",function() {$("changeclothes").style.display = 'block';});
     }
   }
-  if(index >= messages.indexOf("Do homework.<br>You may need to stand up and stretch and change clothes.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
+  if(messages.indexOf("Listen to this.") === -1 && index >= messages.indexOf("Do homework.<br>You may need to stand up and stretch and change clothes.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
     message.addEventListener("click",function() {var exists = $("vader");
       if (!exists) {
         var video = document.createElement("video");
