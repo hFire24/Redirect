@@ -238,7 +238,7 @@ function randomMessage(index) {
   'May this page suggest you take a short break?',
   'It is a good idea to get things done.',
   'Your mind must be wandering off, isn\'t it?',
-  'That website could have hurt you emotionally.',
+  'What other important things do you need to get done?',
   'This is a webpage. And it intercepted your internet access!',
   'Stop typing in addresses of distracting websites!',
   'You\'re wasting your time! Come on!',
@@ -253,7 +253,7 @@ function randomMessage(index) {
   'Make sure you stay on task.',
   'You\'ve made it this far to code this webpage.',
   'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-  'You should try to suppress some thoughts.'];
+  'You may need to switch your thought patterns.'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
     redirectMessages.push('Use the forest app! Trust me.');
