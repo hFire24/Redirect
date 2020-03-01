@@ -98,6 +98,12 @@ input[type='radio']:checked {
     background:#0F0;
 }
 
+img {
+  max-width:100%;
+  height:auto;
+  width:auto;
+}
+
 #stress {
   font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
