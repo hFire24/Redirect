@@ -275,10 +275,7 @@ function randomMessage(index) {
   }
   //Put index value to the console
   console.log("Message " + index);
-  randomLink($("message").innerHTML);
-}
-
-function randomLink(message) {
+  var message = $("message").innerHTML;
   var linkMessages = ["Immediately close this tab."];
   for (var i = 1; i <= 30; i++)
     linkMessages.push("Got something you need to do?");
