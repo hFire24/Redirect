@@ -224,13 +224,15 @@ function loadBreak(index) {
 }
 
 function randomMessage(index) {
-  var redirectMessages = ['You were redirected from a blacklisted website.',
+  var redirectMessages = ['Stop typing in addresses of distracting websites!',
+  'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Chino. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+  'Get back to whatever you should be doing!',
+  'You were redirected from a blacklisted website.',
   'You shouldn\'t access that website now.',
   'This website is blocked.',
   'Don\'t waste time getting distracted on blocked websites.',
   'Hey! You aren\'t supposed to do that!',
   'Don\'t you have anything better to do with your time?',
-  'Get back to whatever you should be doing!',
   'Today will be a great day to catch up with your schedule and tasks.',
   'You might regret visiting that blocked website.',
   'Don\'t go to time-wasting websites!',
@@ -239,11 +241,9 @@ function randomMessage(index) {
   'It is a good idea to get things done.',
   'Your mind must be wandering off, isn\'t it?',
   'This is a webpage. And it intercepted your internet access!',
-  'Stop typing in addresses of distracting websites!',
   'You\'re wasting your time! Come on!',
   'Ehem. You need to stop procrastinating.',
   'You won\'t complete your tasks quickly if you sidetrack.',
-  'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Chino. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
   'There\'s nothing beneficial to see there.',
   'Please get things done. I mean it.',
   'Time is a precious resource. Don\'t waste it.',
@@ -284,7 +284,7 @@ function randomLink(message) {
     linkMessages.push("Got something you need to do?");
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
-  if (message === "Get back to whatever you should be doing!")
+  if (index < 3)
     linkIndex = 0;
   //Put link message and to screen using the index value of the array
   var parent = $("hideable");
