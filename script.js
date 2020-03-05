@@ -54,6 +54,7 @@ function loadSmallBreak(index) {
   'Increase your spirituality.',
   'Try answering this question.',
   'Play one of these short games.',
+  'Watch anime for 5 minutes (or 20% full length).',
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
