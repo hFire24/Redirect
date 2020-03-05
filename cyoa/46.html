@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme3">
+    <div id='message' class='space'>Here are some short games.</div>
+    <div id='break' class='space'></div>
+    <div class='two-list'>
+      <a class='anime-link' href="http://www.flaminglunchbox.net/curvy">Curvy</a>
+      <a class='anime-link' href="http://entanglement.gopherwoodstudios.com/en-US-index.html">Entanglement</a>
+      <a class='anime-link' href="https://www.free-spider-solitaire.com/">Spider Solitaire (1 Suit)</a>
+      <a class='anime-link' href="https://cardbattlestadium.cfreeze9.repl.co/">Card Battle Stadium</a>
+      <a class='anime-link' href="7.html">Math Game</a>
+      <a class='anime-link' href="54.html">Rock Paper Scissors</a>
+    </div>
+    <script>
+      var games = ["Curvy",
+      "Entanglement",
+      "Spider Solitaire",
+      "Card Battle Stadium",
+      "Math Game",
+      "Rock Paper Scissors"];
+      var game = games[Math.floor(Math.random() * games.length)]
+      document.getElementById("break").innerHTML = "Can't decide? Choose " + game + "."
+    </script>
+  </body>
+</html>

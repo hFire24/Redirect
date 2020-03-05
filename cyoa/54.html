@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Play Rock Paper Scissors</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme4">
+    <div id='message' class='space'>Let's Play Rock Paper Scissors</div>
+    <div id='break' class='space'>Choose a Difficulty</div>
+    <div id='difficulty' class='three-list'>
+      <a class='anime-link' onClick=setMode(1)>Easy</a>
+      <a class='anime-link' onClick=setMode(2)>Medium</a>
+      <a class='anime-link' onClick=setMode(3)>Hard</a>
+    </div>
+    <div id='rps' style='display:none;' class='three-list'>
+      <a id='rock' class='anime-link' onClick=play(1)>Rock</a>
+      <a id='paper' class='anime-link' onClick=play(2)>Paper</a>
+      <a id='scissors' class='anime-link' onClick=play(3)>Scissors</a>
+    </div>
+    <br>
+    <div id='computer' class='space'></div>
+    <div id='result' class='space'></div>
+    <div id='playagain' onClick='playAgain()'>Play again?</div>
+    <script>
+      var mode = 2;
+      var player;
+      function setMode(difficulty)
+      {
+        mode = difficulty;
+        document.getElementById('break').style.display = "none";
+        document.getElementById('difficulty').style.display = "none";
+        document.getElementById('rps').style.display = "block";
+      }
+      function play(element)
+      {
+        player = chooseElement(element);
+        console.log(player);
+        //Losing element refers to an element that would make the computer lose.
+        var losingElement = chooseLosingElement(element);
+        //Winning element refers to an element that would make the computer win.
+        var winningElement = chooseWinningElement(element);
+        var tyingElement = player;
+        document.getElementById(player).style.color = "black";
+        var computer = [chooseElement(Math.floor(Math.random() * 3)),chooseElement(Math.floor(Math.random() * 3))];
+        var compChoice = computer[0];
+        if(mode === 1 && (computer[1] === losingElement || computer[0] === winningElement))
+          compChoice = computer[1];
+        else if(mode === 3 && (computer[1] === winningElement || computer[0] === losingElement))
+          compChoice = computer[1];
+        console.log(compChoice);
+        document.getElementById("computer").innerHTML = "I choose " + compChoice + "!";
+        if(compChoice === tyingElement)
+          document.getElementById("result").innerHTML = "It's a tie!";
+        else if(compChoice === losingElement)
+          document.getElementById("result").innerHTML = "You win!";
+        else
+          document.getElementById("result").innerHTML = "I win!";
+        document.getElementById("playagain").style.display = "block";
+      }
+      function chooseElement(element)
+      {
+        switch(element) {
+          case 1:
+            return "rock";
+            break;
+          case 2:
+            return "paper";
+            break;
+          default:
+            return "scissors";
+        }
+      }
+      function chooseLosingElement(element)
+      {
+        switch(element) {
+          case 1:
+            return "scissors";
+            break;
+          case 2:
+            return "rock";
+            break;
+          default:
+            return "paper";
+        }
+      }
+      function chooseWinningElement(element)
+      {
+        switch(element) {
+          case 1:
+            return "paper";
+            break;
+          case 2:
+            return "scissors";
+            break;
+          default:
+            return "rock";
+        }
+      }
+      function playAgain()
+      {
+        document.getElementById(player).style.color = "hsl(14, 22%, 87%)";
+        document.getElementById("computer").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("playagain").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

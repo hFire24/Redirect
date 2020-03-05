@@ -104,6 +104,14 @@ img {
   width:auto;
 }
 
+#playagain {
+  display: none;
+  width: 300px;
+  background-color: limegreen;
+  color: black;
+  margin: auto;
+}
+
 #stress {
   font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
