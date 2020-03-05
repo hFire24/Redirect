@@ -432,7 +432,7 @@ function createMessage() {
   if($("size").checked)
     message.classList.add("big");
   message.innerHTML = newMessage.value;
-  if(newMessage.value.indexOf("Cirno") >= 0)
+  if(newMessage.value.toLowerCase().indexOf("cirno") >= 0)
     location.href = "cirno.html";
   parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
