@@ -53,6 +53,7 @@ function loadSmallBreak(index) {
   //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
   'Increase your spirituality.',
   'Try answering this question.',
+  'Play one of these short games.',
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
@@ -145,6 +146,9 @@ function loadBreak(index) {
       break;
     case messages.indexOf("Put on some focus/relaxation music."):
       message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
+      break;
+    case messages.indexOf("Play one of these short games."):
+      message.href = "cyoa/46.html";
       break;
     case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
       message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
