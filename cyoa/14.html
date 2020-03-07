@@ -8,12 +8,16 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme8">
-    <div id='break' class='space'>Are you required to do something in the next hour?</div>
-    <div class='two-list'>
-      <a class='anime-link' href="../custom.html">Yes</a>
-      <a class='anime-link' href="50.html">No</a>
+  <body class="theme2">
+    <div class='space'>
+      <div id='break' onclick='sleepy()'>Stand up and stretch if you can.</div>
+      <div id='standup'>Wear your pajamas and go to bed.</div>
     </div>
-    <script></script>
+    Brought to you by the blue theme.
+    <script>
+      function sleepy() {
+        document.getElementById("standup").style.display = "block";
+      }
+    </script>
   </body>
 </html>
