@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme2">
-    <div id='hydrate' width='100%' height='100%' class='theme7 space'>
+    <div id='hydrate' width='100%' height='100%' class='theme8 space'>
       <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
       <a class='anime-link' onclick='disappear()'>OK</a>
     </div>
@@ -28,7 +28,7 @@
     <script>
       var hydrate = Math.floor(Math.random() * 10);
       console.log(hydrate);
-      if (hydrate === 1)
+      if (hydrate < 2)
         document.getElementById("hydrate").style.display = "block";
       else if (hydrate < 3)
         document.getElementById("musictip").style.display = "block";

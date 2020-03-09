@@ -100,6 +100,7 @@ function loadBigBreak() {
   'Play Island (Visual Novel).',
   'No routine? Form one.',
   'How about multiple ways to take a break?',
+  'Read your patriarchal blessing.',
     //Goals
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
@@ -257,7 +258,7 @@ function randomMessage(index) {
   'Cute or fun things are good, but they are distractions.',
   'You\'ve made it this far to code this webpage.',
   'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-  'You may need to switch your thought patterns.',
+  'You live to be entertained? 🤣🤣',
   'What other important things do you need to get done?'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)
