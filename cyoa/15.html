@@ -63,8 +63,8 @@
         var x = window.matchMedia("(max-width: 567px)");
         var y = window.matchMedia("(max-width: 1135px)");
         resizeText(x,y);
-        x.addListener(myFunction);
-        y.addListener(myFunction);
+        x.addListener(resizeText);
+        y.addListener(resizeText);
       }
 
       function resizeText(verySmall,small) {

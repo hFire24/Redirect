@@ -15,55 +15,55 @@
     <a href="time.html">DON'T give up.</a></div>
     <a href='cyoa/1.html'>Feeling stuck?</a>
     <script>
-      var messages = ['Never ever do that again. You understand?',
-      'Repent immediately.',
-      'Please stop masturbating.',
-      'You must take NoFap seriously.',
-      'You\'ve sinned. Don\'t do it again.',
-      'Clean yourself up.',
-      'Cleanse your body, mind, and soul.',
-      'Do not feel like you\'ve lost. The battle still rages.',
-      'No more fapping.',
-      'Hopefully today will be your last fap.',
-      'Make your future brighter.',
-      'It will get better next time.',
-      'Make sure you get important things done.',
-      'Take a shower.',
-      'Do not feel pathethic. You are stronger than you think.',
-      'You are capable of doing great things.',
-      'Become a better person.',
-      'After you quickly recover, do some tasks.',
-      'Learn from that mistake you made earlier.',
-      'How will you not repeat the things you just did?',
-      'Expunge that bad habit.',
-      '14-year old you would hate you now.',
-      'You really need more Jesus.',
-      'That was unacceptable.',
-      'What you did was not OK, but it can be forgiven.',
-      'Demolish that sinful part of you.',
-      'Why did you do that? :(',
-      'Quitting indulgent activities is not easy, but worth it.',
-      'To win in life, you must endure trials of boredom.',
-      'Freedom from addictions. That should be a goal.',
-      'Freedom is not being dictated by your urges.',
-      'Freedom is not falling into Satan\'s temptations.',
-      'Escape from temptation.',
-      'There\'s more to life than your fetishes.',
-      'Your ideal self is a cute little kid? <span style="font-style:normal;">🤣🤣</span>',
-      'Please stop being lazy, and stop wasting your time.',
+      var messages = ['No more fapping.',
       'You had been tempted by Satan.',
+      'You\'ve sinned. Don\'t do it again.',
+      'Repent immediately.',
+      'You really need more Jesus.',
       'Do not hate yourself over a regrettable mistake.',
-      'From now on, do your best and avoid making mistakes.',
-      'Deliberately repeating mistakes is not OK.',
-      'Church pamphlets can be surprisingly helpful.',
+      'Please stop being lazy, and stop wasting your time.',
+      'You screwed up. This is not OK.',
+      'Make your future brighter before it\'s too late.',
+      '14-year old you would hate you now.',
+      'Hopefully today will be your last fap.',
+      'You must take NoFap seriously.',
+      'Quitting indulgent activities is not easy, but worth it.',
+      'You have relapsed. How will you recover?',
+      'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
+      'Freedom is not being dictated by your urges.',
       'No more looking at sexual things.',
-      'Do you really want to look at pics of cute anime girls?',
-      'Is what you\'re doing what you really want?',
-      'Break out of this cycle.',
-      'Don\'t waste your life viewing arousing images.'];
+      'Do not feel pathethic. You are stronger than you think.',
+      'Your ideal self is a cute little kid? <span style="font-style:normal;">🤣🤣</span>',
+      'Clean yourself up, and then get important things done.',
+      'Freedom from addictions. That should be a goal.',
+      'Stand up, take off your clothes, and take a shower.',
+      'Never ever do that again. You understand?',
+      'You are not prepared for the Second Coming.',
+      'You are capable of doing great things.',
+      'There\'s more to life than your fetishes.',
+      'Don\'t waste your life viewing immoral images.',
+      'How will you not repeat the things you just did?',
+      'No more of this BS. You understand?',
+      'Freedom is not falling into Satan\'s temptations.'];
       var index = Math.floor(Math.random() * messages.length);
       var message = document.getElementById("message");
       message.innerHTML = messages[index];
+      if(message.innerHTML.length > 200)
+      {
+        var x = window.matchMedia("(max-width: 567px)");
+        var y = window.matchMedia("(max-width: 1135px)");
+        resizeText(x,y);
+        x.addListener(resizeText);
+        y.addListener(resizeText);
+      }
+      function resizeText(verySmall,small) {
+        if (x.matches)
+          message.style.fontSize = "20px";
+        else if (y.matches)
+          message.style.fontSize = "30px";
+        else
+          message.style.fontSize = "60px";
+      }
     </script>
   </body>
 </html>
