@@ -1,0 +1,39 @@
+body {
+  background-color: black;
+  font-family: Futura XBlkCnIt BT, 'Bahnschrift Bold SemiCondensed', AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
+  color: red;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+a {
+  color: red;
+}
+
+#message {
+  font-size:100px;
+  color: yellow;
+}
+
+.space {
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (max-width: 1135px) {
+  body {
+    font-size: 30px;
+  }
+  #message {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  body {
+    font-size: 20px;
+  }
+  #message {
+    font-size: 40px;
+  }
+}
