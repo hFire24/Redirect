@@ -167,7 +167,8 @@ var noFapMessages ['DO NOT FAP',
 'ANYTHING SEXUALLY AROUSING IS TERRIBLE',
 'STOP TYPING IN ADDRESSES OF SINFUL WEBSITES',
 'NO MORE OF THIS BS.<br>YOU UNDERSTAND?',
-'RESIST SATAN\'S TEMPTATIONS'];
+'RESIST SATAN\'S TEMPTATIONS',
+'OH MY FURTING GOO. SERIOUSLY!?'];
 var relapseMessages = ['Never ever do that again. You understand?',
 'Repent immediately.',
 'Please stop masturbating.',
