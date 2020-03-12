@@ -20,6 +20,15 @@ a {
   margin-bottom: 0.5em;
 }
 
+#stress {
+  font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  color: white;
+}
+
+#stress a {
+  color: white;
+}
+
 @media only screen and (max-width: 1135px) {
   body {
     font-size: 30px;

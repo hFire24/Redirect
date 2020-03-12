@@ -192,22 +192,6 @@ td {
   color: hsl(59, 22%, 87%);
 }
 
-.danger {
-  color: red;
-}
-
-.danger a {
-  color: red;
-}
-
-.danger #message {
-  color: yellow;
-}
-
-.danger #stress {
-  color: white;
-}
-
 .relapse {
   background-color: #330099;
   font-family: 'DejaVu Serif Condensed', 'dejavu_serifcondensed_italic', serif;
