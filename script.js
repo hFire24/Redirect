@@ -231,7 +231,7 @@ function loadBreak(index) {
 
 function randomMessage(index) {
   var redirectMessages = ['Stop typing in addresses of distracting websites!',
-  'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Cute. Cirno. Rem. Chino. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+  'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
   'Get back to whatever you should be doing!',
   'You were redirected from a blacklisted website.',
   'You shouldn\'t access that website now.',
