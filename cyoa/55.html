@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme3">
+    <div class='space'>
+      <div id='break' class='space' onclick='next()'>Wiggle your toes.</div>
+    </div>
+    <span class='anime-link' onclick="next()">Continue</span>
+    <script>
+      var scene = 0;
+      var messages = ["Wiggle your toes.",
+      "Wiggle your fingers.",
+      "Wiggle your jaw.",
+      "Take a deep breath in.",
+      "Have a gentle stretch.",
+      "Now gently stand up.",
+      "Now do that task!"];
+      function next()
+      {
+        scene++;
+        if(scene === messages.length - 1)
+          document.getElementById("break").classList.add("big");
+        if(scene === messages.length)
+          scene--;
+        console.log(scene);
+        document.getElementById("break").innerHTML = messages[scene];
+      }
+    </script>
+  </body>
+</html>
