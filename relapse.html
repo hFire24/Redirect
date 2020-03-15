@@ -48,6 +48,8 @@
       var index = Math.floor(Math.random() * messages.length);
       var message = document.getElementById("message");
       message.innerHTML = messages[index];
+      if(index >= messages.indexOf('You\'ve sinned. Don\'t do it again.') && index <= messages.indexOf('You really need more Jesus.'))
+        link.href = "repent.html";
       if(message.innerHTML.length > 200)
       {
         var x = window.matchMedia("(max-width: 567px)");

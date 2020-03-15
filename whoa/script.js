@@ -63,6 +63,4 @@ function loadWebsite(index)
     message.innerHTML = '☢' + messages[index] + '☢';
   if (index === messages.indexOf("PLAY FURY OF THE STORM"))
     link.href = "https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8";
-  else if(index >= messages.indexOf('DO NOT GO AGAINST THE TEACHINGS OF JESUS') && index <= messages.indexOf('YOU NEED MORE JESUS'))
-    link.href = "https://www.churchofjesuschrist.org/bc/content/ldsorg/content/english/manual/missionary/pdf/36951_the-gospel-of-jesus-christ-eng.pdf?lang=eng";
 }

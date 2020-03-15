@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Repent.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class='relapse'>
+    <div id='message' class='space'>You have sinned. There's no denying it.</div>
+    <div id='arrows'><span onclick="previous()">⬅️</span> <span onclick="next()">➡️</span></div>
+    <script>
+      var scene = 0;
+      var messages = ["You have sinned. There's no denying it.",
+      "You should feel truly sorry for what you had done.",
+      "Never commit that sin again.",
+      "Ensure that this sin won't be repeated.",
+      "Clean yourself up if you haven't already.",
+      "Confess your sins to the Lord.",
+      "Ask for forgiveness.",
+      "Remind yourself every morning to never commit that sin.",
+      "Repentance requires consistency.",
+      "It takes time to fully repent.",
+      "The Lord knows you have weaknesses.",
+      "You do not want to be weak in spirit.",
+      "If you are spiritually weak, Satan will manipulate you.",
+      "Strengthen your sprituality for eternal happiness.",
+      "Love God from the bottom of your heart.",
+      "Keep his commandments. Exercise faith daily.",
+      "Keep your faith. Stay in the church.",
+      "Pray always to conquer Satan.",
+      "Learn about the gospel. Share it when appropriate.",
+      "By doing those things, your faith will grow stronger.",
+      "The stronger your faith is, the happier your life will be.",
+      "The happier your life is, the less likely you will sin.",
+      "Breaking out of sin is possible.",
+      "<a href='https://www.churchofjesuschrist.org/bc/content/ldsorg/content/english/manual/missionary/pdf/36951_the-gospel-of-jesus-christ-eng.pdf?lang=eng'>Read this pamphlet.</a>",
+      "<a href='https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng'>Read this article.</a>",
+      "Be sure you get important things done."];
+      function next()
+      {
+        scene++;
+        if(scene === messages.length)
+          scene--;
+        document.getElementById("message").innerHTML = messages[scene];
+      }
+      function previous()
+      {
+        scene--;
+        if(scene === -1)
+          scene++;
+        document.getElementById("message").innerHTML = messages[scene];
+      }
+    </script>
+  </body>
+</html>
