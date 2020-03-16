@@ -63,4 +63,6 @@ function loadWebsite(index)
     message.innerHTML = '☢' + messages[index] + '☢';
   if (index === messages.indexOf("PLAY FURY OF THE STORM"))
     link.href = "https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8";
+  else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
+    link.href = "../repent2.html";
 }
