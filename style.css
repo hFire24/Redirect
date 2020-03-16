@@ -231,6 +231,9 @@ td {
   #chiptune, #break, #stress a, #standup, #changeclothes, #question {
     font-size: 44px;
   }
+  #arrows {
+    font-size: 75px;
+  }
 
   input[type='checkbox'] {
     width:20px;
@@ -255,6 +258,9 @@ td {
 
   #chiptune, #break, #stress a, #standup, #changeclothes, #question {
     font-size: 30px;
+  }
+  #arrows {
+    font-size: 50px;
   }
 
   input[type='checkbox'] {
