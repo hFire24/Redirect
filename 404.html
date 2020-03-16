@@ -74,6 +74,19 @@ permalink: /404.html
         color: hsl(59, 22%, 87%);
       }
 
+      .theme10 {
+        background-color: black;
+        color: red;
+      }
+
+      .theme10 a {
+        color: red;
+      }
+
+      .theme10 #message {
+        color:yellow;
+      }
+
       #stress {
         font-family: Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
         color: red;
@@ -106,18 +119,26 @@ permalink: /404.html
     </div>
     <script>
       var redirectMessages = ['Stop typing in distracting search terms!',
+      'Stop visiting distracting websites!',
       'YouTube. DeviantArt. Reddit. Newgrounds. Facebook. Cute. Cirno. Rem. Chino. Blonde. Pink. Top hats.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
       'Get back to whatever you should be doing!',
+      'You were redirected from a blacklisted search term.',
       'You were redirected from a blacklisted website.',
       'You shouldn\'t access that website now.',
+      'You shouldn\'t search that term.',
       'This website is blocked.',
+      'This search term is blocked.',
       'Don\'t waste time getting distracted on blocked websites.',
+      'Don\'t waste time getting distracted on Google.',
       'Hey! You aren\'t supposed to do that!',
       'Don\'t you have anything better to do with your time?',
       'Today will be a great day to catch up with your schedule and tasks.',
       'You might regret visiting that blocked website.',
+      'You might regret searching that search term.',
       'Don\'t go to time-wasting websites!',
+      'Don\'t search for time-wasting things!',
       'No going to blocked websites. You understand?',
+      'No searching for blocked search terms. You understand?',
       'May this page suggest you take a short break?',
       'It is a good idea to get things done.',
       'Your mind must be wandering off, isn\'t it?',
@@ -133,26 +154,99 @@ permalink: /404.html
       'Cute or fun things are good, but they are distractions.',
       'You\'ve made it this far to code this webpage.',
       'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-      'You live to be entertained? 🤣🤣',
-      'What other important things do you need to get done?'];
+      'You live to be entertained? 🤣',
+      'What other important things do you need to get done?',
+      'You wish you are a cute anime girl? 🤣🤣',
+      '☢DO NOT FAP☢',
+      '☢ERADICATE THE SIN OF LUST☢',
+      '☢DO NOT SIN ON CERTAIN WEBSITES☢',
+      '☢DO NOT GO AGAINST THE TEACHINGS OF JESUS☢',
+      '☢YOU NEED MORE JESUS☢',
+      '☢DO NOT PROCRASTURBATE☢',
+      '☢DO NOT SCREW UP YOUR DAY☢',
+      '☢DO NOT DESTROY YOUR FUTURE☢',
+      '☢DO NOT BE A SICK DEGENERATE☢',
+      '☢DO NOT THROW YOUR LIFE AWAY☢',
+      '☢DO NOT FURTHER CORRUPT YOURSELF☢',
+      '☢DO NOT INDULGE IN TABOO PLEASURES☢',
+      '☢DO NOT EVEN THINK ABOUT RELAPSING☢',
+      '☢DO NOT THINK OF IMMORAL FANTASIES☢',
+      '☢DO NOT LET YOUR URGES DICTATE YOU☢',
+      '☢DO NOT SEEK FOR SEXUALLY PLEASING THINGS☢',
+      '☢YOU WERE REDIRECTED FROM A DANGEROUS WEBSITE☢',
+      '☢YOU HAVE OTHER THINGS TO DO☢',
+      '☢YOU MUST SNAP OUT OF IT☢',
+      '☢UNCLEAN WEBSITE HAS BEEN CONTAINED☢',
+      '☢THAT UNSAFE WEBSITE IS BLOCKED☢',
+      '✝PLAY TABERNACLE CHOIR MUSIC✝',
+      '☢PLAY FURY OF THE STORM☢',
+      '☢THINK OF SOMETHING ELSE☢',
+      '☢ANYTHING SEXUALLY AROUSING IS TERRIBLE☢',
+      '☢STOP TYPING IN ADDRESSES OF SINFUL WEBSITES☢',
+      '☢NO MORE OF THIS BS.<br>YOU UNDERSTAND?☢',
+      '☢RESIST SATAN\'S TEMPTATIONS☢',
+      '☢OH MY FURTING GOO. SERIOUSLY!?☢',
+      'No more fapping.',
+      'You had been tempted by Satan.',
+      'Don\'t ever sin again.',
+      'Please stop being lazy, and stop wasting your time.',
+      'You screwed up. This is not OK.',
+      'Make your future brighter before it\'s too late.',
+      'Don\'t waste your life viewing immoral images.',
+      'You must take NoFap seriously.',
+      'Quitting indulgent activities is not easy, but worth it.',
+      'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
+      'Freedom is not being dictated by your urges.',
+      'No more looking at sexual things.',
+      'Do not feel weak. You are stronger than you think.',
+      'Your ideal self is a cute little kid? 🤣🤣',
+      'Freedom from addictions. That should be a goal.',
+      'You are not prepared for the Second Coming.',
+      'You are capable of doing great things.',
+      'There\'s more to life than your deep desires.',
+      'Freedom is not falling into Satan\'s temptations.'];
       //Get random message index from messages array
       var index = Math.floor(Math.random() * redirectMessages.length);
       //Put message to screen using the index value of the array
       var message = redirectMessages[index];
-      document.getElementById("message").innerHTML = message;
+      $("message").innerHTML = message;
       var d = new Date();
       if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 9 && Math.floor(Math.random() * 3))
       {
-        document.getElementById("message").innerHTML = "Get ready for church!";
+        $("message").innerHTML = "Get ready for church!";
         index = redirectMessages.length + 2;
       }
       if ((d.getHours() <= 5 || d.getHours() >= 22) && !Math.floor(Math.random() * 5))
       {
-        document.getElementById("message").innerHTML = 'You should be asleep by now.';
+        $("message").innerHTML = 'You should be asleep by now.';
         index = redirectMessages.length;
       }
       //Put index value to the console
       console.log("Message " + index);
+      if($("message").innerHTML.length > 200)
+      {
+        var x = window.matchMedia("(max-width: 567px)");
+        var y = window.matchMedia("(max-width: 1135px)");
+        resizeText(x,y);
+        x.addListener(resizeText);
+        y.addListener(resizeText);
+      }
+      if(message.indexOf('🤣') >= 0)
+      {
+        $("message").addEventListener("click",function(){
+          var exists = $("hakase");
+            if (!exists) {
+              $("message").innerHTML = $("message").innerHTML + "<br>";
+              var video = document.createElement("video");
+              video.id = "hakase";
+              var source = document.createElement("source");
+              source.src = "https://hfire24.github.io/Redirect/media/ROFL.mp4";
+              source.type = "video/mp4";
+              video.appendChild(source);
+              $("message").appendChild(video);
+            }
+          $("hakase").play();});
+      }
 
       var linkMessages = ["Immediately close this tab."];
       for (var i = 1; i <= 30; i++)
@@ -162,18 +256,25 @@ permalink: /404.html
       if (index < 3)
         linkIndex = 0;
       //Put link message and to screen using the index value of the array
-      var parent = document.getElementById("hideable");
-      var link = document.getElementById("link");
+      var parent = $("hideable");
+      var link = $("link");
       if(!link) {
         link = document.createElement("div");
         link.id = "link";
         link.className = "space";
         parent.appendChild(link);
       }
-      if (message === "Get ready for church!")
+
+      if ($("message").innerHTML === "Get ready for church!")
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/church.html'>Here's how to get ready.</a>";
       else if (message === "May this page suggest you take a short break?")
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Ready to do something else?</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+      else if (message.startsWith('✝'))
+        link.innerHTML = "<a href='https://www.thetabernaclechoir.org/listen.html'>Click here.</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+      else if (message === '☢PLAY FURY OF THE STORM☢')
+        link.innerHTML = "<a href='https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8'>Click here.</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+      else if (message.startsWith('☢'))
+        link.innerHTML = "<a href='https://emergency.nofap.com/redirect?religious=true&cat=em&cat=rel'>Click here.</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else if (linkIndex > 0)
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else
@@ -182,6 +283,8 @@ permalink: /404.html
       console.log("Link " + linkIndex);
 
       var theme = Math.floor(Math.random() * 5) + 5;
+      if(message.startsWith('☢') || message.startsWith('✝'))
+        theme = 10;
       var themeText = document.createElement("div");
       themeText.id = "theme";
       switch(theme)
@@ -201,6 +304,8 @@ permalink: /404.html
         case 9:
           themeText.innerHTML = "Brought to you by the green theme.";
           break;
+        case 10:
+          break;
         default:
           themeText.innerHTML = "Brought to you by the black theme.";
       }
@@ -208,7 +313,7 @@ permalink: /404.html
       document.body.className = "theme" + theme.toString();
       console.log("Theme " + theme);
 
-      var hide = document.getElementById("hideable");
+      var hide = $("hideable");
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 66) {
           event.preventDefault();
@@ -226,6 +331,19 @@ permalink: /404.html
           link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
         else
           location.href = "https://hfire24.github.io/Redirect/cyoa/1.html";
+      }
+
+      function resizeText(verySmall,small) {
+        if (x.matches)
+          $("message").style.fontSize = "20px";
+        else if (y.matches)
+          $("message").style.fontSize = "30px";
+        else
+          $("message").style.fontSize = "60px";
+      }
+
+      function $(x) {
+        return document.getElementById(x);
       }
     </script>
   </body>

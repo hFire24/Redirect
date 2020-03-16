@@ -258,7 +258,7 @@ function randomMessage(index) {
   'Cute or fun things are good, but they are distractions.',
   'You\'ve made it this far to code this webpage.',
   'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-  'You live to be entertained? 🤣🤣',
+  'You live to be entertained? 🤣',
   'What other important things do you need to get done?'];
   //This message is added when the website is launched on mobile.
   if (window.innerWidth <= 812)

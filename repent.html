@@ -11,7 +11,7 @@
   </head>
   <body class='relapse'>
     <div id='message' class='space'>You have sinned. There's no denying it.</div>
-    <div id='arrows'><span onclick="previous()">⬅️</span> <span onclick="next()">➡️</span></div>
+    <div id='arrows'><span onclick="previous()">⬅️</span><span id='number'>1</span><span onclick="next()">➡️</span></div>
     <script>
       var scene = 0;
       var messages = ["You have sinned. There's no denying it.",
@@ -51,6 +51,7 @@
         if(scene === messages.length)
           scene--;
         document.getElementById("message").innerHTML = messages[scene];
+        document.getElementById("number").innerHTML = scene + 1;
       }
       function previous()
       {
@@ -58,6 +59,7 @@
         if(scene === -1)
           scene++;
         document.getElementById("message").innerHTML = messages[scene];
+        document.getElementById("number").innerHTML = scene + 1;
       }
     </script>
   </body>

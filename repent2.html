@@ -41,6 +41,7 @@
         if(scene === messages.length)
           scene--;
         document.getElementById("message").innerHTML = messages[scene];
+        document.getElementById("number").innerHTML = scene + 1;
       }
       function previous()
       {
@@ -48,6 +49,7 @@
         if(scene === -1)
           scene++;
         document.getElementById("message").innerHTML = messages[scene];
+        document.getElementById("number").innerHTML = scene + 1;
       }
     </script>
   </body>
