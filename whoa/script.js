@@ -21,7 +21,7 @@ var messages = ['DO NOT FAP',
 'UNCLEAN WEBSITE HAS BEEN CONTAINED',
 'THAT UNSAFE WEBSITE IS BLOCKED',
 'PLAY TABERNACLE CHOIR MUSIC',
-'PLAY FURY OF THE STORM',
+'OPEN STEAM AND SHADOW☢<br>☢PLAY FURY OF THE STORM',
 'THINK OF SOMETHING ELSE',
 'ANYTHING SEXUALLY AROUSING IS TERRIBLE',
 'STOP TYPING IN ADDRESSES OF SINFUL WEBSITES',
@@ -61,7 +61,7 @@ function loadWebsite(index)
   }
   else
     message.innerHTML = '☢' + messages[index] + '☢';
-  if (index === messages.indexOf("PLAY FURY OF THE STORM"))
+  if (index === messages.indexOf("OPEN STEAM AND SHADOW☢<br>☢PLAY FURY OF THE STORM"))
     link.href = "https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8";
   else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
     link.href = "../repent2.html";
