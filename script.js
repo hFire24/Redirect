@@ -53,7 +53,6 @@ function loadSmallBreak(index) {
   'Add a new song to your iTunes library.',
   'Put on some music to help you focus.',
     //Miscellaneous
-  'Close tabs and programs.',
   'Say out loud the thing you need to get done.',
   //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
   'Increase your spirituality.',
