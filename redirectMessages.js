@@ -221,5 +221,6 @@ var relapseMessages = ['Never ever do that again. You understand?',
 'You have relapsed. How will you recover?',
 'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
 'Clean yourself up, and then get important things done.',
+'Recover from the relapse, and then get important things done.',
 'Stand up, take off your clothes, and take a shower.',
 'You are not prepared for the Second Coming.'];
