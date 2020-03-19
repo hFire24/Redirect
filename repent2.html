@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class='relapse'>
+  <body class='relapse' onload="randomMessage()">
     <div id='message' class='space'>Remind yourself every morning to not commit that sin.</div>
     <div id='arrows'><span onclick="previous()">⬅️</span><span id='number'>1</span><span onclick="next()">➡️</span></div>
     <script>
@@ -27,6 +27,7 @@
       "Keep his commandments. Exercise faith daily.",
       "Keep your faith. Stay in the church.",
       "Pray always to conquer Satan.",
+      "Read scriptures online. Learn their meanings.",
       "Learn about the gospel. Share it when appropriate.",
       "By doing those things, your faith will grow stronger.",
       "The stronger your faith is, the happier your life will be.",
@@ -34,7 +35,14 @@
       "Breaking out of sin is possible.",
       "<a href='https://www.churchofjesuschrist.org/bc/content/ldsorg/content/english/manual/missionary/pdf/36951_the-gospel-of-jesus-christ-eng.pdf?lang=eng'>Read this pamphlet.</a>",
       "<a href='https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng'>Read this article.</a>",
+      "Read your patriarchal blessing.",
       "Be sure you get important things done."];
+      function randomMessage()
+      {
+        scene = Math.floor(Math.random() * messages.length);
+        document.getElementById("message").innerHTML = messages[scene];
+        document.getElementById("number").innerHTML = scene + 1;
+      }
       function next()
       {
         scene++;

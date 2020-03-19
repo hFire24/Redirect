@@ -223,4 +223,5 @@ var relapseMessages = ['Never ever do that again. You understand?',
 'Clean yourself up, and then get important things done.',
 'Recover from the relapse, and then get important things done.',
 'Stand up, take off your clothes, and take a shower.',
-'You are not prepared for the Second Coming.'];
+'You are not prepared for the Second Coming.',
+'Now is not the time to be doing that.'];
