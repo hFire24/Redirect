@@ -23,9 +23,9 @@
       {
         while(true)
         {
-          await sleep(200);
-          bgHue += 45;
-          textHue +=45;
+          await sleep(100);
+          bgHue += 11.25;
+          textHue += 11.25;
           if(bgHue >= 360)
             bgHue -= 360;
           if (textHue >= 360)
@@ -35,9 +35,21 @@
         }
       }
 
+      /*async function reportColors()
+      {
+        await sleep(100);
+        while(true)
+        {
+          await sleep(100 * 32);
+          console.log(bgHue);
+          console.log(textHue);
+        }
+      }*/
+
       var bgHue = 137;
       var textHue = 104;
       changeColor();
+      //reportColors();
     </script>
   </body>
 </html>
