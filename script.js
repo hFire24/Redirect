@@ -59,6 +59,7 @@ function loadSmallBreak(index) {
   'Try answering this question.',
   'Play one of these short games.',
   'Watch anime for 5 minutes (or 20% full length).',
+  'Read your journal entries.<br>Start with January 2012.',
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
