@@ -75,11 +75,20 @@
       '"Sometimes, being lazy is much favorable than labouring without a purpose." – Vishal Ostwal',
       '"A life of leisure and a life of laziness are two things. There will be sleeping enough in the grave." – Benjamin Franklin',
       '"The only time a lazy man ever succeeds is when he tries to do nothing." – Evan Esar',
-      '"Nothing irritates me more than chronic laziness in others. Mind you, it’s only mental sloth I object to. Physical sloth can be heavenly." – Elizabeth Hurley'];
-      for(var i = messages.length; i < 80; i++)
+      '"Nothing irritates me more than chronic laziness in others. Mind you, it’s only mental sloth I object to. Physical sloth can be heavenly." – Elizabeth Hurley',
+      //Quotes for the lazy 41-50
+      '"The lazy man is usually an ideal man, for he lives on theory, sleeps on hope, and dies in despair." – J. W Croker',
+      '"A lazy man would have every day a holiday." – Ahmed Vesik',
+      '"I don’t like laziness or cutting corners." – Victoria Beckham',
+      '"Fight your fear, your laziness, your ignorance before you worry about fighting the competition." – Amit Kalantri',
+      '"I’ve heard that hard work never killed anyone, but I say why take the chance?" – Ronald Reagan',
+      '"If there’s an easier, more efficient way to do something, trust a lazy person to find it." – Marty Rubin',
+      '"The most basic human impulse is toward entropy and laziness. The less we have to do to grow spiritually, the more likely we are to do it." – Alexandra Fuller',
+      '"It’s a disease of critics that once they’ve labeled someone, it’s very hard to change their perspective. It’s laziness." – Michael Haneke',
+      '"Laziness travels so slowly that poverty soon overtakes him." – Benjamin Franklin',
+      '"The lazy man claims he is too heavy for light work and too light for heavy work." – Evan Esar'];
+      for(var i = messages.length; i < 120; i++)
         messages.push("<a href='https://www.inc.com/lolly-daskal/100-motivational-quotes-that-will-inspire-you-to-succeed.html' target='_blank'>Here. Try reading some quotes from this page.</a>");
-      for(i = messages.length; i < 120; i++)
-        messages.push("<a href='https://www.quotesweekly.com/motivational-quotes-on-laziness-to-overcome-it/' target='_blank'>Here. Try reading these quotes from this page.</a>");
       var index = Math.floor(Math.random() * messages.length);
       var quote = document.getElementById("break");
       quote.innerHTML = messages[index];
