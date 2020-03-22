@@ -117,6 +117,12 @@ permalink: /404.html
     <div id='message' class='space'>This website is blocked.</div>
     <div id='hideable'>
     </div>
+    <audio loop id='nuke'>
+      <source src="https://hfire24.github.io/Redirect/media/Tactical Nuke.mp3" type="audio/mpeg">
+    </audio>
+    <audio id='press'>
+      <source src="https://hfire24.github.io/Redirect/media/Button Push.mp3" type="audio/mpeg">
+    </audio>
     <script>
       var redirectMessages = ['Stop typing in distracting search terms!',
       'Stop visiting distracting websites!',
@@ -252,6 +258,8 @@ permalink: /404.html
             }
           $("hakase").play();});
       }
+      else if(message.indexOf('☢') >= 0)
+        $("message").addEventListener("click",nuke);
 
       var linkMessages = ["Immediately close this tab."];
       for (var i = 1; i <= 30; i++)
@@ -275,11 +283,13 @@ permalink: /404.html
       else if (message === "May this page suggest you take a short break?")
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
       else if (message.startsWith('✝'))
-        link.innerHTML = "<a href='https://www.thetabernaclechoir.org/listen.html'>Click here.</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        link.innerHTML = "<u onclick='pushTheButton(3)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else if (message.startsWith('☢OPEN'))
-        link.innerHTML = "<a href='https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8'>Click here.</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        link.innerHTML = "<u onclick='pushTheButton(4)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+      else if (index > redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index < redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
+        link.innerHTML = "<u onclick='pushTheButton(2)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else if (message.startsWith('☢'))
-        link.innerHTML = "<a href='https://emergency.nofap.com/redirect?religious=true&cat=em&cat=rel'>Click here.</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        link.innerHTML = "<u onclick='pushTheButton(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else if (linkIndex > 0)
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else
@@ -349,6 +359,52 @@ permalink: /404.html
 
       function $(x) {
         return document.getElementById(x);
+      }
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function nuke()
+      {
+        var message = document.getElementById("message").innerHTML;
+        var play = 0;
+        for(var i = 0; i < message.length; i++)
+          if(message.charAt(i) === '☢')
+            play++;
+        for(i = 0; i < play; i++)
+        {
+          document.getElementById("nuke").play();
+          await sleep(2064);
+          if(!document.getElementById("press").paused)
+            break;
+        }
+        document.getElementById("nuke").pause();
+        console.log(message.indexOf('☢'));
+      }
+
+      async function pushTheButton(number)
+      {
+        var emergency = '';
+        document.getElementById("nuke").pause();
+        document.getElementById("press").play();
+        link.style.color = 'white';
+        await sleep(1750);
+        switch(number)
+        {
+          case 2:
+            emergency = 'https://hfire24.github.io/Redirect/repent2.html';
+            break;
+          case 3:
+            emergency = 'https://www.thetabernaclechoir.org/listen.html';
+            break;
+          case 4:
+            emergency = 'https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8';
+            break;
+          default:
+            emergency = 'https://emergency.nofap.com/redirect?religious=true&cat=em&cat=rel';
+        }
+        location.href = emergency;
       }
     </script>
   </body>

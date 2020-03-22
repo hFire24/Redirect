@@ -9,7 +9,22 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme6">
-    <div id='break' class='space'><a href="https://emergency.nofap.com/redirect?religious=true&cat=em">Click here.</a></div>
-    <script></script>
+    <div id='break' class='space'><u onclick="pushTheButton()">Click here.</u></div>
+    <audio id='press'>
+      <source src="../media/Button Push.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function pushTheButton()
+      {
+        document.getElementById("press").play();
+        document.getElementById("break").style.color = 'white';
+        await sleep(1750);
+        location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+      }
+    </script>
   </body>
 </html>
