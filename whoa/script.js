@@ -66,3 +66,23 @@ function loadWebsite(index)
   else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
     link.href = "../repent2.html";
 }
+
+async function nuke()
+{
+  var message = document.getElementById("message").innerHTML;
+  var play = 0;
+  for(var i = 0; i < message.length; i++)
+    if(message.charAt(i) === '☢')
+      play++;
+  for(i = 0; i < play; i++)
+  {
+    document.getElementById("nuke").play();
+    await sleep(2064)
+  }
+  document.getElementById("nuke").pause();
+  console.log(message.indexOf('☢'));
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
