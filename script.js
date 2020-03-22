@@ -179,7 +179,7 @@ function loadBreak(index) {
       message.href = "chiptunelessons.html";
       break;
     case messages.indexOf("Click here."):
-      message.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+      message.addEventListener("click",pushTheButton);
       break;
     case messages.indexOf("Go to Skillshare, and learn programming."):
       message.href = "https://skl.sh/38rV6DT";
@@ -460,3 +460,22 @@ window.addEventListener("keyup", function (event) {
       hide.style.display = "inline";
   }
 });
+
+async function pushTheButton()
+{
+  var press = document.createElement("audio");
+  var source = document.createElement("source");
+  source.src = 'media/Button Push.mp3';
+  source.type = 'audio/mpeg';
+  press.appendChild(source);
+  press.id = "press";
+  document.body.appendChild(press);
+  $("press").play();
+  $("break").style.color = 'white';
+  await sleep(1750);
+  location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";;
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
