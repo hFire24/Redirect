@@ -9,9 +9,17 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <img class='space' src='../media/Anti-Nanahira Meme.jpg' alt='A meme featuring a shocked and sad anime girl'>
+    <img id='firstmeme' class='space' src='../media/Anti-Nanahira Meme.jpg' alt='A meme featuring a shocked and sad anime girl' onclick='showNextMeme()'>
+    <div id='nextmeme' style='display:none;'>
     <img src='../media/Nanahira Eurovision Meme.jpg' alt='A meme featuring a boyfriend labeled "September 2019 me" and his girlfriend labeled "Nanahira" getting distracted by another girl labeled "Eurovision"'>
     <h1>Watch Eurovision instead.</h1>
-    <script></script>
+    </div>
+    <script>
+      function showNextMeme()
+      {
+        document.getElementById('firstmeme').style.display = "none";
+        document.getElementById('nextmeme').style.display = "block";
+      }
+    </script>
   </body>
 </html>
