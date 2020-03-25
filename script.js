@@ -316,7 +316,7 @@ function randomMessage(index) {
   createAdvice();
 }
 
-funciton createAdvice()
+function createAdvice()
 {
   var hydrate = Math.floor(Math.random() * 10);
   console.log(hydrate);
