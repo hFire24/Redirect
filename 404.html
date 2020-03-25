@@ -218,20 +218,20 @@ permalink: /404.html
       'Freedom is not falling into Satan\'s temptations.'];
       //Get random message index from messages array
       var index = Math.floor(Math.random() * redirectMessages.length);
+      var d = new Date();
+      if ((d.getHours() <= 5 || d.getHours() >= 22) && !Math.floor(Math.random() * 5))
+      {
+        redirectMessages.push('You should be asleep by now.');
+        index = redirectMessages.length - 1;
+      }
+      if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
+      {
+        redirectMessages.push('Get ready for church!');
+        index = redirectMessages.length - 1;
+      }
       //Put message to screen using the index value of the array
       var message = redirectMessages[index];
       $("message").innerHTML = message;
-      var d = new Date();
-      if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 9 && Math.floor(Math.random() * 3))
-      {
-        $("message").innerHTML = "Get ready for church!";
-        index = redirectMessages.length + 2;
-      }
-      if ((d.getHours() <= 5 || d.getHours() >= 22) && !Math.floor(Math.random() * 5))
-      {
-        $("message").innerHTML = 'You should be asleep by now.';
-        index = redirectMessages.length;
-      }
       //Put index value to the console
       console.log("Message " + index);
       if($("message").innerHTML.length > 200)

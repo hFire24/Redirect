@@ -274,7 +274,7 @@ function randomMessage(index) {
     index = Math.floor(Math.random() * redirectMessages.length);
   //Put message to screen using the index value of the array
   $("message").innerHTML = redirectMessages[index];
-  if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 9 && Math.floor(Math.random() * 3))
+  if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
   {
     $("message").innerHTML = "Get ready for church!";
     index = redirectMessages.length + 2;
