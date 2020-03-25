@@ -66,12 +66,21 @@ function loadWebsite(index)
     link = "https://www.thetabernaclechoir.org/listen.html";
   else
     link = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+  createAdvice();
+}
+
+async function createAdvice()
+{
   var hydrate = Math.floor(Math.random() * 10);
   console.log(hydrate);
-  if (hydrate < 1)
-    alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
-  else if (hydrate < 3)
-    alert("Here's a tip: Some music can help you focus.\n\nLazy? Play some trance music to energize.\nCan't focus? Play some chillout music to relax.");
+  if(hydrate < 3)
+  {
+    await sleep(100);
+    if (hydrate < 1)
+      alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
+    else
+      alert("Here's a tip: Some music can help you focus.\n\nLazy? Play some trance music to energize.\nCan't focus? Play some chillout music to relax.");
+  }
 }
 
 async function nuke()
