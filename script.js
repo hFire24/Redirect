@@ -313,9 +313,20 @@ function randomMessage(index) {
     link.innerHTML = linkMessages[linkIndex];
   //Put index value to the console
   console.log("Link " + linkIndex);
+  createAdvice();
 }
 
-async function rejectSomething(time) {
+funciton createAdvice()
+{
+  var hydrate = Math.floor(Math.random() * 10);
+  console.log(hydrate);
+  if (hydrate < 1)
+    alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
+  else if (hydrate < 3)
+    alert("Here's a tip: Some music can help you focus.\n\nLazy? Play some trance music to energize.\nCan't focus? Play some chillout music to relax.");
+}
+
+function rejectSomething(time) {
   if(time === 1)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 3)

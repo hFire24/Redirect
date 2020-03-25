@@ -8,7 +8,16 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme5">
+  <body class="theme5" onload="createAdvice()">
+    <div id='hydrate' width='100%' height='100%' class='theme8 space'>
+      <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
+      <a class='anime-link' onclick='disappear()'>OK</a>
+    </div>
+    <div id='musictip' width='100%' height='100%' class='theme3 space'>
+      <h2 class='space'>Here's a tip: Some music can help you focus.</h2>
+      <p>Lazy? Play some trance music to energize.<br>Can't focus? Play some chillout music to relax.</p>
+      <a class='anime-link' onclick='disappear()'>OK</a>
+    </div>
     <div id='message' class='space'>What do you want to do right now?</div>
     <div class='two-list'>
       <a class='anime-link' href="6.html">Nothing.</a>
@@ -16,6 +25,21 @@
       <a class='anime-link' href="10.html">I love this webpage.</a>
       <a class='anime-link' href="../whoa/">Something really bad.</a>
     </div>
-    <script></script>
+    <script>
+      function createAdvice()
+      {
+        var hydrate = Math.floor(Math.random() * 10);
+        console.log(hydrate);
+        if (hydrate < 2)
+          document.getElementById("hydrate").style.display = "block";
+        else if (hydrate < 3)
+          document.getElementById("musictip").style.display = "block";
+      }
+
+      function disappear() {
+        document.getElementById("hydrate").style.display = "none";
+        document.getElementById("musictip").style.display = "none";
+      }
+    </script>
   </body>
 </html>
