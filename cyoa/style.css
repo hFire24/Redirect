@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, 'Bahnschrift Bold SemiCondensed', AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
+  font-family: Futura XBlkCnIt BT, Futura XBlkCnIt BT Extra Black Italic, 'Bahnschrift Bold SemiCondensed', AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
   color: white;
   font-size: 60px;
   text-align: center;
@@ -113,7 +113,7 @@ img {
 }
 
 #stress {
-  font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  font-family: Futura XBlkIt BT, Futura XBlkIt BT Extra Black Italic, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
 }
 
