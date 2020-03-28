@@ -71,8 +71,8 @@ function loadWebsite(index)
 
 async function createAdvice()
 {
-  var hydrate = Math.floor(Math.random() * 10);
-  console.log(hydrate);
+  var hydrate = Math.floor(Math.random() * 30);
+  console.log("Hydrate " + hydrate);
   if(hydrate < 3)
   {
     await sleep(100);

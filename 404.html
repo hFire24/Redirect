@@ -10,7 +10,7 @@ permalink: /404.html
     <style>
       body {
         background-color: black;
-        font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
         color: white;
         font-size: 60px;
         text-align: center;
@@ -75,6 +75,7 @@ permalink: /404.html
       }
 
       .theme10 {
+        font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         background-color: black;
         color: red;
       }
@@ -219,10 +220,12 @@ permalink: /404.html
       //Get random message index from messages array
       var index = Math.floor(Math.random() * redirectMessages.length);
       var d = new Date();
-      if ((d.getHours() <= 5 || d.getHours() >= 22) && !Math.floor(Math.random() * 5))
+      var sleepTime = Math.floor(Math.random() * 5);
+      if ((d.getHours() <= 5 || d.getHours() >= 22) && !sleepTime)
       {
         redirectMessages.push('You should be asleep by now.');
         index = redirectMessages.length - 1;
+        console.log("Sleep " + sleepTime);
       }
       if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
       {
@@ -343,8 +346,8 @@ permalink: /404.html
 
       async function createAdvice()
       {
-        var hydrate = Math.floor(Math.random() * 10);
-        console.log(hydrate);
+        var hydrate = Math.floor(Math.random() * 30);
+        console.log("Hydrate " + hydrate);
         if(hydrate < 3)
         {
           await sleep(100);

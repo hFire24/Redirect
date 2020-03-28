@@ -279,10 +279,12 @@ function randomMessage(index) {
     $("message").innerHTML = "Get ready for church!";
     index = redirectMessages.length + 2;
   }
-  if ((d.getHours() <= 5 || d.getHours() >= 22) && !Math.floor(Math.random() * 5))
+  var sleepTime = Math.floor(Math.random() * 5);
+  if ((d.getHours() <= 5 || d.getHours() >= 22) && !sleepTime)
   {
     $("message").innerHTML = 'You should be asleep by now.';
     index = redirectMessages.length;
+    console.log("Sleep " + sleepTime);
   }
   //Put index value to the console
   console.log("Message " + index);
@@ -318,8 +320,8 @@ function randomMessage(index) {
 
 async function createAdvice()
 {
-  var hydrate = Math.floor(Math.random() * 10);
-  console.log(hydrate);
+  var hydrate = Math.floor(Math.random() * 30);
+  console.log("Hydrate " + hydrate);
   if(hydrate < 3)
   {
     await sleep(100);
