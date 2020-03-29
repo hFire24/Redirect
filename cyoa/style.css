@@ -1,8 +1,8 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, Futura XBlkCnIt BT Extra Black Italic, 'Bahnschrift Bold SemiCondensed', AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
+  font-family: Futura XBlkCnIt BT, 'Bahnschrift Bold SemiCondensed', AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
   color: white;
-  font-size: 60px;
+  font-size: 84px;
   text-align: center;
   margin-top: 25px;
 }
@@ -25,7 +25,7 @@ body {
 }
 
 ol {
-  font-size: 40px;
+  font-size: 60px;
   text-align: left;
   padding-left: 2em;
 }
@@ -35,26 +35,7 @@ ol a {
 }
 
 #message, #break.big, h1 {
-  font-size: 100px;
-}
-
-#advice {
-  font-size: 40px;
-}
-
-#trance {
-  font-size: 100px;
-  font-family: Neuropol, AvenirNext-Heavy, 'Arial Black', sans-serif;
-}
-
-#chiptune {
-  font-size: 75px;
-  font-family: Early GameBoy, 'Arial Black', sans-serif;
-}
-
-#survivor {
-  font-family: Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, 'Arial Narrow Bold', fantasy;
-  font-size: 100px;
+  font-size: 140px;
 }
 
 .space {
@@ -62,7 +43,7 @@ ol a {
 }
 
 #break, #question, #standup, #changeclothes, h2 {
-  font-size:75px;
+  font-size:105px;
 }
 
 #standup, #changeclothes {
@@ -76,8 +57,8 @@ ol a {
 
 input[type='checkbox'] {
     -webkit-appearance:none;
-    width:40px;
-    height:40px;
+    width:60px;
+    height:60px;
     background:#F00;
     border-radius:5px;
     border:2px solid #555;
@@ -88,8 +69,8 @@ input[type='checkbox']:checked {
 
 input[type='radio'] {
     -webkit-appearance:none;
-    width:40px;
-    height:40px;
+    width:60px;
+    height:60px;
     background:#F00;
     border-radius:5px;
     border:2px solid #555;
@@ -113,7 +94,7 @@ img {
 }
 
 #stress {
-  font-family: Futura XBlkIt BT, Futura XBlkIt BT Extra Black Italic, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
 }
 
@@ -143,7 +124,7 @@ img {
 
 td {
   padding: 7px;
-  font-size: 30px;
+  font-size: 45px;
 }
 
 .three-list {
@@ -277,45 +258,64 @@ td {
   color: red;
 }
 
-@media only screen and (max-width: 1135px) {
-  body, ol, #advice {
-    font-size: 30px;
-  }
-  #message, #trance, #stress, #survivor, #break.big, h1 {
+@media only screen and (max-width: 1702px) {
+  body {
     font-size: 60px;
   }
+  #message, #break.big, h1 {
+    font-size: 100px;
+  }
+  #break, #stress a, #standup, #changeclothes, #question, h2 {
+    font-size: 75px;
+  }
+  td {
+    font-size:30px;
+  }
+  ol {
+    font-size:40px;
+  }
+  input[type='checkbox'] {
+    width:40px;
+    height:40px;
+  }
+  .mathpad {
+    width: 30%;
+  }
+}
 
-  #chiptune, #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2 {
+@media only screen and (max-width: 1135px) {
+  body, ol {
+    font-size: 30px;
+  }
+  #message, #break.big, h1 {
+    font-size: 60px;
+  }
+  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2 {
     font-size: 44px;
   }
-
   input[type='checkbox'], input[type='radio'] {
     width:20px;
     height:20px;
   }
-
   .mathpad {
     width: 40%;
   }
 }
 
 @media only screen and (max-width: 567px) {
-  body, ol, #advice {
+  body, ol {
     font-size: 20px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1 {
+  #message, #break.big, h1 {
     font-size: 40px;
   }
-
-  #chiptune, #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2 {
+  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2 {
     font-size: 30px;
   }
-
   input[type='checkbox'], input[type='radio'] {
     width:15px;
     height:15px;
   }
-
   .mathpad {
     width: 50%;
   }

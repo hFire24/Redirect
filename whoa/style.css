@@ -1,8 +1,8 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, Futura XBlkCnIt BT Extra Black Italic, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: red;
-  font-size: 60px;
+  font-size: 84px;
   text-align: center;
   margin-top: 25px;
 }
@@ -12,7 +12,7 @@ a {
 }
 
 #message {
-  font-size:100px;
+  font-size: 140px;
   color: yellow;
 }
 
@@ -21,12 +21,21 @@ a {
 }
 
 #stress {
-  font-family: Futura XBlkIt BT, Futura XBlkIt BT Extra Black Italic, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: white;
 }
 
 #stress a {
   color: white;
+}
+
+@media only screen and (max-width: 1702px) {
+  body {
+    font-size: 60px;
+  }
+  #message {
+    font-size: 100px;
+  }
 }
 
 @media only screen and (max-width: 1135px) {

@@ -1,8 +1,8 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, Futura XBlkCnIt BT Extra Black Italic, AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
+  font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
   color: white;
-  font-size: 60px;
+  font-size: 84px;
   text-align: center;
   margin-top: 25px;
 }
@@ -25,7 +25,7 @@ body {
 }
 
 ol {
-  font-size: 40px;
+  font-size: 60px;
   text-align: left;
   padding-left: 2em;
 }
@@ -34,35 +34,28 @@ ol a {
   color: yellowgreen;
 }
 
-#message, #break.big, h1 {
-  font-size: 100px;
-}
-
-#advice {
-  font-size: 40px;
+#message, #break.big, h1, #trance, #survivor, #arrows {
+  font-size: 140px;
 }
 
 #trance {
-  font-size: 100px;
-  font-family: Neuropol, AvenirNext-Heavy, 'Arial Black', sans-serif;
+  font-family: Neuropol, 'Michroma', AvenirNext-Heavy, 'Arial Black', sans-serif;
 }
 
 #chiptune {
-  font-size: 75px;
   font-family: Early GameBoy, 'Arial Black', sans-serif;
 }
 
 #survivor {
   font-family: Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, 'Arial Narrow Bold', fantasy;
-  font-size: 100px;
 }
 
 .space {
   margin-bottom: 0.5em;
 }
 
-#break, #question, #standup, #changeclothes {
-  font-size:75px;
+#break, #question, #standup, #changeclothes, #chiptune {
+  font-size:105px;
 }
 
 #standup, #changeclothes {
@@ -76,8 +69,8 @@ ol a {
 
 input[type='checkbox'] {
     -webkit-appearance:none;
-    width:40px;
-    height:40px;
+    width:60px;
+    height:60px;
     background:#F00;
     border-radius:5px;
     border:2px solid #555;
@@ -87,7 +80,7 @@ input[type='checkbox']:checked {
 }
 
 #stress {
-  font-family: Futura XBlkIt BT, Futura XBlkIt BT Extra Black Italic, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  font-family: Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
 }
 
@@ -97,7 +90,7 @@ input[type='checkbox']:checked {
 
 td {
   padding: 7px;
-  font-size: 30px;
+  font-size: 45px;
 }
 
 .anime-list {
@@ -211,7 +204,6 @@ td {
 }
 
 #arrows {
-  font-size:100px;
   position:absolute;
   bottom:0;
   left:0;
@@ -224,8 +216,30 @@ td {
   font-style:normal;
 }
 
+@media only screen and (max-width: 1702px) {
+  body {
+    font-size: 60px;
+  }
+  #message, #trance, #stress, #survivor, #break.big, h1, #arrows {
+    font-size: 100px;
+  }
+  #chiptune, #break, #stress a, #standup, #changeclothes, #question {
+    font-size: 75px;
+  }
+  td {
+    font-size:30px;
+  }
+  ol {
+    font-size:40px;
+  }
+  input[type='checkbox'] {
+    width:40px;
+    height:40px;
+  }
+}
+
 @media only screen and (max-width: 1135px) {
-  body, ol, #advice {
+  body {
     font-size: 30px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -253,7 +267,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body, ol, #advice {
+  body {
     font-size: 20px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -266,7 +280,6 @@ td {
   #arrows {
     font-size: 50px;
   }
-
   input[type='checkbox'] {
     width:15px;
     height:15px;
