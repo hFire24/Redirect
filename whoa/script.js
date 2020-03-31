@@ -85,20 +85,7 @@ async function createAdvice()
 
 async function nuke()
 {
-  var message = document.getElementById("message").innerHTML;
-  var play = 0;
-  for(var i = 0; i < message.length; i++)
-    if(message.charAt(i) === '☢')
-      play++;
-  for(i = 0; i < play; i++)
-  {
-    document.getElementById("nuke").play();
-    await sleep(2064);
-    if(!document.getElementById("press").paused)
-      break;
-  }
-  document.getElementById("nuke").pause();
-  console.log(message.indexOf('☢'));
+  document.getElementById("nuke").play();
 }
 
 function sleep(ms) {

@@ -123,7 +123,7 @@ permalink: /404.html
     <div id='message' class='space'>This website is blocked.</div>
     <div id='hideable'>
     </div>
-    <audio loop id='nuke'>
+    <audio id='nuke'>
       <source src="https://hfire24.github.io/Redirect/media/Tactical Nuke.mp3" type="audio/mpeg">
     </audio>
     <audio id='press'>
@@ -391,20 +391,7 @@ permalink: /404.html
 
       async function nuke()
       {
-        var message = document.getElementById("message").innerHTML;
-        var play = 0;
-        for(var i = 0; i < message.length; i++)
-          if(message.charAt(i) === '☢')
-            play++;
-        for(i = 0; i < play; i++)
-        {
-          document.getElementById("nuke").play();
-          await sleep(2064);
-          if(!document.getElementById("press").paused)
-            break;
-        }
-        document.getElementById("nuke").pause();
-        console.log(message.indexOf('☢'));
+        document.getElementById("nuke").play();
       }
 
       async function pushTheButton(number)
