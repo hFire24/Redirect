@@ -328,7 +328,7 @@ async function createAdvice()
     if (hydrate < 1)
       alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
     else
-      alert("Here's a tip: Some music can help you focus.\n\nIf you want to get stuff done, play some trance music to energize.\nIf you feel too hyper, play some chillout music to relax.");
+      alert("Here's a tip: Some music can help you focus.\n\nStart by playing some chillout music to relax.\nIf that doesn't help, play some trance music to energize.\nStill not working? Put on some epic orchestral music!");
   }
 }
 
