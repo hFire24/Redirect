@@ -52,6 +52,7 @@ function loadSmallBreak(index) {
     //Music
   'Add a new song to your iTunes library.',
   'Put on some music to help you focus.',
+  'Watch one Eurovision performance.',
     //Miscellaneous
   'Say out loud the thing you need to get done.',
   //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
@@ -106,6 +107,7 @@ function loadBigBreak() {
   'No routine? Form one.',
   'How about multiple ways to take a break?',
   'Read your patriarchal blessing.',
+  'Watch Eurovision.',
     //Goals
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
