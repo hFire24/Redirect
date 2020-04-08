@@ -246,9 +246,11 @@ permalink: /404.html
       {
         var x = window.matchMedia("(max-width: 567px)");
         var y = window.matchMedia("(max-width: 1135px)");
-        resizeText(x,y);
+        var z = window.matchMedia("(max-width: 1702px)");
+        resizeText(x,y,z);
         x.addListener(resizeText);
         y.addListener(resizeText);
+        z.addListener(resizeText);
       }
       if(message.indexOf('🤣') >= 0)
       {
@@ -372,13 +374,15 @@ permalink: /404.html
           location.href = "https://hfire24.github.io/Redirect/cyoa/1.html";
       }
 
-      function resizeText(verySmall,small) {
+      function resizeText(verySmall,small, medium) {
         if (x.matches)
           $("message").style.fontSize = "20px";
         else if (y.matches)
           $("message").style.fontSize = "30px";
-        else
+        else if (z.matches)
           $("message").style.fontSize = "60px";
+        else
+          $("message").style.fontSize = "84px";
       }
 
       function $(x) {

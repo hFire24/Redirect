@@ -54,9 +54,11 @@
       {
         var x = window.matchMedia("(max-width: 567px)");
         var y = window.matchMedia("(max-width: 1135px)");
-        resizeText(x,y);
+        var z = window.matchMedia("(max-width: 1702px)");
+        resizeText(x,y,z);
         x.addListener(resizeText);
         y.addListener(resizeText);
+        z.addListener(resizeText);
       }
       createAdvice();
       async function createAdvice()
@@ -75,13 +77,15 @@
       function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
-      function resizeText(verySmall,small) {
+      function resizeText(verySmall,small,medium) {
         if (x.matches)
           message.style.fontSize = "20px";
         else if (y.matches)
           message.style.fontSize = "30px";
-        else
+        else if (z.matches)
           message.style.fontSize = "60px";
+        else
+          message.style.fontSize = "84px";
       }
     </script>
   </body>

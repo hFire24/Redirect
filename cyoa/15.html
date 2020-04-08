@@ -97,18 +97,22 @@
       {
         var x = window.matchMedia("(max-width: 567px)");
         var y = window.matchMedia("(max-width: 1135px)");
-        resizeText(x,y);
+        var z = window.matchMedia("(max-width: 1702px)");
+        resizeText(x,y,z);
         x.addListener(resizeText);
         y.addListener(resizeText);
+        z.addListener(resizeText);
       }
 
-      function resizeText(verySmall,small) {
+      function resizeText(verySmall,small,medium) {
         if (x.matches)
           quote.style.fontSize = "20px";
         else if (y.matches)
           quote.style.fontSize = "30px";
-        else
+        else if (z.matches)
           quote.style.fontSize = "60px";
+        else
+          quote.style.fontSize = "84px";
       }
     </script>
   </body>
