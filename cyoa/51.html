@@ -10,7 +10,14 @@
   </head>
   <body class="theme3">
     <div id='message' class='space'>Quit playing games on your phone.</div>
-    <div class='space'><a id='break' class='anime-link' href='2.html'>Let's play a different game instead. I call it "Task Completionist".</a></div>
-    <script></script>
+    <a href='../time.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>
+    <script>
+      function rejectSomething(time) {
+        if(time === 1)
+          link.innerHTML = "<a href='bigbreak.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+        else
+          location.href = "1.html";
+      }
+    </script>
   </body>
 </html>
