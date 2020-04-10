@@ -464,6 +464,8 @@ function createMessage() {
   message.innerHTML = newMessage.value;
   if(newMessage.value.toLowerCase().indexOf("cirno") >= 0)
     location.href = "cirno.html";
+  else if(newMessage.value.toLowerCase().indexOf("nuke") >= 0)
+    location.href = "whoa/";
   parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
   parent.removeChild(button);
