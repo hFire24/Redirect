@@ -199,7 +199,7 @@ function loadBreak(index) {
     standupMessage.href = "stepmania.html";
   else
     standupMessage.removeAttribute("href");
-  if((d.getHours() <= 5 || d.getHours() >= 22) && !Math.floor(Math.random() * 4))
+  if((d.getHours() <= 5 || d.getHours() >= 23) && !Math.floor(Math.random() * 4))
   {
     index = messages.length;
     messages.push('Stand up and stretch if you can.');
@@ -282,7 +282,7 @@ function randomMessage(index) {
     index = redirectMessages.length + 2;
   }
   var sleepTime = Math.floor(Math.random() * 5);
-  if ((d.getHours() <= 5 || d.getHours() >= 22) && !sleepTime)
+  if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
   {
     $("message").innerHTML = 'You should be asleep by now.';
     index = redirectMessages.length;
