@@ -36,7 +36,7 @@ function loadWebsite(index)
   else
     index = index - 1;
   var message = document.getElementById("message");
-  
+
   if(index === messages.indexOf('YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣'))
   {
     message.innerHTML = messages[index];
@@ -56,7 +56,10 @@ function loadWebsite(index)
       document.getElementById("hakase").play();});
   }
   else if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
+  {
     message.innerHTML = '✝' + messages[index] + '✝';
+    message.removeAttribute("onClick");
+  }
   else
     message.innerHTML = '☢' + messages[index] + '☢';
   if (index === messages.indexOf("OPEN STEAM AND SHADOW☢<br>☢PLAY FURY OF THE STORM"))

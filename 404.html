@@ -7,115 +7,7 @@ permalink: /404.html
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <style>
-      body {
-        background-color: black;
-        font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
-        color: white;
-        font-size: 84px;
-        text-align: center;
-        margin-top: 25px;
-      }
-
-      #message {
-        font-size: 140px;
-      }
-
-      .space {
-        margin-bottom: 0.5em;
-
-      }
-      .theme5 {
-        background-color: hsl(0, 0%, 32%);
-        color: hsl(0, 0%, 87%);
-      }
-
-      .theme5 a {
-        color: hsl(0, 0%, 87%);
-      }
-
-      .theme6 {
-        background-color: hsl(182, 13%, 32%);
-        color: hsl(149, 22%, 87%);
-      }
-
-      .theme6 a {
-        color: hsl(149, 22%, 87%);
-      }
-
-      .theme7 {
-        background-color: hsl(272, 13%, 32%);
-        color: hsl(239, 22%, 87%);
-      }
-
-      .theme7 a {
-        color: hsl(239, 22%, 87%);
-      }
-
-      .theme8 {
-        background-color: hsl(2, 13%, 32%);
-        color: hsl(329, 22%, 87%);
-      }
-
-      .theme8 a {
-        color: hsl(329, 22%, 87%);
-      }
-
-      .theme9 {
-        background-color: hsl(92, 13%, 32%);
-        color: hsl(59, 22%, 87%);
-      }
-
-      .theme9 a {
-        color: hsl(59, 22%, 87%);
-      }
-
-      .theme10 {
-        font-family: Futura XBlkCnIt BT, Futura XBlkCnIt BT Extra Black Italic, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        background-color: black;
-        color: red;
-      }
-
-      .theme10 a {
-        color: red;
-      }
-
-      .theme10 #message {
-        color:yellow;
-      }
-
-      #stress {
-        font-family: Futura XBlkIt BT, Futura XBlkIt BT Extra Black Italic, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
-        color: red;
-      }
-
-      @media only screen and (max-width: 1702px) {
-        body {
-          font-size: 60px;
-        }
-        #message, #stress {
-          font-size: 100px;
-        }
-      }
-
-      @media only screen and (max-width: 1135px) {
-        body {
-          font-size: 30px;
-        }
-        #message, #stress {
-          font-size: 60px;
-        }
-      }
-
-      @media only screen and (max-width: 567px) {
-        body {
-          font-size: 20px;
-        }
-        #message, #stress {
-          font-size: 40px;
-        }
-      }
-    </style>
+    <link href="https://hfire24.github.io/Redirect/style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
@@ -348,22 +240,6 @@ permalink: /404.html
             hide.style.display = "inline";
         }
       });
-
-      createAdvice();
-
-      async function createAdvice()
-      {
-        var hydrate = Math.floor(Math.random() * 30);
-        console.log("Hydrate " + hydrate);
-        if(hydrate < 3)
-        {
-          await sleep(100);
-          if (hydrate < 1)
-            alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
-          else
-            alert("Here's a tip: Some music can help you focus.\n\nStart by playing some chillout music to relax.\nIf that doesn't help, play some trance music to energize.\nStill not working? Put on some epic orchestral music!");
-        }
-      }
 
       function rejectSomething(time) {
         if(time === 1)

@@ -185,6 +185,20 @@ td {
   color: hsl(59, 22%, 87%);
 }
 
+.theme10 {
+  font-family: Futura XBlkCnIt BT, Futura XBlkCnIt BT Extra Black Italic, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: black;
+  color: red;
+}
+
+.theme10 a {
+  color: red;
+}
+
+.theme10 #message {
+  color:yellow;
+}
+
 .relapse {
   background-color: #330099;
   font-family: 'DejaVu Serif Condensed', 'dejavu_serifcondensed_italic', serif;
