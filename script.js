@@ -453,7 +453,6 @@ function randomMessage(index,number) {
   //Get random message index from messages array
   if (index < 0 || index >= redirectMessages.length)
     index = Math.floor(Math.random() * redirectMessages.length);
-  index = 40;
   //Put message to screen using the index value of the array
   $("message").innerHTML = redirectMessages[index];
   //If it's Sunday morning, then the website may prompt you to go to church.
