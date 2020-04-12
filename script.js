@@ -670,7 +670,7 @@ function getWidth() {
   $("width").innerHTML = window.innerWidth;
 }
 
-function resizeText(verySmall,small, medium) {
+function resizeText(x,y,z) {
   if (x.matches)
     $("message").style.fontSize = "20px";
   else if (y.matches)
