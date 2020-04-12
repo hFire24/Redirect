@@ -291,7 +291,7 @@ function addBigMessages() {
     //Day planning
   'Sometimes just managing your tasks can be motivating.',
   'If you\'re failing to plan, you\'re planning to fail.',
-  'Why don\'t you think about what things you want and need to do?',
+  'Why don\'t you <a href="https://youtu.be/r-dMhpgj0PA">think about things</a> you want and need to do?',
   'You may want to form a routine.',
     //Homework
   'How about you do your homework?',
@@ -453,6 +453,7 @@ function randomMessage(index,number) {
   //Get random message index from messages array
   if (index < 0 || index >= redirectMessages.length)
     index = Math.floor(Math.random() * redirectMessages.length);
+  index = 40;
   //Put message to screen using the index value of the array
   $("message").innerHTML = redirectMessages[index];
   //If it's Sunday morning, then the website may prompt you to go to church.
