@@ -478,7 +478,7 @@ function randomMessage(index,number) {
     $("message").addEventListener("click",function(){
       var exists = $("hakase");
         if (!exists) {
-          $("message").innerHTML = $("message").innerHTML + "<br>";
+          message = message + "<br>";
           var video = document.createElement("video");
           video.id = "hakase";
           var source = document.createElement("source");
@@ -523,7 +523,7 @@ function randomMessage(index,number) {
   if(number === 5)
     createAdvice();
   //If the message is too long, this fires up.
-  if($("message").innerHTML.length > 200)
+  if(message.length > 200)
   {
     var x = window.matchMedia("(max-width: 567px)");
     var y = window.matchMedia("(max-width: 1135px)");
@@ -533,6 +533,8 @@ function randomMessage(index,number) {
     y.addListener(resizeText);
     z.addListener(resizeText);
   }
+  else if(message.length > 90)
+    $("message").id = "break";
 }
 
 async function createAdvice()
