@@ -336,7 +336,7 @@ function addBigMessages() {
   'Consider tidying up your room.',
   '<a href="stepmania.html">How about playing some Stepmania?</a>',
     //From the whoa webpage
-  '<a href="repent2.html>You need more Jesus.</a>',
+  '<a href="repent2.html">You need more Jesus.</a>',
   'Do not screw up your day.',
   'Do not ruin, darken, or destroy your future.',
   'Do not throw you life away.',
@@ -369,7 +369,7 @@ function addBigMessages() {
     //Rejected relapse messages
   'Become a better person.',
   'Expunge that bad habit.',
-  'Why did you do that? ☹',
+  'Why did you do that? <span style="font-family:\'Futura Md BT\',sans-serif;">:(</span>',
   'To win in life, you must endure trials. It won\'t necessarily be fun, but it will make you better.',
   'Escape from temptation.',
   'Is what you\'re doing what you really want?',
