@@ -67,7 +67,7 @@ function loadSmallBreak(index) {
   'Try answering this question.',
   'Play one of these short games.',
   'Watch anime for 5 minutes (or 20% full length).',
-  'Read your journal entries.<br>Start from January 2012.',
+  'Read your journal entries.<br>Start from February 2012.',
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
@@ -319,7 +319,7 @@ function addBigMessages() {
   'Try saying out loud the thing you need to get done.',
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
   'Why not read your patriarchal blessing?',
-  'Why don\'t you read your journal entries?<br>Start from January 2012.',
+  'Why don\'t you read your journal entries?<br>Start from February 2012.',
   'How about you digitize a paragraph from your journa?',
   'Why not preserve some journal entries into a document?',
     //Goals
