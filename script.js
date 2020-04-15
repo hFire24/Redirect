@@ -442,7 +442,7 @@ function addBigMessages() {
   'Think about things that make you better.',
   'It looks like you feel stuck.',
   'It seems like you feel lost.',
-  'Yeah, yeah. I restricted your freedom.<br><span id="stress">DEAL WITH IT.</span>',
+  'Yeah, yeah. I restricted your freedom. <span id="stress">DEAL WITH IT.</span>',
   'Grow up and get a life!');
 
   for(var i = 0; i < questions.length; i++)
