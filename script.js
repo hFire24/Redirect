@@ -320,7 +320,7 @@ function addBigMessages() {
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
   'Why not read your patriarchal blessing?',
   'Why don\'t you read your journal entries?<br>Start from February 2012.',
-  'How about you digitize a paragraph from your journa?',
+  'How about you digitize a paragraph from your journal?',
   'Why not preserve some journal entries into a document?',
     //Goals
   '<a href="https://skl.sh/37ueYoA">How about going to Skillshare to double your social skills?</a>',
