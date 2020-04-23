@@ -154,6 +154,9 @@ function loadBreak(index) {
     case messages.indexOf("Put on some focus/relaxation music."):
       message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
       break;
+    case messages.indexOf("Put on some music to help you focus."):
+      message.href = "cyoa/58.html";
+      break;
     case messages.indexOf("Play one of these short games."):
       message.href = "cyoa/46.html";
       break;
@@ -292,8 +295,8 @@ function addBigMessages() {
   'Why not get an assignment done early? You\'ll get a head start!',
     //Music
   'Sometimes just browsing your music library could be fun.',
-  'Why don\'t you put on some music to help you focus?',
-  'Put on some calm music. If the music isn\'t making you productive, just ramp up the intensity.',
+  '<a href="cyoa/58.html">Why don\'t you put on some music to help you focus?</a>',
+  '<a href="cyoa/58.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
   '<a href="https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
   'Why not watch at least one Eurovision performance?',
@@ -531,6 +534,17 @@ function randomLink(index,number) {
     $("message").id = "break";
 }
 
+function getBack()
+{
+  var random = Math.floor(Math.random() * 30)
+  console.log("Random " + random);
+  if(random === 0)
+  {
+    document.getElementById("message").innerHTML = "Get back to whatever you should be doing!";
+    document.getElementById("link").innerHTML = "Immediately close this tab.";
+  }
+}
+
 async function createAdvice()
 {
   var hydrate = Math.floor(Math.random() * 30);
@@ -541,7 +555,15 @@ async function createAdvice()
     if (hydrate < 1)
       alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
     else
-      alert("Here's a tip: Some music can help you focus.\n\nGo to hfire24.github.io/Redirect/cyoa/58.html for more info.");
+    {
+      alert("Here's a tip: Some music can help you focus.\n\nPress OK and then the \"M\" key for more info.");
+      window.addEventListener("keyup", function (event) {
+        if (event.keyCode === 77) {
+          event.preventDefault();
+          location.href = "cyoa/58.html";
+        }
+      });
+    }
   }
 }
 
@@ -551,17 +573,21 @@ function rejectSomething(time) {
   else if(time === 3)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 4)
-    location.href = "cyoa/37.html";
+    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(5)' style='color:white;'>No.</span>";
   else if(time === 5)
-    link.innerHTML = "<a href='cyoa/21.html'>Do you really want to look at cute anime girls?</a> <span onclick='rejectSomething(1)' style='color:white;'>No</span>";
+    location.href = "cyoa/37.html"
   else if(time === 6)
-    link.innerHTML = "<a href='time.html'>Screw reddit. Do something else!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='cyoa/21.html'>Do you really want to look at cute anime girls?</a> <span onclick='rejectSomething(1)' style='color:white;'>No</span>";
   else if(time === 7)
-    location.href = "cyoa/29.html";
+    link.innerHTML = "<a href='time.html'>Screw reddit. Do something else!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+  else if(time === 8)
+    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(11)' style='color:white;'>No.</span>";
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
   else if(time === 10)
     link.innerHTML = "<a class='anime-link' href='cyoa/2.html'>You really are bored.</a>";
+  else if(time === 11)
+    location.href = "cyoa/29.html";
   else
     location.href = "cyoa/1.html";
 }
