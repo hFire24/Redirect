@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class='relapse'>
+  <body class='relapse' onload='createAdvice()'>
     <div id='message' class='space'></div>
     <div class='space'><a id='link' href="https://emergency.nofap.com/redirect?religious=true&cat=rel">Click here</a> and
     <a href="bigbreak.html">do something else.</a></div>
@@ -60,33 +60,7 @@
         y.addListener(resizeText);
         z.addListener(resizeText);
       }
-      createAdvice();
-      async function createAdvice()
-      {
-        var hydrate = Math.floor(Math.random() * 30);
-        console.log("Hydrate " + hydrate);
-        if(hydrate < 3)
-        {
-          await sleep(200);
-          if (hydrate < 1)
-            alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
-          else
-            alert("Here's a tip: Some music can help you focus.\n\nStart by playing some chillout music to relax.\nIf that doesn't help, play some trance music to energize.\nStill not working? Put on some epic orchestral music!");
-        }
-      }
-      function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-      }
-      function resizeText(verySmall,small,medium) {
-        if (x.matches)
-          message.style.fontSize = "20px";
-        else if (y.matches)
-          message.style.fontSize = "30px";
-        else if (z.matches)
-          message.style.fontSize = "60px";
-        else
-          message.style.fontSize = "84px";
-      }
     </script>
+    <script src='script.js'></script>
   </body>
 </html>

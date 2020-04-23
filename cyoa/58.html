@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme2">
+    <div id="break" class='space'>This slider will give you some music genres.</div>
+    <div class='small space'>Start with some music from lower intensities to relax.<br>If that doesn't help, play some higher intensity music to energize.</div>
+    <div class='slidercontainer space'>
+      <input type="range" min="0" max="8" value="0" class="slider" id="musicslider">
+    </div>
+    <div id="message">No music</div>
+    <script>
+      var genres = ['No music','Ambient music','Chillout music','Smooth jazz','Progressive house','Chiptunes',/*'Eurovision hits',*/'Uplifting trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
+      var genre = document.getElementById("message");
+      var slider = document.getElementById("musicslider");
+      slider.max = genres.length - 1;
+      slider.oninput = function() {
+        genre.innerHTML = genres[slider.value];
+        if(slider.value >= genres.length - 1)
+          genre.classList.add("stress");
+        else
+          genre.classList.remove("stress");
+      }
+    </script>
+  </body>
+</html>

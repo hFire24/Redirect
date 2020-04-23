@@ -24,6 +24,10 @@ body {
   to {opacity: 1; top:0px;}
 }
 
+.small {
+  font-size: 60px;
+}
+
 ol {
   font-size: 60px;
   text-align: left;
@@ -93,7 +97,7 @@ img {
   margin: auto;
 }
 
-#stress {
+#stress, .stress {
   font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
 }
@@ -141,6 +145,34 @@ td {
   color:white;
   text-decoration:none;
   padding: 20px;
+}
+
+.slidercontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 30px;
+  background: hsl(194, 22%, 87%);
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  height: 60px;
+  background: hsl(227, 26%, 50%);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 60px;
+  height: 60px;
+  background: hsl(227, 26%, 50%);
+  cursor: pointer;
 }
 
 .theme1 {
@@ -224,40 +256,6 @@ td {
   color: hsl(59, 22%, 87%);
 }
 
-.danger {
-  color: red;
-}
-
-.danger a {
-  color: red;
-}
-
-.danger #message {
-  color: yellow;
-}
-
-.danger #stress {
-  color: white;
-}
-
-.relapse {
-  background-color: #330099;
-  font-family: 'DejaVu Serif Condensed', 'dejavu_serifcondensed_italic', serif;
-  font-style: italic;
-}
-
-.relapse a {
-  color: white;
-}
-
-.relapse #message {
-  color: white;
-}
-
-.relapse #stress {
-  color: red;
-}
-
 @media only screen and (max-width: 1702px) {
   body {
     font-size: 60px;
@@ -271,7 +269,7 @@ td {
   td {
     font-size:30px;
   }
-  ol {
+  ol, .small {
     font-size:40px;
   }
   input[type='checkbox'] {
@@ -281,10 +279,21 @@ td {
   .mathpad {
     width: 30%;
   }
+  .slider {
+    height: 20px;
+  }
+  .slider::-webkit-slider-thumb {
+    width: 40px;
+    height: 40px;
+  }
+  .slider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media only screen and (max-width: 1135px) {
-  body, ol {
+  body, ol, .small {
     font-size: 30px;
   }
   #message, #break.big, h1 {
@@ -300,10 +309,21 @@ td {
   .mathpad {
     width: 40%;
   }
+  .slider {
+    height: 15px;
+  }
+  .slider::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+  }
+  .slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media only screen and (max-width: 567px) {
-  body, ol {
+  body, ol, .small {
     font-size: 20px;
   }
   #message, #break.big, h1 {
@@ -318,5 +338,16 @@ td {
   }
   .mathpad {
     width: 50%;
+  }
+  .slider {
+    height: 10px;
+  }
+  .slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
   }
 }
