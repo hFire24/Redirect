@@ -2,31 +2,22 @@ var number = 0;
 var d = new Date();
 
 function loadWebsite(number) {
-  //For breaktime and bigbreak
-  if(number >= 2 && number <= 3)
+  if(number === 1)
+    addBigMessages();
+  if(number === 1 || number === 5)
+    randomMessage(-1,number);
+  else if(number > 1 && number < 4)
   {
-    //For breaktime
-    if (number === 2)
+    if(Math.floor(Math.random() * 2) && number !== 2)
+      loadBigBreak();
+    else
       loadSmallBreak();
-    //For bigbreak. 50/50 chance on loading from the big break thing.
-    else if (number === 3)
-    {
-      if(Math.floor(Math.random() * 2))
-        loadBigBreak();
-      else
-        loadSmallBreak();
-    }
-    //After that's done, the load break thing is loaded.
     loadBreak(-1);
   }
-  else if (number === 4)
+  else if(number === 4)
     randomQuestion(-1);
   else
-  {
-    if (number === 1)
-      addBigMessages();
-    randomMessage(-1,number);
-  }
+    randomLink(-1,number);
   randomTheme(number);
 }
 
@@ -489,7 +480,10 @@ function randomMessage(index,number) {
         }
       $("hakase").play();});
   }
+  randomLink(index,number);
+}
 
+function randomLink(index,number) {
   //Array for link messages below the heading text
   var linkMessages = ["Immediately close this tab."];
   for (var i = 1; i <= 30; i++)
@@ -519,8 +513,8 @@ function randomMessage(index,number) {
     link.innerHTML = linkMessages[linkIndex];
   //Put index value to the console
   console.log("Link " + linkIndex);
-  //This only shows up if the haha page is loaded.
-  if(number === 5)
+  //This only shows up if certain pages are loaded.
+  if(number >= 5)
     createAdvice();
   //If the message is too long, this fires up.
   if(message.length > 200)
@@ -556,9 +550,17 @@ function rejectSomething(time) {
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 3)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
-  else if(time === 9)
-    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(6)' style='color:white;'>No.</span>";
+  else if(time === 4)
+    location.href = "cyoa/37.html";
+  else if(time === 5)
+    location.href = "cyoa/21.html";
   else if(time === 6)
+    link.innerHTML = "<a href='time.html'>Screw reddit. Do something else!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+  else if(time === 7)
+    location.href = "cyoa/29.html";
+  else if(time === 9)
+    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
+  else if(time === 10)
     link.innerHTML = "<a class='anime-link' href='cyoa/2.html'>You really are bored.</a>";
   else
     location.href = "cyoa/1.html";
@@ -694,7 +696,7 @@ function createMessage() {
   if(newMessage.value.toLowerCase().indexOf("cirno") >= 0)
     location.href = "cirno.html";
   else if(newMessage.value.toLowerCase().indexOf("nuke") >= 0)
-    location.href = "whoa/";
+    location.href = "whoa/index.html";
   parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
   parent.removeChild(button);

@@ -54,7 +54,7 @@ ol a {
   margin-bottom: 0.5em;
 }
 
-#break, #question, #standup, #changeclothes, #chiptune {
+#break, #question, #standup, #changeclothes, #chiptune, #message.small {
   font-size:105px;
 }
 
@@ -237,7 +237,7 @@ td {
   #message, #trance, #stress, #survivor, #break.big, h1, #arrows {
     font-size: 100px;
   }
-  #chiptune, #break, #stress a, #standup, #changeclothes, #question {
+  #chiptune, #break, #stress a, #standup, #changeclothes, #question, #message.small {
     font-size: 75px;
   }
   td {
@@ -260,7 +260,7 @@ td {
     font-size: 60px;
   }
 
-  #chiptune, #break, #stress a, #standup, #changeclothes, #question {
+  #chiptune, #break, #stress a, #standup, #changeclothes, #question, #message.small {
     font-size: 44px;
   }
   #arrows {
@@ -288,7 +288,7 @@ td {
     font-size: 40px;
   }
 
-  #chiptune, #break, #stress a, #standup, #changeclothes, #question {
+  #chiptune, #break, #stress a, #standup, #changeclothes, #question, #message.small {
     font-size: 30px;
   }
   #arrows {
