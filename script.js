@@ -540,8 +540,14 @@ function getBack()
   console.log("Random " + random);
   if(random === 0)
   {
-    document.getElementById("message").innerHTML = "Get back to whatever you should be doing!";
-    document.getElementById("link").innerHTML = "Immediately close this tab.";
+    $("message").innerHTML = "Get back to whatever you should be doing!";
+    $("link").innerHTML = "Immediately close this tab.";
+  }
+  var sleepTime = Math.floor(Math.random() * 5);
+  if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
+  {
+    $("message").innerHTML = 'You should be asleep by now.';
+    console.log("Sleep " + sleepTime);
   }
 }
 
