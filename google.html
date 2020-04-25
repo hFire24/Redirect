@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme5">
+    <div id='message' class='space'>Be honest. Did you Google that just because you are bored?</div>
+    <div id='yesno' class='anime-list'>
+      <a class='anime-link' onclick='youLose()'>Yes</a>
+      <a class='anime-link' onclick="youWin()">No</a>
+      <a class='anime-link' onclick="maybe()">Maybe</a>
+      <a class='anime-link' onclick='maybe()'>I dunno</a>
+    </div>
+    <script>
+      var hey = 0;
+      var message = document.getElementById("message");
+
+      function youWin() {
+        hey++;
+        document.body.removeChild(document.getElementById("yesno"));
+        if(hey === 1)
+        {
+          message.innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google in one hour.";
+          message.classList.add("small");
+        }
+        else
+          message.innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
+        }
+
+      function youLose() {
+        hey++;
+        if(hey === 1)
+          message.innerHTML = "Would that search term be blocked normally?";
+        else {
+          document.body.removeChild(document.getElementById("yesno"));
+          message.innerHTML = "☢GET OUT OF HERE☢";
+          document.body.className = "danger";
+          document.getElementById("message").style.color = "yellow";
+        }
+      }
+
+      function maybe() {
+        hey++;
+        if(hey === 1)
+          message.innerHTML = "Would that search term be blocked normally?";
+        else
+        {
+          document.body.removeChild(document.getElementById("yesno"));
+          message.innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
+        }
+      }
+    </script>
+  </body>
+</html>
