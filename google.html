@@ -11,8 +11,8 @@
   <body class="theme5">
     <div id='message' class='space'>Be honest. Did you Google that just because you are bored?</div>
     <div id='yesno' class='anime-list'>
-      <a class='anime-link' onclick='youLose()'>Yes</a>
-      <a class='anime-link' onclick="youWin()">No</a>
+      <a id='yes' class='anime-link' onclick='youLose()'>Yes</a>
+      <a id='no' class='anime-link' onclick="youWin()">No</a>
       <a class='anime-link' onclick="maybe()">Maybe</a>
       <a class='anime-link' onclick='maybe()'>I dunno</a>
     </div>
@@ -36,7 +36,11 @@
       function youLose() {
         hey++;
         if(hey === 1)
-          message.innerHTML = "Is that search term vague?";
+        {
+          message.innerHTML = "Do you want to save that search term for later?";
+          document.getElementById("yes").innerHTML = "No";
+          document.getElementById("no").innerHTML = "Yes";
+        }
         else {
           document.body.removeChild(document.getElementById("yesno"));
           message.innerHTML = "You really are bored.";
@@ -52,7 +56,9 @@
         if(hey === 0)
         {
           hey++;
-          message.innerHTML = "Is that search term vauge?";
+          message.innerHTML = "Do you want to save that search term for later?";
+          document.getElementById("yes").innerHTML = "No";
+          document.getElementById("no").innerHTML = "Yes";
         }
         else
           youLose();
