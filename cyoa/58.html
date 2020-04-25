@@ -14,14 +14,41 @@
     <div class='slidercontainer space'>
       <input type="range" min="0" max="8" value="0" class="slider" id="musicslider">
     </div>
-    <div id="message">No music</div>
+    <div id="message" class="space">No music</div>
+    <div id="intensity">Your mind easily wanders off.</div>
     <script>
       var genres = ['No music','Nature sounds','Ambient music','Chillout music','Smooth jazz','Progressive house','Chiptunes',/*'Eurovision hits',*/'Uplifting trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
       var genre = document.getElementById("message");
       var slider = document.getElementById("musicslider");
+      var intensity = document.getElementById("intensity");
       slider.max = genres.length - 1;
       slider.oninput = function() {
         genre.innerHTML = genres[slider.value];
+        console.log(slider.value);
+        switch(parseInt(slider.value))
+        {
+          case 0:
+            intensity.innerHTML = 'Your mind easily wanders off.';
+            break;
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+            intensity.innerHTML = 'This could help a little.';
+            break;
+          case 5:
+          case 6:
+            intensity.innerHTML = 'Good for getting things done.';
+            break;
+          case 7:
+            intensity.innerHTML = 'Now we\'re getting serious.';
+            break;
+          case 8:
+            intensity.innerHTML = 'GET THINGS DONE!';
+            break;
+          default:
+            intensity.innerHTML = "What?";
+        }
         if(slider.value >= genres.length - 1)
           genre.classList.add("stress");
         else
