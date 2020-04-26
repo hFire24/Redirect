@@ -4,17 +4,22 @@ var d = new Date();
 function loadWebsite(number) {
   if(number === 1)
     addBigMessages();
-  if(number === 1 || number === 5)
+  if(number === 1 || number === 55)
     randomMessage(-1,number);
-  else if(number > 1 && number < 4)
+  else if(number > 1 && number < 5)
   {
+    if(number > 1 && number < 4)
+    {
     if(Math.floor(Math.random() * 2) && number !== 2)
       loadBigBreak();
     else
       loadSmallBreak();
+    }
+    else
+      loadYouTubeBreak();
     loadBreak(-1);
   }
-  else if(number === 4)
+  else if(number === 5)
     randomQuestion(-1);
   else
     randomLink(-1,number);
@@ -25,11 +30,11 @@ function $(x) {
   return document.getElementById(x);
 }
 
-var messages;
-var standup;
+var messages = [];
+var standup = [];
 var changeclothes = [];
 
-function loadSmallBreak(index) {
+function loadSmallBreak() {
   messages = [//Relaxation
   'Listen to this.',
   'Clear your mind.',
@@ -58,7 +63,7 @@ function loadSmallBreak(index) {
   'Try answering this question.',
   'Play one of these short games.',
   'Watch anime for 5 minutes (or 20% full length).',
-  'Read your journal entries.<br>Start from February 2012.',
+  'Read your journal entries.<br>Start from March 2012.',
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
@@ -111,7 +116,9 @@ function loadBigBreak() {
   'Learn how to use FL Studio.',
   'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
-  'Host a website for free that supports FileZilla.'];
+  'Host a website for free that supports FileZilla.',
+  'Buy a drawing tablet for $200. When it arrives, practice drawing by tracing anime art.'];
+  //Do not upload traced art.
 
   standup = [//Health and fitness
   'Eat a meal if it has been 3 hours since you ate something.',
@@ -122,6 +129,20 @@ function loadBigBreak() {
   'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
   'Play some Stepmania.'];
+}
+
+function loadYouTubeBreak() {
+  messages = ['Watch one Eurovision performance.',
+  'Watch anime for 5 minutes (or 20% full length).',
+  'Double your social skills.',
+  'Watch anime.',
+  'If you\'re watching anime, watch a different anime.',
+  'Watch anime.',
+  'Play Island (Visual Novel).',
+  'Watch Eurovision.',
+  'Learn how to make chiptune music.',
+  'Learn how to use FL Studio.',
+  'Go to Skillshare, and learn programming.'];
 }
 
 function loadBreak(index) {
@@ -579,21 +600,17 @@ function rejectSomething(time) {
   else if(time === 3)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 4)
-    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(5)' style='color:white;'>No.</span>";
-  else if(time === 5)
-    location.href = "cyoa/37.html"
+    link.innerHTML = "<a href='breakyt.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 6)
     link.innerHTML = "<a href='cyoa/21.html'>Do you really want to look at cute anime girls?</a> <span onclick='rejectSomething(1)' style='color:white;'>No</span>";
   else if(time === 7)
     link.innerHTML = "<a href='time.html'>Screw reddit. Do something else!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 8)
-    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(11)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='cyoa/29.html'>You just wanted to play games. Right?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
   else if(time === 10)
     link.innerHTML = "<a class='anime-link' href='cyoa/2.html'>You really are bored.</a>";
-  else if(time === 11)
-    location.href = "cyoa/29.html";
   else
     location.href = "cyoa/1.html";
 }
