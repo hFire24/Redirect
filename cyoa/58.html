@@ -17,7 +17,7 @@
     <div id="message" class="space">No music</div>
     <div id="intensity">Your mind easily wanders off.</div>
     <script>
-      var genres = ['No music','Nature sounds','Ambient music','Chillout music','Smooth jazz','Progressive house','Chiptunes',/*'Eurovision hits',*/'Uplifting trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
+      var genres = ['No music','Nature sounds','Ambient music','Downtempo music','Progressive house','Chiptunes',/*'Eurovision hits',*/'Uplifting trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
       var genre = document.getElementById("message");
       var slider = document.getElementById("musicslider");
       var intensity = document.getElementById("intensity");
@@ -33,17 +33,16 @@
           case 1:
           case 2:
           case 3:
-          case 4:
             intensity.innerHTML = 'This could help a little.';
             break;
+          case 4:
           case 5:
-          case 6:
             intensity.innerHTML = 'Good for getting things done.';
             break;
-          case 7:
+          case 6:
             intensity.innerHTML = 'Now we\'re getting serious.';
             break;
-          case 8:
+          case 7:
             intensity.innerHTML = 'GET THINGS DONE!';
             break;
           default:
