@@ -117,7 +117,7 @@ function loadBigBreak() {
   'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
-  'Buy a drawing tablet for $200. When it arrives, practice drawing by tracing anime art.'];
+  'Draw anime, I mean trace over an official art of a Ro-Kyu-Bu! character using your iPad.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -130,6 +130,15 @@ function loadBigBreak() {
   'Learn how to use Pygame by reading that book.',
   'Play some Stepmania.'];
 }
+
+/*function getAnimeArtist() {
+  var artists = ["Fujima Takuya's (c. 2011)",
+  "Korie Riko's (c. 2014)",
+  "Kobuichi's",
+  "Tinkle's (c. 2009)",
+  "Kira Inugami's",
+  "Morinaga Korune's",]
+}*/
 
 function loadYouTubeBreak() {
   messages = ['Watch one Eurovision performance.',
