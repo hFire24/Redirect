@@ -13,8 +13,8 @@
     <div id='yesno' class='anime-list'>
       <a id='yes' class='anime-link' onclick='youLose()'>Yes</a>
       <a id='no' class='anime-link' onclick="youWin()">No</a>
-      <a class='anime-link' onclick="maybe()">Maybe</a>
-      <a class='anime-link' onclick='maybe()'>I dunno</a>
+      <a id='maybe' class='anime-link' onclick="maybe()">Maybe</a>
+      <a id='idk' class='anime-link' onclick='idk()'>I dunno</a>
     </div>
     <div id="clickanywhere" style="display:none;">Click anywhere to continue.</div>
     <script>
@@ -23,15 +23,25 @@
 
       function youWin() {
         hey++;
-        document.body.removeChild(document.getElementById("yesno"));
         if(hey === 1)
         {
-          message.innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google in one hour.";
-          message.classList.add("small");
+          hey = 2;
+          message.innerHTML = "What kind of emotions did you have when searching that term?";
+          document.getElementById("yes").innerHTML = "Anger/Worry";
+          document.getElementById("maybe").innerHTML = "Unclean";
+          document.getElementById("no").innerHTML = "Determined";
         }
-        else
+        else if(hey === 2)
+        {
+          document.body.removeChild(document.getElementById("yesno"));
           message.innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
         }
+        else {
+          document.body.removeChild(document.getElementById("yesno"));
+          message.innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
+          message.classList.add("small");
+        }
+      }
 
       function youLose() {
         hey++;
@@ -41,7 +51,7 @@
           document.getElementById("yes").innerHTML = "No";
           document.getElementById("no").innerHTML = "Yes";
         }
-        else {
+        else if(hey === 2) {
           document.body.removeChild(document.getElementById("yesno"));
           message.innerHTML = "You really are bored.";
           document.getElementById("clickanywhere").style.display = "block";
@@ -50,18 +60,32 @@
             location.href = "cyoa/2.html";
           });
         }
+        else {
+          document.body.removeChild(document.getElementById("yesno"));
+          message.innerHTML = "You need to calm down and relax.";
+          document.getElementById("clickanywhere").style.display = "block";
+          window.addEventListener("mouseup", function (event) {
+            event.preventDefault();
+            location.href = "https://open.spotify.com/album/7Cff6vcc5DQ51FZ0DPLqXD";
+          });
+        }
       }
 
       function maybe() {
-        if(hey === 0)
-        {
-          hey++;
-          message.innerHTML = "Do you want to save that search term for later?";
-          document.getElementById("yes").innerHTML = "No";
-          document.getElementById("no").innerHTML = "Yes";
-        }
-        else
+        if(hey !== 2)
           youLose();
+        else {
+          location.href = "whoa/index.html";
+        }
+      }
+
+      function idk() {
+        if(hey !== 2)
+          youLose();
+        else {
+          hey = 1;
+          youLose();
+        }
       }
     </script>
   </body>
