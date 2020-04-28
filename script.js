@@ -524,6 +524,7 @@ function randomLink(index,number) {
     linkMessages.push("Got something you need to do?");
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
+  var message = $("message").innerHTML;
   //If the message tells you to leave, the linkIndex will be 0.
   if (index < 3 || message === 'Return to your previous task.' || message === 'Get out of here!')
     linkIndex = 0;
