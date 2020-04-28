@@ -164,7 +164,6 @@ function loadBreak(index) {
     do
       index = Math.floor(Math.random() * messages.length);
     while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
-  index = 25;
   var message = $("break");
   var standupMessage = $("standup");
   var changeMessage = $("changeclothes");
