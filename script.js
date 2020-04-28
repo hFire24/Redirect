@@ -352,6 +352,7 @@ function addBigMessages() {
   '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
   '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
   'Remember that Python games book? You may get something out of it by reading it.',
+  'Why don\'t you get the iPad to practice drawing anime? Start by tracing.',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit.<br>Look away from the screen.',
@@ -469,8 +470,8 @@ function addBigMessages() {
   'Yeah, yeah. I restricted your freedom. <span id="stress">DEAL WITH IT.</span>',
   'Grow up and get a life!');
 
-  for(var i = 0; i < questions.length; i++)
-    redirectMessages.push(questions[i]);
+  /*for(var i = 0; i < questions.length; i++)
+    redirectMessages.push(questions[i]);*/
 }
 
 function randomMessage(index,number) {
