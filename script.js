@@ -117,7 +117,7 @@ function loadBigBreak() {
   'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
-  'Draw anime, I mean trace over an official art of a Ro-Kyu-Bu! character using your iPad.'];
+  'Draw anime.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -164,6 +164,7 @@ function loadBreak(index) {
     do
       index = Math.floor(Math.random() * messages.length);
     while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && d.getHours() > 3 && d.getHours() < 20);
+  index = 25;
   var message = $("break");
   var standupMessage = $("standup");
   var changeMessage = $("changeclothes");
@@ -222,6 +223,9 @@ function loadBreak(index) {
       break;
     case messages.indexOf("Don't suck at group projects."):
       message.href = "groupprojects.html";
+      break;
+    case messages.indexOf("Draw anime."):
+      message.href = "art.html";
       break;
     default:
       message.removeAttribute("href");
@@ -352,7 +356,7 @@ function addBigMessages() {
   '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
   '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
   'Remember that Python games book? You may get something out of it by reading it.',
-  'Why don\'t you get the iPad to practice drawing anime? Start by tracing.',
+  '<a href="art.html">Why don\'t you practice drawing anime?</a>',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit.<br>Look away from the screen.',
