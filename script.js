@@ -273,7 +273,7 @@ function loadBreak(index) {
 }
 
 var redirectMessages = ['Stop typing in addresses of distracting websites!',
-'YouTube. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+'YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
 'Get back to whatever you should be doing!',
 'You were redirected from a blacklisted website.',
 'You shouldn\'t access that website now.',
