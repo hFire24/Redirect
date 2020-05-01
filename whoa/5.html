@@ -9,10 +9,16 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body onload='loadWebsite(5)'>
-    <div id='message' class='space'></div>
-    <div class='space'><a id='link' href="https://emergency.nofap.com/redirect?religious=true&cat=em">Click here</a> and
-    <a href="../chiptunelessons.html">DON'T give up.</a></div>
+    <div id='message' class='space' onClick='nuke()'></div>
+    <div class='space'><u id='link' onclick="pushTheButton()">Click here</u> and
+    <a href="../bigbreak.html">do something else.</a></div>
     <a href='../cyoa/1.html'>Feeling stuck?</a>
+    <audio id='nuke'>
+      <source src="../media/Tactical Nuke.mp3" type="audio/mpeg">
+    </audio>
+    <audio id='press'>
+      <source src="../media/Button Push.mp3" type="audio/mpeg">
+    </audio>
     <script src='script.js'></script>
   </body>
 </html>
