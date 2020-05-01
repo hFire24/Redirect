@@ -6,6 +6,8 @@ function loadWebsite(number) {
     addBigMessages();
   if(number === 1 || number === 55)
     randomMessage(-1,number);
+  if(number === 55)
+    randomIcon();
   else if(number > 1 && number < 5)
   {
     if(number > 1 && number < 4)
@@ -39,7 +41,7 @@ function loadSmallBreak() {
   'Listen to this.',
   'Clear your mind.',
   'Pray a short prayer.',
-  'Look away from the screen for about 30 seconds.',
+  'Look away from the screen for about 2 minutes.',
   'Take a deep breath.',
   'Put on some focus/relaxation music.',
     //Task checking
@@ -175,8 +177,8 @@ function loadBreak(index) {
     case messages.indexOf("Clear your mind."):
       message.href = "https://www.dropbox.com/sh/6pw78gq1vty860o/AABxsvUAWPsWw29v7dxiSYT7a?dl=0";
       break;
-    case messages.indexOf("Look away from the screen for about 30 seconds."):
-      message.href = "https://www.google.com/search?q=30+second+timer";
+    case messages.indexOf("Look away from the screen for about 2 minutes."):
+      message.href = "https://www.google.com/search?q=2+minute+timer";
       break;
     case messages.indexOf("Take a deep breath."):
       message.href = "https://www.google.com/search?q=breathing+exercise";
@@ -308,7 +310,7 @@ function addBigMessages() {
   redirectMessages.push(//Relaxation
   'Clearing your mind may help.',
   'Did you think to pray?',
-  'Give your eyes a short 30 second break.',
+  '<a href="https://www.google.com/search?q=2+minute+timer">Give your eyes a short 2 minute break.</a>',
   '<a href="https://www.google.com/search?q=breathing+exercise">Don\'t forget to take deep breaths.</a>',
   '<a href="https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451">Need help? Put on some relaxing music.</a>',
     //Task checking
@@ -567,6 +569,13 @@ function randomLink(index,number) {
   }
   else if(message.length > 90)
     $("message").id = "break";
+}
+
+function randomIcon() {
+  var icon = $("apple");
+  var iconNumber = Math.floor(Math.random() * 5) + 1;
+  if(iconNumber > 1)
+    icon.href = "apple-touch-icon " + iconNumber + ".png";
 }
 
 function getBack()
