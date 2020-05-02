@@ -2,12 +2,14 @@ var number = 0;
 var d = new Date();
 
 function loadWebsite(number) {
-  if(number === 1)
-    addBigMessages();
   if(number === 1 || number === 55)
+  {
+    if(number === 1)
+      addBigMessages();
+    else
+      randomIcon();
     randomMessage(-1,number);
-  if(number === 55)
-    randomIcon();
+  }
   else if(number > 1 && number < 5)
   {
     if(number > 1 && number < 4)
