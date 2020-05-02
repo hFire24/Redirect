@@ -38,6 +38,10 @@ ol a {
   font-size: 140px;
 }
 
+#message.tiny {
+  font-size: 84px;
+}
+
 #trance {
   font-family: Neuropol, 'Michroma', AvenirNext-Heavy, 'Arial Black', sans-serif;
 }
@@ -230,7 +234,7 @@ td {
 }
 
 @media only screen and (max-width: 1702px) {
-  body {
+  body, #message.tiny {
     font-size: 60px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1, #arrows {
@@ -252,7 +256,7 @@ td {
 }
 
 @media only screen and (max-width: 1135px) {
-  body {
+  body, #message.tiny {
     font-size: 30px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -280,7 +284,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body {
+  body, #message.tiny {
     font-size: 20px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {

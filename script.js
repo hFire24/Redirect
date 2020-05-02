@@ -1,5 +1,8 @@
 var number = 0;
 var d = new Date();
+var messages = [];
+var standup = [];
+var changeclothes = [];
 
 function loadWebsite(number) {
   if(number === 1 || number === 55)
@@ -33,10 +36,6 @@ function loadWebsite(number) {
 function $(x) {
   return document.getElementById(x);
 }
-
-var messages = [];
-var standup = [];
-var changeclothes = [];
 
 function loadSmallBreak() {
   messages = [//Relaxation
@@ -560,17 +559,9 @@ function randomLink(index,number) {
     createAdvice();
   //If the message is too long, this fires up.
   if(message.length > 200)
-  {
-    var x = window.matchMedia("(max-width: 567px)");
-    var y = window.matchMedia("(max-width: 1135px)");
-    var z = window.matchMedia("(max-width: 1702px)");
-    resizeText(x,y,z);
-    x.addListener(resizeText);
-    y.addListener(resizeText);
-    z.addListener(resizeText);
-  }
+    $("message").classList.add("tiny");
   else if(message.length > 90)
-    $("message").id = "break";
+    $("message").classList.add("small");
 }
 
 function randomIcon() {
@@ -744,17 +735,6 @@ function randomTheme(number) {
 
 function getWidth() {
   $("width").innerHTML = window.innerWidth;
-}
-
-function resizeText(x,y,z) {
-  if (x.matches)
-    $("message").style.fontSize = "20px";
-  else if (y.matches)
-    $("message").style.fontSize = "30px";
-  else if (z.matches)
-    $("message").style.fontSize = "60px";
-  else
-    $("message").style.fontSize = "84px";
 }
 
 function createMessage() {
