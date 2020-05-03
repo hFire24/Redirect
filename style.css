@@ -189,6 +189,16 @@ td {
   color: hsl(59, 22%, 87%);
 }
 
+.crap {
+  background-color: hsl(22, 13%, 32%);
+  color: hsl(349, 22%, 87%);
+  font-family: 'Comic Sans MS';
+}
+
+.crap a {
+  color: hsl(359, 22%, 87%);
+}
+
 .theme10 {
   background-color: black;
   color: red;
