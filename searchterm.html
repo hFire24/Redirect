@@ -22,215 +22,217 @@
       var relapsed = true;
       if(relapsed)
         location.href = "relapse";
-      var redirectMessages = ['Stop typing in distracting search terms!',
-      'YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image Boards. Facebook. Everything you find to be cute and attractive.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
-      'Get back to whatever you should be doing!',
-      'You were redirected from a blacklisted search term.',
-      'You shouldn\'t search that term.',
-      'This search term is blocked.',
-      'Don\'t waste time getting distracted on Google.',
-      'Hey! You aren\'t supposed to do that!',
-      'Don\'t you have anything better to do with your time?',
-      'Today will be a great day to catch up with your schedule and tasks.',
-      'You might regret searching that search term.',
-      'Don\'t search for time-wasting things!',
-      'No searching for blocked search terms. You understand?',
-      'May this page suggest you take a short break?',
-      'It is a good idea to get things done.',
-      'Your mind must be wandering off, isn\'t it?',
-      'This is a webpage. And it intercepted your internet access!',
-      'You\'re wasting your time! Come on!',
-      'Ehem. You need to stop procrastinating.',
-      'You won\'t complete your tasks quickly if you sidetrack.',
-      'There\'s nothing beneficial to see there.',
-      'Please get things done. I mean it.',
-      'Time is a precious resource. Don\'t waste it.',
-      'Seriously? You got stuff to do!',
-      'Make sure you stay on task.',
-      'Cute or fun things are good, but they are distractions.',
-      'You\'ve made it this far to code this webpage.',
-      'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
-      'You live to be entertained? 🤣',
-      'What other important things do you need to get done?',
-      'You wish you are a cute anime girl? 🤣🤣',
-      '☢DO NOT FAP☢',
-      '☢ERADICATE THE SIN OF LUST☢',
-      '☢DO NOT SIN ON CERTAIN WEBSITES☢',
-      '☢DO NOT GO AGAINST THE TEACHINGS OF JESUS☢',
-      '☢YOU NEED MORE JESUS☢',
-      '☢DO NOT PROCRASTURBATE☢',
-      '☢DO NOT SCREW UP YOUR DAY☢',
-      '☢DO NOT DESTROY YOUR FUTURE☢',
-      '☢DO NOT BE A SICK DEGENERATE☢',
-      '☢DO NOT THROW YOUR LIFE AWAY☢',
-      '☢DO NOT FURTHER CORRUPT YOURSELF☢',
-      '☢DO NOT INDULGE IN TABOO PLEASURES☢',
-      '☢DO NOT EVEN THINK ABOUT RELAPSING☢',
-      '☢DO NOT THINK OF IMMORAL FANTASIES☢',
-      '☢DO NOT LET YOUR URGES DICTATE YOU☢',
-      '☢DO NOT SEEK FOR SEXUALLY PLEASING THINGS☢',
-      '☢YOU WERE REDIRECTED FROM A DANGEROUS SEARCH TERM☢',
-      '☢YOU HAVE OTHER THINGS TO DO☢',
-      '☢☢☢☢☢☢☢☢☢☢☢',
-      '☢UNCLEAN SEARCH QUERY HAS BEEN CONTAINED☢',
-      '☢THAT UNSAFE SEARCH TERM IS BLOCKED☢',
-      '✝PLAY TABERNACLE CHOIR MUSIC✝',
-      '☢PLAY FURY OF THE STORM☢',
-      '☢THINK OF SOMETHING ELSE☢',
-      '☢ANYTHING SEXUALLY AROUSING IS TERRIBLE☢',
-      '☢STOP TYPING IN SINFUL SEARCH TERMS☢',
-      '☢NO MORE OF THIS BS.<br>YOU UNDERSTAND?☢',
-      '☢RESIST SATAN\'S TEMPTATIONS☢',
-      '☢OH MY FURTING GOO. SERIOUSLY!?☢',
-      'No more fapping.',
-      'You had been tempted by Satan.',
-      'Don\'t ever sin again.',
-      'Please stop being lazy, and stop wasting your time.',
-      'You screwed up. This is not OK.',
-      'Make your future brighter before it\'s too late.',
-      'Don\'t waste your life viewing immoral images.',
-      'You must take NoFap seriously.',
-      'Quitting indulgent activities is not easy, but worth it.',
-      'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
-      'Freedom is not being dictated by your urges.',
-      'No more looking at sexual things.',
-      'Do not feel weak. You are stronger than you think.',
-      'Your ideal self is a cute little kid? 🤣🤣',
-      'Freedom from addictions. That should be a goal.',
-      'Do you really want to look at pics of cute anime girls?',
-      'You are not prepared for the Second Coming.',
-      'You are capable of doing great things.',
-      'There\'s more to life than your deep desires.',
-      'Freedom is not falling into Satan\'s temptations.'];
-      //Get random message index from messages array
-      var index = Math.floor(Math.random() * redirectMessages.length);
-      var d = new Date();
-      var sleepTime = Math.floor(Math.random() * 5);
-      if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
-      {
-        redirectMessages.push('You should be asleep by now.');
-        index = redirectMessages.length - 1;
-        console.log("Sleep " + sleepTime);
-      }
-      if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
-      {
-        redirectMessages.push('Get ready for church!');
-        index = redirectMessages.length - 1;
-      }
-      //Put message to screen using the index value of the array
-      var message = redirectMessages[index];
-      $("message").innerHTML = message;
-      //Put index value to the console
-      console.log("Message " + index);
-      if($("message").innerHTML.length > 200)
-      {
-        var x = window.matchMedia("(max-width: 567px)");
-        var y = window.matchMedia("(max-width: 1135px)");
-        var z = window.matchMedia("(max-width: 1702px)");
-        resizeText(x,y,z);
-        x.addListener(resizeText);
-        y.addListener(resizeText);
-        z.addListener(resizeText);
-      }
-      if(message.indexOf('🤣') >= 0)
-      {
-        $("message").addEventListener("click",function(){
-          var exists = $("hakase");
-            if (!exists) {
-              $("message").innerHTML = $("message").innerHTML + "<br>";
-              var video = document.createElement("video");
-              video.id = "hakase";
-              var source = document.createElement("source");
-              source.src = "https://hfire24.github.io/Redirect/media/ROFL.mp4";
-              source.type = "video/mp4";
-              video.appendChild(source);
-              $("message").appendChild(video);
-            }
-          $("hakase").play();});
-      }
-      else if(message.indexOf('☢') >= 0)
-        $("message").addEventListener("click",nuke);
-
-      var linkMessages = ["Immediately close this tab."];
-      for (var i = 1; i <= 30; i++)
-        linkMessages.push("Got something you need to do?");
-      //Get random link from array
-      var linkIndex = Math.floor(Math.random() * linkMessages.length);
-      if (index < 4)
-        linkIndex = 0;
-      //Put link message and to screen using the index value of the array
-      var parent = $("hideable");
-      var link = $("link");
-      if(!link) {
-        link = document.createElement("div");
-        link.id = "link";
-        link.className = "space";
-        parent.appendChild(link);
-      }
-
-      if ($("message").innerHTML === "Get ready for church!")
-        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/church.html'>Here's how to get ready.</a>";
-      else if (message === "May this page suggest you take a short break?")
-        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
-      else if (message.startsWith('✝'))
-        link.innerHTML = "<u onclick='pushTheButton(3)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else if (message.startsWith('☢OPEN'))
-        link.innerHTML = "<u onclick='pushTheButton(4)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else if (index > redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index < redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
-        link.innerHTML = "<u onclick='pushTheButton(2)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else if (message.startsWith('☢'))
-        link.innerHTML = "<u onclick='pushTheButton(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else if (linkIndex > 0)
-        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else
-        link.innerHTML = linkMessages[linkIndex];
-      //Put index value to the console
-      console.log("Link " + linkIndex);
-
-      var theme = Math.floor(Math.random() * 5) + 5;
-      if(message.startsWith('☢') || message.startsWith('✝'))
-      {
-        theme = 10;
-        $("message").style.fontFamily = "Impact";
-      }
-      var themeText = document.createElement("div");
-      themeText.id = "theme";
-      switch(theme)
-      {
-        case 5:
-          themeText.innerHTML = "Brought to you by the gray theme.";
-          break;
-        case 6:
-          themeText.innerHTML = "Brought to you by the slate green theme.";
-          break;
-        case 7:
-          themeText.innerHTML = "Brought to you by the purple theme.";
-          break;
-        case 8:
-          themeText.innerHTML = "Brought to you by the hot & dry theme.";
-          break;
-        case 9:
-          themeText.innerHTML = "Brought to you by the green theme.";
-          break;
-        case 10:
-          break;
-        default:
-          themeText.innerHTML = "Brought to you by the black theme.";
-      }
-      parent.appendChild(themeText);
-      document.body.className = "theme" + theme.toString();
-      console.log("Theme " + theme);
-
-      var hide = $("hideable");
-      window.addEventListener("keyup", function (event) {
-        if (event.keyCode === 66) {
-          event.preventDefault();
-          if (hide.style.display !== "none")
-            hide.style.display = "none";
-          else
-            hide.style.display = "inline";
+      else {
+        var redirectMessages = ['Stop typing in distracting search terms!',
+        'YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image Boards. Facebook. Everything you find to be cute and attractive.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+        'Get back to whatever you should be doing!',
+        'You were redirected from a blacklisted search term.',
+        'You shouldn\'t search that term.',
+        'This search term is blocked.',
+        'Don\'t waste time getting distracted on Google.',
+        'Hey! You aren\'t supposed to do that!',
+        'Don\'t you have anything better to do with your time?',
+        'Today will be a great day to catch up with your schedule and tasks.',
+        'You might regret searching that search term.',
+        'Don\'t search for time-wasting things!',
+        'No searching for blocked search terms. You understand?',
+        'May this page suggest you take a short break?',
+        'It is a good idea to get things done.',
+        'Your mind must be wandering off, isn\'t it?',
+        'This is a webpage. And it intercepted your internet access!',
+        'You\'re wasting your time! Come on!',
+        'Ehem. You need to stop procrastinating.',
+        'You won\'t complete your tasks quickly if you sidetrack.',
+        'There\'s nothing beneficial to see there.',
+        'Please get things done. I mean it.',
+        'Time is a precious resource. Don\'t waste it.',
+        'Seriously? You got stuff to do!',
+        'Make sure you stay on task.',
+        'Cute or fun things are good, but they are distractions.',
+        'You\'ve made it this far to code this webpage.',
+        'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
+        'You live to be entertained? 🤣',
+        'What other important things do you need to get done?',
+        'You wish you are a cute anime girl? 🤣🤣',
+        '☢DO NOT FAP☢',
+        '☢ERADICATE THE SIN OF LUST☢',
+        '☢DO NOT SIN ON CERTAIN WEBSITES☢',
+        '☢DO NOT GO AGAINST THE TEACHINGS OF JESUS☢',
+        '☢YOU NEED MORE JESUS☢',
+        '☢DO NOT PROCRASTURBATE☢',
+        '☢DO NOT SCREW UP YOUR DAY☢',
+        '☢DO NOT DESTROY YOUR FUTURE☢',
+        '☢DO NOT BE A SICK DEGENERATE☢',
+        '☢DO NOT THROW YOUR LIFE AWAY☢',
+        '☢DO NOT FURTHER CORRUPT YOURSELF☢',
+        '☢DO NOT INDULGE IN TABOO PLEASURES☢',
+        '☢DO NOT EVEN THINK ABOUT RELAPSING☢',
+        '☢DO NOT THINK OF IMMORAL FANTASIES☢',
+        '☢DO NOT LET YOUR URGES DICTATE YOU☢',
+        '☢DO NOT SEEK FOR SEXUALLY PLEASING THINGS☢',
+        '☢YOU WERE REDIRECTED FROM A DANGEROUS SEARCH TERM☢',
+        '☢YOU HAVE OTHER THINGS TO DO☢',
+        '☢☢☢☢☢☢☢☢☢☢☢',
+        '☢UNCLEAN SEARCH QUERY HAS BEEN CONTAINED☢',
+        '☢THAT UNSAFE SEARCH TERM IS BLOCKED☢',
+        '✝PLAY TABERNACLE CHOIR MUSIC✝',
+        '☢PLAY FURY OF THE STORM☢',
+        '☢THINK OF SOMETHING ELSE☢',
+        '☢ANYTHING SEXUALLY AROUSING IS TERRIBLE☢',
+        '☢STOP TYPING IN SINFUL SEARCH TERMS☢',
+        '☢NO MORE OF THIS BS.<br>YOU UNDERSTAND?☢',
+        '☢RESIST SATAN\'S TEMPTATIONS☢',
+        '☢OH MY FURTING GOO. SERIOUSLY!?☢',
+        'No more fapping.',
+        'You had been tempted by Satan.',
+        'Don\'t ever sin again.',
+        'Please stop being lazy, and stop wasting your time.',
+        'You screwed up. This is not OK.',
+        'Make your future brighter before it\'s too late.',
+        'Don\'t waste your life viewing immoral images.',
+        'You must take NoFap seriously.',
+        'Quitting indulgent activities is not easy, but worth it.',
+        'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
+        'Freedom is not being dictated by your urges.',
+        'No more looking at sexual things.',
+        'Do not feel weak. You are stronger than you think.',
+        'Your ideal self is a cute little kid? 🤣🤣',
+        'Freedom from addictions. That should be a goal.',
+        'Do you really want to look at pics of cute anime girls?',
+        'You are not prepared for the Second Coming.',
+        'You are capable of doing great things.',
+        'There\'s more to life than your deep desires.',
+        'Freedom is not falling into Satan\'s temptations.'];
+        //Get random message index from messages array
+        var index = Math.floor(Math.random() * redirectMessages.length);
+        var d = new Date();
+        var sleepTime = Math.floor(Math.random() * 5);
+        if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
+        {
+          redirectMessages.push('You should be asleep by now.');
+          index = redirectMessages.length - 1;
+          console.log("Sleep " + sleepTime);
         }
-      });
+        if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
+        {
+          redirectMessages.push('Get ready for church!');
+          index = redirectMessages.length - 1;
+        }
+        //Put message to screen using the index value of the array
+        var message = redirectMessages[index];
+        $("message").innerHTML = message;
+        //Put index value to the console
+        console.log("Message " + index);
+        if($("message").innerHTML.length > 200)
+        {
+          var x = window.matchMedia("(max-width: 567px)");
+          var y = window.matchMedia("(max-width: 1135px)");
+          var z = window.matchMedia("(max-width: 1702px)");
+          resizeText(x,y,z);
+          x.addListener(resizeText);
+          y.addListener(resizeText);
+          z.addListener(resizeText);
+        }
+        if(message.indexOf('🤣') >= 0)
+        {
+          $("message").addEventListener("click",function(){
+            var exists = $("hakase");
+              if (!exists) {
+                $("message").innerHTML = $("message").innerHTML + "<br>";
+                var video = document.createElement("video");
+                video.id = "hakase";
+                var source = document.createElement("source");
+                source.src = "https://hfire24.github.io/Redirect/media/ROFL.mp4";
+                source.type = "video/mp4";
+                video.appendChild(source);
+                $("message").appendChild(video);
+              }
+            $("hakase").play();});
+        }
+        else if(message.indexOf('☢') >= 0)
+          $("message").addEventListener("click",nuke);
+
+        var linkMessages = ["Immediately close this tab."];
+        for (var i = 1; i <= 30; i++)
+          linkMessages.push("Got something you need to do?");
+        //Get random link from array
+        var linkIndex = Math.floor(Math.random() * linkMessages.length);
+        if (index < 4)
+          linkIndex = 0;
+        //Put link message and to screen using the index value of the array
+        var parent = $("hideable");
+        var link = $("link");
+        if(!link) {
+          link = document.createElement("div");
+          link.id = "link";
+          link.className = "space";
+          parent.appendChild(link);
+        }
+
+        if ($("message").innerHTML === "Get ready for church!")
+          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/church.html'>Here's how to get ready.</a>";
+        else if (message === "May this page suggest you take a short break?")
+          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+        else if (message.startsWith('✝'))
+          link.innerHTML = "<u onclick='pushTheButton(3)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        else if (message.startsWith('☢OPEN'))
+          link.innerHTML = "<u onclick='pushTheButton(4)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        else if (index > redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index < redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
+          link.innerHTML = "<u onclick='pushTheButton(2)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        else if (message.startsWith('☢'))
+          link.innerHTML = "<u onclick='pushTheButton(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        else if (linkIndex > 0)
+          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        else
+          link.innerHTML = linkMessages[linkIndex];
+        //Put index value to the console
+        console.log("Link " + linkIndex);
+
+        var theme = Math.floor(Math.random() * 5) + 5;
+        if(message.startsWith('☢') || message.startsWith('✝'))
+        {
+          theme = 10;
+          $("message").style.fontFamily = "Impact";
+        }
+        var themeText = document.createElement("div");
+        themeText.id = "theme";
+        switch(theme)
+        {
+          case 5:
+            themeText.innerHTML = "Brought to you by the gray theme.";
+            break;
+          case 6:
+            themeText.innerHTML = "Brought to you by the slate green theme.";
+            break;
+          case 7:
+            themeText.innerHTML = "Brought to you by the purple theme.";
+            break;
+          case 8:
+            themeText.innerHTML = "Brought to you by the hot & dry theme.";
+            break;
+          case 9:
+            themeText.innerHTML = "Brought to you by the green theme.";
+            break;
+          case 10:
+            break;
+          default:
+            themeText.innerHTML = "Brought to you by the black theme.";
+        }
+        parent.appendChild(themeText);
+        document.body.className = "theme" + theme.toString();
+        console.log("Theme " + theme);
+
+        var hide = $("hideable");
+        window.addEventListener("keyup", function (event) {
+          if (event.keyCode === 66) {
+            event.preventDefault();
+            if (hide.style.display !== "none")
+              hide.style.display = "none";
+            else
+              hide.style.display = "inline";
+          }
+        });
+      }
 
       function rejectSomething(time) {
         if(time === 1)
