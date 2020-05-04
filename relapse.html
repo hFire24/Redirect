@@ -51,15 +51,7 @@
       if(index >= messages.indexOf('You\'ve sinned. Don\'t do it again.') && index <= messages.indexOf('You really need more Jesus.'))
         link.href = "repent.html";
       if(message.innerHTML.length > 200)
-      {
-        var x = window.matchMedia("(max-width: 567px)");
-        var y = window.matchMedia("(max-width: 1135px)");
-        var z = window.matchMedia("(max-width: 1702px)");
-        resizeText(x,y,z);
-        x.addListener(resizeText);
-        y.addListener(resizeText);
-        z.addListener(resizeText);
-      }
+        document.getElementById("message").classList.add("tiny");
     </script>
     <script src='script.js'></script>
   </body>
