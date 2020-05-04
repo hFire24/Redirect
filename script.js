@@ -3,6 +3,7 @@ var d = new Date();
 var messages = [];
 var standup = [];
 var changeclothes = [];
+var breakArray;
 
 function loadWebsite(number) {
   if(number === 1 || number === 55)
@@ -38,6 +39,7 @@ function $(x) {
 }
 
 function loadSmallBreak() {
+  breakArray = 'small';
   messages = [//Relaxation
   'Listen to this.',
   'Clear your mind.',
@@ -80,6 +82,7 @@ function loadSmallBreak() {
   'Stare at an object 20 feet away for 20 seconds.',
   'Eat a snack if it has been 3 hours since you ate something.',
   'Listen to your own music, and don\'t be afraid to dance to it.',
+  'Do planks for one minute.',
     //Personal hygiene
   'Change your clothes if they\'re dirty.',
   'Change to your pajamas. No socks.',
@@ -88,13 +91,14 @@ function loadSmallBreak() {
 }
 
 function loadBigBreak() {
+  breakArray = 'big';
   messages = [//Task checking
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
   'Check your To Do spreadsheet.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
-    //Homework
+    /*Homework
   'Do homework.<br>You may need to stand up and stretch and change clothes.',
   'Get assignments done.<br>You may need to stand up and stretch and change clothes.',
   'If you\'re struggling with homework, do a different assignment.',
@@ -102,7 +106,7 @@ function loadBigBreak() {
   //'Make progress on a big project.',
   'Finish a piece of homework, even if the deadline is far.',
   'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
-  'Don\'t suck at group projects.',
+  'Don\'t suck at group projects.',*/
     //Anime watching
   'Watch anime.',
   'If you\'re watching anime, watch a different anime.',
@@ -144,6 +148,7 @@ function loadBigBreak() {
 }*/
 
 function loadYouTubeBreak() {
+  breakArray = 'YouTube';
   messages = ['Watch one Eurovision performance.',
   'Watch anime for 5 minutes (or 20% full length).',
   'Double your social skills.',
@@ -234,6 +239,8 @@ function loadBreak(index) {
   }
   if (standIndex === standup.indexOf("Play some Stepmania."))
     standupMessage.href = "stepmania.html";
+  else if (standIndex === standup.indexOf("Do planks for one minute."))
+    standupMessage.href = "https://www.youtube.com/watch?v=z6KKo85V9Ew";
   else
     standupMessage.removeAttribute("href");
   if((d.getHours() <= 5 || d.getHours() >= 23) && !Math.floor(Math.random() * 4))
@@ -250,7 +257,7 @@ function loadBreak(index) {
   if(message.innerHTML === 'Stand up and stretch if you can.')
   {
     console.log("Standup " + standIndex);
-    message.addEventListener("click",function() {$("standup").style.display = 'block';});
+    message.addEventListener("click",function() {$("standup").style.display = 'block'; $("link").style.display = 'block';});
     standupMessage.innerHTML = standup[standIndex];
     if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.')
     {
@@ -271,9 +278,21 @@ function loadBreak(index) {
         document.body.appendChild(video);
       }
     $("vader").play();});
+  var parent = $("hideable");
+  var link = $("link");
+  if(!link) {
+    link = document.createElement("div");
+    link.id = "link";
+    link.className = "space";
+    parent.appendChild(link);
+  }
+  link.innerHTML = "<a href='brave.html?array=" + breakArray + "&index=" + index + "'>I don't want to.</a>";
+  if(standIndex > 0)
+    $("link").style.display = 'none';
 }
 
 var redirectMessages = ['Stop typing in addresses of distracting websites!',
+'Stop escaping from your problems!',
 'YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
 'Get back to whatever you should be doing!',
 'You were redirected from a blacklisted website.',
@@ -302,7 +321,10 @@ var redirectMessages = ['Stop typing in addresses of distracting websites!',
 'You\'ve made it this far to code this webpage.',
 'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
 'You live to be entertained? 🤣',
-'What other important things do you need to get done?'];
+'What other important things do you need to get done?',
+'You\'re not bored, lazy, or procrastinating. You are fearful.',
+'Quit running away from your problems.',
+'Distractions: An innefective way to cope fear. You should deal with your problems directly.'];
 //This message is added when the website is launched on mobile.
 if (window.innerWidth <= 812)
   redirectMessages.push('Use the forest app! Trust me.');
@@ -323,12 +345,12 @@ function addBigMessages() {
   'If you\'re failing to plan, you\'re planning to fail.',
   'Why don\'t you <a href="https://youtu.be/r-dMhpgj0PA">think about things</a> you want and need to do?',
   'You may want to form a routine.',
-    //Homework
+    /*Homework
   'How about you do your homework?',
   'Why don\'t you get assignments done?',
   'I get that homework can be a struggle.<br>Try to change your mindset.',
   'Why don\'t you check Blackboard?',
-  'Why not get an assignment done early? You\'ll get a head start!',
+  'Why not get an assignment done early? You\'ll get a head start!',*/
     //Music
   'Sometimes just browsing your music library could be fun.',
   '<a href="cyoa/58.html">Why don\'t you put on some music to help you focus?</a>',
@@ -361,11 +383,12 @@ function addBigMessages() {
   '<a href="art.html">Why don\'t you practice drawing anime?</a>',
   'Are there any goals in life you have?',
     //Health and fitness
-  'Try standing up and walking for a bit.<br>Look away from the screen.',
+  'Try standing up and walking for a bit. Look away from the screen.',
   'Why not get on the treadmill if you feel like it?',
   'Have you been searching for food terms lately? You should eat some food.',
   'Consider tidying up your room.',
   '<a href="stepmania.html">How about playing some Stepmania?</a>',
+  '<a href="https://www.youtube.com/watch?v=z6KKo85V9Ew">Why don\'t you do planks for one minute?</a>',
     //From the whoa webpage
   '<a href="repent2.html">You need more Jesus.</a>',
   'Do not screw up your day.',
@@ -450,8 +473,8 @@ function addBigMessages() {
   'Drop all your distracting habits.',
   'All distracting thoughts need to go away.',
   'You thought about something you shouldn\'t think of.',
-  'Don\'t procrastinate and fail the semester.',
-  'Do you want to fail your classes or not?',
+  //'Don\'t procrastinate and fail the semester.',
+  //'Do you want to fail your classes or not?',
   'Control yourself, or else you will lose in life.',
   'Forget about things that are currently distracting you.',
   'Why would you do this? You stupid idiot!',
@@ -532,7 +555,7 @@ function randomLink(index,number) {
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   var message = $("message").innerHTML;
   //If the message tells you to leave, the linkIndex will be 0.
-  if (index < 3 || message === 'Return to your previous task.' || message === 'Get out of here!')
+  if (index < 4 || message === 'Return to your previous task.' || message === 'Get out of here!')
     linkIndex = 0;
   //Put link message and to screen using the index value of the array
   var parent = $("hideable");
