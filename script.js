@@ -642,7 +642,7 @@ function rejectSomething(time) {
   else if(time === 4)
     link.innerHTML = "<a href='breakyt.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 6)
-    link.innerHTML = "<a href='cyoa/21.html'>Do you really want to look at cute anime girls?</a> <span onclick='rejectSomething(1)' style='color:white;'>No</span>";
+    link.innerHTML = "<a href='cyoa/21.html'>Do you really want to look at cute anime girls?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
   else if(time === 7)
     link.innerHTML = "<a href='time.html'>Screw reddit. Do something else!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 8)
