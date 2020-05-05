@@ -124,7 +124,8 @@ function loadBigBreak() {
   'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
-  'Draw anime.'];
+  'Draw anime.',
+  'Learn a new programming language. Try to code Card Battle Stadium in that language.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -331,6 +332,7 @@ if (window.innerWidth <= 812)
   redirectMessages.push('Use the forest app! Trust me.');
 
 function addBigMessages() {
+  redirectMessages.pop();
   redirectMessages.push(//Relaxation
   'Clearing your mind may help.',
   'Did you think to pray?',
