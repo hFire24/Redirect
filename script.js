@@ -67,7 +67,7 @@ function loadSmallBreak() {
   'Increase your spirituality.',
   'Try answering this question.',
   'Play one of these short games.',
-  'Watch anime for 5 minutes (or 20% full length).',
+  'Watch anime for 30 seconds.',
   'Read your journal entries.<br>Start from March 2012.',
     //Goals
   'Click here.',
@@ -363,7 +363,7 @@ function addBigMessages() {
   'Why not watch at least one Eurovision performance?',
   'Why not watch some Eurovision?',
     //Anime
-  'If you need some happiness, watch 5 minutes of anime!',
+  'If you need some happiness, watch at least 30 seconds of anime!',
   'Why don\'t you watch some anime?',
   'You love anime. Right? Why don\'t you watch some?',
     //Games
