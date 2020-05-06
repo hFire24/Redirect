@@ -143,9 +143,12 @@ function loadBigBreak() {
   var artists = ["Fujima Takuya's (c. 2011)",
   "Korie Riko's (c. 2014)",
   "Kobuichi's",
-  "Tinkle's (c. 2009)",
+  "Tinkle's (c. 2008)",
   "Kira Inugami's",
-  "Morinaga Korune's",]
+  "Morinaga Korune's",
+  "mamita's (c. 2010)",
+  "Natsumiya Yuzu's (c. 2009)",
+  "Keiichi Hinata's"]
 }*/
 
 function loadYouTubeBreak() {
