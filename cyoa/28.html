@@ -9,19 +9,56 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <img id='firstmeme' class='space' src='../media/Anti-Nanahira Meme.jpg' alt='A meme featuring a shocked and sad anime girl' usemap='#ericsaade' onclick='showNextMeme()'>
+    <img id='meme1' class='space' src='../media/Anti-Nanahira Meme.jpg' alt='A meme featuring a shocked and sad anime girl' usemap='#ericsaade' onclick='showNextMeme()'>
     <map name='ericsaade'>
       <area shape="rect" coords="561,41,684,79" href="https://youtu.be/-04pUETT7oI" alt="The word 'popular'">
     </map>
-    <div id='nextmeme' style='display:none;'>
-    <img src='../media/Nanahira Eurovision Meme.jpg' alt='A meme featuring a boyfriend labeled "September 2019 me" and his girlfriend labeled "Nanahira" getting distracted by another girl labeled "Eurovision"'>
-    <h1><a href='https://youtu.be/kZdG5P8ShSI'>Watch Eurovision instead.</a></h1>
+    <div id='meme2' style='display:none;' onclick='showNextMeme()'>
+      <img src='../media/Nanahira Eurovision Meme.jpg' alt='A meme featuring a boyfriend labeled "September 2019 me" and his girlfriend labeled "Nanahira" getting distracted by another girl labeled "Eurovision"'>
     </div>
+    <table id='meme3' class='priorities' style='display:none;'>
+      <tbody>
+        <tr class='priorities'>
+          <th>TIER 1</th>
+          <td>Work</td>
+          <td>Homework</td>
+          <td>Studying</td>
+        </tr>
+        <tr class='priorities'>
+          <th>TIER 2</th>
+          <td>Drawing</td>
+          <td>Exercising</td>
+          <td>
+            Social Skills<br>
+            Full Stack<br>
+            FL Studio
+          </td>
+          <td>Anime + Blogging</td>
+          <td>Journaling</td>
+          <td>Relaxing</td>
+        </tr>
+        <tr class='priorities'>
+          <th>TIER 3</th>
+          <td>YouTube</td>
+          <td>Eurovision</td>
+          <td>Social Networking</td>
+          <td>Browsing Images</td>
+          <td>NGU Idle</td>
+          <td>Mobile Games</td>
+        </tr>
+      </tbody>
+    </table>
     <script>
+      var i = 1;
+      var max = 3;
       function showNextMeme()
       {
-        document.getElementById('firstmeme').style.display = "none";
-        document.getElementById('nextmeme').style.display = "block";
+        if(i !== max)
+        {
+          document.getElementById('meme' + parseInt(i)).style.display = "none";
+          i++;
+          document.getElementById('meme' + parseInt(i)).style.display = "block";
+        }
       }
     </script>
   </body>

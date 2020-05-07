@@ -118,7 +118,7 @@ img {
   font-family: Futura XBlk BT, AvenirNext-Heavy, 'Arial Black', sans-serif;
 }
 
-.mathpad .number {
+.mathpad .number, .priorities td {
   border: 1px solid #000;
 }
 
@@ -129,6 +129,14 @@ img {
 td {
   padding: 7px;
   font-size: 45px;
+}
+
+.priorities td {
+  padding: 0 14px;
+}
+
+.priorities th {
+  padding: 0 21px;
 }
 
 .three-list {
@@ -323,7 +331,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body, ol, .small {
+  body, ol, .small, td {
     font-size: 20px;
   }
   #message, #break.big, h1 {

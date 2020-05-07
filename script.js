@@ -60,7 +60,6 @@ function loadSmallBreak() {
     //Music
   'Add a new song to your iTunes library.',
   'Put on some music to help you focus.',
-  'Watch one Eurovision performance.',
     //Miscellaneous
   'Say out loud the thing you need to get done.',
   //'Remember what happened on January 13? Don\'t drive around just for fun. Install a racing game on your Windows server.',
@@ -117,7 +116,6 @@ function loadBigBreak() {
   'No routine? Form one.',
   'How about multiple ways to take a break?',
   'Read your patriarchal blessing.',
-  'Watch Eurovision.',
     //Goals
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
@@ -153,17 +151,16 @@ function loadBigBreak() {
 
 function loadYouTubeBreak() {
   breakArray = 'YouTube';
-  messages = ['Watch one Eurovision performance.',
-  'Watch anime for 5 minutes (or 20% full length).',
+  messages = ['Watch anime for 10 minutes (or 40% full length).',
   'Double your social skills.',
   'Watch anime.',
   'If you\'re watching anime, watch a different anime.',
   'Watch anime.',
   'Play Island (Visual Novel).',
-  'Watch Eurovision.',
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
-  'Go to Skillshare, and learn programming.'];
+  'Go to Skillshare, and learn programming.',
+  'Draw anime.'];
 }
 
 function loadBreak(index) {
@@ -363,8 +360,6 @@ function addBigMessages() {
   '<a href="cyoa/58.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
   '<a href="https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
-  'Why not watch at least one Eurovision performance?',
-  'Why not watch some Eurovision?',
     //Anime
   'If you need some happiness, watch at least 30 seconds of anime!',
   'Why don\'t you watch some anime?',

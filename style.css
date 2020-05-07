@@ -294,7 +294,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body, #message.tiny {
+  body, #message.tiny, td {
     font-size: 20px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
