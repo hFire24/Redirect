@@ -450,7 +450,7 @@ function addBigMessages() {
   "Would you rather live in a large house with a rich and happy life with people who love you? Or would you rather live all alone, poor and miserable, with nobody to support you? Your choices determine the consequences.",
   "Don't let the lazy part of you define your lifestyle.",
   "Given the huge amount of creature comforts available today, it's so difficult to resist laziness.",
-  "There are so many legitimate opportunies to make lots of money online.",
+  "There are so many legitimate opportunities to make lots of money online.",
   "Don't be like Anzu Futaba.",
     //Rejected neutral messages
   'Return to your previous task.',
