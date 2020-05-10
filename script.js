@@ -119,7 +119,7 @@ function loadBigBreak() {
     //Goals
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
-  'Make some friends in real life. Institute is the best starting point.',
+  //'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
   'Draw anime.',
