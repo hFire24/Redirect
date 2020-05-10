@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body>
+  <body onload='createAdvice()'>
     <div id='message' class='space'></div>
     <div id='hideable'>
     </div>
@@ -20,26 +20,19 @@
       var index = Math.floor(Math.random() * messages.length);
       //Put message to screen using the index value of the array
       document.getElementById("message").innerHTML = messages[index];
-      var linkOuter = document.createElement("div");
-      linkOuter.className = "space";
-      var link = document.createElement("a");
-      link.style.color = "white";
-      linkOuter.appendChild(link);
-      document.getElementById("hideable").appendChild(linkOuter);
+      var parent = document.getElementById("hideable");
+      var link = document.getElementById("link");
+      if(!link) {
+        link = document.createElement("div");
+        link.id = "link";
+        link.className = "space";
+        parent.appendChild(link);
+      }
       if (index === 0)
-      {
-        link.href = "breaktime.html";
-        link.innerHTML = "Ready to do something else?";
-        var no = document.createElement("span");
-        no.innerHTML = " NO";
-        no.addEventListener("click",function() {location.href = "cyoa/1.html";});
-        linkOuter.appendChild(no);
-      }
+        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:red;'>No.</span>";
       else
-      {
-        link.href = "nextanime.html";
-        link.innerHTML = "Here are the anime you need to watch.";
-      }
+        link.innerHTML = "<a href='nextanime.html'>Here are the anime you need to watch.</a> <span onclick='rejectSomething(0)' style='color:red;'>No.</span>";
     </script>
+    <script src='script.js'></script>
   </body>
 </html>
