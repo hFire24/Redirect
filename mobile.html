@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body onLoad="randomTheme(55)">
+    <div id='message' class='space'></div>
+    <div id='hideable'>
+    </div>
+    <script>
+      var icon = document.getElementById("apple");
+      var iconNumber = Math.floor(Math.random() * 5) + 1;
+      if(iconNumber > 1)
+        icon.href = "apple-touch-icon " + iconNumber + ".png";
+      var redirectMessages = ['Stop sporadically checking your phone!',
+      'Stop escaping from your problems!',
+      'Get back to whatever you should be doing!',
+      'You shouldn\'t use your phone now.',
+      'Don\'t waste time getting distracted on your phone.',
+      'Don\'t you have anything better to do with your time?',
+      'Today will be a great day to catch up with your schedule and tasks.',
+      'May this page suggest you take a short break?',
+      'It is a good idea to get things done.',
+      'Your mind must be wandering off, isn\'t it?',
+      'You\'re wasting your time! Come on!',
+      'Ehem. You need to stop procrastinating.',
+      'You won\'t complete your tasks quickly if you sidetrack.',
+      'There\'s nothing new or interesting to check on your phone.',
+      'There\'s nothing beneficial to do on your phone right now.',
+      'Please get things done. I mean it.',
+      'Time is a precious resource. Don\'t waste it.',
+      'You have other things to do off your phone.',
+      'Make sure you stay on task.',
+      'Pay attention to your surroundings.',
+      'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
+      'You live to be entertained? 🤣',
+      'You\'re not bored, lazy, or procrastinating. You are fearful.',
+      'Quit running away from your problems.',
+      'Distractions: An innefective way to cope fear. You should deal with your problems directly.',
+      'Don\'t forget to stay hydrated.'];
+      var index = Math.floor(Math.random() * redirectMessages.length);
+      document.getElementById("message").innerHTML = redirectMessages[index];
+      var d = new Date();
+      if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
+      {
+        document.getElementById("message").innerHTML = "Get ready for church!";
+        index = redirectMessages.length + 2;
+      }
+      var sleepTime = Math.floor(Math.random() * 5);
+      if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
+      {
+        document.getElementById("message").innerHTML = 'You should charge your phone away from the bed.';
+        index = redirectMessages.length;
+        console.log("Sleep " + sleepTime);
+      }
+      console.log("Message " + index);
+      var message = document.getElementById("message").innerHTML;
+      var linkMessages = ["Immediately put your phone away."];
+      for (var i = 1; i <= 30; i++)
+        linkMessages.push("Got something you need to do?");
+      var linkIndex = Math.floor(Math.random() * linkMessages.length);
+      if (index < 3)
+        linkIndex = 0;
+      var parent = document.getElementById("hideable");
+      var link = document.getElementById("link");
+      if(!link) {
+        link = document.createElement("div");
+        link.id = "link";
+        link.className = "space";
+        parent.appendChild(link);
+      }
+      //Sometimes, the link will change depending on the message.
+      if (message === "Get ready for church!")
+        link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
+      else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
+        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+      else if (linkIndex > 0)
+        link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+      else
+        link.innerHTML = linkMessages[linkIndex];
+      //Put index value to the console
+      console.log("Link " + linkIndex);
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -10,8 +10,6 @@ function loadWebsite(number) {
   {
     if(number === 1)
       addBigMessages();
-    else
-      randomIcon();
     randomMessage(-1,number);
   }
   else if(number > 1 && number < 5)
@@ -586,13 +584,6 @@ function randomLink(index,number) {
     $("message").classList.add("tiny");
   else if(message.length > 90)
     $("message").classList.add("small");
-}
-
-function randomIcon() {
-  var icon = $("apple");
-  var iconNumber = Math.floor(Math.random() * 5) + 1;
-  if(iconNumber > 1)
-    icon.href = "apple-touch-icon " + iconNumber + ".png";
 }
 
 function getBack()
