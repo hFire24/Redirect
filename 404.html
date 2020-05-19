@@ -15,12 +15,6 @@ permalink: /404.html
     <div id='message' class='space'>This website is blocked.</div>
     <div id='hideable'>
     </div>
-    <audio id='nuke'>
-      <source src="https://hfire24.github.io/Redirect/media/Tactical Nuke.mp3" type="audio/mpeg">
-    </audio>
-    <audio id='press'>
-      <source src="https://hfire24.github.io/Redirect/media/Button Push.mp3" type="audio/mpeg">
-    </audio>
     <script>
       var redirectMessages = ['Stop visiting distracting websites!',
       'Stop escaping from your problems!',
@@ -53,59 +47,28 @@ permalink: /404.html
       'Tempted? That\'s normal.<br>Tasks? They\'re tasks.<br>Hotel? Trivago.',
       'You live to be entertained? 🤣',
       'What other important things do you need to get done?',
-      'You wish you are a cute anime girl? 🤣🤣',
       'You\'re not bored, lazy, or procrastinating. You are fearful.',
       'Quit running away from your problems.',
       'Distractions: An innefective way to cope fear. You should deal with your problems directly.',
       '😆You got redirected!😆',
-      '☢DO NOT FAP☢',
-      '☢ERADICATE THE SIN OF LUST☢',
-      '☢DO NOT SIN ON CERTAIN WEBSITES☢',
-      '☢DO NOT GO AGAINST THE TEACHINGS OF JESUS☢',
-      '☢YOU NEED MORE JESUS☢',
-      '☢DO NOT PROCRASTURBATE☢',
-      '☢DO NOT SCREW UP YOUR DAY☢',
-      '☢DO NOT DESTROY YOUR FUTURE☢',
-      '☢DO NOT BE A SICK DEGENERATE☢',
-      '☢DO NOT THROW YOUR LIFE AWAY☢',
-      '☢DO NOT FURTHER CORRUPT YOURSELF☢',
-      '☢DO NOT INDULGE IN TABOO PLEASURES☢',
-      '☢DO NOT EVEN THINK ABOUT RELAPSING☢',
-      '☢DO NOT THINK OF IMMORAL FANTASIES☢',
-      '☢DO NOT LET YOUR URGES DICTATE YOU☢',
-      '☢DO NOT SEEK FOR SEXUALLY PLEASING THINGS☢',
-      '☢YOU WERE REDIRECTED FROM A DANGEROUS WEBSITE☢',
-      '☢YOU HAVE OTHER THINGS TO DO☢',
-      '☢☢☢☢☢☢☢☢☢☢☢',
-      '☢UNCLEAN WEBSITE HAS BEEN CONTAINED☢',
-      '☢THAT UNSAFE WEBSITE IS BLOCKED☢',
-      '✝PLAY TABERNACLE CHOIR MUSIC✝',
-      '☢PLAY FURY OF THE STORM☢',
-      '☢THINK OF SOMETHING ELSE☢',
-      '☢ANYTHING SEXUALLY AROUSING IS TERRIBLE☢',
-      '☢STOP VISITING SINFUL WEBSITES☢',
-      '☢NO MORE OF THIS BS.<br>YOU UNDERSTAND?☢',
-      '☢RESIST SATAN\'S TEMPTATIONS☢',
-      '☢OH MY FURTING GOO. SERIOUSLY!?☢',
-      'No more fapping.',
-      'You had been tempted by Satan.',
-      'Don\'t ever sin again.',
+      '<a href="repent2.html">You need more Jesus.</a>',
+      'Do not screw up your day.',
+      'Do not ruin, darken, or destroy your future.',
+      'Do not throw you life away.',
+      'Don\'t be dictated by your urges.',
+      'YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣',
+      'You have more important things to do than browse some websites.',
+      'Think of something else.',
+      'Resist temptations.',
       'Please stop being lazy, and stop wasting your time.',
-      'You screwed up. This is not OK.',
       'Make your future brighter before it\'s too late.',
-      'Don\'t waste your life viewing immoral images.',
-      'You must take NoFap seriously.',
       'Quitting indulgent activities is not easy, but worth it.',
       'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
-      'Freedom is not being dictated by your urges.',
-      'No more looking at sexual things.',
-      'Do not feel weak. You are stronger than you think.',
+      'You are stronger than you think.',
       'Your ideal self is a cute little kid? 🤣🤣',
+      'Be sure you get important things done.',
       'Freedom from addictions. That should be a goal.',
-      'Do you really want to look at pics of cute anime girls?',
-      'You are not prepared for the Second Coming.',
       'You are capable of doing great things.',
-      'There\'s more to life than your deep desires.',
       'Freedom is not falling into Satan\'s temptations.'];
       //Get random message index from messages array
       var index = Math.floor(Math.random() * redirectMessages.length);
@@ -153,8 +116,6 @@ permalink: /404.html
             }
           $("hakase").play();});
       }
-      else if(message.indexOf('☢') >= 0)
-        $("message").addEventListener("click",nuke);
 
       var linkMessages = ["Immediately close this tab."];
       for (var i = 1; i <= 30; i++)
@@ -177,14 +138,6 @@ permalink: /404.html
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/church.html'>Here's how to get ready.</a>";
       else if (message === "May this page suggest you take a short break?")
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
-      else if (message.startsWith('✝'))
-        link.innerHTML = "<u onclick='pushTheButton(3)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else if (message.startsWith('☢OPEN'))
-        link.innerHTML = "<u onclick='pushTheButton(4)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else if (index > redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index < redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
-        link.innerHTML = "<u onclick='pushTheButton(2)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else if (message.startsWith('☢'))
-        link.innerHTML = "<u onclick='pushTheButton(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else if (linkIndex > 0)
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
       else
@@ -193,11 +146,6 @@ permalink: /404.html
       console.log("Link " + linkIndex);
 
       var theme = Math.floor(Math.random() * 5) + 5;
-      if(message.startsWith('☢') || message.startsWith('✝'))
-      {
-        theme = 10;
-        $("message").style.fontFamily = "Impact";
-      }
       var themeText = document.createElement("div");
       themeText.id = "theme";
       switch(theme)
@@ -216,8 +164,6 @@ permalink: /404.html
           break;
         case 9:
           themeText.innerHTML = "Brought to you by the green theme.";
-          break;
-        case 10:
           break;
         default:
           themeText.innerHTML = "Brought to you by the black theme.";
@@ -263,35 +209,6 @@ permalink: /404.html
 
       function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
-      }
-
-      async function nuke()
-      {
-        document.getElementById("nuke").play();
-      }
-
-      async function pushTheButton(number)
-      {
-        var emergency = '';
-        document.getElementById("nuke").pause();
-        document.getElementById("press").play();
-        link.style.color = 'white';
-        await sleep(1750);
-        switch(number)
-        {
-          case 2:
-            emergency = 'https://hfire24.github.io/Redirect/repent2.html';
-            break;
-          case 3:
-            emergency = 'https://www.thetabernaclechoir.org/listen.html';
-            break;
-          case 4:
-            emergency = 'https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8';
-            break;
-          default:
-            emergency = 'https://emergency.nofap.com/redirect?religious=true&cat=em&cat=rel';
-        }
-        location.href = emergency;
       }
     </script>
   </body>
