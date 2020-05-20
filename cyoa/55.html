@@ -12,7 +12,7 @@
     <div class='space'>
       <div id='break' class='space' onclick='next()'>Wiggle your toes.</div>
     </div>
-    <span class='anime-link' onclick="next()">Continue</span>
+    <span id='continue' class='anime-link' onclick="next()">Continue</span>
     <script>
       var scene = 0;
       var messages = ["Wiggle your toes.",
@@ -20,15 +20,17 @@
       "Wiggle your jaw.",
       "Take a deep breath in.",
       "Have a gentle stretch.",
-      "Now gently stand up.",
-      "Now do that task!"];
+      "Now gently stand up."];
       function next()
       {
         scene++;
         if(scene === messages.length - 1)
-          document.getElementById("break").classList.add("big");
-        if(scene === messages.length)
+          document.getElementById("continue").innerHTML = "Done";
+        else if(scene === messages.length)
+        {
           scene--;
+          location.href = "4.html";
+        }
         console.log(scene);
         document.getElementById("break").innerHTML = messages[scene];
       }
