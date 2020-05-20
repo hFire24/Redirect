@@ -392,7 +392,7 @@ function addBigMessages() {
   '<a href="repent2.html">You need more Jesus.</a>',
   'Do not screw up your day.',
   'Do not ruin, darken, or destroy your future.',
-  'Do not throw you life away.',
+  'Do not throw your life away.',
   'Don\'t be dictated by your urges.',
   'YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣',
   'You have more important things to do than browse some websites.',
