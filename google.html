@@ -30,6 +30,14 @@
           document.getElementById("yes").innerHTML = "Anger/Worry";
           document.getElementById("maybe").innerHTML = "Unclean";
           document.getElementById("no").innerHTML = "Determined";
+          var hungry = document.createElement("a");
+          hungry.innerHTML = "Hunger";
+          hungry.className = "anime-link";
+          hungry.addEventListener("click",function() {
+            document.body.removeChild(document.getElementById("yesno"));
+            message.innerHTML = "You need to eat some food now.";
+          });
+          document.getElementById("yesno").appendChild(hungry);
         }
         else if(hey === 2)
         {
