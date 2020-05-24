@@ -186,7 +186,7 @@ function loadBreak(index) {
       message.href = "https://www.google.com/search?q=2+minute+timer";
       break;
     case messages.indexOf("Take a deep breath."):
-      message.href = "https://www.google.com/search?q=breathing+exercise";
+      message.href = "https://www.google.com/search?q=take+a+deep+breath";
       break;
     case messages.indexOf("Put on some focus/relaxation music."):
       message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
