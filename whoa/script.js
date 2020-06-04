@@ -63,7 +63,7 @@ function loadWebsite(index)
   else
     message.innerHTML = '☢' + messages[index] + '☢';
   if (index === messages.indexOf("<i>PLAY FURY OF THE STORM </i>"))
-    link = "https://play.google.com/music/listen?u=0#/wst/st/dd1bd673-f374-3831-adc1-f327aec1a6a8";
+    link = "https://youtu.be/5i7qZxICwgQ";
   else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
     link = "../repent2.html";
   else if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))

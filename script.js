@@ -69,7 +69,7 @@ function loadSmallBreak() {
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
-  'Double your social skills.',
+  //'Double your social skills.',
   'Think of a goal. Any one. Set that as your break message.'];
 
   standup = [//Health and fitness
@@ -150,7 +150,7 @@ function loadBigBreak() {
 function loadYouTubeBreak() {
   breakArray = 'YouTube';
   messages = ['Watch anime for 10 minutes (or 40% full length).',
-  'Double your social skills.',
+  //'Double your social skills.',
   'Watch anime.',
   'If you\'re watching anime, watch a different anime.',
   'Watch anime.',
@@ -374,7 +374,7 @@ function addBigMessages() {
   'How about you digitize a paragraph from your journal?',
   'Why not preserve some journal entries into a document?',
     //Goals
-  '<a href="https://skl.sh/37ueYoA">How about going to Skillshare to double your social skills?</a>',
+  //'<a href="https://skl.sh/37ueYoA">How about going to Skillshare to double your social skills?</a>',
   '<a href="chiptunelessons.html">How about learning how to make chiptunes?</a>',
   '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
   '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
