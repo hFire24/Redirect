@@ -630,12 +630,14 @@ function rejectSomething(time) {
     link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <span onclick='rejectSomething(5)' style='color:red;'>No.</span>";
   else if(time === 1)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+  else if(time === 2)
+    link.innerHTML = "<a href='nexanime.html'>You're just gonna watch anime. Right?</a> <span onclick='rejectSomething(22)' style='color:white;'>No.</span>";
   else if(time === 3)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 4)
     link.innerHTML = "<a href='breakyt.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 5)
-    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:red;'>No.</span>";
+    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(22)' style='color:red;'>No.</span>";
   else if(time === 6)
     link.innerHTML = "<a href='cyoa/21.html'>Do you really want to look at cute anime girls?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
   else if(time === 7)
