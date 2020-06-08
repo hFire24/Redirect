@@ -11,8 +11,7 @@
   <body class="theme3">
     <div id="custom">
       <div id="instructions">Type in a video title, and press "Submit" or Enter when done.</div>
-      <input id="video" type="text"><button id="messageButton" onClick="createMessage()">Submit</button>
-      <div id="sizeselecter"><input type="checkbox" id="size">Bigger Font</div>
+      <input id="video" type="text"><button id="messageButton" onClick="searchYoutube()">Submit</button>
     </div>
     <script>
     messageComplete = false;
@@ -20,26 +19,14 @@
     input.addEventListener("keyup", function (event) {
       if (event.keyCode === 13) {
         event.preventDefault();
-        createMessage();
+        searchYoutube();
       }
     });
 
-    function createMessage() {
-      var parent = document.getElementById("custom");
-      var newMessage = document.getElementById("video");
-      var button = document.getElementById("messageButton");
-      var message = document.createElement("div");
-      message.id = "break";
-      message.className = "space";
-      if(document.getElementById("size").checked)
-        message.classList.add("big");
-      message.innerHTML = newMessage.value;
-      parent.removeChild(document.getElementById("instructions"));
-      parent.removeChild(newMessage);
-      parent.removeChild(button);
-      parent.removeChild(sizeselecter);
-      parent.appendChild(message);
-      messageComplete = true;
+    function searchYoutube() {
+      var newMessage = document.getElementById("video").value;
+      var query = newMessage.replace(" ","+");
+      location.href = "https://www.youtube.com/results?search_query=" + query;
     }
     </script>
   </body>
