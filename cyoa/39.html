@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <div id="custom">
+    <div id="custom" style="margin-bottom:1em;">
       <div id="instructions">Type in a video title, and press "Submit" or Enter when done.</div>
       <input id="video" type="text"><button id="messageButton" onClick="searchYoutube()">Submit</button>
     </div>
@@ -26,7 +26,7 @@
 
     function searchYoutube() {
       var newMessage = document.getElementById("video").value;
-      var query = newMessage.replace(" ","+");
+      var query = newMessage.replace(/ /g,"+");
       location.href = "https://www.youtube.com/results?search_query=" + query;
     }
     </script>
