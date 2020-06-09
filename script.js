@@ -121,7 +121,9 @@ function loadBigBreak() {
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
   'Draw anime.',
-  'Learn a new programming language. Try to code Card Battle Stadium in that language.'];
+  //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
+  'Try to code Card Battle Stadium in C#.',
+  'Try one of these C# coding projects.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -232,6 +234,9 @@ function loadBreak(index) {
       break;
     case messages.indexOf("Draw anime."):
       message.href = "art.html";
+      break;
+    case messages.indexOf("Try one of these C# coding projects."):
+      message.href = "https://blog.udemy.com/c-sharp-projects/";
       break;
     default:
       message.removeAttribute("href");
@@ -374,19 +379,20 @@ function addBigMessages() {
   'How about you digitize a paragraph from your journal?',
   'Why not preserve some journal entries into a document?',
     //Goals
-  //'<a href="https://skl.sh/37ueYoA">How about going to Skillshare to double your social skills?</a>',
-  '<a href="chiptunelessons.html">How about learning how to make chiptunes?</a>',
+  //'<a href="https://skl.sh/37ueYoA">How about you go to Skillshare to double your social skills?</a>',
+  '<a href="chiptunelessons.html">How about you learn how to make chiptunes?</a>',
   '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
   '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
   'Remember that Python games book? You may get something out of it by reading it.',
   '<a href="art.html">Why don\'t you practice drawing anime?</a>',
+  '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
   'Why not get on the treadmill if you feel like it?',
   'Have you been searching for food terms lately? You should eat some food.',
   'Consider tidying up your room.',
-  '<a href="stepmania.html">How about playing some Stepmania?</a>',
+  '<a href="stepmania.html">How about you play some Stepmania?</a>',
   '<a href="https://www.youtube.com/watch?v=z6KKo85V9Ew">Why don\'t you do planks for one minute?</a>',
     //From the whoa webpage
   '<a href="repent2.html">You need more Jesus.</a>',
