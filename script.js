@@ -601,12 +601,6 @@ function getBack()
     $("message").innerHTML = "Get back to whatever you should be doing!";
     $("link").innerHTML = "Immediately close this tab.";
   }
-  var sleepTime = Math.floor(Math.random() * 5);
-  if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
-  {
-    $("message").innerHTML = 'You should be asleep by now.';
-    console.log("Sleep " + sleepTime);
-  }
 }
 
 async function createAdvice()

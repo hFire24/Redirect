@@ -9,11 +9,56 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme4" onload="getBack(); createAdvice();">
-    <div id="message" class="space">This website is blocked.</div>
-    <div id='hideable'>
-      <div id='link' class='space'><a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(8)' style='color:white;'>No.</span></div>
-      <div id='theme'>Brought to you by the sand theme.</div>
-    </div>
-    <script src="script.js"></script>
+    <div id="message" class="small space">Why did you want to go to a game-related website?</div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
+    <script>
+    var input = $("newBreak");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        submit();
+      }
+    });
+
+    function submit()
+    {
+      var inputText = $("newBreak").value.toLowerCase();
+      if (inputText === 'custom task')
+        location.href = "custom.html";
+      else if(gameFound(inputText))
+      {
+        $("message").innerHTML = "So you want to play games, huh?";
+        $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";
+      }
+      else {
+        $("message").innerHTML = "If you're bored, just try to do your tasks.";
+        $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+      }
+    }
+
+    function gameFound(inputText)
+    {
+      var playful = ['play', 'game'];
+      for (var i in playful)
+        if (inputText.indexOf(playful[i]) >= 0)
+          return true;
+      return false;
+    }
+
+    function getBack()
+    {
+      var random = Math.floor(Math.random() * 30)
+      console.log("Random " + random);
+      if(random === 0)
+      {
+        $("message").innerHTML = "Get back to whatever you should be doing!";
+        $("link").innerHTML = "Immediately close this tab.";
+      }
+    }
+
+    function $(x) {
+      return document.getElementById(x);
+    }
+    </script>
   </body>
 </html>
