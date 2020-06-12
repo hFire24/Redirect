@@ -12,30 +12,15 @@
     <div id="message" class="small space">Why did you want to go to a game-related website?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
-    var input = $("newBreak");
-    input.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        submit();
-      }
-    });
-
     function submit()
     {
       var inputText = $("newBreak").value.toLowerCase();
-      if (inputText === 'custom task')
-        location.href = "custom.html";
-      else if(gameFound(inputText)) {
+      if(gameFound(inputText)) {
         $("message").innerHTML = "So you want to play games, huh?";
         $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";
       }
-      else if(inputText.indexOf("lazy") >= 0) {
-        $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
-        $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
-      }
       else {
-        $("message").innerHTML = "If you're bored, just try to do your tasks.";
-        $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+        finalTest(inputText,"newgrounds");
       }
     }
 
@@ -47,21 +32,7 @@
           return true;
       return false;
     }
-
-    function getBack()
-    {
-      var random = Math.floor(Math.random() * 30)
-      console.log("Random " + random);
-      if(random === 0)
-      {
-        $("message").innerHTML = "Get back to whatever you should be doing!";
-        $("link").innerHTML = "Immediately close this tab.";
-      }
-    }
-
-    function $(x) {
-      return document.getElementById(x);
-    }
     </script>
+    <script src="interactivefiction.js"></script>
   </body>
 </html>

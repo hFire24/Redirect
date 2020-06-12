@@ -182,7 +182,7 @@ function loadBreak(index) {
   {
     case messages.indexOf("Listen to this."):
     case messages.indexOf("Clear your mind."):
-      message.href = "https://www.dropbox.com/sh/6pw78gq1vty860o/AABxsvUAWPsWw29v7dxiSYT7a?dl=0";
+      message.href = generateAndrewJohnsonLink();
       break;
     case messages.indexOf("Look away from the screen for about 2 minutes."):
       message.href = "https://www.google.com/search?q=2+minute+timer";
@@ -634,16 +634,8 @@ function rejectSomething(time) {
     link.innerHTML = "<a href='nextanime.html'>You're just gonna watch anime. Right?</a> <span onclick='rejectSomething(22)' style='color:white;'>No.</span>";
   else if(time === 3)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
-  else if(time === 4)
-    link.innerHTML = "<a href='breakyt.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 5)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(22)' style='color:red;'>No.</span>";
-  else if(time === 6)
-    link.innerHTML = "<a href='cyoa/21.html'>Do you really want to look at cute anime girls?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-  else if(time === 7)
-    link.innerHTML = "<a href='time.html'>Screw reddit. Do something else!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
-  else if(time === 8)
-    link.innerHTML = "<a href='cyoa/29.html'>You just wanted to play games. Right?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
   else if(time === 10)
@@ -809,4 +801,25 @@ async function pushTheButton()
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function generateAndrewJohnsonLink()
+{
+  var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
+  var index = Math.floor(Math.random() * meditationLinks.length);
+  return meditationLinks[index];
 }

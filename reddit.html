@@ -9,49 +9,19 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme5" onload="getBack(); createAdvice();">
-    <<div id="message" class="small space">Why did you want to go to Reddit?</div>
+    <div id="message" class="small space">Why did you want to go to Reddit?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
-    var input = $("newBreak");
-    input.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        submit();
-      }
-    });
-
     function submit(){
       var inputText = $("newBreak").value.toLowerCase();
-      if (inputText === 'custom task')
-        location.href = "custom.html";
-      else if (inputText.indexOf("noFap") >= 0) {
+      if (inputText.indexOf("noFap") >= 0) {
         $("message").innerHTML = "I guess that's one good part of reddit.";
         $("link").innerHTML = "Unblock reddit and go straight to NoFap.";
       }
-      else if(inputText.indexOf("lazy") >= 0) {
-        $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
-        $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
-      }
-      else {
-        $("message").innerHTML = "Reddit is bad.";
-        $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
-      }
-    }
-
-    function getBack()
-    {
-      var random = Math.floor(Math.random() * 30)
-      console.log("Random " + random);
-      if(random === 0)
-      {
-        $("message").innerHTML = "Get back to whatever you should be doing!";
-        $("link").innerHTML = "Immediately close this tab.";
-      }
-    }
-
-    function $(x) {
-      return document.getElementById(x);
+      else
+        finalTest(inputText,"reddit")
     }
     </script>
+    <script src="interactivefiction.js"></script>
   </body>
 </html>

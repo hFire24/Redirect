@@ -12,71 +12,47 @@
     <div id="message" class="small space">Why did you want to go to a website known for having cute anime girls?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
-    var input = $("newBreak");
-    input.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        submit();
-      }
-    });
-
     function submit()
     {
       var inputText = $("newBreak").value.toLowerCase();
-      if (inputText === 'custom task')
-        location.href = "custom.html";
-      else if(fetishFound(inputText))
+      if(fetishFound(inputText) || smallNumberFound(inputText))
         location.href = "whoa/index.html";
+      else if (inputText.indexOf("loli") >= 0) {
+        $("message").innerHTML = "If you love lolis so much, why don't you watch Ro-Kyu-Bu!?";
+        document.body.removeChild($("link"));
+      }
+      else if (inputText.indexOf("maid") >= 0)
+        location.href = "cyoa/24.html";
+      else if (inputText.indexOf("dress") >= 0)
+        location.href = "cyoa/25.html";
       else if(inputText.indexOf("anime") >= 0) {
         $("message").innerHTML = "Watch some anime instead.";
         $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
       }
-      else if(newFound(inputText)) {
-        $("message").innerHTML = "There's nothing beneficial to see there.";
-        $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
-      }
-      else if(inputText.indexOf("lazy") >= 0) {
-        $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
-        $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
-      }
-      else {
-        $("message").innerHTML = "If you're bored, just try to do your tasks.";
-        $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
-      }
+      else
+        finalTest(inputText,"deviantart");
+    }
+
+    function smallNumberFound(inputText)
+    {
+      //The smaller the loli, the cuter she is! This cuteness can be dangerous.
+      var smallNumbers = ['two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
+      for (var i in smallNumbers)
+        if(inputText.indexOf(smallNumbers[i]) >= 0)
+          return true;
+      return false;
     }
 
     function fetishFound(inputText)
     {
-      var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'loli', 'shrink', 'tiny', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge', 'fap', 'masturbate'];
+      var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
+      'fap', 'masturbate', 'fantasy', 'fantasi'];
       for (var i in fetishes)
         if (inputText.indexOf(fetishes[i]) >= 0)
           return true;
       return false;
     }
-
-    function newFound(inputText)
-    {
-      var excuses = ['check', 'new'];
-      for (var i in excuses)
-        if (inputText.indexOf(excuses[i]) >= 0)
-          return true;
-      return false;
-    }
-
-    function getBack()
-    {
-      var random = Math.floor(Math.random() * 30)
-      console.log("Random " + random);
-      if(random === 0)
-      {
-        $("message").innerHTML = "Get back to whatever you should be doing!";
-        $("link").innerHTML = "Immediately close this tab.";
-      }
-    }
-
-    function $(x) {
-      return document.getElementById(x);
-    }
     </script>
+    <script src="interactivefiction.js"></script>
   </body>
 </html>
