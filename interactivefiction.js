@@ -65,6 +65,10 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Fun things are good, but they are distractions.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
+  else if(inputText.indexOf("unblock") >= 0) {
+    $("message").innerHTML = "If you unblock that website, you'll waste too much time.";
+    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+  }
   else if(inputText.indexOf("want") >= 0) {
     $("message").innerHTML = "You want to go there, but you don't need to go there.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
