@@ -25,10 +25,13 @@
       var inputText = $("newBreak").value.toLowerCase();
       if (inputText === 'custom task')
         location.href = "custom.html";
-      else if(gameFound(inputText))
-      {
+      else if(gameFound(inputText)) {
         $("message").innerHTML = "So you want to play games, huh?";
         $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";
+      }
+      else if(inputText.indexOf("lazy") >= 0) {
+        $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
+        $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
       }
       else {
         $("message").innerHTML = "If you're bored, just try to do your tasks.";

@@ -24,13 +24,15 @@
       var inputText = $("newBreak").value.toLowerCase();
       if (inputText === 'custom task')
         location.href = "custom.html";
-      else if (inputText.indexOf("noFap") >= 0)
-      {
+      else if (inputText.indexOf("noFap") >= 0) {
         $("message").innerHTML = "I guess that's one good part of reddit.";
         $("link").innerHTML = "Unblock reddit and go straight to NoFap.";
       }
-      else
-      {
+      else if(inputText.indexOf("lazy") >= 0) {
+        $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
+        $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
+      }
+      else {
         $("message").innerHTML = "Reddit is bad.";
         $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
       }

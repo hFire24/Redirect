@@ -31,6 +31,14 @@
         $("message").innerHTML = "Watch some anime instead.";
         $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
       }
+      else if(newFound(inputText)) {
+        $("message").innerHTML = "There's nothing beneficial to see there.";
+        $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+      }
+      else if(inputText.indexOf("lazy") >= 0) {
+        $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
+        $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
+      }
       else {
         $("message").innerHTML = "If you're bored, just try to do your tasks.";
         $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
@@ -39,9 +47,18 @@
 
     function fetishFound(inputText)
     {
-      var fetishes = ['regress', ' ar', ' ar.', 'younger', 'loli', 'shrink', 'tiny', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge', 'fap', 'masturbate'];
+      var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'loli', 'shrink', 'tiny', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge', 'fap', 'masturbate'];
       for (var i in fetishes)
         if (inputText.indexOf(fetishes[i]) >= 0)
+          return true;
+      return false;
+    }
+
+    function newFound(inputText)
+    {
+      var excuses = ['check', 'new'];
+      for (var i in excuses)
+        if (inputText.indexOf(excuses[i]) >= 0)
           return true;
       return false;
     }
