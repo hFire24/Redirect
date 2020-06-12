@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="cyoa/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme5" onload="createAdvice()">
+    <div id='hydrate' width='100%' height='100%' class='theme8 space'>
+      <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
+      <a class='anime-link' onclick='disappear()'>OK</a>
+    </div>
+    <div id='musictip' width='100%' height='100%' class='theme3 space'>
+      <h2 class='space'>Here's a tip: Some music can help you focus.</h2>
+      <p><a class='anime-link' href='58.html'>Click here for more info.</a></p>
+      <a class='anime-link' onclick='disappear()'>OK</a>
+    </div>
+    <div id='message' class='small space'>What do you want to do right now?</div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
+    <script>
+      function createAdvice()
+      {
+        var hydrate = Math.floor(Math.random() * 10);
+        console.log(hydrate);
+        if (hydrate < 2)
+          document.getElementById("hydrate").style.display = "block";
+        else if (hydrate < 3)
+          document.getElementById("musictip").style.display = "block";
+      }
+
+      function disappear() {
+        document.getElementById("hydrate").style.display = "none";
+        document.getElementById("musictip").style.display = "none";
+      }
+
+      function submit() {
+        var inputText = $("newBreak").value.toLowerCase();
+        if(busyFound(inputText)) {
+          $("message").innerHTML = "Don't overwork yourself.";
+          $("link").innerHTML = "<div class='space'><a href='cyoa/20.html'>I'm already overworked.</a></div><div><a href='cyoa/58.html'>I could use some music.</a></div>";
+        }
+        else if(inputText.indexOf("music") >= 0)
+          location.href = "cyoa/58.html";
+        else if(weebFound(inputText)) {
+          $("message").innerHTML = "Now is not the time to weeb out.";
+          $("link").innerHTML = "<div class='space'><a href='cyoa/5.html'>OK.</a></div><div><a href='nextanime.html'>But I'm already watching anime.</a></div>";
+        }
+        else if(inputText.indexOf("something") >= 0) {
+          location.href = "custom.html";
+        }
+        else {
+          finalTest(inputText,"busy");
+        }
+      }
+
+      function busyFound(inputText) {
+        var busy = ['keep', 'continue', 'work', 'resume'];
+        return found(busy,inputText);
+      }
+
+      function weebFound(inputText) {
+        var weebStuff = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
+        'loli', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',
+        'two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
+        return found(weebStuff,inputText);
+      }
+    </script>
+    <script src='interactivefiction.js'></script>
+  </body>
+</html>

@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme5" onload="getBack(); createAdvice();">
+  <body class="theme5" onload="getBack();">
     <div id="message" class="small space">Why did you want to go to Reddit?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
-    function submit(){
+    function submit() {
       var inputText = $("newBreak").value.toLowerCase();
       if (inputText.indexOf("noFap") >= 0) {
         $("message").innerHTML = "I guess that's one good part of reddit.";

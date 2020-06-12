@@ -10,7 +10,9 @@ function finalTest(inputText,site)
 {
   if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("need") >= 0)
     location.href = "custom.html";
-  else if (inputText.indexOf("do something") >= 0)
+  else if(inputText.indexOf("busy") >= 0)
+    location.href = "busy.html";
+  else if (inputText.indexOf("do something") >= 0 || inputText.indexOf("take a break") >= 0)
     location.href = "time.html";
   else if(newFound(inputText)) {
     $("message").innerHTML = "There's nothing beneficial to see there.";
@@ -24,26 +26,12 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
-  else if(worriesFound(inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
+  else if(worriesFound(inputText)) {
     $("message").innerHTML = "You need to calm down and relax.";
-    $("link").innerHTML = "<a id='relax' href=''>Click here to continue.</a>";
-    var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
-    var index = Math.floor(Math.random() * meditationLinks.length);
-    $("relax").href = meditationLinks[index];
+    $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+  }
+  else if(calmFound(inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
+    location.href = generateAndrewJohnsonLink();
   }
   else if(humorFound(inputText)) {
     $("message").innerHTML = "Šílený Ota";
@@ -60,6 +48,11 @@ function finalTest(inputText,site)
     $("message").addEventListener("click",function(){$("silenyota").play();});
     $("link").addEventListener("click",function(){$("silenyota").play();});
     $("silenyota").play();
+  }
+  else if(site === "busy") {
+    $("message").innerHTML = "You need an energy boost.";
+    $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+    ;
   }
   else if(inputText.indexOf("fun") >= 0) {
     $("message").innerHTML = "Fun things are good, but they are distractions.";
@@ -90,38 +83,58 @@ function finalTest(inputText,site)
 function newFound(inputText)
 {
   var excuses = ['check', 'new'];
-  for (var i in excuses)
-    if (inputText.indexOf(excuses[i]) >= 0)
-      return true;
-  return false;
+  return found(excuses,inputText);
 }
 
 function worriesFound(inputText)
 {
-  var worries = ['worr', 'anxi', 'scar', 'afraid',
+  var worries = ['worr', 'anxi', 'scar', 'afraid', 'bad memories', 'trigger',
   'stress', 'angry', 'anger',
-  'punch', 'destroy', 'kill', 'attack', 'bully',
-  'calm', 'relax', 'peace'];
-  for (var i in worries)
-    if (inputText.indexOf(worries[i]) >= 0)
-      return true;
-  return false;
+  'punch', 'destroy', 'kill', 'attack', 'bully'];
+  return found(worries,inputText);
+}
+
+function calmFound(inputText)
+{
+  var relaxing = ['calm', 'relax', 'peace', 'chill'];
+  return found(relaxing,inputText);
+}
+
+function generateAndrewJohnsonLink() {
+  var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
+  var index = Math.floor(Math.random() * meditationLinks.length);
+  return meditationLinks[index];
 }
 
 function humorFound(inputText)
 {
   var humor = ['funny', 'laugh', 'hilarious'];
-  for (var i in humor)
-    if (inputText.indexOf(humor[i]) >= 0)
-      return true;
-  return false;
+  return found(humor,inputText);
 }
 
 function addictFound(inputText)
 {
   var excuses = ['need', 'live without', 'addict'];
-  for (var i in excuses)
-    if (inputText.indexOf(excuses[i]) >= 0)
+  return found(excuses,inputText);
+}
+
+function found(array,inputText) {
+  for (var i in array)
+    if (inputText.indexOf(array[i]) >= 0)
       return true;
   return false;
 }

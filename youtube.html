@@ -12,8 +12,7 @@
     <div id="message" class="small space">Why did you want to go to YouTube?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
-    function submit()
-    {
+    function submit() {
       var inputText = $("newBreak").value.toLowerCase();
       if(requiringSearch(inputText))
         location.href = "cyoa/39.html";
@@ -26,22 +25,14 @@
       }
     }
 
-    function requiringSearch(inputText)
-    {
+    function requiringSearch(inputText) {
       var excuses = ['music', ' one', 'certain', 'specific'];
-      for (var i in excuses)
-        if (inputText.indexOf(excuses[i]) >= 0)
-          return true;
-      return false;
+      return found(excuses,inputText);
     }
 
-    function excuseFound(inputText)
-    {
+    function excuseFound(inputText) {
       var excuses = ['break', 'watch later', 'doug demuro'];
-      for (var i in excuses)
-        if (inputText.indexOf(excuses[i]) >= 0)
-          return true;
-      return false;
+      return found(excuses,inputText);
     }
     </script>
     <script src="interactivefiction.js"></script>

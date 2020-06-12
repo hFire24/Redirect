@@ -12,8 +12,7 @@
     <div id="message" class="small space">Why did you want to go to a website known for having cute anime girls?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
-    function submit()
-    {
+    function submit() {
       var inputText = $("newBreak").value.toLowerCase();
       if(fetishFound(inputText) || smallNumberFound(inputText))
         location.href = "whoa/index.html";
@@ -29,28 +28,23 @@
         $("message").innerHTML = "Watch some anime instead.";
         $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
       }
+      else if(inputText.indexOf("touhou") >= 0) {
+        $("message").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";
+      }
       else
         finalTest(inputText,"deviantart");
     }
 
-    function smallNumberFound(inputText)
-    {
+    function smallNumberFound(inputText) {
       //The smaller the loli, the cuter she is! This cuteness can be dangerous.
       var smallNumbers = ['two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
-      for (var i in smallNumbers)
-        if(inputText.indexOf(smallNumbers[i]) >= 0)
-          return true;
-      return false;
+      return found(smallNumbers,inputText);
     }
 
-    function fetishFound(inputText)
-    {
+    function fetishFound(inputText) {
       var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
       'fap', 'masturbate', 'fantasy', 'fantasi'];
-      for (var i in fetishes)
-        if (inputText.indexOf(fetishes[i]) >= 0)
-          return true;
-      return false;
+      return found(fetishes,inputText);
     }
     </script>
     <script src="interactivefiction.js"></script>
