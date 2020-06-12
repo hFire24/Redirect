@@ -74,8 +74,12 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else {
+  else if(boredomFound(inputText)) {
     $("message").innerHTML = "If you're bored, just try to do your tasks.";
+    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+  }
+  else {
+    $("message").innerHTML = "I gonna assume that you should do your tasks instead.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
 }
@@ -130,6 +134,12 @@ function addictFound(inputText)
 {
   var excuses = ['need', 'live without', 'addict'];
   return found(excuses,inputText);
+}
+
+function boredomFound(inputText)
+{
+  var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno'];
+  return found(bored,inputText)
 }
 
 function found(array,inputText) {
