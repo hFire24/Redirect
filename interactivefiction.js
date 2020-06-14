@@ -14,6 +14,8 @@ function finalTest(inputText,site)
     location.href = "busy.html";
   else if (inputText.indexOf("do something") >= 0 || inputText.indexOf("take a break") >= 0)
     location.href = "time.html";
+  else if(inputText.indexOf("music") >= 0)
+    location.href = "cyoa/58.html";
   else if (inputText.indexOf("tasks") >= 0)
   {
     if(found(negativity,inputText))
