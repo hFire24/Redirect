@@ -124,7 +124,7 @@ function finalTest(inputText,site)
 
 var news = ['check', 'new'];
 var wasteTime = ['kill', 'waste'];
-var worries = ['worr', 'anxi', 'scared', 'afraid', 'bad memories', 'trigger',
+var worries = ['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger',
 'stress', 'angry', 'anger',
 'punch', 'destroy', 'kill', 'attack', 'bully'];
 var overwhelming = ['overwhelm', 'too much', 'too many'];
