@@ -37,6 +37,10 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
+  else if(inputText.indexOf("procrast") >= 0 || inputText.indexOf("time") >= 0 && found(wasteTime,inputText)) {
+    $("message").innerHTML = "Here. Read this article in the link below.";
+    $("link").innerHTML = "<a href='https://alphaefficiency.com/4-types-procrastination-beat/'>Click here to coninue.</a>";
+  }
   else if(found(worries,inputText)) {
     $("message").innerHTML = "You need to calm down and relax.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
@@ -100,10 +104,6 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("procrast") >= 0) {
-    $("message").innerHTML = "Here. Read this article in the link below.";
-    $("link").innerHTML = "<a href='https://alphaefficiency.com/4-types-procrastination-beat/'>Click here to coninue.</a>";
-  }
   else if(site === "reddit") {
     $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
@@ -123,6 +123,7 @@ function finalTest(inputText,site)
 }
 
 var news = ['check', 'new'];
+var wasteTime = ['kill', 'waste'];
 var worries = ['worr', 'anxi', 'scared', 'afraid', 'bad memories', 'trigger',
 'stress', 'angry', 'anger',
 'punch', 'destroy', 'kill', 'attack', 'bully'];
