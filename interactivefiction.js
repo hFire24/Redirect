@@ -39,6 +39,8 @@ function finalTest(inputText,site)
     $("message").innerHTML = "You need to calm down and relax.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
   }
+  else if(found(overwhelming,inputText))
+    location.href = 'cyoa/48.html';
   else if(found(relaxing,inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
     location.href = generateAndrewJohnsonLink();
   }
@@ -58,10 +60,22 @@ function finalTest(inputText,site)
     $("link").addEventListener("click",function(){$("silenyota").play();});
     $("silenyota").play();
   }
+  else if(found(sleepy,inputText)) {
+    var d = new Date();
+    if(d.getHours() >= 6 && d.getHours() <= 10) {
+      $("message").innerHTML = "You need to drink some water.";
+      $("link").innerHTML = "<ins onclick='alreadyDrank()'>But I just drank some water.</ins>";
+    }
+    else if(d.getHours() < 22) {
+      $("message").innerHTML = "You should take a power nap.";
+      $("link").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap'>Click here to continue.</a>";
+    }
+    else
+      location.href = "cyoa/14.html";
+  }
   else if(site === "busy") {
     $("message").innerHTML = "You need an energy boost.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
-    ;
   }
   else if(inputText.indexOf("fun") >= 0) {
     $("message").innerHTML = "Fun things are good, but they are distractions.";
@@ -110,11 +124,13 @@ var news = ['check', 'new'];
 var worries = ['worr', 'anxi', 'scared', 'afraid', 'bad memories', 'trigger',
 'stress', 'angry', 'anger',
 'punch', 'destroy', 'kill', 'attack', 'bully'];
+var overwhelming = ['overwhelm', 'too much', 'too many'];
 var relaxing = ['calm', 'relax', 'peace', 'chill'];
 var humor = ['funny', 'laugh', 'hilarious'];
 var addicts = ['need', 'live without', 'addict'];
 var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre', 'meme'];
 var negativity = ['don\'t want', 'do not want',];
+var sleepy = ['tired','exhaust','sleep'];
 
 function generateAndrewJohnsonLink() {
   var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
@@ -153,6 +169,21 @@ function getBack()
     $("message").classList.remove("small");
     $("link").innerHTML = "Immediately close this tab.";
   }
+}
+
+function alreadyDrank() {
+  $("message").innerHTML = "Change to approrpriate clothes.<br>Take a walk outside.";
+  $("link").innerHTML = "<ins onclick='raining()'>But it's raining!</ins>";
+}
+
+function raining() {
+  $("message").innerHTML = "<a href='stepmania.html'>Play Stepmania.</a>";
+  $("link").innerHTML = "<ins onclick='noStepmania()'>The TV is occupied, or I can't be making noise downstairs.</a>";
+}
+
+function noStepmania() {
+  $("message").innerHTML = "OK, fine. Just sleep in for longer. Your body will thank me later.";
+  document.body.removeChild($("link"));
 }
 
 function $(x) {

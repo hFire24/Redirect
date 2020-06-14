@@ -13,6 +13,7 @@
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
     function submit() {
+      console.log($("newBreak").value);
       var inputText = $("newBreak").value.toLowerCase();
       if(found(fetishes,inputText) || found(smallNumbers,inputText))
         location.href = "whoa/index.html";

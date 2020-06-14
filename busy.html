@@ -38,6 +38,7 @@
       }
 
       function submit() {
+        console.log($("newBreak").value);
         var inputText = $("newBreak").value.toLowerCase();
         if(found(busy,inputText)) {
           $("message").innerHTML = "Don't overwork yourself.";
