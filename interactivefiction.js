@@ -14,11 +14,20 @@ function finalTest(inputText,site)
     location.href = "busy.html";
   else if (inputText.indexOf("do something") >= 0 || inputText.indexOf("take a break") >= 0)
     location.href = "time.html";
-  else if(newFound(inputText)) {
+  else if (inputText.indexOf("tasks") >= 0)
+  {
+    if(found(negativity,inputText))
+      location.href = "cyoa/15.html";
+    else {
+      $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
+      document.body.removeChild($("link"));
+    }
+  }
+  else if(found(news,inputText)) {
     $("message").innerHTML = "There's nothing beneficial to see there.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("lazy") >= 0) {
+  else if(inputText.indexOf("lazy") >= 0 && site !== "busy") {
     $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
@@ -26,14 +35,14 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
-  else if(worriesFound(inputText)) {
+  else if(found(worries,inputText)) {
     $("message").innerHTML = "You need to calm down and relax.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
   }
-  else if(calmFound(inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
+  else if(found(relaxing,inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
     location.href = generateAndrewJohnsonLink();
   }
-  else if(humorFound(inputText)) {
+  else if(found(humor,inputText)) {
     $("message").innerHTML = "Šílený Ota";
     $("message").classList.remove("small");
     var video = document.createElement("video");
@@ -63,18 +72,27 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(inputText.indexOf("want") >= 0) {
-    $("message").innerHTML = "You want to go there, but you don't need to go there.";
-    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+    if (found(negativity,inputText)) {
+      location.href = "cyoa/15.html";
+    }
+    else {
+      $("message").innerHTML = "You want to go there, but you don't need to go there.";
+      $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+    }
   }
-  else if(addictFound(inputText)) {
+  else if(found(addicts,inputText)) {
     $("message").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+  }
+  else if(inputText.indexOf("procrast") >= 0) {
+    $("message").innerHTML = "Here. Read this article in the link below.";
+    $("link").innerHTML = "<a href='https://alphaefficiency.com/4-types-procrastination-beat/'>Click here to coninue.</a>";
   }
   else if(site === "reddit") {
     $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(boredomFound(inputText)) {
+  else if(found(bored,inputText)) {
     $("message").innerHTML = "If you're bored, just try to do your tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
@@ -84,25 +102,15 @@ function finalTest(inputText,site)
   }
 }
 
-function newFound(inputText)
-{
-  var excuses = ['check', 'new'];
-  return found(excuses,inputText);
-}
-
-function worriesFound(inputText)
-{
-  var worries = ['worr', 'anxi', 'scar', 'afraid', 'bad memories', 'trigger',
-  'stress', 'angry', 'anger',
-  'punch', 'destroy', 'kill', 'attack', 'bully'];
-  return found(worries,inputText);
-}
-
-function calmFound(inputText)
-{
-  var relaxing = ['calm', 'relax', 'peace', 'chill'];
-  return found(relaxing,inputText);
-}
+var news = ['check', 'new'];
+var worries = ['worr', 'anxi', 'scared', 'afraid', 'bad memories', 'trigger',
+'stress', 'angry', 'anger',
+'punch', 'destroy', 'kill', 'attack', 'bully'];
+var relaxing = ['calm', 'relax', 'peace', 'chill'];
+var humor = ['funny', 'laugh', 'hilarious'];
+var addicts = ['need', 'live without', 'addict'];
+var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre'];
+var negativity = ['don\'t want', 'do not want',];
 
 function generateAndrewJohnsonLink() {
   var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
@@ -122,24 +130,6 @@ function generateAndrewJohnsonLink() {
   'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
   var index = Math.floor(Math.random() * meditationLinks.length);
   return meditationLinks[index];
-}
-
-function humorFound(inputText)
-{
-  var humor = ['funny', 'laugh', 'hilarious'];
-  return found(humor,inputText);
-}
-
-function addictFound(inputText)
-{
-  var excuses = ['need', 'live without', 'addict'];
-  return found(excuses,inputText);
-}
-
-function boredomFound(inputText)
-{
-  var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno'];
-  return found(bored,inputText)
 }
 
 function found(array,inputText) {

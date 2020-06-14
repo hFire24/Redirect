@@ -14,11 +14,11 @@
     <script>
     function submit() {
       var inputText = $("newBreak").value.toLowerCase();
-      if(fetishFound(inputText) || smallNumberFound(inputText))
+      if(found(fetishes,inputText) || found(smallNumbers,inputText))
         location.href = "whoa/index.html";
       else if (inputText.indexOf("loli") >= 0) {
         $("message").innerHTML = "If you love lolis so much, why don't you watch Ro-Kyu-Bu!?";
-        document.body.removeChild($("link"));
+        $("link").innerHTML = "<a href='cyoa/24.html'>I probably shouldn't watch it now.</a>";
       }
       else if (inputText.indexOf("maid") >= 0)
         location.href = "cyoa/24.html";
@@ -35,17 +35,10 @@
         finalTest(inputText,"deviantart");
     }
 
-    function smallNumberFound(inputText) {
-      //The smaller the loli, the cuter she is! This cuteness can be dangerous.
-      var smallNumbers = ['two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
-      return found(smallNumbers,inputText);
-    }
-
-    function fetishFound(inputText) {
-      var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
-      'fap', 'masturbate', 'fantasy', 'fantasi'];
-      return found(fetishes,inputText);
-    }
+    //The smaller the loli, the cuter she is! This cuteness can be dangerous.
+    var smallNumbers = ['two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
+    var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
+    'fap', 'urbate', 'fantasy', 'fantasi'];
     </script>
     <script src="interactivefiction.js"></script>
   </body>

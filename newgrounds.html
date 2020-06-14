@@ -14,7 +14,7 @@
     <script>
     function submit() {
       var inputText = $("newBreak").value.toLowerCase();
-      if(gameFound(inputText)) {
+      if(found(playful,inputText)) {
         $("message").innerHTML = "So you want to play games, huh?";
         $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";
       }
@@ -23,10 +23,7 @@
       }
     }
 
-    function gameFound(inputText) {
-      var playful = ['play', 'game'];
-      return found(playful,inputText);
-    }
+    var playful = ['play', 'game'];
     </script>
     <script src="interactivefiction.js"></script>
   </body>

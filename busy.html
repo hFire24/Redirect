@@ -39,13 +39,13 @@
 
       function submit() {
         var inputText = $("newBreak").value.toLowerCase();
-        if(busyFound(inputText)) {
+        if(found(busy,inputText)) {
           $("message").innerHTML = "Don't overwork yourself.";
           $("link").innerHTML = "<div class='space'><a href='cyoa/20.html'>I'm already overworked.</a></div><div><a href='cyoa/58.html'>I could use some music.</a></div>";
         }
         else if(inputText.indexOf("music") >= 0)
           location.href = "cyoa/58.html";
-        else if(weebFound(inputText)) {
+        else if(found(weebStuff,inputText)) {
           $("message").innerHTML = "Now is not the time to weeb out.";
           $("link").innerHTML = "<div class='space'><a href='cyoa/5.html'>OK.</a></div><div><a href='nextanime.html'>But I'm already watching anime.</a></div>";
         }
@@ -57,17 +57,10 @@
         }
       }
 
-      function busyFound(inputText) {
-        var busy = ['keep', 'continue', 'work', 'resume'];
-        return found(busy,inputText);
-      }
-
-      function weebFound(inputText) {
-        var weebStuff = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
-        'loli', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',
-        'two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
-        return found(weebStuff,inputText);
-      }
+      var busy = ['keep', 'continue', 'work', 'resume'];
+      var weebStuff = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
+      'loli', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',
+      'two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
     </script>
     <script src='interactivefiction.js'></script>
   </body>
