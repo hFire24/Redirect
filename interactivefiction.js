@@ -96,6 +96,10 @@ function finalTest(inputText,site)
     $("message").innerHTML = "If you're bored, just try to do your tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
+  else if(inputText.indexOf("research") >= 0) {
+    $("message").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
+    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+  }
   else {
     $("message").innerHTML = "I gonna assume that you should do your tasks instead.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
@@ -109,7 +113,7 @@ var worries = ['worr', 'anxi', 'scared', 'afraid', 'bad memories', 'trigger',
 var relaxing = ['calm', 'relax', 'peace', 'chill'];
 var humor = ['funny', 'laugh', 'hilarious'];
 var addicts = ['need', 'live without', 'addict'];
-var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre'];
+var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre', 'meme'];
 var negativity = ['don\'t want', 'do not want',];
 
 function generateAndrewJohnsonLink() {
