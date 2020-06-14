@@ -16,14 +16,11 @@ function finalTest(inputText,site)
     location.href = "time.html";
   else if(inputText.indexOf("music") >= 0)
     location.href = "cyoa/58.html";
-  else if (inputText.indexOf("tasks") >= 0)
-  {
-    if(found(negativity,inputText))
-      location.href = "cyoa/15.html";
-    else {
-      $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
-      document.body.removeChild($("link"));
-    }
+  else if (found(negativity,inputText))
+    location.href = "cyoa/15.html";
+  else if (inputText.indexOf("tasks") >= 0) {
+    $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
+    document.body.removeChild($("link"));
   }
   else if(found(news,inputText)) {
     $("message").innerHTML = "There's nothing beneficial to see there.";
@@ -92,17 +89,20 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(inputText.indexOf("want") >= 0) {
-    if (found(negativity,inputText)) {
-      location.href = "cyoa/15.html";
-    }
-    else {
-      $("message").innerHTML = "You want to go there, but you don't need to go there.";
-      $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
-    }
+    $("message").innerHTML = "You want to go there, but you don't need to go there.";
+    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(found(addicts,inputText)) {
     $("message").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+  }
+  else if(found(love,inputText) && site === "youtube") {
+    $("message").innerHTML = "If you love YouTube so much, then you must love online videos in general.";
+    $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
+  }
+  else if(found(love,inputText) && site === "deviantart") {
+    $("message").innerHTML = "If you love cute anime girls so much, then why don't you see them in action?";
+    $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
   }
   else if(site === "reddit") {
     $("message").innerHTML = "Reddit is bad.";
@@ -114,6 +114,10 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("research") >= 0) {
     $("message").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
+    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
+  }
+  else if(inputText.indexOf("i can") >= 0) {
+    $("message").innerHTML = "You could, but you're better off doing tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else {
@@ -131,8 +135,9 @@ var overwhelming = ['overwhelm', 'too much', 'too many'];
 var relaxing = ['calm', 'relax', 'peace', 'chill'];
 var humor = ['funny', 'laugh', 'hilarious'];
 var addicts = ['need', 'live without', 'addict'];
+var love = ['love','adore','enjoy','favorite','best','awesome','great','cool','good'];
 var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre', 'meme'];
-var negativity = ['don\'t want', 'do not want',];
+var negativity = ['don\'t want', 'do not want'];
 var sleepy = ['tired','exhaust','sleep'];
 
 function generateAndrewJohnsonLink() {
