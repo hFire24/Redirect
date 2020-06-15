@@ -8,7 +8,7 @@ input.addEventListener("keyup", function (event) {
 
 function finalTest(inputText,site)
 {
-  if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("need") >= 0)
+  if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && found(required,inputText))
     location.href = "custom.html";
   else if(inputText.indexOf("busy") >= 0)
     location.href = "busy.html";
@@ -16,8 +16,6 @@ function finalTest(inputText,site)
     location.href = "time.html";
   else if(inputText.indexOf("music") >= 0)
     location.href = "cyoa/58.html";
-  else if (found(negativity,inputText))
-    location.href = "cyoa/15.html";
   else if (inputText.indexOf("tasks") >= 0) {
     $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
     document.body.removeChild($("link"));
@@ -34,10 +32,18 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("procrast") >= 0 || inputText.indexOf("time") >= 0 && found(wasteTime,inputText)) {
+  else if(inputText.indexOf("procrast") >= 0 || found(wasteTime,inputText)) {
     $("message").innerHTML = "Here. Read this article in the link below.";
     $("link").innerHTML = "<a href='https://alphaefficiency.com/4-types-procrastination-beat/'>Click here to coninue.</a>";
   }
+  else if(found(seriousWorries,inputText) || found(negativity,inputText) && found(life,inputText) || inputText.endsWith("die")) {
+    $("message").innerHTML = "This sounds super serious. Talk to someone you absolutely trust about your issues, or call the national helpline.";
+    document.body.removeChild($("link"));
+    document.body.style.color = "black";
+    document.body.style.backgroundColor = "white";
+  }
+  else if (found(negativity,inputText))
+    location.href = "cyoa/15.html";
   else if(found(worries,inputText)) {
     $("message").innerHTML = "You need to calm down and relax.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
@@ -126,18 +132,22 @@ function finalTest(inputText,site)
   }
 }
 
+var required = ['need', 'have to', 'must', 'mean', 'required', 'specific'];
 var news = ['check', 'new'];
-var wasteTime = ['kill', 'waste'];
-var worries = ['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger',
-'stress', 'angry', 'anger',
-'punch', 'destroy', 'kill', 'attack', 'bully'];
+var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
+var worries = ['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
+'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated',
+'sad', 'upset', 'disappointed', 'offended', 'miserable'];
+var seriousWorries = ['suicide', 'die ', 'be dead', 'kill', 'perish', 'get rid of myself', 'waste', 'depressed',
+'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang', 'destroy', 'hate my'];
+var life = ['live', 'living', 'exist', 'earth', 'planet', 'world'];
 var overwhelming = ['overwhelm', 'too much', 'too many'];
-var relaxing = ['calm', 'relax', 'peace', 'chill'];
+var relaxing = ['calm', 'relax', 'peace', 'chill', 'refresh', 'reenergize'];
 var humor = ['funny', 'laugh', 'hilarious'];
 var addicts = ['need', 'live without', 'addict'];
 var love = ['love','adore','enjoy','favorite','best','awesome','great','cool','good'];
 var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre', 'meme'];
-var negativity = ['don\'t want', 'do not want'];
+var negativity = ['don\'t want', 'do not want', 'give up', 'stop'];
 var sleepy = ['tired','exhaust','sleep'];
 
 function generateAndrewJohnsonLink() {
