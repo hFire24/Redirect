@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Anime Timer</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme5">
+    <div id='message' class='space'>Set the timer.</div>
+    <div id='times'>
+      <div class='space'>
+        <span style='left:10%; position:absolute;' onclick="moveTime(-1)">⬅️</span>
+        <span id='time'>30 Minutes (Watch anime)</span>
+        <span style='right:10%; position:absolute;' onclick="moveTime(1)">➡️</span>
+      </div>
+      <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='setTimer(0,30,0)'>Start</span>
+    </div>
+    <div id='additionalTimes' class='space' style='display:none;'>
+      <a class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(600)'>Add 10 Minutes</a>
+    </div>
+    <div id='controls' class='anime-list' style='display:none;'>
+      <a id='pause' class='timerbutton' style='background-color:yellow; color:black;' onclick='pauseTimer()'>Pause Timer</a>
+      <a id='stop' class='timerbutton' style='background-color:red; color:black;' onclick='stopAlarm()'>Stop Timer</a>
+    </div>
+    <!--iframe id="music" style="display:none;" width="656" height="536" frameborder="0" src="cyoa/58.html"-->
+    <audio loop id='alarm'>
+      <source src="media/Alarm 1.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+      //a is for alarm, n is for now.
+      var a = new Date();
+      var n = new Date();
+      //global variable that keeps track of time
+      var myfunc;
+      //global variable that detects if the alarm has gone off.
+      var alarmOff = false;
+      //initializes the tp variable for the moveTime function as an array pointer.
+      var tp = 2;
+
+      function moveTime(distance) {
+        //Each array element describes the length of the timer.
+        var times = ["5 Seconds (Test the timer)",
+        "5 Minutes (For preparing)",
+        "30 Minutes (Watch anime)",
+        "2 Hours (Take a break)"];
+        //This matrix is used to pass hours, minutes, and seconds to the setTimer function depending on the position of tp.
+        var timeArray = [
+        [0,0,0,2],
+        [0,5,30,0],
+        [5,0,0,0]];
+        //moves the array position via the distance parameter.
+        tp = tp + distance;
+        //corrects the array's position if it's too low or too high
+        if(tp === 4)
+          tp = 0;
+        else if(tp === -1)
+          tp = 3;
+        console.log(tp);
+        //Changes the value in the selection area
+        document.getElementById("time").innerHTML = times[tp];
+        //Changes the arguments of the setTimer function activated by the start button.
+        document.getElementById("start").onclick = function() {setTimer(timeArray[0][tp],timeArray[1][tp],timeArray[2][tp])};
+      }
+
+      function setTimer(hours,minutes,seconds) {
+        //Sets n to the current time
+        n = new Date(Date.now());
+        //Displays current time to the console
+        console.log(n.getHours() + ":" + n.getMinutes() + ":" + n.getSeconds());
+
+        //Sets the alarm's second value by adding seconds from the parameter to the current time's second value.
+        a.setSeconds(seconds + n.getSeconds());
+        //Sets the alarm's minute value by adding minutes from the parameter to the current time's minute value.
+        a.setMinutes(minutes + n.getMinutes());
+        if(a.getSeconds() < n.getSeconds())
+        {
+          console.log("Hey. It is known that the second value of the alarm " + a.getSeconds() + " is less than the second value of the current time " + n.getSeconds());
+          //Adds one minute to the alarm's minute value.
+          a.setMinutes(1 + a.getMinutes());
+        }
+        //Sets the alarm's hour value by adding hours from the parameter to the current time's hour value.
+        a.setHours(hours + n.getHours());
+        if(a.getMinutes() === n.getMinutes() && a.getSeconds() < n.getSeconds() || a.getMinutes() < n.getMinutes())
+        {
+          if(a.getMinutes() === n.getMinutes() && a.getSeconds() < n.getSeconds()) {
+            console.log("Hey. It is known that the minute value of the alarm " + a.getMinutes() + " is equal to the minute value of the current time " + n.getMinutes());
+            console.log("AND It is known that the second value of the alarm " + a.getSeconds() + " is less than the second value of the current time " + n.getSeconds());
+          }
+          else
+            console.log("Hey. It is known that the minute value of the alarm " + a.getMinutes() + " is less than the minute value of the current time " + n.getMinutes());
+          //Adds one hour to the alarm's minute value.
+          a.setHours(1 + a.getHours());
+        }
+        //Displays alarm time to the console
+        console.log(a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+
+        //Displays remaining time to the webpage
+        adjustTime();
+
+        //This function keeps track of time. It updates the timer and sets off the alarm when the current time matches the alarm time.
+        myfunc = setInterval(function() {
+          n = new Date(Date.now())
+          if(!alarmOff)
+            adjustTime();
+          if(n.getSeconds() === a.getSeconds() && n.getMinutes() === a.getMinutes() && n.getHours() === a.getHours()) {
+            alarmOff = true;
+            playAlarm();
+            document.getElementById("message").innerHTML = "<span id='stress' onclick='stopAlarm()'>STOP TIMER</span>";
+          }
+        }, 1000);
+
+        document.getElementById("times").style.display = "none";
+        //Only when the timer is set to 30 minutes does this element display for adding time to the timer.
+        if(hours === 0 && minutes === 30 && seconds === 0)
+          document.getElementById("additionalTimes").style.display = "block";
+        /*else if(hours === 2)
+        {
+          var music = document.createElement("iframe");
+          music.id = "music";
+          music.width = 0.5 * window.innerWidth;
+          music.height = 0.6 * window.innerHeight;
+          music.frameborder = 0;
+          music.style.marginTop = '1em';
+          music.src = "cyoa/58.html";
+          document.body.appendChild(music);
+        }*/
+        //This displays the controls for pausing and stopping the timer.
+        document.getElementById("controls").style.display = "block";
+      }
+
+      function adjustTime() {
+        //This calculates how much time is left between the alarm and the current time.
+        var timeLeft = a - n;
+        //Hours, minutes, and seconds are calculated from that value.
+        var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        //Add zeroes to minutes and seconds if the number is a single digit long.
+        if(minutes.toString().length === 1)
+          minutes = "0" + minutes;
+        if(seconds.toString().length === 1)
+          seconds = "0" + seconds;
+        //Displays updated remaining time to the webpage
+        document.getElementById("message").innerHTML = "<span id='hours'>" + hours + "</span>:<span id='minutes'>" + minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
+      }
+
+      function addTime(seconds) {
+        //A new alarm is made.
+        var aa = new Date();
+        //Displays old alarm's time
+        console.log(a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+
+        aa.setSeconds(seconds + a.getSeconds());
+        if(seconds < 60 && aa.getSeconds() < a.getSeconds())
+          aa.setMinutes(1 + a.getMinutes())
+        else
+          aa.setMinutes(seconds/60 + a.getMinutes());
+        if(seconds < 3600 && aa.getMinutes() < a.getMinutes())
+          aa.setHours(1 + a.getHours());
+        else
+          aa.setHours(seconds/3600 + a.getHours());
+        //Displays new alarm's time
+        console.log(aa.getHours() + ":" + aa.getMinutes() + ":" + aa.getSeconds());
+        //Set the current alarm to the new alarm.
+        a = aa;
+        adjustTime();
+      }
+
+      function pauseTimer() {
+        //This freezes the timer.
+        clearInterval(myfunc);
+        //Changes what the pause button does and looks like
+        var pauseButton = document.getElementById("pause");
+        pauseButton.innerHTML = "Resume Timer";
+        pauseButton.onclick = function() {resumeTimer()};
+      }
+
+      function resumeTimer() {
+        //Changes what the resume button does and looks like.
+        var pauseButton = document.getElementById("pause");
+        pauseButton.innerHTML = "Pause Timer";
+        pauseButton.onclick = function() {pauseTimer()};
+        //Extracts the hours, minutes, and seconds from the
+        var hours = document.getElementById('hours').innerHTML;
+        var minutes = document.getElementById('minutes').innerHTML;
+        var seconds = document.getElementById('seconds').innerHTML;
+        //Displays the timer's value to the console
+        console.log(hours + ":" + minutes + ":" + seconds);
+        //Passes the arguments to the setTimer function to resume the timer.
+        setTimer(parseInt(hours),parseInt(minutes),parseInt(seconds));
+      }
+
+      function playAlarm()
+      {
+        alarm.play();
+      }
+
+      function stopAlarm()
+      {
+        //Basically refreshes the page.
+        location.href = "animetimer.html";
+      }
+    </script>
+  </body>
+</html>

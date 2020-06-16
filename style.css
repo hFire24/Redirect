@@ -259,6 +259,10 @@ td {
   font-style:normal;
 }
 
+.timerbutton {
+  padding:10px 30px;
+}
+
 @media only screen and (max-width: 1702px) {
   body, #message.tiny {
     font-size: 60px;
