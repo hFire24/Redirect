@@ -46,6 +46,8 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
+  else if(inputText.indexOf("nanah") >= 0)
+    location.href = "cyoa/28.html";
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
   else if(found(worries,inputText)) {
