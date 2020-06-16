@@ -19,13 +19,19 @@ a {
   animation-duration: 2s;
 }
 
-.morning a {
+.morning a, .relax a {
   color:black;
 }
 
 @keyframes rise {
   from {opacity: 0; top:100px;}
   to {opacity: 1; top:0px;}
+}
+
+.relax {
+  background-color: skyblue;
+  color: black;
+  font-family: Verdana, sans-serif;
 }
 
 ol {
@@ -104,6 +110,12 @@ td {
 .anime-list {
   display:grid;
   grid-template-columns:auto auto;
+}
+
+.three-list {
+  display:grid;
+  grid-template-columns:auto auto auto;
+  font-size:60px;
 }
 
 .anime-link {
@@ -260,7 +272,7 @@ td {
   td {
     font-size:30px;
   }
-  ol {
+  ol, .three-list {
     font-size:40px;
   }
   input[type='checkbox'] {
@@ -270,7 +282,7 @@ td {
 }
 
 @media only screen and (max-width: 1135px) {
-  body, #message.tiny {
+  body, #message.tiny, .three-list {
     font-size: 30px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -298,7 +310,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body, #message.tiny, td {
+  body, #message.tiny, td, .three-list {
     font-size: 20px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Relax.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="relax">
+    <div id='message' class='space'>What kind of relaxation would you like?</div>
+    <a class='anime-link' onclick='goToRandomMeditation()'><strong style='color:darkblue;'>I'm feeling lucky.</strong></a><br>
+    <div id='hideable' class='three-list' style='margin-top:1em;'>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence' class='anime-link'>Quick Confidence</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation' class='anime-link'>Body Scan</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap' class='anime-link'>Power Nap</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost' class='anime-link'>Energy Boost</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation' class='anime-link'>Favorite Place</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation' class='anime-link'>Grounding</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation' class='anime-link'>Stomach</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation' class='anime-link'>Smiling</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation' class='anime-link'>Heaviness</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1' class='anime-link'>Breathing I</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2' class='anime-link'>Breathing II</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3' class='anime-link'>Breathing III</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation' class='anime-link'>Stretching</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage' class='anime-link'>Ears</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/head-massage' class='anime-link'>Head</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation' class='anime-link'>Eyes</a>
+    </div>
+    <script>
+      function goToRandomMeditation() {
+        location.href = generateAndrewJohnsonLink();
+      }
+    </script>
+    <script src='script.js'></script>
+  </body>
+</html>
