@@ -24,13 +24,13 @@ function finalTest(inputText,site)
     $("message").innerHTML = "There's nothing beneficial to see there.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
+  else if(found(hunger,inputText)) {
+    $("message").innerHTML = "You need to eat some food right now.";
+    $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
+  }
   else if(inputText.indexOf("lazy") >= 0 && site !== "busy") {
     $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
-  }
-  else if(inputText.indexOf("focus") >= 0) {
-    $("message").innerHTML = "Well there's your problem.";
-    $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
   else if(inputText.indexOf("procrast") >= 0 || found(wasteTime,inputText)) {
     $("message").innerHTML = "Here. Read this article in the link below.";
@@ -41,6 +41,10 @@ function finalTest(inputText,site)
     document.body.removeChild($("link"));
     document.body.style.color = "black";
     document.body.style.backgroundColor = "white";
+  }
+  else if(inputText.indexOf("focus") >= 0) {
+    $("message").innerHTML = "Well there's your problem.";
+    $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
@@ -149,6 +153,7 @@ var love = ['love','adore','enjoy','favorite','best','awesome','great','cool','g
 var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre', 'meme'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop'];
 var sleepy = ['tired','exhaust','sleep'];
+var hunger = ['hunger', 'hungry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'];
 
 function generateAndrewJohnsonLink() {
   var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
