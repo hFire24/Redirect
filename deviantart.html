@@ -25,7 +25,7 @@
         location.href = "cyoa/24.html";
       else if (inputText.indexOf("dress") >= 0)
         location.href = "cyoa/25.html";
-      else if(inputText.indexOf("anime") >= 0) {
+      else if(found(cuteness,inputText)) {
         $("message").innerHTML = "Watch some anime instead.";
         $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
       }
@@ -39,8 +39,9 @@
     //The smaller the loli, the cuter she is! This cuteness can be dangerous.
     var smallNumbers = ['two', 'three', 'four', 'five', 'six', 'year', ' age', 'toddler', 'preschool', 'tiny'];
     var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
-    'fap', 'urbate', 'fantasy', 'fantasi', 
+    'fap', 'urbate', 'fantasy', 'fantasi',
     'whoa', 'nuke'];
+    var cuteness = ['cute','aww','chino','rem','cirno'];
     </script>
     <script src="interactivefiction.js"></script>
   </body>
