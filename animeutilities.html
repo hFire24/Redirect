@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Your anime utilities</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body>
+    <div id='message' class='space'>Your anime utilities with links</div>
+    <div class='space'>If you struggle with watching anime, <a href="brave.html">click here</a>.</div>
+    <div class='anime-list'>
+      <a id='a0' class='anime-link' href="https://docs.google.com/document/d/1-NhvS-nPuUrk3krHMUFAH-cJN0pwB1H5GBwHtAMddT8/edit">Anime Document</a>
+      <a id='a1' class='anime-link' href="https://docs.google.com/spreadsheets/d/1GDp2yZnU4fkSE5RwQKtgtuH8yeptkjNUJVOeaKufCpo/edit#gid=0">Anime Spreadsheet</a>
+      <a id='a2' class='anime-link' href="animetimer.html">Anime Timer</a>
+      <a id='a3' class='anime-link' href="https://anilist.co/home">AniList</a>
+      <a id='a4' class='anime-link' href="https://myanimelist.net/animelist/cFreeze?status=1">MyAnimeList Watching</a>
+      <a id='a5' class='anime-link' href="https://myanimelist.net/history/cFreeze/anime">MyAnimeList History</a>
+      <a id='a6' class='anime-link' href="nextanime.html">Your queue with links</a>
+    </div>
+    <script>
+      for(var i = 0; i < 7; i++)
+      {
+        var x = Math.floor(Math.random() * 32) + 96;
+        var y = Math.floor(Math.random() * 128);
+        var z = Math.floor(Math.random() * 128);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
+      }
+    </script>
+  </body>
+</html>

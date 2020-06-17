@@ -28,7 +28,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "You need to eat some food right now.";
     $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
   }
-  else if(inputText.indexOf("lazy") >= 0 && site !== "busy") {
+  else if(inputText.indexOf("lazy") >= 0 && site !== "busy" || inputText.indexOf("anime") >= 0) {
     $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
