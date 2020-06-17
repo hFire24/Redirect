@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width">
     <title>Anime Timer</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
+    <link rel="shortcut icon" href="icon-clock.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme5">
     <div id='message' class='space'>Set the timer.</div>
     <div id='times'>
-      <div class='space'>
+      <div class='space2'>
         <span style='left:10%; position:absolute;' onclick="moveTime(-1)">⬅️</span>
         <span id='time'>30 Minutes (Watch anime)</span>
         <span style='right:10%; position:absolute;' onclick="moveTime(1)">➡️</span>
       </div>
       <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='setTimer(0,30,0)'>Start</span>
     </div>
-    <div id='additionalTimes' class='space' style='display:none;'>
-      <a class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(600)'>Add 10 Minutes</a>
+    <div id='additionalTimes' class='space2' style='display:none;'>
+      <a id='ten-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(600)'>Add 10 Minutes</a>
     </div>
     <div id='controls' class='anime-list' style='display:none;'>
       <a id='pause' class='timerbutton' style='background-color:yellow; color:black;' onclick='pauseTimer()'>Pause Timer</a>
@@ -39,6 +39,8 @@
       var alarmOff = false;
       //initializes the tp variable for the moveTime function as an array pointer.
       var tp = 2;
+      //initializes the addTimes variable for the adjustTime function. It keeps track of the number of times the addTime button is pressed.
+      var addTimes = 0;
 
       function moveTime(distance) {
         //Each array element describes the length of the timer.
@@ -166,6 +168,16 @@
         console.log(aa.getHours() + ":" + aa.getMinutes() + ":" + aa.getSeconds());
         //Set the current alarm to the new alarm.
         a = aa;
+        //Increments the addTimes variable
+        addTimes++;
+        //If button is pressed 3 times, disables the add 10 minutes button by removing the onclick attribute and changing the appearance to black with the text "BUTTON DISABLED".
+        if(addTimes >= 3) {
+          var timerButton = document.getElementById("ten-minutes-plus");
+          timerButton.removeAttribute("onclick");
+          timerButton.innerHTML = "BUTTON DISABLED";
+          timerButton.style.color = timerButton.style.backgroundColor;
+          timerButton.style.backgroundColor = 'black';
+        }
         adjustTime();
       }
 

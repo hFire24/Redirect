@@ -64,7 +64,7 @@ ol a {
   font-family: Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, 'Arial Narrow Bold', fantasy;
 }
 
-.space {
+.space, .space2 {
   margin-bottom: 0.5em;
 }
 
@@ -279,6 +279,9 @@ td {
   ol, .three-list {
     font-size:40px;
   }
+  .space2 {
+    margin-bottom:0.6em;
+  }
   input[type='checkbox'] {
     width:40px;
     height:40px;
@@ -298,6 +301,9 @@ td {
   }
   #arrows {
     font-size: 75px;
+  }
+  .space2 {
+    margin-bottom:1em;
   }
 
   input[type='checkbox'] {
@@ -326,6 +332,9 @@ td {
   }
   #arrows {
     font-size: 50px;
+  }
+  .space2 {
+    margin-bottom:1.25em;
   }
   input[type='checkbox'] {
     width:15px;
