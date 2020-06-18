@@ -28,6 +28,10 @@ function finalTest(inputText,site)
     $("message").innerHTML = "You need to eat some food right now.";
     $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
   }
+  else if(inputText.indexOf("fapped") >= 0)
+    location.href = 'relapse.html';
+  else if(found(whoa,inputText))
+    location.href = 'whoa/index.html';
   else if(inputText.indexOf("lazy") >= 0 && site !== "busy" || inputText.indexOf("anime") >= 0) {
     $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
@@ -140,6 +144,7 @@ function finalTest(inputText,site)
 
 var required = ['need', 'have to', 'must', 'mean', 'required', 'specific'];
 var news = ['check', 'new'];
+var whoa = ['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'whoa', 'nuke'];
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 var worries = ['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
 'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated',
