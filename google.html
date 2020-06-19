@@ -8,142 +8,24 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme5">
-    <div id='message' class='space'>Be honest. Did you Google that just because you are bored?</div>
-    <div id='yesno' class='anime-list'>
-      <a id='yes' class='anime-link' onclick='youLose()'>Yes</a>
-      <a id='no' class='anime-link' onclick="youWin()">No</a>
-      <a id='maybe' class='anime-link' onclick="maybe()">Maybe</a>
-      <a id='idk' class='anime-link' onclick='idk()'>I dunno</a>
-    </div>
-    <div id="clickanywhere" style="display:none;">Click here to continue.</div>
+  <body class="theme2" onload="getBack();">
+    <div id="message" class="space">Why did you decide to Google that?</div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <script>
-      var hey = 0;
-      var message = document.getElementById("message");
-
-      function youWin() {
-        hey++;
-        if(hey === 1)
-        {
-          hey = 2;
-          message.innerHTML = "What kind of emotions did you have when searching that term?";
-          document.getElementById("yes").innerHTML = "Anger/Worry";
-          document.getElementById("maybe").innerHTML = "Unclean";
-          document.getElementById("no").innerHTML = "Determined";
-          var hungry = document.createElement("a");
-          hungry.innerHTML = "Hunger";
-          hungry.className = "anime-link";
-          hungry.addEventListener("click",function() {
-            document.body.removeChild(document.getElementById("yesno"));
-            message.innerHTML = "You need to eat some food now.";
-          });
-          document.getElementById("yesno").appendChild(hungry);
-        }
-        else if(hey === 2)
-        {
-          document.body.removeChild(document.getElementById("yesno"));
-          message.innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
-        }
-        else {
-          document.body.removeChild(document.getElementById("yesno"));
-          message.innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
-          message.classList.add("small");
-        }
+    function submit() {
+      console.log($("newBreak").value);
+      var inputText = $("newBreak").value.toLowerCase();
+      if (found(college,inputText)) {
+        $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
+        message.classList.add("small");
+        document.body.removeChild($("link"));
       }
+      else
+        finalTest(inputText,"google")
+    }
 
-      function youLose() {
-        hey++;
-        if(hey === 1)
-        {
-          message.innerHTML = "Do you want to save that search term for later?";
-          document.getElementById("yes").innerHTML = "No";
-          document.getElementById("no").innerHTML = "Yes";
-        }
-        else if(hey === 2) {
-          document.body.removeChild(document.getElementById("yesno"));
-          message.innerHTML = getRandomMessage();
-          document.getElementById("clickanywhere").style.display = "block";
-          document.getElementById("clickanywhere").addEventListener("mouseup", function (event) {
-            event.preventDefault();
-            location.href = "cyoa/2.html";
-          });
-        }
-        else {
-          document.body.removeChild(document.getElementById("yesno"));
-          message.innerHTML = "You need to calm down and relax.";
-          document.getElementById("clickanywhere").style.display = "block";
-          document.getElementById("clickanywhere").addEventListener("mouseup", function (event) {
-            event.preventDefault();
-            location.href = generateAndrewJohnsonLink();
-          });
-        }
-      }
-
-      function maybe() {
-        if(hey !== 2)
-          youLose();
-        else {
-          location.href = "whoa/index.html";
-        }
-      }
-
-      function idk() {
-        if(hey !== 2)
-          youLose();
-        else {
-          hey = 1;
-          youLose();
-        }
-      }
-
-      function getRandomMessage() {
-        var messages = ['You really are bored.',
-        'Stop typing in distracting search terms!',
-        'Stop escaping from your problems!',
-        'Forget that search term!',
-        'You shouldn\'t search that term.',
-        'Don\'t waste time getting distracted on Google.',
-        'Don\'t you have anything better to do with your time?',
-        'Don\'t search for time-wasting things!',
-        'Your mind must be wandering off, isn\'t it?',
-        'You need to stop procrastinating.',
-        'You just wanted to sidetrack. Not good.',
-        'Nothing good will come out of searching that term.',
-        'You are procrastinating and not getting things done.',
-        'You want to spend your life Googling useless stuff? 🤣',
-        'You may seem bored or lazy, but you are fearful.',
-        'Don\'t get dictated by your urges.',
-        'You have more important things to do.',
-        'Now is not the time to be doing that.',
-        'Please stop being lazy, and stop wasting your time.',
-        'You really don\'t want to search that term anyway.',
-        'Don\'t have a lazy, unproductive day.',
-        'It seems like you feel stuck.',
-        'You need motivation.',
-        'Why not use that search energy to make some progress on a task?'];
-
-        return messages[Math.floor(Math.random() * messages.length)];
-      }
-
-      function generateAndrewJohnsonLink() {
-        var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
-        'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
-        var index = Math.floor(Math.random() * meditationLinks.length);
-        return meditationLinks[index];
-      }
+    var college = ['assignment','project','exam','test','college','class'];
     </script>
+    <script src="interactivefiction.js"></script>
   </body>
 </html>
