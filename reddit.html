@@ -10,14 +10,55 @@
   </head>
   <body class="theme5" onload="getBack();">
     <div id="message" class="small space">Why did you want to go to Reddit?</div>
-    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+            <option id="0" value="0">Because I'm lazy</option>
+            <option id="1" value="1">Because I'm bored</option>
+            <option id="2" value="2">For no reason</option>
+            <option id="3" value="3">Because I feel like it</option>
+            <option id="4" value="4">Because I want to visit Reddit</option>
+            <option id="5" value="5">Because I want to procrastinate</option>
+            <option id="6" value="6">To check what's new</option>
+            <option id="7" value="7">I don't know</option>
+            <option id="8" value="8">Because I can</option>
+            <option id="9" value="9">To read my old reddit posts</option>
+            <option id="10" value="10">I meant to watch anime instead</option>
+            <option id="11" value="11">To check NoFap</option>
+            <option id="12" value="12">To visit the homepage</option>
+            <option id="13" value="13">To visit the cars subreddit</option>
+            <option id="14" value="14">To browse the anime subreddit</option>
+            <option id="15" value="15">Because I feel stressed</option>
+            <option id="16" value="16">Because I feel busy</option>
+            <option id="17" value="17">Because I feel hungry</option>
+            <option id="18" value="18">I just relapsed</option>
+            <option id="19" value="19">Because I can't focus</option>
+            <option id="20" value="20">Because I feel overwhelmed</option>
+            <option id="21" value="21">Because I want to relax</option>
+            <option id="22" value="22">For research</option>
+            <option id="23" value="23">To see funny posts</option>
+            <option id="24" value="24">I got something I need to do</option>
+            <option id="25" value="25">I'm ready to do something else</option>
+            <option id="26" value="26">Because I love Reddit</option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
     <script>
     function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
       console.log($("newBreak").value);
-      var inputText = $("newBreak").value.toLowerCase();
-      if (inputText.indexOf("noFap") >= 0) {
-        $("message").innerHTML = "I guess that's one good part of reddit.";
-        $("link").innerHTML = "Unblock reddit and go straight to NoFap.";
+      var inputText = '';
+      if($("custom-reason").value !== -1 && $("newBreak").value === '')
+        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
+      if (inputText.indexOf("nofap") >= 0) {
+        $("message").innerHTML = "There is something beneficial to see there";
+        $("link").innerHTML = "<a href='https://www.reddit.com/r/nofap'>Go straight to NoFap.</a>";
       }
       else
         finalTest(inputText,"reddit")

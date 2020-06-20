@@ -9,22 +9,67 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme2" onload="getBack();">
-    <div id="message" class="space">Why did you decide to Google that?</div>
-    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
+    <div id="message" class="small space">Why did you decide to Google that?</div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+            <option id="0" value="0">Because I'm lazy</option>
+            <option id="1" value="1">Because I'm bored</option>
+            <option id="2" value="2">For no reason</option>
+            <option id="3" value="3">Because I feel like it</option>
+            <option id="4" value="4">Because I wanted to</option>
+            <option id="5" value="5">To pass my classes</option>
+            <option id="6" value="6">Because I need to</option>
+            <option id="7" value="7">Because I feel curious</option>
+            <option id="8" value="8">I don't know</option>
+            <option id="9" value="9">Because I can</option>
+            <option id="10" value="10">I wanted to learn more</option>
+            <option id="11" value="11">I meant to watch anime instead</option>
+            <option id="12" value="12">To listen to music</option>
+            <option id="13" value="13">For research</option>
+            <option id="14" value="14">To learn more about cars</option>
+            <option id="15" value="15">Because I feel stressed</option>
+            <option id="16" value="16">Because I feel busy</option>
+            <option id="17" value="17">Because I feel hungry</option>
+            <option id="18" value="18">I just relapsed</option>
+            <option id="19" value="19">Because I can't focus</option>
+            <option id="20" value="20">Because I feel overwhelmed</option>
+            <option id="21" value="21">Because I want to relax</option>
+            <option id="22" value="22">For a college assignment</option>
+            <option id="23" value="23">For a test/exam</option>
+            <option id="24" value="24">Because it felt funny</option>
+            <option id="25" value="25">I got something I need to do</option>
+            <option id="26" value="26">I'm ready to do something else</option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
     <script>
     function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
       console.log($("newBreak").value);
-      var inputText = $("newBreak").value.toLowerCase();
+      var inputText = '';
+      if($("custom-reason").value !== -1 && $("newBreak").value === '')
+        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
       if (found(college,inputText)) {
         $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
         message.classList.add("small");
         document.body.removeChild($("link"));
       }
+      else if(inputText.indexOf("anime") >= 0) {
+        $("message").innerHTML = "Watch some anime instead.";
+        $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
+      }
       else
         finalTest(inputText,"google")
     }
 
-    var college = ['assignment','project','exam','test','college','class'];
+    var college = ['assignment','project','exam','test','college','class','study'];
     </script>
     <script src="interactivefiction.js"></script>
   </body>

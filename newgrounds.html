@@ -10,11 +10,47 @@
   </head>
   <body class="theme4" onload="getBack();">
     <div id="message" class="small space">Why did you want to go to a game-related website?</div>
-    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+            <option id="0" value="0">Because I'm lazy</option>
+            <option id="1" value="1">Because I'm bored</option>
+            <option id="2" value="2">For no reason</option>
+            <option id="3" value="3">Because I feel like it</option>
+            <option id="4" value="4">Because I want to visit that website</option>
+            <option id="5" value="5">Because I want to procrastinate</option>
+            <option id="6" value="6">To play games</option>
+            <option id="7" value="7">I don't know</option>
+            <option id="8" value="8">Because I can</option>
+            <option id="9" value="9">I meant to watch anime instead</option>
+            <option id="10" value="10">Because I feel stressed</option>
+            <option id="11" value="11">Because I feel busy</option>
+            <option id="12" value="12">Because I feel hungry</option>
+            <option id="13" value="13">I just relapsed</option>
+            <option id="14" value="14">I wanted to play that one game</option>
+            <option id="15" value="15">Because I can't focus</option>
+            <option id="16" value="16">Because I feel overwhelmed</option>
+            <option id="17" value="17">Because I want to relax</option>
+            <option id="18" value="18">For research</option>
+            <option id="19" value="19">I got something I need to do</option>
+            <option id="20" value="20">I'm ready to do something else</option>
+            <option id="21" value="21">Because I love games</option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
     <script>
     function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
       console.log($("newBreak").value);
-      var inputText = $("newBreak").value.toLowerCase();
+      var inputText = '';
+      if($("custom-reason").value !== -1 && $("newBreak").value === '')
+        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
       if(found(playful,inputText)) {
         $("message").innerHTML = "So you want to play games, huh?";
         $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";

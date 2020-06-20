@@ -39,7 +39,7 @@ function finalTest(inputText,site)
     document.body.style.color = "black";
     document.body.style.backgroundColor = "white";
   }
-  else if(inputText.indexOf("focus") >= 0) {
+  else if(found(focus,inputText)) {
     $("message").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
@@ -73,7 +73,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "If you unblock that website, you'll waste too much time.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("lazy") >= 0 && site !== "google" || inputText.indexOf("anime") >= 0) {
+  else if(inputText.indexOf("lazy") >= 0 && site !== "google" || inputText.indexOf("anime") >= 0 && site !== "deviantart") {
     $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
@@ -97,7 +97,6 @@ function finalTest(inputText,site)
     }
     else if (count === 1 && found(determined,inputText)) {
       $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
-      message.classList.add("small");
       document.body.removeChild($("link"));
     }
     else if (count === 2 && found(yes,inputText)) {
@@ -134,6 +133,7 @@ function finalTest(inputText,site)
       'Don\'t be addicted to the internet.',
       'Fun things are good, but they are distractions.'];
       document.getElementById("message").innerHTML = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("message").classList.remove("small");
       document.getElementById("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
     }
   }
@@ -157,6 +157,7 @@ function finalTest(inputText,site)
     $("link").appendChild(video);
     $("link").removeChild($("newBreak"));
     $("link").removeChild($("submit"));
+    $("link").removeChild($("dropdown"));
     $("message").addEventListener("click",function(){$("silenyota").play();});
     $("link").addEventListener("click",function(){$("silenyota").play();});
     $("silenyota").play();
@@ -165,11 +166,11 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Fun things are good, but they are distractions.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("want") >= 0) {
+  else if(inputText.indexOf("want") >= 0 && inputText.indexOf("anime") < 0) {
     $("message").innerHTML = "You want to go there, but you don't need to go there.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(addicts,inputText)) {
+  else if(found(addicts,inputText) && inputText.indexOf("anime") < 0) {
     $("message").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
@@ -177,7 +178,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "If you love YouTube so much, then you must love online videos in general.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
   }
-  else if(found(love,inputText) && site === "deviantart") {
+  else if(site === "deviantart" && (found(love,inputText) || found(cuteness,inputText))) {
     $("message").innerHTML = "If you love cute anime girls so much, then why don't you see them in action?";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
   }
@@ -193,6 +194,10 @@ function finalTest(inputText,site)
     $("message").innerHTML = "You could, but you're better off doing tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
+  else if(inputText.indexOf("anime") >= 0) {
+    $("message").innerHTML = "Watch some anime instead.";
+    $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
+  }
   else {
     $("message").innerHTML = "I gonna assume that you should do your tasks instead.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
@@ -201,7 +206,8 @@ function finalTest(inputText,site)
 
 var required = ['need', 'have to', 'must', 'mean', 'required', 'force'];
 var news = ['check', 'new'];
-var whoa = ['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'whoa', 'nuke'];
+var whoa = ['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
+'whoa', 'nuke'];
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 var worries = ['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
 'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up',
@@ -219,7 +225,9 @@ var negativity = ['don\'t want', 'do not want', 'give up', 'stop'];
 var sleepy = ['tired','exhaust','sleep'];
 var hunger = ['hunger', 'hungry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'];
 var yes = ['yeah', 'yes', 'sure', 'absolute', 'positive', 'definitely', 'ok', 'why', 'to do'];
-var determined = ['determined'];
+var cuteness = ['cute','aww','chino','rem'];
+var focus = ['focus', 'concentrate'];
+var determined = ['determin', 'urgen', 'importan'];
 var relapse = ['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'];
 
 function generateAndrewJohnsonLink() {
