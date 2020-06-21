@@ -15,35 +15,6 @@
         <span class="custom-select" style="width:200px;">
           <select id='custom-reason'>
             <option id="-1" value="-1"></option>
-            <option id="0" value="0">Because I'm lazy</option>
-            <option id="1" value="1">Because I'm bored</option>
-            <option id="2" value="2">For no reason</option>
-            <option id="3" value="3">Because I feel like it</option>
-            <option id="4" value="4">Because I love cute anime girls</option>
-            <option id="5" value="5">Because I want to look at cute anime girls</option>
-            <option id="6" value="6">Because I want to procrastinate</option>
-            <option id="7" value="7">To check what's new</option>
-            <option id="8" value="8">I don't know</option>
-            <option id="9" value="9">Because lolis are so cute</option>
-            <option id="10" value="10">Because I can</option>
-            <option id="11" value="11">I meant to watch anime instead</option>
-            <option id="12" value="12">Because Cirno</option>
-            <option id="13" value="13">I love maids</option>
-            <option id="14" value="14">I love dresses</option>
-            <option id="15" value="15">Because I feel stressed</option>
-            <option id="16" value="16">Because I feel busy</option>
-            <option id="17" value="17">I just relapsed</option>
-            <option id="18" value="18">Because I can't focus</option>
-            <option id="19" value="19">Because I feel overwhelmed</option>
-            <option id="20" value="20">Because I want to relax</option>
-            <option id="21" value="21">For research</option>
-            <option id="22" value="22">Because I want to say "aww"</option>
-            <option id="23" value="23">I got something I need to do</option>
-            <option id="24" value="24">I'm ready to do something else</option>
-            <option id="25" value="25">Because Touhou</option>
-            <option id="26" value="26">To browse age regression pictures</option>
-            <option id="27" value="27">To see anime girls wearing big hats</option>
-            <option id="28" value="28">To see anime girls wearing oversized clothes</option>
           </select>
         </span><button onclick="submit()">Submit</button>
       </div>
@@ -58,9 +29,10 @@
         inputText = $($("custom-reason").value).innerHTML.toLowerCase();
       else
         inputText = $("newBreak").value.toLowerCase();
-      if(found(fetishes,inputText) || found(smallNumbers,inputText))
+      if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge'],inputText)
+      || found(['two', 'three', 'four', 'five', 'six', 'old', 'age', 'toddler', 'preschool', 'tiny'],inputText))
         location.href = "whoa/index.html";
-      else if (inputText.indexOf("loli") >= 0) {
+      else if (found(['loli','little'],inputText)) {
         $("message").innerHTML = "If you love lolis so much, why don't you watch Ro-Kyu-Bu!?";
         $("link").innerHTML = "<a href='cyoa/24.html'>I probably shouldn't watch it now.</a>";
       }
@@ -76,9 +48,44 @@
         finalTest(inputText,"deviantart");
     }
 
-    //The smaller the loli, the cuter she is! This cuteness can be dangerous.
-    var smallNumbers = ['two', 'three', 'four', 'five', 'six', 'year', ' age', 'toddler', 'preschool', 'tiny'];
-    var fetishes = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge'];
+    var reasons = ["Because I'm lazy",
+    "Because I'm bored",
+    "For no reason",
+    "Because I feel like it",
+    "Because I want cute things",
+    "Because I want to look at cute anime girls",
+    "Because I want to procrastinate",
+    "To check what's new",
+    "I don't know",
+    "Because lolis are so cute",
+    "Because I can",
+    "I meant to watch anime instead",
+    "Because Cirno",
+    "I love maids",
+    "I love dresses",
+    "Because I feel stressed",
+    "Because I feel busy",
+    "I just relapsed",
+    "Because I can't focus",
+    "Because I feel overwhelmed",
+    "Because I want to relax",
+    "For research",
+    "Because I want to say \"aww\"",
+    "Because Touhou",
+    "To browse age regression pictures",
+    "To see anime girls wear big hats",
+    "To see anime girls wear oversized clothes",
+    "I already looked at bad stuff",
+    "I got something I need to do",
+    "I'm ready to do something else",
+    "Because I love cute anime girls"];
+    for(var i in reasons) {
+      var option = document.createElement('option');
+      option.id = i;
+      option.value = i;
+      option.innerHTML = reasons[i];
+      document.getElementById("custom-reason").appendChild(option);
+    }
     </script>
     <script src="interactivefiction.js"></script>
   </body>

@@ -112,9 +112,12 @@ td {
   grid-template-columns:auto auto;
 }
 
-.three-list {
+.three-list, .relax-list {
   display:grid;
   grid-template-columns:auto auto auto;
+}
+
+.relax-list {
   font-size:60px;
 }
 
@@ -263,6 +266,34 @@ td {
   padding:10px 30px;
 }
 
+.slidercontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 10px;
+  background: hsl(194, 22%, 87%);
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  height: 60px;
+  background: hsl(227, 26%, 50%);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 60px;
+  height: 60px;
+  background: hsl(227, 26%, 50%);
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1702px) {
   body, #message.tiny {
     font-size: 60px;
@@ -276,7 +307,7 @@ td {
   td {
     font-size:30px;
   }
-  ol, .three-list {
+  ol, .relax-list {
     font-size:40px;
   }
   .space2 {
@@ -286,10 +317,18 @@ td {
     width:40px;
     height:40px;
   }
+  .slider::-webkit-slider-thumb {
+    width: 40px;
+    height: 40px;
+  }
+  .slider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media only screen and (max-width: 1135px) {
-  body, #message.tiny, .three-list {
+  body, #message.tiny, .relax-list {
     font-size: 30px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -310,6 +349,14 @@ td {
     width:20px;
     height:20px;
   }
+  .slider::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+  }
+  .slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -320,7 +367,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body, #message.tiny, td, .three-list {
+  body, #message.tiny, td, .relax-list {
     font-size: 20px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -339,5 +386,13 @@ td {
   input[type='checkbox'] {
     width:15px;
     height:15px;
+  }
+  .slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
   }
 }

@@ -15,33 +15,6 @@
         <span class="custom-select" style="width:200px;">
           <select id='custom-reason'>
             <option id="-1" value="-1"></option>
-            <option id="0" value="0">Because I'm lazy</option>
-            <option id="1" value="1">Because I'm bored</option>
-            <option id="2" value="2">For no reason</option>
-            <option id="3" value="3">Because I feel like it</option>
-            <option id="4" value="4">Because I want to visit Reddit</option>
-            <option id="5" value="5">Because I want to procrastinate</option>
-            <option id="6" value="6">To check what's new</option>
-            <option id="7" value="7">I don't know</option>
-            <option id="8" value="8">Because I can</option>
-            <option id="9" value="9">To read my old reddit posts</option>
-            <option id="10" value="10">I meant to watch anime instead</option>
-            <option id="11" value="11">To check NoFap</option>
-            <option id="12" value="12">To visit the homepage</option>
-            <option id="13" value="13">To visit the cars subreddit</option>
-            <option id="14" value="14">To browse the anime subreddit</option>
-            <option id="15" value="15">Because I feel stressed</option>
-            <option id="16" value="16">Because I feel busy</option>
-            <option id="17" value="17">Because I feel hungry</option>
-            <option id="18" value="18">I just relapsed</option>
-            <option id="19" value="19">Because I can't focus</option>
-            <option id="20" value="20">Because I feel overwhelmed</option>
-            <option id="21" value="21">Because I want to relax</option>
-            <option id="22" value="22">For research</option>
-            <option id="23" value="23">To see funny posts</option>
-            <option id="24" value="24">I got something I need to do</option>
-            <option id="25" value="25">I'm ready to do something else</option>
-            <option id="26" value="26">Because I love Reddit</option>
           </select>
         </span><button onclick="submit()">Submit</button>
       </div>
@@ -62,6 +35,40 @@
       }
       else
         finalTest(inputText,"reddit")
+    }
+
+    var reasons = ["Because I'm lazy",
+    "Because I'm bored",
+    "For no reason",
+    "Because I feel like it",
+    "Because I want to visit Reddit",
+    "Because I want to procrastinate",
+    "To check what's new",
+    "I don't know",
+    "Because I can",
+    "To read my old reddit posts",
+    "I meant to watch anime instead",
+    "To check NoFap",
+    "To visit the home page",
+    "To browse a subreddit other than NoFap",
+    "Because I feel stressed",
+    "Because I feel busy",
+    "Because I feel hungry",
+    "I just relapsed",
+    "Because I can't focus",
+    "Because I feel overwhelmed",
+    "Because I want to relax",
+    "I already looked at bad stuff",
+    "For research",
+    "To see funny posts",
+    "I got something I need to do",
+    "I'm ready to do something else"];
+    for(var i in reasons) {
+      var option = document.createElement('option');
+      option.id = i;
+      option.value = i;
+      option.innerHTML = reasons[i];
+      document.getElementById("custom-reason").appendChild(option);
     }
     </script>
     <script src="interactivefiction.js"></script>

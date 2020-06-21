@@ -5,7 +5,6 @@ input.addEventListener("keyup", function (event) {
     submit();
   }
 });
-var count = 0;
 
 function finalTest(inputText,site)
 {
@@ -21,25 +20,30 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
     document.body.removeChild($("link"));
   }
-  else if(found(news,inputText) && site !== "google") {
+  else if(found(['check', 'new'],inputText) && site !== "google") {
     $("message").innerHTML = "There's nothing beneficial to see there.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(hunger,inputText)) {
+  else if(found(['hunger', 'hungry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
     $("message").innerHTML = "You need to eat some food right now.";
     $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
   }
-  else if(found(relapse,inputText))
+  else if(found(['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'],inputText))
     location.href = 'relapse.html';
-  else if(found(whoa,inputText))
+  else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'erection', 'boner'],inputText))
+    location.href = 'kirby.html';
+  else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
+  'whoa', 'nuke'],inputText))
     location.href = 'whoa/index.html';
-  else if(found(seriousWorries,inputText) && !found(wasteTime,inputText) || found(negativity,inputText) && found(life,inputText) || inputText.endsWith("die")) {
+  else if(found(['suicid', 'die ', 'be dead', 'kill', 'perish', 'get rid of myself', 'waste', 'depressed', 'homicid',
+  'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang', 'destroy', 'hate my'],inputText)
+  && !found(wasteTime,inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText) || inputText.endsWith("die")) {
     $("message").innerHTML = "This sounds super serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
     document.body.removeChild($("link"));
     document.body.style.color = "black";
     document.body.style.backgroundColor = "white";
   }
-  else if(found(focus,inputText)) {
+  else if(found(['focus', 'concentrate'],inputText)) {
     $("message").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to coninue.</a>";
   }
@@ -47,16 +51,18 @@ function finalTest(inputText,site)
     location.href = "cyoa/28.html";
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
-  else if(found(worries,inputText)) {
+  else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
+  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up',
+  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope'],inputText)) {
     $("message").innerHTML = "You need to calm down and relax.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
   }
-  else if(found(overwhelming,inputText))
+  else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
-  else if(found(relaxing,inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
+  else if(found(['calm', 'relax', 'peace', 'chill', 'refresh', 'reenergize'],inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
     location.href = generateAndrewJohnsonLink();
   }
-  else if(found(sleepy,inputText)) {
+  else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
     var d = new Date();
     if(d.getHours() >= 6 && d.getHours() <= 11) {
       $("message").innerHTML = "You need to drink some water.";
@@ -82,26 +88,27 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(site === "google") {
-    if(count === 0) {
-      if(found(required,inputText) || inputText.indexOf("learn") >= 0)
-      {
+    if(count < 2 && inputText !== '') {
+      input.value = "";
+      if(found(required,inputText) || found(['learn','curious','to know'],inputText)) {
         count = 1;
-        $("message").innerHTML = "What kind of emotions did you have while searching that term?";
+        $("message").innerHTML = "Just how important is that search term?";
+        $("custom-reason").value = -1;
+        $("dropdown").style.display = "none";
+        input.style.display = "none";
+        $("submit").style.display = "none";
+        $("slider1").style.display = "block";
       }
-      else
-      {
+      else {
         count = 2;
         $("message").innerHTML = "Would you like to save that search term for later?";
+        $("custom-reason").value = -1;
+        input.style.display = "none";
+        $("submit").style.display = "none";
+        $("dropdown").style.display = "none";
+        $("slider1").style.display = "none";
+        $("yesnomaybe").style.display = "grid";
       }
-      $("newBreak").value = "";
-    }
-    else if (count === 1 && found(determined,inputText)) {
-      $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
-      document.body.removeChild($("link"));
-    }
-    else if (count === 2 && found(yes,inputText)) {
-      document.getElementById("message").innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
-      document.body.removeChild(document.getElementById("link"));
     }
     else {
       var messages = ['You really are bored.',
@@ -145,7 +152,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "You need an energy boost.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
   }
-  else if(found(humor,inputText)) {
+  else if(found(['funny', 'laugh', 'hilarious'],inputText)) {
     $("message").innerHTML = "Šílený Ota";
     $("message").classList.remove("small");
     var video = document.createElement("video");
@@ -155,7 +162,7 @@ function finalTest(inputText,site)
     source.type = "video/mp4";
     video.appendChild(source);
     $("link").appendChild(video);
-    $("link").removeChild($("newBreak"));
+    $("link").removeChild(input);
     $("link").removeChild($("submit"));
     $("link").removeChild($("dropdown"));
     $("message").addEventListener("click",function(){$("silenyota").play();});
@@ -170,7 +177,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "You want to go there, but you don't need to go there.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(addicts,inputText) && inputText.indexOf("anime") < 0) {
+  else if(found(['need', 'live without', 'addict'],inputText) && inputText.indexOf("anime") < 0) {
     $("message").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
@@ -178,7 +185,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "If you love YouTube so much, then you must love online videos in general.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
   }
-  else if(site === "deviantart" && (found(love,inputText) || found(cuteness,inputText))) {
+  else if(site === "deviantart" && (found(love,inputText) || found(['cute', 'aww', 'adorable', 'chino', 'rem'],inputText))) {
     $("message").innerHTML = "If you love cute anime girls so much, then why don't you see them in action?";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
   }
@@ -186,7 +193,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(bored,inputText)) {
+  else if(found(['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
     $("message").innerHTML = "If you're bored, just try to do your tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
@@ -204,31 +211,10 @@ function finalTest(inputText,site)
   }
 }
 
-var required = ['need', 'have to', 'must', 'mean', 'required', 'force'];
-var news = ['check', 'new'];
-var whoa = ['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
-'whoa', 'nuke'];
+var required = ['need', 'have to', 'must', 'mean', 'required', 'force', 'urgent', 'immediate'];
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
-var worries = ['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
-'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up',
-'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope'];
-var seriousWorries = ['suicid', 'die ', 'be dead', 'kill', 'perish', 'get rid of myself', 'waste', 'depressed', 'homicid',
-'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang', 'destroy', 'hate my'];
-var life = ['live', 'living', 'exist', 'earth', 'planet', 'world'];
-var overwhelming = ['overwhelm', 'too much', 'too many'];
-var relaxing = ['calm', 'relax', 'peace', 'chill', 'refresh', 'reenergize'];
-var humor = ['funny', 'laugh', 'hilarious'];
-var addicts = ['need', 'live without', 'addict'];
 var love = ['love','adore','enjoy','favorite','best','awesome','great','cool','good'];
-var bored = ['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'flandre', 'meme'];
-var negativity = ['don\'t want', 'do not want', 'give up', 'stop'];
-var sleepy = ['tired','exhaust','sleep'];
-var hunger = ['hunger', 'hungry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'];
-var yes = ['yeah', 'yes', 'sure', 'absolute', 'positive', 'definitely', 'ok', 'why', 'to do'];
-var cuteness = ['cute','aww','chino','rem'];
-var focus = ['focus', 'concentrate'];
-var determined = ['determin', 'urgen', 'importan'];
-var relapse = ['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'];
+var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate'];
 
 function generateAndrewJohnsonLink() {
   var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
