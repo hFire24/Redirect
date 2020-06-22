@@ -9,11 +9,13 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <img src='https://i.redd.it/cgfdvvecgem21.jpg' onclick='disappointed()'></img>
+    <img id='sadKirby' src='https://i.redd.it/cgfdvvecgem21.jpg' onclick='disappointed()'></img>
     <script>
       function disappointed() {
         location.href = "https://youtu.be/mGx4BSFMiuo";
       }
+      if (window.innerWidth < 1044)
+        document.getElementById('sadKirby').width = window.innerWidth - 20;
     </script>
   </body>
 </html>
