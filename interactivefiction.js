@@ -206,7 +206,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
   else {
-    $("message").innerHTML = "I gonna assume that you should do your tasks instead.";
+    $("message").innerHTML = "I'm gonna assume that you should do your tasks instead.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
 }
