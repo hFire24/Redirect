@@ -30,7 +30,7 @@
       else
         inputText = $("newBreak").value.toLowerCase();
       if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge'],inputText)
-      || found(['two', 'three', 'four', 'five', 'six', 'old', 'age', 'toddler', 'preschool', 'tiny'],inputText))
+      || found(['two', 'three', 'four', 'five', 'six', '-old', ' old', ' age', 'toddler', 'preschool', 'tiny'],inputText))
         location.href = "whoa/index.html";
       else if (found(['loli','little'],inputText)) {
         $("message").innerHTML = "If you love lolis so much, why don't you watch Ro-Kyu-Bu!?";
