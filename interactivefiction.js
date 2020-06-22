@@ -14,7 +14,7 @@ function finalTest(inputText,site)
     location.href = "busy.html";
   else if (inputText.indexOf("do something") >= 0 || inputText.indexOf("take a break") >= 0)
     location.href = "time.html";
-  else if(inputText.indexOf("music") >= 0)
+  else if(inputText.indexOf("music") >= 0 && !found(knowledge,inputText))
     location.href = "cyoa/58.html";
   else if (inputText.indexOf("tasks") >= 0) {
     $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
@@ -90,7 +90,7 @@ function finalTest(inputText,site)
   else if(site === "google") {
     if(count < 2 && inputText !== '') {
       input.value = "";
-      if(found(required,inputText) || found(['learn','curious','to know'],inputText)) {
+      if(found(required,inputText) || found(knowledge,inputText)) {
         count = 1;
         $("message").innerHTML = "Just how important is that search term?";
         $("custom-reason").value = -1;
@@ -215,6 +215,7 @@ var required = ['need', 'have to', 'must', 'mean', 'required', 'force', 'urgent'
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 var love = ['love','adore','enjoy','favorite','best','awesome','great','cool','good'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate'];
+var knowledge = ['learn','curious','to know'];
 
 function generateAndrewJohnsonLink() {
   var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
