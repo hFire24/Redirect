@@ -11,13 +11,13 @@
   </head>
   <body class='relapse' onload="randomMessage()">
     <div id='message' class='space'>Remind yourself every morning to not commit that sin.</div>
-    <div id='arrows'><span class='arrow' onclick="previous()">⬅️</span><span id='number'>1</span><span class='arrow' onclick="next()">➡️</span></div>
+    <div id='arrows'><span class='arrow' onclick="first()">⏮️</span><span class='arrow' onclick="previous()">⬅️</span><span id='number'>1</span><span class='arrow' onclick="next()">➡️</span></div>
     <script>
       var scene = 0;
       var messages = ["Remind yourself every morning to not commit that sin.",
-      "When you get your devices in the morning, play music to suppress any bad thoughts.",
+      "In the morning, play music to suppress any bad thoughts.",
       "Ensure that this sin won't be repeated.",
-      "Every night, pray, and keep repenting .",
+      "Every night, pray and keep repenting.",
       "You do not want to severely disappoint God again.",
       "Repentance requires consistency.",
       "It takes time to fully repent.",
@@ -25,12 +25,12 @@
       "You do not want to be weak in spirit.",
       "If you are spiritually weak, Satan will manipulate you.",
       "Strengthen your sprituality for eternal happiness.",
-      "Love God from the bottom of your heart.",
-      "Keep his commandments. Exercise faith daily.",
+      "Keep His commandments. Exercise faith daily.",
       "Keep your faith. Stay in the church.",
       "Pray always to conquer Satan.",
       "Read scriptures online. Learn their meanings.",
       "Learn about the gospel. Share it when appropriate.",
+      "Love God from the bottom of your heart.",
       "By doing those things, your faith will grow stronger.",
       "The stronger your faith is, the happier your life will be.",
       "The happier your life is, the less likely you will sin.",
@@ -42,22 +42,29 @@
       function randomMessage()
       {
         scene = Math.floor(Math.random() * messages.length);
-        document.getElementById("message").innerHTML = messages[scene];
-        document.getElementById("number").innerHTML = scene + 1;
+        setScene();
       }
       function next()
       {
         scene++;
         if(scene === messages.length)
           scene--;
-        document.getElementById("message").innerHTML = messages[scene];
-        document.getElementById("number").innerHTML = scene + 1;
+        setScene();
       }
       function previous()
       {
         scene--;
         if(scene === -1)
           scene++;
+        setScene();
+      }
+      function first()
+      {
+        scene = 0;
+        setScene();
+      }
+      function setScene()
+      {
         document.getElementById("message").innerHTML = messages[scene];
         document.getElementById("number").innerHTML = scene + 1;
       }
