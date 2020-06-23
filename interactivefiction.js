@@ -16,6 +16,8 @@ function finalTest(inputText,site)
     location.href = "time.html";
   else if(inputText.indexOf("music") >= 0 && !found(knowledge,inputText))
     location.href = "cyoa/58.html";
+  else if(inputText.indexOf("wait") >= 0)
+    location.href = "cyoa/12.html";
   else if (inputText.indexOf("tasks") >= 0) {
     $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
     document.body.removeChild($("link"));
@@ -213,7 +215,7 @@ function finalTest(inputText,site)
 
 var required = ['need', 'have to', 'must', 'mean', 'required', 'force', 'urgent', 'immediate'];
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
-var love = ['love','adore','enjoy','favorite','best','awesome','great','cool','good'];
+var love = ['love','adore','enjoy','favorite','best'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate'];
 var knowledge = ['learn','curious','to know'];
 
