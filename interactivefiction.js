@@ -85,10 +85,6 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("research") >= 0) {
-    $("message").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
-    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
-  }
   else if(site === "google") {
     if(count < 2 && inputText !== '') {
       input.value = "";
@@ -153,6 +149,10 @@ function finalTest(inputText,site)
   else if(site === "busy") {
     $("message").innerHTML = "You need an energy boost.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+  }
+  else if(inputText.indexOf("research") >= 0) {
+    $("message").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
+    $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(found(['funny', 'laugh', 'hilarious'],inputText)) {
     $("message").innerHTML = "Šílený Ota";
