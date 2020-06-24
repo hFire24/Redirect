@@ -92,7 +92,7 @@ function finalTest(inputText,site)
   else if(site === "google") {
     if(count < 2 && inputText !== '') {
       input.value = "";
-      if(found(required,inputText) || found(knowledge,inputText)) {
+      if((found(required,inputText) || found(knowledge,inputText)) && count !== 1) {
         count = 1;
         $("message").innerHTML = "Just how important is that search term?";
         $("custom-reason").value = -1;
