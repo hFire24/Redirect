@@ -47,19 +47,20 @@
         var times = ["5 Seconds (Test the timer)",
         "5 Minutes (For preparing)",
         "30 Minutes (Watch anime)",
+        "1 Hour (Take a break)",
         "2 Hours (Take a break)"];
         //This matrix is used to pass hours, minutes, and seconds to the setTimer function depending on the position of tp.
         var timeArray = [
-        [0,0,0,2],
-        [0,5,30,0],
-        [5,0,0,0]];
+        [0,0,0,1,2],
+        [0,5,30,0,0],
+        [5,0,0,0,0]];
         //moves the array position via the distance parameter.
         tp = tp + distance;
         //corrects the array's position if it's too low or too high
-        if(tp === 4)
+        if(tp === 5)
           tp = 0;
         else if(tp === -1)
-          tp = 3;
+          tp = 4;
         console.log(tp);
         //Changes the value in the selection area
         document.getElementById("time").innerHTML = times[tp];
