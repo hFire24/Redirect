@@ -531,23 +531,6 @@ function randomMessage(index,number) {
   //Put index value to the console
   console.log("Message " + index);
   var message = $("message").innerHTML;
-  //Adds a ROFL clip event listener if the message contains a 🤣
-  if(message.indexOf('🤣') >= 0)
-  {
-    $("message").addEventListener("click",function(){
-      var exists = $("hakase");
-        if (!exists) {
-          message = message + "<br>";
-          var video = document.createElement("video");
-          video.id = "hakase";
-          var source = document.createElement("source");
-          source.src = "https://hfire24.github.io/Redirect/media/ROFL.mp4";
-          source.type = "video/mp4";
-          video.appendChild(source);
-          $("message").appendChild(video);
-        }
-      $("hakase").play();});
-  }
   randomLink(index,number);
 }
 

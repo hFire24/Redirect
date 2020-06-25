@@ -138,22 +138,6 @@
           y.addListener(resizeText);
           z.addListener(resizeText);
         }
-        if(message.indexOf('🤣') >= 0)
-        {
-          $("message").addEventListener("click",function(){
-            var exists = $("hakase");
-              if (!exists) {
-                $("message").innerHTML = $("message").innerHTML + "<br>";
-                var video = document.createElement("video");
-                video.id = "hakase";
-                var source = document.createElement("source");
-                source.src = "https://hfire24.github.io/Redirect/media/ROFL.mp4";
-                source.type = "video/mp4";
-                video.appendChild(source);
-                $("message").appendChild(video);
-              }
-            $("hakase").play();});
-        }
         else if(message.indexOf('☢') >= 0)
           $("message").addEventListener("click",nuke);
 

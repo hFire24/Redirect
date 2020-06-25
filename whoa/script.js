@@ -36,26 +36,7 @@ function loadWebsite(index)
   else
     index = index - 1;
   var message = document.getElementById("message");
-
-  if(index === messages.indexOf('YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣'))
-  {
-    message.innerHTML = messages[index];
-    message.removeAttribute("onClick");
-    message.addEventListener("click",function(){
-      var exists = document.getElementById("hakase");
-        if (!exists) {
-          message.innerHTML = message.innerHTML + "<br>";
-          var video = document.createElement("video");
-          video.id = "hakase";
-          var source = document.createElement("source");
-          source.src = "../media/ROFL.mp4";
-          source.type = "video/mp4";
-          video.appendChild(source);
-          message.appendChild(video);
-        }
-      document.getElementById("hakase").play();});
-  }
-  else if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
+  if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
   {
     message.innerHTML = '✝' + messages[index] + '✝';
     message.removeAttribute("onClick");
