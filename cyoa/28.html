@@ -9,14 +9,9 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <img id='meme1' class='space' src='../media/Anti-Nanahira Meme.jpg' alt='A meme featuring a shocked and sad anime girl' usemap='#ericsaade' onclick='showNextMeme()'>
-    <map name='ericsaade'>
-      <area shape="rect" coords="561,41,684,79" href="https://youtu.be/-04pUETT7oI" alt="The word 'popular'">
-    </map>
-    <div id='meme2' style='display:none;' onclick='showNextMeme()'>
-      <img src='../media/Nanahira Eurovision Meme.jpg' alt='A meme featuring a boyfriend labeled "September 2019 me" and his girlfriend labeled "Nanahira" getting distracted by another girl labeled "Eurovision"'>
-    </div>
-    <div id='meme3' style='display:none;' onclick='showNextMeme()'>
+    <div id='meme1' class='big space'>Look. You lost all faith in Nanahira in September 2019. She sang a song with the F-word in it. And it got <a href='https://youtu.be/-04pUETT7oI'>popular!</a></div>
+    <div id='meme2' class='big space' style='display:none;'>Also in September 2019, you gained interest in Eurovision. It seemed like a perfect substitute! But...</div>
+    <div id='meme3' class='space' style='display:none;'>
       <table class='priorities space'>
         <tbody>
           <tr class='priorities'>
@@ -50,6 +45,7 @@
       </table>
       <div id='consider' style='display:none;'>Consider <span id='activity'></span> instead.</div>
     </div>
+    <p id='next' style='color:rgb(0,255,0);' onclick='showNextMeme()'>Next</p>
     <script>
       var i = 1;
       var max = 3;
@@ -63,11 +59,13 @@
         }
         else {
           document.getElementById('consider').style.display = "block";
+          document.getElementById('next').style.display = "none";
         }
       }
 
-      var activities = ['drawing','light exercise','learning full stack','learning FL Studio','watching & blogging about anime','writing in journal','digitizing journal','meditation'];
+      var activities = ['drawing stuff like temples','light exercise','learning full stack','learning FL Studio','watching & blogging about anime','writing in journal','digitizing journal','meditation'];
       var index = Math.floor(Math.random() * activities.length);
+      index = 0;
       document.getElementById('activity').innerHTML = activities[index];
     </script>
   </body>

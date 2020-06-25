@@ -46,7 +46,7 @@ ol a {
   margin-bottom: 0.5em;
 }
 
-#break, #question, #standup, #changeclothes, h2 {
+#break, #question, #standup, #changeclothes, h2, #meme1, #meme2 {
   font-size:105px;
 }
 
@@ -271,7 +271,7 @@ td {
   #message, #break.big, h1 {
     font-size: 100px;
   }
-  #break, #stress a, #standup, #changeclothes, #question, h2 {
+  #break, #stress a, #standup, #changeclothes, #question, h2, #meme1, #meme2 {
     font-size: 75px;
   }
   td {
@@ -310,7 +310,7 @@ td {
   #message, #break.big, h1 {
     font-size: 60px;
   }
-  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2 {
+  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
     font-size: 44px;
   }
   .space2 {
@@ -343,7 +343,7 @@ td {
   #message, #break.big, h1 {
     font-size: 40px;
   }
-  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2 {
+  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
     font-size: 30px;
   }
   .space2 {
