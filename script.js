@@ -613,12 +613,10 @@ function rejectSomething(time) {
     link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <span onclick='rejectSomething(5)' style='color:red;'>No.</span>";
   else if(time === 1)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
-  else if(time === 2)
-    link.innerHTML = "<a href='nextanime.html'>You're just gonna watch anime. Right?</a> <span onclick='rejectSomething(22)' style='color:white;'>No.</span>";
   else if(time === 3)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 5)
-    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(22)' style='color:red;'>No.</span>";
+    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:red;'>No.</span>";
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
   else if(time === 10)

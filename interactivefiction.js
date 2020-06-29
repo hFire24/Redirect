@@ -66,7 +66,7 @@ function finalTest(inputText,site)
   }
   else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
     var d = new Date();
-    if(d.getHours() >= 6 && d.getHours() <= 11) {
+    if(d.getHours() >= 6 && d.getHours() <= 12) {
       $("message").innerHTML = "You need to drink some water.";
       $("link").innerHTML = "<ins onclick='alreadyDrank()'>But I just drank some water.</ins>";
     }
@@ -81,8 +81,16 @@ function finalTest(inputText,site)
     $("message").innerHTML = "If you unblock that website, you'll waste too much time.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("lazy") >= 0 && site !== "google" || inputText.indexOf("anime") >= 0 && site !== "deviantart") {
-    $("message").innerHTML = "Be like Anzu Futaba, and watch more anime.";
+  else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
+    $("message").innerHTML = "Watch just a little bit more anime. Then you spend better time while being lazy.";
+    $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
+  }
+  else if(site === "deviantart" && (found(love,inputText) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress'],inputText))) {
+    $("message").innerHTML = "Life isn't about seeking cuteness. Go empty out your watching list.";
+    $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
+  }
+  else if(inputText.indexOf("anime") >= 0) {
+    $("message").innerHTML = "You're almost done watching anime. Finish it ASAP.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
   else if(site === "google") {
@@ -175,37 +183,27 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Fun things are good, but they are distractions.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(inputText.indexOf("want") >= 0 && inputText.indexOf("anime") < 0) {
+  else if(inputText.indexOf("want") >= 0) {
     $("message").innerHTML = "You want to go there, but you don't need to go there.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(['need', 'live without', 'addict'],inputText) && inputText.indexOf("anime") < 0) {
+  else if(found(['need', 'live without', 'addict'],inputText)) {
     $("message").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(love,inputText) && site === "youtube") {
-    $("message").innerHTML = "If you love YouTube so much, then you must love online videos in general.";
-    $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
-  }
-  else if(site === "deviantart" && (found(love,inputText) || found(['cute', 'aww', 'adorable', 'chino', 'rem'],inputText))) {
-    $("message").innerHTML = "If you love cute anime girls so much, then why don't you see them in action?";
-    $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
-  }
+  else if(found(love,inputText) && site === "youtube")
+    location.href = 'cyoa/35.html';
   else if(site === "reddit") {
     $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(['bored', 'nothing', 'don\'t know', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
+  else if(found(['bored', 'nothing', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
     $("message").innerHTML = "If you're bored, just try to do your tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(inputText.indexOf("i can") >= 0) {
     $("message").innerHTML = "You could, but you're better off doing tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
-  }
-  else if(inputText.indexOf("anime") >= 0) {
-    $("message").innerHTML = "Watch some anime instead.";
-    $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
   else {
     $("message").innerHTML = "I'm gonna assume that you should do your tasks instead.";

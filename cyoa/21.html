@@ -9,22 +9,16 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme2">
-    <div id='message' class='space'>What kind of cute anime girls do you want to look at?</div>
-    <div class='three-list' class='space'>
-      <a class='anime-link' href="../cirno.html">Cirno</a>
-      <a class='anime-link' href="24.html">Rem</a>
-      <a class='anime-link' href="28.html">Nanahira</a>
-      <a class='anime-link' href="24.html">Maids</a>
-      <a class='anime-link' href="26.html">Little girls</a>
-      <a class='anime-link' href="59.html">Blonde girls</a>
-      <a class='anime-link' href="27.html">Girls with twintails</a>
-      <a class='anime-link' href="25.html">Pink haired girls with twintails</a>
-      <a class='anime-link' href="../whoa/index.html">Age regressed girls</a>
-      <a class='anime-link' href="17.html">The kind you find on image boards</a>
-      <a class='anime-link' href="17.html">The kind you find on DeviantArt</a>
-      <a class='anime-link' href="../whoa/index.html">Girls with big hats</a>
-    </div>
-    <a class='anime-link' href="17.html">I don't know</a>
-    <script></script>
+    <div id='message' class='space'>Life isn't about seeking cuteness.</div>
+    <div id='link' class='space'><a href='../custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span></div>
+    <div id="theme">Brought to you by the blue theme.</div>
+    <script>
+      function rejectSomething(time) {
+        if(time === 1)
+          link.innerHTML = "<a href='../bigbreak.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+        else
+          location.href = "1.html";
+      }
+    </script>
   </body>
 </html>

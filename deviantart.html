@@ -29,17 +29,9 @@
         inputText = $($("custom-reason").value).innerHTML.toLowerCase();
       else
         inputText = $("newBreak").value.toLowerCase();
-      if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge'],inputText)
+      if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge', 'loli', 'cute little'],inputText)
       || found(['two', 'three', 'four', 'five', 'six', '-old', ' old', ' age', 'toddler', 'preschool', 'tiny'],inputText))
         location.href = "whoa/index.html";
-      else if (found(['loli','little'],inputText)) {
-        $("message").innerHTML = "If you love lolis so much, why don't you watch Ro-Kyu-Bu!?";
-        $("link").innerHTML = "<a href='cyoa/24.html'>I probably shouldn't watch it now.</a>";
-      }
-      else if (inputText.indexOf("maid") >= 0)
-        location.href = "cyoa/24.html";
-      else if (inputText.indexOf("dress") >= 0)
-        location.href = "cyoa/25.html";
       else if(inputText.indexOf("touhou") >= 0) {
         $("message").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";
         document.body.removeChild($("link"));
