@@ -104,13 +104,9 @@ function loadBigBreak() {
   'Finish a piece of homework, even if the deadline is far.',
   'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
   'Don\'t suck at group projects.',*/
-    //Anime watching
-  'Watch anime.',
-  'If you\'re watching anime, watch a different anime.',
-  'Watch anime.',
     //Miscellaneous
+  'Watch anime.',
   'Drive around how you want in Need for Speed: Hot Pursuit.',
-  'Play Island (Visual Novel).',
   'No routine? Form one.',
   'How about multiple ways to take a break?',
   'Read your patriarchal blessing.',
@@ -120,7 +116,6 @@ function loadBigBreak() {
   //'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
-  'Draw anime.',
   //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
   'Try to code Card Battle Stadium in C#.',
   'Try one of these C# coding projects.'];
@@ -137,30 +132,14 @@ function loadBigBreak() {
   'Play some Stepmania.'];
 }
 
-/*function getAnimeArtist() {
-  var artists = ["Fujima Takuya's (c. 2011)",
-  "Korie Riko's (c. 2014)",
-  "Kobuichi's",
-  "Tinkle's (c. 2008)",
-  "Kira Inugami's",
-  "Morinaga Korune's",
-  "mamita's (c. 2010)",
-  "Natsumiya Yuzu's (c. 2009)",
-  "Keiichi Hinata's"]
-}*/
-
 function loadYouTubeBreak() {
   breakArray = 'YouTube';
   messages = ['Watch anime for 10 minutes (or 40% full length).',
   //'Double your social skills.',
   'Watch anime.',
-  'If you\'re watching anime, watch a different anime.',
-  'Watch anime.',
-  'Play Island (Visual Novel).',
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
-  'Go to Skillshare, and learn programming.',
-  'Draw anime.'];
+  'Go to Skillshare, and learn programming.'];
 }
 
 function loadBreak(index) {
@@ -203,8 +182,6 @@ function loadBreak(index) {
       message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
       break;
     case messages.indexOf("Watch anime."):
-    case messages.indexOf("Watch anime.") + 1:
-    case messages.lastIndexOf("Watch anime."):
       message.href = "nextanime.html";
       break;
     case messages.indexOf("Increase your spirituality."):
@@ -231,9 +208,6 @@ function loadBreak(index) {
       break;
     case messages.indexOf("Don't suck at group projects."):
       message.href = "groupprojects.html";
-      break;
-    case messages.indexOf("Draw anime."):
-      message.href = "art.html";
       break;
     case messages.indexOf("Try one of these C# coding projects."):
       message.href = "https://blog.udemy.com/c-sharp-projects/";
@@ -329,6 +303,7 @@ var redirectMessages = ['Stop typing in addresses of distracting websites!',
 'You\'re not bored, lazy, or procrastinating. You are fearful.',
 'Quit running away from your problems.',
 'Distractions: An innefective way to cope fear. You should deal with your problems directly.',
+'Life isn\'t about seeking cuteness.',
 '😆You got redirected!😆'];
 //This message is added when the website is launched on mobile.
 if (window.innerWidth <= 812)
@@ -366,11 +341,9 @@ function addBigMessages() {
     //Anime
   'If you need some happiness, watch at least 30 seconds of anime!',
   'Why don\'t you watch some anime?',
-  'You love anime. Right? Why don\'t you watch some?',
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
-  'Why not play Island (Visual Novel)?',
     //Miscellaneous
   'Try saying out loud the thing you need to get done.',
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
@@ -384,7 +357,6 @@ function addBigMessages() {
   '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
   '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
   'Remember that Python games book? You may get something out of it by reading it.',
-  '<a href="art.html">Why don\'t you practice drawing anime?</a>',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
   'Are there any goals in life you have?',
     //Health and fitness
@@ -666,7 +638,7 @@ var questions = ['How can you focus your mind?',
 'How can you have a good day?',
 'How can you not be like an idiot?',
 'What makes you very happy? Think about it for a bit.',
-'What compels you to look at anime pictures?',
+//'What compels you to look at anime pictures?',
 'How can you overcome addictions?',
 'Why do certain things appeal to you?',
 'Where do you see yourself in 2 years?',

@@ -82,7 +82,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
-    $("message").innerHTML = "Watch just a little bit more anime. Then you spend better time while being lazy.";
+    $("message").innerHTML = "Watch some anime instead. You're almost done anyway.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
   }
   else if(site === "deviantart" && (found(love,inputText) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress'],inputText))) {

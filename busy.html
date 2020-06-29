@@ -21,6 +21,9 @@
     </div>
     <div id='message' class='small space'>What do you want to do right now?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
+    <audio id='press'>
+      <source src="media/Button Push.mp3" type="audio/mpeg">
+    </audio>
     <script>
       function createAdvice()
       {
@@ -45,8 +48,8 @@
           $("link").innerHTML = "<div class='space'><a href='cyoa/20.html'>I'm already overworked.</a></div><div><a href='cyoa/58.html'>I could use some music.</a></div>";
         }
         else if(found(weebStuff,inputText)) {
-          $("message").innerHTML = "Now is not the time to weeb out.";
-          $("link").innerHTML = "<div class='space'><a href='cyoa/5.html'>OK.</a></div><div><a href='animeutilities.html'>But I'm already watching anime.</a></div>";
+          $("message").innerHTML = "You're having urges again.";
+          $("link").innerHTML = "<u id='clickHere' onclick='pushTheButton()'>Click here.</u>";
         }
         else if(inputText.indexOf("something") >= 0) {
           location.href = "custom.html";
@@ -60,6 +63,18 @@
       var weebStuff = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
       'loli', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',
       'two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function pushTheButton()
+      {
+        document.getElementById("press").play();
+        document.getElementById("clickHere").style.color = 'white';
+        await sleep(1750);
+        location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+      }
     </script>
     <script src='interactivefiction.js'></script>
   </body>
