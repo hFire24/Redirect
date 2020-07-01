@@ -14,8 +14,13 @@ function finalTest(inputText,site)
     location.href = "busy.html";
   else if (inputText.indexOf("do something") >= 0 || inputText.indexOf("take a break") >= 0)
     location.href = "time.html";
-  else if(inputText.indexOf("music") >= 0 && !found(knowledge,inputText))
-    location.href = "cyoa/58.html";
+  else if(inputText.indexOf("music") >= 0 && !(site === "google" && found(knowledge,inputText)))
+  {
+    if(inputText.indexOf("listening") >= 0)
+      location.href = "cyoa/9.html";
+    else
+      location.href = "cyoa/58.html";
+  }
   else if(inputText.indexOf("wait") >= 0)
     location.href = "cyoa/12.html";
   else if(inputText.indexOf("struggl") >= 0)
