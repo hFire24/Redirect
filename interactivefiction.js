@@ -18,6 +18,8 @@ function finalTest(inputText,site)
     location.href = "cyoa/58.html";
   else if(inputText.indexOf("wait") >= 0)
     location.href = "cyoa/12.html";
+  else if(inputText.indexOf("struggl") >= 0)
+    location.href = "struggle.html";
   else if (inputText.indexOf("tasks") >= 0) {
     $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
     document.body.removeChild($("link"));
