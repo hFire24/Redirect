@@ -29,13 +29,7 @@
         inputText = $($("custom-reason").value).innerHTML.toLowerCase();
       else
         inputText = $("newBreak").value.toLowerCase();
-      if(found(['play', 'game'],inputText)) {
-        $("message").innerHTML = "So you want to play games, huh?";
-        $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";
-      }
-      else {
-        finalTest(inputText,"newgrounds");
-      }
+      finalTest(inputText,"newgrounds");
     }
     
     var reasons = ["Because I'm lazy",
@@ -46,6 +40,7 @@
     "Because I want to procrastinate",
     "To play games",
     "To play Pokemon Showdown",
+    "I'm struggling in life",
     "I don't know",
     "Because I can",
     "I meant to watch anime instead",
@@ -55,6 +50,7 @@
     "Because I feel stressed",
     "Because I feel busy",
     "Because I feel hungry",
+    "I feel like playing games",
     "I just relapsed",
     "Because I can't focus",
     "Because I feel overwhelmed",
