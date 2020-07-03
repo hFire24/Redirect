@@ -91,6 +91,10 @@ function finalTest(inputText,site)
   else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
     $("message").innerHTML = "Watch some anime instead. You're almost done anyway.";
     $("link").innerHTML = "<a href='nextanime.html'>Click here to coninue.</a>";
+    /*
+    $("message").innerHTML = "Why don't you just use your laziness to your advantage?";
+    $("link").innerHTML = "<a href=" + generateAndrewJohnsonLink() + ">Click here to coninue.</a>";
+    */
   }
   else if(site === "deviantart" && (found(love,inputText) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress'],inputText))) {
     $("message").innerHTML = "Life isn't about seeking cuteness. Go empty out your watching list.";
