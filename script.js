@@ -70,6 +70,7 @@ function loadSmallBreak() {
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
   //'Double your social skills.',
+  'Read just one page of <u>Atomic Habits</u>.',
   'Think of a goal. Any one. Set that as your break message.'];
 
   standup = [//Health and fitness
@@ -118,7 +119,8 @@ function loadBigBreak() {
   'Host a website for free that supports FileZilla.',
   //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
   'Try to code Card Battle Stadium in C#.',
-  'Try one of these C# coding projects.'];
+  'Try one of these C# coding projects.',
+  'Read the book <u>Atomic Habits</u>.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -358,6 +360,7 @@ function addBigMessages() {
   '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
   'Remember that Python games book? You may get something out of it by reading it.',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
+  'Why don\'t you read that book you bought on Amazon?',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
