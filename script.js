@@ -679,7 +679,7 @@ function randomTheme(number) {
       themeText.innerHTML = "Brought to you by the violet theme.";
       break;
     case 4:
-      themeText.innerHTML = "Brought to you by the sand theme.";
+      themeText.innerHTML = "Brought to you by the <a style='text-decoration:none;' href='https://youtu.be/GZpMy-pW7_8' target='_blank'>sand</a> theme.";
       break;
     case 5:
       themeText.innerHTML = "Brought to you by the gray theme.";
