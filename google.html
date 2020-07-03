@@ -61,7 +61,7 @@
         inputText = $("newBreak").value.toLowerCase();
       console.log(inputText);
 
-      if (found(['assignment','project','exam','test','college','class','study'],inputText) || slider1.value === "6" || slider1.value === "9" || count === 3 && inputText === 'immediately') {
+      if (found(['assignment','project','exam','test','college','class','study','related to'],inputText) || slider1.value === "6" || slider1.value === "9" || count === 3 && inputText === 'immediately') {
         $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
         message.classList.add("small");
         document.body.removeChild($("link"));
