@@ -69,7 +69,7 @@ function loadSmallBreak() {
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
-  //'Double your social skills.',
+  'Double your social skills.',
   'Read just one page of <u>Atomic Habits</u>.',
   'Think of a goal. Any one. Set that as your break message.'];
 
@@ -105,9 +105,11 @@ function loadBigBreak() {
   'Finish a piece of homework, even if the deadline is far.',
   'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
   'Don\'t suck at group projects.',*/
+    //Games
+  'Drive around how you want in Need for Speed: Hot Pursuit.',
+  'Play Sudoku.',
     //Miscellaneous
   'Watch anime.',
-  'Drive around how you want in Need for Speed: Hot Pursuit.',
   'No routine? Form one.',
   'How about multiple ways to take a break?',
   'Read your patriarchal blessing.',
@@ -117,10 +119,12 @@ function loadBigBreak() {
   //'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Host a website for free that supports FileZilla.',
+  'Draw anime.',
   //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
   'Try to code Card Battle Stadium in C#.',
   'Try one of these C# coding projects.',
-  'Read the book <u>Atomic Habits</u>.'];
+  'Read the book <u>Atomic Habits</u>.',
+  'Learn a language with Duolingo.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -131,17 +135,19 @@ function loadBigBreak() {
   'Declutter your room.',
   'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
-  'Play some Stepmania.'];
+  'Play some Stepmania.',
+  'Bust out the iPad for Elevate.'];
 }
 
 function loadYouTubeBreak() {
   breakArray = 'YouTube';
   messages = ['Watch anime for 10 minutes (or 40% full length).',
-  //'Double your social skills.',
+  'Double your social skills.',
   'Watch anime.',
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
-  'Go to Skillshare, and learn programming.'];
+  'Go to Skillshare, and learn programming.',
+  'Draw anime.'];
 }
 
 function loadBreak(index) {
@@ -211,8 +217,17 @@ function loadBreak(index) {
     case messages.indexOf("Don't suck at group projects."):
       message.href = "groupprojects.html";
       break;
+    case messages.indexOf("Draw anime."):
+      message.href = "art.html";
+      break;
     case messages.indexOf("Try one of these C# coding projects."):
       message.href = "https://blog.udemy.com/c-sharp-projects/";
+      break;
+    case messages.indexOf("Play Sudoku."):
+      message.href = "https://www.websudoku.com/";
+      break;
+    case messages.indexOf("Learn a language with Duolingo."):
+      message.href = "https://www.duolingo.com/";
       break;
     default:
       message.removeAttribute("href");
@@ -346,6 +361,7 @@ function addBigMessages() {
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
+  '<a href="https://www.websudoku.com/">Why don\'t you play Sudoku?</a>';
     //Miscellaneous
   'Try saying out loud the thing you need to get done.',
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
@@ -354,13 +370,15 @@ function addBigMessages() {
   'How about you digitize a paragraph from your journal?',
   'Why not preserve some journal entries into a document?',
     //Goals
-  //'<a href="https://skl.sh/37ueYoA">How about you go to Skillshare to double your social skills?</a>',
+  '<a href="https://skl.sh/37ueYoA">How about you go to Skillshare to double your social skills?</a>',
   '<a href="chiptunelessons.html">How about you learn how to make chiptunes?</a>',
   '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
   '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
   'Remember that Python games book? You may get something out of it by reading it.',
+  '<a href="art.html">Why don\'t you practice drawing anime?</a>',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
   'Why don\'t you read that book you bought on Amazon?',
+  '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
