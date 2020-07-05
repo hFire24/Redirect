@@ -319,6 +319,8 @@ function submitReason() {
   //If a task seems impossible for the moment, then the user can just solve math problems for the time being.
   else if(found(["don't have","sn't with me","not with me","not here","away","forgot my","not home","not at my home","not in my home","not inside my home","college","Purdue"],reason))
     location.href = "cyoa/7.html";
+  else if(reason.indexOf("nothing") >= 0)
+    location.href = "multiple.html";
   else
   {
     if(Math.floor(Math.random() * 2) === 0)
