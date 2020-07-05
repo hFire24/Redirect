@@ -29,8 +29,10 @@
         inputText = $($("custom-reason").value).innerHTML.toLowerCase();
       else
         inputText = $("newBreak").value.toLowerCase();
-      if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge', 'loli', 'cute little'],inputText)
-      || found(['two', 'three', 'four', 'five', 'six', '-old', ' old', ' age', 'toddler', 'preschool', 'tiny'],inputText))
+      if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'erection', 'boner'],inputText))
+        location.href = 'kirby.html';
+      else if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge', 'loli', 'cute little'],inputText)
+      || found(['-old', ' old', ' age', 'toddler', 'preschool', 'tiny'],inputText))
         location.href = "whoa/index.html";
       else if(inputText.indexOf("touhou") >= 0) {
         $("message").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";
