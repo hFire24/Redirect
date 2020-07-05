@@ -108,6 +108,8 @@ function finalTest(inputText,site)
     $("message").innerHTML = "So you want to play games, huh?";
     $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";
   }
+  else if(found['poop', 'fart', 'defecat', 'feces', 'butt'])
+    location.href = 'crap.html';
   else if(site === "google") {
     if(count < 2 && inputText !== '') {
       input.value = "";
