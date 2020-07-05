@@ -48,10 +48,8 @@ function loadSmallBreak() {
     //Task checking
   'Check your tasks for the day.',
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
-  'Check your To Do spreadsheet.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Create tasks for today and tomorrow.',
-  'Make a plan for today and tomorrow.',
   'Determine what you need to do and what you want to do today.',
   'List everything you\'re currently doing, and order them by priority.',
   'List all the things you want to do, and order them by priority.',
@@ -92,9 +90,7 @@ function loadBigBreak() {
   breakArray = 'big';
   messages = [//Task checking
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
-  'Check your To Do spreadsheet.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
-  'Create tasks for today and tomorrow.',
   'Make a plan for today and tomorrow.',
     /*Homework
   'Do homework.<br>You may need to stand up and stretch and change clothes.',
@@ -186,9 +182,9 @@ function loadBreak(index) {
     case messages.indexOf("Play one of these short games."):
       message.href = "cyoa/46.html";
       break;
-    case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
+    /*case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
       message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
-      break;
+      break;*/
     case messages.indexOf("Watch anime."):
       message.href = "nextanime.html";
       break;
@@ -281,9 +277,62 @@ function loadBreak(index) {
     link.className = "space";
     parent.appendChild(link);
   }
-  link.innerHTML = "<a href='brave.html?array=" + breakArray + "&index=" + index + "'>I don't want to.</a>";
+  link.innerHTML = "<u onclick='whyNot()'>I don't feel like it.</u>";
   if(standIndex > 0)
     $("link").style.display = 'none';
+}
+
+function whyNot() {
+  messageComplete = false;
+  link.innerHTML = "<div class='space'>Why not?</div>";
+  var textField = document.createElement("div");
+  textField.id = "reason";
+  var input = document.createElement("input");
+  input.id = "excuse";
+  input.type = "text";
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      submitReason();
+    }
+  });
+  textField.appendChild(input);
+  var submit = document.createElement("button");
+  submit.id = "submit";
+  submit.addEventListener("click", submitReason);
+  submit.innerHTML = "Submit";
+  textField.appendChild(submit);
+  link.appendChild(textField);
+  //<input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+}
+
+function submitReason() {
+  var reason = $("excuse").value.toLowerCase();
+  if(found(["already","finish","done"],reason) || reason.endsWith("today"))
+    location.reload();
+  else if(found(["class","lecture","church"],reason))
+    location.href = "cyoa/50.html";
+  else if(reason.indexOf("something") >= 0 && reason.indexOf("watch") < 0)
+    location.href = "custom.html";
+  else if(found(["watch","i need to"],reason))
+    window.open("cyoa/47.html", '_blank');
+  //If a task seems impossible for the moment, then the user can just solve math problems for the time being.
+  else if(found(["don't have","sn't with me","not with me","not here","away","forgot my","not home","not at my home","not in my home","not inside my home","college","Purdue"],reason))
+    location.href = "cyoa/7.html";
+  else
+  {
+    if(Math.floor(Math.random() * 2) === 0)
+      window.open("2minuterule.html", '_blank');
+    else
+      window.open("brave.html", '_blank');
+  }
+}
+
+function found(array,reason) {
+  for (var i in array)
+    if (reason.indexOf(array[i]) >= 0)
+      return true;
+  return false;
 }
 
 var redirectMessages = ['Stop typing in addresses of distracting websites!',
@@ -361,7 +410,7 @@ function addBigMessages() {
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
-  '<a href="https://www.websudoku.com/">Why don\'t you play Sudoku?</a>';
+  '<a href="https://www.websudoku.com/">Why don\'t you play Sudoku?</a>',
     //Miscellaneous
   'Try saying out loud the thing you need to get done.',
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',

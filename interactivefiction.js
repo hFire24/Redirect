@@ -6,6 +6,8 @@ input.addEventListener("keyup", function (event) {
   }
 });
 
+var d = new Date();
+
 function finalTest(inputText,site)
 {
   if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("do") >= 0 && (found(required,inputText) || inputText.indexOf("specific") >= 0))
@@ -34,8 +36,16 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(found(['hunger', 'hungry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
-    $("message").innerHTML = "You need to eat some food right now.";
-    $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
+    if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth()))
+    {
+      $("message").innerHTML = "<img src='media/Fasting.png'>";
+      document.body.removeChild($("link"));
+    }
+    else
+    {
+      $("message").innerHTML = "You need to eat some food right now.";
+      $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
+    }
   }
   else if(found(['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'],inputText))
     location.href = 'relapse.html';
@@ -72,7 +82,6 @@ function finalTest(inputText,site)
     location.href = generateAndrewJohnsonLink();
   }
   else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
-    var d = new Date();
     if(d.getHours() >= 6 && d.getHours() <= 12) {
       $("message").innerHTML = "You need to drink some water.";
       $("link").innerHTML = "<ins onclick='alreadyDrank()'>But I just drank some water.</ins>";
@@ -108,7 +117,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "So you want to play games, huh?";
     $("link").innerHTML = "<a href='cyoa/29.html'>Click here to coninue.</a>";
   }
-  else if(found['poop', 'fart', 'defecat', 'feces', 'butt'])
+  else if(found(['poop', 'fart', 'defecat', 'feces', 'butt'],inputText))
     location.href = 'crap.html';
   else if(site === "google") {
     if(count < 2 && inputText !== '') {
@@ -286,6 +295,14 @@ function raining() {
 function noStepmania() {
   $("message").innerHTML = "OK, fine. Just sleep in for longer. Your body will thank me later.";
   document.body.removeChild($("link"));
+}
+
+function generalConferenceMonth() {
+  if (d.getMonth() === 3 || d.getMonth() === 9)
+    return true;
+  else {
+    return false;
+  }
 }
 
 function $(x) {
