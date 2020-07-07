@@ -218,12 +218,17 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
   else if(found(love,inputText) && site === "youtube")
-    location.href = 'cyoa/35.html';
+    location.href = 'cyoa/38.html';
+  else if(found(['really bored','very bored','nothing'],inputText)) {
+    $("message").innerHTML = "Why do nothing when there are so many things to do?";
+    $("link").innerHTML = "<a href='multiple.html'>Click here to coninue.</a>";
+  }
   else if(site === "reddit") {
     $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
-  else if(found(['bored', 'nothing', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
+
+  else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
     $("message").innerHTML = "If you're bored, just try to do your tasks.";
     $("link").innerHTML = "<a href='cyoa/2.html'>Click here to coninue.</a>";
   }
