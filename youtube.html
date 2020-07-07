@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme3" onload="getBack();">
+  <body class="theme3" onload="getBack('youtube');">
     <div id="message" class="small space">Why did you want to go to YouTube?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
@@ -18,6 +18,14 @@
           </select>
         </span><button onclick="submit()">Submit</button>
       </div>
+    </div>
+    <div id='yesno' class='anime-list' style='display:none;'>
+      <a class='anime-link' onclick="addicted(1)">Yes</a>
+      <a class='anime-link' onclick="restoreLink()">No</a>
+    </div>
+    <div id='willpower' class='anime-list' style='display:none;'>
+      <a class='anime-link' onclick="addicted(2)">Limited</a>
+      <a class='anime-link' onclick="addicted(3)">Unlimited</a>
     </div>
     <script>
     function submit() {
@@ -80,6 +88,34 @@
       option.value = i;
       option.innerHTML = reasons[i];
       document.getElementById("custom-reason").appendChild(option);
+    }
+
+    function addicted(number) {
+      switch(number) {
+        case 1:
+          $("message").innerHTML = "Is willpower limited or unlimited?";
+          $("yesno").style.display = "none";
+          $("willpower").style.display = "grid";
+          break;
+        case 2:
+          $("newBreak").value = 'exhausted';
+          break;
+        case 3:
+          $("newBreak").value = 'really bored';
+          break;
+      }
+
+      if(number !== 1) {
+        $("willpower").style.display = "none";
+        $("link").style.display = "block";
+        submit();
+      }
+    }
+
+    function restoreLink() {
+      $("message").innerHTML = "Then why did you decide to go there?";
+      $("yesno").style.display = "none";
+      $("link").style.display = "block";
     }
     </script>
     <script src="interactivefiction.js"></script>

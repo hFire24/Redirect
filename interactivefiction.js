@@ -275,7 +275,7 @@ function found(array,inputText) {
   return false;
 }
 
-function getBack()
+function getBack(site)
 {
   var random = Math.floor(Math.random() * 30)
   console.log("Random " + random);
@@ -284,6 +284,12 @@ function getBack()
     $("message").innerHTML = "Get back to whatever you should be doing!";
     $("message").classList.remove("small");
     $("link").innerHTML = "Immediately close this tab.";
+  }
+  else if(random < 15 && site === 'youtube')
+  {
+    $("message").innerHTML = "Let me guess. You're bored and feel like going to YouTube.";
+    $("link").style.display = "none";
+    $("yesno").style.display = "grid";
   }
 }
 
