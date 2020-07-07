@@ -60,7 +60,15 @@
         }
       }
 
-      var activities = ['light exercise','learning full stack','learning FL Studio','writing in journal','digitizing journal','meditation','reading <u>Atomic Habits</u>','planning for the next 24 hours'];
+      function planTodayOrTomorrow() {
+        var d = new Date();
+        if (d.getHours() < 17)
+          return 'planning your day';
+        else
+          return 'planning your next day';
+      }
+
+      var activities = ['light exercise','learning full stack','learning FL Studio','writing in journal','digitizing journal','meditation','reading <u>Atomic Habits</u>',planTodayOrTomorrow()];
       var index = Math.floor(Math.random() * activities.length);
       document.getElementById('activity').innerHTML = activities[index];
     </script>
