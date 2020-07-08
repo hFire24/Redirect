@@ -43,11 +43,13 @@
       function submit() {
         console.log($("newBreak").value);
         var inputText = $("newBreak").value.toLowerCase();
-        if(found(busy,inputText)) {
+        if(found(['busy', 'keep', 'continue', 'work', 'resume', 'job', 'internship'],inputText)) {
           $("message").innerHTML = "Don't overwork yourself.";
           $("link").innerHTML = "<div class='space'><a href='cyoa/20.html'>I'm already overworked.</a></div><div><a href='cyoa/58.html'>I could use some music.</a></div>";
         }
-        else if(found(weebStuff,inputText)) {
+        else if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
+        'loli', 'cute little', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',
+        '-old', ' old', ' age', 'toddler', 'preschool', 'tiny'],inputText)) {
           $("message").innerHTML = "You're having urges again.";
           $("link").innerHTML = "<u id='clickHere' onclick='pushTheButton()'>Click here.</u>";
         }
@@ -58,11 +60,6 @@
           finalTest(inputText,"busy");
         }
       }
-
-      var busy = ['busy', 'keep', 'continue', 'work', 'resume', 'job', 'internship'];
-      var weebStuff = ['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
-      'loli', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',
-      'two', 'three', 'four', 'five', 'six', 'year', 'age', 'toddler', 'preschool', 'tiny'];
 
       function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));

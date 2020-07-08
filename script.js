@@ -120,7 +120,8 @@ function loadBigBreak() {
   'Try to code Card Battle Stadium in C#.',
   'Try one of these C# coding projects.',
   'Read the book <u>Atomic Habits</u>.',
-  'Learn a language with Duolingo.'];
+  'Learn a language with Duolingo.',
+  'Check your goals page. Do as many goals as you can for today.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -224,6 +225,9 @@ function loadBreak(index) {
       break;
     case messages.indexOf("Learn a language with Duolingo."):
       message.href = "https://www.duolingo.com/";
+      break;
+    case messages.indexOf("Check your goals page. Do as many goals as you can for today."):
+      message.href = "goals.html";
       break;
     default:
       message.removeAttribute("href");
@@ -429,7 +433,8 @@ function addBigMessages() {
   '<a href="art.html">Why don\'t you practice drawing anime?</a>',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
   'Why don\'t you read that book you bought on Amazon?',
-  '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?',
+  '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?</a>',
+  '<a href="goals.html">Check out the goals page for the big things you want to do!</a>',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
@@ -664,7 +669,7 @@ function rejectSomething(time) {
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
   else if(time === 10)
-    link.innerHTML = "<a class='anime-link' href='cyoa/2.html'>You really are bored.</a>";
+    link.innerHTML = "<a class='anime-link' href='cyoa/35.html'>You really are bored.</a>";
   else
     location.href = "cyoa/1.html";
 }
