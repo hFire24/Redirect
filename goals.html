@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Keep this open! Your goals</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body>
+    <div id='message' class='space'>Your current goals</div>
+    <div id='best-results' class='space'>For best results, keep this page open during the day.</a></div>
+    <div id='advice' class='space'>If you're done with a goal, press the key corresponding to that goal to hide it.</a></div>
+    <div id='parent' class='anime-list' style="width:95%; margin:auto;">
+    </div>
+    <script>
+      var aHabits = [{text:"Digitize fifth journal <span class='time'>(2 hours)</span>",link:"pass"},
+      {text:"Code Card Battle Stadium in C# <span class='time'>(30 minutes)</span>",link:"pass"},
+      {text:"Learn FL Studio <span class='time'>(30 minutes)</span>",link:"https://skl.sh/2Hq5hNy"},
+      {text:"Play Stepmania on pad <span class='time'>(30 minutes)</span>",link:"stepmania.html"},
+      {text:"Gain social skills <span class='time'>(30 minutes)</span>",link:"https://skl.sh/37ueYoA"},
+      {text:"Draw anime girls <span class='time'>(1 hour)</span>",link:"art.html"},
+      {text:"Learn Full Stack on Skillshare <span class='time'>(30 minutes)</span>",link:"https://skl.sh/38rV6DT"}];
+      shuffle(aHabits);
+
+      var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(15 minutes)</span>",link:"https://read.amazon.com/"},
+      {text:"Get better at Sudoku <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/"},
+      {text:"Learn Spanish via Duolingo <span class='time'>(15 minutes)</span>",link:"https://www.duolingo.com/"},
+      {text:"Relax and meditate more <span class='time'>(1 session)</span>",link:"relax.html"},
+      {text:"Take a walk outside <span class='time'>(10 minutes per meal)</span>",link:"pass"}];
+      shuffle(bHabits);
+
+      function shuffle(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * i);
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+      }
+
+      var parent = document.getElementById("parent");
+
+      async function buildAArray()
+      {
+        for(var i = 0; i < aHabits.length; i++)
+        {
+          var aElement = document.createElement("a");
+          aElement.id = "a" + i;
+          aElement.classList.add("anime-link");
+          aElement.innerHTML = String.fromCharCode(65+i) + ": " + aHabits[i].text;
+          if(aHabits[i].link !== "pass")
+          {
+            aElement.href = aHabits[i].link;
+            aElement.target = "_blank";
+          }
+          parent.appendChild(aElement);
+          //Creates a random background color for the element
+          var x = Math.floor(Math.random() * 128);
+          var y = Math.floor(Math.random() * 128);
+          var z = Math.floor(Math.random() * 32) + 96;
+          var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+          document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
+          console.log(aHabits[i]);
+        }
+      }
+
+      async function buildBArray()
+      {
+        for(var j = 0; j < bHabits.length; j++)
+        {
+          var bElement = document.createElement("a");
+          bElement.id = "b" + j;
+          bElement.classList.add("anime-link");
+          bElement.innerHTML = String.fromCharCode(65 + aHabits.length + j) + ": " + bHabits[j].text;
+          if(bHabits[j].link !== "pass")
+          {
+            bElement.href = bHabits[j].link;
+            bElement.target = "_blank";
+          }
+          parent.appendChild(bElement);
+          //Creates a random background color for the element
+          x = Math.floor(Math.random() * 128);
+          y = Math.floor(Math.random() * 128);
+          z = Math.floor(Math.random() * 32) + 96;
+          bgColor = "rgb(" + x + "," + y + "," + z + ")";
+          document.getElementById("b" + parseInt(j)).style.backgroundColor = bgColor;
+          console.log(bHabits[j]);
+        }
+      }
+
+      buildAArray();
+      buildBArray();
+
+      window.addEventListener("keyup",keyType);
+
+      function keyType(event) {
+        switch(event.keyCode) {
+          case 65:
+            deleteText("a0");
+            break;
+          case 66:
+            deleteText("a1");
+            break;
+          case 67:
+            deleteText("a2");
+            break;
+          case 68:
+            deleteText("a3");
+            break;
+          case 69:
+            deleteText("a4");
+            break;
+          case 70:
+            deleteText("a5");
+            break;
+          case 71:
+            deleteText("a6");
+            break;
+          case 72:
+            deleteText("b0");
+            break;
+          case 73:
+            deleteText("b1");
+            break;
+          case 74:
+            deleteText("b2");
+            break;
+          case 75:
+            deleteText("b3");
+            break;
+          case 76:
+            deleteText("b4");
+            break;
+          default:
+            console.log("Key does nothing");
+        }
+      }
+
+      var deletedElements = [];
+
+      function deleteText(id) {
+        //For potential future proofing
+        if(document.getElementById(id) === null)
+          return;
+        var toBeDisabled = document.getElementById(id);
+        toBeDisabled.style.color = toBeDisabled.style.backgroundColor;
+        toBeDisabled.removeAttribute("href");
+        deletedElements.push(id);
+        for(var i = 0; i < deletedElements.length - 1; i++) {
+          if(deletedElements[i] === id) {
+            deletedElements.pop();
+            break;
+          }
+        }
+        console.log(deletedElements);
+        if(deletedElements.length === aHabits.length + bHabits.length)
+        {
+          document.getElementById("message").innerHTML = "CONGRATULATIONS!";
+          document.getElementById("best-results").innerHTML = "You did them all in one day!";
+          document.body.removeChild(advice);
+          document.body.removeChild(parent);
+          changeColor();
+        }
+      }
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function changeColor()
+      {
+        while(true)
+        {
+          await sleep(100);
+          bgHue += 11.25;
+          textHue += 11.25;
+          if(bgHue >= 360)
+            bgHue -= 360;
+          if (textHue >= 360)
+            textHue -= 360;
+          document.body.style.backgroundColor = "hsl(" + bgHue.toString() + ", 13%, 32%)";
+          document.body.style.color = "hsl(" + textHue.toString() + ", 22%, 87%)";
+        }
+      }
+
+      var bgHue = 137;
+      var textHue = 104;
+    </script>
+  </body>
+</html>
