@@ -138,55 +138,63 @@
       'You have a phone. Call your grandparents and have meaningful discussions with them.',
       "Heal the world. Make it a better place.",
       'Don\'t forget to stay hydrated.'];
-      var index = Math.floor(Math.random() * redirectMessages.length);
-      document.getElementById("message").innerHTML = redirectMessages[index];
-      var d = new Date();
-      if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
+
+      var index = 0;
+      function randomMobileMessage()
       {
-        document.getElementById("message").innerHTML = "Get ready for church!";
-        index = redirectMessages.length + 2;
+        index = Math.floor(Math.random() * redirectMessages.length);
+        document.getElementById("message").innerHTML = redirectMessages[index];
+        var d = new Date();
+        if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
+        {
+          document.getElementById("message").innerHTML = "Get ready for church!";
+          index = redirectMessages.length + 2;
+        }
+        var sleepTime = Math.floor(Math.random() * 5);
+        if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
+        {
+          document.getElementById("message").innerHTML = 'You should charge your phone away from the bed.';
+          index = redirectMessages.length;
+          console.log("Sleep " + sleepTime);
+        }
+        console.log("Message " + index);
+        var message = document.getElementById("message").innerHTML;
+        var linkMessages = ["Immediately put your phone away."];
+        for (var i = 1; i <= 30; i++)
+          linkMessages.push("Got something you need to do?");
+        var linkIndex = Math.floor(Math.random() * linkMessages.length);
+        if (index < 5)
+          linkIndex = 0;
+        var parent = document.getElementById("hideable");
+        var link = document.getElementById("link");
+        if(!link) {
+          link = document.createElement("div");
+          link.id = "link";
+          link.className = "space";
+          parent.appendChild(link);
+        }
+        //Sometimes, the link will change depending on the message.
+        if (message === "Get ready for church!")
+          link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
+        else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
+          link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+        else if (linkIndex > 0)
+          link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        else
+          link.innerHTML = linkMessages[linkIndex];
+        //Put index value to the console
+        console.log("Link " + linkIndex);
       }
-      var sleepTime = Math.floor(Math.random() * 5);
-      if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
-      {
-        document.getElementById("message").innerHTML = 'You should charge your phone away from the bed.';
-        index = redirectMessages.length;
-        console.log("Sleep " + sleepTime);
-      }
-      console.log("Message " + index);
-      var message = document.getElementById("message").innerHTML;
-      var linkMessages = ["Immediately put your phone away."];
-      for (var i = 1; i <= 30; i++)
-        linkMessages.push("Got something you need to do?");
-      var linkIndex = Math.floor(Math.random() * linkMessages.length);
-      if (index < 5)
-        linkIndex = 0;
-      var parent = document.getElementById("hideable");
-      var link = document.getElementById("link");
-      if(!link) {
-        link = document.createElement("div");
-        link.id = "link";
-        link.className = "space";
-        parent.appendChild(link);
-      }
-      //Sometimes, the link will change depending on the message.
-      if (message === "Get ready for church!")
-        link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
-      else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
-        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
-      else if (linkIndex > 0)
-        link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-      else
-        link.innerHTML = linkMessages[linkIndex];
-      //Put index value to the console
-      console.log("Link " + linkIndex);
+
+      randomMobileMessage();
     </script>
     <script src="script.js"></script>
-    <script src="pulltorefresh.js"></script>
+    <script src="pulltorefresh.js/dist/pulltorefresh.js"></script>
     <script>
     PullToRefresh.init({
       mainElement: 'body',
-      onRefresh: function() { window.location.reload() }
+      distMax: 1999,
+      onRefresh: function() { randomMobileMessage() }
     });
     </script>
   </body>
