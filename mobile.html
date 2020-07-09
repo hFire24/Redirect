@@ -17,7 +17,7 @@
       var iconNumber = Math.floor(Math.random() * 5) + 1;
       if(iconNumber > 1)
         icon.href = "apple-touch-icon " + iconNumber + ".png";
-      var redirectMessages = ['Stop sporadically checking your phone!',
+      var mobileMessages = ['Stop sporadically checking your phone!',
       'Stop escaping from your problems!',
       'Get back to whatever you should be doing!',
       'Your phone is like a prison. Break out of it.',
@@ -143,19 +143,19 @@
       var index = 0;
       function randomMobileMessage()
       {
-        index = Math.floor(Math.random() * redirectMessages.length);
-        document.getElementById("message").innerHTML = redirectMessages[index];
+        index = Math.floor(Math.random() * mobileMessages.length);
+        document.getElementById("message").innerHTML = mobileMessages[index];
         var d = new Date();
         if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
         {
           document.getElementById("message").innerHTML = "Get ready for church!";
-          index = redirectMessages.length + 2;
+          index = mobileMessages.length + 2;
         }
         var sleepTime = Math.floor(Math.random() * 5);
         if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
         {
           document.getElementById("message").innerHTML = 'You should charge your phone away from the bed.';
-          index = redirectMessages.length;
+          index = mobileMessages.length;
           console.log("Sleep " + sleepTime);
         }
         console.log("Message " + index);
@@ -194,7 +194,6 @@
 
       randomMobileMessage();
     </script>
-    <script src="script.js"></script>
     <script src="pulltorefresh.js/dist/pulltorefresh.js"></script>
     <script>
     PullToRefresh.init({
@@ -203,5 +202,6 @@
       onRefresh: function() { randomMobileMessage() }
     });
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
