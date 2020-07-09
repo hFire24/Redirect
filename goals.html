@@ -93,6 +93,8 @@
       buildAArray();
       buildBArray();
 
+      window.onbeforeunload = function() { return "Would you really like to leave this page?"; }
+
       window.addEventListener("keyup",keyType);
 
       function keyType(event) {
