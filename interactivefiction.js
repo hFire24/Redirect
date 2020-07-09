@@ -242,7 +242,7 @@ function finalTest(inputText,site)
   }
 }
 
-var required = ['need', 'have to', 'must', 'mean', 'required', 'force', 'urgent', 'immediate'];
+var required = ['need', 'have to', 'must', 'mean', 'required', 'force', 'urgent', 'emergency', 'immediate', 'important', 'critical', 'crucial', 'essential'];
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 var love = ['love','adore','enjoy','favorite','best'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate'];

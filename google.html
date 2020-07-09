@@ -76,9 +76,12 @@
         $("message").innerHTML = "<a href='https://www.google.com/search?q=take+a+deep+breath' target='_blank'>Take deep breaths</a>, finish whatever you're doing, and do that thing next.";
         document.body.removeChild($("link"));
       }
-      else if(slider1.value === "7") {
+      else if(slider1.value === "7" || inputText.indexOf("research") >= 0) {
         count = 3;
         $("message").innerHTML = "How urgent is this? When should you do it?";
+        $("newBreak").style.display = "none";
+        $("submit").style.display = "none";
+        $("dropdown").style.display = "none";
         $("slider1").style.display = "none";
         $("urgent").style.display = "block";
       }
