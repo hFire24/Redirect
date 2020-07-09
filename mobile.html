@@ -94,6 +94,7 @@
         //From the relapse page
       'Now is not the time to be doing that.',
       'Please stop being distracted, and stop wasting your time.',
+      'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
       'Freedom from addictions. That should be a goal.',
       'Do you really want to browse your phone?',
       'You want to be on your phone all the time? 🤣',
@@ -184,6 +185,11 @@
           link.innerHTML = linkMessages[linkIndex];
         //Put index value to the console
         console.log("Link " + linkIndex);
+        //If the message is too long, this fires up.
+        if(message.length > 200)
+          $("message").classList.add("tiny");
+        else if(message.length > 90)
+          $("message").classList.add("small");
       }
 
       randomMobileMessage();
@@ -193,7 +199,7 @@
     <script>
     PullToRefresh.init({
       mainElement: 'body',
-      distMax: 1999,
+      distMax: window.innerHeight / 2,
       onRefresh: function() { randomMobileMessage() }
     });
     </script>
