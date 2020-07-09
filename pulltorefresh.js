@@ -1,407 +1,330 @@
-/*!
- * pulltorefreshjs v0.1.19
- * (c) Rafael Soto
- * Released under the MIT License.
- */
-'use strict';
+(function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global.PullToRefresh = factory());
+}(this, (function() {
 
-var _shared = {
-  pullStartY: null,
-  pullMoveY: null,
-  handlers: [],
-  styleEl: null,
-  events: null,
-  dist: 0,
-  state: 'pending',
-  timeout: null,
-  distResisted: 0,
-  supportsPassive: false,
-  supportsPointerEvents: !!window.PointerEvent
-};
+    var _ptrMarkup = function() {
+        return "<div class=\"__PREFIX__box\">\n  <div class=\"__PREFIX__content\">\n    <div class=\"__PREFIX__icon\"></div>\n    <div class=\"__PREFIX__text\"></div>\n  </div>\n</div>";
+    };
 
-try {
-  window.addEventListener('test', null, {
-    get passive() {
-      // eslint-disable-line getter-return
-      _shared.supportsPassive = true;
-    }
+    var _ptrStyles = function() {
+        return ".__PREFIX__ptr {\n  box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.12);\n  pointer-events: none;\n  font-size: 0.85em;\n  font-weight: bold;\n  top: 0;\n  height: 0;\n  transition: height 0.3s, min-height 0.3s;\n  text-align: center;\n  width: 100%;\n  overflow: hidden;\n  display: flex;\n  align-items: flex-end;\n  align-content: stretch;\n}\n.__PREFIX__box {\n  padding: 10px;\n  flex-basis: 100%;\n}\n.__PREFIX__pull {\n  transition: none;\n}\n.__PREFIX__text {\n  margin-top: .33em;\n  color: rgba(0, 0, 0, 0.3);\n}\n.__PREFIX__icon {\n  color: rgba(0, 0, 0, 0.3);\n  transition: transform .3s;\n}\n.__PREFIX__release .__PREFIX__icon {\n  transform: rotate(180deg);\n}";
+    };
 
-  });
-} catch (e) {// do nothing
-}
+    /*
+*/
 
-function setupDOM(handler) {
-  if (!handler.ptrElement) {
-    var ptr = document.createElement('div');
+    /* eslint-disable import/no-unresolved */
 
-    if (handler.mainElement !== document.body) {
-      handler.mainElement.parentNode.insertBefore(ptr, handler.mainElement);
-    } else {
-      document.body.insertBefore(ptr, document.body.firstChild);
-    }
+    var _SETTINGS = {};
 
-    ptr.classList.add(((handler.classPrefix) + "ptr"));
-    ptr.innerHTML = handler.getMarkup().replace(/__PREFIX__/g, handler.classPrefix);
-    handler.ptrElement = ptr;
+    var _defaults = {
+        distThreshold: 60,
+        distMax: 80,
+        distReload: 50,
+        bodyOffset: 20,
+        mainElement: 'body',
+        triggerElement: 'body',
+        ptrElement: '.ptr',
+        classPrefix: 'ptr--',
+        cssProp: 'min-height',
+        iconArrow: '&#8675;',
+        iconRefreshing: '&hellip;',
+        instructionsPullToRefresh: 'Pull down to refresh',
+        instructionsReleaseToRefresh: 'Release to refresh',
+        instructionsRefreshing: 'Refreshing',
+        refreshTimeout: 500,
+        getMarkup: _ptrMarkup,
+        getStyles: _ptrStyles,
+        onInit: function() {},
+        onRefresh: function() {
+            return location.reload();
+        },
+        resistanceFunction: function(t) {
+            return Math.min(1, t / 2.5);
+        },
+    };
 
-    if (typeof handler.onInit === 'function') {
-      handler.onInit(handler);
-    } // Add the css styles to the style node, and then
-    // insert it into the dom
+    var pullStartY = null;
+    var pullMoveY = null;
+    var dist = 0;
+    var distResisted = 0;
 
+    var _state = 'pending';
+    var _setup = false;
+    var _enable = false;
+    var _timeout;
 
-    if (!_shared.styleEl) {
-      _shared.styleEl = document.createElement('style');
+    function _update() {
+        var classPrefix = _SETTINGS.classPrefix;
+        var ptrElement = _SETTINGS.ptrElement;
+        var iconArrow = _SETTINGS.iconArrow;
+        var iconRefreshing = _SETTINGS.iconRefreshing;
+        var instructionsRefreshing = _SETTINGS.instructionsRefreshing;
+        var instructionsPullToRefresh = _SETTINGS.instructionsPullToRefresh;
+        var instructionsReleaseToRefresh = _SETTINGS.instructionsReleaseToRefresh;
 
-      _shared.styleEl.setAttribute('id', 'pull-to-refresh-js-style');
+        var iconEl = ptrElement.querySelector(("." + classPrefix + "icon"));
+        var textEl = ptrElement.querySelector(("." + classPrefix + "text"));
 
-      document.head.appendChild(_shared.styleEl);
-    }
-
-    _shared.styleEl.textContent = handler.getStyles().replace(/__PREFIX__/g, handler.classPrefix).replace(/\s+/g, ' ');
-  }
-
-  return handler;
-}
-
-function onReset(handler) {
-  handler.ptrElement.classList.remove(((handler.classPrefix) + "refresh"));
-  handler.ptrElement.style[handler.cssProp] = '0px';
-  setTimeout(function () {
-    // remove previous ptr-element from DOM
-    if (handler.ptrElement && handler.ptrElement.parentNode) {
-      handler.ptrElement.parentNode.removeChild(handler.ptrElement);
-      handler.ptrElement = null;
-    } // reset state
-
-
-    _shared.state = 'pending';
-  }, handler.refreshTimeout);
-}
-
-function update(handler) {
-  var iconEl = handler.ptrElement.querySelector(("." + (handler.classPrefix) + "icon"));
-  var textEl = handler.ptrElement.querySelector(("." + (handler.classPrefix) + "text"));
-
-  if (iconEl) {
-    if (_shared.state === 'refreshing') {
-      iconEl.innerHTML = handler.iconRefreshing;
-    } else {
-      iconEl.innerHTML = handler.iconArrow;
-    }
-  }
-
-  if (textEl) {
-    if (_shared.state === 'releasing') {
-      textEl.innerHTML = handler.instructionsReleaseToRefresh;
-    }
-
-    if (_shared.state === 'pulling' || _shared.state === 'pending') {
-      textEl.innerHTML = handler.instructionsPullToRefresh;
-    }
-
-    if (_shared.state === 'refreshing') {
-      textEl.innerHTML = handler.instructionsRefreshing;
-    }
-  }
-}
-
-var _ptr = {
-  setupDOM: setupDOM,
-  onReset: onReset,
-  update: update
-};
-
-var _timeout;
-
-var screenY = function screenY(event) {
-  if (_shared.pointerEventsEnabled && _shared.supportsPointerEvents) {
-    return event.screenY;
-  }
-
-  return event.touches[0].screenY;
-};
-
-var _setupEvents = (function () {
-  var _el;
-
-  function _onTouchStart(e) {
-    // here, we must pick a handler first, and then append their html/css on the DOM
-    var target = _shared.handlers.filter(function (h) { return h.contains(e.target); })[0];
-
-    _shared.enable = !!target;
-
-    if (target && _shared.state === 'pending') {
-      _el = _ptr.setupDOM(target);
-
-      if (target.shouldPullToRefresh()) {
-        _shared.pullStartY = screenY(e);
-      }
-
-      clearTimeout(_shared.timeout);
-
-      _ptr.update(target);
-    }
-  }
-
-  function _onTouchMove(e) {
-    if (!(_el && _el.ptrElement && _shared.enable)) {
-      return;
-    }
-
-    if (!_shared.pullStartY) {
-      if (_el.shouldPullToRefresh()) {
-        _shared.pullStartY = screenY(e);
-      }
-    } else {
-      _shared.pullMoveY = screenY(e);
-    }
-
-    if (_shared.state === 'refreshing') {
-      if (e.cancelable && _el.shouldPullToRefresh() && _shared.pullStartY < _shared.pullMoveY) {
-        e.preventDefault();
-      }
-
-      return;
-    }
-
-    if (_shared.state === 'pending') {
-      _el.ptrElement.classList.add(((_el.classPrefix) + "pull"));
-
-      _shared.state = 'pulling';
-
-      _ptr.update(_el);
-    }
-
-    if (_shared.pullStartY && _shared.pullMoveY) {
-      _shared.dist = _shared.pullMoveY - _shared.pullStartY;
-    }
-
-    _shared.distExtra = _shared.dist - _el.distIgnore;
-
-    if (_shared.distExtra > 0) {
-      if (e.cancelable) {
-        e.preventDefault();
-      }
-
-      _el.ptrElement.style[_el.cssProp] = (_shared.distResisted) + "px";
-      _shared.distResisted = _el.resistanceFunction(_shared.distExtra / _el.distThreshold) * Math.min(_el.distMax, _shared.distExtra);
-
-      if (_shared.state === 'pulling' && _shared.distResisted > _el.distThreshold) {
-        _el.ptrElement.classList.add(((_el.classPrefix) + "release"));
-
-        _shared.state = 'releasing';
-
-        _ptr.update(_el);
-      }
-
-      if (_shared.state === 'releasing' && _shared.distResisted < _el.distThreshold) {
-        _el.ptrElement.classList.remove(((_el.classPrefix) + "release"));
-
-        _shared.state = 'pulling';
-
-        _ptr.update(_el);
-      }
-    }
-  }
-
-  function _onTouchEnd() {
-    if (!(_el && _el.ptrElement && _shared.enable)) {
-      return;
-    } // wait 1/2 sec before unmounting...
-
-
-    clearTimeout(_timeout);
-    _timeout = setTimeout(function () {
-      if (_el && _el.ptrElement && _shared.state === 'pending') {
-        _ptr.onReset(_el);
-      }
-    }, 500);
-
-    if (_shared.state === 'releasing' && _shared.distResisted > _el.distThreshold) {
-      _shared.state = 'refreshing';
-      _el.ptrElement.style[_el.cssProp] = (_el.distReload) + "px";
-
-      _el.ptrElement.classList.add(((_el.classPrefix) + "refresh"));
-
-      _shared.timeout = setTimeout(function () {
-        var retval = _el.onRefresh(function () { return _ptr.onReset(_el); });
-
-        if (retval && typeof retval.then === 'function') {
-          retval.then(function () { return _ptr.onReset(_el); });
+        if (_state === 'refreshing') {
+            iconEl.innerHTML = iconRefreshing;
+        } else {
+            iconEl.innerHTML = iconArrow;
         }
 
-        if (!retval && !_el.onRefresh.length) {
-          _ptr.onReset(_el);
+        if (_state === 'releasing') {
+            textEl.innerHTML = instructionsReleaseToRefresh;
         }
-      }, _el.refreshTimeout);
-    } else {
-      if (_shared.state === 'refreshing') {
-        return;
-      }
 
-      _el.ptrElement.style[_el.cssProp] = '0px';
-      _shared.state = 'pending';
+        if (_state === 'pulling' || _state === 'pending') {
+            textEl.innerHTML = instructionsPullToRefresh;
+        }
+
+        if (_state === 'refreshing') {
+            textEl.innerHTML = instructionsRefreshing;
+        }
     }
 
-    _ptr.update(_el);
+    function _setupEvents() {
+        function onReset() {
+            var cssProp = _SETTINGS.cssProp;
+            var ptrElement = _SETTINGS.ptrElement;
+            var classPrefix = _SETTINGS.classPrefix;
 
-    _el.ptrElement.classList.remove(((_el.classPrefix) + "release"));
+            ptrElement.classList.remove((classPrefix + "refresh"));
+            ptrElement.style[cssProp] = '0px';
 
-    _el.ptrElement.classList.remove(((_el.classPrefix) + "pull"));
+            _state = 'pending';
+        }
 
-    _shared.pullStartY = _shared.pullMoveY = null;
-    _shared.dist = _shared.distResisted = 0;
-  }
+        function _onTouchStart(e) {
+            var triggerElement = _SETTINGS.triggerElement;
 
-  function _onScroll() {
-    if (_el) {
-      _el.mainElement.classList.toggle(((_el.classPrefix) + "top"), _el.shouldPullToRefresh());
+            if (!window.scrollY) {
+                pullStartY = e.touches[0].screenY;
+            }
+
+            if (_state !== 'pending') {
+                return;
+            }
+
+            clearTimeout(_timeout);
+
+            _enable = triggerElement.contains(e.target);
+            _state = 'pending';
+            _update();
+        }
+
+        function _onTouchMove(e) {
+            var ptrElement = _SETTINGS.ptrElement;
+            var resistanceFunction = _SETTINGS.resistanceFunction;
+            var distMax = _SETTINGS.distMax;
+            var distThreshold = _SETTINGS.distThreshold;
+            var cssProp = _SETTINGS.cssProp;
+            var classPrefix = _SETTINGS.classPrefix;
+
+            if (!pullStartY) {
+                if (!window.scrollY) {
+                    pullStartY = e.touches[0].screenY;
+                }
+            } else {
+                pullMoveY = e.touches[0].screenY;
+            }
+
+            if (!_enable || _state === 'refreshing') {
+                if (!window.scrollY && pullStartY < pullMoveY) {
+                    e.preventDefault();
+                }
+
+                return;
+            }
+
+            if (_state === 'pending') {
+                ptrElement.classList.add((classPrefix + "pull"));
+                _state = 'pulling';
+                _update();
+            }
+
+            if (pullStartY && pullMoveY) {
+                dist = pullMoveY - pullStartY;
+            }
+
+            if (dist > 0) {
+                e.preventDefault();
+
+                ptrElement.style[cssProp] = distResisted + "px";
+
+                distResisted = resistanceFunction(dist / distThreshold) * Math.min(distMax, dist);
+
+                if (_state === 'pulling' && distResisted > distThreshold) {
+                    ptrElement.classList.add((classPrefix + "release"));
+                    _state = 'releasing';
+                    _update();
+                }
+
+                if (_state === 'releasing' && distResisted < distThreshold) {
+                    ptrElement.classList.remove((classPrefix + "release"));
+                    _state = 'pulling';
+                    _update();
+                }
+            }
+        }
+
+        function _onTouchEnd() {
+            var ptrElement = _SETTINGS.ptrElement;
+            var onRefresh = _SETTINGS.onRefresh;
+            var refreshTimeout = _SETTINGS.refreshTimeout;
+            var distThreshold = _SETTINGS.distThreshold;
+            var distReload = _SETTINGS.distReload;
+            var cssProp = _SETTINGS.cssProp;
+            var classPrefix = _SETTINGS.classPrefix;
+
+            if (_state === 'releasing' && distResisted > distThreshold) {
+                _state = 'refreshing';
+
+                ptrElement.style[cssProp] = distReload + "px";
+                ptrElement.classList.add((classPrefix + "refresh"));
+
+                _timeout = setTimeout(function() {
+                    var retval = onRefresh(onReset);
+
+                    if (retval && typeof retval.then === 'function') {
+                        retval.then(function() {
+                            return onReset();
+                        });
+                    }
+
+                    if (!retval && !onRefresh.length) {
+                        onReset();
+                    }
+                }, refreshTimeout);
+            } else {
+                if (_state === 'refreshing') {
+                    return;
+                }
+
+                ptrElement.style[cssProp] = '0px';
+
+                _state = 'pending';
+            }
+
+            _update();
+
+            ptrElement.classList.remove((classPrefix + "release"));
+            ptrElement.classList.remove((classPrefix + "pull"));
+
+            pullStartY = pullMoveY = null;
+            dist = distResisted = 0;
+        }
+
+        window.addEventListener('touchend', _onTouchEnd);
+        window.addEventListener('touchstart', _onTouchStart);
+        window.addEventListener('touchmove', _onTouchMove, {
+            passive: false
+        });
+
+        // Store event handlers to use for teardown later
+        return {
+            onTouchStart: _onTouchStart,
+            onTouchMove: _onTouchMove,
+            onTouchEnd: _onTouchEnd,
+        };
     }
-  }
 
-  var _passiveSettings = _shared.supportsPassive ? {
-    passive: _shared.passive || false
-  } : undefined;
+    function _run() {
+        var mainElement = _SETTINGS.mainElement;
+        var getMarkup = _SETTINGS.getMarkup;
+        var getStyles = _SETTINGS.getStyles;
+        var classPrefix = _SETTINGS.classPrefix;
+        var onInit = _SETTINGS.onInit;
 
-  if (_shared.pointerEventsEnabled && _shared.supportsPointerEvents) {
-    window.addEventListener('pointerup', _onTouchEnd);
-    window.addEventListener('pointerdown', _onTouchStart);
-    window.addEventListener('pointermove', _onTouchMove, _passiveSettings);
-  } else {
-    window.addEventListener('touchend', _onTouchEnd);
-    window.addEventListener('touchstart', _onTouchStart);
-    window.addEventListener('touchmove', _onTouchMove, _passiveSettings);
-  }
+        if (!_SETTINGS.ptrElement) {
+            var ptr = document.createElement('div');
 
-  window.addEventListener('scroll', _onScroll);
-  return {
-    onTouchEnd: _onTouchEnd,
-    onTouchStart: _onTouchStart,
-    onTouchMove: _onTouchMove,
-    onScroll: _onScroll,
+            if (mainElement !== document.body) {
+                mainElement.parentNode.insertBefore(ptr, mainElement);
+            } else {
+                document.body.insertBefore(ptr, document.body.firstChild);
+            }
 
-    destroy: function destroy() {
-      if (_shared.pointerEventsEnabled && _shared.supportsPointerEvents) {
-        window.removeEventListener('pointerdown', _onTouchStart);
-        window.removeEventListener('pointerup', _onTouchEnd);
-        window.removeEventListener('pointermove', _onTouchMove, _passiveSettings);
-      } else {
-        window.removeEventListener('touchstart', _onTouchStart);
-        window.removeEventListener('touchend', _onTouchEnd);
-        window.removeEventListener('touchmove', _onTouchMove, _passiveSettings);
-      }
+            ptr.classList.add((classPrefix + "ptr"));
+            ptr.innerHTML = getMarkup().replace(/__PREFIX__/g, classPrefix);
 
-      window.removeEventListener('scroll', _onScroll);
+            _SETTINGS.ptrElement = ptr;
+        }
+
+        var styleEl = document.createElement('style');
+
+        styleEl.textContent = getStyles().replace(/__PREFIX__/g, classPrefix).replace(/\s+/g, ' ');
+
+        document.head.appendChild(styleEl);
+
+        if (typeof onInit === 'function') {
+            onInit(_SETTINGS);
+        }
+
+        return {
+            styleNode: styleEl,
+            ptrElement: _SETTINGS.ptrElement,
+        };
     }
 
-  };
-});
+    var pulltorefresh = {
+        init: function init(options) {
+            if (options === void 0)
+                options = {};
 
-var _ptrMarkup = "\n<div class=\"__PREFIX__box\">\n  <div class=\"__PREFIX__content\">\n    <div class=\"__PREFIX__icon\"></div>\n    <div class=\"__PREFIX__text\"></div>\n  </div>\n</div>\n";
+            var handlers;
+            Object.keys(_defaults).forEach(function(key) {
+                _SETTINGS[key] = options[key] || _defaults[key];
+            });
 
-var _ptrStyles = "\n.__PREFIX__ptr {\n  box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.12);\n  pointer-events: none;\n  font-size: 0.85em;\n  font-weight: bold;\n  top: 0;\n  height: 0;\n  transition: height 0.3s, min-height 0.3s;\n  text-align: center;\n  width: 100%;\n  overflow: hidden;\n  display: flex;\n  align-items: flex-end;\n  align-content: stretch;\n}\n\n.__PREFIX__box {\n  padding: 10px;\n  flex-basis: 100%;\n}\n\n.__PREFIX__pull {\n  transition: none;\n}\n\n.__PREFIX__text {\n  margin-top: .33em;\n  color: rgba(0, 0, 0, 0.3);\n}\n\n.__PREFIX__icon {\n  color: rgba(0, 0, 0, 0.3);\n  transition: transform .3s;\n}\n\n/*\nWhen at the top of the page, disable vertical overscroll so passive touch\nlisteners can take over.\n*/\n.__PREFIX__top {\n  touch-action: pan-x pan-down pinch-zoom;\n}\n\n.__PREFIX__release .__PREFIX__icon {\n  transform: rotate(180deg);\n}\n";
+            if (typeof _SETTINGS.mainElement === 'string') {
+                _SETTINGS.mainElement = document.querySelector(_SETTINGS.mainElement);
+            }
 
-var _defaults = {
-  distThreshold: 60,
-  distMax: 80,
-  distReload: 50,
-  distIgnore: 0,
-  mainElement: 'body',
-  triggerElement: 'body',
-  ptrElement: '.ptr',
-  classPrefix: 'ptr--',
-  cssProp: 'min-height',
-  iconArrow: '&#8675;',
-  iconRefreshing: '&hellip;',
-  instructionsPullToRefresh: 'Pull down to refresh',
-  instructionsReleaseToRefresh: 'Release to refresh',
-  instructionsRefreshing: 'Refreshing',
-  refreshTimeout: 500,
-  getMarkup: function () { return _ptrMarkup; },
-  getStyles: function () { return _ptrStyles; },
-  onInit: function () {},
-  onRefresh: function () { return location.reload(); },
-  resistanceFunction: function (t) { return Math.min(1, t / 2.5); },
-  shouldPullToRefresh: function () { return !window.scrollY; }
-};
+            if (typeof _SETTINGS.ptrElement === 'string') {
+                _SETTINGS.ptrElement = document.querySelector(_SETTINGS.ptrElement);
+            }
 
-var _methods = ['mainElement', 'ptrElement', 'triggerElement'];
-var _setupHandler = (function (options) {
-  var _handler = {}; // merge options with defaults
+            if (typeof _SETTINGS.triggerElement === 'string') {
+                _SETTINGS.triggerElement = document.querySelector(_SETTINGS.triggerElement);
+            }
 
-  Object.keys(_defaults).forEach(function (key) {
-    _handler[key] = options[key] || _defaults[key];
-  }); // normalize timeout value, even if it is zero
+            if (!_setup) {
+                handlers = _setupEvents();
+                _setup = true;
+            }
 
-  _handler.refreshTimeout = typeof options.refreshTimeout === 'number' ? options.refreshTimeout : _defaults.refreshTimeout; // normalize elements
+            var ref = _run();
+            var styleNode = ref.styleNode;
+            var ptrElement = ref.ptrElement;
 
-  _methods.forEach(function (method) {
-    if (typeof _handler[method] === 'string') {
-      _handler[method] = document.querySelector(_handler[method]);
-    }
-  }); // attach events lazily
+            return {
+                destroy: function destroy() {
+                    // Teardown event listeners
+                    window.removeEventListener('touchstart', handlers.onTouchStart);
+                    window.removeEventListener('touchend', handlers.onTouchEnd);
+                    window.removeEventListener('touchmove', handlers.onTouchMove);
 
+                    // Remove ptr element and style tag
+                    styleNode.parentNode.removeChild(styleNode);
+                    ptrElement.parentNode.removeChild(ptrElement);
 
-  if (!_shared.events) {
-    _shared.events = _setupEvents();
-  }
+                    // Enable setupEvents to run again
+                    _setup = false;
 
-  _handler.contains = function (target) {
-    return _handler.triggerElement.contains(target);
-  };
+                    // null object references
+                    handlers = null;
+                    styleNode = null;
+                    ptrElement = null;
+                    _SETTINGS = {};
+                },
+            };
+        },
+    };
 
-  _handler.destroy = function () {
-    // stop pending any pending callbacks
-    clearTimeout(_shared.timeout); // remove handler from shared state
+    return pulltorefresh;
 
-    var offset = _shared.handlers.indexOf(_handler);
-
-    _shared.handlers.splice(offset, 1);
-  };
-
-  return _handler;
-});
-
-var index = {
-  setPassiveMode: function setPassiveMode(isPassive) {
-    _shared.passive = isPassive;
-  },
-
-  setPointerEventsMode: function setPointerEventsMode(isEnabled) {
-    _shared.pointerEventsEnabled = isEnabled;
-  },
-
-  destroyAll: function destroyAll() {
-    if (_shared.events) {
-      _shared.events.destroy();
-
-      _shared.events = null;
-    }
-
-    _shared.handlers.forEach(function (h) {
-      h.destroy();
-    });
-  },
-
-  init: function init(options) {
-    if ( options === void 0 ) options = {};
-
-    var handler = _setupHandler(options);
-
-    _shared.handlers.push(handler);
-
-    return handler;
-  },
-
-  // export utils for testing
-  _: {
-    setupHandler: _setupHandler,
-    setupEvents: _setupEvents,
-    setupDOM: _ptr.setupDOM,
-    onReset: _ptr.onReset,
-    update: _ptr.update
-  }
-};
-
-module.exports = index;
+}
+)));
