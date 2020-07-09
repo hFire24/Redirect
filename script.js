@@ -551,6 +551,7 @@ function addBigMessages() {
   'It looks like you feel stuck.',
   'It seems like you feel lost.',
   'Yeah, yeah. I restricted your freedom. <span id="stress">DEAL WITH IT.</span>',
+  //"<a href='hi'>This is <span id='stress'>SPARTA!</span></a>",
   'Grow up and get a life!');
 
   /*for(var i = 0; i < questions.length; i++)
@@ -618,10 +619,25 @@ function randomLink(index,number) {
   if(number >= 5)
     createAdvice();
   //If the message is too long, this fires up.
-  if(message.length > 200)
+  if(actualLength() > 200) {
     $("message").classList.add("tiny");
-  else if(message.length > 90)
+    $("message").classList.remove("small");
+  }
+  else if(actualLength() > 90) {
     $("message").classList.add("small");
+    $("message").classList.remove("tiny");
+  }
+  else {
+    document.getElementById("message").classList.remove("small");
+    document.getElementById("message").classList.remove("tiny");
+  }
+}
+
+function actualLength() {
+  var text = $("message");
+  var txt = text.innerText || text.textContent;
+  console.log("Shortened message: " + txt);
+  return txt.length;
 }
 
 function getBack()

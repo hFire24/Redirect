@@ -186,14 +186,30 @@
         //Put index value to the console
         console.log("Link " + linkIndex);
         //If the message is too long, this fires up.
-        if(message.length > 200)
+        if(actualLength() > 200) {
           $("message").classList.add("tiny");
-        else if(message.length > 90)
+          $("message").classList.remove("small");
+        }
+        else if(actualLength() > 90) {
           $("message").classList.add("small");
+          $("message").classList.remove("tiny");
+        }
+        else {
+          document.getElementById("message").classList.remove("small");
+          document.getElementById("message").classList.remove("tiny");
+        }
       }
 
       randomMobileMessage();
+
+      function actualLength() {
+        var text = document.getElementById("message");
+        var txt = text.innerText || text.textContent;
+        console.log("Shortened message: " + txt);
+        return txt.length;
+      }
     </script>
+    <script src="script.js"></script>
     <script src="pulltorefresh.js/dist/pulltorefresh.js"></script>
     <script>
     PullToRefresh.init({
@@ -202,6 +218,5 @@
       onRefresh: function() { randomMobileMessage() }
     });
     </script>
-    <script src="script.js"></script>
   </body>
 </html>
