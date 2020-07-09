@@ -167,7 +167,7 @@ function finalTest(inputText,site)
       'It seems like you feel stuck.',
       'You need motivation.',
       'Why not use that search energy to make some progress on a task?',
-      'If you\'re bored, just try to do one of those three things.',
+      'If you\'re bored, just try to do one of those four things.',
       'You want to go there, but you don\'t need to go there.',
       'Don\'t be addicted to the internet.',
       'Fun things are good, but they are distractions.'];
@@ -229,11 +229,11 @@ function finalTest(inputText,site)
   }
 
   else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
-    $("message").innerHTML = "If you're bored, just try to do one of those three things.";
+    $("message").innerHTML = "If you're bored, just try to do one of those four things.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to coninue.</a>";
   }
   else if(inputText.indexOf("i can") >= 0) {
-    $("message").innerHTML = "You could, but you should be doing one of those three things instead.";
+    $("message").innerHTML = "You could, but you should be doing one of those four things instead.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to coninue.</a>";
   }
   else {
