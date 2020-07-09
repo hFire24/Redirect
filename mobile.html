@@ -180,13 +180,14 @@
         link.innerHTML = linkMessages[linkIndex];
       //Put index value to the console
       console.log("Link " + linkIndex);
-
-      PullToRefresh.init({
-        mainElement: 'body',
-        onRefresh: function() { window.location.reload() }
-      });
     </script>
     <script src="script.js"></script>
     <script src="pulltorefresh.js"></script>
+    <script>
+    PullToRefresh.init({
+      mainElement: 'body',
+      onRefresh: function() { window.location.reload() }
+    });
+    </script>
   </body>
 </html>
