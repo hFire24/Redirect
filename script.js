@@ -80,7 +80,6 @@ function loadSmallBreak() {
   'Listen to your own music, and don\'t be afraid to dance to it.',
   'Do planks for one minute.',
     //Personal hygiene
-  'Change your clothes if they\'re dirty.',
   'Change to your pajamas. No socks.',
     //Miscellaneous Part 2
   'Digitize at least one paragraph from your journal.'];
