@@ -71,7 +71,7 @@ async function createAdvice()
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 77) {
           event.preventDefault();
-          location.href = "../cyoa/58.html";
+          location.href = "../musicSlider.html";
         }
       });
     }

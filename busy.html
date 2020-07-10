@@ -16,7 +16,7 @@
     </div>
     <div id='musictip' width='100%' height='100%' class='theme3 space'>
       <h2 class='space'>Here's a tip: Some music can help you focus.</h2>
-      <p><a class='anime-link' href='58.html'>Click here for more info.</a></p>
+      <p><a class='anime-link' href='musicSlider.html'>Click here for more info.</a></p>
       <a class='anime-link' onclick='disappear()'>OK</a>
     </div>
     <div id='message' class='small space'>What do you want to do right now?</div>
@@ -45,7 +45,7 @@
         var inputText = $("newBreak").value.toLowerCase();
         if(found(['busy', 'keep', 'continue', 'work', 'resume', 'job', 'internship'],inputText)) {
           $("message").innerHTML = "Don't overwork yourself.";
-          $("link").innerHTML = "<div class='space'><a href='cyoa/20.html'>I'm already overworked.</a></div><div><a href='cyoa/58.html'>I could use some music.</a></div>";
+          $("link").innerHTML = "<div class='space'><a href='cyoa/20.html'>I'm already overworked.</a></div><div><a href='musicSlider.html'>I could use some music.</a></div>";
         }
         else if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
         'loli', 'cute little', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',

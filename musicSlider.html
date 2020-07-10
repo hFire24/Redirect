@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme2">
+    <div id="break" class='space'>This slider will give you some music genres.</div>
+    <div class='small space'>Start with some music from lower intensities to relax.<br>If that doesn't help, play some higher intensity music to energize.<br>If you're watching anime, don't play other music.</div>
+    <div class='slidercontainer space'>
+      <input type="range" min="0" max="8" value="0" class="slider" id="musicslider">
+    </div>
+    <div id="message" class="space">No music</div>
+    <div id="intensity">Your mind easily wanders off.</div>
+    <script>
+      var genres = ['No music','Nature sounds','Ambient music','Beautiful piano music','Downtempo music','Progressive house','Upbeat instrumentals',/*'Chiptunes','Eurovision hits',*/'Uplifting trance','Hard trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
+      var genre = document.getElementById("message");
+      var slider = document.getElementById("musicslider");
+      var intensity = document.getElementById("intensity");
+      slider.max = genres.length - 1;
+      slider.oninput = function() {
+        genre.innerHTML = genres[slider.value];
+        console.log(slider.value);
+        switch(parseInt(slider.value))
+        {
+          case 0:
+            intensity.innerHTML = 'Your mind easily wanders off.';
+            break;
+          case 1:
+          case 2:
+            intensity.innerHTML = 'Lowest intensity';
+            break;
+          case 3:
+          case 4:
+            intensity.innerHTML = 'Low intensity';
+            break;
+          case 5:
+          case 6:
+            intensity.innerHTML = 'Medium intensity';
+            break;
+          case 7:
+          case 8:
+            intensity.innerHTML = 'High intensity';
+            break;
+          case 9:
+            intensity.innerHTML = 'SUPER HIGH INTENSITY';
+            break;
+          default:
+            intensity.innerHTML = "What?";
+        }
+        if(slider.value >= genres.length - 1)
+          genre.classList.add("stress");
+        else
+          genre.classList.remove("stress");
+      }
+    </script>
+  </body>
+</html>

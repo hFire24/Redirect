@@ -178,7 +178,7 @@ function loadBreak(index) {
       message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
       break;
     case messages.indexOf("Put on some music to help you focus."):
-      message.href = "cyoa/58.html";
+      message.href = "musicSlider.html";
       break;
     case messages.indexOf("Play one of these short games."):
       message.href = "cyoa/46.html";
@@ -406,8 +406,8 @@ function addBigMessages() {
   'Why not get an assignment done early? You\'ll get a head start!',*/
     //Music
   'Sometimes just browsing your music library could be fun.',
-  '<a href="cyoa/58.html">Why don\'t you put on some music to help you focus?</a>',
-  '<a href="cyoa/58.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
+  '<a href="musicSlider.html">Why don\'t you put on some music to help you focus?</a>',
+  '<a href="musicSlider.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
   '<a href="https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
     //Anime
@@ -666,7 +666,7 @@ async function createAdvice()
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 77) {
           event.preventDefault();
-          location.href = "cyoa/58.html";
+          location.href = "musicSlider.html";
         }
       });
     }

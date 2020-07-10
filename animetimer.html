@@ -25,7 +25,7 @@
       <a id='pause' class='timerbutton' style='background-color:yellow; color:black;' onclick='pauseTimer()'>Pause Timer</a>
       <a id='stop' class='timerbutton' style='background-color:red; color:black;' onclick='stopAlarm()'>Stop Timer</a>
     </div>
-    <!--iframe id="music" style="display:none;" width="656" height="536" frameborder="0" src="cyoa/58.html"-->
+    <!--iframe id="music" style="display:none;" width="656" height="536" frameborder="0" src="musicSlider.html"-->
     <audio loop id='alarm'>
       <source src="media/Alarm 1.mp3" type="audio/mpeg">
     </audio>
@@ -127,7 +127,7 @@
           music.height = 0.6 * window.innerHeight;
           music.frameborder = 0;
           music.style.marginTop = '1em';
-          music.src = "cyoa/58.html";
+          music.src = "musicSlider.html";
           document.body.appendChild(music);
         }*/
         //This displays the controls for pausing and stopping the timer.

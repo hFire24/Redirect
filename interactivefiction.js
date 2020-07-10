@@ -21,7 +21,7 @@ function finalTest(inputText,site)
     if(inputText.indexOf("listening") >= 0)
       location.href = "cyoa/9.html";
     else
-      location.href = "cyoa/58.html";
+      location.href = "musicSlider.html";
   }
   else if(inputText.indexOf("wait") >= 0)
     location.href = "cyoa/12.html";
