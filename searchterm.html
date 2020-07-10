@@ -165,9 +165,9 @@
           link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
         else if (message.startsWith('✝'))
           link.innerHTML = "<u onclick='pushTheButton(3)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-        else if (message.startsWith('☢PLAY'))
+        else if (message.startsWith('☢<i>PLAY'))
           link.innerHTML = "<u onclick='pushTheButton(4)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-        else if (index > redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index < redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
+        else if (index >= redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index <= redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
           link.innerHTML = "<u onclick='pushTheButton(2)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
         else if (message.startsWith('☢'))
           link.innerHTML = "<u onclick='pushTheButton(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
