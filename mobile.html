@@ -12,12 +12,10 @@
     <div id='message' class='space'></div>
     <div id='hideable' class='space'>
     </div>
-    <div id='images'>
-      <img src='media/Screenshot (101).png' width='90%'></img>
-      <img src='media/Screenshot (102).png' width='90%'></img>
-      <img src='media/Screenshot (103).png' width='90%'></img>
-    </div>
+    <img id='image' src='media/Nissan Expanding Brain.png' width="857"></img>
     <script>
+      if(window.innerWidth < 857 / 0.9)
+        document.getElementById('image').width = 0.9 * window.innerWidth;
       var icon = document.getElementById("apple");
       var iconNumber = Math.floor(Math.random() * 5) + 1;
       if(iconNumber > 1)
