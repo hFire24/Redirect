@@ -805,9 +805,9 @@ function createMessage() {
   if($("size").checked)
     message.classList.add("big");
   message.innerHTML = newMessage.value;
-  if(newMessage.value.toLowerCase().indexOf("cirno") >= 0)
+  if(found(["cirno"],newMessage))
     location.href = "cirno.html";
-  else if(newMessage.value.toLowerCase().indexOf("nuke") >= 0)
+  else if(found(["loli","nuke"],newMessage))
     location.href = "whoa/index.html";
   parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
@@ -816,6 +816,13 @@ function createMessage() {
   parent.removeChild(sizeselecter);
   parent.appendChild(message);
   messageComplete = true;
+}
+
+function found(array,source) {
+  for (var i in array)
+    if (source.value.toLowerCase().indexOf(array[i]) >= 0)
+      return true;
+  return false;
 }
 
 var hide = $("hideable");
