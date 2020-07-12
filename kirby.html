@@ -10,12 +10,59 @@
   </head>
   <body class="theme3">
     <img id='sadKirby' src='https://i.redd.it/cgfdvvecgem21.jpg' onclick='disappointed()'></img>
+    <div id='time'></div>
     <script>
       function disappointed() {
         location.href = "https://youtu.be/mGx4BSFMiuo";
       }
       if (window.innerWidth < 1044)
         document.getElementById('sadKirby').width = window.innerWidth - 20;
+
+      //a is for alarm, n is for now.
+      var a = new Date();
+      var n = new Date(Date.now());
+      //global variable that keeps track of time
+      var myfunc;
+      //global variable that detects if the alarm has gone off.
+      var alarmOff = false;
+      //Sets the timer for one minute
+      a.setMinutes(1 + n.getMinutes());
+      if(a.getMinutes() < n.getMinutes())
+      {
+        console.log("Hey. It is known that the minute value of the alarm " + a.getMinutes() + " is less than the minute value of the current time " + n.getMinutes());
+        //Adds one hour to the alarm's minute value.
+        a.setHours(1 + a.getHours());
+      }
+
+      //Displays remaining time to the webpage
+      adjustTime();
+
+      //This function keeps track of time. It updates the timer and sets off the alarm when the current time matches the alarm time.
+      myfunc = setInterval(function() {
+        n = new Date(Date.now())
+        if(!alarmOff)
+          adjustTime();
+        if(n.getSeconds() === a.getSeconds() && n.getMinutes() === a.getMinutes() && n.getHours() === a.getHours()) {
+          alarmOff = true;
+          document.getElementById("time").innerHTML = "OK, you can go now. Don't disappoint Kirby again.";
+        }
+      }, 1000);
+
+      function adjustTime() {
+        //This calculates how much time is left between the alarm and the current time.
+        var timeLeft = a - n;
+        //Hours, minutes, and seconds are calculated from that value.
+        var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        //Add zeroes to minutes and seconds if the number is a single digit long.
+        if(minutes.toString().length === 1)
+          minutes = "0" + minutes;
+        if(seconds.toString().length === 1)
+          seconds = "0" + seconds;
+        //Displays updated remaining time to the webpage
+        document.getElementById("time").innerHTML = "<span id='hours'>" + hours + "</span>:<span id='minutes'>" + minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
+      }
     </script>
   </body>
 </html>
