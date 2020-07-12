@@ -107,7 +107,7 @@ td {
   font-size: 45px;
 }
 
-.anime-list {
+.two-list {
   display:grid;
   grid-template-columns:auto auto;
 }
@@ -356,13 +356,6 @@ td {
   .slider::-moz-range-thumb {
     width: 30px;
     height: 30px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .anime-list {
-    display:grid;
-    grid-template-columns:auto auto;
   }
 }
 
