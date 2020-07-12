@@ -48,7 +48,7 @@
         {
           var aElement = document.createElement("a");
           aElement.id = "a" + i;
-          aElement.classList.add("anime-link");
+          aElement.classList.add("hfire-link");
           aElement.innerHTML = String.fromCharCode(65+i) + ": " + aHabits[i].text;
           if(aHabits[i].link !== "pass")
           {
@@ -72,7 +72,7 @@
         {
           var bElement = document.createElement("a");
           bElement.id = "b" + j;
-          bElement.classList.add("anime-link");
+          bElement.classList.add("hfire-link");
           bElement.innerHTML = String.fromCharCode(65 + aHabits.length + j) + ": " + bHabits[j].text;
           if(bHabits[j].link !== "pass")
           {

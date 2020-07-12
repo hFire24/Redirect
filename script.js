@@ -684,7 +684,7 @@ function rejectSomething(time) {
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
   else if(time === 10)
-    link.innerHTML = "<a class='anime-link' href='cyoa/35.html'>You really are bored.</a>";
+    link.innerHTML = "<a class='hfire-link' href='cyoa/35.html'>You really are bored.</a>";
   else
     location.href = "cyoa/1.html";
 }

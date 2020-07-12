@@ -11,10 +11,10 @@
   <body class="theme5">
     <div id='message' class='space'>Be honest. Did you Google that just because you are bored?</div>
     <div id='yesno' class='anime-list'>
-      <a id='yes' class='anime-link' onclick='youLose()'>Yes</a>
-      <a id='no' class='anime-link' onclick="youWin()">No</a>
-      <a id='maybe' class='anime-link' onclick="maybe()">Maybe</a>
-      <a id='idk' class='anime-link' onclick='idk()'>I dunno</a>
+      <a id='yes' class='hfire-link' onclick='youLose()'>Yes</a>
+      <a id='no' class='hfire-link' onclick="youWin()">No</a>
+      <a id='maybe' class='hfire-link' onclick="maybe()">Maybe</a>
+      <a id='idk' class='hfire-link' onclick='idk()'>I dunno</a>
     </div>
     <div id="clickanywhere" style="display:none;">Click here to continue.</div>
     <script>
@@ -32,7 +32,7 @@
           document.getElementById("no").innerHTML = "Determined";
           var hungry = document.createElement("a");
           hungry.innerHTML = "Hunger";
-          hungry.className = "anime-link";
+          hungry.className = "hfire-link";
           hungry.addEventListener("click",function() {
             document.body.removeChild(document.getElementById("yesno"));
             message.innerHTML = "You need to eat some food now.";
