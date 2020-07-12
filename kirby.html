@@ -52,16 +52,13 @@
         //This calculates how much time is left between the alarm and the current time.
         var timeLeft = a - n;
         //Hours, minutes, and seconds are calculated from that value.
-        var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        var seconds = Math.round((timeLeft % (1000 * 60)) / 1000);
         //Add zeroes to minutes and seconds if the number is a single digit long.
-        if(minutes.toString().length === 1)
-          minutes = "0" + minutes;
         if(seconds.toString().length === 1)
           seconds = "0" + seconds;
         //Displays updated remaining time to the webpage
-        document.getElementById("time").innerHTML = "<span id='hours'>" + hours + "</span>:<span id='minutes'>" + minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
+        document.getElementById("time").innerHTML = "<span id='minutes'>" + minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
       }
     </script>
   </body>
