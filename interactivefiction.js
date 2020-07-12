@@ -188,7 +188,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to coninue.</a>";
   }
-  else if(found(['funny', 'laugh', 'hilarious'],inputText)) {
+  else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd'],inputText) && inputText.indexOf("loli") < 0) {
     $("message").innerHTML = "Šílený Ota";
     $("message").classList.remove("small");
     var video = document.createElement("video");
