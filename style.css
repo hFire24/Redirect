@@ -72,7 +72,7 @@ ol a {
   font-size:105px;
 }
 
-#standup, #changeclothes {
+#standup, #changeclothes, .additional {
   display:none;
 }
 

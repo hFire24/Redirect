@@ -805,6 +805,39 @@ function createMessage() {
   if($("size").checked)
     message.classList.add("big");
   message.innerHTML = newMessage.value;
+  if(found(["|"],newMessage)) {
+    var splitMessage = newMessage.value.split("|");
+    console.log(splitMessage[0]);
+    if(splitMessage[0].trim() === '')
+      splitMessage[0] = '👻';
+    message.innerHTML = "<span id='message0'>" + splitMessage[0] + "</span>";
+    for(var i = 1; i < splitMessage.length; i++)
+      addSplitMessage(splitMessage[i],i,message);
+    /*var message1 = document.createElement("span");
+    message1.id = "message1";
+    message1.className = "additional";
+    message1.innerHTML = splitMessage[1];
+    message.appendChild(message1);*/
+    parent.appendChild(message);
+    console.log(message);
+    $('message0').addEventListener("click", function() {displayNextValue(1)});
+    if(splitMessage.length > 2)
+      $('message1').addEventListener("click", function() {displayNextValue(2)});
+    if(splitMessage.length > 3)
+      $('message2').addEventListener("click", function() {displayNextValue(3)});
+    if(splitMessage.length > 4)
+      $('message3').addEventListener("click", function() {displayNextValue(4)});
+    if(splitMessage.length > 5)
+      $('message4').addEventListener("click", function() {displayNextValue(5)});
+    if(splitMessage.length > 6)
+      $('message5').addEventListener("click", function(){
+        for(var i = 6; i < splitMessage.length; i++)
+          displayNextValue(i);
+      });
+    $("theme").innerHTML = "Click or tap on the most recent task to see what happens.";
+  }
+  else
+    parent.appendChild(message);
   if(found(["cirno"],newMessage))
     location.href = "cirno.html";
   else if(found(["loli","nuke"],newMessage))
@@ -814,7 +847,6 @@ function createMessage() {
   parent.removeChild(button);
   parent.removeChild(breaklink);
   parent.removeChild(sizeselecter);
-  parent.appendChild(message);
   messageComplete = true;
 }
 
@@ -823,6 +855,22 @@ function found(array,source) {
     if (source.value.toLowerCase().indexOf(array[i]) >= 0)
       return true;
   return false;
+}
+
+function addSplitMessage(messageSegment,pos,message) {
+  console.log(messageSegment + " " + pos + " " + message);
+  var appendMessage = document.createElement("span");
+  appendMessage.id = "message" + pos;
+  console.log(appendMessage.id);
+  appendMessage.className = "additional";
+  if(messageSegment.trim() === '')
+    messageSegment = '👻';
+  appendMessage.innerHTML = messageSegment;
+  message.appendChild(appendMessage);
+}
+
+function displayNextValue(pos) {
+  $('message' + pos).style.display = "block";
 }
 
 var hide = $("hideable");
