@@ -62,7 +62,6 @@ function loadSmallBreak() {
   'Increase your spirituality.',
   'Try answering this question.',
   'Play one of these short games.',
-  'Watch anime for 30 seconds.',
   'Read your journal entries.<br>Start from April 2012.',
     //Goals
   'Click here.',
@@ -104,7 +103,6 @@ function loadBigBreak() {
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'Play Sudoku.',
     //Miscellaneous
-  'Watch anime.',
   'No routine? Form one.',
   'How about multiple ways to take a break?',
   'Read your patriarchal blessing.',
@@ -137,9 +135,7 @@ function loadBigBreak() {
 
 function loadYouTubeBreak() {
   breakArray = 'YouTube';
-  messages = ['Watch anime for 10 minutes (or 40% full length).',
-  'Double your social skills.',
-  'Watch anime.',
+  messages = ['Double your social skills.',
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
   'Go to Skillshare, and learn programming.',
@@ -185,9 +181,6 @@ function loadBreak(index) {
     /*case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
       message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
       break;*/
-    case messages.indexOf("Watch anime."):
-      message.href = "nextanime.html";
-      break;
     case messages.indexOf("Increase your spirituality."):
       message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
       break;
@@ -409,9 +402,6 @@ function addBigMessages() {
   '<a href="musicSlider.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
   '<a href="https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
-    //Anime
-  'If you need some happiness, watch at least 30 seconds of anime!',
-  'Why don\'t you watch some anime?',
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
