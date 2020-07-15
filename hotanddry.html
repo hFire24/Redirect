@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme8">
+    <div id="message" class="small space">Why are you here?</div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
+    <script>
+    function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
+      console.log($("newBreak").value);
+      var inputText = '';
+      if($("custom-reason").value !== -1 && $("newBreak").value === '')
+        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
+      finalTest(inputText,"hotanddry");
+    }
+
+    var reasons = ["Because I'm lazy",
+    "Because I'm bored", "Because I'm really bored", "I have nothing to do",
+    "For no reason",
+    "Because I feel like it",
+    "Because I feel like procrastinating",
+    "I'm struggling in life",
+    "I don't know",
+    "Because I can",
+    "Because I feel stressed",
+    "Because I feel busy",
+    "Because I feel hungry",
+    "I just relapsed",
+    "Because I can't focus",
+    "Because I feel overwhelmed",
+    "Because I want to relax",
+    "I already looked at bad stuff",
+    "I got something I need to do",
+    "I'm ready to do something else"];
+    for(var i in reasons) {
+      var option = document.createElement('option');
+      option.id = i;
+      option.value = i;
+      option.innerHTML = reasons[i];
+      document.getElementById("custom-reason").appendChild(option);
+    }
+    </script>
+    <script src="interactivefiction.js"></script>
+  </body>
+</html>
