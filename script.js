@@ -795,7 +795,7 @@ function createMessage() {
   if($("size").checked)
     message.classList.add("big");
   message.innerHTML = newMessage.value;
-  if(found(["|"],newMessage)) {
+  if(splitFound(["|"],newMessage)) {
     var splitMessage = newMessage.value.split("|");
     console.log(splitMessage[0]);
     if(splitMessage[0].trim() === '')
@@ -840,7 +840,7 @@ function createMessage() {
   messageComplete = true;
 }
 
-function found(array,source) {
+function splitFound(array,source) {
   for (var i in array)
     if (source.value.toLowerCase().indexOf(array[i]) >= 0)
       return true;
