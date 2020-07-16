@@ -188,12 +188,12 @@
         console.log("Link " + linkIndex);
         //If the message is too long, this fires up.
         if(actualLength() > 200) {
-          $("message").classList.add("tiny");
-          $("message").classList.remove("small");
+          document.getElementById("message").classList.add("tiny");
+          document.getElementById("message").classList.remove("small");
         }
         else if(actualLength() > 90) {
-          $("message").classList.add("small");
-          $("message").classList.remove("tiny");
+          document.getElementById("message").classList.add("small");
+          document.getElementById("message").classList.remove("tiny");
         }
         else {
           document.getElementById("message").classList.remove("small");

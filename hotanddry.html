@@ -6,7 +6,7 @@
     <title>You got redirected!</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme8">
     <div id="message" class="small space">Why are you here?</div>
@@ -20,6 +20,12 @@
       </div>
     </div>
     <script>
+    //Changes the apple icon
+    var icon = document.getElementById("apple");
+    var iconNumber = Math.floor(Math.random() * 7) + 1;
+    if(iconNumber > 1)
+      icon.href = "apple-touch-icon " + iconNumber + ".png";
+
     function submit() {
       console.log($("custom-reason").value);
       console.log($($("custom-reason").value).innerHTML);
@@ -29,7 +35,16 @@
         inputText = $($("custom-reason").value).innerHTML.toLowerCase();
       else
         inputText = $("newBreak").value.toLowerCase();
-      finalTest(inputText,"hotanddry");
+      if (inputText.indexOf("twitter") >= 0) {
+        $("message").innerHTML = "Twitter is a toxic wasteland that you should not go to.";
+        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      }
+      else if (inputText.indexOf("discord") >= 0) {
+        $("message").innerHTML = "You might regret using Discord on mobile.";
+        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      }
+      else
+        finalTest(inputText,"hotanddry");
     }
 
     var reasons = ["Because I'm lazy",
