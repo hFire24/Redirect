@@ -304,7 +304,7 @@ function whyNot() {
 
 function submitReason() {
   var reason = $("excuse").value.toLowerCase();
-  if(found(["already","finish","done"],reason) || reason.endsWith("today"))
+  if(found(["already","finish","done","next"],reason) || reason.endsWith("today"))
     location.reload();
   else if(found(["class","lecture","church"],reason))
     location.href = "cyoa/50.html";
