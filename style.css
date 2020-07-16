@@ -328,7 +328,7 @@ td {
 }
 
 @media only screen and (max-width: 1135px) {
-  body, #message.tiny, .relax-list {
+  body, #message.tiny, ol, .relax-list {
     font-size: 30px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -360,7 +360,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body, #message.tiny, td, .relax-list {
+  body, #message.tiny, ol, td, .relax-list {
     font-size: 20px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
