@@ -129,15 +129,13 @@
         $("message").innerHTML = message;
         //Put index value to the console
         console.log("Message " + index);
-        if($("message").innerHTML.length > 200)
-        {
-          var x = window.matchMedia("(max-width: 567px)");
-          var y = window.matchMedia("(max-width: 1135px)");
-          var z = window.matchMedia("(max-width: 1702px)");
-          resizeText(x,y,z);
-          x.addListener(resizeText);
-          y.addListener(resizeText);
-          z.addListener(resizeText);
+        if(actualLength() > 200) {
+          document.getElementById("message").classList.add("tiny");
+          document.getElementById("message").classList.remove("small");
+        }
+        else if(actualLength() > 90) {
+          document.getElementById("message").classList.add("small");
+          document.getElementById("message").classList.remove("tiny");
         }
         else if(message.indexOf('☢') >= 0)
           $("message").addEventListener("click",nuke);
@@ -233,15 +231,11 @@
           location.href = "https://hfire24.github.io/Redirect/cyoa/1.html";
       }
 
-      function resizeText(verySmall,small, medium) {
-        if (x.matches)
-          $("message").style.fontSize = "20px";
-        else if (y.matches)
-          $("message").style.fontSize = "30px";
-        else if (z.matches)
-          $("message").style.fontSize = "60px";
-        else
-          $("message").style.fontSize = "84px";
+      function actualLength() {
+        var text = document.getElementById("message");
+        var txt = text.innerText || text.textContent;
+        console.log("Shortened message: " + txt);
+        return txt.length;
       }
 
       function $(x) {
