@@ -828,9 +828,9 @@ function createMessage() {
   }
   else
     parent.appendChild(message);
-  if(found(["cirno"],newMessage))
+  if(found(["cirno"],newMessage.value.toLowerCase()))
     location.href = "cirno.html";
-  else if(found(["loli","nuke"],newMessage))
+  else if(found(["loli","nuke"],newMessage.value.toLowerCase()))
     location.href = "whoa/index.html";
   parent.removeChild($("instructions"));
   parent.removeChild(newMessage);
