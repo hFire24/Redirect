@@ -323,8 +323,8 @@ function cute(number) {
       $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cute(3)'>Cute anime girls are the best thing in the world.</a> <a class='hfire-link' style='color:gold;' onclick='cute(0)'>Click here if you want a better life.</a></div>";
       break;
     case 3:
-      $("message").innerHTML = "OK, OK. Enjoy rewatching anime with cute anime girls.";
-      $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>";
+      $("message").innerHTML = "I'll tell you what. Listen to this. I hope it inspires you.";
+      $("link").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/build-creativity'>Click here to continue.</a>";
       break;
     default:
       $("message").innerHTML = "OK. Just remember this one thing:<br>Life isn't about seeking cuteness.";
