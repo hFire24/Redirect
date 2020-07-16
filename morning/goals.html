@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Good morning!</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icon-star.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class='morning'>
+    <div id='message' class='space'>Your morning routine</div>
+    <ol id='parent'>
+    </ol>
+    <script>
+      var morningHabits = ["Drink a glass of water",
+      "Take a walk outside (skip if raining)<ul><li><a href='nowalk.html'>Click here</a> if you don't feel like taking a walk outside</li></ul>",
+      "Eat breakfast if you're hungry",
+      "Take a not hot shower, brush teeth, shave (if your have facial hair)",
+      "Listen to this <a href='https://insighttimer.com/andrewjohnson/guided-meditations/morning-boost-meditation'>morning meditation</a>"];
+
+      var parent = document.getElementById("parent");
+
+      for(var i = 0; i < morningHabits.length; i++)
+      {
+        var aElement = document.createElement("li");
+        aElement.id = "a" + i;
+        aElement.innerHTML = morningHabits[i];
+        parent.appendChild(aElement);
+        //Creates a random background color for the element
+        var x = Math.floor(Math.random() * 64) + 192;
+        var y = Math.floor(Math.random() * 64) + 192;
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
+        console.log(morningHabits[i]);
+      }
+
+    </script>
+  </body>
+</html>
