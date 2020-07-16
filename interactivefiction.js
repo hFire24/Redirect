@@ -49,8 +49,10 @@ function finalTest(inputText,site)
   }
   else if(found(['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'],inputText))
     location.href = 'relapse.html';
-  else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'erection', 'boner'],inputText))
+  else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched'],inputText))
     location.href = 'kirby.html';
+  else if(found(['erection', 'boner'],inputText))
+    erectionQuestion(1);
   else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
   'whoa', 'nuke'],inputText))
     location.href = 'whoa/index.html';
@@ -309,6 +311,20 @@ function generalConferenceMonth() {
     return true;
   else {
     return false;
+  }
+}
+
+function erectionQuestion(number) {
+  switch(number) {
+    case 1:
+      $("message").innerHTML = "Was it caused by looking at things?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='erectionQuestion(2)'>Yes</a> <a class='hfire-link' onclick='erectionQuestion(3)'>No</a></div>";
+      break;
+    case 2:
+      location.href = "kirby.html";
+      break;
+    default:
+      location.href = "cyoa/20.html";
   }
 }
 
