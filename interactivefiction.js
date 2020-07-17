@@ -38,7 +38,7 @@ function finalTest(inputText,site)
   else if(found(['hunger', 'hungry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
     if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth()))
     {
-      $("message").innerHTML = "<img src='media/Fasting.png'>";
+      $("message").innerHTML = "<img src='media/Fasting.png' alt='a bunch of text that persuades the reader to fast on fast sunday'>";
       document.body.removeChild($("link"));
     }
     else
