@@ -56,8 +56,8 @@ function finalTest(inputText,site)
   else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
   'whoa', 'nuke'],inputText))
     location.href = 'whoa/index.html';
-  else if(found(['suicid', 'die ', 'be dead', 'kill', 'perish', 'get rid of myself', 'waste', 'depressed', 'homicid',
-  'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang', 'destroy', 'hate my'],inputText)
+  else if(found(['suicid', 'die ', 'be dead', 'kill myself', 'perish', 'get rid of myself', 'depressed', 'homicid',
+  'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang myself', 'destroy myself', 'destroy my life', 'hate my'],inputText)
   && !found(wasteTime,inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText) || inputText.endsWith("die")) {
     $("message").innerHTML = "This sounds super serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
     document.body.removeChild($("link"));
@@ -73,8 +73,8 @@ function finalTest(inputText,site)
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
-  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up',
-  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope'],inputText)) {
+  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up',
+  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'waste'],inputText) || inputText === 'hate') {
     $("message").innerHTML = "You need to calm down and relax.";
     $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
   }
