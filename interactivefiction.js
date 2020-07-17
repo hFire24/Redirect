@@ -88,9 +88,13 @@ function finalTest(inputText,site)
       $("message").innerHTML = "You need to drink some water.";
       $("link").innerHTML = "<ins onclick='alreadyDrank()'>But I just drank some water.</ins>";
     }
-    else if(d.getHours() < 22) {
+    else if(d.getHours() < 17) {
       $("message").innerHTML = "You should take a power nap.";
       $("link").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap'>Click here to continue.</a>";
+    }
+    else if(d.getHours() < 22) {
+      $("message").innerHTML = "You should recharge yourself. But how?";
+      $("link").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/evening-boost-meditation'>click here to continue.</a>"
     }
     else
       location.href = "cyoa/14.html";

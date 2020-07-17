@@ -10,10 +10,52 @@
   </head>
   <body class="relax">
     <div id='message' class='space'>More guided meditations</div>
+    <a id='random' class='hfire-link' onclick='goToRandomMeditation()'><strong style='color:darkblue;'>I'm feeling lucky.</strong></a><br>
     <div id='hideable' class='relax-list' style='margin-top:1em;'>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap' class='hfire-link'>Power Nap</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2' class='hfire-link'>Inner Guide</a>
+      <a id='one' href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap' class='hfire-link link'>Power Nap</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/relax-lite' class='hfire-link link'>Relax Lite</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation' class='hfire-link link'>Law of Attraction</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/positivity' class='hfire-link link'>Positivity</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/astral-flying' class='hfire-link link'>Astral Flying</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation' class='hfire-link link'>Believe In Yourself</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success' class='hfire-link link'>Visualize Success</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2' class='hfire-link link'>Inner Guide</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-grateful-with-andrew-johnson' class='hfire-link link'>Be Grateful</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2' class='hfire-link link'>Boost Your Confidence</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/mindful-awareness-meditation-2' class='hfire-link link'>Mindful Awareness</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-happy' class='hfire-link link'>Be Happy</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/expansion-meditation-3' class='hfire-link link'>Expansion Meditation</a>
+      <a id='fourteen' href='https://insighttimer.com/andrewjohnson/guided-meditations/evening-boost-meditation' class='hfire-link'>Evening Boost</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stress-free' class='hfire-link link'>Stress Free</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/mindful-breathing-12' class='hfire-link link'>Mindful Breathing</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/freedom-meditation-2' class='hfire-link'>Long-lasting Freedom I</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-peaceful-meditation' class='hfire-link'>Be Peaceful</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stop-worrying-2' class='hfire-link'>Stop Worrying</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/freedom-meditation-6' class='hfire-link'>Long-lasting Freedom II</a>
+      <a hfef='https://insighttimer.com/andrewjohnson/guided-meditations/build-creativity' class='hfire-link'>Build Creativity</a>
+      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/quiet-mind-meditation' class='hfire-link'>Quiet Mind Meditation</a>
     </div>
-    <script src='script.js'></script>
+    <a href='relax.html' class='hfire-link'><strong style='color:darkred;'>Back</strong></a>
+    <script>
+      var d = new Date();
+      //Ensures that the "I'm Feeling Lucky" button does not take the user to the Power Nap meditation in the afternoon.
+      //Gives a 1 in 15 chance that the "I'm Feeling Lucky" button takes the user to the Evening Boost meditation in the evening.
+      if (d.getHours >= 17) {
+        document.getElementById('one').classList.remove('link');
+        document.getElementById('fourteen').classList.add('link');
+      }
+      var meditations = document.getElementsByClassName('link');
+      console.log(meditations);
+      var randomMeditation = [];
+      for(var i = 0; i < 15; i++)
+      {
+        randomMeditation.push(meditations[i].href);
+        console.log(meditations[i].href);
+      }
+      function goToRandomMeditation() {
+        var index = Math.floor(Math.random() * randomMeditation.length)
+        document.getElementById("random").href = randomMeditation[index];
+      }
+    </script>
   </body>
 </html>
