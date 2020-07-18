@@ -8,15 +8,21 @@
     <link rel="shortcut icon" href="icon.ico">
     <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body onLoad="randomTheme(55)">
+  <body onLoad="randomTheme(55)" onresize='checkWidth()'>
     <div id='message' class='space'></div>
     <div id='hideable' class='space'>
     </div>
     <img id='image' src='media/Nissan Expanding Brain.png' alt='an expanding brain meme with the nissan logo appearing three times and the phrase "Drink Me" appearing in the top left' width="857"></img>
     <script>
       //Resizes the meme
-      if(window.innerWidth < 857 / 0.9)
-        document.getElementById('image').width = 0.9 * window.innerWidth;
+      function checkWidth() {
+        if(window.innerWidth < 857 / 0.9)
+          document.getElementById('image').width = 0.9 * window.innerWidth;
+        else {
+          document.getElementById('image').width = 857;
+        }
+      }
+      checkWidth();
       //Changes the apple icon
       var icon = document.getElementById("apple");
       var iconNumber = Math.floor(Math.random() * 7) + 1;
