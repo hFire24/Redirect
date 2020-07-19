@@ -111,7 +111,7 @@ function loadBigBreak() {
   'Learn how to use FL Studio.',
   //'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
-  'Host a website for free that supports FileZilla.',
+  'Learn Full Stack so that you can host a website for free that supports FileZilla.',
   'Draw anime.',
   //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
   'Try to code Card Battle Stadium in C#.',
@@ -139,6 +139,7 @@ function loadYouTubeBreak() {
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
   'Go to Skillshare, and learn programming.',
+  'Learn Full Stack so that you can host a website for free that supports FileZilla.',
   'Draw anime.'];
 }
 
@@ -198,6 +199,7 @@ function loadBreak(index) {
       message.addEventListener("click",pushTheButton);
       break;
     case messages.indexOf("Go to Skillshare, and learn programming."):
+    case messages.indexOf("Go to Skillshare, and learn programming.") + 1:
       message.href = "https://skl.sh/38rV6DT";
       break;
     case messages.indexOf("Double your social skills."):
