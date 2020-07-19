@@ -296,6 +296,11 @@ function getBack(site)
 }
 
 function alreadyDrank() {
+  $("message").innerHTML = "Launch NGU Idle and farm for boosts/equipment.";
+  $("link").innerHTML = "<ins onclick='nguIdle()'>Done.</ins>";
+}
+
+function nguIdle() {
   $("message").innerHTML = "Change to approrpriate clothes.<br>Take a walk outside.";
   $("link").innerHTML = "<ins onclick='raining()'>But it's raining!</ins>";
 }
