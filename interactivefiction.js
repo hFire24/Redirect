@@ -35,7 +35,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "There's nothing beneficial to see there.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-  else if(found(['hunger', 'hungry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
+  else if(found(['hunger', 'hungry', 'hangry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
     if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth()))
     {
       $("message").innerHTML = "<img src='media/Fasting.png' alt='a bunch of text that persuades the reader to fast on fast sunday'>";
