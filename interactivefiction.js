@@ -73,10 +73,10 @@ function finalTest(inputText,site)
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
-  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up',
+  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat',
   'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'waste'],inputText) || inputText === 'hate') {
-    $("message").innerHTML = "You need to calm down and relax.";
-    $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+    $("message").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + "> You need to calm down and relax.</a>";
+    $("link").innerHTML = "<ins onclick='leaveMeAlone(1)'>Just leave me alone!</ins>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
@@ -335,6 +335,108 @@ function erectionQuestion(number) {
     default:
       location.href = "cyoa/20.html";
   }
+}
+
+function leaveMeAlone(number) {
+  switch(number) {
+    case 1:
+      $("message").innerHTML = "Are you upset over a missed opportunity that can come back?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='later()'>Yes</a> <a class='hfire-link' onclick='leaveMeAlone(2)'>No</a></div>";
+      break;
+    case 2:
+      $("message").innerHTML = "Are you upset over an argument with your parents?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='leaveMeAlone(3)'>Yes</a> <a class='hfire-link' onclick='leaveMeAlone(5)'>No</a></div>";
+      break;
+    case 3:
+      $("message").innerHTML = "Did the argument involve your post-graduation life?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='future(true)'>Yes</a> <a class='hfire-link' onclick='future(false)'>No</a></div>";
+      break;
+    case 4:
+      $("message").innerHTML = "Did the argument involve food or entertainment?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='fun(true)'>Yes</a> <a class='hfire-link' onclick='fun(false)'>No</a></div>";
+      break;
+    case 5:
+      $("message").innerHTML = "Are you upset over something you saw online?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='leaveMeAlone(6)'>Yes</a> <a class='hfire-link' onclick='leaveMeAlone(7)'>No</a></div>";
+      break;
+    case 6:
+      $("message").innerHTML = "Did someone use the P-word?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='thePWord()'>Yes</a> <a class='hfire-link' onclick='leaveMeAlone(99)'>No</a></div>";
+      break;
+    case 7:
+      $("message").innerHTML = "Is the fear of failure making you feel weak?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='confidenceBoost()'>Yes</a> <a class='hfire-link' onclick='leaveMeAlone(99)'>No</a></div>";
+      break;
+    default:
+      $("message").innerHTML = "Based on your responses, you will need to say a prayer. How bad is your day?";
+      $("link").innerHTML = "<div class='four-list'><a class='hfire-link' onclick='pray(0)'>Benign</a> <a class='hfire-link' onclick='pray(1)'>Somewhat bad</a> <a class='hfire-link' onclick='pray(2)'>Rough</a> <a class='hfire-link' onclick='pray(3)'>Truly Disastrous</a></div>";
+  }
+}
+
+function later() {
+  $("message").innerHTML = "Be patient. I advise that you distract yourself by <a href='time.html'>doing something else</a> for the time being.";
+  $("link").innerHTML = "<a class='hfre-link' onclick='leaveMeAlone(99)'>But I'm still not feeling better!</a>";
+}
+
+var future;
+var fun;
+function future(bool) {
+  future = bool;
+  leaveMeAlone(4);
+}
+
+function fun(bool) {
+  fun = bool;
+  if(future === true) {
+    if (fun === true)
+      $("message").innerHTML = "Just keep being yourself, but please step up your Skillshare game for programming.";
+    else
+      $("message").innerHTML = "It's time to pick up the pace for this Skillshare course.";
+    $("link").innerHTML = "<a href='https://skl.sh/38rV6DT'>Click here to continue.</a>";
+  }
+  else if(fun === true) {
+    $("message").innerHTML = "Who cares about what mom says? You're living your life to your fullest! Enjoy it while it lasts!";
+    document.body.removeChild($("link"));
+  }
+  else {
+    $("message").innerHTML = "If you want to prevent this from happening again, I suggest you learn programming faster.";
+    $("link").innerHTML = "<a href='https://skl.sh/38rV6DT'>Click here to continue.</a>";
+  }
+}
+
+function thePWord() {
+  $("message").innerHTML = "God loves you the way you are, no matter what.";
+  $("link").innerHTML = " You're not as bad as a person as you think. You know that it's not OK to do some sick things. Given the way your brain works, life can be a struggle. Just don't let temptations control you. As of now, focus on doing the things you love. Ideally, don't get married, and use that money you would have used on marriage and family for a nice performance car. Oh, and financially supporting other families within your extended family would be fantastic. <ins onclick='leaveMeAlone(99)'>Prayer works too. Don't underestimate it.</a>";
+}
+
+function confidenceBoost() {
+  $("message").innerHTML = "You need a real confidence boost.";
+  $("link").innerHTML = "<a id='relax'>Click here to continue</a>";
+  var confidenceMeditations = ['https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/positivity',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2',
+  'https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2'];
+  var index = Math.floor(Math.random() * confidenceMeditations.length);
+  $("relax").href = confidenceMeditations[index];
+}
+
+function pray(number) {
+  switch(number) {
+    case 1:
+      $("message").innerHTML = "A short prayer will suffice. Maybe pray for safety and better behavior.";
+      break;
+    case 2:
+      $("message").innerHTML = "Make sure you prayer is long and sincere. Pray for safety, better behavior, and wise deicisions.";
+      break;
+    case 3:
+      $("message").innerHTML = "Put away all distractions, pray with all your spiritual might, and act on any answers you may receive. Do not forget to pray for safety, better behavior, wise decisions, and spirituality. Hopefully things will get better.";
+      break;
+    default:
+      $("message").innerHTML = "Just say a short prayer anyway. It doesn't matter what it is about.";
+  }
+  document.body.removeChild($("link"));
 }
 
 function cute(number) {

@@ -121,6 +121,11 @@ td {
   font-size:60px;
 }
 
+.four-list {
+  display:grid;
+  grid-template-columns:auto auto auto auto;
+}
+
 .hfire-link {
   color:white;
   text-decoration:none;
