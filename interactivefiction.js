@@ -56,8 +56,8 @@ function finalTest(inputText,site)
   else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
   'whoa', 'nuke'],inputText))
     location.href = 'whoa/index.html';
-  else if(found(['suicid', 'die ', 'be dead', 'kill myself', 'perish', 'get rid of myself', 'depressed', 'homicid',
-  'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang myself', 'destroy myself', 'destroy my life', 'hate my'],inputText)
+  else if(found(['suicid', 'die ', 'be dead', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'depressed', 'homicid',
+  'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang myself', 'destroy myself', 'destroy my life', 'hate myself', 'hate my life', 'worthless'],inputText)
   && !found(wasteTime,inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText) || inputText.endsWith("die")) {
     $("message").innerHTML = "This sounds super serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
     document.body.removeChild($("link"));
@@ -74,7 +74,7 @@ function finalTest(inputText,site)
     location.href = "cyoa/15.html";
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
   'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat',
-  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'waste'],inputText) || inputText === 'hate') {
+  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful'],inputText) || inputText === 'hate') {
     $("message").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + "> You need to calm down and relax.</a>";
     $("link").innerHTML = "<ins onclick='leaveMeAlone(1)'>I don't feel like it.</ins>";
   }
@@ -224,6 +224,14 @@ function finalTest(inputText,site)
   else if(found(['really bored','very bored','nothing'],inputText)) {
     $("message").innerHTML = "Why do nothing when there are so many things to do?";
     $("link").innerHTML = "<a href='multiple.html'>Click here to continue.</a>";
+  }
+  else if(found(['succe', 'accomplish',' win', ' won', 'champion'],inputText)) {
+    $("message").innerHTML = "Congratulations! Give yourself a pat on the back! Now keep that winning streak alive!";
+    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+  else if(found(['lost', 'lose', 'failed', 'pathetic', 'am defeat', 'feel defeat', 'defeated me'],inputText)) {
+    $("message").innerHTML = "You won't feel like a loser anymore after listening to one of those meditations.";
+    $("link").innerHTML = "<a href='relax2.html'>Click here to continue.</a>";
   }
   else if(site === "reddit") {
     $("message").innerHTML = "Reddit is bad.";
