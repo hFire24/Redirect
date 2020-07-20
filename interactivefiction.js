@@ -76,7 +76,7 @@ function finalTest(inputText,site)
   'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat',
   'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'waste'],inputText) || inputText === 'hate') {
     $("message").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + "> You need to calm down and relax.</a>";
-    $("link").innerHTML = "<ins onclick='leaveMeAlone(1)'>Just leave me alone!</ins>";
+    $("link").innerHTML = "<ins onclick='leaveMeAlone(1)'>I don't feel like it.</ins>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
@@ -398,10 +398,8 @@ function fun(bool) {
     $("message").innerHTML = "Who cares about what mom says? You're living your life to your fullest! Enjoy it while it lasts!";
     document.body.removeChild($("link"));
   }
-  else {
-    $("message").innerHTML = "If you want to prevent this from happening again, I suggest you learn programming faster.";
-    $("link").innerHTML = "<a href='https://skl.sh/38rV6DT'>Click here to continue.</a>";
-  }
+  else
+    leaveMeAlone(99);
 }
 
 function thePWord() {
