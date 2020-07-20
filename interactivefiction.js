@@ -105,7 +105,7 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
     $("message").innerHTML = "Why don't you use your laziness to your advantage?";
-    $("link").innerHTML = "<a href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+    $("link").innerHTML = "<div class='two-list'><a href=" + generateAndrewJohnsonLink() + ">I'm sitting.</a><a href=relax2.html>I'm lying down.</a></div>";
   }
   else if(site === "deviantart" && (found(love,inputText)) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan'],inputText)) {
     $("message").innerHTML = "Do you really want to look at cute anime girls?";
@@ -121,6 +121,16 @@ function finalTest(inputText,site)
   }
   else if(found(['poop', 'fart', 'defecat', 'feces', 'butt'],inputText))
     location.href = 'crap.html';
+  else if(found(['wait', 'patient'],inputText))
+    location.href = 'cyoa/12.html';
+  else if(found(['succe', 'accomplish',' win', ' won', 'champion'],inputText)) {
+    $("message").innerHTML = "Congratulations! Give yourself a pat on the back! Now keep that winning streak alive!";
+    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+  else if(found(['lost', 'lose', 'failed', 'pathetic', 'am defeat', 'feel defeat', 'defeated me'],inputText)) {
+    $("message").innerHTML = "You won't feel like a loser anymore after listening to one of those meditations.";
+    $("link").innerHTML = "<a href='relax2.html'>Click here to continue.</a>";
+  }
   else if(site === "google") {
     if(count < 2 && inputText !== '') {
       input.value = "";
@@ -225,19 +235,10 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Why do nothing when there are so many things to do?";
     $("link").innerHTML = "<a href='multiple.html'>Click here to continue.</a>";
   }
-  else if(found(['succe', 'accomplish',' win', ' won', 'champion'],inputText)) {
-    $("message").innerHTML = "Congratulations! Give yourself a pat on the back! Now keep that winning streak alive!";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-  }
-  else if(found(['lost', 'lose', 'failed', 'pathetic', 'am defeat', 'feel defeat', 'defeated me'],inputText)) {
-    $("message").innerHTML = "You won't feel like a loser anymore after listening to one of those meditations.";
-    $("link").innerHTML = "<a href='relax2.html'>Click here to continue.</a>";
-  }
   else if(site === "reddit") {
     $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-
   else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
     $("message").innerHTML = "If you're bored, just try to do one of those four things.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
