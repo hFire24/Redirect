@@ -248,9 +248,9 @@ function finalTest(inputText,site)
     'You have more important things to do.',
     'Please stop being lazy, and stop wasting your time.',
     'Don\'t have a lazy, unproductive day.',
+    'Is what you\'re doing what you really want?',
     'It seems like you feel stuck.',
     'You need motivation.',
-    'You lack energy.',
     'If you\'re bored, just try to do one of those four things.'];
     if(site !== 'hotanddry')
     {
@@ -259,6 +259,7 @@ function finalTest(inputText,site)
       'You shouldn\'t access that website now.',
       'Don\'t waste time getting distracted on blocked websites.',
       'Don\'t go to time-wasting websites!',
+      'There\'s nothing beneficial to see there.',
       'Nothing good will come out of going to that website.',
       'Don\'t get dictated by your urges.',
       'Now is not the time to be doing that.',
@@ -268,6 +269,11 @@ function finalTest(inputText,site)
         var arrayLength = messages.length;
         for(var i = arrayLength; i < arrayLength * 2; i++)
           messages.push('Reddit is bad.');
+      }
+      else if(site === 'deviantart')
+      {
+        messages.push('You wish you are a cute anime girl? 🤣🤣',
+        'Your ideal self is a cute little kid? 🤣🤣');
       }
     }
     else if(window.innerWidth <= 812) {
