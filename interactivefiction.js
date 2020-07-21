@@ -240,8 +240,44 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
-    $("message").innerHTML = "If you're bored, just try to do one of those four things.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    var messages = ['You really are bored.',
+    'Stop escaping from your problems!',
+    'Don\'t you have anything better to do with your time?',
+    'Your mind must be wandering off, isn\'t it?',
+    'You need to stop procrastinating.',
+    'You just wanted to sidetrack. Not good.',
+    'You are procrastinating and not getting things done.',
+    'You live to be entertained? 🤣',
+    'You may seem bored or lazy, but you are fearful.',
+    'You have more important things to do.',
+    'Please stop being lazy, and stop wasting your time.',
+    'Don\'t have a lazy, unproductive day.',
+    'It seems like you feel stuck.',
+    'You need motivation.',
+    'You lack energy.',
+    'If you\'re bored, just try to do one of those four things.'];
+    if(site !== 'hotanddry')
+      messages.push('Stop typing in addresses of distracting websites!',
+      'Forget about that website!',
+      'You shouldn\'t access that website now.',
+      'Don\'t waste time getting distracted on blocked websites.',
+      'Don\'t go to time-wasting websites!',
+      'Nothing good will come out of going to that website.',
+      'Don\'t get dictated by your urges.',
+      'Now is not the time to be doing that.',
+      'You really don\'t want to go to that website anyway.');
+    else if(window.innerWidth <= 812) {
+      messages.push('Stop sporadically checking your phone!',
+      'Your phone is like a prison. Break out of it.',
+      'You shouldn\'t use your phone just because you\'re bored.',
+      'Don\'t waste time getting distracted on your phone.',
+      'Now is not the time to be doing that.',
+      'You really don\'t want to use your phone to kill boredom anyway.',
+      'There\'s e-books on your phone. Read them.');
+    }
+    document.getElementById("message").innerHTML = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("message").classList.remove("small");
+    document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("i can") >= 0) {
     $("message").innerHTML = "You could, but you should be doing one of those four things instead.";
