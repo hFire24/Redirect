@@ -8,41 +8,12 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme5" onload="createAdvice()">
-    <div id='hydrate' width='100%' height='100%' class='theme8 space'>
-      <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
-      <a class='hfire-link' onclick='disappear()'>OK</a>
+  <body class="theme6">
+    <div id='break' class='space'>Were you doing something before you got distracted?</div>
+    <div class='two-list'>
+      <a class='hfire-link' href="56.html">Yes</a>
+      <a class='hfire-link' href="35.html">No</a>
     </div>
-    <div id='musictip' width='100%' height='100%' class='theme3 space'>
-      <h2 class='space'>Here's a tip: Some music can help you focus.</h2>
-      <p><a class='hfire-link' href='../musicSlider.html'>Click here for more info.</a></p>
-      <a class='hfire-link' onclick='disappear()'>OK</a>
-    </div>
-    <div id='break' class='space'>What's more appealing to you right now?</div>
-    <div class='two-list space'>
-      <a class='hfire-link' href="../goals.html">Achieving goals</a>
-      <a class='hfire-link' href="2.html">Completing tasks</a>
-      <a class='hfire-link' href="../bigbreak.html">Random stuff</a>
-      <a class='hfire-link' href="../custom.html">Creating a task</a>
-      <a class='hfire-link' href="6.html">Nothing</a>
-      <a class='hfire-link' href="11.html">Doing Something</a>
-    </div>
-    <a class='hfire-link' href="56.html">I'm already doing something</a>
-    <script>
-    function createAdvice()
-    {
-      var hydrate = Math.floor(Math.random() * 10);
-      console.log(hydrate);
-      if (hydrate < 2)
-        document.getElementById("hydrate").style.display = "block";
-      else if (hydrate < 3)
-        document.getElementById("musictip").style.display = "block";
-    }
-
-    function disappear() {
-      document.getElementById("hydrate").style.display = "none";
-      document.getElementById("musictip").style.display = "none";
-    }
-    </script>
+    <script></script>
   </body>
 </html>

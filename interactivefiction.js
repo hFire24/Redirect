@@ -105,7 +105,7 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
     $("message").innerHTML = "Why don't you use your laziness to your advantage?";
-    $("link").innerHTML = "<div class='two-list'><a href=" + generateAndrewJohnsonLink() + ">I'm sitting.</a><a href=relax2.html>I'm lying down.</a></div>";
+    $("link").innerHTML = "<div class='two-list space'><a href=" + generateAndrewJohnsonLink() + ">I'm sitting.</a><a href='relax2.html'>I'm lying down.</a></div><a onclick='cantRelax(1)'>I can't relax due to noise.</a>";
   }
   else if(site === "deviantart" && (found(love,inputText)) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan'],inputText)) {
     $("message").innerHTML = "Do you really want to look at cute anime girls?";
@@ -494,6 +494,30 @@ function pray(number) {
       $("message").innerHTML = "Just say a short prayer anyway. It doesn't matter what it is about.";
   }
   document.body.removeChild($("link"));
+}
+
+function cantRelax(number) {
+  switch(number) {
+    case 1:
+      $("message").innerHTML = "Are you alone?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cantRelax(2)'>Yes</a> <a class='hfire-link' onclick='cantRelax(3)'>No</a></div>";
+      break;
+    case 2:
+      $("message").innerHTML = "Just turn off you brain and enjoy some twintail action!";
+      document.body.removeChild($("link"));
+      break;
+    case 3:
+      $("message").innerHTML = "Do you have earbuds with you?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cantRelax(4)'>Yes</a> <a class='hfire-link' onclick='cantRelax(5)'>No</a></div>";
+      break;
+    case 4:
+      $("message").innerHTML = "Just shuffle all your liked videos on YouTube.";
+      $("link").innerHTML = "Don't forget to unblock YouTube if possible.";
+      break;
+    default:
+      $("message").innerHTML = "In this case, play a game like Minesweeper or I Love Hue";
+      document.body.removeChild($("link"));
+  }
 }
 
 function cute(number) {
