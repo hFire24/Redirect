@@ -273,7 +273,8 @@ function finalTest(inputText,site)
       else if(site === 'deviantart')
       {
         messages.push('You wish you are a cute anime girl? 🤣🤣',
-        'Your ideal self is a cute little kid? 🤣🤣');
+        'Your ideal self is a cute little kid? 🤣🤣',
+        'Life isn\'t about seeking cuteness.');
       }
     }
     else if(window.innerWidth <= 812) {
