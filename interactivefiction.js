@@ -235,10 +235,6 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Why do nothing when there are so many things to do?";
     $("link").innerHTML = "<a href='multiple.html'>Click here to continue.</a>";
   }
-  else if(site === "reddit") {
-    $("message").innerHTML = "Reddit is bad.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-  }
   else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
     var messages = ['You really are bored.',
     'Stop escaping from your problems!',
@@ -257,6 +253,7 @@ function finalTest(inputText,site)
     'You lack energy.',
     'If you\'re bored, just try to do one of those four things.'];
     if(site !== 'hotanddry')
+    {
       messages.push('Stop typing in addresses of distracting websites!',
       'Forget about that website!',
       'You shouldn\'t access that website now.',
@@ -266,6 +263,13 @@ function finalTest(inputText,site)
       'Don\'t get dictated by your urges.',
       'Now is not the time to be doing that.',
       'You really don\'t want to go to that website anyway.');
+      if(site === 'reddit')
+      {
+        var arrayLength = messages.length;
+        for(var i = arrayLength; i < arrayLength * 2; i++)
+          messages.push('Reddit is bad.');
+      }
+    }
     else if(window.innerWidth <= 812) {
       messages.push('Stop sporadically checking your phone!',
       'Your phone is like a prison. Break out of it.',
@@ -276,11 +280,14 @@ function finalTest(inputText,site)
       'There\'s e-books on your phone. Read them.');
     }
     document.getElementById("message").innerHTML = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("message").classList.remove("small");
     document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("i can") >= 0) {
     $("message").innerHTML = "You could, but you should be doing one of those four things instead.";
+    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+  else if(site === "reddit") {
+    $("message").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else {
