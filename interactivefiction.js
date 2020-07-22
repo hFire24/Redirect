@@ -361,7 +361,12 @@ function alreadyDrank() {
 
 function nguIdle() {
   $("message").innerHTML = "Change to approrpriate clothes.<br>Take a walk outside.";
-  $("link").innerHTML = "<ins onclick='raining()'>But it's raining!</ins>";
+  $("link").innerHTML = "<div class='two-list'><ins onclick='raining()'>But it's raining!</ins><ins onclick='hurt()'>But my feet hurt!</ins></div>";
+}
+
+function hurt() {
+  $("message").innerHTML = "Sorry to hear about that! Make sure you take preventative measures so that your feet don't hurt next time.";
+  $("link").innerHTML = "<a href='time.html'>In the meantime, just do something else.</a>";
 }
 
 function raining() {
