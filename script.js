@@ -276,7 +276,7 @@ function loadBreak(index) {
     parent.appendChild(link);
   }
   link.innerHTML = "<u onclick='whyNot()'>I don't feel like it.</u>";
-  if(standIndex > 0)
+  if(standIndex >= 0)
     $("link").style.display = 'none';
 }
 
