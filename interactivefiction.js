@@ -282,6 +282,7 @@ function finalTest(inputText,site)
       'Your phone is like a prison. Break out of it.',
       'You shouldn\'t use your phone just because you\'re bored.',
       'Don\'t waste time getting distracted on your phone.',
+      'You want to be on your phone all the time? 🤣',
       'Now is not the time to be doing that.',
       'You really don\'t want to use your phone to kill boredom anyway.',
       'There\'s e-books on your phone. Read them.');

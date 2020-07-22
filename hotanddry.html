@@ -19,6 +19,7 @@
         </span><button onclick="submit()">Submit</button>
       </div>
     </div>
+    <img id='image' src='media/Nissan Expanding Brain.png' style='opacity:0;' width="857"></img>
     <script>
     //Changes the apple icon
     var icon = document.getElementById("apple");
@@ -77,5 +78,16 @@
     }
     </script>
     <script src="interactivefiction.js"></script>
+    <script src="pulltorefresh.js/dist/pulltorefresh.js"></script>
+    <script>
+    PullToRefresh.init({
+      mainElement: 'body',
+      distMax: window.innerHeight / 2,
+      onRefresh: function() {
+        $("message").innerHTML = "I get it. You miss Twitter with its pull to refresh feature. But there be dragons.";
+        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      }
+    });
+    </script>
   </body>
 </html>
