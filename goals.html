@@ -22,7 +22,10 @@
       {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA"},
       {text:"Doodle on your sketchpad <span class='time'>(2 minutes)</span>",link:"art.html"},
       {text:"Learn Full Stack on Skillshare <span class='time'>(3 lessons)</span>",link:"https://skl.sh/38rV6DT"}];
-      shuffle(aHabits);
+      do {
+        shuffle(aHabits);
+      } while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(2 hours)</span>");
+
 
       var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/"},
       {text:"Learn how to solve a Rubik's Cube <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/"},
