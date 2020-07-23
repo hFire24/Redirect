@@ -541,8 +541,8 @@ function cute(number) {
       $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cute(3)'>Cute anime girls are the best thing in the world.</a> <a class='hfire-link' style='color:gold;' onclick='cute(0)'>Click here if you want a better life.</a></div>";
       break;
     case 3:
-      $("message").innerHTML = "OK, OK. Feel free to rewatch anime.";
-      $("link").innerHTML = "You're just gonna be watching GochiUsa or Ro-Kyu-Bu! Right?";
+      $("message").innerHTML = "OK, OK. <a href='animetimer.html' target='_blank'>Just set a timer for five minutes.</a>";
+      $("link").innerHTML = "Do something other than look at/think of cute anime girls.<br>If you're still thinking about them, just go with your urges.";
       break;
     default:
       $("message").innerHTML = "OK. Just remember this one thing:<br>Life isn't about seeking cuteness.";

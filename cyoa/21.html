@@ -55,7 +55,7 @@
       'Not lazy',
       'Quite enthusiastic',
       'Pumped',
-      'Hyper like a rockstar',
+      'Hyper',
       'Totally energetic'];
       var lazyLevel = document.getElementById("lazy-level");
       var slider = document.getElementById("anime-slider");
@@ -72,8 +72,8 @@
         else if(slider.value > 8)
           location.href = "../whoa/24.html";
         else {
-          message.innerHTML = "OK, OK. Feel free to rewatch anime.";
-          link.innerHTML = "You're just gonna be watching GochiUsa or Ro-Kyu-Bu! Right?";
+          message.innerHTML = "OK, OK. <a href='../animetimer.html' target='_blank'>Just set a timer for five minutes.</a>";
+          link.innerHTML = "Do something other than look at/think of cute anime girls.<br>If you're still thinking about them, just go with your urges.";
           link.style.display = "block";
           slider1.style.display = "none";
         }

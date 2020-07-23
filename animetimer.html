@@ -13,7 +13,7 @@
     <div id='times'>
       <div class='space2'>
         <span style='left:10%; position:absolute;' onclick="moveTime(-1)">⬅️</span>
-        <span id='time'>30 Minutes (Watch anime)</span>
+        <span id='time'>5 minutes (For forgetting)</span>
         <span style='right:10%; position:absolute;' onclick="moveTime(1)">➡️</span>
       </div>
       <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='startTimer()'>Start</span>
@@ -38,15 +38,15 @@
       //global variable that detects if the alarm has gone off.
       var alarmOff = false;
       //initializes the tp variable for the moveTime function as an array pointer.
-      var tp = 2;
+      var tp = 1;
       //initializes the addTimes variable for the adjustTime function. It keeps track of the number of times the addTime button is pressed.
       var addTimes = 0;
 
       function moveTime(distance) {
         //Each array element describes the length of the timer.
         var times = ["5 Seconds (Test the timer)",
-        "5 Minutes (For preparing)",
-        "30 Minutes (Watch anime)",
+        "5 Minutes (For forgetting)",
+        "30 Minutes (Take a break)",
         "1 Hour (Take a break)",
         "2 Hours (Take a break)"];
         //moves the array position via the distance parameter.
