@@ -236,8 +236,9 @@ function finalTest(inputText,site)
   else if(found(love,inputText) && site === "youtube")
     location.href = 'cyoa/38.html';
   else if(found(['really bored','very bored','nothing'],inputText)) {
-    $("message").innerHTML = "Why do nothing when there are so many things to do?";
-    $("link").innerHTML = "<a href='multiple.html'>Click here to continue.</a>";
+    $("message").innerHTML = "Ehem. You need to stop procrastinating.";
+    $("message").classList.remove("small");
+    $("link").innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
   }
   else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
     var messages = ['You really are bored.',
@@ -547,6 +548,15 @@ function cute(number) {
     default:
       $("message").innerHTML = "OK. Just remember this one thing:<br>Life isn't about seeking cuteness.";
       $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+}
+
+function rejectSomething(time) {
+  if(time === 1)
+    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+  else {
+    message.innerHTML = "Why do nothing when there are so many things to do?";
+    link.innerHTML = "<a href='multiple.html'>Click here to continue.</a>";
   }
 }
 
