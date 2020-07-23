@@ -31,10 +31,6 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
     document.body.removeChild($("link"));
   }
-  else if(found(['check', 'new'],inputText) && site !== "google") {
-    $("message").innerHTML = "There's nothing beneficial to see there.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-  }
   else if(found(['hunger', 'hungry', 'hangry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
     if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth()))
     {
@@ -47,15 +43,6 @@ function finalTest(inputText,site)
       $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
     }
   }
-  else if(found(['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'],inputText))
-    location.href = 'relapse.html';
-  else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched'],inputText))
-    location.href = 'kirby.html';
-  else if(found(['erection', 'boner'],inputText))
-    erectionQuestion(1);
-  else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'fantasy', 'fantasi', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
-  'whoa', 'nuke'],inputText))
-    location.href = 'whoa/index.html';
   else if(found(['suicid', 'die ', 'be dead', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'depressed', 'homicid',
   'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang myself', 'destroy myself', 'destroy my life', 'hate myself', 'hate my life', 'worthless'],inputText)
   && !found(wasteTime,inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText) || inputText.endsWith("die")) {
@@ -63,6 +50,19 @@ function finalTest(inputText,site)
     document.body.removeChild($("link"));
     document.body.style.color = "black";
     document.body.style.backgroundColor = "white";
+  }
+  else if(found(['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'],inputText))
+    location.href = 'relapse.html';
+  else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'fantasiz'],inputText))
+    location.href = 'kirby.html';
+  else if(found(['erection', 'boner'],inputText))
+    erectionQuestion(1);
+  else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
+  'whoa', 'nuke', 'emergency button'],inputText))
+    location.href = 'whoa/index.html';
+  else if(found(['check', 'new'],inputText) && site !== "google") {
+    $("message").innerHTML = "There's nothing beneficial to see there.";
+    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(found(['focus', 'concentrate'],inputText)) {
     $("message").innerHTML = "Well there's your problem.";
