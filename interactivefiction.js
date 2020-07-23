@@ -179,7 +179,7 @@ function finalTest(inputText,site)
       'It seems like you feel stuck.',
       'You need motivation.',
       'Why not use that search energy to make some progress on a task?',
-      'If you\'re bored, just try to do one of those four things.',
+      'If you\'re bored, just try to do something productive.',
       'You want to go there, but you don\'t need to go there.',
       'Don\'t be addicted to the internet.',
       'Fun things are good, but they are distractions.'];
@@ -256,7 +256,7 @@ function finalTest(inputText,site)
     'Is what you\'re doing what you really want?',
     'It seems like you feel stuck.',
     'You need motivation.',
-    'If you\'re bored, just try to do one of those four things.'];
+    'If you\'re bored, just try to do something productive.'];
     if(site !== 'hotanddry')
     {
       messages.push('Stop typing in addresses of distracting websites!',
@@ -290,7 +290,8 @@ function finalTest(inputText,site)
       'You want to be on your phone all the time? 🤣',
       'Now is not the time to be doing that.',
       'You really don\'t want to use your phone to kill boredom anyway.',
-      'There\'s e-books on your phone. Read them.');
+      'There\'s e-books on your phone. Read them.',
+      'You have a phone. Use it to call your grandparents.');
     }
     document.getElementById("message").innerHTML = messages[Math.floor(Math.random() * messages.length)];
     document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
