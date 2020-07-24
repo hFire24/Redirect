@@ -81,7 +81,8 @@ function finalTest(inputText,site)
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
   else if(found(['calm', 'relax', 'peace', 'chill', 'refresh', 'reenergize'],inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
-    location.href = generateAndrewJohnsonLink();
+    $("message").innerHTML = "Are you sitting down or lying down?";
+    $("link").innerHTML = "<div class='two-list'><a id='relax' href=" + generateAndrewJohnsonLink() + ">Sitting Down</a><a href='relax2.html'>Lying Down</a></a>";
   }
   else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
     if(d.getHours() >= 6 && d.getHours() <= 12) {
