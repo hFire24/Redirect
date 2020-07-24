@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme5">
+    <div id='break' class='space'><a id="link" href="" target="_blank">Listen to this instead. It is long, but worth it.</a></div>
+    <a class='hfire-link' href="15.html">Continue</a>
+  </body>
+  <script>
+    var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/relax-lite',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/positivity',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/astral-flying',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/be-grateful-with-andrew-johnson',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/mindful-awareness-meditation-2',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/be-happy',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/expansion-meditation-3',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/stress-free',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/mindful-breathing-12',
+    'https://insighttimer.com/andrewjohnson/guided-meditations/build-creativity'];
+    var d = new Date();
+    if(d.getHours() < 11)
+      meditationLinks.push('https://insighttimer.com/andrewjohnson/guided-meditations/morning-boost-meditation');
+    var index = Math.floor(Math.random() * meditationLinks.length);
+    document.getElementById("link").href = meditationLinks[index];
+  </script>
+</html>

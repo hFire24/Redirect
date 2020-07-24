@@ -10,7 +10,7 @@
   </head>
   <body class="theme5">
     <div id='break' class='space'><a id="link" href="" target="_blank">Listen to this. It won't take very long.</a></div>
-    <a class='hfire-link' href="15.html">Continue</a>
+    <div id='link' class='two-list'><a class='hfire-link' href="15.html">Continue</a><a class='hfire-link' href="62.html">I'm laying down</a></div>
   </body>
   <script>
     var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
@@ -28,6 +28,9 @@
     'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
     'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
     'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
+    var d = new Date();
+    if(d.getHours() < 11)
+      meditationLinks.push('https://insighttimer.com/andrewjohnson/guided-meditations/morning-boost-meditation');
     var index = Math.floor(Math.random() * meditationLinks.length);
     document.getElementById("link").href = meditationLinks[index];
   </script>
