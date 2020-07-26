@@ -23,14 +23,10 @@
       <a class='hfire-link' onclick="addicted(1)">Yes</a>
       <a class='hfire-link' onclick="restoreLink()">No</a>
     </div>
-    <div id='willpower' class='two-list' style='display:none;'>
-      <a class='hfire-link' onclick="addicted(2)">Limited</a>
-      <a class='hfire-link' onclick="addicted(3)">Unlimited</a>
-    </div>
-    <div id='willpower-limited' class='three-list' style='display:none;'>
-      <a class='hfire-link' onclick="addicted(4)">Running dry</a>
-      <a class='hfire-link' onclick="addicted(5)">A fair amount</a>
-      <a class='hfire-link' onclick="addicted(6)">Plentiful</a>
+    <div id='lazy-scale' class='three-list' style='display:none;'>
+      <a class='hfire-link' onclick="addicted(4)">Exhausted</a>
+      <a class='hfire-link' onclick="addicted(5)">Procrastinator</a>
+      <a class='hfire-link' onclick="addicted(6)">Determined</a>
     </div>
     <script>
     function submit() {
@@ -58,7 +54,7 @@
     }
 
     var reasons = ["Because I'm lazy",
-    "Because I'm bored", "Because I'm really bored", "I have nothing to do",
+    "Because I'm bored", "Because I'm tired", "Because I'm really bored", "I have nothing to do",
     "For no reason",
     "Because I feel like it",
     "Because I want to visit YouTube",
@@ -97,17 +93,9 @@
     function addicted(number) {
       switch(number) {
         case 1:
-          $("message").innerHTML = "Is willpower limited or unlimited?";
+          $("message").innerHTML = "What word best describes you at this moment?";
           $("yesno").style.display = "none";
-          $("willpower").style.display = "grid";
-          break;
-        case 2:
-          $("message").innerHTML = "How much willpower do you have left?";
-          $("willpower").style.display = "none";
-          $("willpower-limited").style.display = "grid";
-          break;
-        case 3:
-          $("newBreak").value = 'really bored';
+          $("lazy-scale").style.display = "grid";
           break;
         case 4:
           $("newBreak").value = 'exhausted';
@@ -116,16 +104,15 @@
           $("newBreak").value = 'really bored';
           break;
         case 6:
-          $("message").innerHTML = 'If you have so much willpower, then use it on something productive.';
+          $("message").innerHTML = 'If you have so much energy, then use it on something productive.';
           $("link").style.display = "block";
           $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-          $("willpower-limited").style.display = 'none';
+          $("lazy-scale").style.display = 'none';
           break;
       }
 
       if(number > 2 && number !== 6) {
-        $("willpower").style.display = "none";
-        $("willpower-limited").style.display = "none";
+        $("lazy-scale").style.display = "none";
         $("link").style.display = "block";
         submit();
       }

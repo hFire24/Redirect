@@ -10,7 +10,12 @@ var d = new Date();
 
 function finalTest(inputText,site)
 {
-  if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("do") >= 0 && (found(required,inputText) || inputText.indexOf("specific") >= 0))
+  if (inputText.indexOf("sick") >= 0 && inputText.indexOf("sick of") < 0)
+  {
+    $("message").innerHTML = "Your health matters. If you have some kind of disease, it's best to rest, drink plenty of fluids, and give your eyes a break.";
+    $("link").innerHTML = "Immediately put your electronic device away.";
+  }
+  else if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("do") >= 0 && (found(required,inputText) || inputText.indexOf("specific") >= 0))
     location.href = "custom.html";
   else if(inputText.indexOf("busy") >= 0)
     location.href = "busy.html";
@@ -40,7 +45,10 @@ function finalTest(inputText,site)
     else
     {
       $("message").innerHTML = "You need to eat some food right now.";
-      $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
+      if(d.getDay() === 0)
+        document.body.removeChild($("link"));
+      else
+        $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
     }
   }
   else if(found(['suicid', 'die ', 'be dead', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'depressed', 'homicid',
@@ -73,16 +81,16 @@ function finalTest(inputText,site)
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
-  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat',
+  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat', 'sick of',
   'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful'],inputText) || inputText === 'hate') {
     $("message").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + "> You need to calm down and relax.</a>";
-    $("link").innerHTML = "<ins onclick='leaveMeAlone(1)'>I don't feel like it.</ins>";
+    $("link").innerHTML = "<ins onclick='leaveMeAlone(0)'>I don't feel like it.</ins>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
   else if(found(['calm', 'relax', 'peace', 'chill', 'refresh', 'reenergize'],inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
-    $("message").innerHTML = "Are you sitting down or lying down?";
-    $("link").innerHTML = "<div class='two-list'><a id='relax' href=" + generateAndrewJohnsonLink() + ">Sitting Down</a><a href='relax2.html'>Lying Down</a></a>";
+    $("message").innerHTML = "Make the place nice and quiet. How much spare time do you have?";
+    $("link").innerHTML = "<div class='two-list'><a id='relax' href=" + generateAndrewJohnsonLink() + ">A Fair Amount</a><a href='relax2.html'>Plentiful</a></a>";
   }
   else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
     if(d.getHours() >= 6 && d.getHours() <= 12) {
@@ -95,7 +103,7 @@ function finalTest(inputText,site)
     }
     else if(d.getHours() < 22) {
       $("message").innerHTML = "You should recharge yourself. But how?";
-      $("link").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/evening-boost-meditation'>click here to continue.</a>"
+      $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
     }
     else
       location.href = "cyoa/14.html";
@@ -105,8 +113,10 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
-    $("message").innerHTML = "Why don't you use your laziness to your advantage?";
-    $("link").innerHTML = "<div class='two-list space'><a href=" + generateAndrewJohnsonLink() + ">I'm sitting.</a><a href='relax2.html'>I'm lying down.</a></div><a onclick='cantRelax(1)'>I can't relax due to noise.</a>";
+    $("message").innerHTML = "Are you lazy, or are you just exhausted?";
+    $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
+    //$("message").innerHTML = "Why don't you use your laziness to your advantage?";
+    //$("link").innerHTML = "<div class='two-list space'><a href=" + generateAndrewJohnsonLink() + ">I'm sitting.</a><a href='relax2.html'>I'm lying down.</a></div><a onclick='cantRelax(1)'>I can't relax due to noise.</a>";
   }
   else if(site === "deviantart" && (found(love,inputText)) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan'],inputText)) {
     $("message").innerHTML = "Do you really want to look at cute anime girls?";
@@ -363,13 +373,13 @@ function getBack(site)
 }
 
 function alreadyDrank() {
-  $("message").innerHTML = "Launch NGU Idle and farm for boosts/equipment.";
-  $("link").innerHTML = "<ins onclick='nguIdle()'>Done.</ins>";
+  $("message").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/morning-boost-meditation'>Listen to this.</a>";
+  $("link").innerHTML = "<ins onclick='meditated()'>Continue</ins>";
 }
 
-function nguIdle() {
+function meditated() {
   $("message").innerHTML = "Change to approrpriate clothes.<br>Take a walk outside.";
-  $("link").innerHTML = "<div class='two-list'><ins onclick='raining()'>But it's raining!</ins><ins onclick='hurt()'>But my feet hurt!</ins></div>";
+  $("link").innerHTML = "<div class='two-list'><a href='stepmania.html'>But it's raining!</a><ins onclick='hurt()'>But I hurt my foot!</ins></div>";
 }
 
 function hurt() {
@@ -382,10 +392,10 @@ function raining() {
   $("link").innerHTML = "<ins onclick='noStepmania()'>The TV is occupied, or I can't be making noise downstairs.</a>";
 }
 
-function noStepmania() {
+/*function noStepmania() {
   $("message").innerHTML = "OK, fine. Just sleep in for longer. Your body will thank me later.";
   document.body.removeChild($("link"));
-}
+}*/
 
 function generalConferenceMonth() {
   if (d.getMonth() === 3 || d.getMonth() === 9)
@@ -411,6 +421,10 @@ function erectionQuestion(number) {
 
 function leaveMeAlone(number) {
   switch(number) {
+    case 0:
+      $("message").innerHTML = "Are you stressed over the amount of work or homework you have to do?";
+      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='workStress()'>Yes</a> <a class='hfire-link' onclick='leaveMeAlone(1)'>No</a></div>";
+      break;
     case 1:
       $("message").innerHTML = "Are you upset over a missed opportunity that can come back?";
       $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='later()'>Yes</a> <a class='hfire-link' onclick='leaveMeAlone(2)'>No</a></div>";
@@ -445,9 +459,14 @@ function leaveMeAlone(number) {
   }
 }
 
+function workStress() {
+  $("message").innerHTML = "This is why I provided you with that link earlier. Use it to destress yourself.";
+  $("link").innerHTML = "<a href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+}
+
 function later() {
   $("message").innerHTML = "Be patient. I advise that you distract yourself by <a href='time.html'>doing something else</a> for the time being.";
-  $("link").innerHTML = "<a class='hfre-link' onclick='leaveMeAlone(99)'>But I'm still not feeling better!</a>";
+  $("link").innerHTML = "<a class='hfire-link' onclick='leaveMeAlone(99)'>But I'm still not feeling better!</a>";
 }
 
 var future;
