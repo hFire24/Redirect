@@ -15,6 +15,8 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Your health matters. If you have some kind of disease, it's best to rest, drink plenty of fluids, and give your eyes a break.";
     $("link").innerHTML = "Immediately put your electronic device away.";
   }
+  else if(inputText.indexOf("struggl") >= 0)
+    location.href = "struggle.html";
   else if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("do") >= 0 && (found(required,inputText) || inputText.indexOf("specific") >= 0))
     location.href = "custom.html";
   else if(inputText.indexOf("busy") >= 0)
@@ -30,8 +32,6 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("wait") >= 0)
     location.href = "cyoa/12.html";
-  else if(inputText.indexOf("struggl") >= 0)
-    location.href = "struggle.html";
   else if (inputText.indexOf("tasks") >= 0) {
     $("message").innerHTML = "Just type in \"ta\" in your browser and press enter.";
     document.body.removeChild($("link"));
