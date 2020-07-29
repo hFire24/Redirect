@@ -15,23 +15,23 @@
     <div id='parent' class='two-list' style="width:95%; margin:auto;">
     </div>
     <script>
-      var aHabits = [{text:"Digitize fifth journal <span class='time'>(3 pages)</span>",link:"pass"},
-      {text:"Code some stuff in C# <span class='time'>(15 minutes)</span>",link:"pass"},
-      {text:"Learn FL Studio <span class='time'>(1 lesson)</span>",link:"https://skl.sh/2Hq5hNy"},
+      var aHabits = [{text:"Digitize fifth journal <span class='time'>(½ page)</span>",link:"pass"},
+      {text:"Code some stuff in C# <span class='time'>(5 minutes)</span>",link:"pass"},
+      {text:"Learn FL Studio <span class='time'>(½ lesson)</span>",link:"https://skl.sh/2Hq5hNy"},
       {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html"},
       {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA"},
-      {text:"Doodle on your sketchpad <span class='time'>(2 minutes)</span>",link:"art.html"},
-      {text:"Learn Full Stack on Skillshare <span class='time'>(3 lessons)</span>",link:"https://skl.sh/38rV6DT"}];
+      {text:"<ins>Doodle</ins> on your sketchpad <span class='time'>(2 minutes)</span>",link:"art.html"},
+      {text:"Learn Full Stack on Skillshare <span class='time'>(2 lessons)</span>",link:"https://skl.sh/38rV6DT"}];
       do {
         shuffle(aHabits);
-      } while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(3 pages)</span>");
+      } while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(½ page)</span>");
 
 
-      var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/"},
+      var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 section)</span>",link:"https://read.amazon.com/"},
       {text:"Memorize Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/"},
       {text:"Learn Spanish via Duolingo <span class='time'>(2 lessons)</span>",link:"https://www.duolingo.com/"},
       {text:"Relax and meditate more <span class='time'>(1 session)</span>",link:"relax.html"},
-      {text:"Take a walk outside <span class='time'>(10 minutes per meal)</span>",link:"pass"}];
+      {text:"Take a walk outside <span class='time'>(5 minutes)</span>",link:"pass"}];
       shuffle(bHabits);
 
       function shuffle(array) {
