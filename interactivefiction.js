@@ -61,7 +61,7 @@ function finalTest(inputText,site)
   }
   else if(found(['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'],inputText))
     location.href = 'relapse.html';
-  else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'fantasiz'],inputText))
+  else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'already viewed', 'already browsed', 'fantasiz'],inputText))
     location.href = 'kirby.html';
   else if(found(['erection', 'boner'],inputText))
     erectionQuestion(1);
