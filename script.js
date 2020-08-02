@@ -171,7 +171,7 @@ function loadBreak(index) {
       message.href = "https://www.google.com/search?q=take+a+deep+breath";
       break;
     case messages.indexOf("Put on some focus/relaxation music."):
-      message.href = "https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451";
+      message.href = "https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA";
       break;
     case messages.indexOf("Put on some music to help you focus."):
       message.href = "musicSlider.html";
@@ -382,7 +382,7 @@ function addBigMessages() {
   'Did you think to pray?',
   '<a href="https://www.google.com/search?q=2+minute+timer">Give your eyes a short 2 minute break.</a>',
   '<a href="https://www.google.com/search?q=breathing+exercise">Don\'t forget to take deep breaths.</a>',
-  '<a href="https://play.google.com/music/listen?u=0#/wst/st/d9934a37-45b6-3997-a3f9-90d93a638451">Need help? Put on some relaxing music.</a>',
+  '<a href="https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA">Need help? Put on some relaxing music.</a>',
     //Task checking
   'Why don\'t you check your tasks for the day?',
   'How about you check your gTasks list?',
