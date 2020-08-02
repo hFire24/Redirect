@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Anime Timer</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon-clock.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme5" onload="startTimer()">
+    <div id='message' class='small space'>Don't do anything anime-related for about 5 minutes.</div>
+    <div id='times'>
+    </div>
+    <div id='post-timer' style='display:none;'>
+      <div class='three-list space'>
+        <a class='hfire-link' href='cyoa/6.html'>I want to do nothing</a>
+        <a class='hfire-link' href='cyoa/11.html'>I want to do something</a>
+        <a class='hfire-link' href='cyoa/56.html'>I'm already doing someting</a>
+      </div>
+    <a class='hfire-link' onclick='urgesWin()'>I'm still thinking about cute anime girls</a>
+    </div>
+    <script>
+      //a is for alarm, n is for now.
+      var a = new Date();
+      var n = new Date();
+      //global variable that keeps track of time
+      var myfunc;
+      //global variable that detects if the alarm has gone off.
+      var alarmOff = false;
+
+      function startTimer() {
+        //Sets n to the current time
+        n = new Date(Date.now());
+        //Displays current time to the console
+        console.log("Current time: " + n.getHours() + ":" + n.getMinutes() + ":" + n.getSeconds());
+
+        //Sets the alarm's second value by adding seconds from the parameter to the current time's second value.
+        a.setSeconds(0 + n.getSeconds());
+        //Sets the alarm's minute value by adding minutes from the parameter to the current time's minute value.
+        a.setMinutes(5 + n.getMinutes());
+        if(a.getSeconds() < n.getSeconds())
+        {
+          console.log("Hey. It is known that the second value of the alarm " + a.getSeconds() + " is less than the second value of the current time " + n.getSeconds());
+          //Adds one minute to the alarm's minute value.
+          a.setMinutes(1 + a.getMinutes());
+        }
+        if(a.getMinutes() === n.getMinutes() && a.getSeconds() < n.getSeconds() || a.getMinutes() < n.getMinutes())
+        {
+          if(a.getMinutes() === n.getMinutes() && a.getSeconds() < n.getSeconds()) {
+            console.log("Hey. It is known that the minute value of the alarm " + a.getMinutes() + " is equal to the minute value of the current time " + n.getMinutes());
+            console.log("AND It is known that the second value of the alarm " + a.getSeconds() + " is less than the second value of the current time " + n.getSeconds());
+          }
+          else
+            console.log("Hey. It is known that the minute value of the alarm " + a.getMinutes() + " is less than the minute value of the current time " + n.getMinutes());
+          //Adds one hour to the alarm's minute value.
+          a.setHours(1 + a.getHours());
+        }
+        //Displays alarm time to the console
+        console.log("Alarm will go off at " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
+
+        //Displays remaining time to the webpage
+        adjustTime();
+
+        //This function keeps track of time. It updates the timer and sets off the alarm when the current time matches the alarm time.
+        myfunc = setInterval(function() {
+          n = new Date(Date.now())
+          if(!alarmOff)
+            adjustTime();
+          if(n.getSeconds() === a.getSeconds() && n.getMinutes() === a.getMinutes() && n.getHours() === a.getHours()) {
+            alarmOff = true;
+            document.getElementById("message").innerHTML = "What are your thoughts right now?";
+            document.getElementById("times").style.display = "none";
+            document.getElementById("post-timer").style.display = "block";
+          }
+        }, 1000);
+      }
+
+      function adjustTime() {
+        //This calculates how much time is left between the alarm and the current time.
+        var timeLeft = a - n;
+        //Minutes, and seconds are calculated from that value.
+        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        //Add zeroes to seconds if the number is a single digit long.
+        if(seconds.toString().length === 1)
+          seconds = "0" + seconds;
+        //Displays updated remaining time to the webpage
+        document.getElementById("times").innerHTML = minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
+      }
+
+      function urgesWin() {
+        document.getElementById("message").innerHTML = "Looks like the thought hasn't gone away.";
+        document.getElementById("post-timer").innerHTML = "If you want that thought to go away, <a href='relax.html'>listen to one of these.</a> It should weaken them.";
+      }
+    </script>
+  </body>
+</html>

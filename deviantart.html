@@ -19,16 +19,41 @@
         </span><button onclick="submit()">Submit</button>
       </div>
     </div>
+    <div id='yesno' style='display:none;'>
+      <div class='two-list'>
+        <a class='hfire-link' onclick="addicted()">Yes</a>
+        <a class='hfire-link' onclick="restoreLink()">No</a>
+      </div>
+      <a class='hfire-link' onclick="addicted()">I wasn't until now.</a>
+    </div>
+    <div id='dependency' style='display:none;'>
+      <div class='slidercontainer space'>
+        <input type="range" min="0" max="6" value="1" class="slider" id="dependency-slider"> <button onclick="dependencySubmit()">Submit</button>
+      </div>
+      <div id="importance">It doesn’t bother me that much</div>
+    </div>
+    <audio id='press'>
+      <source src="media/Button Push.mp3" type="audio/mpeg">
+    </audio>
     <script>
     function submit() {
       console.log($("custom-reason").value);
       console.log($($("custom-reason").value).innerHTML);
+      console.log(dependencyValues[slider1.value]);
+      console.log(slider1.value);
+      console.log(slider1.value === "6");
       console.log($("newBreak").value);
       var inputText = '';
-      if($("custom-reason").value !== -1 && $("newBreak").value === '')
-        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      if($("newBreak").value === '')
+      {
+        if($($("custom-reason").value).innerHTML !== '')
+          inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+        else
+          inputText = dependencyValues[slider1.value];
+      }
       else
         inputText = $("newBreak").value.toLowerCase();
+      console.log(inputText);
       if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'erection', 'boner'],inputText))
         location.href = 'kirby.html';
       else if(found(['regress', 'younger', 'shrink', 'oversize', 'too big', 'gigantic', 'giant', 'huge', ' age', 'toddler', 'preschool', 'tiny'],inputText))
@@ -37,10 +62,28 @@
         $("message").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";
         document.body.removeChild($("link"));
       }
+      else if(slider1.value < 3 && $("newBreak").value === '' && $($("custom-reason").value).innerHTML === '')
+      {
+        $("message").innerHTML = "Control these thoughts and kick them out!";
+        $("link").innerHTML = "<a href='cyoa/20.html'>But I can't get them out!</a>";
+      }
+      else if(slider1.value === "5")
+        location.href = "fiveminutetimer.html";
+      else if(slider1.value === "6")
+      {
+        $("message").innerHTML = "✝PLAY TABERNACLE CHOIR MUSIC✝";
+        $("message").classList.remove("small");
+        $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButton()'>click here.</u>";
+      }
+      else if(inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText))
+        cute(1);
       else if(inputText.indexOf("thing in the world") >= 0)
         cute(3);
       else
         finalTest(inputText,"deviantart");
+      document.body.removeChild($('dependency'));
+      if($("link"))
+        $("link").style.display = "block";
     }
 
     var reasons = ["Because I'm lazy",
@@ -83,6 +126,48 @@
       option.value = i;
       option.innerHTML = reasons[i];
       document.getElementById("custom-reason").appendChild(option);
+    }
+
+    function addicted() {
+      $("message").innerHTML = "How much do these thoughts control you?";
+      $("yesno").style.display = "none";
+      $("dependency").style.display = "block";
+    }
+
+    var dependencyValues = ['They don’t control me',
+    'It doesn’t bother me that much',
+    'They control me somewhat',
+    'I want to look at cute anime girls',
+    'I really want to look at cute anime girls',
+    'I don’t want to do anything other than look at cute anime girls',
+    'I am depressed because I haven’t looked at cute anime girls'];
+    var dependency = document.getElementById("dependency");
+    var slider1 = document.getElementById("dependency-slider");
+    slider1.max = dependencyValues.length - 1;
+    slider1.oninput = function () {
+      importance.innerHTML = dependencyValues[slider1.value];
+    }
+
+    function dependencySubmit() {
+      submit();
+    }
+
+    function restoreLink() {
+      $("message").innerHTML = "Then why did you decide to go there?";
+      $("yesno").style.display = "none";
+      $("link").style.display = "block";
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function pushTheButton()
+    {
+      document.getElementById("press").play();
+      document.getElementById("thebutton").style.color = 'white';
+      await sleep(1750);
+      location.href = "https://www.thetabernaclechoir.org/listen.html";
     }
     </script>
     <script src="interactivefiction.js"></script>

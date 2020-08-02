@@ -364,9 +364,12 @@ function getBack(site)
     $("message").classList.remove("small");
     $("link").innerHTML = "Immediately close this tab.";
   }
-  else if(random < 15 && site === 'youtube')
+  else if(random < 16 && (site === 'youtube' || site === 'deviantart'))
   {
-    $("message").innerHTML = "Let me guess. You're bored and feel like going to YouTube.";
+    if(site === 'youtube')
+      $("message").innerHTML = "Let me guess. You're bored and feel like going to YouTube.";
+    else if(site === 'deviantart')
+      $("message").innerHTML = "Let me guess. You're thinking about cute anime girls.";
     $("link").style.display = "none";
     $("yesno").style.display = "grid";
   }
@@ -563,7 +566,7 @@ function cute(number) {
       $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cute(3)'>Cute anime girls are the best thing in the world.</a> <a class='hfire-link' style='color:gold;' onclick='cute(0)'>Click here if you want a better life.</a></div>";
       break;
     case 3:
-      $("message").innerHTML = "OK, OK. <a href='animetimer.html' target='_blank'>Just set a timer for five minutes.</a>";
+      $("message").innerHTML = "OK, OK. <a href='fiveminutetimer.html'>Just set a timer for five minutes.</a>";
       $("link").innerHTML = "Do something other than look at/think of cute anime girls.<br>If you're still thinking about them, just go with your urges.";
       break;
     default:
