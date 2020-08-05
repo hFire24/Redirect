@@ -16,25 +16,26 @@
     <div id='parent' class='two-list' style="width:95%; margin:auto;">
     </div>
     <script>
-      var aHabits = [{text:"Digitize fifth journal <span class='time'>(½ page)</span>",link:"pass"},
-      {text:"Code some stuff in C# <span class='time'>(5 minutes)</span>",link:"pass"},
-      {text:"Learn FL Studio <span class='time'>(½ lesson)</span>",link:"https://skl.sh/2Hq5hNy"},
-      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html"},
+      var aHabits = [{text:"Do the first thing on your to-do list",link:"index.html"},
       {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA"},
-      {text:"<ins>Doodle</ins> on your sketchpad <span class='time'>(2 minutes)</span>",link:"art.html"},
       {text:"Learn Full Stack on Skillshare <span class='time'>(3 lessons)</span>",link:"https://skl.sh/38rV6DT"},
-      {text:"Do the first thing on your to-do list",link:"index.html"}];
-      do {
+      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html"},
+      {text:"Digitize fifth journal <span class='time'>(½ page)</span>",link:"pass"},
+      {text:"Code some stuff in C# <span class='time'>(5 minutes)</span>",link:"pass"},
+      {text:"<ins>Doodle</ins> on your sketchpad <span class='time'>(2 minutes)</span>",link:"art.html"},
+      {text:"Learn FL Studio <span class='time'>(½ lesson)</span>",link:"https://skl.sh/2Hq5hNy"}];
+      /*do {
         shuffle(aHabits);
       } while (aHabits[0].text !== "Do the first thing on your to-do list");
-      //while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(½ page)</span>");
+      //while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(½ page)</span>");*/
 
 
       var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 section)</span>",link:"https://read.amazon.com/"},
-      {text:"Memorize Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/"},
+      {text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/"},
       {text:"Learn Spanish via Duolingo <span class='time'>(2 lessons)</span>",link:"https://www.duolingo.com/"},
       {text:"Relax and meditate more <span class='time'>(2 sessions)</span>",link:"relax.html"},
-      {text:"Take a walk outside <span class='time'>(5 minutes)</span>",link:"pass"}];
+      {text:"Take a walk outside <span class='time'>(5 minutes)</span>",link:"pass"},
+      {text:"Do an Elevate training session <span class='time'>(5 minutes)</span>",link:"pass"}];
       shuffle(bHabits);
 
       function shuffle(array) {
@@ -143,6 +144,9 @@
             break;
           case 77:
             deleteText("b4");
+            break;
+          case 78:
+            deleteText("b5");
             break;
           default:
             console.log("Key does nothing");
