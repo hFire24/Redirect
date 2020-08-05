@@ -127,18 +127,21 @@
             deleteText("a6");
             break;
           case 72:
-            deleteText("b0");
+            deleteText("a7");
             break;
           case 73:
-            deleteText("b1");
+            deleteText("b0");
             break;
           case 74:
-            deleteText("b2");
+            deleteText("b1");
             break;
           case 75:
-            deleteText("b3");
+            deleteText("b2");
             break;
           case 76:
+            deleteText("b3");
+            break;
+          case 77:
             deleteText("b4");
             break;
           default:
@@ -167,7 +170,6 @@
         {
           document.getElementById("message").innerHTML = "CONGRATULATIONS!";
           document.getElementById("best-results").innerHTML = "You did them all in one day!";
-          document.body.removeChild(advice);
           document.body.removeChild(parent);
           changeColor();
         }
