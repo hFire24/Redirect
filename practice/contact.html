@@ -56,6 +56,35 @@
         <div>
           <label for="message">Message:</label><textarea rows="5" cols="30" id="message" name="message"></textarea>
         </div>
+        <!--div>
+          <label for="subject">Subject</label>
+          <select id="subject">
+            <optgroup label="Product issues">
+              <option value="returns">Returns</option>
+              <option value="faulty_item">Faulty item</option>
+            </optgroup>
+            <optgroup label="Delivery">
+              <option value="delivery">Delivery Info</option>
+              <option value="order_tracking">Order Tracking</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="advice">Advice</option>
+              <option value="other">Other</option>
+            </optgroup>
+          </select>
+        </div-->
+        <div>
+          <label for="subject">Subject</label>
+          <input type="text" list="subjects" id="subject" placeholder="Enter your subject">
+          <datalist id="subjects">
+            <option value="returns">
+            <option value="faulty item">
+            <option value="delivery">
+            <option value="order tracking">
+            <option value="advice">
+            <option value="other">
+          </datalist>
+        </div>
         <div>
           <p>Subscribe to future offers by:</p>
           <label for="newsletter">Newsletter</label>
@@ -71,6 +100,11 @@
           <input type="radio" id="phoneResponse" name="response" value="phone">
           <label for="emailResponse">Email</label>
           <input type="radio" id="emailResponse" name="response" value="email">
+        </div>
+        <div>
+          <input type="submit">
+          <input type="reset">
+          <!--button type="submit">Submit</button-->
         </div>
       </form>
     </main>
