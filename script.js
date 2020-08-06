@@ -368,7 +368,7 @@ var redirectMessages = ['Stop typing in addresses of distracting websites!',
 'What other important things do you need to get done?',
 'You\'re not bored, lazy, or procrastinating. You are fearful.',
 'Quit running away from your problems.',
-'Distractions: An innefective way to cope fear. You should deal with your problems directly.',
+'Distractions: An ineffective way to cope fear. You should deal with your problems directly.',
 'Life isn\'t about seeking cuteness.',
 '😆You got redirected!😆'];
 //This message is added when the website is launched on mobile.
