@@ -59,12 +59,12 @@ function finalTest(inputText,site)
     document.body.style.color = "black";
     document.body.style.backgroundColor = "white";
   }
+  else if(found(['erection', 'boner'],inputText))
+    erectionQuestion(1);
   else if(found(['relapse', 'fapped', 'ejaculated', 'orgasmed', 'masturbated', 'refractory'],inputText))
     location.href = 'relapse.html';
   else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'already viewed', 'already browsed', 'fantasiz'],inputText))
     location.href = 'kirby.html';
-  else if(found(['erection', 'boner'],inputText))
-    erectionQuestion(1);
   else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
   'whoa', 'nuke', 'emergency button'],inputText))
     location.href = 'whoa/index.html';
@@ -582,6 +582,20 @@ function rejectSomething(time) {
     message.innerHTML = "Why do nothing when there are so many things to do?";
     link.innerHTML = "<a href='multiple.html'>Click here to continue.</a>";
   }
+}
+
+function createAdvice() {
+  var hydrate = Math.floor(Math.random() * 10);
+  console.log("Popup " + hydrate);
+  if (hydrate < 1)
+    $("hydrate").style.display = "block";
+  else if (hydrate < 2)
+    $("musictip").style.display = "block";
+}
+
+function disappear() {
+  document.getElementById("hydrate").style.display = "none";
+  document.getElementById("musictip").style.display = "none";
 }
 
 function $(x) {

@@ -107,6 +107,10 @@ td {
   font-size: 45px;
 }
 
+#hydrate, #musictip {
+  display:none;
+}
+
 .two-list {
   display:grid;
   grid-template-columns:auto auto;

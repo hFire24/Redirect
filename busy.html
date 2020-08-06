@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="cyoa/style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
@@ -25,21 +25,6 @@
       <source src="media/Button Push.mp3" type="audio/mpeg">
     </audio>
     <script>
-      function createAdvice()
-      {
-        var hydrate = Math.floor(Math.random() * 10);
-        console.log(hydrate);
-        if (hydrate < 2)
-          document.getElementById("hydrate").style.display = "block";
-        else if (hydrate < 3)
-          document.getElementById("musictip").style.display = "block";
-      }
-
-      function disappear() {
-        document.getElementById("hydrate").style.display = "none";
-        document.getElementById("musictip").style.display = "none";
-      }
-
       function submit() {
         console.log($("newBreak").value);
         var inputText = $("newBreak").value.toLowerCase();
