@@ -49,6 +49,10 @@
         $("message").innerHTML = "If you're quitting anime, you might as well abandon DeviantArt.";
         $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
       }
+      else if (inputText.indexOf("youtube") >= 0) {
+        $("message").innerHTML = "YouTube is your most frequented timesink. Avoid going there.";
+        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      }
       else
         finalTest(inputText,"hotanddry");
     }
