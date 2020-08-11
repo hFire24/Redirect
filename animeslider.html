@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme1">
+    <div id="message" class="small space">How much do these thoughts control you?</div>
+    <div id='link' class='space' style='display:none;'></div>
+    <div id='dependency'>
+      <div class='slidercontainer space'>
+        <input type="range" min="0" max="6" value="1" class="slider" id="dependency-slider"> <button onclick="submit()">Submit</button>
+      </div>
+      <div id="importance">It doesn’t bother me that much</div>
+    </div>
+    <audio id='press'>
+      <source src="media/Button Push.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+    function submit() {
+      console.log(slider1.value);
+      console.log(slider1.value === "6");
+      var inputText = dependencyValues[slider1.value];
+      console.log(inputText);
+      if(slider1.value < 3)
+      {
+        $("message").innerHTML = "Control these thoughts and kick them out!";
+        $("link").innerHTML = "<a href='cyoa/20.html'>But I can't get them out!</a>";
+      }
+      else if(slider1.value === "3")
+      {
+        $("message").innerHTML = "You want to do it, but you don't need to do it. There are other ways to feel happiness.";
+        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      }
+      else if(slider1.value === "4")
+      {
+        $("message").innerHTML = "You are being deceived by your urges!";
+        $("link").innerHTML = "<a href='art.html'>If you want to feel productive, then start drawing!</a>";
+      }
+      else if(slider1.value === "5")
+        location.href = "fiveminutetimer.html";
+      else if(slider1.value === "6")
+      {
+        $("message").innerHTML = "✝PLAY TABERNACLE CHOIR MUSIC✝";
+        $("message").classList.remove("small");
+        $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButton()'>click here.</u>";
+      }
+      document.body.removeChild($('dependency'));
+      if($("link"))
+        $("link").style.display = "block";
+    }
+
+    var dependencyValues = ['They don’t control me',
+    'It doesn’t bother me that much',
+    'They control me somewhat',
+    'I want to look at cute anime girls',
+    'I really want to look at cute anime girls',
+    'I don’t want to do anything other than look at cute anime girls',
+    'I am depressed because I haven’t looked at cute anime girls'];
+    var dependency = document.getElementById("dependency");
+    var slider1 = document.getElementById("dependency-slider");
+    slider1.max = dependencyValues.length - 1;
+    slider1.oninput = function () {
+      importance.innerHTML = dependencyValues[slider1.value];
+    }
+
+    function $(x)
+    {
+      return document.getElementById(x);
+    }
+    </script>
+  </body>
+</html>

@@ -142,7 +142,7 @@
 
         var linkMessages = ["Immediately close this tab."];
         for (var i = 1; i <= 30; i++)
-          linkMessages.push("Got something you need to do?");
+          linkMessages.push("How are you feeling?");
         //Get random link from array
         var linkIndex = Math.floor(Math.random() * linkMessages.length);
         if (index < 4)
@@ -170,7 +170,45 @@
         else if (message.startsWith('☢'))
           link.innerHTML = "<u onclick='pushTheButton(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
         else if (linkIndex > 0)
-          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        {
+          link.innerHTML =  linkMessages[linkIndex] + "<br><select id='dropdownMenu'></select> <button onclick='ok()'>OK</button>";
+          var feelings = [{text:"I got something I need to do",value:"custom"},
+          {text:"I'm ready to do something else",value:"time"},
+          {text:"Meh",value:"meh"},
+          {text:"I feel bored",value:"bored"},
+          {text:"I feel really bored",value:"multiple"},
+          {text:"I feel lazy",value:"lazy"},
+          {text:"I feel tired",value:"tired"},
+          {text:"I feel stressed",value:"stressed"},
+          {text:"I feel worried",value:"stressed"},
+          {text:"I feel busy",value:"busy"},
+          {text:"I feel unconfident",value:"unconfident"},
+          {text:"I feel overwhelmed",value:"overwhelmed"},
+          {text:"I feel impatient",value:"impatient"},
+          {text:"I got nothing to do",value:"multiple"},
+          {text:"I can't focus",value:"no focus"},
+          {text:"I am hungry",value:"hungry"},
+          {text:"I am procrastinating",value:"procrastinate"},
+          {text:"I am struggling in life",value:"struggle"},
+          {text:"I am waiting for something",value:"impatient"},
+          {text:"I already looked at bad stuff",value:"disappointed"},
+          {text:"I really want to do nothing",value:"nothing"},
+          {text:"I want to relax",value:"relax"},
+          {text:"I want to get motivated",value:"motivate"},
+          {text:"I want to accomplish goals",value:"goals"},
+          {text:"I want to complete tasks",value:"tasks"},
+          {text:"I want to listen to music",value:"music"},
+          {text:"I want to browse YouTube",value:"youtube"},
+          {text:"I want to look at cute anime girls",value:"anime girls"},
+          {text:"I feel like playing a game",value:"game"}];
+          for(var i = 0; i < feelings.length; i++)
+          {
+            var option = document.createElement("option");
+            option.innerHTML = feelings[i].text;
+            option.value = feelings[i].value;
+            $("dropdownMenu").appendChild(option);
+          }
+        }
         else
           link.innerHTML = linkMessages[linkIndex];
         //Put index value to the console
@@ -274,6 +312,10 @@
         }
         location.href = emergency;
       }
+
+      //To prepare things for the ok() function
+      message = $("message");
     </script>
+    <script src="script.js"></script>
   </body>
 </html>

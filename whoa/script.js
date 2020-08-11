@@ -37,7 +37,10 @@ function loadWebsite(index)
     index = index - 1;
   var message = document.getElementById("message");
   if(index === messages.indexOf("YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣"))
+  {
+    message.innerHTML = messages[index];
     message.removeAttribute("onClick");
+  }
   else if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
   {
     message.innerHTML = '✝' + messages[index] + '✝';

@@ -579,7 +579,8 @@ function randomLink(index,number) {
   //Array for link messages below the heading text
   var linkMessages = ["Immediately close this tab."];
   for (var i = 1; i <= 30; i++)
-    linkMessages.push("Got something you need to do?");
+    //linkMessages.push("Got something you need to do?");
+    linkMessages.push("How are you feeling?");
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   var message = $("message").innerHTML;
@@ -601,7 +602,45 @@ function randomLink(index,number) {
   else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
   else if (linkIndex > 0)
-    link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+  {
+    link.innerHTML =  linkMessages[linkIndex] + "<br><select id='dropdownMenu'></select> <button onclick='ok()'>OK</button>";
+    var feelings = [{text:"I got something I need to do",value:"custom"},
+    {text:"I'm ready to do something else",value:"time"},
+    {text:"Meh",value:"meh"},
+    {text:"I feel bored",value:"bored"},
+    {text:"I feel really bored",value:"multiple"},
+    {text:"I feel lazy",value:"lazy"},
+    {text:"I feel tired",value:"tired"},
+    {text:"I feel stressed",value:"stressed"},
+    {text:"I feel worried",value:"stressed"},
+    {text:"I feel busy",value:"busy"},
+    {text:"I feel unconfident",value:"unconfident"},
+    {text:"I feel overwhelmed",value:"overwhelmed"},
+    {text:"I feel impatient",value:"impatient"},
+    {text:"I got nothing to do",value:"multiple"},
+    {text:"I can't focus",value:"no focus"},
+    {text:"I am hungry",value:"hungry"},
+    {text:"I am procrastinating",value:"procrastinate"},
+    {text:"I am struggling in life",value:"struggle"},
+    {text:"I am waiting for something",value:"impatient"},
+    {text:"I already looked at bad stuff",value:"disappointed"},
+    {text:"I really want to do nothing",value:"nothing"},
+    {text:"I want to relax",value:"relax"},
+    {text:"I want to get motivated",value:"motivate"},
+    {text:"I want to accomplish goals",value:"goals"},
+    {text:"I want to complete tasks",value:"tasks"},
+    {text:"I want to listen to music",value:"music"},
+    {text:"I want to browse YouTube",value:"youtube"},
+    {text:"I want to look at cute anime girls",value:"anime girls"},
+    {text:"I feel like playing a game",value:"game"}];
+    for(var i = 0; i < feelings.length; i++)
+    {
+      var option = document.createElement("option");
+      option.innerHTML = feelings[i].text;
+      option.value = feelings[i].value;
+      $("dropdownMenu").appendChild(option);
+    }
+  }
   else
     link.innerHTML = linkMessages[linkIndex];
   //Put index value to the console
@@ -621,6 +660,126 @@ function randomLink(index,number) {
   else {
     document.getElementById("message").classList.remove("small");
     document.getElementById("message").classList.remove("tiny");
+  }
+}
+
+function ok() {
+  switch(dropdownMenu.value)
+  {
+    case "custom":
+      location.href = "custom.html";
+      break;
+    case "something":
+      location.href = "time.html";
+      break;
+    case "bored":
+      location.href = "cyoa/35.html";
+      break;
+    case "multiple":
+      location.href = "multiple.html";
+      break;
+    case "lazy":
+      message.innerHTML = "Are you lazy, or are you just exhausted?";
+      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
+      break;
+    case "tired":
+      if(d.getHours() >= 6 && d.getHours() <= 12) {
+        message.innerHTML = "You need to drink some water.";
+        $("hideable").removeChild(link);
+      }
+      else if(d.getHours() < 17) {
+        message.innerHTML = "You should take a power nap.";
+        link.innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap'>Click here to continue.</a>";
+      }
+      else if(d.getHours() < 22) {
+        message.innerHTML = "You should recharge yourself. But how?";
+        link.innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+      }
+      else
+        location.href = "cyoa/14.html";
+      break;
+    case "stressed":
+      message.innerHTML = "<a href=" + generateAndrewJohnsonLink() + ">You need to calm down and relax.</a>";
+      link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+      break;
+    case "busy":
+      location.href = "busy.html";
+      break;
+    case "unconfident":
+      message.innerHTML = "You need a real confidence boost.";
+      link.innerHTML = "<a id='relax'>Click here to continue.</a>";
+      var confidenceMeditations = ['https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation',
+      'https://insighttimer.com/andrewjohnson/guided-meditations/positivity',
+      'https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation',
+      'https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success',
+      'https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2',
+      'https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2'];
+      var confidenceIndex = Math.floor(Math.random() * confidenceMeditations.length);
+      $("relax").href = confidenceMeditations[confidenceIndex];
+      break;
+    case "overwhelmed":
+      location.href = "cyoa/48.html";
+      break;
+    case "impatient":
+      location.href = "cyoa/12.html";
+      break;
+    case "no focus":
+      location.href = "cyoa/18.html";
+      break;
+    case "hungry":
+      if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth()))
+      {
+        message.innerHTML = "<img src='media/Fasting.png' alt='a bunch of text that persuades the reader to fast on fast sunday'>";
+        $("hideable").removeChild(link);
+      }
+      else
+      {
+        message.innerHTML = "You need to eat some food right now.";
+        if(d.getDay() === 0)
+          $("hideable").removeChild(link);
+        else
+          link.innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
+      }
+      break;
+    case "procrastinate":
+      location.href = "https://alphaefficiency.com/4-types-procrastination-beat/";
+      break;
+    case "struggle":
+      location.href = "struggle.html";
+      break;
+    case "disappointed":
+      location.href = "kirby.html";
+      break;
+    case "nothing":
+      location.href = "cyoa/13.html";
+      break;
+    case "relax":
+      location.href = "relax.html";
+      break;
+    case "motivate":
+      location.href = "cyoa/15.html";
+      break;
+    case "goals":
+      location.href = "goals.html";
+      break;
+    case "tasks":
+      location.href = "cyoa/2.html";
+      break;
+    case "music":
+      location.href = "musicSlider.html";
+      break;
+    case "youtube":
+      location.href = "cyoa/37.html";
+      break;
+    case "anime girls":
+      location.href = "animeSlider.html";
+      break;
+    case "game":
+      message.innerHTML = "How long have you been being productive?";
+      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href=''>&lt;10 minutes</a><a class='hfire-link' href='cyoa/29.html'>At least 10 minutes</a></div>";
+      break;
+    default:
+      location.href = "cyoa/1.html";
   }
 }
 
