@@ -102,6 +102,7 @@ function loadBigBreak() {
     //Games
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'Play Sudoku.',
+  'Solve a Rubik\'s cube.',
     //Miscellaneous
   'No routine? Form one.',
   'How about multiple ways to take a break?',
@@ -426,6 +427,7 @@ function addBigMessages() {
   'Why don\'t you read that book you bought on Amazon?',
   '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?</a>',
   '<a href="goals.html">Check out the goals page for the big things you want to do!</a>',
+  'Try solving a Rubik\'s cube.',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
