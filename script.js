@@ -616,6 +616,7 @@ function randomLink(index,number) {
     {text:"I feel stressed",value:"stressed"},
     {text:"I feel worried",value:"stressed"},
     {text:"I feel busy",value:"busy"},
+    {text:"I feel disappointed",value:"stressed"},
     {text:"I feel unconfident",value:"unconfident"},
     {text:"I feel overwhelmed",value:"overwhelmed"},
     {text:"I feel impatient",value:"impatient"},
