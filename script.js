@@ -605,10 +605,10 @@ function randomLink(index,number) {
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
   else if (linkIndex > 0)
   {
-    link.innerHTML =  linkMessages[linkIndex] + "<br><select id='dropdownMenu'></select> <button onclick='ok()'>OK</button>";
-    var feelings = [{text:"I got something I need to do",value:"custom"},
+    link.innerHTML =  linkMessages[linkIndex] + " <a href='cyoa/35.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button onclick='ok()'>OK</button>";
+    var feelings = [{text:"Select an emotion",value:"lazy"},
+    {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
-    {text:"Meh",value:"meh"},
     {text:"I feel bored",value:"bored"},
     {text:"I feel really bored",value:"multiple"},
     {text:"I feel lazy",value:"lazy"},
@@ -627,6 +627,7 @@ function randomLink(index,number) {
     {text:"I am waiting for something",value:"impatient"},
     {text:"I already looked at bad stuff",value:"disappointed"},
     {text:"I really want to do nothing",value:"nothing"},
+    {text:"I want to fap",value:"whoa"},
     {text:"I want to relax",value:"relax"},
     {text:"I want to get motivated",value:"motivate"},
     {text:"I want to accomplish goals",value:"goals"},
@@ -754,6 +755,9 @@ function ok() {
       break;
     case "nothing":
       location.href = "cyoa/13.html";
+      break;
+    case "whoa":
+      location.href = "whoa/index.html";
       break;
     case "relax":
       location.href = "relax.html";

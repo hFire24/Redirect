@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://hfire24.github.io/Redirect/style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
@@ -171,10 +171,10 @@
           link.innerHTML = "<u onclick='pushTheButton2(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
         else if (linkIndex > 0)
         {
-          link.innerHTML =  linkMessages[linkIndex] + "<br><select id='dropdownMenu'></select> <button onclick='ok()'>OK</button>";
-          var feelings = [{text:"I got something I need to do",value:"custom"},
+          link.innerHTML =  linkMessages[linkIndex] + " <a href='cyoa/35.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='ok()'>OK</button>";
+          var feelings = [{text:"Select an emotion",value:"lazy"},
+          {text:"I got something I need to do",value:"custom"},
           {text:"I'm ready to do something else",value:"time"},
-          {text:"Meh",value:"meh"},
           {text:"I feel bored",value:"bored"},
           {text:"I feel really bored",value:"multiple"},
           {text:"I feel lazy",value:"lazy"},
@@ -193,6 +193,7 @@
           {text:"I am waiting for something",value:"impatient"},
           {text:"I already looked at bad stuff",value:"disappointed"},
           {text:"I really want to do nothing",value:"nothing"},
+          {text:"I want to fap",value:"whoa"},
           {text:"I want to relax",value:"relax"},
           {text:"I want to get motivated",value:"motivate"},
           {text:"I want to accomplish goals",value:"goals"},
