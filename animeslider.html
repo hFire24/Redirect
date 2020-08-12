@@ -72,6 +72,25 @@
     {
       return document.getElementById(x);
     }
+
+    async function pushTheButton()
+    {
+      var press = document.createElement("audio");
+      var source = document.createElement("source");
+      source.src = 'media/Button Push.mp3';
+      source.type = 'audio/mpeg';
+      press.appendChild(source);
+      press.id = "press";
+      document.body.appendChild(press);
+      $("press").play();
+      $("thebutton").style.color = 'white';
+      await sleep(1750);
+      location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";;
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
     </script>
   </body>
 </html>
