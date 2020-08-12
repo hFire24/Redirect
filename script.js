@@ -605,7 +605,7 @@ function randomLink(index,number) {
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
   else if (linkIndex > 0)
   {
-    link.innerHTML =  linkMessages[linkIndex] + " <a href='cyoa/35.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button onclick='ok()'>OK</button>";
+    link.innerHTML =  linkMessages[linkIndex] + " <a href='cyoa/35.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='ok()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
     {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
