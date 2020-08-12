@@ -53,8 +53,6 @@
           }
           else
             console.log("Hey. It is known that the minute value of the alarm " + a.getMinutes() + " is less than the minute value of the current time " + n.getMinutes());
-          //Adds one hour to the alarm's minute value.
-          a.setHours(1 + a.getHours());
         }
         //Displays alarm time to the console
         console.log("Alarm will go off at " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds());
@@ -86,7 +84,7 @@
         if(seconds.toString().length === 1)
           seconds = "0" + seconds;
         //Displays updated remaining time to the webpage
-        document.getElementById("times").innerHTML = minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
+        document.getElementById("times").innerHTML = "<span id='minutes'>" + minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
       }
 
       function urgesWin() {
