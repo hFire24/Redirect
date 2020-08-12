@@ -403,7 +403,7 @@ function addBigMessages() {
   'Sometimes just browsing your music library could be fun.',
   '<a href="musicSlider.html">Why don\'t you put on some music to help you focus?</a>',
   '<a href="musicSlider.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
-  '<a href="https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell">If things aren\'t going your way, put on some epic music!</a>',
+  '<a href="https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
