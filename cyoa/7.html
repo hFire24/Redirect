@@ -4,9 +4,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Do math.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:wght@800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+      .mathpad {
+        display:grid;
+        grid-template-columns:auto auto auto;
+        width: 30%;
+        margin:auto;
+        border: 1px solid #000;
+      }
+
+      .number {
+        font-family: /*Futura XBlk BT,*/ AvenirNext-Heavy, 'Barlow', 'Arial Black', sans-serif;
+      }
+
+      @media only screen and (max-width: 1702px) {
+        .mathpad {
+          width: 30%;
+        }
+      }
+
+      @media only screen and (max-width: 1135px) {
+        .mathpad {
+          width: 40%;
+        }
+      }
+
+      @media only screen and (max-width: 567px) {
+        .mathpad {
+          width: 50%;
+        }
+      }
+    </style>
   </head>
   <body class="theme9">
     <div id='break' class='space'>OK, fine. Solve some math problems.</div>

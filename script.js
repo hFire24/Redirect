@@ -470,7 +470,7 @@ function addBigMessages() {
     //Rejected relapse messages
   'Become a better person.',
   'Expunge that bad habit.',
-  'Why did you do that? <span style="font-family:\'Futura Md BT\',sans-serif;">:(</span>',
+  'Why did you do that? <span style="font-family: Futura Md BT, sans-serif;">:(</span>',
   'To win in life, you must endure trials. It won\'t necessarily be fun, but it will make you better.',
   'Escape from temptation.',
   'Is what you\'re doing what you really want?',

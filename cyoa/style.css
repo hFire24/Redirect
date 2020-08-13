@@ -1,27 +1,10 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, 'Bahnschrift Bold SemiCondensed', AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Barlow Semi Condensed', Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, sans-serif;
   color: white;
   font-size: 84px;
   text-align: center;
   margin-top: 25px;
-}
-
-.morning {
-  background-color: white;
-  color: black;
-  position: relative;
-  animation-name: rise;
-  animation-duration: 2s;
-}
-
-.morning a {
-  color:black;
-}
-
-@keyframes rise {
-  from {opacity: 0; top:100px;}
-  to {opacity: 1; top:0px;}
 }
 
 .small {
@@ -85,25 +68,8 @@ img {
   margin: auto;
 }
 
-#stress, .stress {
-  font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
-  color: red;
-}
-
 #stress a {
   color: red;
-}
-
-.mathpad {
-  display:grid;
-  grid-template-columns:auto auto auto;
-  width: 30%;
-  margin:auto;
-  border: 1px solid #000;
-}
-
-.number {
-  font-family: Futura XBlk BT, AvenirNext-Heavy, 'Arial Black', sans-serif;
 }
 
 .mathpad .number, .priorities td {
@@ -117,14 +83,6 @@ img {
 td {
   padding: 7px;
   font-size: 45px;
-}
-
-.priorities td {
-  padding: 0 14px;
-}
-
-.priorities th {
-  padding: 0 21px;
 }
 
 .three-list {
@@ -259,7 +217,7 @@ td {
   #message, #break.big, h1 {
     font-size: 100px;
   }
-  #break, #stress a, #standup, #changeclothes, #question, h2, #meme1, #meme2 {
+  #break, #standup, #changeclothes, #question, h2, #meme1, #meme2 {
     font-size: 75px;
   }
   td {
@@ -270,9 +228,6 @@ td {
   }
   .space2 {
     margin-bottom:0.6em;
-  }
-  .mathpad {
-    width: 30%;
   }
   .slider {
     height: 20px;
@@ -294,7 +249,7 @@ td {
   #message, #break.big, h1 {
     font-size: 60px;
   }
-  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
+  #break, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
     font-size: 44px;
   }
   .space2 {
@@ -303,9 +258,6 @@ td {
   input[type='radio'] {
     width:20px;
     height:20px;
-  }
-  .mathpad {
-    width: 40%;
   }
   .slider {
     height: 15px;
@@ -327,7 +279,7 @@ td {
   #message, #break.big, h1 {
     font-size: 40px;
   }
-  #break, #stress a, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
+  #break, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
     font-size: 30px;
   }
   .space2 {
@@ -336,9 +288,6 @@ td {
   input[type='radio'] {
     width:15px;
     height:15px;
-  }
-  .mathpad {
-    width: 50%;
   }
   .slider {
     height: 10px;

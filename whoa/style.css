@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Barlow Semi Condensed", Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: red;
   font-size: 84px;
   text-align: center;
@@ -12,7 +12,7 @@ a {
 }
 
 #message {
-  font-family: Impact, Haettenschweiler, Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Barlow Semi Condensed", Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
   font-size: 140px;
   color: yellow;
 }
@@ -22,7 +22,7 @@ a {
 }
 
 #stress {
-  font-family: Futura XBlkIt BT, 'Bahnschrift Bold', AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  font-family: "Barlow", Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: white;
 }
 

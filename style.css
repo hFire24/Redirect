@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  font-family: Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Barlow Semi Condensed', Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, sans-serif;
   color: white;
   font-size: 84px;
   text-align: center;
@@ -94,7 +94,7 @@ input[type='checkbox']:checked {
 }
 
 #stress, .stress {
-  font-family: Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  font-family: 'Barlow', Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
   color: red;
 }
 
