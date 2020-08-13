@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body onload='loadWebsite(0)'>
+  <body onload="loadWebsite()">
     <div id='message' class='space' onClick='nuke()'></div>
-    <div class='space'><u id='link' onclick="pushTheButton()">Click here</u> and
+    <div id='lower-message' class='space'><u id='link' onclick="pushTheButton()">Click here</u> and
     <a href="../bigbreak.html">do something else.</a></div>
-    <a href='../cyoa/1.html'>Feeling stuck?</a>
+    <!--a id='stuck' href='../cyoa/1.html'>Feeling stuck?</a-->
     <audio id='nuke'>
       <source src="../media/Tactical Nuke.mp3" type="audio/mpeg">
     </audio>

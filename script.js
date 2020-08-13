@@ -628,7 +628,7 @@ function randomLink(index,number) {
     {text:"I am waiting for something",value:"impatient"},
     {text:"I already looked at bad stuff",value:"disappointed"},
     {text:"I really want to do nothing",value:"nothing"},
-    {text:"I want to fap",value:"whoa"},
+    {text:"I want to do someting bad",value:"whoa"},
     {text:"I want to relax",value:"relax"},
     {text:"I want to get motivated",value:"motivate"},
     {text:"I want to accomplish goals",value:"goals"},

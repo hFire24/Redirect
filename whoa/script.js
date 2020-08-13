@@ -1,4 +1,4 @@
-var messages = ['DO NOT FAP',
+/*var messages = ['DO NOT FAP',
 'ERADICATE THE SIN OF LUST',
 'DO NOT SIN ON CERTAIN WEBSITES',
 'DO NOT GO AGAINST THE TEACHINGS OF JESUS',
@@ -27,37 +27,37 @@ var messages = ['DO NOT FAP',
 'STOP TYPING IN ADDRESSES OF SINFUL WEBSITES',
 'NO MORE OF THIS BS.<br>YOU UNDERSTAND?',
 'RESIST SATAN\'S TEMPTATIONS',
-'OH MY FURTING GOO. SERIOUSLY!?'];
+'OH MY FURTING GOO. SERIOUSLY!?'];*/
 
-function loadWebsite(index)
-{
-  if(index < 1 || index > messages.length)
-    index = Math.floor(Math.random() * messages.length);
-  else
-    index = index - 1;
-  var message = document.getElementById("message");
-  if(index === messages.indexOf("YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣"))
-  {
-    message.innerHTML = messages[index];
+var messages = [];
+for (var i = 1; i <= 29; i++)
+  messages.push("IMMEDIATELY LEAVE");
+messages.push("PLAY TABERNACLE CHOIR MUSIC");
+var message = document.getElementById("message");
+
+function loadWebsite() {
+  var index = Math.floor(Math.random() * 30);
+  if(messages[index] === "YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣")
     message.removeAttribute("onClick");
-  }
-  else if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
+  else if(messages[index] === "PLAY TABERNACLE CHOIR MUSIC")
   {
     message.innerHTML = '✝' + messages[index] + '✝';
     message.removeAttribute("onClick");
   }
   else
     message.innerHTML = '☢' + messages[index] + '☢';
-  if (index === messages.indexOf("<i>PLAY FURY OF THE STORM </i>"))
-    link = "https://youtu.be/5i7qZxICwgQ";
-  else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
-    link = "../repent2.html";
-  else if(index === messages.indexOf("PLAY TABERNACLE CHOIR MUSIC"))
+  if(messages[index] === "PLAY TABERNACLE CHOIR MUSIC")
     link = "https://www.thetabernaclechoir.org/listen.html";
   else
-    link = "https://emergency.nofap.com/redirect?religious=true&cat=em";
-  createAdvice();
+    document.getElementById("lower-message").innerHTML = "Do not bring your phone with you."
 }
+
+if (message.innerHTML === "☢<i>PLAY FURY OF THE STORM </i>☢")
+  link = "https://youtu.be/5i7qZxICwgQ";
+createAdvice();
+
+/*else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
+  link = "../repent2.html";*/
 
 async function createAdvice()
 {
