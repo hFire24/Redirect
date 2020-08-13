@@ -60,57 +60,40 @@
         'Distractions: An ineffective way to cope fear. You should deal with your problems directly.',
         'Life isn\'t about seeking cuteness.',
         '😆You got redirected!😆',
-        '☢DO NOT FAP☢',
-        '☢ERADICATE THE SIN OF LUST☢',
-        '☢DO NOT SIN ON CERTAIN WEBSITES☢',
-        '☢DO NOT GO AGAINST THE TEACHINGS OF JESUS☢',
-        '☢YOU NEED MORE JESUS☢',
-        '☢DO NOT PROCRASTURBATE☢',
-        '☢DO NOT SCREW UP YOUR DAY☢',
-        '☢DO NOT DESTROY YOUR FUTURE☢',
-        '☢DO NOT BE A SICK DEGENERATE☢',
-        '☢DO NOT THROW YOUR LIFE AWAY☢',
-        '☢DO NOT FURTHER CORRUPT YOURSELF☢',
-        '☢DO NOT INDULGE IN TABOO PLEASURES☢',
-        '☢DO NOT EVEN THINK ABOUT RELAPSING☢',
-        '☢DO NOT THINK OF IMMORAL FANTASIES☢',
-        '☢DO NOT LET YOUR URGES DICTATE YOU☢',
-        '☢DO NOT SEEK FOR SEXUALLY PLEASING THINGS☢',
-        '☢YOU WERE REDIRECTED FROM A DANGEROUS SEARCH TERM☢',
-        '☢YOU HAVE OTHER THINGS TO DO☢',
-        '☢☢☢☢☢☢☢☢☢☢☢',
-        '☢UNCLEAN SEARCH QUERY HAS BEEN CONTAINED☢',
-        '☢THAT UNSAFE SEARCH TERM IS BLOCKED☢',
-        '✝PLAY TABERNACLE CHOIR MUSIC✝',
-        '☢<i>PLAY FURY OF THE STORM </i>☢',
-        '☢THINK OF SOMETHING ELSE☢',
-        '☢ANYTHING SEXUALLY AROUSING IS TERRIBLE☢',
-        '☢STOP TYPING IN SINFUL SEARCH TERMS☢',
-        '☢NO MORE OF THIS BS.<br>YOU UNDERSTAND?☢',
-        '☢RESIST SATAN\'S TEMPTATIONS☢',
-        '☢OH MY FURTING GOO. SERIOUSLY!?☢',
-        'No more fapping.',
-        'You had been tempted by Satan.',
-        'Don\'t ever sin again.',
+        '<a href="repent2.html">You need more Jesus.</a>',
+        'Do not screw up your day.',
+        'Do not ruin, darken, or destroy your future.',
+        'Do not throw your life away.',
+        'Don\'t be dictated by your urges.',
+        'You have more important things to do than browse some websites.',
+        'Think of something else.',
+        'Resist temptations.',
+        '<a href="repent2.html">Do not forsake God.</a>',
+        'Don\'t procrasturbate and be a loser.',
+        'Do not abandon goals.',
+        'You must snap out of it!',
+        'This is unacceptable.',
+        'Stop it and get some help.',
+        'Get out of here!',
+        'Now is not the time to be doing that.',
         'Please stop being lazy, and stop wasting your time.',
-        'You screwed up. This is not OK.',
         'Make your future brighter before it\'s too late.',
-        'Don\'t waste your life viewing immoral images.',
-        'You must take NoFap seriously.',
         'Quitting indulgent activities is not easy, but worth it.',
         'Watch your thoughts; they become words.<br>Watch your words; they become actions.<br>Watch your actions; they become habits.<br>Watch your habits; they become character.<br>Watch your character; it becomes your destiny.',
-        'Freedom is not being dictated by your urges.',
-        'No more looking at sexual things.',
         'Do not feel weak. You are stronger than you think.',
         'Your ideal self is a cute little kid? 🤣🤣',
+        'Be sure you get important things done.',
         'Freedom from addictions. That should be a goal.',
         'Do you really want to look at pics of cute anime girls?',
-        'You are not prepared for the Second Coming.',
         'You are capable of doing great things.',
-        'There\'s more to life than your deep desires.',
         'Freedom is not falling into Satan\'s temptations.'];
+        for(var i = 0; i < 12; i++)
+          redirectMessages.push("☢IMMEDIATELY LEAVE☢");
+        redirectMessages.push('✝PLAY TABERNACLE CHOIR MUSIC✝',
+        '☢<i>PLAY FURY OF THE STORM </i>☢');
         //Get random message index from messages array
         var index = Math.floor(Math.random() * redirectMessages.length);
+        index = redirectMessages.length - 1;
         var d = new Date();
         var sleepTime = Math.floor(Math.random() * 5);
         if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
@@ -168,7 +151,7 @@
         else if (index >= redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index <= redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
           link.innerHTML = "<u onclick='pushTheButton2(2)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
         else if (message.startsWith('☢'))
-          link.innerHTML = "<u onclick='pushTheButton2(1)'>Click here.</u> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+          link.innerHTML = "Do not bring your phone with you.";
         else if (linkIndex > 0)
         {
           link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='ok()'>OK</button>";
