@@ -94,7 +94,6 @@
         '☢<i>PLAY FURY OF THE STORM </i>☢');
         //Get random message index from messages array
         var index = Math.floor(Math.random() * redirectMessages.length);
-        index = redirectMessages.length - 1;
         var d = new Date();
         var sleepTime = Math.floor(Math.random() * 5);
         if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
@@ -204,7 +203,7 @@
         if(message.startsWith('☢') || message.startsWith('✝'))
         {
           theme = 10;
-          $("message").style.fontFamily = "Impact", Haettenschweiler, HelveticaNeue-CondensedBlack, "Barlow Semi Condensed", sans-serif;
+          $("message").style.fontFamily = "Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, Barlow Semi Condensed, sans-serif";
         }
         var themeText = document.createElement("div");
         themeText.id = "theme";
