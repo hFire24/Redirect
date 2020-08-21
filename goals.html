@@ -17,26 +17,27 @@
     <div id='parent' class='two-list' style="width:95%; margin:auto;">
     </div>
     <script>
-      var aHabits = [{text:"Do the first thing on your to-do list",link:"index.html"},
-      {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA"},
-      {text:"Learn Full Stack on Skillshare <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT"},
-      {text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass"},
-      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html"}
-      //{text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass"}];
+      var aHabits = [{text:"Tackle your to-do list (1 task)",link:"index.html",category:"passive"},
+      {text:"Do your homework <span class='time'>(2 hours)</span>",link:"homework.html",category:"active"},
+      {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
+      {text:"*Learn Full Stack on Skillshare <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
+      {text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
+      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"}
+      //{text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"}];
       ];
       do {
         shuffle(aHabits);
-      } while (aHabits[0].text !== "Do the first thing on your to-do list");
+      } while (aHabits[0].text !== "Tackle your to-do list (1 task)" || aHabits[1].text !== "Do your homework <span class='time'>(2 hours)</span>");
       //while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(½ page)</span>");*/
 
-      var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/"},
-      {text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/"},
-      {text:"Learn Spanish via Duolingo <span class='time'>(3 lessons)</span>",link:"https://www.duolingo.com/"},
-      {text:"Relax and meditate more <span class='time'>(2 sessions)</span>",link:"relax.html"},
-      {text:"Take a walk outside <span class='time'>(5 minutes)</span>",link:"pass"},
-      {text:"Do an Elevate training session <span class='time'>(5 minutes)</span>",link:"pass"},
-      {text:"Read the Daily Verse and more <span class='time'>(5 minutes)</span>",link:"dvprogress.html"}
-      //{text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html"}];
+      var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
+      //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
+      {text:"Learn Spanish via Duolingo <span class='time'>(3 lessons)</span>",link:"https://www.duolingo.com/",category:"active"},
+      {text:"Relax and meditate more <span class='time'>(2 sessions)</span>",link:"relax.html",category:"passive"},
+      {text:"Take a walk outside <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
+      {text:"Do an Elevate training session <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
+      {text:"Read the Daily Verse and more <span class='time'>(5 minutes)</span>",link:"dvprogress.html",category:"active"}
+      //{text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"}];
       ];
       shuffle(bHabits);
 
@@ -70,8 +71,11 @@
           var y = Math.floor(Math.random() * 128);
           var z = Math.floor(Math.random() * 32) + 96;
           var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-          document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
+          aElement = document.getElementById("a" + parseInt(i))
+          aElement.style.backgroundColor = bgColor;
           console.log(aHabits[i]);
+          if(aHabits[i].category === "passive")
+            aElement.style.color = "#7BF";
         }
       }
 
@@ -94,8 +98,11 @@
           y = Math.floor(Math.random() * 128);
           z = Math.floor(Math.random() * 32) + 96;
           bgColor = "rgb(" + x + "," + y + "," + z + ")";
-          document.getElementById("b" + parseInt(j)).style.backgroundColor = bgColor;
+          bElement = document.getElementById("b" + parseInt(j))
+          bElement.style.backgroundColor = bgColor;
           console.log(bHabits[j]);
+          if(bHabits[j].category === "passive")
+            bElement.style.color = "#7BF";
         }
       }
 

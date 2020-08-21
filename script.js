@@ -90,7 +90,7 @@ function loadBigBreak() {
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Make a plan for today and tomorrow.',
-    /*Homework
+    //Homework
   'Do homework.<br>You may need to stand up and stretch and change clothes.',
   'Get assignments done.<br>You may need to stand up and stretch and change clothes.',
   'If you\'re struggling with homework, do a different assignment.',
@@ -98,7 +98,7 @@ function loadBigBreak() {
   //'Make progress on a big project.',
   'Finish a piece of homework, even if the deadline is far.',
   'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
-  'Don\'t suck at group projects.',*/
+  'Don\'t suck at group projects.',
     //Games
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'Play Sudoku.',
@@ -180,9 +180,9 @@ function loadBreak(index) {
     case messages.indexOf("Play one of these short games."):
       message.href = "cyoa/46.html";
       break;
-    /*case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
-      message.href = "https://play.google.com/music/m/Aym2r2mohqm3rio4gwqnsjjzfdm?t=Two_Steps_from_Hell";
-      break;*/
+    case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
+      message.href = "https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw";
+      break;
     case messages.indexOf("Increase your spirituality."):
       message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
       break;
@@ -393,12 +393,12 @@ function addBigMessages() {
   'If you\'re failing to plan, you\'re planning to fail.',
   'Why don\'t you <a href="https://youtu.be/r-dMhpgj0PA">think about things</a> you want and need to do?',
   'You may want to form a routine.',
-    /*Homework
+    //Homework
   'How about you do your homework?',
   'Why don\'t you get assignments done?',
   'I get that homework can be a struggle.<br>Try to change your mindset.',
   'Why don\'t you check Blackboard?',
-  'Why not get an assignment done early? You\'ll get a head start!',*/
+  'Why not get an assignment done early? You\'ll get a head start!',
     //Music
   'Sometimes just browsing your music library could be fun.',
   '<a href="musicSlider.html">Why don\'t you put on some music to help you focus?</a>',
@@ -520,8 +520,8 @@ function addBigMessages() {
   'Drop all your distracting habits.',
   'All distracting thoughts need to go away.',
   'You thought about something you shouldn\'t think of.',
-  //'Don\'t procrastinate and fail the semester.',
-  //'Do you want to fail your classes or not?',
+  'Don\'t procrastinate and fail the semester.',
+  'Do you want to fail your classes or not?',
   'Control yourself, or else you will lose in life.',
   'Forget about things that are currently distracting you.',
   'Why would you do this? You stupid idiot!',
