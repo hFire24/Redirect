@@ -41,6 +41,14 @@
       ];
       shuffle(bHabits);
 
+      var cHabits = [{text:"Play 100% Orange Juice <span class='time'>(2 games)</span>",link:"pass",category:"active"},
+      {text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
+      {text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
+      {text:"Play I Love Hue <span class='time'>(2 puzzles)</span>",link:"pass",category:"active"},
+      {text:"Play Minesweeper <span class='time'>(1 successful solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
+      {text:"Play Smash Ultimate <span class='time'>(30 minutes)</span>",link:"pass",category:"active"}];
+      shuffle(cHabits);
+
       function shuffle(array) {
         for (var i = array.length - 1; i > 0; i--) {
           var j = Math.floor(Math.random() * i);
@@ -106,8 +114,36 @@
         }
       }
 
+      async function buildCArray()
+      {
+        for(var k = 0; k < cHabits.length; k++)
+        {
+          var cElement = document.createElement("a");
+          cElement.id = "c" + k;
+          cElement.classList.add("hfire-link");
+          cElement.innerHTML = String.fromCharCode(65 + aHabits.length + bHabits.length + k) + ": " + cHabits[k].text;
+          if(cHabits[k].link !== "pass")
+          {
+            cElement.href = cHabits[k].link;
+            cElement.target = "_blank";
+          }
+          parent.appendChild(cElement);
+          //Creates a random background color for the element
+          x = Math.floor(Math.random() * 128);
+          y = Math.floor(Math.random() * 128);
+          z = Math.floor(Math.random() * 32) + 96;
+          bgColor = "rgb(" + x + "," + y + "," + z + ")";
+          cElement = document.getElementById("c" + parseInt(k))
+          cElement.style.backgroundColor = bgColor;
+          console.log(cHabits[k]);
+          if(cHabits[k].category === "passive")
+            cElement.style.color = "#7BF";
+        }
+      }
+
       buildAArray();
       buildBArray();
+      buildCArray();
 
       window.onbeforeunload = function() { return "Would you really like to leave this page?"; }
 
@@ -151,6 +187,24 @@
           case 76:
             deleteText("b5");
             break;
+          case 77:
+            deleteText("c0");
+            break;
+          case 78:
+            deleteText("c1");
+            break;
+          case 79:
+            deleteText("c2");
+            break;
+          case 80:
+            deleteText("c3");
+            break;
+          case 81:
+            deleteText("c4");
+            break;
+          case 82:
+            deleteText("c5");
+            break;
           default:
             console.log("Key does nothing");
         }
@@ -173,7 +227,7 @@
           }
         }
         console.log(deletedElements);
-        if(deletedElements.length === aHabits.length + bHabits.length)
+        if(deletedElements.length === aHabits.length + bHabits.length + cHabits.length)
         {
           document.getElementById("message").innerHTML = "CONGRATULATIONS!";
           document.getElementById("best-results").innerHTML = "You did them all in one day!";
