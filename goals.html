@@ -61,168 +61,53 @@
 
       var parent = document.getElementById("parent");
 
-      async function buildAArray()
+      async function buildArray(array,offset)
       {
-        for(var i = 0; i < aHabits.length; i++)
+        for(var i = 0; i < array.length; i++)
         {
-          var aElement = document.createElement("a");
-          aElement.id = "a" + i;
-          aElement.classList.add("hfire-link");
-          aElement.innerHTML = String.fromCharCode(65+i) + ": " + aHabits[i].text;
-          if(aHabits[i].link !== "pass")
+          var element = document.createElement("a");
+          var letter = String.fromCharCode(65+offset+i);
+          element.id = "habit-" + letter;
+          element.classList.add("hfire-link");
+          element.innerHTML = letter + ": " + array[i].text;
+          if(array[i].link !== "pass")
           {
-            aElement.href = aHabits[i].link;
-            aElement.target = "_blank";
+            element.href = array[i].link;
+            element.target = "_blank";
           }
-          parent.appendChild(aElement);
+          parent.appendChild(element);
           //Creates a random background color for the element
           var x = Math.floor(Math.random() * 128);
           var y = Math.floor(Math.random() * 128);
           var z = Math.floor(Math.random() * 32) + 96;
           var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-          aElement = document.getElementById("a" + parseInt(i))
-          aElement.style.backgroundColor = bgColor;
-          console.log(aHabits[i]);
-          if(aHabits[i].category === "passive")
-            aElement.style.color = "#7BF";
+          element = document.getElementById("habit-" + letter)
+          element.style.backgroundColor = bgColor;
+          console.log(array[i]);
+          if(array[i].category === "passive")
+            element.style.color = "#7BF";
         }
       }
 
-      async function buildBArray()
-      {
-        for(var j = 0; j < bHabits.length; j++)
-        {
-          var bElement = document.createElement("a");
-          bElement.id = "b" + j;
-          bElement.classList.add("hfire-link");
-          bElement.innerHTML = String.fromCharCode(65 + aHabits.length + j) + ": " + bHabits[j].text;
-          if(bHabits[j].link !== "pass")
-          {
-            bElement.href = bHabits[j].link;
-            bElement.target = "_blank";
-          }
-          parent.appendChild(bElement);
-          //Creates a random background color for the element
-          x = Math.floor(Math.random() * 128);
-          y = Math.floor(Math.random() * 128);
-          z = Math.floor(Math.random() * 32) + 96;
-          bgColor = "rgb(" + x + "," + y + "," + z + ")";
-          bElement = document.getElementById("b" + parseInt(j))
-          bElement.style.backgroundColor = bgColor;
-          console.log(bHabits[j]);
-          if(bHabits[j].category === "passive")
-            bElement.style.color = "#7BF";
-        }
-      }
-
-      async function buildCArray()
-      {
-        for(var k = 0; k < cHabits.length; k++)
-        {
-          var cElement = document.createElement("a");
-          cElement.id = "c" + k;
-          cElement.classList.add("hfire-link");
-          cElement.innerHTML = String.fromCharCode(65 + aHabits.length + bHabits.length + k) + ": " + cHabits[k].text;
-          if(cHabits[k].link !== "pass")
-          {
-            cElement.href = cHabits[k].link;
-            cElement.target = "_blank";
-          }
-          parent.appendChild(cElement);
-          //Creates a random background color for the element
-          x = Math.floor(Math.random() * 128);
-          y = Math.floor(Math.random() * 128);
-          z = Math.floor(Math.random() * 32) + 96;
-          bgColor = "rgb(" + x + "," + y + "," + z + ")";
-          cElement = document.getElementById("c" + parseInt(k))
-          cElement.style.backgroundColor = bgColor;
-          console.log(cHabits[k]);
-          if(cHabits[k].category === "passive")
-            cElement.style.color = "#7BF";
-        }
-      }
-
-      buildAArray();
-      buildBArray();
-      buildCArray();
-
+      buildArray(aHabits,0);
+      buildArray(bHabits,aHabits.length);
+      buildArray(cHabits,aHabits.length + bHabits.length);
       window.onbeforeunload = function() { return "Would you really like to leave this page?"; }
-
-      window.addEventListener("keyup",keyType);
-
-      function keyType(event) {
-        switch(event.keyCode) {
-          case 65:
-            deleteText("a0");
-            break;
-          case 66:
-            deleteText("a1");
-            break;
-          case 67:
-            deleteText("a2");
-            break;
-          case 68:
-            deleteText("a3");
-            break;
-          case 69:
-            deleteText("a4");
-            break;
-          case 70:
-            deleteText("a5");
-            break;
-          case 71:
-            deleteText("b0");
-            break;
-          case 72:
-            deleteText("b1");
-            break;
-          case 73:
-            deleteText("b2");
-            break;
-          case 74:
-            deleteText("b3");
-            break;
-          case 75:
-            deleteText("b4");
-            break;
-          case 76:
-            deleteText("b5");
-            break;
-          case 77:
-            deleteText("c0");
-            break;
-          case 78:
-            deleteText("c1");
-            break;
-          case 79:
-            deleteText("c2");
-            break;
-          case 80:
-            deleteText("c3");
-            break;
-          case 81:
-            deleteText("c4");
-            break;
-          case 82:
-            deleteText("c5");
-            break;
-          default:
-            console.log("Key does nothing");
-        }
-      }
+      window.onkeyup = function(){deleteText(event)};
 
       var deletedElements = [];
 
       function deleteText(id) {
+        console.log(id.key.toUpperCase());
         //For potential future proofing
-        if(document.getElementById(id) === null)
+        if(document.getElementById("habit-" + id.key.toUpperCase()) === null)
           return;
-        var toBeDisabled = document.getElementById(id);
+        var toBeDisabled = document.getElementById("habit-" + id.key.toUpperCase());
         toBeDisabled.style.color = toBeDisabled.style.backgroundColor;
         toBeDisabled.removeAttribute("href");
-        deletedElements.push(id);
+        deletedElements.push(id.key);
         for(var i = 0; i < deletedElements.length - 1; i++) {
-          if(deletedElements[i] === id) {
+          if(deletedElements[i] === id.key) {
             deletedElements.pop();
             break;
           }
