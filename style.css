@@ -136,6 +136,10 @@ td {
   padding: 20px;
 }
 
+.passive, .passive a {
+  color:#7FB;
+}
+
 .slidercontainer {
   width: 100%;
 }
