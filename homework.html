@@ -25,6 +25,7 @@
         <li>Learn Technical Writing</li>
         <ul>
           <li><a href="https://purdue.brightspace.com/d2l/le/content/56271/Home">Carefully follow these instructions</a></li>
+          <li>Take the quiz.</li>
           <li><a href="https://purdue.brightspace.com/d2l/le/56271/discussions/topics/147802/View">Reply to two posts. (10 + 5 Minutes per Post)</a>
             <ul><li>Minimum of 100 words, shows evidence of material read</li></ul>
           </li>
@@ -47,7 +48,7 @@
       //Put message to screen using the index value of the array
       document.getElementById("message").innerHTML = messages[index];
       var d = new Date();
-      if (true)
+      if (index === 0)
       {
         var linkOuter = document.createElement("div");
         linkOuter.className = "space";
