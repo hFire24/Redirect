@@ -118,10 +118,8 @@ function finalTest(inputText,site)
     //$("message").innerHTML = "Why don't you use your laziness to your advantage?";
     //$("link").innerHTML = "<div class='two-list space'><a href=" + generateAndrewJohnsonLink() + ">I'm sitting.</a><a href='relax2.html'>I'm lying down.</a></div><a onclick='cantRelax(1)'>I can't relax due to noise.</a>";
   }
-  else if(site === "deviantart" && (found(love,inputText)) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan'],inputText)) {
-    $("message").innerHTML = "Do you really want to look at cute anime girls?";
-    $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cute(1)'>Yes</a> <a class='hfire-link' onclick='cute(0)'>No</a></div>";
-  }
+  else if(site === "deviantart" && (found(love,inputText)) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan'],inputText))
+    location.href = "animeslider.html";
   else if(inputText.indexOf("anime") >= 0) {
     $("message").innerHTML = "Remember what you said about quitting anime?";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
@@ -552,26 +550,6 @@ function cantRelax(number) {
     default:
       $("message").innerHTML = "In this case, play a game like Minesweeper or I Love Hue";
       document.body.removeChild($("link"));
-  }
-}
-
-function cute(number) {
-  switch(number) {
-    case 1:
-      $("message").innerHTML = "Are you absolutely sure that you want to do it?";
-      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cute(0)'>No</a> <a class='hfire-link' onclick='cute(2)'>Yes</a></div>";
-      break;
-    case 2:
-      $("message").innerHTML = "Are you absolutely, positively sure?";
-      $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cute(3)'>Cute anime girls are the best thing in the world.</a> <a class='hfire-link' style='color:gold;' onclick='cute(0)'>Click here if you want a better life.</a></div>";
-      break;
-    case 3:
-      $("message").innerHTML = "OK, OK. <a href='fiveminutetimer.html'>Just set a timer for five minutes.</a>";
-      $("link").innerHTML = "Do something other than look at/think of cute anime girls.<br>If you're still thinking about them, just go with your urges.";
-      break;
-    default:
-      $("message").innerHTML = "OK. Just remember this one thing:<br>Life isn't about seeking cuteness.";
-      $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
 }
 
