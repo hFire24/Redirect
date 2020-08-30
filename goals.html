@@ -13,9 +13,13 @@
     <div id='message' class='space'>Your current goals</div>
     <div id='best-results' class='space'>For best results, keep this page open during the day.<br>
     If you're done with a goal, press the key corresponding to that goal to hide it.<br>
-    If you're struggling to do the next goal, <a href='struggle2.html' target='_blank'>click here.</a></div>
-    <div id='parent' class='two-list' style="width:95%; margin:auto;">
+    If you're struggling to do the next goal, <a href='struggle2.html' target='_blank'>click here.</a><br>
+    To export your tasks, <a href='#exportArea' onclick='exportGoals()'>click here.</a></div>
+    <div id='goals-list' class='two-list' style="width:95%; margin:auto;">
     </div>
+    <div class='space'></div>
+    <textarea id='exportArea' cols='50' rows='8'></textarea>
+    <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
     <script>
       var aHabits = [{text:"Tackle your to-do list (1 task)",link:"index.html",category:"passive"},
       {text:"Do your homework <span class='time'>(2 hours)</span>",link:"homework.html",category:"active"},
@@ -43,12 +47,13 @@
 
       var cHabits = [{text:"Play 100% Orange Juice <span class='time'>(2 games)</span>",link:"pass",category:"active"},
       {text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
-      {text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
+      //{text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
       {text:"Play I Love Hue <span class='time'>(2 puzzles)</span>",link:"pass",category:"active"},
       {text:"Play Minesweeper <span class='time'>(1 successful solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
       {text:"Play Smash Ultimate <span class='time'>(30 minutes)</span>",link:"pass",category:"active"},
       {text:"Play Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"},
-      {text:"Play Bloons Tower Defense 6 <span class='time'>(1 hard game)</span>",link:"pass",category:"active"}];
+      {text:"Play Bloons Tower Defense 6 <span class='time'>(1 hard game)</span>",link:"pass",category:"active"},
+      {text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}];
       shuffle(cHabits);
 
       function shuffle(array) {
@@ -60,7 +65,7 @@
         }
       }
 
-      var parent = document.getElementById("parent");
+      var parent = document.getElementById("goals-list");
 
       async function buildArray(array,offset)
       {
@@ -144,6 +149,35 @@
           document.body.removeChild(parent);
           changeColor();
         }
+      }
+
+      function exportGoals() {
+        var text = document.getElementById("exportArea");
+        text.value = "";
+        var bigArray = document.getElementsByClassName("hfire-link");
+        for(var i = 0; i < bigArray.length; i++)
+          if(bigArray[i].style.color !== bigArray[i].style.backgroundColor)
+          {
+            var preText = bigArray[i].innerText || bigArray[i].textContent;
+            text.value = text.value + preText;
+            if(i < bigArray.length-1)
+              text.value = text.value + "\r\n";
+          }
+      }
+
+      function copyToClipboard() {
+        /* Get the text field */
+        var copyText = document.getElementById("exportArea");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
       }
 
       function sleep(ms) {

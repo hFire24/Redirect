@@ -34,8 +34,11 @@ a {
   font-family: Verdana, sans-serif;
 }
 
-ol {
+ol, #goals-list {
   font-size: 60px;
+}
+
+ol {
   text-align: left;
   padding-left: 2em;
 }
@@ -336,7 +339,7 @@ td {
   td {
     font-size:30px;
   }
-  ol, .relax-list, .small {
+  ol, #goals-list, .relax-list, .small {
     font-size:40px;
   }
   .space2 {
@@ -363,7 +366,7 @@ td {
 }
 
 @media only screen and (max-width: 1135px) {
-  body, #message.tiny, ol, .relax-list, .small {
+  body, #message.tiny, ol, #goals-list, .relax-list, .small {
     font-size: 30px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
@@ -401,7 +404,7 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  body, #message.tiny, ol, td, .relax-list, .small {
+  body, #message.tiny, ol, #goals-list, td, .relax-list, .small {
     font-size: 20px;
   }
   #message, #trance, #stress, #survivor, #break.big, h1 {
