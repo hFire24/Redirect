@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme6">
+    <div id='break' class='space'>The emergency button is your ally. If you're having urges, don't act on them.</div>
+    <span id='emergency-button' class='stress' onclick="pushTheButton()">EMERGENCY BUTTON</span>
+    <audio id='press'>
+      <source src="media/Button Push.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function pushTheButton()
+      {
+        document.getElementById("press").play();
+        document.getElementById("emergency-button").style.color = 'white';
+        await sleep(1750);
+        location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+      }
+    </script>
+  </body>
+</html>

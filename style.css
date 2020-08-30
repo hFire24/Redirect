@@ -47,7 +47,7 @@ ol a {
   color: yellowgreen;
 }
 
-#message, #break.big, h1, #trance, #survivor, #arrows {
+#message, #break.big, h1, #trance, #survivor, #arrows, #emergency-button {
   font-size: 140px;
 }
 
@@ -330,7 +330,7 @@ td {
   body, #message.tiny {
     font-size: 60px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1, #arrows {
+  #message, #trance, #stress, #survivor, #break.big, h1, #arrows, #emergency-button {
     font-size: 100px;
   }
   #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2 {
@@ -369,7 +369,7 @@ td {
   body, #message.tiny, ol, #goals-list, .relax-list, .small {
     font-size: 30px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1 {
+  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button {
     font-size: 60px;
   }
 
@@ -407,7 +407,7 @@ td {
   body, #message.tiny, ol, #goals-list, td, .relax-list, .small {
     font-size: 20px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1 {
+  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button {
     font-size: 40px;
   }
 
