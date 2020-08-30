@@ -1,44 +1,55 @@
-/*var messages = ['DO NOT FAP',
-'ERADICATE THE SIN OF LUST',
-'DO NOT SIN ON CERTAIN WEBSITES',
-'DO NOT GO AGAINST THE TEACHINGS OF JESUS',
-'YOU NEED MORE JESUS',
-'DO NOT PROCRASTURBATE',
-'DO NOT SCREW UP YOUR DAY',
-'DO NOT DESTROY YOUR FUTURE',
-'DO NOT BE A SICK DEGENERATE',
-'DO NOT THROW YOUR LIFE AWAY',
-'DO NOT FURTHER CORRUPT YOURSELF',
-'DO NOT INDULGE IN TABOO PLEASURES',
-'DO NOT EVEN THINK ABOUT RELAPSING',
-'DO NOT THINK OF IMMORAL FANTASIES',
-'DO NOT LET YOUR URGES DICTATE YOU',
-'DO NOT SEEK FOR SEXUALLY PLEASING THINGS',
-'YOU WERE REDIRECTED FROM A DANGEROUS WEBSITE',
-'YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣',
-'YOU HAVE OTHER THINGS TO DO',
-'☢☢☢☢☢☢☢☢☢',
-'UNCLEAN WEBSITE HAS BEEN CONTAINED',
-'THAT UNSAFE WEBSITE IS BLOCKED',
-'PLAY TABERNACLE CHOIR MUSIC',
-'<i>PLAY FURY OF THE STORM </i>',
-'THINK OF SOMETHING ELSE',
-'ANYTHING SEXUALLY AROUSING IS TERRIBLE',
-'STOP TYPING IN ADDRESSES OF SINFUL WEBSITES',
-'NO MORE OF THIS BS.<br>YOU UNDERSTAND?',
-'RESIST SATAN\'S TEMPTATIONS',
-'OH MY FURTING GOO. SERIOUSLY!?'];*/
-
 var messages = [];
-for (var i = 1; i <= 29; i++)
-  messages.push("IMMEDIATELY LEAVE");
-messages.push("PLAY TABERNACLE CHOIR MUSIC");
 var message = document.getElementById("message");
+
+function generateArray(age) {
+  if (age === 'old')
+  {
+    messages.push ('DO NOT FAP',
+    'ERADICATE THE SIN OF LUST',
+    'DO NOT SIN ON CERTAIN WEBSITES',
+    'DO NOT GO AGAINST THE TEACHINGS OF JESUS',
+    'YOU NEED MORE JESUS',
+    'DO NOT PROCRASTURBATE',
+    'DO NOT SCREW UP YOUR DAY',
+    'DO NOT DESTROY YOUR FUTURE',
+    'DO NOT BE A SICK DEGENERATE',
+    'DO NOT THROW YOUR LIFE AWAY',
+    'DO NOT FURTHER CORRUPT YOURSELF',
+    'DO NOT INDULGE IN TABOO PLEASURES',
+    'DO NOT EVEN THINK ABOUT RELAPSING',
+    'DO NOT THINK OF IMMORAL FANTASIES',
+    'DO NOT LET YOUR URGES DICTATE YOU',
+    'DO NOT SEEK FOR SEXUALLY PLEASING THINGS',
+    'YOU WERE REDIRECTED FROM A DANGEROUS WEBSITE',
+    'YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣',
+    'YOU HAVE OTHER THINGS TO DO',
+    '☢☢☢☢☢☢☢☢☢',
+    'UNCLEAN WEBSITE HAS BEEN CONTAINED',
+    'THAT UNSAFE WEBSITE IS BLOCKED',
+    'PLAY TABERNACLE CHOIR MUSIC',
+    '<i>PLAY FURY OF THE STORM </i>',
+    'THINK OF SOMETHING ELSE',
+    'ANYTHING SEXUALLY AROUSING IS TERRIBLE',
+    'STOP TYPING IN ADDRESSES OF SINFUL WEBSITES',
+    'NO MORE OF THIS BS.<br>YOU UNDERSTAND?',
+    'RESIST SATAN\'S TEMPTATIONS',
+    'OH MY FURTING GOO. SERIOUSLY!?');
+  }
+  else {
+    for (var i = 1; i <= 29; i++)
+      messages.push("IMMEDIATELY LEAVE");
+    messages.push("PLAY TABERNACLE CHOIR MUSIC");
+  }
+  loadWebsite();
+}
 
 function loadWebsite() {
   var index = Math.floor(Math.random() * 30);
   if(messages[index] === "YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣")
+  {
     message.removeAttribute("onClick");
+    message.innerHTML = messages[index];
+  }
   else if(messages[index] === "PLAY TABERNACLE CHOIR MUSIC")
   {
     message.innerHTML = '✝' + messages[index] + '✝';
@@ -48,16 +59,22 @@ function loadWebsite() {
     message.innerHTML = '☢' + messages[index] + '☢';
   if(messages[index] === "PLAY TABERNACLE CHOIR MUSIC")
     link = "https://www.thetabernaclechoir.org/listen.html";
+  else if (messages[index] === "<i>PLAY FURY OF THE STORM </i>")
+    link = "https://youtu.be/5i7qZxICwgQ";
+  else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
+    link = "../repent2.html";
+  else if(messages[index] === "IMMEDIATELY LEAVE")
+    document.getElementById("lower-message").innerHTML = "Do not bring your phone with you.";
   else
-    document.getElementById("lower-message").innerHTML = "Do not bring your phone with you."
+    link = "https://emergency.nofap.com/redirect?religious=true&cat=em";
 }
 
-if (message.innerHTML === "☢<i>PLAY FURY OF THE STORM </i>☢")
-  link = "https://youtu.be/5i7qZxICwgQ";
-createAdvice();
+function setLink(song) {
+  if(song === "furyOfTheStorm")
+    link = "https://youtu.be/5i7qZxICwgQ";
+}
 
-/*else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
-  link = "../repent2.html";*/
+createAdvice();
 
 async function createAdvice()
 {
