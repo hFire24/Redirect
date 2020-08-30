@@ -9,7 +9,15 @@ function loadWebsite(number) {
   if(number === 1 || number === 55)
   {
     if(number === 1)
+    {
+      var homeworkRedirection = Math.floor(Math.random() * 3);
+      console.log(homeworkRedirection);
+      if(homeworkRedirection === 0)
+      {
+        location.href = "homework.html";
+      }
       addBigMessages();
+    }
     randomMessage(-1,number);
   }
   else if(number > 1 && number < 5)
