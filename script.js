@@ -635,6 +635,7 @@ function randomLink(index,number) {
     {text:"I am struggling in life",value:"struggle"},
     {text:"I am waiting for something",value:"impatient"},
     {text:"I already looked at bad stuff",value:"disappointed"},
+    {text:"I relapsed",value:"relapse"},
     {text:"I really want to do nothing",value:"nothing"},
     {text:"I want to do someting bad",value:"whoa"},
     {text:"I want to relax",value:"relax"},
@@ -681,7 +682,7 @@ function ok() {
     case "custom":
       location.href = "custom.html";
       break;
-    case "something":
+    case "time":
       location.href = "time.html";
       break;
     case "bored":
@@ -761,6 +762,9 @@ function ok() {
       break;
     case "disappointed":
       location.href = "kirby.html";
+      break;
+    case "relapse":
+      location.href = "relapse.html";
       break;
     case "nothing":
       location.href = "cyoa/13.html";
