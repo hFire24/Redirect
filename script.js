@@ -9,15 +9,7 @@ function loadWebsite(number) {
   if(number === 1 || number === 55)
   {
     if(number === 1)
-    {
-      var homeworkRedirection = Math.floor(Math.random() * 3);
-      console.log(homeworkRedirection);
-      if(homeworkRedirection === 0)
-      {
-        location.href = "homework.html";
-      }
       addBigMessages();
-    }
     randomMessage(-1,number);
   }
   else if(number > 1 && number < 5)
@@ -38,6 +30,20 @@ function loadWebsite(number) {
   else
     randomLink(-1,number);
   randomTheme(number);
+  if(number === 1) {
+    var homework = Math.floor(Math.random() * 3);
+    console.log(homework);
+    if(homework === 0)
+    {
+      var homeworkFrame = document.createElement("IFRAME");
+      homeworkFrame.width = 0.75 * window.innerWidth;
+      homeworkFrame.height = 768;
+      homeworkFrame.src = "homework.html";
+      homeworkFrame.id = "homework";
+      $("hideable").innerHTML = "";
+      $("hideable").appendChild(homeworkFrame);
+    }
+  }
 }
 
 function $(x) {
@@ -962,7 +968,10 @@ function randomTheme(number) {
 }
 
 function getWidth() {
-  $("width").innerHTML = window.innerWidth;
+  if($("width"))
+    $("width").innerHTML = window.innerWidth;
+  if($("homework"))
+    $("homework").width = 0.75 * window.innerWidth;
 }
 
 function createMessage() {
