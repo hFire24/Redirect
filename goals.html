@@ -21,40 +21,42 @@
     <textarea id='exportArea' cols='50' rows='8'></textarea>
     <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
     <script>
-      var aHabits = [{text:"Tackle your to-do list (1 task)",link:"index.html",category:"passive"},
-      {text:"Do your homework <span class='time'>(2 hours)</span>",link:"homework.html",category:"active"},
+      var aHabits = [{text:"Tackle your to-do list",link:"index.html",category:"active"},
+      {text:"Do your homework",link:"homework.html",category:"active"},
       {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
-      {text:"*Learn Full Stack on Skillshare <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
+      {text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
       {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
       {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"}
       //{text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"}];
       ];
       do {
         shuffle(aHabits);
-      } while (aHabits[0].text !== "Tackle your to-do list (1 task)" || aHabits[1].text !== "Do your homework <span class='time'>(2 hours)</span>");
+      } while (aHabits[0].text !== "Tackle your to-do list" || aHabits[1].text !== "Do your homework");
       //while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(½ page)</span>");*/
 
-      var bHabits = [{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
+      var bHabits = [//{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
-      {text:"Learn Spanish via Duolingo <span class='time'>(3 lessons)</span>",link:"https://www.duolingo.com/",category:"active"},
-      {text:"Relax and meditate more <span class='time'>(2 sessions)</span>",link:"relax.html",category:"passive"},
-      {text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
-      {text:"Do an Elevate training session <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
-      {text:"Read the Daily Verse and more <span class='time'>(5 minutes)</span>",link:"dvprogress.html",category:"active"}
+      {text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
+      {text:"Relax/meditate <span class='time'>(1 session)</span>",link:"relax.html",category:"passive"},
+      //{text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
+      {text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
+      {text:"Read the Daily Verse",link:"dvprogress.html",category:"active"}
       //{text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"}];
       ];
       shuffle(bHabits);
 
-      var cHabits = [{text:"Play 100% Orange Juice <span class='time'>(2 games)</span>",link:"pass",category:"active"},
-      {text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
+      var cHabits = [{text:"Play 100% Orange Juice <span class='time'>(1-2 games)</span>",link:"pass",category:"active"},
+      //{text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
       //{text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
-      {text:"Play I Love Hue <span class='time'>(2 puzzles)</span>",link:"pass",category:"active"},
-      {text:"Play Minesweeper <span class='time'>(1 successful solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
-      {text:"Play Smash Ultimate <span class='time'>(30 minutes)</span>",link:"pass",category:"active"},
-      {text:"Play Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"},
-      {text:"Play Bloons Tower Defense 6 <span class='time'>(1 hard game)</span>",link:"pass",category:"active"},
-      {text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}];
+      {text:"Play I Love Hue <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
+      {text:"Play Minesweeper <span class='time'>(1 solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
+      //{text:"Play Smash Ultimate <span class='time'>(30 minutes)</span>",link:"pass",category:"active"},
+      {text:"Play Pokemon Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"},
+      {text:"Play Bloons Tower Defense 6 <span class='time'>(1 hard game)</span>",link:"pass",category:"active"}
+      //{text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}
+      ];
       shuffle(cHabits);
+      cHabits = cHabits.slice(0,4);
 
       function shuffle(array) {
         for (var i = array.length - 1; i > 0; i--) {
