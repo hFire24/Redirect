@@ -326,6 +326,10 @@ td {
   font-size: 36px;
 }
 
+#listen {
+  color:#0F0;
+}
+
 @media only screen and (max-width: 1702px) {
   body, #message.tiny {
     font-size: 60px;
