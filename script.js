@@ -489,7 +489,8 @@ function addBigMessages() {
   'Escape from temptation.',
   'Is what you\'re doing what you really want?',
   'Break out of this cycle of internet addiction.',
-    //From the repent2 webpage
+    //From the repent webpage
+  "Keep repenting. Pray and ask for forgiveness.",
   "The Lord knows you have weaknesses.",
   "You do not want to be weak in spirit.",
   "Pray always to conquer Satan.",
