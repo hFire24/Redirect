@@ -100,26 +100,28 @@
       buildArray(bHabits,aHabits.length);
       buildArray(cHabits,aHabits.length + bHabits.length);
 
-      var tiers = ["OU","UU","RU","NU","PU"];
-      var d = new Date();
-      switch(d.getDay()) {
-        case 1:
-          tier.innerHTML = "OU";
-          break;
-        case 2:
-          tier.innerHTML = "UU";
-          break;
-        case 3:
-          tier.innerHTML = "RU";
-          break;
-        case 4:
-          tier.innerHTML = "NU";
-          break;
-        case 5:
-          tier.innerHTML = "PU";
-          break;
-        default:
-          tier.innerHTML = tiers[Math.floor(Math.random() * 5)];
+      if(document.getElementById("tier")) {
+        var tiers = ["OU","UU","RU","NU","PU"];
+        var d = new Date();
+        switch(d.getDay()) {
+          case 1:
+            tier.innerHTML = "OU";
+            break;
+          case 2:
+            tier.innerHTML = "UU";
+            break;
+          case 3:
+            tier.innerHTML = "RU";
+            break;
+          case 4:
+            tier.innerHTML = "NU";
+            break;
+          case 5:
+            tier.innerHTML = "PU";
+            break;
+          default:
+            tier.innerHTML = tiers[Math.floor(Math.random() * 5)];
+        }
       }
 
       window.onbeforeunload = function() { return "Would you really like to leave this page?"; }
