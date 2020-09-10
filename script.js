@@ -117,6 +117,9 @@ function loadBigBreak() {
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'Play Sudoku.',
   'Solve a Rubik\'s cube.',
+  'Play 100% Orange Juice.',
+  'Solve a Minesweeper board on Expert.',
+  'Play Super Smash Bros. Ultimate for about 30 minutes.',
     //Miscellaneous
   'No routine? Form one.',
   'How about multiple ways to take a break?',
@@ -133,7 +136,7 @@ function loadBigBreak() {
   'Try one of these C# coding projects.',
   'Read the book <u>Atomic Habits</u>.',
   'Learn a language with Duolingo.',
-  'Check your goals page. Do as many goals as you can for today.'];
+  'Check your goals page. Try to knock out one of them.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -235,7 +238,7 @@ function loadBreak(index) {
     case messages.indexOf("Learn a language with Duolingo."):
       message.href = "https://www.duolingo.com/";
       break;
-    case messages.indexOf("Check your goals page. Do as many goals as you can for today."):
+    case messages.indexOf("Check your goals page. Try to knock out one of them."):
       message.href = "goals.html";
       break;
     default:
