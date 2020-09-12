@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body onLoad="randomTheme(55)">
+    <div class='space'><a id='message'></a><br><a id='standup'></a></div>
+    <div id='hideable' class='space'>
+    </div>
+    <img id='image' src='media/Expanding Brain Six Things.jpg' alt='An expanding brain meme. 1: Being dictated by your urges, 2: Watching educational YouTube videos, 3: Listening to guided meditations, 4: Learning new skills, 5: Doing your homework, 6: Getting closer to God' width="680"></img>
+    <script>
+      //Resizes the meme
+      if(window.innerWidth < 680 / 0.9)
+        document.getElementById('image').width = 0.9 * window.innerWidth;
+
+      var messages = [//Relaxation
+      'Listen to this.',
+      'Clear your mind.',
+      'Pray a short prayer.',
+      'Look away from the screen for about 2 minutes.',
+      'Take a deep breath.',
+      'Put on some focus/relaxation music.',
+        //Task checking
+      'Check your tasks for the day.',
+      'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
+        //Day planning
+      'Create tasks for today and tomorrow.',
+        //Music
+      'Put on some music to help you focus.',
+        //Homework
+      'Check your homework page and see if you can do a passive assignment.',
+        //Games
+      'Solve a Minesweeper board on Expert.',
+      'Play one of these short games.',
+        //Miscellaneous
+      'Say out loud the thing you need to get done.',
+      'Increase your spirituality.',
+      'Read your patriarchal blessing.',
+      'Try answering this question.',
+      'Read your journal entries.<br>Start from June 2012.',
+        //Goals
+      'Click here.',
+      'Double your social skills.',
+      'Train your communication skills.',
+      'Train your conversation skills.',
+      'Read the book <u>Atomic Habits</u>.',
+      'Learn a language with Duolingo.',
+      'Take this productivity course on Skillshare.',
+      'Take that anti-procrastination course on Skillshare.',
+      'Check your goals list. Try to knock out one of them.'];
+
+      var standup = [//Health and fitness
+      'That\'s all there is to it. Sit back down.',
+      'Drink some water.',
+      'Stare at an object 20 feet away for 20 seconds.',
+      'Eat a snack if it has been 3 hours since you ate something.'];
+
+      //I seriously need to add more goals, especially from the mobile page.
+      //I really want to make sure this page acts like the breaktime or bigbreak page,
+      //so I better make sure to copy and paste information from the script.js file.
+      //Especially when it comes to sleep. Thank Andrew Johnson for a sleep meditation.
+
+      for(var i = 0; i < standup.length; i++)
+        messages.push('Stand up and stretch if you can.');
+
+      var index = 0;
+      function randomMobileMessage()
+      {
+        index = Math.floor(Math.random() * messages.length);
+        var standIndex = index - (messages.length - standup.length);
+        document.getElementById("message").innerHTML = messages[index];
+        var message = document.getElementById("message");
+        switch(index)
+        {
+          case messages.indexOf("Listen to this."):
+          case messages.indexOf("Clear your mind."):
+            message.href = generateAndrewJohnsonLink();
+            break;
+          case messages.indexOf("Look away from the screen for about 2 minutes."):
+            message.href = "https://www.google.com/search?q=2+minute+timer";
+            break;
+          case messages.indexOf("Take a deep breath."):
+            message.href = "https://www.google.com/search?q=take+a+deep+breath";
+            break;
+          case messages.indexOf("Put on some focus/relaxation music."):
+            message.href = "https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA";
+            break;
+          case messages.indexOf("Put on some music to help you focus."):
+            message.href = "musicSlider.html";
+            break;
+          case messages.indexOf("Check your homework page and see if you can do a passive assignment."):
+            message.href = "homework.html";
+            break;
+          case messages.indexOf("Play one of these short games."):
+            message.href = "cyoa/46.html";
+            break;
+          case messages.indexOf("Increase your spirituality."):
+            message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
+            break;
+          case messages.indexOf("Try answering this question."):
+            message.href = "question.html";
+            break;
+          case messages.indexOf("How about multiple ways to take a break?"):
+            message.href = "multiple.html";
+            break;
+          case messages.indexOf("Click here."):
+            message.addEventListener("click",pushTheButton);
+            break;
+          case messages.indexOf("Double your social skills."):
+            message.href = "https://skl.sh/37ueYoA";
+            break;
+          case messages.indexOf("Train your communication skills."):
+            message.href = "https://skl.sh/33mrvdU";
+            break;
+          case messages.indexOf("Train your conversatoin skills."):
+            message.href = "https://skl.sh/35tGtBl";
+            break;
+          case messages.indexOf("Take this productivity course on Skillshare."):
+            message.href = "https://skl.sh/3hiV3Ow";
+            break;
+          case messages.indexOf("Take that anti-procrastination course on Skillshare."):
+            message.href = "https://skl.sh/3kb5Goj";
+            break;
+          case messages.indexOf("Learn a language with Duolingo."):
+            message.href = "https://www.duolingo.com/";
+            break;
+          default:
+            message.removeAttribute("href");
+        }
+        var d = new Date();
+        if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
+        {
+          document.getElementById("message").innerHTML = 'You should charge your phone away from the bed.';
+          index = messages.length;
+          console.log("Sleep " + sleepTime);
+        }
+        console.log("Message " + index);
+        var message = document.getElementById("message").innerHTML;
+        var linkMessages = ["Immediately put your phone away."];
+        for (var i = 1; i <= 30; i++)
+          linkMessages.push("Got something you need to do?");
+        var linkIndex = Math.floor(Math.random() * linkMessages.length);
+        if (index < 5)
+          linkIndex = 0;
+        var parent = document.getElementById("hideable");
+        var link = document.getElementById("link");
+        if(!link) {
+          link = document.createElement("div");
+          link.id = "link";
+          link.className = "space";
+          parent.appendChild(link);
+        }
+        //Sometimes, the link will change depending on the message.
+        if (message === "Get ready for church!")
+          link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
+        else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
+          link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+        else if (linkIndex > 0)
+          link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        else
+          link.innerHTML = linkMessages[linkIndex];
+        //Put index value to the console
+        console.log("Link " + linkIndex);
+        //If the message is too long, this fires up.
+        if(actualLength() > 200) {
+          document.getElementById("message").classList.add("tiny");
+          document.getElementById("message").classList.remove("small");
+        }
+        else if(actualLength() > 90) {
+          document.getElementById("message").classList.add("small");
+          document.getElementById("message").classList.remove("tiny");
+        }
+        else {
+          document.getElementById("message").classList.remove("small");
+          document.getElementById("message").classList.remove("tiny");
+        }
+      }
+
+      randomMobileMessage();
+
+      function actualLength() {
+        var text = document.getElementById("message");
+        var txt = text.innerText || text.textContent;
+        console.log("Shortened message: " + txt);
+        return txt.length;
+      }
+    </script>
+    <script src="script.js"></script>
+    <script src="pulltorefresh.js/dist/pulltorefresh.js"></script>
+    <script>
+    PullToRefresh.init({
+      mainElement: 'body',
+      distMax: window.innerHeight / 2,
+      onRefresh: function() { randomMobileMessage() }
+    });
+    </script>
+  </body>
+</html>
