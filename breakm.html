@@ -10,15 +10,11 @@
     <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body onLoad="randomTheme(55)">
-    <div class='space'><a id='message'></a><br><a id='standup'></a></div>
+    <div class='space'><a id='break'></a><a id='standup'></a></div>
     <div id='hideable' class='space'>
     </div>
-    <img id='image' src='media/Expanding Brain Six Things.jpg' alt='An expanding brain meme. 1: Being dictated by your urges, 2: Watching educational YouTube videos, 3: Listening to guided meditations, 4: Learning new skills, 5: Doing your homework, 6: Getting closer to God' width="680"></img>
+    <script src="script.js"></script>
     <script>
-      //Resizes the meme
-      if(window.innerWidth < 680 / 0.9)
-        document.getElementById('image').width = 0.9 * window.innerWidth;
-
       var messages = [//Relaxation
       'Listen to this.',
       'Clear your mind.',
@@ -46,9 +42,10 @@
       'Read your journal entries.<br>Start from June 2012.',
         //Goals
       'Click here.',
+      'Listen to a General Conference talk.',
       'Double your social skills.',
       'Train your communication skills.',
-      'Train your conversation skills.',
+      'Increase your conversation skills.',
       'Read the book <u>Atomic Habits</u>.',
       'Learn a language with Duolingo.',
       'Take this productivity course on Skillshare.',
@@ -61,21 +58,27 @@
       'Stare at an object 20 feet away for 20 seconds.',
       'Eat a snack if it has been 3 hours since you ate something.'];
 
-      //I seriously need to add more goals, especially from the mobile page.
-      //I really want to make sure this page acts like the breaktime or bigbreak page,
-      //so I better make sure to copy and paste information from the script.js file.
-      //Especially when it comes to sleep. Thank Andrew Johnson for a sleep meditation.
-
       for(var i = 0; i < standup.length; i++)
         messages.push('Stand up and stretch if you can.');
 
       var index = 0;
       function randomMobileMessage()
       {
+        $("standup").style.display = "none";
         index = Math.floor(Math.random() * messages.length);
         var standIndex = index - (messages.length - standup.length);
-        document.getElementById("message").innerHTML = messages[index];
-        var message = document.getElementById("message");
+        var message = $("break");
+        var d = new Date();
+        if((d.getHours() <= 5 || d.getHours() >= 23) && !Math.floor(Math.random() * 4))
+        {
+          index = messages.length;
+          messages.push('Stand up and stretch if you can.');
+          message.removeAttribute("href");
+          standIndex = standup.length;
+          standup.push('Wear your pajamas and go to bed. No electronics.');
+          $("standup").removeAttribute("href");
+        }
+        $("break").innerHTML = messages[index];
         switch(index)
         {
           case messages.indexOf("Listen to this."):
@@ -112,13 +115,16 @@
           case messages.indexOf("Click here."):
             message.addEventListener("click",pushTheButton);
             break;
+          case messages.indexOf("Listen to a General Conference talk."):
+            message.href = "gcprogress.html";
+            break;
           case messages.indexOf("Double your social skills."):
             message.href = "https://skl.sh/37ueYoA";
             break;
           case messages.indexOf("Train your communication skills."):
             message.href = "https://skl.sh/33mrvdU";
             break;
-          case messages.indexOf("Train your conversatoin skills."):
+          case messages.indexOf("Increase your conversation skills."):
             message.href = "https://skl.sh/35tGtBl";
             break;
           case messages.indexOf("Take this productivity course on Skillshare."):
@@ -133,65 +139,17 @@
           default:
             message.removeAttribute("href");
         }
-        var d = new Date();
-        if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
-        {
-          document.getElementById("message").innerHTML = 'You should charge your phone away from the bed.';
-          index = messages.length;
-          console.log("Sleep " + sleepTime);
-        }
         console.log("Message " + index);
-        var message = document.getElementById("message").innerHTML;
-        var linkMessages = ["Immediately put your phone away."];
-        for (var i = 1; i <= 30; i++)
-          linkMessages.push("Got something you need to do?");
-        var linkIndex = Math.floor(Math.random() * linkMessages.length);
-        if (index < 5)
-          linkIndex = 0;
-        var parent = document.getElementById("hideable");
-        var link = document.getElementById("link");
-        if(!link) {
-          link = document.createElement("div");
-          link.id = "link";
-          link.className = "space";
-          parent.appendChild(link);
-        }
-        //Sometimes, the link will change depending on the message.
-        if (message === "Get ready for church!")
-          link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
-        else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
-          link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
-        else if (linkIndex > 0)
-          link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
-        else
-          link.innerHTML = linkMessages[linkIndex];
-        //Put index value to the console
-        console.log("Link " + linkIndex);
-        //If the message is too long, this fires up.
-        if(actualLength() > 200) {
-          document.getElementById("message").classList.add("tiny");
-          document.getElementById("message").classList.remove("small");
-        }
-        else if(actualLength() > 90) {
-          document.getElementById("message").classList.add("small");
-          document.getElementById("message").classList.remove("tiny");
-        }
-        else {
-          document.getElementById("message").classList.remove("small");
-          document.getElementById("message").classList.remove("tiny");
+        if(message.innerHTML === 'Stand up and stretch if you can.')
+        {
+          console.log("Standup " + standIndex);
+          message.addEventListener("click",function() {$("standup").style.display = 'block';});
+          $("standup").innerHTML = standup[standIndex];
         }
       }
 
       randomMobileMessage();
-
-      function actualLength() {
-        var text = document.getElementById("message");
-        var txt = text.innerText || text.textContent;
-        console.log("Shortened message: " + txt);
-        return txt.length;
-      }
     </script>
-    <script src="script.js"></script>
     <script src="pulltorefresh.js/dist/pulltorefresh.js"></script>
     <script>
     PullToRefresh.init({
