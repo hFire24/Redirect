@@ -576,11 +576,11 @@ function randomMessage(index,number) {
   //Put message to screen using the index value of the array
   $("message").innerHTML = redirectMessages[index];
   //If it's Sunday morning, then the website may prompt you to go to church.
-  if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
+  /*if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
   {
     $("message").innerHTML = "Get ready for church!";
     index = redirectMessages.length + 2;
-  }
+  }*/
   //If it's late at night, the website may prompt you to go to sleep.
   var sleepTime = Math.floor(Math.random() * 5);
   if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)

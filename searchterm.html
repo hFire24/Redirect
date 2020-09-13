@@ -100,11 +100,11 @@
           index = redirectMessages.length - 1;
           console.log("Sleep " + sleepTime);
         }
-        if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
+        /*if(d.getDay() === 0 && d.getHours() >= 6 && d.getHours() < 10 && Math.floor(Math.random() * 3))
         {
           redirectMessages.push('Get ready for church!');
           index = redirectMessages.length - 1;
-        }
+        }*/
         //Put message to screen using the index value of the array
         var message = redirectMessages[index];
         $("message").innerHTML = message;
