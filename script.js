@@ -6,30 +6,36 @@ var changeclothes = [];
 var breakArray;
 
 function loadWebsite(number) {
+  //1, 55
   if(number === 1 || number === 55)
   {
     if(number === 1)
       addBigMessages();
     randomMessage(-1,number);
   }
-  else if(number > 1 && number < 5)
+  //2, 3, 4, 6
+  else if(number > 1 && number < 5 || number === 6)
   {
     if(number > 1 && number < 4)
     {
-    if(Math.floor(Math.random() * 2) && number !== 2)
-      loadBigBreak();
-    else
-      loadSmallBreak();
+      if(Math.floor(Math.random() * 2) && number !== 2)
+        loadBigBreak();
+      else
+        loadSmallBreak();
     }
-    else
+    else if(number === 4)
       loadYouTubeBreak();
-    loadBreak(-1);
+    else if(number === 6)
+      loadStandBreak();
+    loadBreak(-1,number);
   }
+  //5
   else if(number === 5)
     randomQuestion(-1);
   else
     randomLink(-1,number);
   randomTheme(number);
+  //If the number is 1, then the homework iframe may pop up.
   if(number === 1) {
     var homework = Math.floor(Math.random() * 3);
     console.log(homework);
@@ -83,7 +89,10 @@ function loadSmallBreak() {
   'Double your social skills.',
   'Read just one page of <u>Atomic Habits</u>.',
   'Think of a goal. Any one. Set that as your break message.'];
+  loadStandBreak();
+}
 
+function loadStandBreak() {
   standup = [//Health and fitness
   'Get on the treadmill.',
   'Refill your bottle and drink water.',
@@ -147,8 +156,7 @@ function loadBigBreak() {
   'Declutter your room.',
   'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
-  'Play some Stepmania.',
-  'Bust out the iPad for Elevate.'];
+  'Play some Stepmania.'];
 }
 
 function loadYouTubeBreak() {
@@ -161,7 +169,7 @@ function loadYouTubeBreak() {
   'Draw anime.'];
 }
 
-function loadBreak(index) {
+function loadBreak(index,number) {
   for(var i = 0; i < changeclothes.length; i++)
     standup.push("Change to appropriate clothes if necessary.");
   for(i = 0; i < standup.length; i++)
@@ -176,74 +184,75 @@ function loadBreak(index) {
   var changeMessage = $("changeclothes");
   var standIndex = index - (messages.length - standup.length);
   var changeIndex = standIndex - (standup.length - changeclothes.length);
-  switch(index)
-  {
-    case messages.indexOf("Listen to this."):
-    case messages.indexOf("Clear your mind."):
-      message.href = generateAndrewJohnsonLink();
-      break;
-    case messages.indexOf("Look away from the screen for about 2 minutes."):
-      message.href = "https://www.google.com/search?q=2+minute+timer";
-      break;
-    case messages.indexOf("Take a deep breath."):
-      message.href = "https://www.google.com/search?q=take+a+deep+breath";
-      break;
-    case messages.indexOf("Put on some focus/relaxation music."):
-      message.href = "https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA";
-      break;
-    case messages.indexOf("Put on some music to help you focus."):
-      message.href = "musicSlider.html";
-      break;
-    case messages.indexOf("Play one of these short games."):
-      message.href = "cyoa/46.html";
-      break;
-    case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
-      message.href = "https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw";
-      break;
-    case messages.indexOf("Increase your spirituality."):
-      message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
-      break;
-    case messages.indexOf("Try answering this question."):
-      message.href = "question.html";
-      break;
-    case messages.indexOf("How about multiple ways to take a break?"):
-      message.href = "multiple.html";
-      break;
-    case messages.indexOf("Learn how to make chiptune music."):
-    case messages.indexOf("Learn how to use FL Studio."):
-      message.href = "chiptunelessons.html";
-      break;
-    case messages.indexOf("Click here."):
-      message.addEventListener("click",pushTheButton);
-      break;
-    case messages.indexOf("Go to Skillshare, and learn programming."):
-    case messages.indexOf("Go to Skillshare, and learn programming.") + 1:
-      message.href = "https://skl.sh/38rV6DT";
-      break;
-    case messages.indexOf("Double your social skills."):
-      message.href = "https://skl.sh/37ueYoA";
-      break;
-    case messages.indexOf("Don't suck at group projects."):
-      message.href = "groupprojects.html";
-      break;
-    case messages.indexOf("Draw anime."):
-      message.href = "art.html";
-      break;
-    case messages.indexOf("Try one of these C# coding projects."):
-      message.href = "https://blog.udemy.com/c-sharp-projects/";
-      break;
-    case messages.indexOf("Play Sudoku."):
-      message.href = "https://www.websudoku.com/";
-      break;
-    case messages.indexOf("Learn a language with Duolingo."):
-      message.href = "https://www.duolingo.com/";
-      break;
-    case messages.indexOf("Check your goals page. Try to knock out one of them."):
-      message.href = "goals.html";
-      break;
-    default:
-      message.removeAttribute("href");
-  }
+  if(number !== 6)
+    switch(index)
+    {
+      case messages.indexOf("Listen to this."):
+      case messages.indexOf("Clear your mind."):
+        message.href = generateAndrewJohnsonLink();
+        break;
+      case messages.indexOf("Look away from the screen for about 2 minutes."):
+        message.href = "https://www.google.com/search?q=2+minute+timer";
+        break;
+      case messages.indexOf("Take a deep breath."):
+        message.href = "https://www.google.com/search?q=take+a+deep+breath";
+        break;
+      case messages.indexOf("Put on some focus/relaxation music."):
+        message.href = "https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA";
+        break;
+      case messages.indexOf("Put on some music to help you focus."):
+        message.href = "musicSlider.html";
+        break;
+      case messages.indexOf("Play one of these short games."):
+        message.href = "cyoa/46.html";
+        break;
+      case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
+        message.href = "https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw";
+        break;
+      case messages.indexOf("Increase your spirituality."):
+        message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
+        break;
+      case messages.indexOf("Try answering this question."):
+        message.href = "question.html";
+        break;
+      case messages.indexOf("How about multiple ways to take a break?"):
+        message.href = "multiple.html";
+        break;
+      case messages.indexOf("Learn how to make chiptune music."):
+      case messages.indexOf("Learn how to use FL Studio."):
+        message.href = "chiptunelessons.html";
+        break;
+      case messages.indexOf("Click here."):
+        message.addEventListener("click",pushTheButton);
+        break;
+      case messages.indexOf("Go to Skillshare, and learn programming."):
+      case messages.indexOf("Go to Skillshare, and learn programming.") + 1:
+        message.href = "https://skl.sh/38rV6DT";
+        break;
+      case messages.indexOf("Double your social skills."):
+        message.href = "https://skl.sh/37ueYoA";
+        break;
+      case messages.indexOf("Don't suck at group projects."):
+        message.href = "groupprojects.html";
+        break;
+      case messages.indexOf("Draw anime."):
+        message.href = "art.html";
+        break;
+      case messages.indexOf("Try one of these C# coding projects."):
+        message.href = "https://blog.udemy.com/c-sharp-projects/";
+        break;
+      case messages.indexOf("Play Sudoku."):
+        message.href = "https://www.websudoku.com/";
+        break;
+      case messages.indexOf("Learn a language with Duolingo."):
+        message.href = "https://www.duolingo.com/";
+        break;
+      case messages.indexOf("Check your goals page. Try to knock out one of them."):
+        message.href = "goals.html";
+        break;
+      default:
+        message.removeAttribute("href");
+    }
   if (standIndex === standup.indexOf("Play some Stepmania."))
     standupMessage.href = "stepmania.html";
   else if (standIndex === standup.indexOf("Do planks for one minute."))
@@ -273,7 +282,7 @@ function loadBreak(index) {
       standupMessage.addEventListener("click",function() {$("changeclothes").style.display = 'block';});
     }
   }
-  if(messages.indexOf("Listen to this.") === -1 && index >= messages.indexOf("Do homework.<br>You may need to stand up and stretch and change clothes.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
+  if(messages.indexOf("Listen to this.") === -1 && number !== 6 && index >= messages.indexOf("Do homework.<br>You may need to stand up and stretch and change clothes.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
     message.addEventListener("click",function() {var exists = $("vader");
       if (!exists) {
         var video = document.createElement("video");
