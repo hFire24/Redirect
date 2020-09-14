@@ -22,7 +22,12 @@
     <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
     <script>
       var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
-      {text:"Do your homework",link:"homework.html",category:"active"},
+      {text:"Do your ENGL421 homework",link:"homework.html#ENGL421",category:"homework"},
+      {text:"Do your THTR253 homework",link:"homework.html#THTR253",category:"homework"},
+      {text:"Do your CNIT340 homework",link:"homework.html#CNIT340",category:"homework"},
+      {text:"Practice your piano <span class='time'>(15 minutes)</span>",link:"homework.html#MUS161",category:"homework"},
+      {text:"Do your CNIT355 homework",link:"homework.html#CNIT355",category:"homework"},
+        //Non-Homework Habits
       {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
       {text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
       {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
@@ -32,7 +37,7 @@
       //{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
       {text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
-      {text:"Relax/meditate <span class='time'>(1 session)</span>",link:"relax.html",category:"passive"},
+      //{text:"Relax/meditate <span class='time'>(1 session)</span>",link:"relax.html",category:"passive"},
       //{text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
       {text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
       {text:"Read the Daily Verse",link:"dvprogress.html",category:"active"},
@@ -41,16 +46,16 @@
       {text:"Play 100% Orange Juice <span class='time'>(1-2 games)</span>",link:"pass",category:"active"},
       //{text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
       //{text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
-      {text:"Play I Love Hue <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
-      {text:"Play Minesweeper <span class='time'>(1 solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
+      //{text:"Play I Love Hue <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
+      //{text:"Play Minesweeper <span class='time'>(1 solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
       //{text:"Play Smash Ultimate <span class='time'>(30 minutes)</span>",link:"pass",category:"active"},
-      {text:"Play Pokemon Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"},
-      {text:"Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>",link:"pass",category:"active"}
+      {text:"Play Pokemon Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"}
+      //{text:"Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>",link:"pass",category:"active"}
       //{text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}];
       ];
       do {
         shuffle(aHabits);
-      } while (aHabits[0].text !== "Do your homework" || aHabits[aHabits.length - 2].text !== "Deal with Purdue E-mails" || aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>");
+      } while (aHabits[0].category !== "homework" || aHabits[aHabits.length - 1].text !== "Deal with Purdue E-mails" /*|| aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>"*/);
       //while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(1 page)</span>");
 
       //cHabits = cHabits.slice(0,5);
