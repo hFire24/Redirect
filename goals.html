@@ -25,7 +25,7 @@
       {text:"Do your ENGL421 homework",link:"homework.html#ENGL421",category:"homework"},
       {text:"Do your THTR253 homework",link:"homework.html#THTR253",category:"homework"},
       {text:"Do your CNIT340 homework",link:"homework.html#CNIT340",category:"homework"},
-      {text:"Practice your piano <span class='time'>(15 minutes)</span>",link:"homework.html#MUS161",category:"homework"},
+      {text:"Practice Piano <span class='time'>(15 minutes)</span>",link:"homework.html#MUS161",category:"homework"},
       {text:"Do your CNIT355 homework",link:"homework.html#CNIT355",category:"homework"},
         //Non-Homework Habits
       {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
@@ -71,7 +71,7 @@
 
       var parent = document.getElementById("goals-list");
 
-      async function buildArray(array,offset)
+      function buildArray(array,offset)
       {
         for(var i = 0; i < array.length; i++)
         {
@@ -102,28 +102,18 @@
       buildArray(aHabits,0);
       //buildArray(bHabits,aHabits.length);
       //buildArray(cHabits,aHabits.length + bHabits.length);
+      var tierNumber = -1;
+      getTier(-1);
 
-      if(document.getElementById("tier")) {
-        var tiers = ["OU","UU","RU","NU","PU"];
-        var d = new Date();
-        switch(d.getDay()) {
-          case 1:
-            tier.innerHTML = "OU";
-            break;
-          case 2:
-            tier.innerHTML = "UU";
-            break;
-          case 3:
-            tier.innerHTML = "RU";
-            break;
-          case 4:
-            tier.innerHTML = "NU";
-            break;
-          case 5:
-            tier.innerHTML = "PU";
-            break;
-          default:
-            tier.innerHTML = tiers[Math.floor(Math.random() * 5)];
+      function getTier(tierNumber) {
+        if(document.getElementById("tier")) {
+          var tiers = ["OU","UU","RU","NU","PU"];
+          var d = new Date();
+          if(d.getDay() >= 1 && d.getDay() <= 5)
+            tierNumber = d.getDay() - 1;
+          else if(tierNumber === -1)
+            tierNumber = Math.floor(Math.random() * 5);
+          tier.innerHTML = tiers[tierNumber];
         }
       }
 
@@ -184,6 +174,51 @@
 
         /* Alert the copied text */
         alert("Copied the text: " + copyText.value);
+      }
+
+      function swapGoals(a, b) {
+        //Converts the letters to numbers for the array
+        a = a.toUpperCase().charCodeAt(0) - 65;
+        b = b.toUpperCase().charCodeAt(0) - 65;
+        console.log(a + " " + b);
+        //Throws this error if one of the values is out of range
+        if(a < 0 || b < 0 || a >= aHabits.length || b >= aHabits.length)
+          console.log("ERROR: One of the goal letters does not exist");
+        else {
+          //Swaps the goals within the array
+          var temp = aHabits[a];
+          aHabits[a] = aHabits[b];
+          aHabits[b] = temp;
+          //Creates a new temporary array for the swapped elements for the loop
+          var swappedGoals = [aHabits[a],aHabits[b]];
+          //Adds the number and background color properties for the elements
+          swappedGoals[0].num = a;
+          swappedGoals[1].num = b;
+          //These are reversed so that when the elements are swapped, they get to keep their background colors.
+          swappedGoals[0].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[1].num)).style.backgroundColor;
+          swappedGoals[1].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[0].num)).style.backgroundColor;
+          //This is where the swapping takes place. All the swapped elements come from the newly created swappedGoals array.
+          for(var i = 0; i < swappedGoals.length; i++)
+          {
+            //Gets the position of one of the swapped goals.
+            var letter = String.fromCharCode(65+swappedGoals[i].num);
+            var element = document.getElementById("habit-" + letter);
+            //The text, link, and color data are transferred to the other HTML element being swapped.
+            element.innerHTML = letter + ": " + swappedGoals[i].text;
+            if(swappedGoals[i].link !== "pass")
+            {
+              element.href = swappedGoals[i].link;
+              element.target = "_blank";
+            }
+            console.log(swappedGoals[i].backgroundColor);
+            element.style.backgroundColor = swappedGoals[i].backgroundColor;
+            if(swappedGoals[i].category === "passive")
+              element.style.color = "#7BF";
+            else
+              element.style.color = "white";
+            getTier(tierNumber);
+          }
+        }
       }
 
       function sleep(ms) {
