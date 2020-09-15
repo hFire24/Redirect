@@ -13,7 +13,8 @@
     <div id='break' class='space'></div>
     <a class='hfire-link' href="16.html">Continue</a>
     <script>
-      var messages = ["Make your future brighter! Don't walk on the path of darkness!",
+      var messages = [//My own quotes 1-10
+      "Make your future brighter! Don't walk on the path of darkness!",
       "Get important things done! You will feel a sense of accomplishment!",
       "You are stronger than you think.",
       "You are capable of doing great things.",
@@ -23,6 +24,7 @@
       "When you get things done, you feel happy and accomplished!",
       "You are a really good person. Did you know that?",
       "If you keep doing great things, you'll get a Tesla!",
+      //My own quotes 11-20
       "Win a million dollars! It's harder to do than earning $1000000.",
       "The road to productivity. Take it, and you'll be successful.",
       "Be a productive human being! Do something good!",
@@ -110,10 +112,23 @@
       '“If you don\'t value your time, neither will others. Stop giving away your time and talents–start charging for it.” – Kim Garst',
       '“A successful man is one who can lay a firm foundation with the bricks others have thrown at him.” – David Brinkley',
       '“No one can make you feel inferior without your consent.” – Eleanor Roosevelt',
+      //Motivational quotes 21-30
+      '“The whole secret of a successful life is to find out what is one\'s destiny to do, and then do it.” – Henry Ford',
+      '“If you\'re going through hell keep going.” – Winston Churchill',
+      '“The ones who are crazy enough to think they can change the world, are the ones who do.” – Anonymous',
+      '“Don\'t raise your voice, improve your argument.” – Anonymous',
+      '“What seems to us as bitter trials are often blessings in disguise.” – Oscar Wilde',
+      '“The meaning of life is to find your gift. The purpose of life is to give it away.” – Anonymous',
+      '“The distance between insanity and genius is measured only by success.” – Bruce Feirstein',
+      '“When you stop chasing the wrong things, you give the right things a chance to catch you.” – Lolly Daskal',
+      '“I believe that the only courage anybody ever needs is the courage to follow your own dreams..” – Oprah Winfrey',
+      '“No masterpiece was ever created by a lazy artist.” – Anonymous',
       //Additional motivational Quotes
       '“The penalty for procrastination is the loss of hopes and dreams.” – Tai Lopez'];
-      for(var i = messages.length; i < 120; i++)
+      for(var i = messages.length; i < 171; i++)
         messages.push("<a href='https://www.inc.com/lolly-daskal/100-motivational-quotes-that-will-inspire-you-to-succeed.html' target='_blank'>Here. Try reading some quotes from this page.</a>");
+      for(var i = messages.length; i < 251; i++)
+        messages.push("<a href='https://www.keepinspiring.me/procrastination-quotes/' target='_blank'>Here. Try reading these quotes from this page.</a>");
       var index = Math.floor(Math.random() * messages.length);
       var quote = document.getElementById("break");
       quote.innerHTML = messages[index];
