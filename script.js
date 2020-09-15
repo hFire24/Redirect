@@ -46,6 +46,7 @@ function loadWebsite(number) {
       homeworkFrame.height = 768;
       homeworkFrame.src = "homework.html";
       homeworkFrame.id = "homework";
+      $("theme").classList.add("space");
       $("hideable").appendChild(homeworkFrame);
     }
   }
@@ -696,6 +697,8 @@ function randomLink(index,number) {
 }
 
 function ok() {
+  $("message").classList.remove("small");
+  $("message").classList.remove("tiny");
   switch(dropdownMenu.value)
   {
     case "custom":
