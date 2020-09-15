@@ -117,7 +117,7 @@ function loadBigBreak() {
   'Do homework.<br>You may need to stand up and stretch and change clothes.',
   'Get assignments done.<br>You may need to stand up and stretch and change clothes.',
   'If you\'re struggling with homework, do a different assignment.',
-  'Check Blackboard for assignments, then do one of them.',
+  'Check Brightspace for assignments, then do one of them.',
   //'Make progress on a big project.',
   'Finish a piece of homework, even if the deadline is far.',
   'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
@@ -423,7 +423,7 @@ function addBigMessages() {
   'How about you do your homework?',
   'Why don\'t you get assignments done?',
   'I get that homework can be a struggle.<br>Try to change your mindset.',
-  'Why don\'t you check Blackboard?',
+  'Why don\'t you check Brightspace?',
   'Why not get an assignment done early? You\'ll get a head start!',
     //Music
   'Sometimes just browsing your music library could be fun.',
