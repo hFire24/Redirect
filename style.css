@@ -137,10 +137,21 @@ td {
   color:white;
   text-decoration:none;
   padding: 20px;
+  cursor: pointer;
 }
 
 .passive, .passive a {
   color:#7FB;
+}
+
+.content {
+  display:none;
+  overflow:hidden;
+}
+
+.expand {
+  font-size: 28px;
+  font-family: inherit;
 }
 
 .slidercontainer {

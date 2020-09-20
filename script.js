@@ -189,7 +189,7 @@ function loadBreak(index,number) {
     {
       case messages.indexOf("Listen to this."):
       case messages.indexOf("Clear your mind."):
-        message.href = generateAndrewJohnsonLink();
+        message.href = "relax.html";
         break;
       case messages.indexOf("Look away from the screen for about 2 minutes."):
         message.href = "https://www.google.com/search?q=2+minute+timer";
@@ -660,7 +660,7 @@ function randomLink(index,number) {
     {text:"I want to do someting bad 😈",value:"whoa"},
     {text:"I want to relax 🧘‍♂️",value:"relax"},
     {text:"I want to get motivated 🔥",value:"motivate"},
-    {text:"I want to accomplish goals 🏅",value:"goals"},
+    {text:"I want to accomplish goals 🏅",value:"tasks"},
     {text:"I want to complete tasks ✅",value:"tasks"},
     {text:"I want to listen to music 🎶",value:"music"},
     {text:"I want to browse YouTube",value:"youtube"},
@@ -724,17 +724,17 @@ function ok() {
       }
       else if(d.getHours() < 17) {
         message.innerHTML = "You should take a power nap.";
-        link.innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap'>Click here to continue.</a>";
+        link.innerHTML = "<a href='https://www.youtube.com/watch?v=RXBG1-1zI_E'>Click here to continue.</a>";
       }
       else if(d.getHours() < 22) {
         message.innerHTML = "You should recharge yourself. But how?";
-        link.innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+        link.innerHTML = "<a id='relax' href='relax.html#tired-evening'>Click here to continue.</a>";
       }
       else
         location.href = "cyoa/14.html";
       break;
     case "stressed":
-      message.innerHTML = "<a href=" + generateAndrewJohnsonLink() + ">You need to calm down and relax.</a>";
+      message.innerHTML = "<a href='relax.html'>You need to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "busy":
@@ -742,7 +742,7 @@ function ok() {
       break;
     case "unconfident":
       message.innerHTML = "You need a real confidence boost.";
-      link.innerHTML = "<a id='relax'>Click here to continue.</a>";
+      link.innerHTML = "<a id='relax'>Open this link in Opera.</a>";
       var confidenceMeditations = ['https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation',
       'https://insighttimer.com/andrewjohnson/guided-meditations/positivity',
       'https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation',
@@ -800,9 +800,6 @@ function ok() {
     case "motivate":
       location.href = "cyoa/15.html";
       break;
-    case "goals":
-      location.href = "goals.html";
-      break;
     case "tasks":
       location.href = "cyoa/2.html";
       break;
@@ -817,7 +814,7 @@ function ok() {
       break;
     case "game":
       message.innerHTML = "How long have you been being productive?";
-      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href=''>&lt;10 minutes</a><a class='hfire-link' href='cyoa/29.html'>At least 10 minutes</a></div>";
+      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href=''>&lt;45 minutes</a><a class='hfire-link' href='cyoa/29.html'>At least 45 minutes</a></div>";
       break;
     default:
       location.href = "cyoa/1.html";
@@ -1098,8 +1095,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function generateAndrewJohnsonLink()
-{
+function generateAndrewJohnsonLink() {
   var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
   'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
   'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',

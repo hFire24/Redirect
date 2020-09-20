@@ -99,6 +99,7 @@ td {
   color:white;
   text-decoration:none;
   padding: 20px;
+  cursor: pointer;
 }
 
 .slidercontainer {

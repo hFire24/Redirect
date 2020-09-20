@@ -83,14 +83,14 @@ function finalTest(inputText,site)
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic',
   'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat', 'sick of',
   'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful'],inputText) || inputText === 'hate') {
-    $("message").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + "> You need to calm down and relax.</a>";
+    $("message").innerHTML = "<a id='relax' href='relax.html'> You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
   else if(found(['calm', 'relax', 'peace', 'chill', 'refresh', 'reenergize'],inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
     $("message").innerHTML = "Make the place nice and quiet. How much spare time do you have?";
-    $("link").innerHTML = "<div class='two-list'><a id='relax' href=" + generateAndrewJohnsonLink() + ">A Fair Amount</a><a href='relax2.html'>Plentiful</a></a>";
+    $("link").innerHTML = "<div class='two-list'><a id='relax' href='relax.html'>A Fair Amount</a><a href='relax2.html'>Plentiful</a></a>";
   }
   else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
     if(d.getHours() >= 6 && d.getHours() <= 12) {
@@ -99,11 +99,11 @@ function finalTest(inputText,site)
     }
     else if(d.getHours() < 17) {
       $("message").innerHTML = "You should take a power nap.";
-      $("link").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap'>Click here to continue.</a>";
+      $("link").innerHTML = "<a href='https://www.youtube.com/watch?v=RXBG1-1zI_E'>Click here to continue.</a>";
     }
     else if(d.getHours() < 22) {
       $("message").innerHTML = "You should recharge yourself. But how?";
-      $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+      $("link").innerHTML = "<a id='relax' href='relax.html'>Click here to continue.</a>";
     }
     else
       location.href = "cyoa/14.html";
@@ -125,8 +125,8 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(found(['play', 'game'],inputText)) {
-    $("message").innerHTML = "So you want to play games, huh?";
-    $("link").innerHTML = "<a href='cyoa/29.html'>Click here to continue.</a>";
+    message.innerHTML = "How long have you been being productive?";
+    link.innerHTML = "<div class='two-list space'><a class='hfire-link' href='index.html'>&lt;45 minutes</a><a class='hfire-link' href='cyoa/29.html'>At least 45 minutes</a></div>";
   }
   else if(found(['poop', 'fart', 'defecat', 'feces', 'butt'],inputText))
     location.href = 'crap.html';
@@ -203,7 +203,7 @@ function finalTest(inputText,site)
   }
   else if(site === "busy") {
     $("message").innerHTML = "You need an energy boost.";
-    $("link").innerHTML = "<a id='relax' href=" + generateAndrewJohnsonLink() + ">Click here to continue.</a>";
+    $("link").innerHTML = "<a id='relax' href='relax.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("research") >= 0) {
     $("message").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
@@ -324,26 +324,6 @@ var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some ti
 var love = ['love','adore','enjoy','favorite','best'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate'];
 var knowledge = ['learn','curious','to know'];
-
-function generateAndrewJohnsonLink() {
-  var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
-  var index = Math.floor(Math.random() * meditationLinks.length);
-  return meditationLinks[index];
-}
 
 function found(array,inputText) {
   for (var i in array)
