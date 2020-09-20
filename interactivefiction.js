@@ -88,10 +88,8 @@ function finalTest(inputText,site)
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
-  else if(found(['calm', 'relax', 'peace', 'chill', 'refresh', 'reenergize'],inputText) || inputText.indexOf('clear') >= 0 && inputText.indexOf('mind') >= 0) {
-    $("message").innerHTML = "Make the place nice and quiet. How much spare time do you have?";
-    $("link").innerHTML = "<div class='two-list'><a id='relax' href='relax.html'>A Fair Amount</a><a href='relax2.html'>Plentiful</a></a>";
-  }
+  else if(found(['calm', 'relax', 'peace', 'chill', 'fresh', 'reenergize'],inputText) || found(['clear', 'reset'],inputText) && inputText.indexOf('mind') >= 0)
+    location.href = 'relax.html';
   else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
     if(d.getHours() >= 6 && d.getHours() <= 12) {
       $("message").innerHTML = "You need to drink some water.";
