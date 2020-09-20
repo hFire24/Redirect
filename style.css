@@ -354,6 +354,9 @@ td {
   td {
     font-size:30px;
   }
+  .expand {
+    font-size:20px;
+  }
   ol, #goals-list, .relax-list, .small {
     font-size:40px;
   }
@@ -428,6 +431,9 @@ td {
 
   #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2 {
     font-size: 30px;
+  }
+  .expand {
+    font-size: 14px;
   }
   #arrows {
     font-size: 50px;
