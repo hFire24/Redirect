@@ -52,6 +52,13 @@
         location.href = generateAndrewJohnsonLink();
       }
     </script-->
+    <script>
+      var meditations = document.getElementsByClassName('hfire-link');
+      console.log(meditations);
+      for(var i = 0; i < meditations.length; i++) {
+        meditations[i].href = "https://my.headspace.com/packs/16";
+      }
+    </script>
     <script src='script.js'></script>
   </body>
 </html>
