@@ -1,0 +1,90 @@
+.theme1 {
+  background-color: hsl(137, 13%, 32%);
+  color: hsl(104, 22%, 87%);
+}
+
+.theme1 a {
+  color: hsl(104, 22%, 87%);
+}
+
+.theme2 {
+  background-color: hsl(227, 13%, 32%);
+  color: hsl(194, 22%, 87%);
+}
+
+.theme2 a {
+  color: hsl(194, 22%, 87%);
+}
+
+.theme3 {
+  background-color: hsl(317, 13%, 32%);
+  color: hsl(284, 22%, 87%);
+}
+
+.theme3 a {
+  color: hsl(284, 22%, 87%);
+}
+
+.theme4 {
+  background-color: hsl(47, 13%, 32%);
+  color: hsl(14, 22%, 87%);
+}
+
+.theme4 a {
+  color: hsl(14, 22%, 87%);
+}
+
+.theme5 {
+  background-color: hsl(0, 0%, 32%);
+  color: hsl(0, 0%, 87%);
+}
+
+.theme5 a {
+  color: hsl(0, 0%, 87%);
+}
+
+.theme6 {
+  background-color: hsl(182, 13%, 32%);
+  color: hsl(149, 22%, 87%);
+}
+
+.theme6 a {
+  color: hsl(149, 22%, 87%);
+}
+
+.theme7 {
+  background-color: hsl(272, 13%, 32%);
+  color: hsl(239, 22%, 87%);
+}
+
+.theme7 a {
+  color: hsl(239, 22%, 87%);
+}
+
+.theme8 {
+  background-color: hsl(2, 13%, 32%);
+  color: hsl(329, 22%, 87%);
+}
+
+.theme8 a {
+  color: hsl(329, 22%, 87%);
+}
+
+.theme9 {
+  background-color: hsl(92, 13%, 32%);
+  color: hsl(59, 22%, 87%);
+}
+
+.theme9 a {
+  color: hsl(59, 22%, 87%);
+}
+
+.crap {
+  background-color: hsl(22, 13%, 32%);
+  color: hsl(349, 22%, 87%);
+  font-family: 'Comic Sans MS', 'Marker Felt', 'MarkerFelt-Thin';
+}
+
+.crap a {
+  color: hsl(349, 22%, 87%);
+}

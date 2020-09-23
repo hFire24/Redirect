@@ -229,13 +229,13 @@
         while(true)
         {
           await sleep(100);
-          bgHue += 11.25;
-          textHue += 11.25;
+          bgHue += 7.5;
+          textHue += 7.5;
           if(bgHue >= 360)
             bgHue -= 360;
           if (textHue >= 360)
             textHue -= 360;
-          document.body.style.backgroundColor = "hsl(" + bgHue.toString() + ", 13%, 32%)";
+          document.body.style.backgroundColor = "hsl(" + bgHue.toString() + ", 30%, 32%)";
           document.body.style.color = "hsl(" + textHue.toString() + ", 22%, 87%)";
         }
       }

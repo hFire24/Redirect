@@ -110,7 +110,7 @@ td {
   -webkit-appearance: none;
   width: 70%;
   height: 30px;
-  background: hsl(194, 22%, 87%);
+  background: hsl(209, 22%, 87%);
   outline: none;
 }
 
@@ -119,19 +119,19 @@ td {
   appearance: none;
   width: 60px;
   height: 60px;
-  background: hsl(227, 26%, 50%);
+  background: hsl(227, 43%, 50%);
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 60px;
   height: 60px;
-  background: hsl(227, 26%, 50%);
+  background: hsl(227, 43%, 50%);
   cursor: pointer;
 }
 
 .theme1 {
-  background-color: hsl(137, 13%, 32%);
+  background-color: hsl(122, 30%, 32%);
   color: hsl(104, 22%, 87%);
 }
 
@@ -140,30 +140,30 @@ td {
 }
 
 .theme2 {
-  background-color: hsl(227, 13%, 32%);
-  color: hsl(194, 22%, 87%);
+  background-color: hsl(227, 30%, 32%);
+  color: hsl(209, 22%, 87%);
 }
 
 .theme2 a {
-  color: hsl(194, 22%, 87%);
+  color: hsl(209, 22%, 87%);
 }
 
 .theme3 {
-  background-color: hsl(317, 13%, 32%);
-  color: hsl(284, 22%, 87%);
+  background-color: hsl(317, 30%, 32%);
+  color: hsl(299, 22%, 87%);
 }
 
 .theme3 a {
-  color: hsl(284, 22%, 87%);
+  color: hsl(299, 22%, 87%);
 }
 
 .theme4 {
-  background-color: hsl(47, 13%, 32%);
-  color: hsl(14, 22%, 87%);
+  background-color: hsl(47, 21%, 40%);
+  color: hsl(29, 22%, 87%);
 }
 
 .theme4 a {
-  color: hsl(14, 22%, 87%);
+  color: hsl(29, 22%, 87%);
 }
 
 .theme5 {
@@ -176,7 +176,7 @@ td {
 }
 
 .theme6 {
-  background-color: hsl(182, 13%, 32%);
+  background-color: hsl(167, 30%, 32%);
   color: hsl(149, 22%, 87%);
 }
 
@@ -185,30 +185,30 @@ td {
 }
 
 .theme7 {
-  background-color: hsl(272, 13%, 32%);
-  color: hsl(239, 22%, 87%);
+  background-color: hsl(272, 30%, 32%);
+  color: hsl(254, 22%, 87%);
 }
 
 .theme7 a {
-  color: hsl(239, 22%, 87%);
+  color: hsl(254, 22%, 87%);
 }
 
 .theme8 {
-  background-color: hsl(2, 13%, 32%);
-  color: hsl(329, 22%, 87%);
+  background-color: hsl(2, 21%, 32%);
+  color: hsl(344, 22%, 87%);
 }
 
 .theme8 a {
-  color: hsl(329, 22%, 87%);
+  color: hsl(344, 22%, 87%);
 }
 
 .theme9 {
-  background-color: hsl(92, 13%, 32%);
-  color: hsl(59, 22%, 87%);
+  background-color: hsl(92, 30%, 32%);
+  color: hsl(74, 22%, 87%);
 }
 
 .theme9 a {
-  color: hsl(59, 22%, 87%);
+  color: hsl(74, 22%, 87%);
 }
 
 @media only screen and (max-width: 1702px) {
