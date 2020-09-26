@@ -30,8 +30,8 @@
         //Non-Homework Habits
       {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
       {text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
-      {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
-      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
+      //{text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
+      //{text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
       //{text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"},
         //bHabits
       //{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
@@ -42,11 +42,11 @@
       {text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
       //{text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"},
         //cHabits
-      {text:"Play 100% Orange Juice <span class='time'>(1-2 games)</span>",link:"pass",category:"active"},
+      //{text:"Play 100% Orange Juice <span class='time'>(1-2 games)</span>",link:"pass",category:"active"},
       //{text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
       //{text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
       //{text:"Play I Love Hue <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
-      {text:"Play Minesweeper <span class='time'>(1 solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
+      //{text:"Play Minesweeper <span class='time'>(1 solve)</span>",link:"http://minesweeperonline.com/",category:"active"},
       //{text:"Play Smash Ultimate <span class='time'>(30 minutes)</span>",link:"pass",category:"active"},
       {text:"Play Pokemon Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"}
       //{text:"Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>",link:"pass",category:"active"}
@@ -54,7 +54,10 @@
       ];
       do {
         shuffle(aHabits);
-      } while (aHabits[0].category !== "homework" || aHabits[aHabits.length - 1].text !== "Deal with Purdue E-mails" /*|| aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>"*/);
+      } while (aHabits[2].text !== "Practice Piano <span class='time'>(15 minutes)</span>" ||
+      aHabits[3].text !== "Deal with Purdue E-mails" ||
+      aHabits[0].text !== "Play Elevate <span class='time'>(5 minutes)</span>" ||
+      aHabits[1].text !== "Play Duolingo <span class='time'>(1 lesson)</span>"/*|| aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>"*/);
       //while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(1 page)</span>");
 
       //cHabits = cHabits.slice(0,5);
@@ -98,21 +101,35 @@
         }
       }
 
+      class Tier {
+        constructor(number) {
+          this.number = number;
+        }
+        getNumber() {
+          return this.number;
+        }
+        setNumber(number) {
+          this.number = number;
+        }
+      }
+
       buildArray(aHabits,0);
       //buildArray(bHabits,aHabits.length);
       //buildArray(cHabits,aHabits.length + bHabits.length);
-      var tierNumber = -1;
-      getTier(-1);
+      var tierNumber = new Tier(-1);
+      getTier(tierNumber);
 
-      function getTier(tierNumber) {
+      function getTier(tierObject) {
+        var d = new Date();
+        var tiers = ["OU","UU","RU","NU","PU"];
+        console.log("Tier Number is " + tierObject.getNumber());
         if(document.getElementById("tier")) {
-          var tiers = ["OU","UU","RU","NU","PU"];
-          var d = new Date();
           if(d.getDay() >= 1 && d.getDay() <= 5)
-            tierNumber = d.getDay() - 1;
-          else if(tierNumber === -1)
-            tierNumber = Math.floor(Math.random() * 5);
-          tier.innerHTML = tiers[tierNumber];
+            tierObject.setNumber(d.getDay() - 1);
+          else if(tierObject.getNumber() === -1)
+            tierObject.setNumber(Math.floor(Math.random() * 5));
+          tier.innerHTML = tiers[tierObject.getNumber()];
+          console.log("The Tier Number is " + tierObject.getNumber());
         }
       }
 
@@ -215,8 +232,8 @@
               element.style.color = "#7BF";
             else
               element.style.color = "white";
-            getTier(tierNumber);
           }
+          getTier(tierNumber);
         }
       }
 
