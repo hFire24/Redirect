@@ -10,43 +10,14 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme2">
-    <div id='message' class='space'>Life isn't about seeking cuteness.</div>
-    <div id='link' class='space'><a href='../custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span></div>
-    <div id='slider1' class='space' style='display:none;'>
+    <div id='message' class='space'>Just how lazy or energetic are you?</div>
+    <div id='slider1' class='space'>
       <div class='slidercontainer space'>
         <input type="range" min="0" max="10" value="5" class="slider" id="anime-slider"> <button onclick="submit()">Submit</button>
       </div>
       <div id="lazy-level">Neutral</div>
     </div>
-    <div id="theme">Brought to you by the blue theme.</div>
     <script>
-      function rejectSomething(time) {
-        if(time === 1)
-          link.innerHTML = "<a href='../bigbreak.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
-        else if(time === 2) {
-          theme.style.display = "none";
-          message.innerHTML = "Do you really want to look at cute anime girls?";
-          link.innerHTML = "<div class='two-list'><a class='hfire-link' onclick='rejectSomething(3)'>Yes</a> <a class='hfire-link' onclick='rejectSomething(0)'>No</a></div>";
-        }
-        else if(time === 3) {
-          message.innerHTML = "Are you absolutely sure that you want to do it?";
-          link.innerHTML = "<div class='two-list'><a class='hfire-link' onclick='rejectSomething(0)'>No</a> <a class='hfire-link' onclick='rejectSomething(4)'>Yes</a></div>";
-        }
-        else if(time === 4) {
-          message.innerHTML = "Are you absolutely, positively sure?";
-          link.innerHTML = "<div class='two-list'><a class='hfire-link' onclick='rejectSomething(5)'>Cute anime girls are the best thing in the world.</a> <a class='hfire-link' style='color:gold;' onclick='rejectSomething(0)'>Click here if you want a better life.</a></div>";
-        }
-        else if(time === 5) {
-          message.innerHTML = "Just how lazy or energetic are you?";
-          link.style.display = "none";
-          slider1.style.display = "block";
-        }
-        else {
-          message.innerHTML = "OK. Just remember this one thing:<br>Life isn't about seeking cuteness.";
-          link.innerHTML = "<a href='35.html'>Click here to continue.</a>";
-        }
-      }
-
       var lazyLevels = ['Ultra lazy',
       'Lazy like Anzu Futaba',
       'Kind of lazy',
@@ -73,10 +44,7 @@
         else if(slider.value > 8)
           location.href = "../whoa/24.html";
         else {
-          message.innerHTML = "OK, OK. <a href='../animetimer.html' target='_blank'>Just set a timer for five minutes.</a>";
-          link.innerHTML = "Do something other than look at/think of cute anime girls.<br>If you're still thinking about them, just go with your urges.";
-          link.style.display = "block";
-          slider1.style.display = "none";
+          location.href = "../animeslider.html";
         }
       }
     </script>
