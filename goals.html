@@ -29,10 +29,11 @@
       {text:"Do your CNIT355 homework",link:"homework.html#CNIT355",category:"homework"},
         //Non-Homework Habits
       {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
-      {text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
+      //{text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
       //{text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
       //{text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
       //{text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"},
+      {text:"Manage money, write in journal",link:"pass",category:"active"},
         //bHabits
       //{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
@@ -54,7 +55,8 @@
       ];
       do {
         shuffle(aHabits);
-      } while (aHabits[2].text !== "Practice Piano <span class='time'>(15 minutes)</span>" ||
+      } while (aHabits[4].text === "Manage money, write in journal" ||
+      aHabits[2].text !== "Practice Piano <span class='time'>(15 minutes)</span>" ||
       aHabits[3].text !== "Deal with Purdue E-mails" ||
       aHabits[0].text !== "Play Elevate <span class='time'>(5 minutes)</span>" ||
       aHabits[1].text !== "Play Duolingo <span class='time'>(1 lesson)</span>"/*|| aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>"*/);
