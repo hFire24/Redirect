@@ -650,7 +650,7 @@ function randomLink(index,number) {
     {text:"I feel unmotivated 😐",value:"motivate"},
     {text:"I got nothing to do",value:"multiple"},
     {text:"I can't focus 😕",value:"no focus"},
-    {text:"I am hungry 🍔",value:"hungry"},
+    {text:"I am hungry <span id='food-emoji'>🍔</span>",value:"hungry"},
     {text:"I am procrastinating",value:"procrastinate"},
     {text:"I am struggling in life 😣",value:"struggle"},
     {text:"I am waiting for something ⌚",value:"impatient"},
@@ -673,6 +673,8 @@ function randomLink(index,number) {
       option.value = feelings[i].value;
       $("dropdownMenu").appendChild(option);
     }
+    if (d.getHours() > 4 && (d.getHours() < 10 || d.getHours() === 10 && d.getMinutes() < 30))
+      $("food-emoji").innerHTML = "🥓";
   }
   else
     link.innerHTML = linkMessages[linkIndex];
