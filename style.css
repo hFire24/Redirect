@@ -427,7 +427,7 @@ td {
   }
   .relax-list {
     display:grid;
-    grid-template-columns:auto auto auto;
+    grid-template-columns:auto auto;
   }
   #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button {
     font-size: 40px;
