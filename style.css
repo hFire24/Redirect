@@ -425,6 +425,10 @@ td {
   body, #message.tiny, ol, #goals-list, td, .relax-list, .small {
     font-size: 20px;
   }
+  .relax-list {
+    display:grid;
+    grid-template-columns:auto auto auto;
+  }
   #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button {
     font-size: 40px;
   }
