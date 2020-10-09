@@ -553,7 +553,7 @@ function addBigMessages() {
   'Forget about things that are currently distracting you.',
   'Why would you do this? You stupid idiot!',
   'Mindlessness is a bad thing.',
-  'I get that Cirno is your waifu, but <span id="stress">DO NOT be like her!</span>',
+  'Don\'t be a <span style="font-weight:bold;">⑨</span>',
   'Don\'t have a lazy, unproductive day.',
   'You\'re behind on your schedule and tasks! Hurry up!',
   'Temptations aren\'t good things.',
