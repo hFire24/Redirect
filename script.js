@@ -1116,3 +1116,11 @@ function generateAndrewJohnsonLink() {
   var index = Math.floor(Math.random() * meditationLinks.length);
   return meditationLinks[index];
 }
+
+function generalConferenceMonth() {
+  if (d.getMonth() === 3 || d.getMonth() === 9)
+    return true;
+  else {
+    return false;
+  }
+}
