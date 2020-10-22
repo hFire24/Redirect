@@ -20,32 +20,33 @@
   </head>
   <body class="theme3">
     <div id='meme1' class='big space'>Look. You lost all faith in Nanahira in September 2019. She sang a song with the F-word in it. And it got <a style='text-decoration:none;' href='https://youtu.be/-04pUETT7oI' target='_blank'>popular!</a></div>
-    <div id='meme2' class='big space' style='display:none;'>Also in September 2019, you gained interest in Eurovision. It seemed like a perfect substitute! But...</div>
+    <!--div id='meme2' class='big space' style='display:none;'>Also in September 2019, you gained interest in Eurovision. It seemed like a perfect substitute! But...</div-->
+    <div id='meme2' class='big space' style='display:none;'>But still, you think of her name like it's a good thing. Here's what you can do instead.</div>
     <div id='meme3' class='space' style='display:none;'>
       <table class='priorities space'>
         <tbody>
           <tr class='priorities'>
-            <th>TIER 1</th>
+            <th>A</th>
             <td>Work</td>
             <td>Homework</td>
             <td>Studying</td>
           </tr>
           <tr class='priorities'>
-            <th>TIER 2</th>
+            <th>B</th>
             <td>Exercising</td>
             <td>Journaling</td>
             <td>Atomic Habits</td>
-            <td>Full Stack<br>FL Studio</td>
             <td>Relaxing</td>
+            <td>Full Stack</td>
+            <td>Social Skills</td>
             <td>Day Planning</td>
           </tr>
           <tr class='priorities'>
-            <th>TIER 3</th>
+            <th>C</th>
             <td>YouTube</td>
-            <td>Eurovision</td>
             <td>Social Networking</td>
             <td>Browsing Images</td>
-            <td>NGU Idle</td>
+            <td>100% Orange Juice</td>
             <td>Mobile Games</td>
           </tr>
         </tbody>
@@ -78,7 +79,7 @@
           return 'planning your next day';
       }
 
-      var activities = ['light exercise','learning full stack','learning FL Studio','writing in journal','digitizing journal','meditation','reading <u>Atomic Habits</u>',planTodayOrTomorrow()];
+      var activities = ['light exercise','learning full stack','learning social skills','writing in journal','digitizing journal','meditation','reading <u>Atomic Habits</u>',planTodayOrTomorrow()];
       var index = Math.floor(Math.random() * activities.length);
       document.getElementById('activity').innerHTML = activities[index];
     </script>
