@@ -96,9 +96,12 @@
         $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButton()'>click here.</u>";
       }
       else if(inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText))
-        cute(1);
+      {
+        $("message").innerHTML = "You are being deceived by your urges!";
+        $("link").innerHTML = "<a href='art.html'>If you want to feel productive, then start drawing!</a>";
+      }
       else if(inputText.indexOf("thing in the world") >= 0)
-        cute(3);
+        location.href = "fiveminutetimer.html";
       else
         finalTest(inputText,"deviantart");
       document.body.removeChild($('dependency'));
