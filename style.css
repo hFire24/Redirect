@@ -47,7 +47,7 @@ ol a {
   color: yellowgreen;
 }
 
-#message, #break.big, h1, #trance, #survivor, #arrows, #emergency-button {
+#message, #break.big, h1, #trance, #survivor, #arrows, #emergency-button, .huge {
   font-size: 140px;
 }
 
@@ -71,7 +71,7 @@ ol a {
   margin-bottom: 0.5em;
 }
 
-#break, #question, #standup, #changeclothes, #chiptune, #message.small, #arrows.small, h2 {
+#break, #question, #standup, #changeclothes, #chiptune, #message.small, #arrows.small, h2, .big {
   font-size:105px;
 }
 
@@ -345,10 +345,10 @@ td {
   body, #message.tiny {
     font-size: 60px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1, #arrows, #emergency-button {
+  #message, #trance, #stress, #survivor, #break.big, h1, #arrows, #emergency-button, .huge {
     font-size: 100px;
   }
-  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2 {
+  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2, .big {
     font-size: 75px;
   }
   td {
@@ -387,11 +387,10 @@ td {
   body, #message.tiny, ol, #goals-list, .relax-list, .small {
     font-size: 30px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button {
+  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button, .huge {
     font-size: 60px;
   }
-
-  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2 {
+  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2, .big {
     font-size: 44px;
   }
   #arrows {
@@ -400,7 +399,6 @@ td {
   .space2 {
     margin-bottom:1em;
   }
-
   input[type='checkbox'] {
     width:20px;
     height:20px;
@@ -429,11 +427,10 @@ td {
     display:grid;
     grid-template-columns:auto auto;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button {
+  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button, .huge {
     font-size: 40px;
   }
-
-  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2 {
+  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2, .big {
     font-size: 30px;
   }
   .expand {

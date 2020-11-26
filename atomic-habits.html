@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body onresize="getWidth()">
+    <div id='break' class='space'></div>
+    <div id='hideable'>
+      <div id='link' class='space'>
+        How can you apply this to your life?<br><input id="lifeAdvice" class="custom-select" type="text"><button id="submit" class="custom-button" onClick="submit()">Submit</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Page 15
+      "You do not rise to the level of your goals. You fall to the level of your systems.", //Page 27
+      "True behavior change is identity change.", //Page 34
+      "Every action you take is a vote for the type of person you wish to become.", //Page 38
+      "Want to start a good habit? Make it obvious.", //First Law
+      "For good habits, determine where, what day & time, and how you're going to do them.", //Implementation Intention
+      "I will [action] for [duration] at [time] in [location].", //Implementation Intention
+      "If implementation intentions aren't working, add plans to ensure that these actions will be done.", //Coping plans
+      "I will [action] for [duration] at [time] in [location]. And if I can't do it, I'll do it at [time]/in [location].", //Implementation Intention 2
+      "I will [action] for [duration] at [time] in [location]. And if I don't feel like doing it, I'll do just a little.", //Implementation Intention 3
+      "Want to resist a bad habit? Make it invisible.", //Inverse of the First Law
+      "Want to keep a good habit alive? Make it attractive.", //Second Law
+      "Prime your environment for good habits to thrive.",
+      "Prime your environment to eliminate bad habits.",
+      "Want to quit a bad habit? Make it unattractive.", //Inverse of the Second Law
+      "Want to make a good habit? Make it easy.", //Third Law
+      "Want to end a bad habit? Make it difficult.", //Inverse of the Third Law
+      "Want to enjoy a good habit? Make it satisfying.", //Fourth Law
+      "Want to get rid of a bad habit? Make it unsatisfying." //Inverse of the Fourth Law
+      ];
+
+      jamesClearQuote(-1);
+
+      function jamesClearQuote(index)
+      {
+        if (index < 0 || index >= jcQuotes.length)
+          index = Math.floor(Math.random() * jcQuotes.length)
+        $("break").innerHTML = jcQuotes[index];
+        //Put index value to the console
+        console.log("Quote " + index);
+      }
+
+      randomTheme(7);
+      messageComplete = false;
+      var input = $("lifeAdvice");
+      input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          submit();
+        }
+      });
+
+      function submit()
+      {
+        if(found(["cirno"],lifeAdvice.value.toLowerCase()))
+          location.href = "cirno.html";
+        $("link").innerHTML = $("lifeAdvice").value;
+        $("link").classList.add("big");
+        messageComplete = true;
+      }
+    </script>
+  </body>
+</html>
