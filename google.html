@@ -71,10 +71,10 @@
         inputText = $("newBreak").value.toLowerCase();
       console.log(inputText);
 
-      if (found(['assignment','project','exam','test','college','class','study','related to'],inputText) || slider1.value === "6" || slider1.value === "9" || count === 3 && inputText === 'immediately') {
+      if (found(['assignment','project','exam','college','class','related to'],inputText) || slider1.value === "6" || slider1.value === "9" || count === 3 && inputText === 'immediately') {
         $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
         message.classList.add("small");
-        document.body.removeChild($("link"));
+        revealSearchTerm();
       }
       else if(inputText.indexOf("anime") >= 0) {
         $("message").innerHTML = "Remember what you said about quitting anime?";
@@ -96,6 +96,7 @@
         $("urgent").style.display = "block";
       }
       else
+        //Go to finalTest() in interactivefiction.js
         finalTest(inputText,"google")
     }
 
@@ -156,7 +157,19 @@
     function ok() {
       $("message").innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
       $("message").classList.remove("small");
-      document.body.removeChild($("link"));
+      revealSearchTerm();
+    }
+
+    function revealSearchTerm() {
+      var urlSearch = window.location.search;
+      console.log(urlSearch);
+      if (urlSearch === "")
+      {
+        document.body.removeChild($("link"));
+        return;
+      }
+      var parameter = new URLSearchParams(urlSearch);
+      $("link").innerHTML = "You searched for \"" + parameter.get(q) + "\"";
     }
     </script>
     <script src="interactivefiction.js"></script>

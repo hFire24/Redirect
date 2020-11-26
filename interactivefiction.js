@@ -321,7 +321,7 @@ var required = ['need', 'have to', 'must', 'mean', 'required', 'force', 'urgent'
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 var love = ['love','adore','enjoy','favorite','best'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate'];
-var knowledge = ['learn','curious','to know'];
+var knowledge = ['learn','curious','to know','stud','educat','smart','knowledg'];
 
 function found(array,inputText) {
   for (var i in array)
