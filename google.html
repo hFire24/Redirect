@@ -76,10 +76,6 @@
         message.classList.add("small");
         revealSearchTerm();
       }
-      else if(inputText.indexOf("anime") >= 0) {
-        $("message").innerHTML = "Remember what you said about quitting anime?";
-        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-      }
       else if(slider1.value > 3 && slider1.value < 6 || count === 3 && inputText === 'when convenient')
         ok();
       else if(count === 3 && inputText === 'as soon as possible') {
@@ -169,7 +165,7 @@
         return;
       }
       var parameter = new URLSearchParams(urlSearch);
-      $("link").innerHTML = "You searched for \"" + parameter.get(q) + "\"";
+      $("link").innerHTML = "You searched for \"" + parameter.get('q') + "\"";
     }
     </script>
     <script src="interactivefiction.js"></script>

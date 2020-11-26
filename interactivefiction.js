@@ -10,8 +10,7 @@ var d = new Date();
 
 function finalTest(inputText,site)
 {
-  if (inputText.indexOf("sick") >= 0 && inputText.indexOf("sick of") < 0)
-  {
+  if (inputText.indexOf("sick") >= 0 && inputText.indexOf("sick of") < 0) {
     $("message").innerHTML = "Your health matters. If you have some kind of disease, it's best to rest, drink plenty of fluids, and give your eyes a break.";
     $("link").innerHTML = "Immediately put your electronic device away.";
   }
@@ -23,8 +22,7 @@ function finalTest(inputText,site)
     location.href = "busy.html";
   else if (inputText.indexOf("do something") >= 0 || inputText.indexOf("take a break") >= 0)
     location.href = "time.html";
-  else if(inputText.indexOf("music") >= 0 && !(site === "google" && found(knowledge,inputText)))
-  {
+  else if(inputText.indexOf("music") >= 0 && !(site === "google" && found(knowledge,inputText))) {
     if(inputText.indexOf("listening") >= 0)
       location.href = "cyoa/9.html";
     else
@@ -37,13 +35,11 @@ function finalTest(inputText,site)
     document.body.removeChild($("link"));
   }
   else if(found(['hunger', 'hungry', 'hangry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
-    if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth()))
-    {
+    if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth())) {
       $("message").innerHTML = "<img src='media/Fasting.png' alt='a bunch of text that persuades the reader to fast on fast sunday'>";
       document.body.removeChild($("link"));
     }
-    else
-    {
+    else {
       $("message").innerHTML = "You need to eat some food right now.";
       if(d.getDay() === 0)
         document.body.removeChild($("link"));
@@ -65,9 +61,10 @@ function finalTest(inputText,site)
     location.href = 'relapse.html';
   else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'already viewed', 'already browsed', 'fantasiz'],inputText))
     location.href = 'kirby.html';
-  else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
-  'whoa', 'nuke', 'emergency button'],inputText))
+  else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful'],inputText))
     location.href = 'whoa/index.html';
+  else if(found(['whoa', 'nuke', 'emergency button'],inputText))
+    location.href = 'whoa/old.html'
   else if(found(['check', 'new'],inputText) && site !== "google") {
     $("message").innerHTML = "There's nothing beneficial to see there.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
@@ -110,6 +107,8 @@ function finalTest(inputText,site)
     $("message").innerHTML = "If you unblock that website, you'll waste too much time.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
+  else if(found(['cirno','crino','cinro','ciron'],inputText))
+    location.href = "cirno.html";
   else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
     $("message").innerHTML = "Are you lazy, or are you just exhausted?";
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
@@ -207,7 +206,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-  else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd'],inputText) && inputText.indexOf("loli") < 0) {
+  else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd'],inputText)) {
     $("message").innerHTML = "Šílený Ota";
     $("message").classList.remove("small");
     var video = document.createElement("video");
@@ -247,7 +246,10 @@ function finalTest(inputText,site)
     $("message").classList.remove("small");
     $("link").innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
   }
-  else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'cirno', 'meme'],inputText)) {
+  else if(inputText.indexOf("habit") >= 0) {
+    location.href = "atomic-habits.html";
+  }
+  else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'meme'],inputText)) {
     var messages = ['You really are bored.',
     'Stop escaping from your problems!',
     'Don\'t you have anything better to do with your time?',
