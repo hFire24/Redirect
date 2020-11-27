@@ -91,7 +91,7 @@ async function createAdvice()
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 77) {
           event.preventDefault();
-          location.href = "../musicSlider.html";
+          location.href = "../works247.html";
         }
       });
     }
