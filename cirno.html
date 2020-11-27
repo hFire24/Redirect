@@ -9,9 +9,28 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme3" onload="createAdvice()">
-    <div id='message' class='space'>Don't be a <span style="font-weight:bold;">⑨</span></div>
-    <div id="link"><a href="time.html">Do something else instead!</a> <span onclick="rejectSomething(9)" style="color:white;">No.</span></div>
+  <body class="theme2" onload="createAdvice()">
+    <div id='message' class='small space'><!--Don't be a <span style="font-weight:bold;">⑨</span>-->You love Cirno so much, so why don't you draw her?</div>
+    <div id="link" onclick="next()"><a style='color:white;'>Next</a><!--a href="time.html">Do something else instead!</a> <span onclick="rejectSomething(9)" style="color:white;">No.</span--></div>
     <script src="script.js"></script>
+    <script>
+    var num = 1;
+    const max = 2
+    function next() {
+      switch(num) {
+        case 1:
+          $("message").innerHTML = "Creativity is a good thing, and you should use it to draw Cirno.";
+          break;
+        case 2:
+          $("message").innerHTML = "After all, creating and producing are better than consuming.";
+          break;
+        default:
+          console.log("No more new messages");
+      }
+      num++;
+      if(num > max)
+        document.body.removeChild($("link"));
+    }
+    </script>
   </body>
 </html>
