@@ -80,7 +80,7 @@ function finalTest(inputText,site)
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'nerv',
   'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat', 'sick of',
   'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful'],inputText) || inputText === 'hate') {
-    $("message").innerHTML = "<a id='relax' href='relax.html'> You need to calm down and relax.</a>";
+    $("message").innerHTML = "<a id='relax' href='relax.html'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
