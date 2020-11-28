@@ -259,7 +259,7 @@ function loadBreak(index,number) {
     standupMessage.href = "https://www.youtube.com/watch?v=z6KKo85V9Ew";
   else
     standupMessage.removeAttribute("href");
-  if((d.getHours() <= 5 || d.getHours() >= 23) && !Math.floor(Math.random() * 4))
+  if((d.getHours() <= 4 || d.getHours() >= 22) && !Math.floor(Math.random() * 4))
   {
     index = messages.length;
     messages.push('Stand up and stretch if you can.');
@@ -592,7 +592,7 @@ function randomMessage(index,number) {
   }*/
   //If it's late at night, the website may prompt you to go to sleep.
   var sleepTime = Math.floor(Math.random() * 5);
-  if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
+  if ((d.getHours() <= 4 || d.getHours() >= 22) && !sleepTime)
   {
     $("message").innerHTML = 'You should be asleep by now.';
     index = redirectMessages.length;

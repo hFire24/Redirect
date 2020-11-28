@@ -70,7 +70,7 @@
         var standIndex = index - (messages.length - standup.length);
         var message = $("break");
         var d = new Date();
-        if((d.getHours() <= 5 || d.getHours() >= 23) && !Math.floor(Math.random() * 4))
+        if((d.getHours() <= 4 || d.getHours() >= 22) && !Math.floor(Math.random() * 4))
         {
           index = messages.length;
           messages.push('Stand up and stretch if you can.');

@@ -94,7 +94,7 @@
         var index = Math.floor(Math.random() * redirectMessages.length);
         var d = new Date();
         var sleepTime = Math.floor(Math.random() * 5);
-        if ((d.getHours() <= 5 || d.getHours() >= 23) && !sleepTime)
+        if ((d.getHours() <= 4 || d.getHours() >= 22) && !sleepTime)
         {
           redirectMessages.push('You should be asleep by now.');
           index = redirectMessages.length - 1;
