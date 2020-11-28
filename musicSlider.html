@@ -18,12 +18,29 @@
     <div id="message" class="space">No music</div>
     <div id="intensity">Your mind easily wanders off.</div>
     <script>
-      var genres = ['No music','Nature sounds','Ambient music','Beautiful piano music','Downtempo music','Progressive house','<a href="works247.html">"works." 24/7 stream</a>','Upbeat instrumentals',/*'Chiptunes','Eurovision hits',*/'Uplifting trance','Hard trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
-      var genre = document.getElementById("message");
-      var slider = document.getElementById("musicslider");
-      var intensity = document.getElementById("intensity");
+      //Sets up the genres array and gets the elements by id
+      const genres = ['No music','Nature sounds','Ambient music','Beautiful piano music','Downtempo music','Progressive house','<a href="works247.html">"works." 24/7 stream</a>',/*'Chiptunes','Eurovision hits',*/'Uplifting trance','Hard trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
+      const genre = document.getElementById("message");
+      const slider = document.getElementById("musicslider");
+      const intensity = document.getElementById("intensity");
       slider.max = genres.length - 1;
-      slider.oninput = function() {
+
+      //If a question mark follows the url, then the slider can automatically go to the level stated in the url.
+      const urlSearch = window.location.search;
+      if (urlSearch !== "")
+      {
+        let parameter = new URLSearchParams(urlSearch);
+        slider.value = parameter.get('level');
+        if(slider.value > slider.max || slider.value < 0)
+          slider.value = 0;
+        setSliderValue();
+      }
+
+      //Makes the slider work
+      slider.oninput = function() {setSliderValue()};
+
+      //Changes the text of the genre and the intensity
+      function setSliderValue() {
         genre.innerHTML = genres[slider.value];
         console.log(slider.value);
         switch(parseInt(slider.value))
@@ -54,6 +71,7 @@
           default:
             intensity.innerHTML = "What?";
         }
+        //Adds the stress style if the genre's intensity is super high
         if(slider.value >= genres.length - 1)
           genre.classList.add("stress");
         else
