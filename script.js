@@ -204,7 +204,7 @@ function loadBreak(index,number) {
         message.href = "musicSlider.html";
         break;
       case messages.indexOf("Play one of these short games."):
-        message.href = "cyoa/46.html";
+        message.href = "games/index.html";
         break;
       case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
         message.href = "https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw";
@@ -341,9 +341,9 @@ function submitReason() {
     location.href = "custom.html";
   else if(found(["watch","i need to"],reason))
     window.open("cyoa/47.html", '_blank');
-  //If a task seems impossible for the moment, then the user can just solve math problems for the time being.
+  //If a task seems impossible for the moment, then the user can just play some games.
   else if(found(["don't have","sn't with me","not with me","not here","away","forgot my","not home","not at my home","not in my home","not inside my home","college","Purdue"],reason))
-    location.href = "cyoa/7.html";
+    location.href = "games/index.html";
   else if(reason.indexOf("nothing") >= 0)
     location.href = "multiple.html";
   else
@@ -432,7 +432,7 @@ function addBigMessages() {
   '<a href="https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
     //Games
-  '<a href="cyoa/46.html">Why not play one of these short games?</a>',
+  '<a href="games/index.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
   '<a href="https://www.websudoku.com/">Why don\'t you play Sudoku?</a>',
     //Miscellaneous

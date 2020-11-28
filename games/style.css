@@ -33,43 +33,20 @@ ol a {
   font-size:105px;
 }
 
-#standup, #changeclothes {
-  display:none;
-}
-
-#breaklink {
-  padding-top:0.5em;
-  margin-bottom:0.5em;
-}
-
-input[type='radio'] {
-    -webkit-appearance:none;
-    width:60px;
-    height:60px;
-    background:#F00;
-    border-radius:5px;
-    border:2px solid #555;
-}
-input[type='radio']:checked {
-    background:#0F0;
-}
-
-img {
-  max-width:100%;
-  height:auto;
-  width:auto;
+#playagain {
+  display: none;
+  width: 30%;
+  background-color: limegreen;
+  color: black;
+  margin: auto;
 }
 
 #stress a {
   color: red;
 }
 
-.priorities td {
+.mathpad .number, .priorities td {
   border: 1px solid #000;
-}
-
-#hydrate, #musictip {
-  display:none;
 }
 
 td {
@@ -91,34 +68,6 @@ td {
   color:white;
   text-decoration:none;
   padding: 20px;
-  cursor: pointer;
-}
-
-.slidercontainer {
-  width: 100%;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 70%;
-  height: 30px;
-  background: hsl(209, 22%, 87%);
-  outline: none;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 60px;
-  height: 60px;
-  background: hsl(227, 43%, 50%);
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 60px;
-  height: 60px;
-  background: hsl(227, 43%, 50%);
   cursor: pointer;
 }
 
@@ -222,17 +171,6 @@ td {
   .space2 {
     margin-bottom:0.6em;
   }
-  .slider {
-    height: 20px;
-  }
-  .slider::-webkit-slider-thumb {
-    width: 40px;
-    height: 40px;
-  }
-  .slider::-moz-range-thumb {
-    width: 40px;
-    height: 40px;
-  }
 }
 
 @media only screen and (max-width: 1135px) {
@@ -242,26 +180,11 @@ td {
   #message, #break.big, h1 {
     font-size: 60px;
   }
-  #break, #standup, #changeclothes, #question, h2, #meme1, #meme2 {
+  #break, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
     font-size: 44px;
   }
   .space2 {
     margin-bottom:1em;
-  }
-  input[type='radio'] {
-    width:20px;
-    height:20px;
-  }
-  .slider {
-    height: 15px;
-  }
-  .slider::-webkit-slider-thumb {
-    width: 30px;
-    height: 30px;
-  }
-  .slider::-moz-range-thumb {
-    width: 30px;
-    height: 30px;
   }
 }
 
@@ -277,20 +200,5 @@ td {
   }
   .space2 {
     margin-bottom:1.25em;
-  }
-  input[type='radio'] {
-    width:15px;
-    height:15px;
-  }
-  .slider {
-    height: 10px;
-  }
-  .slider::-webkit-slider-thumb {
-    width: 20px;
-    height: 20px;
-  }
-  .slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
   }
 }

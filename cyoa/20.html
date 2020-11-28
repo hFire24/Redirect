@@ -15,25 +15,37 @@
   </body>
   <script>
     document.getElementById("link").href= generateAndrewJohnsonLink();
-    if(window.innerWidth > 812)
-      location.href = "64.html";
 
     function generateAndrewJohnsonLink() {
-      var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
+      var meditationLinks = [];
+      //Mobile links will lead to insighttimer.
+      if(window.innerWidth <= 812)
+        meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
+        'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
+      //Desktop links will lead to youtube.
+      else
+        meditationLinks = ['https://youtu.be/aeai8YNPH-g',
+        'https://youtu.be/9GS4ja6x2ME',
+        'https://youtu.be/w60qcK7ge-s',
+        'https://youtu.be/W1iHzBGc0uA',
+        'https://youtu.be/r8wufRlfmL8',
+        'https://youtu.be/Nzsv9IRaqXc',
+        'https://youtu.be/9Tuu0lOGyEo',
+        'https://youtu.be/ONvacfg50HU',
+        'https://youtu.be/caGFq6JVPCA'];
       var index = Math.floor(Math.random() * meditationLinks.length);
       return meditationLinks[index];
     }
