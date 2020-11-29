@@ -242,9 +242,7 @@ function finalTest(inputText,site)
   else if(found(love,inputText) && site === "youtube")
     location.href = 'cyoa/38.html';
   else if(found(['really bored','very bored','nothing'],inputText)) {
-    $("message").innerHTML = "Ehem. You need to stop procrastinating.";
-    $("message").classList.remove("small");
-    $("link").innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+    location.href = 'index.html';
   }
   else if(inputText.indexOf("habit") >= 0) {
     location.href = "atomic-habits.html";
