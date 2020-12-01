@@ -229,7 +229,7 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("want") >= 0) {
     if(inputText.indexOf("nothing") >= 0)
-      location.href = "13.html";
+      location.href = "cyoa/13.html";
     else {
       $("message").innerHTML = "You want to go there, but you don't need to go there.";
       $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
