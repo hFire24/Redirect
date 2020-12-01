@@ -22,28 +22,29 @@
     <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
     <script>
       var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
-      {text:"Do your ENGL421 homework",link:"homework.html#ENGL421",category:"homework"},
-      {text:"Do your THTR253 homework",link:"homework.html#THTR253",category:"homework"},
-      {text:"Do your CNIT340 homework",link:"homework.html#CNIT340",category:"homework"},
+      //{text:"Do your ENGL421 homework",link:"homework.html#ENGL421",category:"homework"},
+      //{text:"Do your THTR253 homework",link:"homework.html#THTR253",category:"homework"},
+      //{text:"Do your CNIT340 homework",link:"homework.html#CNIT340",category:"homework"},
       {text:"Practice Piano <span class='time'>(15 minutes)</span>",link:"homework.html#MUS161",category:"homework"},
-      {text:"Do your CNIT355 homework",link:"homework.html#CNIT355",category:"homework"},
+      //{text:"Do your CNIT355 homework",link:"homework.html#CNIT355",category:"homework"},
         //Non-Homework Habits
-      {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
-      //{text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
-      //{text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
-      //{text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
-      //{text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"},
-      {text:"Manage money, write in journal",link:"pass",category:"active"},
+      //{text:"Deal with Purdue E-mails",link:"pass",category:"active"},
+      {text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
+      {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
+      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
+      {text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"},
+      //{text:"Manage money, write in journal",link:"pass",category:"active"},
         //bHabits
-      //{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
+      {text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
-      {text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
-      //{text:"Relax/meditate <span class='time'>(1 session)</span>",link:"relax.html",category:"passive"},
+      //{text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
+      {text:"Relax/meditate <span class='time'>(1 session)</span>",link:"relax.html",category:"passive"},
       //{text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
-      {text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
-      //{text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"},
+      //{text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
+      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"},
+      {text:"Draw Cirno <span class='time'>(1+ times)</span>",link:"art.html",category:"acitve"},
         //cHabits
-      {text:"Play 100% Orange Juice <span class='time'>(2-3 games)</span>",link:"pass",category:"active"},
+      {text:"Play 100% Orange Juice <span class='time'>(2-3 games)</span>",link:"pass",category:"active"}
       //{text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
       //{text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
       //{text:"Play I Love Hue <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
@@ -53,14 +54,15 @@
       //{text:"Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>",link:"pass",category:"active"}
       //{text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}];
       ];
-      do {
+      shuffle(aHabits);
+      /*do {
         shuffle(aHabits);
       } while (aHabits[4].text === "Manage money, write in journal" ||
       aHabits[3].text !== "Practice Piano <span class='time'>(15 minutes)</span>" ||
       aHabits[2].text !== "Deal with Purdue E-mails" ||
       aHabits[0].text !== "Play Elevate <span class='time'>(5 minutes)</span>" ||
-      aHabits[1].text !== "Play Duolingo <span class='time'>(1 lesson)</span>"/*|| aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>"*/);
-      //while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(1 page)</span>");
+      aHabits[1].text !== "Play Duolingo <span class='time'>(1 lesson)</span>"/*|| aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>");
+      while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(1 page)</span>");*/
 
       //cHabits = cHabits.slice(0,5);
 
@@ -95,6 +97,8 @@
           var y = Math.floor(Math.random() * 128);
           var z = Math.floor(Math.random() * 32) + 96;
           var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+          if(array[i].text.indexOf("Cirno") >= 0)
+            bgColor = "rgb(30,105,192)";
           element = document.getElementById("habit-" + letter)
           element.style.backgroundColor = bgColor;
           console.log(array[i]);
