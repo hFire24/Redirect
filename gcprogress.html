@@ -7,16 +7,142 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon-meditate.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+      table {
+        border-collapse:collapse;
+        width:100%;
+      }
+
+      table, th, td {
+        border:1px solid black;
+      }
+
+      td {
+        width: 3em;
+      }
+
+      .filled {
+        background-color:darkblue;
+      }
+
+      .skip {
+        background-color:darkred;
+      }
+
+      @media only screen and (max-width: 1702px) {
+        td {
+          width: 5em;
+        }
+      }
+
+      @media only screen and (max-width: 1584px) {
+        td {
+          width: 4em;
+        }
+      }
+
+      @media only screen and (max-width: 1344px) {
+        td {
+          width: 3em;
+        }
+      }
+
+      @media only screen and (max-width: 973px) {
+        td {
+          width: 2.5em;
+        }
+      }
+
+      @media only screen and (max-width: 853px) {
+        td {
+          width: 2em;
+        }
+      }
+
+      @media only screen and (max-width: 733px) {
+        td {
+          width: 1.5em;
+        }
+      }
+
+      @media only screen and (max-width: 613px) {
+        td {
+          width: 1em;
+        }
+      }
+
+      @media only screen and (max-width: 375px) {
+        td {
+          width: 0.5em;
+        }
+      }
+    </style>
   </head>
-  <body class="relax">
+  <body class="relax" onresize='getWidth()'>
     <div id='message' class='space'>Your General Conference Progress</div>
-    <a class='hfire-link' href='https://www.churchofjesuschrist.org/general-conference/2010/10?lang=eng'><strong style='color:darkblue;'>
-      <div>Current Progress: October 2010</div>
-      <div>4 Saturday Morning Talks Completed</div>
-    </strong></a><br>
+    <div class='small space'>It's highly recommended that you say a prayer before watching a conference talk.</div>
+    <div style='text-align:left;'><strong style='text-align:left;'><a class='hfire-link' style='color:darkblue;' href='https://www.churchofjesuschrist.org/general-conference/2010/10?lang=eng'>October 2010</a></strong></div>
+    <table>
+      <tbody>
+        <tr>
+          <th>Sat. M</th>
+          <td class='filled'></td>
+          <td class='filled'></td>
+          <td class='filled'></td>
+          <td class='filled'></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Sat. A</th>
+          <td class='skip'></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Sat. E</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Sun. M</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Sun. A</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
     <strong>Other Talks Completed</strong><br>
-    <a href="https://www.youtube.com/watch?v=iC4aV5WutY0">April 2010: Place No More for the Enemy of My Soul</a><br>
-    <a href="https://www.youtube.com/watch?v=G0nvz7QXVDg">April 2007: Stay On The Path</a>
+    <div class='small'>
+      <a href="https://www.youtube.com/watch?v=iC4aV5WutY0">April 2010: Place No More for the Enemy of My Soul</a><br>
+      <a href="https://www.youtube.com/watch?v=G0nvz7QXVDg">April 2007: Stay On The Path</a>
+    </div>
+    <div id='width'></div>
     <script src='script.js'></script>
   </body>
 </html>
