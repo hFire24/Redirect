@@ -19,7 +19,10 @@
         <a class='hfire-link' href='cyoa/11.html'>I want to do something</a>
         <a class='hfire-link' href='cyoa/56.html'>I'm already doing someting</a>
       </div>
-    <a class='hfire-link' onclick='urgesWin()'>I'm still thinking about cute anime girls</a>
+      <div class='two-list'>
+        <a class='hfire-link' onclick='urgesWin()'>I already looked at anime</a>
+        <a class='hfire-link' onclick='urgesWin()'>I'm still thinking about cute anime girls</a>
+      </div>
     </div>
     <script>
       //a is for alarm, n is for now.
@@ -66,7 +69,7 @@
           n = new Date(Date.now())
           if(!alarmOff)
             adjustTime();
-          if(n.getSeconds() === a.getSeconds() && n.getMinutes() === a.getMinutes() && n.getHours() === a.getHours()) {
+          if(a.getSeconds() <= n.getSeconds() && a.getMinutes() <= n.getMinutes() && a.getHours() <= n.getHours()) {
             alarmOff = true;
             document.getElementById("message").innerHTML = "What are your thoughts right now?";
             document.getElementById("times").style.display = "none";
