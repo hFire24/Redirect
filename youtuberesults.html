@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme3" onload="getBack('youtube2'); createAdvice()">
+    <div id='hydrate' width='100%' height='100%' class='theme8 space'>
+      <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
+      <a class='hfire-link' onclick='disappear()'>OK</a>
+    </div>
+    <div id='musictip' width='100%' height='100%' class='theme2 space'>
+      <h2 class='space'>Here's a tip: Some music can help you focus.</h2>
+      <p><a class='hfire-link' href='works247.html'>Click here for more info.</a></p>
+      <a class='hfire-link' onclick='disappear()'>OK</a>
+    </div>
+    <div id="message" class="small space">Why did you decide to go there?</div>
+    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+      <div id='slider1' style='display:none;'>
+        <div class='slidercontainer space'>
+          <input type="range" min="0" max="10" value="0" class="slider" id="importance-slider"> <button onclick="submit()">Submit</button>
+        </div>
+        <div id="importance">It's totally useless information</div>
+      </div>
+      <div id='yesnomaybe' class='three-list' style='display:none;'>
+        <a class='hfire-link' onclick="ok()">Yes</a>
+        <a class='hfire-link' onclick="submit()">No</a>
+        <a class='hfire-link' onclick="submit()">Maybe</a>
+      </div>
+      <div id='urgent' style='display:none;'>
+        <span class="custom-select" style="width:200px;">
+          <select id='urgent-levels'>
+            <option id="u0" value="0">When convenient</option>
+            <option id="u1" value="1">As soon as possible</option>
+            <option id="u2" value="2">Immediately</option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
+    <script>
+    var count = 0;
+    function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
+      console.log($("newBreak").value);
+      console.log(importanceValues[slider1.value]);
+      var inputText = '';
+      if($("newBreak").value === '' && count !== 3)
+      {
+        if(slider1.value !== "0")
+          inputText = importanceValues[slider1.value];
+        else
+          inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+        console.log(":D");
+      }
+      else if(count === 3)
+        inputText = $("u" + $("urgent-levels").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
+      console.log(inputText);
+
+      if (found(['assignment','project','exam','college','class','related to'],inputText) || slider1.value === "6" || slider1.value === "9" || count === 3 && inputText === 'immediately') {
+        $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block YouTube soon.";
+        message.classList.add("small");
+        revealSearchTerm();
+      }
+      else if(slider1.value > 3 && slider1.value < 6 || count === 3 && inputText === 'when convenient')
+        ok();
+      else if(count === 3 && inputText === 'as soon as possible') {
+        $("message").innerHTML = "<a href='https://www.google.com/search?q=take+a+deep+breath' target='_blank'>Take deep breaths</a>, finish whatever you're doing, and do that thing next.";
+        document.body.removeChild($("link"));
+      }
+      else if(slider1.value === "7" || inputText.indexOf("research") >= 0) {
+        count = 3;
+        $("message").innerHTML = "How urgent is this? When should you do it?";
+        $("newBreak").style.display = "none";
+        $("submit").style.display = "none";
+        $("dropdown").style.display = "none";
+        $("slider1").style.display = "none";
+        $("urgent").style.display = "block";
+      }
+      else
+        //Go to finalTest() in interactivefiction.js
+        finalTest(inputText,"youtube2")
+    }
+
+    var reasons = ["Because I'm lazy",
+    "Because I'm bored", "Because I'm tired", "Because I'm really bored", "I have nothing to do",
+    "For no reason",
+    "Because I feel like it",
+    "Because I want to visit YouTube",
+    "Because I want to procrastinate",
+    "Because I need YouTube",
+    "To check what's new",
+    "I'm struggling in life",
+    "I don't know",
+    "Because I can",
+    "I wanted to watch this one video",
+    "To listen to music",
+    "To clear my watch later list",
+    "To watch car videos",
+    "Because I feel stressed",
+    "Because I feel busy",
+    "Because I feel hungry",
+    "I feel like playing games",
+    "I just relapsed",
+    "Because I can't focus",
+    "Because I feel overwhelmed",
+    "Because I want to relax",
+    "I already looked at bad stuff",
+    "For research",
+    "To watch something funny",
+    "I got something I need to do",
+    "I'm ready to do something else",
+    "Because I love YouTube"];
+    for(var i in reasons) {
+      var option = document.createElement('option');
+      option.id = i;
+      option.value = i;
+      option.innerHTML = reasons[i];
+      document.getElementById("custom-reason").appendChild(option);
+    }
+
+    var importanceValues = ['It\'s totally useless information',
+    'It\'s probably useless information',
+    'It would be nice to know',
+    'It could help me with trivia quizzes',
+    'It could make me happier',
+    'It could come in handy',
+    'It\'s related to what I\'m doing',
+    'It could minimize some risks',
+    'It will help with college classes',
+    'It could save my life',
+    'It upsets me so much'];
+    var importance = document.getElementById("importance");
+    var slider1 = document.getElementById("importance-slider");
+    slider1.max = importanceValues.length - 1;
+    slider1.oninput = function () {
+      importance.innerHTML = importanceValues[slider1.value];
+    }
+
+    function ok() {
+      $("message").innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
+      $("message").classList.remove("small");
+      revealSearchTerm();
+    }
+
+    function revealSearchTerm() {
+      var urlSearch = window.location.search;
+      console.log(urlSearch);
+      if (urlSearch === "")
+      {
+        document.body.removeChild($("link"));
+        return;
+      }
+      var parameter = new URLSearchParams(urlSearch);
+      $("link").innerHTML = "You searched for \"" + parameter.get('search_query') + "\"";
+    }
+    </script>
+    <script src="interactivefiction.js"></script>
+  </body>
+</html>

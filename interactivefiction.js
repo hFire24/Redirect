@@ -65,7 +65,7 @@ function finalTest(inputText,site)
     location.href = 'whoa/index.html';
   else if(found(['whoa', 'nuke', 'emergency button'],inputText))
     location.href = 'whoa/old.html'
-  else if(found(['check', 'new'],inputText) && site !== "google") {
+  else if(found(['check', 'new'],inputText) && (site !== "google") || site !== "youtube2") {
     $("message").innerHTML = "There's nothing beneficial to see there.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
@@ -109,7 +109,7 @@ function finalTest(inputText,site)
   }
   else if(found(['cirno','crino','cinro','ciron'],inputText))
     location.href = "cirno.html";
-  else if(inputText.indexOf("lazy") >= 0 && site !== "google") {
+  else if(inputText.indexOf("lazy") >= 0 && (site !== "google" || site !== "youtube2")) {
     $("message").innerHTML = "Are you lazy, or are you just exhausted?";
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
     //$("message").innerHTML = "Why don't you use your laziness to your advantage?";
@@ -137,7 +137,7 @@ function finalTest(inputText,site)
     $("message").innerHTML = "You won't feel like a loser anymore after listening to one of those meditations.";
     $("link").innerHTML = "<a href='relax2.html'>Click here to continue.</a>";
   }
-  else if(site === "google") {
+  else if(site === "google" || site === "youtube2") {
     if(count < 2 && inputText !== '') {
       input.value = "";
       if((found(required,inputText) || found(knowledge,inputText)) && count !== 1) {
@@ -166,7 +166,6 @@ function finalTest(inputText,site)
       'Stop escaping from your problems!',
       'Forget that search term!',
       'You shouldn\'t search that term.',
-      'Don\'t waste time getting distracted on Google.',
       'Don\'t you have anything better to do with your time?',
       'Don\'t search for time-wasting things!',
       'Your mind must be wandering off, isn\'t it?',
@@ -174,7 +173,6 @@ function finalTest(inputText,site)
       'You just wanted to sidetrack. Not good.',
       'Nothing good will come out of searching that term.',
       'You are procrastinating and not getting things done.',
-      'You want to spend your life Googling useless stuff? 🤣',
       'You may seem bored or lazy, but you are fearful.',
       'Don\'t get dictated by your urges.',
       'You have more important things to do.',
@@ -189,6 +187,13 @@ function finalTest(inputText,site)
       'You want to go there, but you don\'t need to go there.',
       'Don\'t be addicted to the internet.',
       'Fun things are good, but they are distractions.'];
+      if(site === "youtube2")
+      messages.push('Don\'t waste time getting distracted on YouTube.',
+      'You want to spend your life watching useless YouTube videos? 🤣');
+      else {
+        messages.push('Don\'t waste time getting distracted on Google.',
+        'You want to spend your life Googling useless stuff? 🤣');
+      }
       document.getElementById("message").innerHTML = messages[Math.floor(Math.random() * messages.length)];
       document.getElementById("message").classList.remove("small");
       document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
