@@ -65,7 +65,7 @@ function finalTest(inputText,site)
     location.href = 'whoa/index.html';
   else if(found(['whoa', 'nuke', 'emergency button'],inputText))
     location.href = 'whoa/old.html'
-  else if(found(['check', 'new'],inputText) && (site === "google" || site === "youtube2")) {
+  else if(found(['check', 'new'],inputText) && !(site === "google" || site === "youtube2")) {
     $("message").innerHTML = "There's nothing beneficial to see there.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
