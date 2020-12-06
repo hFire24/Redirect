@@ -15,11 +15,30 @@
     <script src="script.js"></script>
     <script>
     var num = 1;
-    const max = 2
+    const max = 2;
+    var term = "Cirno";
+
+    var urlSearch = window.location.search;
+    console.log(urlSearch);
+    if (urlSearch !== "")
+    {
+      var parameter = new URLSearchParams(urlSearch);
+      if(parameter.get('q') !== 'cirno') {
+        term = parameter.get('q').toString();
+        term = term.replace('cirno','Cirno');
+        term = term.charAt(0).toUpperCase() + term.slice(1);
+        $("message").innerHTML = term + "? You really are a <span style=\"font-weight:bold;\">⑨</span>.";
+        num = 0;
+      }
+    }
+
     function next() {
       switch(num) {
+        case 0:
+          $("message").innerHTML = "You love Cirno so much, so why don't you draw " + term + "?";
+          break;
         case 1:
-          $("message").innerHTML = "Creativity is a good thing, and you should use it to draw Cirno.";
+          $("message").innerHTML = "Creativity is a good thing, and you should use it to draw " + term + ".";
           break;
         case 2:
           $("message").innerHTML = "After all, creating and producing are better than consuming.";
@@ -31,6 +50,8 @@
       if(num > max)
         document.body.removeChild($("link"));
     }
+
+
     </script>
   </body>
 </html>
