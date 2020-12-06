@@ -23,10 +23,10 @@
     if (urlSearch !== "")
     {
       var parameter = new URLSearchParams(urlSearch);
-      if(parameter.get('q') !== 'cirno') {
+      if(parameter.get('q') !== "" && parameter.get('q') !== 'cirno') {
         term = parameter.get('q').toString();
       }
-      else if(parameter.get('search_query') !== 'cirno') {
+      else if(parameter.get('search_query') !== "" && parameter.get('search_query') !== 'cirno') {
         term = parameter.get('search_query').toString();
       }
       term = term.replace('cirno','Cirno');
