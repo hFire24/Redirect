@@ -217,7 +217,15 @@ td {
   color: hsl(299, 22%, 87%);
 }
 
-.theme3 a {
+.theme3 .slider::-webkit-slider-thumb {
+  background: hsl(317, 43%, 50%);
+}
+
+.theme3 .slider::-moz-range-thumb {
+  background: hsl(317, 43%, 50%);
+}
+
+.theme3 a, .theme1 .slider {
   color: hsl(299, 22%, 87%);
 }
 
