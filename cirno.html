@@ -23,16 +23,18 @@
     if (urlSearch !== "")
     {
       var parameter = new URLSearchParams(urlSearch);
-      if(parameter.get('q') !== null && parameter.get('q') !== 'cirno') {
+      if(parameter.get('q') !== null) {
         term = parameter.get('q').toString();
       }
-      else if(parameter.get('search_query') !== null && parameter.get('search_query') !== 'cirno') {
+      else if(parameter.get('search_query') !== null) {
         term = parameter.get('search_query').toString();
       }
-      term = term.replace('cirno','Cirno');
-      term = term.charAt(0).toUpperCase() + term.slice(1);
-      $("message").innerHTML = term + "? You really are a <span style=\"font-weight:bold;\">⑨</span>.";
-      num = 0;
+      if(term !== 'cirno') {
+        term = term.replace('cirno','Cirno');
+        term = term.charAt(0).toUpperCase() + term.slice(1);
+        $("message").innerHTML = term + "? You really are a <span style=\"font-weight:bold;\">⑨</span>.";
+        num = 0;
+      }
     }
 
     function next() {
