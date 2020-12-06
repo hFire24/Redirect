@@ -47,7 +47,7 @@ function finalTest(inputText,site)
         $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
     }
   }
-  else if(found(['suicid', 'die ', 'be dead', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'depressed', 'homicid',
+  else if(found(['suicid', 'die ', 'be dead', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid',
   'give up in life', 'end my life', 'life to end', 'i don\'t matter', 'i do not matter', 'hang myself', 'destroy myself', 'destroy my life', 'hate myself', 'hate my life', 'worthless'],inputText)
   && !found(wasteTime,inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText) || inputText.endsWith("die")) {
     $("message").innerHTML = "This sounds super serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
@@ -78,8 +78,8 @@ function finalTest(inputText,site)
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'nerv',
-  'stress', 'angry', 'anger', 'furious', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat', 'sick of',
-  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful'],inputText) || inputText === 'hate') {
+  'stress', 'angry', 'anger', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat', 'sick of',
+  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'depress', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful'],inputText) || inputText === 'hate') {
     $("message").innerHTML = "<a id='relax' href='relax.html'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
