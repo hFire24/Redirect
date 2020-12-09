@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme5" onload="createAdvice()">
+  <body class="theme5" onload="displayAdvice()">
     <div id='hydrate' width='100%' height='100%' class='theme8 space'>
       <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
       <a class='hfire-link' onclick='disappear()'>OK</a>
@@ -19,7 +19,8 @@
       <p><a class='hfire-link' href='works247.html'>Click here for more info.</a></p>
       <a class='hfire-link' onclick='disappear()'>OK</a>
     </div>
-    <div id='message' class='small space'>What do you want to do right now?</div>
+    <div id='message'></div>
+    <div id='question' class='space'>What do you want to do right now?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button></div>
     <audio id='press'>
       <source src="media/Button Push.mp3" type="audio/mpeg">
@@ -29,13 +30,13 @@
         console.log($("newBreak").value);
         var inputText = $("newBreak").value.toLowerCase();
         if(found(['busy', 'keep', 'continue', 'work', 'resume', 'job', 'internship'],inputText)) {
-          $("message").innerHTML = "Don't overwork yourself.";
+          $("question").innerHTML = "Don't overwork yourself.";
           $("link").innerHTML = "<div class='space'><a href='cyoa/20.html'>I'm already overworked.</a></div><div><a href='works247.html'>I could use some music.</a></div>";
         }
         else if(found(['regress', ' ar', ' ars', ' ar.', 'ar\'', 'younger', 'shrink', 'hats', 'oversize', 'too big', 'gigantic', 'giant', 'huge',
         'loli', 'cute little', 'maid', 'dress', 'anime', 'touhou', 'cirno', 'deviantart', 'booru', 'onii-',
         '-old', ' old', ' age', 'toddler', 'preschool', 'tiny'],inputText)) {
-          $("message").innerHTML = "You're having urges again.";
+          $("question").innerHTML = "You're having urges again.";
           $("link").innerHTML = "<u id='clickHere' onclick='pushTheButton()'>Click here.</u>";
         }
         else if(inputText.indexOf("something") >= 0) {

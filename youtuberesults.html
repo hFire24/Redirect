@@ -9,17 +9,9 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme3" onload="getBack('youtube2'); createAdvice()">
-    <div id='hydrate' width='100%' height='100%' class='theme8 space'>
-      <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
-      <a class='hfire-link' onclick='disappear()'>OK</a>
-    </div>
-    <div id='musictip' width='100%' height='100%' class='theme2 space'>
-      <h2 class='space'>Here's a tip: Some music can help you focus.</h2>
-      <p><a class='hfire-link' href='works247.html'>Click here for more info.</a></p>
-      <a class='hfire-link' onclick='disappear()'>OK</a>
-    </div>
-    <div id="message" class="small space">Why did you decide to go there?</div>
+  <body class="theme3" onload="loadWebsite(7);">
+    <div id="message" class="space"></div>
+    <div id="question" class="space">Why did you decide to go there?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
         <span class="custom-select" style="width:200px;">
@@ -59,8 +51,8 @@
       var inputText = '';
       if($("newBreak").value === '' && count !== 3)
       {
-        if(slider1.value !== "0")
-          inputText = importanceValues[slider1.value];
+        if(slider1.value !== "0" || count === 1)
+          inputText = importanceValues[slider1.value].toLowerCase();
         else
           inputText = $($("custom-reason").value).innerHTML.toLowerCase();
         console.log(":D");
@@ -71,20 +63,19 @@
         inputText = $("newBreak").value.toLowerCase();
       console.log(inputText);
 
-      if (found(['assignment','project','exam','college','class','related to'],inputText) || slider1.value === "6" || slider1.value === "9" || count === 3 && inputText === 'immediately') {
-        $("message").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block YouTube soon.";
-        message.classList.add("small");
+      if (found(['assignment','project','exam','college','class','related to',],inputText) || slider1.value > 6 && slider1.value < 10 || count === 3 && inputText === 'immediately') {
+        $("question").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block YouTube soon.";
         revealSearchTerm();
       }
       else if(slider1.value > 3 && slider1.value < 6 || count === 3 && inputText === 'when convenient')
         ok();
       else if(count === 3 && inputText === 'as soon as possible') {
-        $("message").innerHTML = "<a href='https://www.google.com/search?q=take+a+deep+breath' target='_blank'>Take deep breaths</a>, finish whatever you're doing, and do that thing next.";
+        $("question").innerHTML = "<a href='https://www.google.com/search?q=take+a+deep+breath' target='_blank'>Take deep breaths</a>, finish whatever you're doing, and do that thing next.";
         document.body.removeChild($("link"));
       }
-      else if(slider1.value === "7" || inputText.indexOf("research") >= 0) {
+      else if(slider1.value === "6" || inputText.indexOf("research") >= 0) {
         count = 3;
-        $("message").innerHTML = "How urgent is this? When should you do it?";
+        $("question").innerHTML = "How urgent is this? When should you do it?";
         $("newBreak").style.display = "none";
         $("submit").style.display = "none";
         $("dropdown").style.display = "none";
@@ -139,8 +130,8 @@
     'It could help me with trivia quizzes',
     'It could make me happier',
     'It could come in handy',
-    'It\'s related to what I\'m doing',
     'It could minimize some risks',
+    'It\'s related to what I\'m doing',
     'It will help with college classes',
     'It could save my life',
     'It upsets me so much'];
@@ -152,16 +143,14 @@
     }
 
     function ok() {
-      $("message").innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
-      $("message").classList.remove("small");
+      $("question").innerHTML = "OK! Add that your \"Search Terms\" list to search for later!";
       revealSearchTerm();
     }
 
     function revealSearchTerm() {
       var urlSearch = window.location.search;
       console.log(urlSearch);
-      if (urlSearch === "")
-      {
+      if (urlSearch === "") {
         document.body.removeChild($("link"));
         return;
       }
@@ -170,5 +159,6 @@
     }
     </script>
     <script src="interactivefiction.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

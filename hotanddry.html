@@ -10,7 +10,8 @@
     <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme8">
-    <div id="message" class="small space">Why are you here?</div>
+    <div id="message"></div>
+    <div id="question" class="space">Why are you here?</div>
     <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
         <span class="custom-select" style="width:200px;">
@@ -20,14 +21,11 @@
         </span><button onclick="submit()">Submit</button>
       </div>
     </div>
-    <img id='image' src='media/Nissan Expanding Brain.png' style='opacity:0;' width="857"></img>
+    <img style='max-width:90%; height:auto; opacity:0;' src='media/Nissan Expanding Brain.png' style='opacity:0;' width="857"></img>
     <audio id='press'>
       <source src="media/Button Push.mp3" type="audio/mpeg">
     </audio>
     <script>
-    //Resizes the meme
-    if(window.innerWidth < 680 / 0.9)
-      document.getElementById('image').width = 0.9 * window.innerWidth;
     //Changes the apple icon
     var icon = document.getElementById("apple");
     var iconNumber = Math.floor(Math.random() * 7) + 1;
@@ -44,20 +42,24 @@
       else
         inputText = $("newBreak").value.toLowerCase();
       if (inputText.indexOf("twitter") >= 0) {
-        $("message").innerHTML = "Twitter is a toxic wasteland that you should not go to.";
+        $("question").innerHTML = "Twitter is a toxic wasteland that you should not go to.";
         $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
       }
       else if (inputText.indexOf("deviantart") >= 0) {
-        $("message").innerHTML = giveAReason("deviantart");
+        $("question").innerHTML = giveAReason("deviantart");
         $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
       }
       else if (inputText.indexOf("youtube") >= 0) {
-        $("message").innerHTML = "YouTube is your most frequented timesink. Avoid going there.";
+        $("question").innerHTML = "YouTube is your most frequented timesink. Avoid going there.";
+        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      }
+      else if (inputText.indexOf("reddit") >= 0) {
+        $("question").innerHTML = "Reddit is bad.";
         $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
       }
       else
         finalTest(inputText,"hotanddry");
-      if ($("message").innerText === "Click here.")
+      if ($("question").innerText === "Click here.")
         document.body.removeChild($("link"));
     }
 
@@ -96,10 +98,14 @@
     "DeviantArt's reputation is not very good due to some of its art.",
     "Like YouTube, DeviantArt can be a major timesink.",
     "Time is money. Don't let DeviantArt waste more of your time",
-    "<span onclick='pushTheButton()'>Click here.</span>"];
+    "<span onclick='pushTheButtonHD()'>Click here.</span>"];
     function giveAReason(website) {
       if (website === "deviantart")
-        return noDeviantArtReasons[Math.floor(Math.random() * noDeviantArtReasons.length)];
+      {
+        var index = Math.floor(Math.random() * noDeviantArtReasons.length)
+        index = noDeviantArtReasons.length - 1;
+        return noDeviantArtReasons[index];
+      }
       else
         return "I'm gonna assume that you should be more productive instead.";
     }
@@ -108,10 +114,10 @@
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    async function pushTheButton()
+    async function pushTheButtonHD()
     {
       $("press").play();
-      $("message").style.color = 'white';
+      $("question").style.color = 'white';
       await sleep(1750);
       location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
     }
@@ -123,7 +129,7 @@
       mainElement: 'body',
       distMax: window.innerHeight / 2,
       onRefresh: function() {
-        $("message").innerHTML = "I get it. You miss the pull to refresh feature on social media websites. But you could spend your spare time more wisely.";
+        $("question").innerHTML = "I get it. You miss the pull to refresh feature on social media websites. But you could spend your spare time more wisely.";
         $("link").innerHTML = "<a href='breakm.html'>Click here to continue.</a>";
       }
     });

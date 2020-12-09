@@ -4,20 +4,18 @@ var messages = [];
 var standup = [];
 var changeclothes = [];
 var breakArray;
+var messageComplete = true;
 
 function loadWebsite(number) {
-  //1, 55
-  if(number === 1 || number === 55)
-  {
+  //1, 7, 55
+  if(number === 1 || number === 7 || number === 55) {
     if(number === 1)
       addBigMessages();
     randomMessage(-1,number);
   }
   //2, 3, 4, 6
-  else if(number > 1 && number < 5 || number === 6)
-  {
-    if(number > 1 && number < 4)
-    {
+  else if(number > 1 && number < 5 || number === 6) {
+    if(number > 1 && number < 4) {
       if(Math.floor(Math.random() * 2) && number !== 2)
         loadBigBreak();
       else
@@ -34,7 +32,8 @@ function loadWebsite(number) {
     randomQuestion(-1);
   else
     randomLink(-1,number);
-  randomTheme(number);
+  if (number !== 7)
+    randomTheme(number);
   //If the number is 1, then the homework iframe may pop up.
   if(number === 1) {
     var homework = Math.floor(Math.random() * 3);
@@ -50,6 +49,8 @@ function loadWebsite(number) {
       $("hideable").appendChild(homeworkFrame);
     }
   }
+  if(number === 7)
+    messageComplete = false;
 }
 
 function $(x) {
@@ -605,6 +606,8 @@ function randomMessage(index,number) {
 }
 
 function randomLink(index,number) {
+  //For pages with a number of 7 (e.g., youtube.html)
+  var removeQuestion = false;
   //Array for link messages below the heading text
   var linkMessages = ["Immediately close this tab."];
   for (var i = 1; i <= 30; i++)
@@ -616,10 +619,13 @@ function randomLink(index,number) {
   //If the message tells you to leave, the linkIndex will be 0.
   if (index < 4 || message === 'Return to your previous task.' || message === 'Get out of here!')
     linkIndex = 0;
+  if (linkIndex === 0 || message === "May this page suggest you take a short break?" || message === "Time to take a break.")
+    removeQuestion = true;
   //Put link message and to screen using the index value of the array
-  var parent = $("hideable");
+  if(number !== 7)
+    var parent = $("hideable");
   var link = $("link");
-  if(!link) {
+  if(!link && number !== 7) {
     link = document.createElement("div");
     link.id = "link";
     link.className = "space";
@@ -630,9 +636,8 @@ function randomLink(index,number) {
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
   else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
-  else if (linkIndex > 0)
-  {
-    link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='ok()'>OK</button>";
+  else if (linkIndex > 0 && number !== 7) {
+    link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
     {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
@@ -666,8 +671,7 @@ function randomLink(index,number) {
     {text:"I want to browse YouTube",value:"youtube"},
     {text:"I want to look at cute anime girls",value:"anime girls"},
     {text:"I feel like playing a game 🎮",value:"game"}];
-    for(var i = 0; i < feelings.length; i++)
-    {
+    for(var i = 0; i < feelings.length; i++) {
       var option = document.createElement("option");
       option.innerHTML = feelings[i].text;
       option.value = feelings[i].value;
@@ -676,8 +680,10 @@ function randomLink(index,number) {
     if (d.getHours() > 4 && (d.getHours() < 10 || d.getHours() === 10 && d.getMinutes() < 30))
       $("food-emoji").innerHTML = "🥓";
   }
-  else
+  else if(number !== 7 || removeQuestion)
     link.innerHTML = linkMessages[linkIndex];
+  if(number === 7 && removeQuestion)
+    document.body.removeChild($("question"));
   //Put index value to the console
   console.log("Link " + linkIndex);
   //This only shows up if certain pages are loaded.
@@ -698,7 +704,7 @@ function randomLink(index,number) {
   }
 }
 
-function ok() {
+function okFeeling() {
   $("message").classList.remove("small");
   $("message").classList.remove("tiny");
   switch(dropdownMenu.value)
@@ -830,28 +836,14 @@ function actualLength() {
   return txt.length;
 }
 
-function getBack()
-{
-  var random = Math.floor(Math.random() * 30)
-  console.log("Random " + random);
-  if(random === 0)
-  {
-    $("message").innerHTML = "Get back to whatever you should be doing!";
-    $("link").innerHTML = "Immediately close this tab.";
-  }
-}
-
-async function createAdvice()
-{
+async function createAdvice() {
   var hydrate = Math.floor(Math.random() * 30);
   console.log("Hydrate " + hydrate);
-  if(hydrate < 3)
-  {
+  if(hydrate < 3) {
     await sleep(100);
     if (hydrate < 1)
       alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
-    else
-    {
+    else {
       alert("Here's a tip: Some music can help you focus.\n\nPress OK and then the \"M\" key for more info.");
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 77) {
@@ -937,8 +929,6 @@ function randomQuestion(index) {
   //Put index value to the console
   console.log("Question " + index);
 }
-
-var messageComplete = true;
 
 function randomTheme(number) {
   //Pick a random theme

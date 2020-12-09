@@ -9,18 +9,11 @@
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme1" onload="getBack('deviantart'); createAdvice()">
-    <div id='hydrate' width='100%' height='100%' class='theme8 space'>
-      <h2 class='space'>Just a reminder to stay hydrated.<br>You may need to stand up and stretch.</h2>
-      <a class='hfire-link' onclick='disappear()'>OK</a>
-    </div>
-    <div id='musictip' width='100%' height='100%' class='theme3 space'>
-      <h2 class='space'>Here's a tip: Some music can help you focus.</h2>
-      <p><a class='hfire-link' href='works247.html'>Click here for more info.</a></p>
-      <a class='hfire-link' onclick='disappear()'>OK</a>
-    </div>
-    <div id="message" class="small space">Why did you decide to go there?</div>
-    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+  <body class="theme1" onload="loadWebsite(7); areYouBored('deviantart');">
+    <div id="message" class="space"></div>
+    <div id="question" class="space">Why did you decide to go there?</div>
+    <div id='link' class='space'>
+      <input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
         <span class="custom-select" style="width:200px;">
           <select id='custom-reason'>
@@ -64,44 +57,36 @@
       else
         inputText = $("newBreak").value.toLowerCase();
       console.log(inputText);
-      if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'erection', 'boner'],inputText))
-        location.href = 'kirby.html';
-      else if(found(['regress', 'younger', 'shrink', 'oversize', 'too big', 'gigantic', 'giant', 'huge', ' age', 'toddler', 'preschool', 'tiny'],inputText))
+      if(found(['regress', 'younger', 'shrink', 'oversize', 'too big', 'gigantic', 'giant', 'huge', ' age', 'toddler', 'preschool', 'tiny'],inputText) ||
+        found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful'],inputText))
         location.href = "whoa/index.html";
       else if(inputText.indexOf("touhou") >= 0) {
-        $("message").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";
+        $("question").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";
         document.body.removeChild($("link"));
       }
-      else if(slider1.value < 3 && $("newBreak").value === '' && $($("custom-reason").value).innerHTML === '')
-      {
-        $("message").innerHTML = "Control these thoughts and kick them out!";
+      else if(slider1.value < 3 && $("newBreak").value === '' && $($("custom-reason").value).innerHTML === '' && $('dependency').style.display !== 'none') {
+        $("question").innerHTML = "Control these thoughts and kick them out!";
         $("link").innerHTML = "<a href='cyoa/20.html'>But I can't get them out!</a>";
       }
-      else if(slider1.value === "3")
-      {
-        $("message").innerHTML = "You want to do it, but you don't need to do it. There are other ways to feel happiness.";
+      else if(slider1.value === "3") {
+        $("question").innerHTML = "You want to do it, but you don't need to do it. There are other ways to feel happiness.";
         $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
       }
-      else if(slider1.value === "4")
-      {
-        $("message").innerHTML = "You are being deceived by your urges!";
+      else if(slider1.value === "4") {
+        $("question").innerHTML = "You are being deceived by your urges!";
         $("link").innerHTML = "<a href='art.html' style='display:block; margin-bottom:0.5em;'>If you want to be more creative, then start drawing!</a><a href='gcprogress.html'>If you want to be more religious, then watch General Conference!</a>";
       }
-      else if(slider1.value === "5")
+      else if(slider1.value === "5" || inputText.indexOf("thing in the world") >= 0)
         location.href = "fiveminutetimer.html";
-      else if(slider1.value === "6")
-      {
+      else if(slider1.value === "6") {
         $("message").innerHTML = "✝PLAY TABERNACLE CHOIR MUSIC✝";
-        $("message").classList.remove("small");
-        $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButton()'>click here.</u>";
+        document.body.removeChild($("question"));
+        $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButtonTC()'>click here.</u>";
       }
-      else if(inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText))
-      {
-        $("message").innerHTML = "You are being deceived by your urges!";
+      else if(inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
+        $("question").innerHTML = "You are being deceived by your urges!";
         $("link").innerHTML = "<a href='art.html' style='display:block; margin-bottom:0.5em;'>If you want to be more creative, then start drawing!</a><a href='gcprogress.html'>If you want to be more religious, then watch General Conference!</a>";
       }
-      else if(inputText.indexOf("thing in the world") >= 0)
-        location.href = "fiveminutetimer.html";
       else
         finalTest(inputText,"deviantart");
       document.body.removeChild($('dependency'));
@@ -113,7 +98,7 @@
     "Because I'm bored", "Because I'm tired", "Because I'm really bored", "I have nothing to do",
     "For no reason",
     "Because I feel like it",
-    "Because I want cute things",
+    "Because I want to",
     "Because I want to look at cute anime girls",
     "Because I want to procrastinate",
     "To check what's new",
@@ -152,7 +137,7 @@
     }
 
     function addicted() {
-      $("message").innerHTML = "How much do these thoughts control you?";
+      $("question").innerHTML = "How much do these thoughts control you?";
       $("yesno").style.display = "none";
       $("dependency").style.display = "block";
     }
@@ -176,7 +161,7 @@
     }
 
     function restoreLink() {
-      $("message").innerHTML = "Then why did you decide to go there?";
+      $("question").innerHTML = "Then why did you decide to go there?";
       $("yesno").style.display = "none";
       $("link").style.display = "block";
     }
@@ -185,7 +170,7 @@
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    async function pushTheButton()
+    async function pushTheButtonTC()
     {
       document.getElementById("press").play();
       document.getElementById("thebutton").style.color = 'white';
@@ -194,5 +179,6 @@
     }
     </script>
     <script src="interactivefiction.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

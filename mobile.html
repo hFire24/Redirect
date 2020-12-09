@@ -14,11 +14,8 @@
     <div id='message' class='space'></div>
     <div id='hideable' class='space'>
     </div>
-    <img id='image' src='media/Expanding Brain Six Things.jpg' alt='An expanding brain meme. 1: Being dictated by your urges, 2: Watching educational YouTube videos, 3: Listening to guided meditations, 4: Learning new skills, 5: Doing your homework, 6: Getting closer to God' width="680"></img>
+    <img id='image' src='media/Expanding Brain Six Things.jpg' style='max-width:90%; height:auto;' alt='An expanding brain meme. 1: Being dictated by your urges, 2: Watching educational YouTube videos, 3: Listening to guided meditations, 4: Learning new skills, 5: Doing your homework, 6: Getting closer to God' width="680"></img>
     <script>
-      //Resizes the meme
-      if(window.innerWidth < 680 / 0.9)
-        document.getElementById('image').width = 0.9 * window.innerWidth;
       //Changes the apple icon
       var icon = document.getElementById("apple");
       var iconNumber = Math.floor(Math.random() * 7) + 1;

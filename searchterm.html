@@ -152,7 +152,7 @@
           link.innerHTML = "Do not bring your phone with you.";
         else if (linkIndex > 0)
         {
-          link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='ok()'>OK</button>";
+          link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
           var feelings = [{text:"Select an emotion",value:"lazy"},
           {text:"I got something I need to do",value:"custom"},
           {text:"I'm ready to do something else",value:"time"},
@@ -300,7 +300,7 @@
         location.href = emergency;
       }
 
-      //To prepare things for the ok() function
+      //To prepare things for the okFeeling() function
       message = $("message");
     </script>
     <script src="script.js"></script>
