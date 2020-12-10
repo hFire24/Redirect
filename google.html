@@ -154,7 +154,8 @@
         return;
       }
       var parameter = new URLSearchParams(urlSearch);
-      $("link").innerHTML = "You searched for \"" + parameter.get('q') + "\"";
+      var searchTerm = parameter.get('q')
+      $("link").innerHTML = "You searched for \"" + searchTerm + "\"<br><a href='https://www.ecosia.org/search?q=" + searchTerm + "'>Search for \"" + searchTerm + "\" on Ecosia</a>";
     }
     </script>
     <script src="interactivefiction.js"></script>

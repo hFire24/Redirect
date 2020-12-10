@@ -844,9 +844,9 @@ async function createAdvice() {
     if (hydrate < 1)
       alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
     else {
-      alert("Here's a tip: Some music can help you focus.\n\nPress OK and then the \"M\" key for more info.");
+      alert("Here's a tip: Some music can help you focus.\n\nPress OK and then \"Ctrl + M\" for more info.");
       window.addEventListener("keyup", function (event) {
-        if (event.keyCode === 77) {
+        if (event.keyCode === 77 && event.ctrlKey) {
           event.preventDefault();
           location.href = "works247.html";
         }
