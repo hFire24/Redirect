@@ -95,7 +95,6 @@ function loadSmallBreak() {
 
 function loadStandBreak() {
   standup = [//Health and fitness
-  'Get on the treadmill.',
   'Refill your bottle and drink water.',
   'Go up and down the stairs for one minute.',
   'Stare at an object 20 feet away for 20 seconds.',
