@@ -346,8 +346,7 @@ function submitReason() {
     location.href = "games/index.html";
   else if(reason.indexOf("nothing") >= 0)
     location.href = "multiple.html";
-  else
-  {
+  else {
     if(Math.floor(Math.random() * 2) === 0)
       window.open("2minuterule.html", '_blank');
     else
