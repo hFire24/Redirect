@@ -10,18 +10,300 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme9">
-    <div id='break' class='space'>Is there anything important that's due soon?</div>
-    <div class='two-list space'>
-      <a class='hfire-link' onclick="loadHomework()">Yes, I have homework to do.</a>
-      <a class='hfire-link' href="../brave.html">Yes, but it's not homework.</a>
-      <a class='hfire-link' href="24.html">I want to procrastinate.</a>
-      <a class='hfire-link' href="2.html">No. I have nothing to do.</a>
+    <div id="question" class="space">Answer this questionnaire. Press Enter or "Submit" to submit.<br></div>
+    <div id="questionnaire">
+      <div class='space'>Are you bored?<br>
+        <input type="radio" name="bored" onclick="setCheck('bored',1)">Yes <input type="radio" name="bored" onclick="setCheck('bored',0)">No
+      </div>
+      <div class='space'>Are you lazy?<br>
+        <input type="radio" name="lazy" onclick="setCheck('lazy',1)">Yes <input type="radio" name="lazy" onclick="setCheck('lazy',0)">No
+      </div>
+      <div class='space'>Do you want to have a lazy, unproductive day?<br>
+        <input type="radio" name="unproductive" onclick="setCheck('unproductive',1)">Yes <input type="radio" name="unproductive" onclick="setCheck('unproductive',0)">No
+      </div>
+      <div class='space'>Do you feel like you need motivation?<br>
+        <input type="radio" name="motivation" onclick="setCheck('motivation',1)">Yes <input type="radio" name="motivation" onclick="setCheck('motivation',0)">No
+      </div>
+      <div class='space'>Do you want to improve your habits or routine?<br>
+        <input type="radio" name="habits" onclick="setCheck('habits',1)">Yes <input type="radio" name="habits" onclick="setCheck('habits',0)">No
+      </div>
+      <div class='space'>Are you ready to do something else?<br>
+        <input type="radio" name="something" onclick="setCheck('something',1)">Yes <input type="radio" name="something" onclick="setCheck('something',0)">No
+      </div>
+      <div class='space'>Do you really want to do nothing?<br>
+        <input type="radio" name="nothing" onclick="setCheck('nothing',1)">Yes <input type="radio" name="nothing" onclick="setCheck('nothing',0)">No
+      </div>
+      <div class='space'>Are you feeling overwhelmed?<br>
+        <input type="radio" name="overwhelm" onclick="setCheck('overwhelm',1)">Yes <input type="radio" name="overwhelm" onclick="setCheck('overwhelm',0)">No
+      </div>
+      <div class='space'>Are you stressed or worried or feeling down?<br>
+        <input type="radio" name="stress" onclick="setCheck('stress',1)">Yes <input type="radio" name="stress" onclick="setCheck('stress',0)">No
+      </div>
+      <div class='space'>Are you thinking about cute anime girls?<br>
+        <input type="radio" name="anime" onclick="setCheck('anime',1)">Yes <input type="radio" name="anime" onclick="setCheck('anime',0)">No
+      </div>
+      <div class='space'>Do you feel like going to YouTube?<br>
+        <input type="radio" name="youtube" onclick="setCheck('youtube',1)">Yes <input type="radio" name="youtube" onclick="setCheck('youtube',0)">No
+      </div>
+      <div class='space'>Do you feel like playing a game?<br>
+        <input type="radio" name="game" onclick="setCheck('game',1)">Yes <input type="radio" name="game" onclick="setCheck('game',0)">No
+      </div>
+      <div class='space'>Are there any big projects due within a month?<br>
+        <input type="radio" name="dueM" onclick="setCheck('dueM',1)">Yes <input type="radio" name="dueM" onclick="setCheck('dueM',0)">No
+      </div>
+      <div class='space'>Is there anything due within 7 days?<br>
+        <input type="radio" name="due7" onclick="setCheck('due7',1)">Yes <input type="radio" name="due7" onclick="setCheck('due7',0)">No
+      </div>
+      <div class='space'>Is there anything due within the next 24 hours?<br>
+        <input type="radio" name="due1" onclick="setCheck('due1',1)">Yes <input type="radio" name="due1" onclick="setCheck('due1',0)">No
+      </div>
+      <div class='hfire-link' onclick='submit()'>Submit</div>
     </div>
     <script>
-    function loadHomework() {
-      window.open("../brave.html","_blank");
-      location.href = "../homework.html";
-    }
+      //Object for saving options
+      const myObject = {
+        defaultOption:1,
+        bored:0,
+        lazy:0,
+        unproductive:0,
+        motivation:0,
+        habits:0,
+        something:0,
+        nothing:0,
+        overwhelm:0,
+        stress:0,
+        anime:0,
+        youtube:0,
+        game:0,
+        dueM:0,
+        due7:0,
+        due1:0,
+      };
+
+      //Executes every time a radio button is pressed.
+      function setCheck(attribute,number) {
+        console.log(attribute + " " + myObject[attribute]);
+        //Sets the attribute of the object to the number
+        myObject[attribute] = number;
+        console.log(attribute + " " + myObject[attribute]);
+      }
+
+      //Function used if the user confirms they don't want to do nothing.
+      const nothingFunction = {
+        type:"function",
+        function:function() {
+          myObject["nothing"] = 0;
+          submit();
+        }
+      }
+      //Function used if the user rejects the advice found in the "unproductive" branch
+      const ignoreAdvice = {
+        type:"function",
+        function:function() {
+          myObject["dueM"] = 0;
+          myObject["due7"] = 0;
+          submit();
+        }
+      }
+
+      //This allows the enter key to be used for submitting
+      document.body.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          submit();
+        }
+      });
+
+      function submit() {
+        let decisions = [];
+
+        //Pushes values to the array if it's equal to 1.
+        for(let attribute in myObject) {
+          if(myObject[attribute] === 1) {
+            decisions.push(attribute);
+            console.log(attribute);
+          }
+        }
+
+        //randomizes the list to pick a decision based on the values in myObject that are equal to 1.
+        let decision = decisions[Math.floor(Math.random() * decisions.length)];
+
+        //switch case to do stuff. If "bored" was in the decisions array and the randomizer picks it, it will go to that branch.
+        //Some branches are affected by other selections equal to 1. The "youtube" branch is affected by other decisions.
+        switch(decision) {
+          case "bored":
+            location.href = "2.html";
+            break;
+          case "lazy":
+            setTitle("Are you lazy, or are you just exhausted?");
+            setLinks(3,["Lazy","I'm not sure","Exhausted"],["15.html","https://youtu.be/B2wPs4Bd6mg","20.html"]);
+            break;
+          case "unproductive":
+            if(myObject.due1 === 1)
+              location.href = "../brave.html";
+            else if(myObject.due7 === 1 || myObject.dueM === 1) {
+              setTitle("You got other things to do. ");
+              if(myObject.due7 === 1)
+                setTitle(document.getElementById("question").innerHTML + "Stuff is due in a week.");
+              else if(myObject.dueM === 1)
+                setTitle(document.getElementById("question").innerHTML + "At least one big project is due in a month.");
+              setLinks(2,["Ignore Advice","Accept Advice"],[ignoreAdvice,"36.html"]);
+            }
+            else {
+              setTitle("OK. Do whatever you want. There's always the goals list in case you get sick of being unproductive.");
+              setLinks(1,"Click here to continue.","../goals.html");
+            }
+            break;
+          case "motivation":
+            location.href = "15.html";
+            break;
+          case "habits":
+            location.href = "../atomic-habits.html";
+            break;
+          case "something":
+            setTitle("You're ready to do something else. First, close tabs and programs (except for this tab). Can you tell me how much spare time you have?");
+            setLinks(3,["Not much","Plentiful","Uhh..."],["../breaktime.html","../bigbreak.html","47.html"]);
+            break;
+          case "nothing":
+            if(myObject.due1 === 1)
+              location.href = "../brave.html";
+            else {
+              setTitle("You expressed genuine desire to do nothing. Is this what you want to do?");
+              setLinks(2,["Yes","No"],["13.html",nothingFunction]);
+            }
+            break;
+          case "overwhelm":
+            location.href = "48.html";
+            break;
+          case "stress":
+            setTitle("<a href='20.html'>It's time to calm down and relax.</a>");
+            setLinks(1,"I don't feel like it","../stress.html");
+            break;
+          case "anime":
+            location.href = "21.html";
+            break;
+          case "youtube":
+            if(myObject.due1 === 1)
+              location.href = "../brave.html";
+            else if(myObject.due7 === 1 || myObject.dueM === 1) {
+              setTitle("You got other things to do. ");
+              if(myObject.due7 === 1)
+                setTitle(document.getElementById("question").innerHTML + "Stuff is due in less than a week.");
+              else if(myObject.dueM === 1)
+                setTitle(document.getElementById("question").innerHTML + "At least one big project is due in less than a month.");
+              setLinks(2,["Go to YouTube Anyway","Accept Advice"],["37.html","36.html"]);
+            }
+            else
+              location.href = "37.html";
+            break;
+          case "game":
+            if(myObject.due1 === 1)
+              location.href = "../brave.html";
+            else if(myObject.due7 === 1 || myObject.dueM === 1) {
+              setTitle("You got other things to do. ");
+              if(myObject.due7 === 1)
+                setTitle(document.getElementById("question").innerHTML + "Stuff is due in a week.");
+              else if(myObject.dueM === 1)
+                setTitle(document.getElementById("question").innerHTML + "At least one big project is due in a month.");
+              setLinks(2,["Play Games Anyway","Accept Advice"],["29.html","36.html"]);
+            }
+            else
+              location.href = "29.html";
+            break;
+          case "dueM":
+            if(myObject.due1 === 1)
+              location.href = "../brave.html";
+            else if(myObject.due7 === 1){
+              setTitle("You do realize that stuff is due in one week.");
+              setLinks(1,"Click here to continue.","36.html");
+            }
+            else {
+              setTitle("You do realize that you have a big project. Don't neglect it.");
+              setLinks(1,"Click here to continue.","36.html");
+            }
+            break;
+          case "due7":
+            if(myObject.due1 === 1)
+              location.href = "../brave.html";
+            else {
+              setTitle("You do realize that stuff is due in one week.");
+              setLinks(1,"Click here to continue.","36.html");
+            }
+            break;
+          case "due1":
+            location.href = "../brave.html";
+            break;
+          default:
+            if(myObject.unproductive === 1) {
+              setTitle("There's always the goals list in case you get sick of being unproductive.");
+              setLinks(1,"Click here to continue.","../goals.html");
+            }
+            else if(myObject.something === 1) {
+              myObject["defaultOption"] = 0;
+              submit();
+            }
+            else
+              location.href = "../anti-procrastination.html";
+        }
+      }
+
+      //Changes the heading
+      function setTitle(title) {
+        document.getElementById("question").innerHTML = title;
+      }
+
+      //Creates links in the area occupied by the questionnaire
+      function setLinks(numElements,text,links) {
+        let questionnaire = document.getElementById("questionnaire");
+        //Clears the questionaire
+        questionnaire.innerHTML = "";
+        //Removes these classes from the class list if they existed previously
+        questionnaire.classList.remove("two-list");
+        questionnaire.classList.remove("three-list");
+        //For use when more than one links are passed with arrays
+        if(numElements > 1) {
+          //Adds class list for nice formatting
+          if(numElements % 3 === 0 || numElements > 8)
+            questionnaire.classList.add("three-list");
+          else
+            questionnaire.classList.add("two-list");
+          //Adds the a elements to the document
+          for(let i in text) {
+            //Declare a new element
+            let linkElement = document.createElement('a');
+            //Set text of new element
+            linkElement.innerHTML = text[i];
+            //Set class of new element for formatting
+            linkElement.classList.add('hfire-link');
+            //For when the item stored in an array is an object with type "function".
+            if(links[i].type === "function") {
+              linkElement.removeAttribute("href");
+              //Clicking the element will execute the function stored in the object.
+              linkElement.onclick = function() {
+                links[i]["function"]();
+              }
+            }
+            //For when the item stored in an array is not an object.
+            else {
+              //Clicking the element will take you to the URL specified in links[i].
+              linkElement.href = links[i];
+              //For YouTube links, a new tab opens.
+              if(links[i].startsWith("https://youtu.be"))
+                linkElement.target="_blank";
+            }
+            //Adds the element to the questionnaire element on the page
+            questionnaire.appendChild(linkElement);
+          }
+        }
+        //For use when only one link is passed without arrays
+        else {
+          let linkElement = document.createElement('a');
+          linkElement.innerHTML = text;
+          linkElement.classList.add('hfire-link');
+          linkElement.href = links;
+          questionnaire.appendChild(linkElement);
+        }
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Quit procrastinating</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body onload="loadVideo(-1); randomTheme(1)">
+    <div id='message' class='space'><a id='link' href=''>Here. Watch this video.</a></div>
+    <div id='break' class='space'>It's called "<span id='title'></span>"</div>
+    <div id='hideable'>
+      <div class='space' style='color:white;' onclick='loadVideo(-1)'>Load Different Video</div>
+    </div>
+  </body>
+  <script>
+    class Video {
+      constructor(id,title,position) {
+        this.id = id;
+        this.title = title;
+        this.position = position;
+      }
+      getId() {
+        return this.id;
+      }
+      setId(id) {
+        this.id = id;
+      }
+      getTitle() {
+        return this.title;
+      }
+      setTitle(title) {
+        this.title = title;
+      }
+      getPosition() {
+        return this.position;
+      }
+      setPosition(position) {
+        this.position = position;
+      }
+    }
+
+    const playlist = [];
+
+    playlist.push(new Video("Y1NcEs2ZT14","How To Use Procrastination To Your Advantage (Productive Procrastination)",5),
+    new Video("aehoGGCHkyw","You're Not Lazy, Bored, or Unmotivated",11),
+    new Video("F52UZxv2X2Q","what is PROCRASTURBATION NoFAP on another level",14),
+    new Video("-3QJke9_Z4o","Break Your Mental Resistance With The 2 Minute Rule",17),
+    new Video("AfRWeybdF2c","New Study Reveals Why You Prorastinate (Not Laziness or Time-Management)",28),
+    new Video("Tbp5BQiqa38","I Can't Stick To My Habits (HERE'S WHY)",31),
+    new Video("TGfN9297Yq8","How to finally overcome procrastination.",73),
+    new Video("YokGiK29k74","How to Break Your Procrastination Habit (For Good)",82),
+    new Video("4x7MkLDGnu8","The ONLY way to stop procrastinating | Mel Robbins",84),
+    new Video("9oWOsocN7qg","How to Make Yourself Study When You Have ZERO Motivation",86),
+    new Video("LE8mNTJOYmQ","How to Stay Focused For Long Periodds of Time (even on boring things)",91),
+    new Video("arj7oStGLkU","Inside the mind of a master procrastinator | Tim Urban",104),
+    new Video("HHiWRNuKCcY","This SpongeBob Episode Will Make You Stop Procrastinating",105));
+
+    function loadVideo(index) {
+      if(index < 0 || index >= playlist.length)
+        index = Math.floor(Math.random() * playlist.length);
+      link.href = "https://www.youtu.be/v=" + playlist[index].id;
+      title.innerHTML = playlist[index].title;
+    }
+  </script>
+  <script src='script.js'></script>
+</html>
