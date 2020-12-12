@@ -1086,21 +1086,28 @@ function sleep(ms) {
 }
 
 function generateAndrewJohnsonLink() {
-  var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/quick-confidence',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/body-scan-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-boost',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/favourite-place-of-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/grounding-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/stomach-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/smiling-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-1',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/heaviness-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-3',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/breathing-relaxation-2',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/energy-ear-massage',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/stretch-relaxation',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/head-massage',
-  'https://insighttimer.com/andrewjohnson/guided-meditations/eye-relaxation'];
+  var meditationLinks = ['Body Scan Relaxation 2',
+  'Breathing Relaxation',
+  'Breathing Break',
+  'Breathing Relaxation 1',
+  'Breathing Relaxation 2',
+  'Breathing Relaxation 3',
+  'Ear Massage Relaxation',
+  'Energy Boost Meditation',
+  'Eye Relaxation',
+  'Favourite Place Relaxation',
+  'Grounding Relaxation',
+  'Head Massage Relaxation',
+  'Heaviness Relaxation',
+  'Massage Break',
+  'Memory Break',
+  'Quick Confidence',
+  'Release Break',
+  'Roots Break',
+  'Shoulder Relaxation',
+  'Stomach Relaxation',
+  'Smiling Relaxation',
+  'Stretch Relaxation'];
   var index = Math.floor(Math.random() * meditationLinks.length);
   return meditationLinks[index];
 }

@@ -10,13 +10,73 @@
   </head>
   <body class="relax">
     <div id='message' class='space'>It's time to relax.</div>
-    <strong style='color:darkblue;'>For best results, make the area nice and quiet before continuing.</strong><br>
-    <div id='hideable' style='margin-top:1em; display:grid;'>
-      <a href='relax-desktop.html' class='hfire-link'>Relax with PLAYNE (Desktop)</a>
-      <a href='https://www.balanceapp.com' class='hfire-link'>Relax with Balance (Mobile)</a>
-      <a href='cyoa/39.html' class='hfire-link'>Relax with YouTube meditations</a>
-      <a href="relax-old.html" class='hfire-link'>Relax with Insight Timer (Mobile)</a>
+    Go to <a href="https://app.mysoundwise.com/mysoundcasts">Soundwise</a>, followed by <strong id='pack' style='color:darkblue;'></strong> to listen to audio files for <span id='purpose'></span><br>
+    <div id='message2' class='space' style='margin-top:1em;'>
+      For Example: <span id='random'></span> <span id='action'></span>
     </div>
+    <div id='hideable' class='relax-list' style='margin-top:1em;'>
+    </div>
+    <div><a id='more' href='relax2.html' class='hfire-link'><strong style='color:darkred;'>More</strong></a></div>
     <script src='script.js'></script>
+    <script>
+      var angerTrack = 1;
+      var worryTrack = 1;
+      var stressTrack = 1;
+      var lazyTrack = 1;
+      var confidentTrack = 1;
+
+      pack.innerHTML = "Quick Solutions";
+      purpose.innerHTML = "a short break."
+      const relaxText = generateAndrewJohnsonLink();
+      document.getElementById("random").innerHTML = relaxText;
+
+      if(relaxText.startsWith("Body Scan") || relaxText.startsWith("Breathing")) //6
+        action.innerHTML = 'helps you be more focused.';
+      else if(relaxText === "Favourite Place Relaxation" || relaxText === "Memory Break" || relaxText === "Smiling Relaxation") //3
+        action.innerHTML = 'makes you happier.';
+      else if(relaxText === "Grounding Relaxation" || relaxText === "Heaviness Relaxation") //2
+        action.innerHTML = 'relaxes you.';
+      else if(relaxText === "Energy Boost Meditation" || relaxText === "Roots Break") //2
+        action.innerHTML = 're-energizes you.';
+      else if(relaxText === "Quick Confidence") //1
+        action.innerHTML = 'boosts your confidence.';
+      else //Ears, Eyes, Head, Massage, Release, Shoulder, Stomach, Stretch
+        action.innerHTML = 'refreshes you.';
+
+      const moodSearch = window.location.search;
+      if (moodSearch !== "") {
+        const parameter = new URLSearchParams(moodSearch);
+        let mood = parameter.get('mood');
+        more.href = "relax2.html?mood=" + mood;
+        switch(mood)
+        {
+          case "angry":
+            pack.innerHTML = "SOS - Let Go of Anger";
+            purpose.innerHTML = "calming the mind.";
+            message2.innerHTML = "Good job on making the first step to control your anger. You are on track " + angerTrack + ".";
+            break;
+          case "worried":
+            pack.innerHTML = "SOS - Let Go of Anxiety";
+            purpose.innerHTML = "calming the mind.";
+            message2.innerHTML = "You do not want to keep this feeling with you. You are on track " + worryTrack + ".";
+            break;
+          case "stressed":
+            pack.innerHTML = "SOS - Let Go of Stress";
+            purpose.innerHTML = "destressing.";
+            message2.innerHTML = "You are on track " + stressTrack + ". Listening to it is a strategic move in life.";
+            break;
+          case "lazy":
+            pack.innerHTML = "SOS - Get Moving";
+            purpose.innerHTML = "energizing.";
+            message2.innerHTML = "All this weight you acquired is waiting to be shed. You are on track " + lazyTrack + ".";
+            break;
+          case "unconfident":
+            pack.innerHTML = "SOS - Confidence Boost";
+            purpose.innerHTML = "making you confident.";
+            message2.innerHTML = "You have the potential to become successful. You are on track " + confidentTrack + ".";
+            break;
+        }
+      }
+    </script>
   </body>
 </html>

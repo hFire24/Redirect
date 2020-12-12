@@ -57,7 +57,7 @@
 
     function workStress() {
       $("message").innerHTML = "This is why I provided you with that link earlier. Use it to destress yourself.";
-      $("link").innerHTML = "<a href='relax.html'>Click here to continue.</a>";
+      $("link").innerHTML = "<a href='relax.html?mood=stress'>Click here to continue.</a>";
     }
 
     function later() {
@@ -95,16 +95,8 @@
     }
 
     function confidenceBoost() {
-      $("message").innerHTML = "You need a real confidence boost.";
-      $("link").innerHTML = "<a id='relax'>Open this link in Opera.</a>";
-      var confidenceMeditations = ['https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/positivity',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2'];
-      var index = Math.floor(Math.random() * confidenceMeditations.length);
-      $("relax").href = confidenceMeditations[index];
+      $("message").innerHTML = "You need a confidence boost.";
+      $("link").innerHTML = "<a href='relax.html?mood=unconfident'>Go to Soundwise.</a> If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Improve Your Mental Health.";
     }
 
     function pray(number) {

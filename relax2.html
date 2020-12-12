@@ -7,55 +7,267 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon-meditate.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon RL.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body class="relax">
     <div id='message' class='space'>More guided meditations.</div>
-    <div class="space">For best results, open these links on Opera.</div>
-    <a id='random' class='hfire-link' onclick='goToRandomMeditation()'><strong style='color:darkblue;'>I'm feeling lucky.</strong></a><br>
-    <div id='hideable' class='relax-list' style='margin-top:1em;'>
-      <a id='one' href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap' class='hfire-link link'>Power Nap</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/relax-lite' class='hfire-link link'>Relax Lite</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation' class='hfire-link link'>Law of Attraction</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/positivity' class='hfire-link link'>Positivity</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/astral-flying' class='hfire-link link'>Astral Flying</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation' class='hfire-link link'>Believe In Yourself</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success' class='hfire-link link'>Visualize Success</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2' class='hfire-link link'>Inner Guide</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-grateful-with-andrew-johnson' class='hfire-link link'>Be Grateful</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2' class='hfire-link link'>Boost Your Confidence</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/mindful-awareness-meditation-2' class='hfire-link link'>Mindful Awareness</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-happy' class='hfire-link link'>Be Happy</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/expansion-meditation-3' class='hfire-link link'>Expansion Meditation</a>
-      <a id='fourteen' href='https://insighttimer.com/andrewjohnson/guided-meditations/evening-boost-meditation' class='hfire-link'>Evening Boost</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stress-free' class='hfire-link link'>Stress Free</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/mindful-breathing-12' class='hfire-link link'>Mindful Breathing</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/freedom-meditation-2' class='hfire-link'>Long-lasting Freedom I</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-peaceful-meditation' class='hfire-link'>Be Peaceful</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stop-worrying-2' class='hfire-link'>Stop Worrying</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/freedom-meditation-6' class='hfire-link'>Long-lasting Freedom II</a>
-      <a hfef='https://insighttimer.com/andrewjohnson/guided-meditations/build-creativity' class='hfire-link'>Build Creativity</a>
-      <a href='https://insighttimer.com/andrewjohnson/guided-meditations/quiet-mind-meditation' class='hfire-link'>Quiet Mind Meditation</a>
+    <div id='message2' class='space' style='margin-top:1em;'>
+      There are many meditations to choose from in <a href="https://app.mysoundwise.com/mysoundcasts">Soundwise</a>. One of them is called <strong id='random' style='color:darkblue'></strong> from <span id='category'></span>.
+    </div>
+    <div id='sad-grid' class='relax-list' style='display:none; margin-top:1em;'>
+      <a class="hfire-link" onclick='reason("fed up")'>I feel fed up</a> <a class="hfire-link" onclick='reason("upset")'>I feel upset</a> <a class="hfire-link" onclick='reason("disappointed")'>I feel disappointed</a>
+      <a class="hfire-link" onclick='reason("lonely")'>I feel like I can't make friends</a> <a class="hfire-link" onclick='reason("lost")'>I feel lost</a> <a class="hfire-link" onclick='reason("lost all hope")'>All hope is lost for me</a>
+      <a class="hfire-link" onclick='reason("fail")'>I failed in life</a> <a class="hfire-link" onclick='reason("fail")'>I feel like a failure</a> <a class="hfire-link" onclick='reason("waste")'>I feel like a waste</a>
+      <a class="hfire-link" onclick='reason("awful")'>I feel awful</a> <a class="hfire-link" onclick='reason("waste")'>I feel stuck</a> <a class="hfire-link" onclick='reason("grief")'>I'm dealing with loss</a>
+      <a class="hfire-link" onclick='reason("unconfident")'>I don't feel confident</a> <a class="hfire-link" onclick='reason("sad")'>I just feel sad</a>
+    </div>
+    Click on a category for more information.
+    <div id='category-list' class="relax-list">
+      <a class='hfire-link' onclick="openList('abundance-list')">Abundance</a>
+      <a class='hfire-link' onclick="openList('habits-list')">Breaking Habits</a>
+      <a class='hfire-link' onclick="openList('meditate-list')">Meditate</a>
+      <a class='hfire-link' onclick="openList('mental-health-list')">Mental Health</a>
+      <a class='hfire-link' onclick="openList('mindfulness-list')">Mindfulness</a>
+      <a class='hfire-link' onclick="openList('physical-health-list')">Physical Health</a>
+      <a class='hfire-link' onclick="openList('positivity-list')">Positivity</a>
+      <a class='hfire-link' onclick="openList('relaxation-list')">Learn to Relax</a>
+      <a class='hfire-link' onclick="openList('sleep-list')">Sleep</a>
+      <a class='hfire-link' onclick="openList('time-list')">Make Use of Day</a>
+    </div>
+    <div id='abundance-list' class="relax-list" style='display:none;'>
+      <!--Creating Abundance-->
+      <a class='hfire-link link abundance' id="abundance">Create Abundance</a>
+      <a class='hfire-link link abundance' id="attraction">Law of Attraction</a>
+      <a class='hfire-link link abundance' id="money">Money Magnetism</a>
+      <a class='hfire-link link abundance' id="motivation">Motivation for Success</a>
+      <a class='hfire-link link abundance' id="prosperity_i">Increase Prosperity</a>
+      <a class='hfire-link link abundance' id="prosperity_v">Visualise Prosperity</a>
+      <a class='hfire-link close abundance' onclick="closeList('abundance-list')">Go Back</a>
+    </div>
+    <div id='habits-list' class="relax-list" style='display:none;'>
+      <!--Breaking Habits-->
+      <a class='hfire-link link habits' id="anger">Let Go of Anger</a>
+      <a class='hfire-link link habits' id="guilt">Let Go of Guilt</a>
+      <a class='hfire-link link habits' id="moveon">Move On</a>
+      <a class='hfire-link link habits' id="negativity">Let Go of Negativity</a>
+      <a class='hfire-link link habits' id="procrastination">Beat Procrastination</a>
+      <a class='hfire-link link habits' id="social-phobia">Beat Social Phobia</a>
+      <a class='hfire-link link habits' id="worring">Stop Worrying</a>
+      <a class='hfire-link close habits' onclick="closeList('habits-list')">Go Back</a>
+    </div>
+    <div id='meditate-list' class="relax-list" style='display:none;'>
+      <!--Meditate-->
+      <a class='hfire-link link meditate' id="astral_flying">Astral Flying</a>
+      <a class='hfire-link link meditate' id="cleansing">Cleansing Meditation</a>
+      <a class='hfire-link link meditate' id="charka">Charka Meditation</a>
+      <a class='hfire-link link meditate' id="energy">Energy Meditation</a>
+      <a class='hfire-link link meditate' id="energy_healing">Energy Healing and Balancing</a>
+      <a class='hfire-link link meditate' id="expansion">Expansion Meditation</a>
+      <a class='hfire-link link meditate' id="freedom">Freedom Meditation</a>
+      <a class='hfire-link link meditate' id="ground">Ground and Centre</a>
+      <a class='hfire-link link meditate' id="inner_guide">Meet Your Inner Guide</a>
+      <a class='hfire-link link meditate' id="inner_child">Healing the Inner Child</a>
+      <a class='hfire-link link meditate' id="meditate">Meditate</a>
+      <a class='hfire-link link meditate' id="serenity">Serenity Meditation</a>
+      <a class='hfire-link close meditate' onclick="closeList('meditate-list')">Go Back</a>
+    </div>
+    <div id='mental-health-list' class="relax-list" style='display:none;'>
+      <!--Improve Your Mental Health-->
+      <a class='hfire-link link mental-health' id="believe">Believe in Yourself</a>
+      <a class='hfire-link link mental-health' id="breath">Breath of Life</a>
+      <a class='hfire-link link mental-health' id="clear">Clear Your Mind</a>
+      <a class='hfire-link link mental-health' id="confidence">Confidence</a>
+      <a class='hfire-link link mental-health' id="discipline">Self-Discipline</a>
+      <a class='hfire-link link mental-health' id="disconnect">Disconnect</a>
+      <a class='hfire-link link mental-health' id="emotional">Emotional Strength Meditation</a>
+      <a class='hfire-link link mental-health' id="gratitute">Be Grateful</a>
+      <!--a class='hfire-link link mental-health' id="grief">Resolve Grief</a-->
+      <a class='hfire-link link mental-health' id="happy">Be Happy</a>
+      <a class='hfire-link link mental-health' id="memory">Improve Your Memory</a>
+      <a class='hfire-link link mental-health' id="panic">Don't Panic</a>
+      <a class='hfire-link link mental-health' id="peaceful">Be Peaceful</a>
+      <a class='hfire-link link mental-health' id="quiet">Quiet Mind</a>
+      <a class='hfire-link link mental-health' id="stress-free">Stress Free</a>
+      <a class='hfire-link close mental-health' onclick="closeList('mental-health-list')">Go Back</a>
+    </div>
+    <div id='mindfulness-list' class="relax-list" style='display:none;'>
+      <!--Practice Mindfulness-->
+      <a class='hfire-link link mindfulness' id="breathing">Mindful Breathing</a>
+      <a class='hfire-link link mindfulness' id="mindfulness">Mindful Meditation</a>
+      <a class='hfire-link link mindfulness' id="now_here_this">Now Here This Meditation</a>
+      <a class='hfire-link link mindfulness' id="present">Living in the Present</a>
+      <a class='hfire-link close mindfulness' onclick="closeList('mindfulness-list')">Go Back</a>
+    </div>
+    <div id='physical-health-list' class="relax-list" style='display:none;'>
+      <!--Improve Your Physical Health-->
+      <a class='hfire-link link physical-health' id="fit">Get Fit</a>
+      <a class='hfire-link link physical-health' id="healing">Visualise Healing</a>
+      <a class='hfire-link link physical-health' id="health">Health Boost</a>
+      <a class='hfire-link link physical-health' id="pain">Manage Pain</a>
+      <a class='hfire-link link physical-health' id="posture">Improve Posture</a>
+      <a class='hfire-link link physical-health' id="symptom">Symptom Control</a>
+      <a class='hfire-link link physical-health' id="water">Drink Water</a>
+      <a class='hfire-link close physical-health' onclick="closeList('physical-health-list')">Go Back</a>
+    </div>
+    <div id='positivity-list' class="relax-list" style='display:none;'>
+      <!--Increase Positivity-->
+      <a class='hfire-link link positivity' id="creativity">Build Creativity</a>
+      <a class='hfire-link link positivity' id="love">Attract Love</a>
+      <a class='hfire-link link positivity' id="positivity">Positivity</a>
+      <a class='hfire-link link positivity' id="self-image">Positive Self Image</a>
+      <a class='hfire-link close positivity' onclick="closeList('positivity-list')">Go Back</a>
+    </div>
+    <div id='relaxation-list' class="relax-list" style='display:none;'>
+      <!--Learn the Art of Relaxation-->
+      <a class='hfire-link link relaxation' id="relax_i">How to Relax - Track 1</a>
+      <a class='hfire-link link relaxation' id="relax_ii">How to Relax - Track 2</a>
+      <a class='hfire-link link relaxation' id="relax_iii">How to Relax - Track 3</a>
+      <a class='hfire-link link relaxation' id="relax_iv">How to Relax - Track 4</a>
+      <a class='hfire-link link relaxation' id="relax">Relax</a>
+      <a class='hfire-link link relaxation' id="relax_lite">Relax Lite</a>
+      <a class='hfire-link link relaxation' id="deeper">Deeper Relaxation</a>
+      <a class='hfire-link link relaxation' id="relaxation">Relaxation Meditation</a>
+      <a class='hfire-link close relaxation' onclick="closeList('relaxation-list')">Go Back</a>
+    </div>
+    <div id='sleep-list' class="relax-list" style='display:none;'>
+      <!--Improve Your Sleep-->
+      <a class='hfire-link link sleep' id="deep_sleep">Deep Sleep</a>
+      <a class='hfire-link link sleep' id="deeper_sleep">Deeper Sleep</a>
+      <a class='hfire-link link sleep' id="nap">Power Nap</a>
+      <a class='hfire-link close sleep' onclick="closeList('sleep-list')">Go Back</a>
+    </div>
+    <div id='time-list' class="relax-list" style='display:none;'>
+      <!--Make the Most of Your Day-->
+      <a class='hfire-link link day' id="morning">Morning Boost</a>
+      <a class='hfire-link link day' id="afternoon">Lunchtime Boost</a>
+      <a class='hfire-link link day' id="evening">Evening Boost</a>
+      <a class='hfire-link close day' onclick="closeList('time-list')">Go Back</a>
     </div>
     <a href='relax.html' class='hfire-link'><strong style='color:darkred;'>Back</strong></a>
+    <!--a id='one' href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap' class='hfire-link link'>Power Nap</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/relax-lite' class='hfire-link link'>Relax Lite</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation' class='hfire-link link'>Law of Attraction</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/positivity' class='hfire-link link'>Positivity</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/astral-flying' class='hfire-link link'>Astral Flying</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation' class='hfire-link link'>Believe In Yourself</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success' class='hfire-link link'>Visualise Success</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2' class='hfire-link link'>Inner Guide</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-grateful-with-andrew-johnson' class='hfire-link link'>Be Grateful</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2' class='hfire-link link'>Boost Your Confidence</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/mindful-awareness-meditation-2' class='hfire-link link'>Mindful Awareness</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-happy' class='hfire-link link'>Be Happy</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/expansion-meditation-3' class='hfire-link link'>Expansion Meditation</a>
+    <a id='fourteen' href='https://insighttimer.com/andrewjohnson/guided-meditations/evening-boost-meditation' class='hfire-link'>Evening Boost</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stress-free' class='hfire-link link'>Stress Free</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/mindful-breathing-12' class='hfire-link link'>Mindful Breathing</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/freedom-meditation-2' class='hfire-link'>Long-lasting Freedom I</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/be-peaceful-meditation' class='hfire-link'>Be Peaceful</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/stop-worrying-2' class='hfire-link'>Stop Worrying</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/freedom-meditation-6' class='hfire-link'>Long-lasting Freedom II</a>
+    <a hfef='https://insighttimer.com/andrewjohnson/guided-meditations/build-creativity' class='hfire-link'>Build Creativity</a>
+    <a href='https://insighttimer.com/andrewjohnson/guided-meditations/quiet-mind-meditation' class='hfire-link'>Quiet Mind Meditation</a-->
+    <script src="relax-long-meditations.js"></script>
     <script>
-      var d = new Date();
-      //Ensures that the "I'm Feeling Lucky" button does not take the user to the Power Nap meditation in the afternoon.
-      //Gives a 1 in 15 chance that the "I'm Feeling Lucky" button takes the user to the Evening Boost meditation in the evening.
-      if (d.getHours >= 17) {
-        document.getElementById('one').classList.remove('link');
-        document.getElementById('fourteen').classList.add('link');
+      const moodSearch = window.location.search;
+      if (moodSearch !== "") {
+        const parameter = new URLSearchParams(moodSearch);
+        let mood = parameter.get('mood');
+        switch(mood)
+        {
+          case "angry":
+            message2.innerHTML = "I notice that you are angry. I suggest listening to <strong style='color:darkblue;'>Let Go of Anger</strong> from Breaking Habits. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
+            break;
+          case "worried":
+            message2.innerHTML = "I notice that you are worried. I suggest listening to <strong style='color:darkblue;'>Stop Worrying</strong> from Breaking Habits. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
+            break;
+          case "stressed":
+            message2.innerHTML = "I notice that you are stressed. I suggest listening to <strong style='color:darkblue;'>Stress Free</strong> from Mental Health. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
+            break;
+          case "lazy":
+            message2.innerHTML = "I notice that you are lazy. I suggest listening to <strong style='color:darkblue;'>Improve Posture</strong> from Physical Health. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
+            break;
+          case "unconfident":
+            message2.innerHTML = "I notice that you feel unconfident. I suggest listening to <strong style='color:darkblue;'>Confidence</strong> from Mental Health. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
+            break;
+          case "sad":
+            message2.innerHTML = "<div class='space'>I notice that you feel sad. Why are you sad?</div>";
+            document.getElementById("sad-grid").style.display = "grid";
+            break;
+          default:
+            randomMeditation();
+        }
       }
-      var meditations = document.getElementsByClassName('link');
-      console.log(meditations);
-      var randomMeditation = [];
-      for(var i = 0; i < 15; i++)
-      {
-        randomMeditation.push(meditations[i].href);
-        console.log(meditations[i].href);
+      else {
+        randomMeditation();
       }
-      function goToRandomMeditation() {
-        var index = Math.floor(Math.random() * randomMeditation.length)
-        document.getElementById("random").href = randomMeditation[index];
+
+      function displayInfo(){
+        /*let object = document.getElementById('meditation-list').value;
+        object = objects[object];
+        if(object !== null && object !== undefined)
+          document.getElementById("info").innerHTML = object.name + ": " + object.description + "<br>It can be found under <strong style='color:darkblue;'>" + object.category + "</strong>, its length is " + object.time + ", and it was listened to " + object.plays + " times.";
+        else
+          document.getElementById("info").innerHTML = "Info Coming Soon";*/
+      }
+
+      function reason(reason) {
+        document.getElementById("sad-grid").style.display = "none";
+        //Add a switch case for reasons that give appropriate meditations
+      }
+
+      function randomMeditation() {
+        let meditations = document.getElementsByClassName('link');
+        let randomMeditation = [];
+        let categories = [];
+        for(let i = 0; i < meditations.length; i++) {
+          randomMeditation.push(meditations[i].innerHTML);
+          categories.push(meditations[i].classList[2]);
+          console.log(meditations[i].innerHTML + " " + meditations[i].classList[2]);
+        }
+        let index = Math.floor(Math.random() * randomMeditation.length);
+        document.getElementById("random").innerHTML = randomMeditation[index];
+        switch(categories[index]) {
+          case "abundance":
+            category.innerHTML = "Abundance";
+            break;
+          case "habits":
+            category.innerHTML = "Breaking Habits";
+            break;
+          case "meditate":
+            category.innerHTML = "Meditate";
+            break;
+          case "mental-health":
+            category.innerHTML = "Mental Health";
+            break;
+          case "mindfulness":
+            category.innerHTML = "Mindfulness";
+            break;
+          case "physical-health":
+            category.innerHTML = "Physical Health";
+            break;
+          case "positivity":
+            category.innerHTML = "Positivity";
+            break;
+          case "relaxation":
+            category.innerHTML = "Learn to Relax";
+            break;
+          case "sleep":
+            category.innerHTML = "Sleep";
+            break;
+          case "day":
+            category.innerHTML = "Make Use of Day";
+            break;
+        }
+      }
+
+      function openList(id) {
+        document.getElementById("category-list").style.display = "none";
+        document.getElementById(id).style.display = "grid";
+      }
+
+      function closeList(id) {
+        document.getElementById(id).style.display = "none";
+        document.getElementById("category-list").style.display = "grid";
       }
     </script>
   </body>

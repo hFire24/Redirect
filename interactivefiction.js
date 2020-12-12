@@ -12,7 +12,7 @@ function finalTest(inputText,site)
 {
   if (inputText.indexOf("sick") >= 0 && inputText.indexOf("sick of") < 0) {
     $("question").innerHTML = "Your health matters. If you have some kind of disease, it's best to rest, drink plenty of fluids, and give your eyes a break.";
-    $("link").innerHTML = "Immediately put your electronic device away.";
+    $("link").innerHTML = "Go to Soundwise, followed by \"Improve Your Physical Health\", and listen to \"" + generateHealthLink() + "\"";
   }
   else if(inputText.indexOf("struggl") >= 0)
     location.href = "struggle.html";
@@ -83,10 +83,20 @@ function finalTest(inputText,site)
     location.href = "cyoa/28.html";
   else if (found(negativity,inputText))
     location.href = "cyoa/15.html";
-  else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'nerv',
-  'stress', 'angry', 'anger', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat', 'sick of',
-  'sad', 'upset', 'disappointed', 'offended', 'miserable', 'depress', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful'],inputText) || inputText === 'hate') {
-    $("question").innerHTML = "<a id='relax' href='relax.html'>It's time calm down and relax.</a>";
+  else if(found(['angry', 'anger', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'frustrat', 'offended'],inputText)) {
+    $("question").innerHTML = "<a id='relax' href='relax.html?mood=angry'>You need to calm down and relax.</a>";
+    $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+  }
+  else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'nerv', 'fail in life',],inputText)) {
+    $("question").innerHTML = "<a id='relax' href='relax.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
+    $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+  }
+  else if(inputText.indexOf('stress') >= 0) {
+    $("question").innerHTML = "<a id='relax' href='relax.html?mood=stressed'>You need to calm down and relax.</a>";
+    $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+  }
+  else if(found(['sick of', 'sad', 'upset', 'disappointed', 'miserable', 'depress', 'feel lost', 'lost all hope', 'fail in life', 'failure', 'waste', 'awful', 'stuck'],inputText) || inputText === 'hate') {
+    $("question").innerHTML = "<a id='relax' href='relax.html?mood=sad'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
@@ -114,8 +124,6 @@ function finalTest(inputText,site)
   else if(inputText.indexOf("lazy") >= 0 && (site !== "google" || site !== "youtube2")) {
     $("question").innerHTML = "Are you lazy, or are you just exhausted?";
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
-    //$("question").innerHTML = "Why don't you use your laziness to your advantage?";
-    //$("link").innerHTML = "<div class='two-list space'><a href=" + generateAndrewJohnsonLink() + ">I'm sitting.</a><a href='relax2.html'>I'm lying down.</a></div><a onclick='cantRelax(1)'>I can't relax due to noise.</a>";
   }
   else if(site === "deviantart" && (found(love,inputText)) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan'],inputText))
     location.href = "animeslider.html";
@@ -342,6 +350,11 @@ var love = ['love','adore','enjoy','favorite','best'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate'];
 var knowledge = ['learn','curious','to know','stud','educat','smart','knowledg'];
 
+function generateHealthLink() {
+  var healthMeditations = ["Symptom Control","Visualise Healing"];
+  return healthMeditations[Math.floor(Math.random() * healthMeditations.length)];
+}
+
 function found(array,inputText) {
   for (var i in array)
     if (inputText.indexOf(array[i]) >= 0)
@@ -363,7 +376,7 @@ function areYouBored(site) {
 }
 
 function alreadyDrank() {
-  $("question").innerHTML = "<a href='https://insighttimer.com/andrewjohnson/guided-meditations/morning-boost-meditation'>Listen to this.</a>";
+  $("question").innerHTML = "<a href='https://app.mysoundwise.com/mysoundcasts'>Listen to Morning Boost under Make the Most of Your Day.</a>";
   $("link").innerHTML = "<ins onclick='meditated()'>Continue</ins>";
 }
 

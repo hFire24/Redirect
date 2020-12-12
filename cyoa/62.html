@@ -10,29 +10,31 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme5">
-    <div id='break' class='space'><a id="link" href="" target="_blank">Listen to this instead. It is long, but worth it.</a></div>
+    <div id='break' class='space'><a id="link" href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Listen to <span id='meditation'></span>. It is long, but worth it.</a></div>
     <a class='hfire-link' href="15.html">Continue</a>
   </body>
   <script>
-    var meditationLinks = ['https://insighttimer.com/andrewjohnson/guided-meditations/relax-lite',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/positivity',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/astral-flying',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/be-grateful-with-andrew-johnson',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/mindful-awareness-meditation-2',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/be-happy',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/expansion-meditation-3',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/stress-free',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/mindful-breathing-12',
-    'https://insighttimer.com/andrewjohnson/guided-meditations/build-creativity'];
+    var meditationTitles = ['Relax Lite under Learn the Art of Relaxation',
+    'Law of Attraction under Creating Abundance',
+    'Positivity under Increase Positivity',
+    'Astral Flying under Meditate',
+    'Believe in Yourself under Improve Your Mental Health',
+    'Visualise Prosperity under Creating Abundance', //Visualise Success
+    'Meet Your Inner Guide under Meditate',
+    'Be Grateful under Improve Your Mental Health',
+    'Confidence under Improve Your Mental Health', //Boost your confidence
+    'Mindful Awareness in Insight Timer', //Mindful awareness: Only Insight Timer Link
+    'Be Happy under Improve Mental Health',
+    'Expansion Meditation under Meditate',
+    'Stress Free under Improve Your Mental Health',
+    'Mindful Breathing under Practice Mindfulness',
+    'Build Creativity under Increase Positivity'];
     var d = new Date();
     if(d.getHours() < 11)
-      meditationLinks.push('https://insighttimer.com/andrewjohnson/guided-meditations/morning-boost-meditation');
-    var index = Math.floor(Math.random() * meditationLinks.length);
-    document.getElementById("link").href = meditationLinks[index];
+      meditationTitles.push('Morning Boost under Make the Most of Your Day'); //Morning Boost
+    var index = Math.floor(Math.random() * meditationTitles.length);
+    document.getElementById("meditation").innerHTML = meditationTitles[index];
+    if(meditationTitles[index] === "Mindful Awareness in Insight Timer")
+      document.getElementById("link").href = "https://insighttimer.com/andrewjohnson/guided-meditations/mindful-awareness-meditation-2";
   </script>
 </html>
