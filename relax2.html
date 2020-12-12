@@ -12,16 +12,16 @@
   <body class="relax">
     <div id='message' class='space'>More guided meditations.</div>
     <div id='message2' class='space' style='margin-top:1em;'>
-      There are many meditations to choose from in <a href="https://app.mysoundwise.com/mysoundcasts">Soundwise</a>. One of them is called <strong id='random' style='color:darkblue'></strong> from <span id='category'></span>.
+      One of the many meditations to choose from in <a href="https://app.mysoundwise.com/mysoundcasts">Soundwise</a> is called <strong id='random' style='color:darkblue'></strong> from <span id='category'></span>.
     </div>
-    <div id='sad-grid' class='relax-list' style='display:none; margin-top:1em;'>
+    <!--div id='sad-grid' class='relax-list' style='display:none; margin-top:1em;'>
       <a class="hfire-link" onclick='reason("fed up")'>I feel fed up</a> <a class="hfire-link" onclick='reason("upset")'>I feel upset</a> <a class="hfire-link" onclick='reason("disappointed")'>I feel disappointed</a>
       <a class="hfire-link" onclick='reason("lonely")'>I feel like I can't make friends</a> <a class="hfire-link" onclick='reason("lost")'>I feel lost</a> <a class="hfire-link" onclick='reason("lost all hope")'>All hope is lost for me</a>
       <a class="hfire-link" onclick='reason("fail")'>I failed in life</a> <a class="hfire-link" onclick='reason("fail")'>I feel like a failure</a> <a class="hfire-link" onclick='reason("waste")'>I feel like a waste</a>
       <a class="hfire-link" onclick='reason("awful")'>I feel awful</a> <a class="hfire-link" onclick='reason("waste")'>I feel stuck</a> <a class="hfire-link" onclick='reason("grief")'>I'm dealing with loss</a>
-      <a class="hfire-link" onclick='reason("unconfident")'>I don't feel confident</a> <a class="hfire-link" onclick='reason("sad")'>I just feel sad</a>
-    </div>
-    Click on a category for more information.
+      <a class="hfire-link" onclick='reason("unconfident")'>I don't feel confident</a> <a class="hfire-link" onclick='reason("self hate")'>I hate myself</a> <a class="hfire-link" onclick='reason("sad")'>I just feel sad</a>
+    </div-->
+    <div id='message3' style='font-weight:bold;'>Choose a Category</div>
     <div id='category-list' class="relax-list">
       <a class='hfire-link' onclick="openList('abundance-list')">Abundance</a>
       <a class='hfire-link' onclick="openList('habits-list')">Breaking Habits</a>
@@ -33,6 +33,7 @@
       <a class='hfire-link' onclick="openList('relaxation-list')">Learn to Relax</a>
       <a class='hfire-link' onclick="openList('sleep-list')">Sleep</a>
       <a class='hfire-link' onclick="openList('time-list')">Make Use of Day</a>
+      <a class='hfire-link close' onclick="openList(lastList)">Go Forward</a>
     </div>
     <div id='abundance-list' class="relax-list" style='display:none;'>
       <!--Creating Abundance-->
@@ -83,9 +84,9 @@
       <a class='hfire-link link mental-health' id="gratitute">Be Grateful</a>
       <!--a class='hfire-link link mental-health' id="grief">Resolve Grief</a-->
       <a class='hfire-link link mental-health' id="happy">Be Happy</a>
-      <a class='hfire-link link mental-health' id="memory">Improve Your Memory</a>
       <a class='hfire-link link mental-health' id="panic">Don't Panic</a>
       <a class='hfire-link link mental-health' id="peaceful">Be Peaceful</a>
+      <a class='hfire-link link mental-health' id="memory">Improve Your Memory</a>
       <a class='hfire-link link mental-health' id="quiet">Quiet Mind</a>
       <a class='hfire-link link mental-health' id="stress-free">Stress Free</a>
       <a class='hfire-link close mental-health' onclick="closeList('mental-health-list')">Go Back</a>
@@ -119,10 +120,10 @@
     </div>
     <div id='relaxation-list' class="relax-list" style='display:none;'>
       <!--Learn the Art of Relaxation-->
-      <a class='hfire-link link relaxation' id="relax_i">How to Relax - Track 1</a>
-      <a class='hfire-link link relaxation' id="relax_ii">How to Relax - Track 2</a>
-      <a class='hfire-link link relaxation' id="relax_iii">How to Relax - Track 3</a>
-      <a class='hfire-link link relaxation' id="relax_iv">How to Relax - Track 4</a>
+      <a class='hfire-link link relaxation' id="relax_i">How to Relax 1</a>
+      <a class='hfire-link link relaxation' id="relax_ii">How to Relax 2</a>
+      <a class='hfire-link link relaxation' id="relax_iii">How to Relax 3</a>
+      <a class='hfire-link link relaxation' id="relax_iv">How to Relax 4</a>
       <a class='hfire-link link relaxation' id="relax">Relax</a>
       <a class='hfire-link link relaxation' id="relax_lite">Relax Lite</a>
       <a class='hfire-link link relaxation' id="deeper">Deeper Relaxation</a>
@@ -131,6 +132,7 @@
     </div>
     <div id='sleep-list' class="relax-list" style='display:none;'>
       <!--Improve Your Sleep-->
+      <a class='hfire-link link sleep' id="back_sleep">Back to Sleep</a>
       <a class='hfire-link link sleep' id="deep_sleep">Deep Sleep</a>
       <a class='hfire-link link sleep' id="deeper_sleep">Deeper Sleep</a>
       <a class='hfire-link link sleep' id="nap">Power Nap</a>
@@ -139,11 +141,11 @@
     <div id='time-list' class="relax-list" style='display:none;'>
       <!--Make the Most of Your Day-->
       <a class='hfire-link link day' id="morning">Morning Boost</a>
-      <a class='hfire-link link day' id="afternoon">Lunchtime Boost</a>
+      <a class='hfire-link link day' id="lunch">Lunchtime Boost</a>
       <a class='hfire-link link day' id="evening">Evening Boost</a>
       <a class='hfire-link close day' onclick="closeList('time-list')">Go Back</a>
     </div>
-    <a href='relax.html' class='hfire-link'><strong style='color:darkred;'>Back</strong></a>
+    <a id='back-button' href='relax.html' class='hfire-link'><strong style='color:darkred;'>Back</strong></a>
     <!--a id='one' href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap' class='hfire-link link'>Power Nap</a>
     <a href='https://insighttimer.com/andrewjohnson/guided-meditations/relax-lite' class='hfire-link link'>Relax Lite</a>
     <a href='https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation' class='hfire-link link'>Law of Attraction</a>
@@ -172,8 +174,7 @@
       if (moodSearch !== "") {
         const parameter = new URLSearchParams(moodSearch);
         let mood = parameter.get('mood');
-        switch(mood)
-        {
+        switch(mood) {
           case "angry":
             message2.innerHTML = "I notice that you are angry. I suggest listening to <strong style='color:darkblue;'>Let Go of Anger</strong> from Breaking Habits. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
             break;
@@ -190,8 +191,13 @@
             message2.innerHTML = "I notice that you feel unconfident. I suggest listening to <strong style='color:darkblue;'>Confidence</strong> from Mental Health. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
             break;
           case "sad":
-            message2.innerHTML = "<div class='space'>I notice that you feel sad. Why are you sad?</div>";
-            document.getElementById("sad-grid").style.display = "grid";
+            message2.innerHTML = "I notice that you feel sad. I suggest exploring the Mental Health category to find something you like. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
+            break;
+          case "self hate":
+            message2.innerHTML = "You may be disappointed in yourself, but I suggest listening to <strong style='color:darkblue;'>Believe in Yourself</strong> from Mental Health. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
+            break;
+          case "evening":
+            message2.innerHTML = "Good evening. Listen to <strong style='color:darkblue;'>Evening Boost</strong> from Make Use of Day for a late-day boost. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\">Soundwise</a> link.";
             break;
           default:
             randomMeditation();
@@ -210,20 +216,39 @@
           document.getElementById("info").innerHTML = "Info Coming Soon";*/
       }
 
-      function reason(reason) {
-        document.getElementById("sad-grid").style.display = "none";
-        //Add a switch case for reasons that give appropriate meditations
-      }
-
+      // Times: 1=morning(6AM-11AM), 2=midday(11AM-3PM) 3=afternoon(12PM-5PM), 4=evening(5PM-10PM), 5=night(10PM-2AM), 6=late night(1AM-6AM)
       function randomMeditation() {
         let meditations = document.getElementsByClassName('link');
         let randomMeditation = [];
         let categories = [];
+        let timeSensitive = [{name:'morning',time:1},{name:'lunch',time:2},{name:'power_nap',time:3},{name:'evening',time:4},{name:'deep_sleep',time:5},{name:'deeper_sleep',time:5},{name:'back_sleep',time:6}];
+        let d = new Date();
+        let h = d.getHours();
+        //Gets rid of entries that won't get deleted in the randomMeditation function
+        if(h === 1)
+          timeSensitive.splice(4,3);
+        else if(h > 1 && h < 6)
+          timeSensitive.splice(6,1);
+        else if(h >= 6 && h < 11)
+          timeSensitive.splice(0,1);
+        else if(h === 11)
+          timeSensitive.splice(1,1);
+        else if(h >= 12 && h < 15)
+          timeSensitive.splice(1,2);
+        else if(h >= 15 && h < 17)
+          timeSensitive.splice(2,1);
+        else if(h >= 17 && h < 22)
+          timeSensitive.splice(3,1);
+        else
+          timeSensitive.splice(4,2);
         for(let i = 0; i < meditations.length; i++) {
-          randomMeditation.push(meditations[i].innerHTML);
-          categories.push(meditations[i].classList[2]);
-          console.log(meditations[i].innerHTML + " " + meditations[i].classList[2]);
+          if(!found(timeSensitive,meditations[i].id)) {
+            randomMeditation.push(meditations[i].innerHTML);
+            categories.push(meditations[i].classList[2]);
+            console.log(meditations[i].innerHTML + " " + meditations[i].classList[2]);
+          }
         }
+
         let index = Math.floor(Math.random() * randomMeditation.length);
         document.getElementById("random").innerHTML = randomMeditation[index];
         switch(categories[index]) {
@@ -260,14 +285,61 @@
         }
       }
 
+      function found(array,text) {
+        for (let i in array)
+          if (array[i].name === text)
+            return true;
+        return false;
+      }
+
+      var lastList = 'category-list';
+
       function openList(id) {
+        let category = document.getElementById("message3");
+        switch(id) {
+          case "abundance-list":
+            category.innerHTML = "Creating Abundance";
+            break;
+          case "habits-list":
+            category.innerHTML = "Breaking Habits";
+            break;
+          case "meditate-list":
+            category.innerHTML = "Meditate";
+            break;
+          case "mental-health-list":
+            category.innerHTML = "Improve Your Mental Health";
+            break;
+          case "mindfulness-list":
+            category.innerHTML = "Practice Mindfulness";
+            break;
+          case "physical-health-list":
+            category.innerHTML = "Improve Your Physical Health";
+            break;
+          case "positivity-list":
+            category.innerHTML = "Increase Positivity";
+            break;
+          case "relaxation-list":
+            category.innerHTML = "Learn the Art of Relaxation";
+            break;
+          case "sleep-list":
+            category.innerHTML = "Improve Your Sleep";
+            break;
+          case "time-list":
+            category.innerHTML = "Make the Most of Your Day";
+            break;
+        }
         document.getElementById("category-list").style.display = "none";
         document.getElementById(id).style.display = "grid";
+        if(id !== 'category-list')
+          document.getElementById("back-button").style.display = "none";
       }
 
       function closeList(id) {
+        document.getElementById("message3").innerHTML = "Choose a category";
         document.getElementById(id).style.display = "none";
         document.getElementById("category-list").style.display = "grid";
+        document.getElementById("back-button").style.display = "inline";
+        lastList = id;
       }
     </script>
   </body>

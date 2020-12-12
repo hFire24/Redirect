@@ -644,12 +644,13 @@ function randomLink(index,number) {
     {text:"I feel lazy 😪",value:"lazy"},
     {text:"I feel tired 😴",value:"tired"},
     {text:"I feel stressed 😫",value:"stressed"},
-    {text:"I feel worried 😟",value:"stressed"},
+    {text:"I feel worried 😟",value:"worried"},
     {text:"I feel busy 🏢",value:"busy"},
-    {text:"I feel disappointed 😞",value:"stressed"},
+    {text:"I feel disappointed 😞",value:"sad"},
     {text:"I feel unconfident 😩",value:"unconfident"},
     {text:"I feel overwhelmed 😵",value:"overwhelmed"},
     {text:"I feel impatient 😠",value:"impatient"},
+    {text:"I feel angry 😡",value:"angry"},
     {text:"I feel unmotivated 😐",value:"motivate"},
     {text:"I got nothing to do",value:"multiple"},
     {text:"I can't focus 😕",value:"no focus"},
@@ -734,29 +735,33 @@ function okFeeling() {
       }
       else if(d.getHours() < 22) {
         message.innerHTML = "You should recharge yourself. But how?";
-        link.innerHTML = "<a id='relax' href='relax.html#tired-evening'>Click here to continue.</a>";
+        link.innerHTML = "<a id='relax' href='relax2.html?mood=evening'>Click here to continue.</a>";
       }
       else
         location.href = "cyoa/14.html";
       break;
+    case "angry":
+      message.innerHTML = "<a href='relax.html?mood=angry'>You need to calm down and relax.</a>";
+      link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+      break;
+    case "worried":
+      message.innerHTML = "<a href='relax.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
+      link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+      break;
     case "stressed":
-      message.innerHTML = "<a href='relax.html'>You need to calm down and relax.</a>";
+      message.innerHTML = "<a href='relax.html?mood=stressed'>You need to calm down and relax.</a>";
+      link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+      break;
+    case "sad":
+      message.innerHTML = "<a href='relax.html?mood=sad'>It's time to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "busy":
       location.href = "busy.html";
       break;
     case "unconfident":
-      message.innerHTML = "You need a real confidence boost.";
-      link.innerHTML = "<a id='relax'>Open this link in Opera.</a>";
-      var confidenceMeditations = ['https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/positivity',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/believe-in-yourself-meditation',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/visualise-success',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/meet-your-inner-guide-2',
-      'https://insighttimer.com/andrewjohnson/guided-meditations/boost-your-confidence-2'];
-      var confidenceIndex = Math.floor(Math.random() * confidenceMeditations.length);
-      $("relax").href = confidenceMeditations[confidenceIndex];
+      message.innerHTML = "You need a confidence boost.";
+      link.innerHTML = "If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Improve Your Mental Health. Otherwise, <a href='relax.html?mood=unconfident'>click here.</a>";
       break;
     case "overwhelmed":
       location.href = "cyoa/48.html";

@@ -27,7 +27,7 @@
       <div class='space'>Do you want to improve your habits or routine?<br>
         <input type="radio" name="habits" onclick="setCheck('habits',1)">Yes <input type="radio" name="habits" onclick="setCheck('habits',0)">No
       </div>
-      <div class='space'>Are you ready to do something else?<br>
+      <div class='space'>Do you want to take a short break?<br>
         <input type="radio" name="something" onclick="setCheck('something',1)">Yes <input type="radio" name="something" onclick="setCheck('something',0)">No
       </div>
       <div class='space'>Do you really want to do nothing?<br>
@@ -161,7 +161,7 @@
             location.href = "../atomic-habits.html";
             break;
           case "something":
-            setTitle("You're ready to do something else. First, close tabs and programs (except for this tab). Can you tell me how much spare time you have?");
+            setTitle("You want to take a break. First, close tabs and programs (except for this tab). Next, can you tell me how much time you will spare?");
             setLinks(3,["Not much","Plentiful","Uhh..."],["../breaktime.html","../bigbreak.html","47.html"]);
             break;
           case "nothing":
