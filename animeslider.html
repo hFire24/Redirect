@@ -40,7 +40,7 @@
       else if(slider1.value === "4")
       {
         $("message").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html' style='display:block; margin-bottom:0.5em;'>If you want to be more creative, then start drawing!</a><a href='gcprogress.html'>If you want to be more religious, then watch General Conference!</a>";
+        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <span onclick='rejectSomething(6)' style='color:white;'>No.</span>";
       }
       else if(slider1.value === "5")
         location.href = "fiveminutetimer.html";
@@ -48,7 +48,7 @@
       {
         $("message").innerHTML = "✝PLAY TABERNACLE CHOIR MUSIC✝";
         $("message").classList.remove("small");
-        $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButton()'>click here.</u>";
+        $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButtonTC()'>click here.</u>";
       }
       document.body.removeChild($('dependency'));
       if($("link"))
@@ -69,12 +69,7 @@
       importance.innerHTML = dependencyValues[slider1.value];
     }
 
-    function $(x)
-    {
-      return document.getElementById(x);
-    }
-
-    async function pushTheButton()
+    async function pushTheButtonTC()
     {
       var press = document.createElement("audio");
       var source = document.createElement("source");
@@ -88,10 +83,7 @@
       await sleep(1750);
       location.href = "https://www.thetabernaclechoir.org/listen.html";;
     }
-
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
     </script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -867,6 +867,10 @@ function rejectSomething(time) {
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
   else if(time === 5)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:red;'>No.</span>";
+  else if (time === 6)
+    link.innerHTML = "<a href='gcprogress.html'>Be more religious instead!</a> <span onclick='rejectSomething(7)' style='color:white;'>No.</span>";
+  else if (time === 7)
+    link.innerHTML = "<a class='hfire-link' href='anti-procrastination.html'>You are procrastinating on two of your goals. Not good.</a>";
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
   else if(time === 10)

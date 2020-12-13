@@ -72,9 +72,9 @@
         $("question").innerHTML = "You want to do it, but you don't need to do it. There are other ways to feel happiness.";
         $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
       }
-      else if(slider1.value === "4") {
+      else if(slider1.value === "4" || inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
         $("question").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html' style='display:block; margin-bottom:0.5em;'>If you want to be more creative, then start drawing!</a><a href='gcprogress.html'>If you want to be more religious, then watch General Conference!</a>";
+        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <span onclick='rejectSomething(6)' style='color:white;'>No.</span>";
       }
       else if(slider1.value === "5" || inputText.indexOf("thing in the world") >= 0)
         location.href = "fiveminutetimer.html";
@@ -82,10 +82,6 @@
         $("message").innerHTML = "✝PLAY TABERNACLE CHOIR MUSIC✝";
         document.body.removeChild($("question"));
         $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButtonTC()'>click here.</u>";
-      }
-      else if(inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
-        $("question").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html' style='display:block; margin-bottom:0.5em;'>If you want to be more creative, then start drawing!</a><a href='gcprogress.html'>If you want to be more religious, then watch General Conference!</a>";
       }
       else
         finalTest(inputText,"deviantart");
