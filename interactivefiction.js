@@ -20,7 +20,7 @@ function finalTest(inputText,site)
     location.href = "custom.html";
   else if(inputText.indexOf("busy") >= 0)
     location.href = "busy.html";
-  else if (inputText.indexOf("do something") >= 0 || inputText.indexOf("take a break") >= 0)
+  else if (found(["do something","take a break"],inputText))
     location.href = "time.html";
   else if(inputText.indexOf("music") >= 0 && !(site === "google" && found(knowledge,inputText))) {
     if(inputText.indexOf("listening") >= 0)
@@ -209,10 +209,26 @@ function finalTest(inputText,site)
       document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
     }
   }
+  else if(found(['productive','to accomplish','get stuff done','work','to achieve'],inputText)) {
+    $("question").innerHTML = "What sounds more appealing?";
+    $("link").innerHTML = "";
+    $("link").classList.add("two-list");
+    var productiveActivities = ["Completing Tasks","Achieving Goals","Creating a Task","Doing Something"];
+    var links = ["cyoa/2.html","goals.html","custom.html","time.html"];
+    for (var i in links) {
+      var element = document.createElement('a');
+      element.classList.add('hfire-link');
+      element.innerHTML = productiveActivities[i];
+      element.href = links[i];
+      $("link").appendChild(element);
+    }
+  }
   else if(found(['succe', 'accomplish',' win', ' won', 'champion','victor'],inputText)) {
     $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
+  else if(inputText.indexOf("do stuff") >= 0)
+    location.href = "time.html";
   else if(found(["unblock","access","bypass"],inputText)) {
     $("question").innerHTML = "If you unblock that website, you'll waste too much time.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
