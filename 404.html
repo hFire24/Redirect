@@ -14,9 +14,7 @@
     <div id='hideable'>
     </div>
     <script>
-      var redirectMessages = ['Stop visiting distracting websites!',
-      'Stop escaping from your problems!',
-      'YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook. Everything you find to be cute and attractive.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+      var redirectMessages = ['YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook. Everything you find to be cute and attractive.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
       'Get back to whatever you should be doing!',
       'You were redirected from a blacklisted website.',
       'You shouldn\'t access that website now.',
@@ -32,6 +30,8 @@
       'It is a good idea to get things done.',
       'Your mind must be wandering off, isn\'t it?',
       'This is a webpage. And it intercepted your internet access!',
+      'Stop visiting distracting websites!',
+      'Stop escaping from your problems!',
       'You\'re wasting your time! Come on!',
       'Ehem. You need to stop procrastinating.',
       'You won\'t complete your tasks quickly if you sidetrack.',
@@ -101,7 +101,7 @@
         linkMessages.push("Got something you need to do?");
       //Get random link from array
       var linkIndex = Math.floor(Math.random() * linkMessages.length);
-      if (index < 4)
+      if (index < 2)
         linkIndex = 0;
       //Put link message and to screen using the index value of the array
       var parent = $("hideable");

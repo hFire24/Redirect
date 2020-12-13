@@ -361,9 +361,7 @@ function found(array,reason) {
   return false;
 }
 
-var redirectMessages = ['Stop typing in addresses of distracting websites!',
-'Stop escaping from your problems!',
-'YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+var redirectMessages = ['YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
 'Get back to whatever you should be doing!',
 'You were redirected from a blacklisted website.',
 'You shouldn\'t access that website now.',
@@ -379,6 +377,8 @@ var redirectMessages = ['Stop typing in addresses of distracting websites!',
 'It is a good idea to get things done.',
 'Your mind must be wandering off, isn\'t it?',
 'This is a webpage. And it intercepted your internet access!',
+'Stop typing in addresses of distracting websites!',
+'Stop escaping from your problems!',
 'You\'re wasting your time! Come on!',
 'Ehem. You need to stop procrastinating.',
 'You won\'t complete your tasks quickly if you sidetrack.',
@@ -615,7 +615,7 @@ function randomLink(index,number) {
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   var message = $("message").innerHTML;
   //If the message tells you to leave, the linkIndex will be 0.
-  if (index < 4 || message === 'Return to your previous task.' || message === 'Get out of here!')
+  if (index < 2 || message === 'Return to your previous task.' || message === 'Get out of here!')
     linkIndex = 0;
   if (linkIndex === 0 || message === "May this page suggest you take a short break?" || message === "Time to take a break.")
     removeQuestion = true;
