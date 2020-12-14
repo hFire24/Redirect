@@ -234,10 +234,8 @@ function finalTest(inputText,site)
     $("question").innerHTML = "If you unblock that website, you'll waste too much time.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-  else if(inputText.indexOf("procrast") >= 0 || found(wasteTime,inputText)) {
-    $("question").innerHTML = "Here. Read this article in the link below.";
-    $("link").innerHTML = "<a href='https://alphaefficiency.com/4-types-procrastination-beat/'>Click here to continue.</a>";
-  }
+  else if(inputText.indexOf("procrast") >= 0 || found(wasteTime,inputText))
+    location.href = "anti-procrastination.html";
   else if(site === "busy") {
     $("question").innerHTML = "You need an energy boost.";
     $("link").innerHTML = "<a id='relax' href='relax.html'>Click here to continue.</a>";
