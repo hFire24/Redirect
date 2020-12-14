@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Good morning!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon-7.png">
+  </head>
+  <body class="morning">
+    <div id="question" class="space">Do the following actions. Leave the page when you are no longer feeling tired.<br></div>
+    <div id="questionnaire">
+      <div class='morning-task'>
+        Stand up and stretch. <input type="checkbox" onclick="reveal(1)">
+      </div>
+      <div class='morning-task'>
+        Drink water. <input type="checkbox" onclick="reveal(2)">
+      </div>
+      <div class='morning-task'>
+        <a href='../relax2.html?mood=morning' target="_blank">Listen to this.</a> <input type="checkbox" onclick="reveal(3)">
+      </div>
+      <div class='morning-task'>
+        Change clothes to go outside. <input type="checkbox" onclick="reveal(4)">
+      </div>
+      <div class='morning-task'>
+        Take a walk outside. <input type="checkbox" onclick="reveal(5)">
+      </div>
+      <div class='morning-task'>
+        Congratulations! You should be more energized. If you haven't taken a shower<span id='breakfast'> or ate a hearty breakfast</span> yet, then do so!
+      </div>
+    <script>
+      const morningTasks = document.getElementsByClassName('morning-task');
+      reveal(0);
+      const d = new Date()
+      if (d.getHours() > 9)
+        document.getElementById('breakfast').innerHTML = '';
+      function reveal(index) {
+        if(index !== 0)
+          morningTasks[index-1].style.display = "none";
+        morningTasks[index].style.display = "block";
+      }
+    </script>
+  </body>
+</html>

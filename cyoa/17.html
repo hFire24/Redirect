@@ -24,6 +24,9 @@
       <div class='space'>Do you feel like you need motivation?<br>
         <input type="radio" name="motivation" onclick="setCheck('motivation',1)">Yes <input type="radio" name="motivation" onclick="setCheck('motivation',0)">No
       </div>
+      <div class='space'>Are you feeling tired?<br>
+        <input type="radio" name="tired" onclick="setCheck('tired',1)">Yes <input type="radio" name="tired" onclick="setCheck('tired',0)">No
+      </div>
       <div class='space'>Do you want to improve your habits or routine?<br>
         <input type="radio" name="habits" onclick="setCheck('habits',1)">Yes <input type="radio" name="habits" onclick="setCheck('habits',0)">No
       </div>
@@ -39,14 +42,11 @@
       <div class='space'>Are you stressed or worried or feeling down?<br>
         <input type="radio" name="stress" onclick="setCheck('stress',1)">Yes <input type="radio" name="stress" onclick="setCheck('stress',0)">No
       </div>
-      <div class='space'>Are you thinking about cute anime girls?<br>
-        <input type="radio" name="anime" onclick="setCheck('anime',1)">Yes <input type="radio" name="anime" onclick="setCheck('anime',0)">No
-      </div>
-      <div class='space'>Do you feel like going to YouTube?<br>
-        <input type="radio" name="youtube" onclick="setCheck('youtube',1)">Yes <input type="radio" name="youtube" onclick="setCheck('youtube',0)">No
-      </div>
       <div class='space'>Do you feel like playing a game?<br>
         <input type="radio" name="game" onclick="setCheck('game',1)">Yes <input type="radio" name="game" onclick="setCheck('game',0)">No
+      </div>
+      <div class='space'>Are you thinking about cute anime girls?<br>
+        <input type="radio" name="anime" onclick="setCheck('anime',1)">Yes <input type="radio" name="anime" onclick="setCheck('anime',0)">No
       </div>
       <div class='space'>Are there any big projects due within a month?<br>
         <input type="radio" name="dueM" onclick="setCheck('dueM',1)">Yes <input type="radio" name="dueM" onclick="setCheck('dueM',0)">No
@@ -60,6 +60,11 @@
       <div class='hfire-link' onclick='submit()'>Submit</div>
     </div>
     <script>
+      //Date object
+      const d = new Date();
+      //Submitted global variable
+      var submitted = false;
+
       //Object for saving options
       const myObject = {
         defaultOption:1,
@@ -67,13 +72,13 @@
         lazy:0,
         unproductive:0,
         motivation:0,
+        tired:0,
         habits:0,
         something:0,
         nothing:0,
         overwhelm:0,
         stress:0,
         anime:0,
-        youtube:0,
         game:0,
         dueM:0,
         due7:0,
@@ -105,10 +110,26 @@
           submit();
         }
       }
+      //Function used if the user really wants a lazy, unproductive day
+      const enjoy = {
+        type:"function",
+        function:function() {
+          setTitle("Enjoy your lazy, unproductive day.");
+          document.getElementById("questionnaire").innerHTML = "We all get overwhelmed from time to time. A good way to deal with being overwhelmed is to just take a day off. Days like this can feel refereshing. Hopefully you've already done a lot to deserve this lazy, unproductive day.";
+        }
+      }
+      //Function used if the user rejects the advice found in the "unproductive" branch
+      const ohshoot = {
+        type:"function",
+        function:function() {
+          myObject["unproductive"] = 0;
+          submit();
+        }
+      }
 
       //This allows the enter key to be used for submitting
       document.body.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
+        if (event.keyCode === 13 && !submitted) {
           event.preventDefault();
           submit();
         }
@@ -142,20 +163,39 @@
             if(myObject.due1 === 1)
               location.href = "../brave.html";
             else if(myObject.due7 === 1 || myObject.dueM === 1) {
-              setTitle("You got other things to do. ");
+              setTitle("You got other things to do.");
               if(myObject.due7 === 1)
-                setTitle(document.getElementById("question").innerHTML + "Stuff is due in a week.");
-              else if(myObject.dueM === 1)
-                setTitle(document.getElementById("question").innerHTML + "At least one big project is due in a month.");
+                setTitle(document.getElementById("question").innerHTML + " Stuff is due in a week.");
+              if(myObject.dueM === 1)
+                setTitle(document.getElementById("question").innerHTML + " Please set milestones for your projects.");
               setLinks(2,["Ignore Advice","Accept Advice"],[ignoreAdvice,"36.html"]);
             }
             else {
-              setTitle("OK. Do whatever you want. There's always the goals list in case you get sick of being unproductive.");
-              setLinks(1,"Click here to continue.","../goals.html");
+              setTitle("You wanted a lazy, unproductive day. Does the idea of a day like that feel relaxing?");
+              setLinks(2,["Yes","No"],[enjoy,ohshoot]);
             }
             break;
           case "motivation":
             location.href = "15.html";
+            break;
+          case "tired":
+            if(d.getHours() >= 6 && d.getHours() <= 12) {
+              location.href = '../morning/checklist.html';
+            }
+            else if(d.getHours() < 17) {
+              setTitle("You should take a power nap.");
+              setLinks(1,"Click here to continue.","https://www.youtube.com/watch?v=RXBG1-1zI_E");
+            }
+            else if(d.getHours() < 22) {
+              setTitle("You should recharge yourself. But how?");
+              setLinks(1,"Click here to continue.","../relax2.html?mood=evening");
+            }
+            else {
+              if(myObject.due1 === 1)
+                location.href = "../brave.html";
+              else
+                location.href = "14.html";
+            }
             break;
           case "habits":
             location.href = "../atomic-habits.html";
@@ -182,52 +222,32 @@
           case "anime":
             location.href = "21.html";
             break;
-          case "youtube":
-            if(myObject.due1 === 1)
-              location.href = "../brave.html";
-            else if(myObject.due7 === 1 || myObject.dueM === 1) {
-              setTitle("You got other things to do. ");
-              if(myObject.due7 === 1)
-                setTitle(document.getElementById("question").innerHTML + "Stuff is due in less than a week.");
-              else if(myObject.dueM === 1)
-                setTitle(document.getElementById("question").innerHTML + "At least one big project is due in less than a month.");
-              setLinks(2,["Go to YouTube Anyway","Accept Advice"],["37.html","36.html"]);
-            }
-            else
-              location.href = "37.html";
-            break;
           case "game":
             if(myObject.due1 === 1)
               location.href = "../brave.html";
             else if(myObject.due7 === 1 || myObject.dueM === 1) {
-              setTitle("You got other things to do. ");
+              setTitle("You got other things to do.");
               if(myObject.due7 === 1)
-                setTitle(document.getElementById("question").innerHTML + "Stuff is due in a week.");
-              else if(myObject.dueM === 1)
-                setTitle(document.getElementById("question").innerHTML + "At least one big project is due in a month.");
+                setTitle(document.getElementById("question").innerHTML + " Stuff is due in a week.");
+              if(myObject.dueM === 1)
+                setTitle(document.getElementById("question").innerHTML + " Please set milestones for your projects.");
               setLinks(2,["Play Games Anyway","Accept Advice"],["29.html","36.html"]);
             }
             else
               location.href = "29.html";
             break;
+          case "due7":
           case "dueM":
             if(myObject.due1 === 1)
               location.href = "../brave.html";
-            else if(myObject.due7 === 1){
-              setTitle("You do realize that stuff is due in one week.");
-              setLinks(1,"Click here to continue.","36.html");
-            }
             else {
-              setTitle("You do realize that you have a big project. Don't neglect it.");
               setLinks(1,"Click here to continue.","36.html");
-            }
-            break;
-          case "due7":
-            if(myObject.due1 === 1)
-              location.href = "../brave.html";
-            else {
-              setTitle("You do realize that stuff is due in one week.");
-              setLinks(1,"Click here to continue.","36.html");
+              if(myObject.dueM === 0 && myObject.due7 === 0)
+                setTitle("You do realize that stuff is due in one week. Plus, don't neglect your projects.");
+              else if(myObject.due7 === 0)
+                setTitle("You do realize that stuff is due in one week.");
+              else
+                setTitle("You do realize that you have a big project. Don't neglect it.");
             }
             break;
           case "due1":
@@ -238,13 +258,15 @@
               setTitle("There's always the goals list in case you get sick of being unproductive.");
               setLinks(1,"Click here to continue.","../goals.html");
             }
-            else if(myObject.something === 1) {
+            else if(myObject.something === 1 || myObject.tired === 1) {
               myObject["defaultOption"] = 0;
               submit();
             }
             else
               location.href = "../anti-procrastination.html";
         }
+        //Set submitted to true
+        submitted = true;
       }
 
       //Changes the heading

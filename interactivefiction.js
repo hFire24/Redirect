@@ -7,6 +7,7 @@ input.addEventListener("keyup", function (event) {
 });
 
 var d = new Date();
+var expressDesireForCuteness = false;
 
 function finalTest(inputText,site)
 {
@@ -47,9 +48,9 @@ function finalTest(inputText,site)
         $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
     }
   }
-  else if(found(['suicid', 'die ', 'be dead', 'kill', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life'],inputText)
-  && !found(wasteTime,inputText) && !found(['die cast','diecast'],inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText)
-  || inputText.endsWith("die") && !found(['birdie','hoodie','indie','roll a die'],inputText)) {
+  else if(found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life'],inputText)
+  && !found(wasteTime,inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText)
+  || inputText.endsWith("die") && !found(['birdie','hoodie','indie','roll a die'],inputText) || inputText.startsWith("kill") || inputText.endsWith(" kill")) {
     $("question").innerHTML = "This is very serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
     document.body.removeChild($("message"));
     document.body.removeChild($("link"));
@@ -77,7 +78,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Well there's your problem.";
     $("link").innerHTML = "<a href='cyoa/18.html'>Click here to continue.</a>";
   }
-  else if(found(['poop', 'fart', 'defecat', 'feces', 'butt', 'turd', 'dung'],inputText) && !(inputText.indexOf('feel like') >= 0 && inputText.indexOf('poop') >= 0 && inputText.indexOf('pooping') < 0))
+  else if(found(['poop', 'fart', 'defecat', 'feces', 'butt', 'turd', 'dung', 'anus'],inputText) && !(inputText.indexOf('feel like') >= 0 && inputText.indexOf('poop') >= 0 && inputText.indexOf('pooping') < 0))
     location.href = 'crap.html';
   else if(inputText.indexOf("nanah") >= 0)
     location.href = "cyoa/28.html";
@@ -97,7 +98,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=stressed'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if(found(['sick of', 'sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless'],inputText)) {
+  else if(found(['sick of', 'sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless'],inputText) && !found(wasteTime,inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=sad'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
@@ -108,10 +109,8 @@ function finalTest(inputText,site)
   else if(found(['calm', 'relax', 'peace', 'chill', 'fresh', 'reenergize', 'meditate', 'refresh'],inputText) || found(['clear', 'reset'],inputText) && inputText.indexOf('mind') >= 0)
     location.href = 'relax.html';
   else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
-    if(d.getHours() >= 6 && d.getHours() <= 12) {
-      $("question").innerHTML = "You need to drink some water.";
-      $("link").innerHTML = "<ins onclick='alreadyDrank()'>But I just drank some water.</ins>";
-    }
+    if(d.getHours() >= 6 && d.getHours() <= 12)
+      location.href = "morning/checklist.html";
     else if(d.getHours() < 17) {
       $("question").innerHTML = "You should take a power nap.";
       $("link").innerHTML = "<a href='https://www.youtube.com/watch?v=RXBG1-1zI_E'>Click here to continue.</a>";
@@ -129,9 +128,11 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Are you lazy, or are you just exhausted?";
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
   }
-  else if(site === "deviantart" && (found(love,inputText)) || found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan'],inputText))
-    location.href = "animeslider.html";
-  else if(inputText.indexOf("anime") >= 0) {
+  else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
+    $("question").innerHTML = "If you love cute things so much, then why don't you draw them?";
+    expressDesireForCuteness = true;
+  }
+  else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0) {
     $("question").innerHTML = "Remember what you said about quitting anime?";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
@@ -143,7 +144,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "You won't feel like a loser anymore after listening to one of those meditations.";
     $("link").innerHTML = "<a href='relax2.html'>Click here to continue.</a>";
   }
-  else if(site === "google" || site === "youtube2") {
+  else if(!expressDesireForCuteness && (site === "google" || site === "youtube2")) {
     if(count < 2 && !(inputText === "it's totally useless information")) {
       console.log(count);
       input.value = "";
@@ -245,7 +246,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-  else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd'],inputText)) {
+  else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd', '😆', '🤣', '😂'],inputText) && inputText.indexOf('loli') < 0) {
     $("message").innerHTML = "Šílený Ota";
     if(site === "hotanddry")
       $("message").classList.add("space");
@@ -272,15 +273,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Fun things are good, but they are distractions.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-  else if(inputText.indexOf("want") >= 0) {
-    if(inputText.indexOf("nothing") >= 0)
-      location.href = "cyoa/13.html";
-    else {
-      $("question").innerHTML = "You want to go there, but you don't need to go there.";
-      $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-    }
-  }
-  else if(found(['need', 'live without', 'addict'],inputText)) {
+  else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need","do not need"],inputText)) {
     $("question").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
@@ -290,8 +283,27 @@ function finalTest(inputText,site)
     location.href = 'index.html';
   else if(inputText.indexOf("nothing") >= 0)
     location.href = 'multiple.html';
-  else if(inputText.indexOf("habit") >= 0) {
+  else if(inputText.indexOf("habit") >= 0)
     location.href = "atomic-habits.html";
+  else if(found(["embar","embbar","emmb","awkward","cringe","weird","creep"],inputText) && expressDesireForCuteness) {
+    $("question").innerHTML = "Who cares? If you learn how to draw cute anime girls, then you are learning a valuable skill!";
+    $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
+  }
+  else if(found(["hard","difficult","challenging","i can't","not skilled","not proficient","beginnner","novice","not good enough"],inputText)) {
+    $("question").innerHTML = "Practice is key to mastering something hard.";
+    $("link").innerHTML = "<a href='cyoa/15.html'>Click here to continue.</a>";
+  }
+  else if(inputText.indexOf("boring") >= 0) {
+    $("question").innerHTML = "The reason why you said \"boring\" is because you aren't stepping outside of your comfort zone.";
+    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+  else if(found(creativity,inputText) || inputText.indexOf('consum') >= 0) {
+    $("question").innerHTML = "Even a minute of breathing helps creativity.";
+    $("link").innerHTML = "<a href='https://www.google.com/search?q=breathing+exercise'>Click here to continue.</a>";
+  }
+  else if(inputText.indexOf('commission') >= 0 && expressDesireForCuteness) {
+    $("question").innerHTML = "This is the lamest excuse ever. Stop wasting money on commissions, and make your own drawings.";
+    $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
   else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'meme'],inputText)) {
     var messages = ['You really are bored.',
@@ -350,6 +362,16 @@ function finalTest(inputText,site)
       document.getElementById("question").innerHTML = replace;
     document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
+  else if(expressDesireForCuteness)
+    location.href = "animeslider.html";
+  else if(inputText.indexOf("want") >= 0) {
+    if(inputText.indexOf("nothing") >= 0)
+      location.href = "cyoa/13.html";
+    else {
+      $("question").innerHTML = "You want to go there, but you don't need to go there.";
+      $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    }
+  }
   else if(inputText.indexOf("i can") >= 0) {
     $("question").innerHTML = "You could, but you should be doing one of those four things instead.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
@@ -369,6 +391,7 @@ var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some ti
 var love = ['love','adore','enjoy','favorite','best'];
 var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'];
 var knowledge = ['learn','curious','to know','stud','educat','smart','knowledg'];
+var creativity = ['creat','draw','illustrat'];
 
 function generateHealthLink() {
   var healthMeditations = ["Symptom Control","Visualise Healing"];
@@ -395,7 +418,7 @@ function areYouBored(site) {
   }
 }
 
-function alreadyDrank() {
+/*function alreadyDrank() {
   $("question").innerHTML = "<a href='https://app.mysoundwise.com/mysoundcasts'>Listen to Morning Boost under Make the Most of Your Day.</a>";
   $("link").innerHTML = "<ins onclick='meditated()'>Continue</ins>";
 }
@@ -415,7 +438,7 @@ function raining() {
   $("link").innerHTML = "<ins onclick='noStepmania()'>The TV is occupied, or I can't be making noise downstairs.</a>";
 }
 
-/*function noStepmania() {
+function noStepmania() {
   $("question").innerHTML = "OK, fine. Just sleep in for longer. Your body will thank me later.";
   document.body.removeChild($("link"));
 }*/

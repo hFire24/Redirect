@@ -57,8 +57,7 @@
       else
         inputText = $("newBreak").value.toLowerCase();
       console.log(inputText);
-      if(found(['regress', 'younger', 'shrink', 'oversize', 'too big', 'gigantic', 'giant', 'huge', ' age', 'toddler', 'preschool', 'tiny'],inputText) ||
-        found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful'],inputText))
+      if(found(['regress', 'shrink'],inputText))
         location.href = "whoa/index.html";
       else if(inputText.indexOf("touhou") >= 0) {
         $("question").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";

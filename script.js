@@ -725,10 +725,8 @@ function okFeeling() {
       link.innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
       break;
     case "tired":
-      if(d.getHours() >= 6 && d.getHours() <= 12) {
-        message.innerHTML = "You need to drink some water.";
-        $("hideable").removeChild(link);
-      }
+      if(d.getHours() >= 6 && d.getHours() <= 12)
+        location.href = "morning/checklist.html";
       else if(d.getHours() < 17) {
         message.innerHTML = "You should take a power nap.";
         link.innerHTML = "<a href='https://www.youtube.com/watch?v=RXBG1-1zI_E'>Click here to continue.</a>";

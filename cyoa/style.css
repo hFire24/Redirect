@@ -33,7 +33,7 @@ ol a {
   font-size:105px;
 }
 
-#standup, #changeclothes {
+#standup, #changeclothes, #hydrate, #musictip, .invisible {
   display:none;
 }
 
@@ -66,10 +66,6 @@ img {
 
 .priorities td {
   border: 1px solid #000;
-}
-
-#hydrate, #musictip {
-  display:none;
 }
 
 td {

@@ -75,8 +75,13 @@ ol a {
   font-size:105px;
 }
 
-#standup, #changeclothes, .additional {
+#standup, #changeclothes, #hydrate, #musitip, .additional, .morning-task, .invisible {
   display:none;
+}
+
+.morning-task {
+  animation-name:rise;
+  animation-duration:2s;
 }
 
 #breaklink {
@@ -108,10 +113,6 @@ input[type='checkbox']:checked {
 td {
   padding: 7px;
   font-size: 45px;
-}
-
-#hydrate, #musictip {
-  display:none;
 }
 
 .two-list {

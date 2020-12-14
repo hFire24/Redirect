@@ -2,8 +2,7 @@ var messages = [];
 var message = document.getElementById("message");
 
 function generateArray(age) {
-  if (age === 'old')
-  {
+  if (age === 'old') {
     messages.push ('DO NOT FAP',
     'ERADICATE THE SIN OF LUST',
     'DO NOT SIN ON CERTAIN WEBSITES',
@@ -45,6 +44,13 @@ function generateArray(age) {
 
 function loadWebsite() {
   var index = Math.floor(Math.random() * 30);
+  var urlSearch = window.location.search;
+  var parameter = new URLSearchParams(urlSearch);
+  var newIndex = parameter.get('id');
+  console.log(newIndex);
+  if (newIndex !== null)
+    if(newIndex > 0 && newIndex <= messages.length)
+      index = newIndex - 1;
   if(messages[index] === "YOU WISH YOU ARE A CUTE ANIME GIRL? 🤣🤣")
   {
     message.removeAttribute("onClick");

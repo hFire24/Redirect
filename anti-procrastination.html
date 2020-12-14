@@ -12,11 +12,14 @@
   <body onload="loadVideo(-1); randomTheme(1)">
     <div id='message' class='space'><a id='link' href=''>Here. Watch this video.</a></div>
     <div id='break' class='space'>It's called "<span id='title'></span>"</div>
+    <div id='demolish' class='invisible space'><img src="media/Building Demolish Procrastination.gif" alt='A building with the label "Your Future". An explosion labeled "Too Much Procrastination" appears, then the building collapses.'></div>
     <div id='hideable'>
-      <div class='space' style='color:white;' onclick='loadVideo(-1)'>Load Different Video</div>
+      <div id='load' class='space' style='color:white;' onclick='loadVideo(-1)'>Load Different Video</div>
     </div>
   </body>
   <script>
+    var times = 0;
+
     class Video {
       constructor(id,title,position) {
         this.id = id;
@@ -60,10 +63,26 @@
     new Video("HHiWRNuKCcY","This SpongeBob Episode Will Make You Stop Procrastinating",105));
 
     function loadVideo(index) {
-      if(index < 0 || index >= playlist.length)
-        index = Math.floor(Math.random() * playlist.length);
-      link.href = "https://www.youtu.be/v=" + playlist[index].id;
-      title.innerHTML = playlist[index].title;
+      if(times >= playlist.length) {
+        document.body.classList.add("theme10");
+        message.classList.add("invisible");
+        document.getElementById("break").classList.add("invisible");
+        demolish.classList.remove("invisible");
+        load.classList.add("big");
+        load.style.fontFamily = "Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, Barlow Semi Condensed, sans-serif";
+        load.innerHTML = "☢STOP PROCRASTINATING☢";
+        document.getElementById("hideable").removeChild(document.getElementById("theme"));
+      }
+      else {
+        if(index < 0 || index >= playlist.length)
+        {
+          index = Math.floor(Math.random() * playlist.length);
+        }
+        link.href = "https://www.youtu.be/v=" + playlist[index].id;
+        title.innerHTML = playlist[index].title;
+        playlist.splice(index,1);
+      }
+      times++;
     }
   </script>
   <script src='script.js'></script>
