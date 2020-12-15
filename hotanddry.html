@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link id='apple' rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme8">
-    <div id="message"></div>
-    <div id="question" class="space">Why are you here?</div>
-    <div id='link' class='space'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+    <h1 id="message" class="invisible"></h1>
+    <h2 id="question">Why are you here?</h2>
+    <div id='link'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
         <span class="custom-select" style="width:200px;">
           <select id='custom-reason'>
@@ -30,7 +30,7 @@
     var icon = document.getElementById("apple");
     var iconNumber = Math.floor(Math.random() * 7) + 1;
     if(iconNumber > 1)
-      icon.href = "apple-touch-icon " + iconNumber + ".png";
+      icon.href = "icons/apple-touch-icon " + iconNumber + ".png";
 
     function submit() {
       console.log($("custom-reason").value);

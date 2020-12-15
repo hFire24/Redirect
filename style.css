@@ -1,14 +1,61 @@
 body {
   background-color: black;
-  font-family: 'Barlow Semi Condensed', Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, sans-serif;
+  font-family: 'Barlow Semi Condensed', Futura Md BT, AvenirNextCondensed-Italic, sans-serif;
   color: white;
-  font-size: 84px;
+  font-size: 60px;
   text-align: center;
   margin-top: 25px;
 }
 
 a {
   color: white;
+}
+
+input[type='text'], select, button {
+  font-family: 'Barlow Semi Condensed', Futura MdCn BT, AvenirNextCondensed-Italic, sans-serif;
+  font-size:16px;
+}
+
+.custom-select, input[type='text'].custom-select, .custom-button {
+  font-size: 36px;
+}
+
+h1, h2, h3, strong, .theme10 {
+  font-family: 'Barlow Semi Condensed', Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, sans-serif;
+}
+
+h1 {
+  font-size: 140px;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 105px;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+h3, #ok {
+  font-size: 84px;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+#message, #break.big, #trance, #survivor, #arrows, #emergency-button, .huge {
+  font-size: 140px;
+}
+
+#break, #question, #standup, #changeclothes, #chiptune, #message.small, #arrows.small, .big {
+  font-size:105px;
+}
+
+#message.tiny, #link, #theme, .medium {
+  font-size: 84px;
+}
+
+#instructions, .no-space {
+  margin-bottom: 0px;
 }
 
 .morning {
@@ -34,6 +81,10 @@ a {
   font-family: Verdana, sans-serif;
 }
 
+.relax strong {
+  font-family: Verdana, sans-serif;
+}
+
 ol, #goals-list {
   font-size: 60px;
 }
@@ -45,14 +96,6 @@ ol {
 
 ol a {
   color: yellowgreen;
-}
-
-#message, #break.big, h1, #trance, #survivor, #arrows, #emergency-button, .huge {
-  font-size: 140px;
-}
-
-#message.tiny {
-  font-size: 84px;
 }
 
 #trance {
@@ -67,16 +110,16 @@ ol a {
   font-family: Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, 'Arial Narrow Bold', fantasy;
 }
 
-.space, .space2 {
+#link, .space, .space2 {
   margin-bottom: 0.5em;
 }
 
-#break, #question, #standup, #changeclothes, #chiptune, #message.small, #arrows.small, h2, .big {
-  font-size:105px;
+#standup, #changeclothes, #hydrate, #musictip, .additional, .morning-task, .invisible {
+  display:none;
 }
 
-#standup, #changeclothes, #hydrate, #musitip, .additional, .morning-task, .invisible {
-  display:none;
+#hydrate, #musictip {
+  padding-bottom: 20px;
 }
 
 .morning-task {
@@ -91,8 +134,8 @@ ol a {
 
 input[type='checkbox'] {
     -webkit-appearance:none;
-    width:60px;
-    height:60px;
+    width:50px;
+    height:50px;
     background:#F00;
     border-radius:5px;
     border:2px solid #555;
@@ -125,13 +168,18 @@ td {
   grid-template-columns:auto auto auto;
 }
 
-.relax-list, .small {
-  font-size:60px;
+.small {
+  font-size:45px;
 }
 
-.close {
+.relax .close {
   font-weight:bold;
   color:darkred;
+}
+
+.relax .forward {
+  font-weight:bold;
+  color:darkblue;
 }
 
 .four-list {
@@ -310,6 +358,7 @@ td {
 
 .theme10 #message {
   color:yellow;
+  font-weight:500;
 }
 
 .relapse {
@@ -347,39 +396,38 @@ td {
   padding:10px 30px;
 }
 
-.custom-select, .custom-button {
-  font-size: 36px;
-}
-
 #listen {
   color:#0F0;
 }
 
 @media only screen and (max-width: 1702px) {
-  body, #message.tiny {
-    font-size: 60px;
-  }
-  #message, #trance, #stress, #survivor, #break.big, h1, #arrows, #emergency-button, .huge {
+  h1, #message, #trance, #survivor, #break.big, #arrows, #emergency-button, .huge {
     font-size: 100px;
   }
-  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2, .big {
+  h2, #chiptune, #break, #standup, #changeclothes, #question, #message.small, #arrows.small, .big {
     font-size: 75px;
   }
-  td {
+  h3, #ok, #link, #theme, #message.tiny, .medium {
+    font-size: 60px;
+  }
+  body, ol, #goals-list, .relax-list {
+    font-size:40px;
+  }
+  td, .small {
     font-size:30px;
+  }
+  .custom-select, input[type='text'].custom-select, .custom-button {
+    font-size: 24px;
   }
   .expand {
     font-size:20px;
-  }
-  ol, #goals-list, .relax-list, .small {
-    font-size:40px;
   }
   .space2 {
     margin-bottom:0.6em;
   }
   input[type='checkbox'] {
-    width:40px;
-    height:40px;
+    width:30px;
+    height:30px;
   }
   #musicslider {
     height: 20px;
@@ -392,20 +440,35 @@ td {
     width: 40px;
     height: 40px;
   }
-  .custom-select, .custom-button {
-    font-size: 24px;
-  }
 }
 
 @media only screen and (max-width: 1135px) {
-  body, #message.tiny, ol, #goals-list, .relax-list, .small {
-    font-size: 30px;
+  h1, #message, #trance, #survivor, #break.big, #emergency-button, .huge {
+    font-size: 80px;
   }
-  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button, .huge {
+  h2, #chiptune, #break, #standup, #changeclothes, #question, #message.small, #arrows.small, .big {
     font-size: 60px;
   }
-  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2, .big {
+  h3, #ok, #link, #theme, #message.tiny, .medium {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 851px) {
+  h1, #message, #trance, #survivor, #break.big, #emergency-button, .huge {
+    font-size: 60px;
+  }
+  h2, #chiptune, #break, #standup, #changeclothes, #question, #message.small, #arrows.small, .big {
     font-size: 44px;
+  }
+  h3, #ok, #link, #theme, #message.tiny, .medium {
+    font-size: 36px;
+  }
+  body, ol, #goals-list, .relax-list, .small {
+    font-size: 30px;
+  }
+  .custom-select, input[type='text'].custom-select, .custom-button, .expand {
+    font-size:16px;
   }
   #arrows {
     font-size: 75px;
@@ -428,27 +491,24 @@ td {
     width: 30px;
     height: 30px;
   }
-  .custom-select, .custom-button {
-    font-size:14px;
-  }
 }
 
 @media only screen and (max-width: 567px) {
-  body, #message.tiny, ol, #goals-list, td, .relax-list, .small {
+  h1, #message, #trance, #survivor, #break.big, #emergency-button, .huge {
+    font-size: 40px;
+  }
+  h2, #chiptune, #break, #standup, #changeclothes, #question, #message.small, #arrows.small, .big {
+    font-size: 30px;
+  }
+  h3, #ok, .medium, #link, #message.tiny, #theme {
+    font-size: 25px;
+  }
+  body, ol, td, #goals-list, .relax-list, .small {
     font-size: 20px;
   }
   .relax-list {
     display:grid;
     grid-template-columns:auto auto;
-  }
-  #message, #trance, #stress, #survivor, #break.big, h1, #emergency-button, .huge {
-    font-size: 40px;
-  }
-  #chiptune, #break, .small #stress, #standup, #changeclothes, #question, #message.small, #arrows.small, h2, .big {
-    font-size: 30px;
-  }
-  .expand {
-    font-size: 14px;
   }
   #arrows {
     font-size: 50px;

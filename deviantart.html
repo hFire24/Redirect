@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme1" onload="loadWebsite(7); areYouBored('deviantart');">
-    <div id="message" class="space"></div>
-    <div id="question" class="space">Why did you decide to go there?</div>
-    <div id='link' class='space'>
+    <h1 id="message"></h1>
+    <h2 id="question">Why did you decide to go there?</h2>
+    <div id='link'>
       <input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
         <span class="custom-select" style="width:200px;">
@@ -22,7 +22,7 @@
         </span><button onclick="submit()">Submit</button>
       </div>
     </div>
-    <div id='yesno' style='display:none;'>
+    <div id='yesno' class='medium' style='display:none;'>
       <div class='two-list'>
         <a class='hfire-link' onclick="addicted()">Yes</a>
         <a class='hfire-link' onclick="restoreLink()">No</a>
@@ -73,7 +73,7 @@
       }
       else if(slider1.value === "4" || inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
         $("question").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <span onclick='rejectSomething(6)' style='color:white;'>No.</span>";
+        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
       }
       else if(slider1.value === "5" || inputText.indexOf("thing in the world") >= 0)
         location.href = "fiveminutetimer.html";

@@ -4,61 +4,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Answer this questionnaire.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme9">
-    <div id="question" class="space">Answer this questionnaire. Press Enter or "Submit" to submit.<br></div>
-    <div id="questionnaire">
-      <div class='space'>Are you bored?<br>
-        <input type="radio" name="bored" onclick="setCheck('bored',1)">Yes <input type="radio" name="bored" onclick="setCheck('bored',0)">No
+    <h2 id="question">Answer this questionnaire. Press Enter or "Submit" to submit.<br></h2>
+    <div id="questionnaire" class="small">
+      <div class='three-list'>
+        <div class='space'>Bored?<br>
+          <input type="checkbox" name="bored" onclick="setCheck('bored')">Yes
+        </div>
+        <div class='space'>Lazy?<br>
+          <input type="checkbox" name="lazy" onclick="setCheck('lazy')">Yes
+        </div>
+        <div class='space'>Tired?<br>
+          <input type="checkbox" name="tired" onclick="setCheck('tired')">Yes
+        </div>
       </div>
-      <div class='space'>Are you lazy?<br>
-        <input type="radio" name="lazy" onclick="setCheck('lazy',1)">Yes <input type="radio" name="lazy" onclick="setCheck('lazy',0)">No
+      <div class='two-list'>
+        <div class='space'>Want better habits or routines?<br>
+          <input type="checkbox" name="habits" onclick="setCheck('habits')">Yes
+        </div>
+        <div class='space'>Would you like to get motivated?<br>
+          <input type="checkbox" name="motivation" onclick="setCheck('motivation')">Yes
+        </div>
       </div>
-      <div class='space'>Do you want to have a lazy, unproductive day?<br>
-        <input type="radio" name="unproductive" onclick="setCheck('unproductive',1)">Yes <input type="radio" name="unproductive" onclick="setCheck('unproductive',0)">No
+      <div class='two-list'>
+        <div class='space'>Do you want a lazy, unproductive day?<br>
+          <input type="checkbox" name="unproductive" onclick="setCheck('unproductive')">Yes
+        </div>
+        <div class='space'>Do you really want to do nothing?<br>
+          <input type="checkbox" name="nothing" onclick="setCheck('nothing')">Yes
+        </div>
       </div>
-      <div class='space'>Do you feel like you need motivation?<br>
-        <input type="radio" name="motivation" onclick="setCheck('motivation',1)">Yes <input type="radio" name="motivation" onclick="setCheck('motivation',0)">No
+      <div class='three-list'>
+        <div class='space'>Want a short break?<br>
+          <input type="checkbox" name="something" onclick="setCheck('something')">Yes
+        </div>
+        <div class='space'>Overwhelmed?<br>
+          <input type="checkbox" name="overwhelm" onclick="setCheck('overwhelm')">Yes
+        </div>
+        <div class='space'>Stressed or worried?<br>
+          <input type="checkbox" name="stress" onclick="setCheck('stress')">Yes
+        </div>
       </div>
-      <div class='space'>Are you feeling tired?<br>
-        <input type="radio" name="tired" onclick="setCheck('tired',1)">Yes <input type="radio" name="tired" onclick="setCheck('tired',0)">No
+      <div class='two-list'>
+        <div class='space'>Feel like playing a game?<br>
+          <input type="checkbox" name="game" onclick="setCheck('game')">Yes
+        </div>
+        <div class='space'>Thinking about cute anime girls?<br>
+          <input type="checkbox" name="anime" onclick="setCheck('anime')">Yes
+        </div>
       </div>
-      <div class='space'>Do you want to improve your habits or routine?<br>
-        <input type="radio" name="habits" onclick="setCheck('habits',1)">Yes <input type="radio" name="habits" onclick="setCheck('habits',0)">No
+      <div class='space'>Is there anything due within...</div>
+      <div class='three-list'>
+        <div class='space'>A month (for projects)?<br>
+          <input type="checkbox" name="dueM" onclick="setCheck('dueM')">Yes
+        </div>
+        <div class='space'>7 days?<br>
+          <input type="checkbox" name="due7" onclick="setCheck('due7')">Yes
+        </div>
+        <div class='space'>24 hours?<br>
+          <input type="checkbox" name="due1" onclick="setCheck('due1')">Yes
+        </div>
       </div>
-      <div class='space'>Do you want to take a short break?<br>
-        <input type="radio" name="something" onclick="setCheck('something',1)">Yes <input type="radio" name="something" onclick="setCheck('something',0)">No
-      </div>
-      <div class='space'>Do you really want to do nothing?<br>
-        <input type="radio" name="nothing" onclick="setCheck('nothing',1)">Yes <input type="radio" name="nothing" onclick="setCheck('nothing',0)">No
-      </div>
-      <div class='space'>Are you feeling overwhelmed?<br>
-        <input type="radio" name="overwhelm" onclick="setCheck('overwhelm',1)">Yes <input type="radio" name="overwhelm" onclick="setCheck('overwhelm',0)">No
-      </div>
-      <div class='space'>Are you stressed or worried or feeling down?<br>
-        <input type="radio" name="stress" onclick="setCheck('stress',1)">Yes <input type="radio" name="stress" onclick="setCheck('stress',0)">No
-      </div>
-      <div class='space'>Do you feel like playing a game?<br>
-        <input type="radio" name="game" onclick="setCheck('game',1)">Yes <input type="radio" name="game" onclick="setCheck('game',0)">No
-      </div>
-      <div class='space'>Are you thinking about cute anime girls?<br>
-        <input type="radio" name="anime" onclick="setCheck('anime',1)">Yes <input type="radio" name="anime" onclick="setCheck('anime',0)">No
-      </div>
-      <div class='space'>Are there any big projects due within a month?<br>
-        <input type="radio" name="dueM" onclick="setCheck('dueM',1)">Yes <input type="radio" name="dueM" onclick="setCheck('dueM',0)">No
-      </div>
-      <div class='space'>Is there anything due within 7 days?<br>
-        <input type="radio" name="due7" onclick="setCheck('due7',1)">Yes <input type="radio" name="due7" onclick="setCheck('due7',0)">No
-      </div>
-      <div class='space'>Is there anything due within the next 24 hours?<br>
-        <input type="radio" name="due1" onclick="setCheck('due1',1)">Yes <input type="radio" name="due1" onclick="setCheck('due1',0)">No
-      </div>
-      <div class='hfire-link' onclick='submit()'>Submit</div>
     </div>
+    <div id='submit' class='hfire-link' onclick='submit()'>Submit</div>
     <script>
       //Date object
       const d = new Date();
@@ -86,10 +99,13 @@
       };
 
       //Executes every time a radio button is pressed.
-      function setCheck(attribute,number) {
+      function setCheck(attribute) {
         console.log(attribute + " " + myObject[attribute]);
-        //Sets the attribute of the object to the number
-        myObject[attribute] = number;
+        //Sets the attribute of the object to the opposite number
+        if(myObject[attribute] === 1)
+          myObject[attribute] = 0;
+        else
+          myObject[attribute] = 1;
         console.log(attribute + " " + myObject[attribute]);
       }
 
@@ -254,11 +270,7 @@
             location.href = "../brave.html";
             break;
           default:
-            if(myObject.unproductive === 1) {
-              setTitle("There's always the goals list in case you get sick of being unproductive.");
-              setLinks(1,"Click here to continue.","../goals.html");
-            }
-            else if(myObject.something === 1 || myObject.tired === 1) {
+            if(myObject.unproductive === 1 || myObject.something === 1 || myObject.tired === 1) {
               myObject["defaultOption"] = 0;
               submit();
             }
@@ -267,6 +279,8 @@
         }
         //Set submitted to true
         submitted = true;
+        questionnaire.classList.remove("small");
+        document.getElementById("submit").style.display = "none";
       }
 
       //Changes the heading

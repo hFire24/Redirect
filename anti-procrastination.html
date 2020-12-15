@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Quit procrastinating</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body onload="loadVideo(-1); randomTheme(1)">
-    <div id='message' class='space'><a id='link' href=''>Here. Watch this video.</a></div>
-    <div id='break' class='space'>It's called "<span id='title'></span>"</div>
+    <h1 id='message'><a id='video-link' href=''>Here. Watch this video.</a></h1>
+    <div id='title-container' class='medium space'>It's called "<span id='video-title'></span>"</div>
     <div id='demolish' class='invisible space'><img src="media/Building Demolish Procrastination.gif" alt='A building with the label "Your Future". An explosion labeled "Too Much Procrastination" appears, then the building collapses.'></div>
     <div id='hideable'>
-      <div id='load' class='space' style='color:white;' onclick='loadVideo(-1)'>Load Different Video</div>
+      <button id='load' class='custom-button space' onclick='loadVideo(-1)'>Load Different Video</button>
     </div>
   </body>
   <script>
@@ -58,7 +58,7 @@
     new Video("YokGiK29k74","How to Break Your Procrastination Habit (For Good)",82),
     new Video("4x7MkLDGnu8","The ONLY way to stop procrastinating | Mel Robbins",84),
     new Video("9oWOsocN7qg","How to Make Yourself Study When You Have ZERO Motivation",86),
-    new Video("LE8mNTJOYmQ","How to Stay Focused For Long Periodds of Time (even on boring things)",91),
+    new Video("LE8mNTJOYmQ","How to Stay Focused For Long Periods of Time (even on boring things)",91),
     new Video("arj7oStGLkU","Inside the mind of a master procrastinator | Tim Urban",104),
     new Video("HHiWRNuKCcY","This SpongeBob Episode Will Make You Stop Procrastinating",105));
 
@@ -66,20 +66,19 @@
       if(times >= playlist.length) {
         document.body.classList.add("theme10");
         message.classList.add("invisible");
-        document.getElementById("break").classList.add("invisible");
+        document.getElementById("title-container").classList.add("invisible");
         demolish.classList.remove("invisible");
-        load.classList.add("big");
-        load.style.fontFamily = "Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, Barlow Semi Condensed, sans-serif";
-        load.innerHTML = "☢STOP PROCRASTINATING☢";
-        document.getElementById("hideable").removeChild(document.getElementById("theme"));
+        hideable.classList.add("big");
+        hideable.style.fontFamily = "Impact, Haettenschweiler, HelveticaNeue-CondensedBlack, Barlow Semi Condensed, sans-serif";
+        hideable.innerHTML = "☢STOP PROCRASTINATING☢";
       }
       else {
         if(index < 0 || index >= playlist.length)
         {
           index = Math.floor(Math.random() * playlist.length);
         }
-        link.href = "https://www.youtu.be/v=" + playlist[index].id;
-        title.innerHTML = playlist[index].title;
+        document.getElementById("video-link").href = "https://www.youtu.be/v=" + playlist[index].id;
+        document.getElementById("video-title").innerHTML = playlist[index].title;
         playlist.splice(index,1);
       }
       times++;

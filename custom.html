@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Create a task</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body onload="randomTheme(80)">
     <div id="custom">
-      <div id="instructions">Type in a task, and press "Submit" or Enter when done.<br>For multiple tasks, just split each task with "|".</div>
-      <input id="newBreak" type="text"><button id="messageButton" onClick="createMessage()">Submit</button>
+      <h3 id="instructions">Type in a task, and press "Submit" or Enter when done.<br>For multiple tasks, just split each task with "|".</h3>
+      <div id="form" class="space"><input id="newBreak" type="text"><button id="messageButton" onClick="createMessage()">Submit</button></div>
       <div id="sizeselecter"><input type="checkbox" id="size">Bigger Font</div>
-      <div id="breaklink"><a href="time.html">Got nothing to do?</a> <a href="cyoa/1.html">Can't think or focus?</a></div>
+      <div id="breaklink"><a href="time.html">Got nothing to do?</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="cyoa/1.html">Can't think or focus?</a></div>
     </div>
     <div id='hideable'>
     </div>

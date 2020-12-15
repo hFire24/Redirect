@@ -4,31 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Take a break.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme2">
-    <div id="break" class='space'>This slider will give you some music genres.</div>
-    <div class='small space'>Start with some music from lower intensities to relax.<br>If that doesn't help, play some higher intensity music to energize.<br>If you're watching something, don't play other music.</div>
+    <h2>This slider will give you some music genres.</h2>
+    <div class='space'>Start with some music from lower intensities to relax.<br>If that doesn't help, play some higher intensity music to energize.<br>If you're watching something, don't play other music.</div>
     <div class='slidercontainer space'>
       <input type="range" min="0" max="8" value="0" class="slider" id="musicslider">
     </div>
-    <div id="message" class="space">No music</div>
+    <h1 id="genre">No music</h2>
     <div id="intensity">Your mind easily wanders off.</div>
     <script>
       //Sets up the genres array and gets the elements by id
       const genres = ['No music','Nature sounds','Ambient music','Beautiful piano music','Downtempo music','Progressive house','<a href="works247.html">"works." 24/7 stream</a>',/*'Chiptunes','Eurovision hits',*/'Uplifting trance','Hard trance','EPIC ORCHESTRAL MUSIC'/*,'DEMETORI'*/];
-      const genre = document.getElementById("message");
+      const genre = document.getElementById("genre");
       const slider = document.getElementById("musicslider");
       const intensity = document.getElementById("intensity");
       slider.max = genres.length - 1;
 
       //If a question mark follows the url, then the slider can automatically go to the level stated in the url.
       const urlSearch = window.location.search;
-      if (urlSearch !== "")
-      {
+      if (urlSearch !== "") {
         let parameter = new URLSearchParams(urlSearch);
         slider.value = parameter.get('level');
         if(slider.value > slider.max || slider.value < 0)
@@ -43,8 +42,7 @@
       function setSliderValue() {
         genre.innerHTML = genres[slider.value];
         console.log(slider.value);
-        switch(parseInt(slider.value))
-        {
+        switch(parseInt(slider.value)) {
           case 0:
             intensity.innerHTML = 'Your mind easily wanders off.';
             break;

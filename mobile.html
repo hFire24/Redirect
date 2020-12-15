@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link id='apple' rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link id='apple' rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body onLoad="randomTheme(55)">
-    <div id='message' class='space'></div>
+    <h1 id='message'></h1>
     <div id='hideable' class='space'>
     </div>
     <img id='image' src='media/Expanding Brain Six Things.jpg' style='max-width:90%; height:auto;' alt='An expanding brain meme. 1: Being dictated by your urges, 2: Watching educational YouTube videos, 3: Listening to guided meditations, 4: Learning new skills, 5: Doing your homework, 6: Getting closer to God' width="680"></img>
@@ -20,7 +19,7 @@
       var icon = document.getElementById("apple");
       var iconNumber = Math.floor(Math.random() * 7) + 1;
       if(iconNumber > 1)
-        icon.href = "apple-touch-icon " + iconNumber + ".png";
+        icon.href = "icons/apple-touch-icon " + iconNumber + ".png";
       var mobileMessages = ['Stop sporadically checking your phone!',
       'Stop escaping from your problems!',
       'Get back to whatever you should be doing!',
@@ -70,7 +69,7 @@
       '<a href="musicSlider.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
       '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
         //Games
-      '<a href="games/index.html">Why not play one of these short games?</a>',
+      '<a href="cyoa/46.html">Why not play one of these short games?</a>',
       'Why stare at your phone when you can instead drive?... in Need for Speed?',
         //Miscellaneous
       'Try saying out loud the thing you need to get done.',
@@ -180,16 +179,15 @@
         if(!link) {
           link = document.createElement("div");
           link.id = "link";
-          link.className = "space";
           parent.appendChild(link);
         }
         //Sometimes, the link will change depending on the message.
         if (message === "Get ready for church!")
           link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
         else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
-          link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+          link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
         else if (linkIndex > 0)
-          link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+          link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
         else
           link.innerHTML = linkMessages[linkIndex];
         //Put index value to the console

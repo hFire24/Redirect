@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Take a break.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme2">
     <div class='space'>
-      <div id='break' onclick='sleepy()'>Stand up and stretch if you can.</div>
-      <div id='standup'>Wear your pajamas and go to bed.</div>
+      <h2 class='no-space' onclick='sleepy()'>Stand up and stretch if you can.</h2>
+      <h2 id='standup'>Wear your pajamas and go to bed.</h2>
     </div>
-    Brought to you by the blue theme.
+    <strong>Brought to you by the blue theme.</strong>
     <script>
       function sleepy() {
         document.getElementById("standup").style.display = "block";

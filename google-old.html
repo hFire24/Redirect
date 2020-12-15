@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme5">
-    <div id='message' class='space'>Be honest. Did you Google that just because you are bored?</div>
-    <div id='yesno' class='two-list'>
+    <h1 id='message'>Be honest. Did you Google that just because you are bored?</h1>
+    <div id='yesno' class='medium two-list'>
       <a id='yes' class='hfire-link' onclick='youLose()'>Yes</a>
       <a id='no' class='hfire-link' onclick="youWin()">No</a>
       <a id='maybe' class='hfire-link' onclick="maybe()">Maybe</a>
       <a id='idk' class='hfire-link' onclick='idk()'>I dunno</a>
     </div>
-    <div id="clickanywhere" style="display:none;">Click here to continue.</div>
+    <div id="link" style="display:none;">Click here to continue.</div>
     <script>
       var hey = 0;
       var message = document.getElementById("message");
@@ -63,8 +63,8 @@
         else if(hey === 2) {
           document.body.removeChild(document.getElementById("yesno"));
           message.innerHTML = getRandomMessage();
-          document.getElementById("clickanywhere").style.display = "block";
-          document.getElementById("clickanywhere").addEventListener("mouseup", function (event) {
+          document.getElementById("link").style.display = "block";
+          document.getElementById("link").addEventListener("mouseup", function (event) {
             event.preventDefault();
             location.href = "cyoa/2.html";
           });
@@ -72,8 +72,8 @@
         else {
           document.body.removeChild(document.getElementById("yesno"));
           message.innerHTML = "You need to calm down and relax.";
-          document.getElementById("clickanywhere").style.display = "block";
-          document.getElementById("clickanywhere").addEventListener("mouseup", function (event) {
+          document.getElementById("link").style.display = "block";
+          document.getElementById("link").addEventListener("mouseup", function (event) {
             event.preventDefault();
             location.href = generateAndrewJohnsonLink();
           });

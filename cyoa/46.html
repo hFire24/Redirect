@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Take a break.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <div id='message' class='space'>Here are some short games.</div>
-    <div id='break' class='space'></div>
+    <h1>Here are some short games.</h1>
+    <h2 id='suggestion'></h2>
     <div class='two-list'>
       <a class='hfire-link' href="http://www.flaminglunchbox.net/curvy">Curvy</a>
       <a class='hfire-link' href="http://entanglement.gopherwoodstudios.com/en-US-index.html">Entanglement</a>
       <a class='hfire-link' href="https://www.free-spider-solitaire.com/">Spider Solitaire (1 Suit)</a>
       <a class='hfire-link' href="http://minesweeperonline.com/">Minesweeper (Medium)</a>
       <a class='hfire-link' href="https://cardbattlestadium.cfreeze9.repl.co/">Card Battle Stadium</a>
-      <a class='hfire-link' href="mathgame.html">Math Game</a>
-      <a class='hfire-link' href="rockpaperscissors.html">Rock Paper Scissors</a>
+      <a class='hfire-link' href="https://hfire24.github.io/Games/mathgame.html">Math Game</a>
+      <a class='hfire-link' href="https://hfire24.github.io/Games/rockpaperscissors.html">Rock Paper Scissors</a>
       <a class='hfire-link' href="https://www.websudoku.com/">Sudoku (Easy)</a>
     </div>
     <script>
@@ -32,7 +32,7 @@
       "Rock Paper Scissors",
       "Sudoku (Easy)"];
       var game = games[Math.floor(Math.random() * games.length)]
-      document.getElementById("break").innerHTML = "Can't decide? Choose " + game + "."
+      document.getElementById("suggestion").innerHTML = "Can't decide? Choose " + game + "."
     </script>
   </body>
 </html>

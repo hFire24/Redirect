@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Five Minute Timer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon-clock.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon-clock.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme5" onload="startTimer()">
-    <div id='message' class='small space'>Don't do anything anime-related for about 5 minutes.</div>
-    <div id='times'>
-    </div>
+    <h2 id='heading'>Don't do anything anime-related for about 5 minutes.</h2>
+    <h3 id='times'>
+    </h3>
     <div id='post-timer' style='display:none;'>
       <div class='three-list space'>
         <a class='hfire-link' href='cyoa/6.html'>I want to do nothing</a>
@@ -69,9 +69,9 @@
           n = new Date(Date.now())
           if(!alarmOff)
             adjustTime();
-          if(a.getSeconds() <= n.getSeconds() && a.getMinutes() <= n.getMinutes() && a.getHours() <= n.getHours()) {
+          if(a.getSeconds() <= n.getSeconds() && a.getMinutes() <= n.getMinutes() && a.getHours() <= n.getHours() && !alarmOff) {
             alarmOff = true;
-            document.getElementById("message").innerHTML = "What are your thoughts right now?";
+            document.getElementById("heading").innerHTML = "What are your thoughts right now?";
             document.getElementById("times").style.display = "none";
             document.getElementById("post-timer").style.display = "block";
           }
@@ -92,7 +92,7 @@
       }
 
       function urgesWin() {
-        document.getElementById("message").innerHTML = "Looks like the thought hasn't gone away.";
+        document.getElementById("heading").innerHTML = "Looks like the thought hasn't gone away.";
         document.getElementById("post-timer").innerHTML = "If you want that thought to go away, <a href='relax.html'>listen to one of these.</a> It should weaken them.";
       }
     </script>

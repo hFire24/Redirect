@@ -204,7 +204,7 @@ function loadBreak(index,number) {
         message.href = "musicSlider.html";
         break;
       case messages.indexOf("Play one of these short games."):
-        message.href = "games/index.html";
+        message.href = "cyoa/46.html";
         break;
       case messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1:
         message.href = "https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw";
@@ -299,7 +299,6 @@ function loadBreak(index,number) {
   if(!link) {
     link = document.createElement("div");
     link.id = "link";
-    link.className = "space";
     parent.appendChild(link);
   }
   link.innerHTML = "<u onclick='whyNot()'>I don't feel like it.</u>";
@@ -309,12 +308,13 @@ function loadBreak(index,number) {
 
 function whyNot() {
   messageComplete = false;
-  link.innerHTML = "<div class='space'>Why not?</div>";
-  var textField = document.createElement("div");
+  link.innerHTML = "Why not? ";
+  var textField = document.createElement("span");
   textField.id = "reason";
   var input = document.createElement("input");
   input.id = "excuse";
   input.type = "text";
+  input.classList.add('custom-select');
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
@@ -324,6 +324,7 @@ function whyNot() {
   textField.appendChild(input);
   var submit = document.createElement("button");
   submit.id = "submit";
+  submit.classList.add('custom-button');
   submit.addEventListener("click", submitReason);
   submit.innerHTML = "Submit";
   textField.appendChild(submit);
@@ -343,7 +344,7 @@ function submitReason() {
     window.open("cyoa/47.html", '_blank');
   //If a task seems impossible for the moment, then the user can just play some games.
   else if(found(["don't have","sn't with me","not with me","not here","away","forgot my","not home","not at my home","not in my home","not inside my home","college","Purdue"],reason))
-    location.href = "games/index.html";
+    location.href = "cyoa/46.html";
   else if(reason.indexOf("nothing") >= 0)
     location.href = "multiple.html";
   else {
@@ -431,7 +432,7 @@ function addBigMessages() {
   '<a href="https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
     //Games
-  '<a href="games/index.html">Why not play one of these short games?</a>',
+  '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
   '<a href="https://www.websudoku.com/">Why don\'t you play Sudoku?</a>',
     //Miscellaneous
@@ -626,14 +627,13 @@ function randomLink(index,number) {
   if(!link && number !== 7) {
     link = document.createElement("div");
     link.id = "link";
-    link.className = "space";
     parent.appendChild(link);
   }
   //Sometimes, the link will change depending on the message.
   if (message === "Get ready for church!")
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
   else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
-    link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
   else if (linkIndex > 0 && number !== 7) {
     link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
@@ -786,7 +786,7 @@ function okFeeling() {
       }
       break;
     case "procrastinate":
-      location.href = "https://alphaefficiency.com/4-types-procrastination-beat/";
+      location.href = "anti-procrastination.html";
       break;
     case "struggle":
       location.href = "struggle.html";
@@ -858,19 +858,19 @@ async function createAdvice() {
 
 function rejectSomething(time) {
   if (time === 0)
-    link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <span onclick='rejectSomething(5)' style='color:red;'>No.</span>";
+    link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <strong onclick='rejectSomething(5)' style='color:red;'>No.</strong>";
   else if(time === 1)
-    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
   else if(time === 3)
-    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
   else if(time === 5)
-    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:red;'>No.</span>";
+    link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:red;'>No.</strong>";
   else if (time === 6)
-    link.innerHTML = "<a href='gcprogress.html'>Be more religious instead!</a> <span onclick='rejectSomething(7)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='gcprogress.html'>Be more religious instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
   else if (time === 7)
     link.innerHTML = "<a class='hfire-link' href='anti-procrastination.html'>You are procrastinating on two of your goals. Not good.</a>";
   else if(time === 9)
-    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(10)' style='color:white;'>No.</span>";
+    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(10)' style='color:white;'>No.</strong>";
   else if(time === 10)
     link.innerHTML = "<a class='hfire-link' href='cyoa/35.html'>You really are bored.</a>";
   else
@@ -939,11 +939,12 @@ function randomTheme(number) {
   //Pick a random theme
   var theme;
   var parent = $("hideable");
-  var themeText = document.createElement("div");
+  console.log(parent);
+  var themeText = document.createElement("strong");
   themeText.id = "theme";
+  themeText.style.display = "block";
   theme = Math.floor(Math.random() * 5) + 1;
-  switch (theme)
-  {
+  switch (theme) {
     case 1:
       themeText.innerHTML = "Brought to you by the moss green theme.";
       break;
@@ -988,7 +989,8 @@ function createMessage() {
   var parent = $("custom");
   var newMessage = $("newBreak");
   var button = $("messageButton");
-  var message = document.createElement("div");
+  var form = $("form");
+  var message = document.createElement("h2");
   message.id = "break";
   message.className = "space";
   if($("size").checked)
@@ -1032,8 +1034,7 @@ function createMessage() {
   else if(found(["loli","nuke"],newMessage.value.toLowerCase()))
     location.href = "whoa/index.html";
   parent.removeChild($("instructions"));
-  parent.removeChild(newMessage);
-  parent.removeChild(button);
+  parent.removeChild(form);
   parent.removeChild(breaklink);
   parent.removeChild(sizeselecter);
   messageComplete = true;

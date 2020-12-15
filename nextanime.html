@@ -4,38 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Your current anime</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body>
-    <div id='message' class='space'>Your current anime with links</div>
+    <h1 id='message'>Your current anime with links</h1>
     <div class='space'>Since you made it here, I assume you're going to want to watch one of these</div>
-    <div class='two-list'>
+    <div class='four-list'>
       <a id='a0' class='hfire-link'>GochiUsa</a>
       <a id='b0' class='hfire-link'>Ro-Kyu-Bu!</a>
       <a id='a1' class='hfire-link'>Gonna be the Twin-Tail!!</a>
       <a id='a2' class='hfire-link'>NouCome?</a>
     </div>
     <script>
-      /*for(var i = 0; i < 3; i++)
-      {
+      for(var i = 0; i < 3; i++) {
         var x = Math.floor(Math.random() * 128);
         var y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
         var bgColor = "rgb(" + x + "," + y + "," + z + ")";
         document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
       }
-      for(var i = 0; i < 1; i++)
-      {
+      for(var i = 0; i < 1; i++) {
         x = Math.floor(Math.random() * 128);
         y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
         bgColor = "rgb(" + x + "," + y + "," + z + ")";
         document.getElementById("b" + parseInt(i)).style.backgroundColor = bgColor;
         document.getElementById("b" + parseInt(i)).style.color = 'orange';
-      }*/
+      }
     </script>
   </body>
 </html>

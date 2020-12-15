@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Anime Timer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon-clock.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon-clock.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme5">
-    <div id='message' class='space'>Set the timer.</div>
+    <h1 id="message">Set the timer.</h1>
     <div id='times'>
-      <div class='space2'>
+      <h3 class='space2'>
         <span style='left:10%; position:absolute;' onclick="moveTime(-1)">⬅️</span>
         <span id='time'>5 minutes (For forgetting)</span>
         <span style='right:10%; position:absolute;' onclick="moveTime(1)">➡️</span>
-      </div>
+      </h3>
       <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='startTimer()'>Start</span>
     </div>
     <div id='additionalTimes' class='space2' style='display:none;'>

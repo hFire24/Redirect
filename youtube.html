@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme3" onload="loadWebsite(7); areYouBored('youtube');">
-    <div id="message" class="space"></div>
-    <div id="question" class="space">Why did you decide to go there?</div>
-    <div id='link' class='space'>
+    <h1 id="message"></h1>
+    <h2 id="question">Why did you decide to go there?</h2>
+    <div id='link'>
       <div id='youtube-reasons' class='two-list'>
         <a class='hfire-link' href="cyoa/39.html">To search for something</a>
         <a class='hfire-link' href="https://www.youtube.com/feed/subscriptions">Check Subscriptions</a>
@@ -28,11 +28,11 @@
         </span><button onclick="submit()">Submit</button>
       </div>
     </div>
-    <div id='yesno' class='two-list' style='display:none;'>
+    <div id='yesno' class='medium two-list' style='display:none;'>
       <a class='hfire-link' onclick="addicted(1)">Yes</a>
       <a class='hfire-link' onclick="restoreLink()">No</a>
     </div>
-    <div id='lazy-scale' class='three-list' style='display:none;'>
+    <div id='lazy-scale' class='medium three-list' style='display:none;'>
       <a class='hfire-link' onclick="addicted(4)">Exhausted</a>
       <a class='hfire-link' onclick="addicted(5)">Procrastinator</a>
       <a class='hfire-link' onclick="addicted(6)">Determined</a>

@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Watch anime!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body onload='createAdvice()'>
-    <div id='message' class='space'></div>
+    <h1 id='message'></h1>
     <div id='hideable'>
     </div>
     <script>
@@ -26,27 +26,26 @@
       if(!link) {
         link = document.createElement("div");
         link.id = "link";
-        link.className = "space";
         parent.appendChild(link);
       }
       if (index === 0)
-        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:red;'>No.</span>";
+        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:red;'>No.</strong>";
       else
-        link.innerHTML = "<a href='nextanime.html'>Here are the anime you need to watch.</a> <span onclick='rejectSomething(0)' style='color:red;'>No.</span>";
+        link.innerHTML = "<a href='nextanime.html'>Here are the anime you need to watch.</a> <strong onclick='rejectSomething(0)' style='color:red;'>No.</strong>";
 
       function rejectSomething(time) {
         if (time === 0)
-          link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <span onclick='rejectSomething(1)' style='color:red;'>No.</span>";
+          link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <strong onclick='rejectSomething(1)' style='color:red;'>No.</strong>";
         else if(time === 1)
-          link.innerHTML = "Can you digitize your journal a little? <span onclick='rejectSomething(4)' style='color:red;'>No.</span>";
+          link.innerHTML = "Can you digitize your journal a little? <strong onclick='rejectSomething(4)' style='color:red;'>No.</strong>";
         else if(time === 3)
-          link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:red;'>No.</span>";
+          link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:red;'>No.</strong>";
         else if(time === 4)
-          link.innerHTML = "<a href='art.html'>Can you practice drawing?</a> <span onclick='rejectSomething(5)' style='color:red;'>No.</span>";
+          link.innerHTML = "<a href='art.html'>Can you practice drawing?</a> <strong onclick='rejectSomething(5)' style='color:red;'>No.</strong>";
         else if(time === 5)
-          link.innerHTML = "Can you learn C# and .NET? <span onclick='rejectSomething(6)' style='color:red;'>No.</span>";
+          link.innerHTML = "Can you learn Full Stack on Skillshare? <strong onclick='rejectSomething(6)' style='color:red;'>No.</strong>";
         else if(time === 6)
-          link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:red;'>No.</span>";
+          link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:red;'>No.</strong>";
         else
           location.href = "cyoa/1.html";
       }

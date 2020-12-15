@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Get motivated.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme6">
-    <div id='break' class='space'></div>
+    <div id='quote' class='space'></div>
     <a class='hfire-link' href="16.html">Continue</a>
     <script>
       var messages = [//My own quotes 1-10
@@ -153,26 +153,32 @@
       for(var i = messages.length; i < 252; i++)
         messages.push("<a href='https://www.keepinspiring.me/procrastination-quotes/' target='_blank'>Here. Try reading these quotes from this page.</a>");
       var index = Math.floor(Math.random() * messages.length);
-      var quote = document.getElementById("break");
+      var quote = document.getElementById("quote");
       quote.innerHTML = messages[index];
 
-      if(quote.innerHTML.length > 200)
-      {
+      if(!quote.innerHTML.startsWith("“"))
+        quote.style.fontWeight = "bold";
+
+      if(quote.innerHTML.length > 200) {
         var x = window.matchMedia("(max-width: 567px)");
-        var y = window.matchMedia("(max-width: 1135px)");
-        var z = window.matchMedia("(max-width: 1702px)");
-        resizeText(x,y,z);
+        var y = window.matchMedia("(max-width: 851px)");
+        var z = window.matchMedia("(max-width: 1135px)");
+        var a = window.matchMedia("(max-width: 1702px)");
+        resizeText(x,y,z,a);
         x.addListener(resizeText);
         y.addListener(resizeText);
         z.addListener(resizeText);
+        z.addListener(resizeText);
       }
 
-      function resizeText(verySmall,small,medium) {
+      function resizeText(verySmall,small,medium,large) {
         if (x.matches)
           quote.style.fontSize = "20px";
         else if (y.matches)
           quote.style.fontSize = "30px";
         else if (z.matches)
+          quote.style.fontSize = "45px";
+        else if (a.mathces)
           quote.style.fontSize = "60px";
         else
           quote.style.fontSize = "84px";

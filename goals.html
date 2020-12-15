@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Keep this open! Your goals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon-star.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon G.png">
+    <link rel="shortcut icon" href="icons/icon-star.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon G.png">
   </head>
   <body>
-    <div id='message' class='space'>Your current goals</div>
+    <h1 id='message'>Your current goals</h1>
     <div id='best-results' class='space'>For best results, keep this page open during the day.<br>
     If you're done with a goal, press the key corresponding to that goal to hide it.<br>
     If you're struggling to do the next goal, <a href='struggle2.html' target='_blank'>click here.</a><br>
@@ -18,8 +18,10 @@
     <div id='goals-list' class='two-list' style="width:95%; margin:auto;">
     </div>
     <div class='space'></div>
-    <textarea id='exportArea' cols='50' rows='8'></textarea>
-    <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
+    <div id='exportRegion'>
+      <textarea id='exportArea' cols='50' rows='8'></textarea>
+      <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
+    </div>
     <script>
       var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
       //{text:"Do your ENGL421 homework",link:"homework.html#ENGL421",category:"homework"},
@@ -160,11 +162,12 @@
           }
         }
         console.log(deletedElements);
-        if(deletedElements.length === aHabits.length)
-        {
+        if(deletedElements.length === aHabits.length) {
           document.getElementById("message").innerHTML = "CONGRATULATIONS!";
           document.getElementById("best-results").innerHTML = "You did them all in one day!";
+          document.getElementById("best-results").className = "medium";
           document.body.removeChild(parent);
+          document.body.removeChild(document.getElementById("exportRegion"));
           changeColor();
         }
       }
@@ -220,15 +223,13 @@
           swappedGoals[0].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[1].num)).style.backgroundColor;
           swappedGoals[1].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[0].num)).style.backgroundColor;
           //This is where the swapping takes place. All the swapped elements come from the newly created swappedGoals array.
-          for(var i = 0; i < swappedGoals.length; i++)
-          {
+          for(var i = 0; i < swappedGoals.length; i++) {
             //Gets the position of one of the swapped goals.
             var letter = String.fromCharCode(65+swappedGoals[i].num);
             var element = document.getElementById("habit-" + letter);
             //The text, link, and color data are transferred to the other HTML element being swapped.
             element.innerHTML = letter + ": " + swappedGoals[i].text;
-            if(swappedGoals[i].link !== "pass")
-            {
+            if(swappedGoals[i].link !== "pass") {
               element.href = swappedGoals[i].link;
               element.target = "_blank";
             }
@@ -247,10 +248,8 @@
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
-      async function changeColor()
-      {
-        while(true)
-        {
+      async function changeColor() {
+        while(true) {
           await sleep(100);
           bgHue += 7.5;
           textHue += 7.5;

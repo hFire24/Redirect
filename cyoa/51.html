@@ -4,20 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Take a break.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <div id='message' class='space'>Quit playing games on your phone.</div>
-    <a href='../time.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>
+    <h1>Quit playing games on your phone.</h1>
+    <a href='../time.html'>Ready to do something else?</a> <strong onclick='rejectSomething()' style='color:white;'>No.</strong>
     <script>
-      function rejectSomething(time) {
-        if(time === 1)
-          link.innerHTML = "<a href='bigbreak.html'>Ready to do something else?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
-        else
-          location.href = "1.html";
+      function rejectSomething() {
+        location.href = "1.html";
       }
     </script>
   </body>

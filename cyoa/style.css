@@ -7,8 +7,47 @@ body {
   margin-top: 25px;
 }
 
-.small {
-  font-size: 60px;
+input[type='text'], select, button {
+  font-family: 'Barlow Semi Condensed', Futura MdCn BT, AvenirNextCondensed-Italic, sans-serif;
+  font-size:16px;
+}
+
+h1, h2, h3, strong {
+  font-family: 'Barlow Semi Condensed', Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, sans-serif;
+}
+
+h1 {
+  font-size: 140px;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 105px;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+h3, #ok {
+  font-size: 84px;
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+#message, #break.big {
+  font-size: 140px;
+}
+
+#break, #question, #standup, #changeclothes, #quote {
+  font-size:105px;
+}
+
+#link, #theme, .medium {
+  font-size:84px;
+}
+
+#instructions, .no-space {
+  margin-bottom: 0px;
 }
 
 ol {
@@ -21,20 +60,20 @@ ol a {
   color: yellowgreen;
 }
 
-#message, #break.big, h1 {
-  font-size: 140px;
-}
-
-.space, .space2 {
+#link, .space, .space2 {
   margin-bottom: 0.5em;
 }
 
-#break, #question, #standup, #changeclothes, h2, #meme1, #meme2 {
-  font-size:105px;
+h3 #instructions {
+  margin-bottom: 0px;
 }
 
 #standup, #changeclothes, #hydrate, #musictip, .invisible {
   display:none;
+}
+
+#hydrate, #musictip {
+  padding-bottom: 20px;
 }
 
 #breaklink {
@@ -42,16 +81,24 @@ ol a {
   margin-bottom:0.5em;
 }
 
-input[type='radio'] {
+input[type='radio'], input[type='checkbox'] {
     -webkit-appearance:none;
-    width:60px;
-    height:60px;
+    width:50px;
+    height:50px;
     background:#F00;
     border-radius:5px;
     border:2px solid #555;
 }
-input[type='radio']:checked {
+input[type='radio']:checked, input[type='checkbox']:checked {
     background:#0F0;
+}
+
+.custom-button {
+  font-size: 36px;
+}
+
+#questionnaire div {
+  margin:5px;
 }
 
 img {
@@ -68,9 +115,18 @@ img {
   border: 1px solid #000;
 }
 
+.small {
+  font-size: 60px;
+}
+
 td {
   padding: 7px;
   font-size: 45px;
+}
+
+.four-list {
+  display:grid;
+  grid-template-columns:auto auto auto auto;
 }
 
 .three-list {
@@ -200,27 +256,27 @@ td {
 }
 
 @media only screen and (max-width: 1702px) {
-  body {
-    font-size: 60px;
-  }
-  #message, #break.big, h1 {
+  h1, #message, #break.big {
     font-size: 100px;
   }
-  #break, #standup, #changeclothes, #question, h2, #meme1, #meme2 {
+  h2, #break, #standup, #changeclothes, #question, #quote {
     font-size: 75px;
   }
-  td {
-    font-size:30px;
+  h3, body, #link, #theme, .medium {
+    font-size: 60px;
   }
   ol, .small {
     font-size:40px;
   }
+  td {
+    font-size:30px;
+  }
   .space2 {
     margin-bottom:0.6em;
   }
-  input[type='radio'] {
-    width:40px;
-    height:40px;
+  input[type='radio'], input[type='checkbox'] {
+    width:30px;
+    height:30px;
   }
   .slider {
     height: 20px;
@@ -233,22 +289,36 @@ td {
     width: 40px;
     height: 40px;
   }
+  .custom-button {
+    font-size:20px;
+  }
 }
 
 @media only screen and (max-width: 1135px) {
-  body, ol, .small {
-    font-size: 30px;
+  h1, #message, #break.big {
+    font-size: 80px;
   }
-  #message, #break.big, h1 {
+  h2, #break, #standup, #changeclothes, #question, #quote {
     font-size: 60px;
   }
-  #break, #standup, #changeclothes, #question, h2, #meme1, #meme2 {
+  h3, #ok, #link, #theme, .medium {
+    font-size: 45px;
+  }
+
+@media only screen and (max-width: 851px) {
+  h1, #message, #break.big {
+    font-size: 60px;
+  }
+  h2, #break, #standup, #changeclothes, #question, #quote {
     font-size: 44px;
+  }
+  h3, body, ol, #ok, #link, #theme, .medium, .small {
+    font-size: 30px;
   }
   .space2 {
     margin-bottom:1em;
   }
-  input[type='radio'] {
+  input[type='radio'], input[type='checkbox'] {
     width:20px;
     height:20px;
   }
@@ -263,22 +333,25 @@ td {
     width: 30px;
     height: 30px;
   }
+  .custom-button {
+    font-size:14px;
+  }
 }
 
 @media only screen and (max-width: 567px) {
-  body, ol, .small, td {
-    font-size: 20px;
-  }
-  #message, #break.big, h1 {
+  h1, #message, #break.big {
     font-size: 40px;
   }
-  #break, #standup, #changeclothes, #question, .mathpad, h2, #meme1, #meme2 {
+  h2, #break, #standup, #changeclothes, #question, #quote {
     font-size: 30px;
+  }
+  h3, body, ol, td, #ok, #link, #theme, .medium, .small {
+    font-size: 20px;
   }
   .space2 {
     margin-bottom:1.25em;
   }
-  input[type='radio'] {
+  input[type='radio'], input[type='checkbox'] {
     width:15px;
     height:15px;
   }

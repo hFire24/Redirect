@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class='theme1' onload="createAdvice()">
-    <div id='message' class='space'></div>
+    <h1 id='message'></h1>
     <div id='hideable'>
     </div>
     <script>
@@ -22,21 +22,18 @@
       //Put message to screen using the index value of the array
       document.getElementById("message").innerHTML = messages[index];
       var linkOuter = document.createElement("div");
-      linkOuter.className = "space";
+      linkOuter.className = "medium";
       var link = document.createElement("a");
-      if (index === 0)
-      {
+      if (index === 0) {
         link.href = "time.html";
         link.innerHTML = "Ready to do something else?";
       }
-      else
-      {
+      else {
         link.href = "cyoa/1.html";
         link.innerHTML = "Feeling stuck?";
       }
       linkOuter.appendChild(link);
-      if (index === 0)
-      {
+      if (index === 0) {
         var no = document.createElement("span");
         no.innerHTML = " NO";
         no.addEventListener("click",function() {location.href = "cyoa/1.html";});

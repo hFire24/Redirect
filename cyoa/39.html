@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Take a break.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme3">
-    <div id="custom" class="space2">
-      <div id="instructions">Type in a video title, and press "Submit" or Enter when done.</div>
-      <input id="video" type="text"><button id="messageButton" onClick="searchYoutube()">Submit</button>
+    <div id="custom">
+      <h3 id="instructions">Type in a video title, and press "Submit" or Enter when done.</h3>
+      <div id="form" class="space"><input id="video" type="text"><button id="messageButton" onClick="searchYoutube()">Submit</button></div>
     </div>
-    <a class='hfire-link small' style='color:white;' href="38.html">I just wanted to browse YouTube.</a>
+    <a class='hfire-link' style='color:white;' href="38.html">I just wanted to browse YouTube.</a>
     <script>
     messageComplete = false;
     var input = document.getElementById("video");

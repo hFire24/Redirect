@@ -245,6 +245,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd', '😆', '🤣', '😂'],inputText) && inputText.indexOf('loli') < 0) {
+    $("message").classList.remove("invisible");
     $("message").innerHTML = "Šílený Ota";
     if(site === "hotanddry")
       $("message").classList.add("space");

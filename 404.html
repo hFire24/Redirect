@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="https://hfire24.github.io/Redirect/style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body>
-    <div id='message' class='space'>This website is blocked.</div>
+    <h1 id='message'>This website is blocked.</h1>
     <div id='hideable'>
     </div>
     <script>
@@ -109,26 +109,25 @@
       if(!link) {
         link = document.createElement("div");
         link.id = "link";
-        link.className = "space";
         parent.appendChild(link);
       }
 
       if ($("message").innerHTML === "Get ready for church!")
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/church.html'>Here's how to get ready.</a>";
       else if (message === "May this page suggest you take a short break?")
-        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(3)' style='color:white;'>No.</span>";
+        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
       else if (linkIndex > 0)
-        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <span onclick='rejectSomething(1)' style='color:white;'>No.</span>";
+        link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>" + linkMessages[linkIndex] + "</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
       else
         link.innerHTML = linkMessages[linkIndex];
       //Put index value to the console
       console.log("Link " + linkIndex);
 
       var theme = Math.floor(Math.random() * 5) + 5;
-      var themeText = document.createElement("div");
+      var themeText = document.createElement("strong");
       themeText.id = "theme";
-      switch(theme)
-      {
+      themeText.style.display = "block";
+      switch(theme) {
         case 5:
           themeText.innerHTML = "Brought to you by the gray theme.";
           break;
@@ -164,9 +163,9 @@
 
       function rejectSomething(time) {
         if(time === 1)
-          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
         else if(time === 3)
-          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>Got something you need to do?</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
+          link.innerHTML = "<a href='https://hfire24.github.io/Redirect/custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
         else
           location.href = "https://hfire24.github.io/Redirect/cyoa/1.html";
       }

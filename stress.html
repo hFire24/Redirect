@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body onLoad="randomTheme(); leaveMeAlone(0)">
-    <div id='message' class='small space'></div>
-    <div id='link' class='space'></div>
+    <h2 id='message' class='small'></h2>
+    <div id='link'></div>
     <div id='hideable'>
     </div>
     <script>
@@ -100,20 +100,20 @@
     }
 
     function pray(number) {
+      $("message").innerHTML = "It's time to pray.";
       switch(number) {
         case 1:
-          $("message").innerHTML = "A short prayer will suffice. Maybe pray for safety and better behavior.";
+          $("link").innerHTML = "A short prayer will suffice. Maybe pray for safety and better behavior.";
           break;
         case 2:
-          $("message").innerHTML = "Make sure you prayer is long and sincere. Pray for safety, better behavior, and wise deicisions.";
+          $("link").innerHTML = "Make sure you prayer is long and sincere. Pray for safety, better behavior, and wise deicisions.";
           break;
         case 3:
-          $("message").innerHTML = "Put away all distractions, pray with all your spiritual might, and act on any answers you may receive. Do not forget to pray for safety, better behavior, wise decisions, and spirituality. Hopefully things will get better.";
+          $("link").innerHTML = "Put away all distractions, pray with all your spiritual might, and act on any answers you may receive. Do not forget to pray for safety, better behavior, wise decisions, and spirituality. Hopefully things will get better.";
           break;
         default:
-          $("message").innerHTML = "Just say a short prayer anyway. It doesn't matter what it is about.";
+          $("link").innerHTML = "Just say a short prayer. It doesn't matter what it is about.";
       }
-      document.body.removeChild($("link"));
     }
     </script>
     <script src="script.js"></script>

@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>You got redirected!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme1">
-    <div id="message" class="small space">How much do these thoughts control you?</div>
-    <div id='link' class='space' style='display:none;'></div>
+    <h2 id='message' class='small'>How much do these thoughts control you?</h2>
+    <div id='link' class='invisible'></div>
     <div id='dependency'>
       <div class='slidercontainer space'>
         <input type="range" min="0" max="6" value="1" class="slider" id="dependency-slider"> <button onclick="submit()">Submit</button>
@@ -27,25 +27,21 @@
       console.log(slider1.value === "6");
       var inputText = dependencyValues[slider1.value];
       console.log(inputText);
-      if(slider1.value < 3)
-      {
+      if(slider1.value < 3) {
         $("message").innerHTML = "Control these thoughts and kick them out!";
         $("link").innerHTML = "<a href='cyoa/20.html'>But I can't get them out!</a>";
       }
-      else if(slider1.value === "3")
-      {
+      else if(slider1.value === "3") {
         $("message").innerHTML = "You want to do it, but you don't need to do it. There are other ways to feel happiness.";
         $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
       }
-      else if(slider1.value === "4")
-      {
+      else if(slider1.value === "4") {
         $("message").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <span onclick='rejectSomething(6)' style='color:white;'>No.</span>";
+        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
       }
       else if(slider1.value === "5")
         location.href = "fiveminutetimer.html";
-      else if(slider1.value === "6")
-      {
+      else if(slider1.value === "6") {
         $("message").innerHTML = "✝PLAY TABERNACLE CHOIR MUSIC✝";
         $("message").classList.remove("small");
         $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButtonTC()'>click here.</u>";
@@ -69,8 +65,7 @@
       importance.innerHTML = dependencyValues[slider1.value];
     }
 
-    async function pushTheButtonTC()
-    {
+    async function pushTheButtonTC() {
       var press = document.createElement("audio");
       var source = document.createElement("source");
       source.src = 'media/Button Push.mp3';

@@ -4,34 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Do your homework!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="icon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body>
-    <div id='message' class='space'></div>
+    <h1 id='message'></h1>
     <div id='hideable'>
       <ol id='assignments'>
-        <li id="CNIT340" class='collapsible'><a href="https://purdue.brightspace.com/d2l/home/52778">Learn UNIX</a> <button class='expand'>MORE</button></li>
+        <li id="CNIT480" class='collapsible'><a href="">Manage Information Technology Projects</a> <button class='expand'>MORE</button></li>
         <ul class="content">
           <li><a href="https://studentvc.cit.lcl/">Link to vSphere is here. Turn on OpenVPN first.</a></li>
         </ul>
 
-        <li id="ENGL421" class='collapsible'><a href="https://purdue.brightspace.com/d2l/home/56271">Learn Technical Writing</a> <button class='expand'>MORE</button></li>
+        <li id="CNIT390" class='collapsible'><a href="">Supervised Practicum</a> <button class='expand'>MORE</button></li>
         <ul class="content">
           <li><a href="https://www.chegg.com/reader/9780134433448">Here's the link to the textbook.</a></li>
         </ul>
 
-        <li id="THTR253" class='collapsible'><a href="https://purdue.brightspace.com/d2l/home/64531">Learn Audio Recording Techniques</a> <button class='expand'>MORE</button></li>
+        <li id="ECET224" class='collapsible'><a href="">Learn Electronic Systems</a> <button class='expand'>MORE</button></li>
         <ul class="content">
         </ul>
 
-        <li id="CNIT355" class='collapsible'><a href="https://purdue.brightspace.com/d2l/home/52793">Learn Software Development for Mobile Devices</a> <button class='expand'>MORE</button></li>
-        <ul class="content">
-        </ul>
-
-        <li id="MUS161" class='collapsible'>Practice Piano <button class='expand'>MORE</button></li>
+        <li id="MUS162" class='collapsible'>Practice Piano <button class='expand'>MORE</button></li>
         <ul class="content">
           <li>You should probably use a piano learning app in tandem with your course.</li>
         </ul>
@@ -46,33 +42,29 @@
       //Put message to screen using the index value of the array
       document.getElementById("message").innerHTML = messages[index];
       var d = new Date();
-      if (index === 0)
-      {
+      if (index === 0) {
         var linkOuter = document.createElement("div");
-        linkOuter.className = "space";
+        linkOuter.id = "link";
         var link = document.createElement("a");
         link.href = "breaktime.html";
         link.innerHTML = "Ready to do something else?";
         linkOuter.appendChild(link);
-        var no = document.createElement("span");
+        var no = document.createElement("strong");
         no.innerHTML = " NO";
         no.addEventListener("click",function() {location.href = "cyoa/1.html";});
         linkOuter.appendChild(no);
         document.getElementById("hideable").removeChild(document.getElementById("assignments"));
         document.getElementById("hideable").appendChild(linkOuter);
-        if (d.getHours() < 6 || d.getHours() >= 22)
-        {
+        if (d.getHours() < 6 || d.getHours() >= 22) {
           link.style.color = "black";
           no.style.color = 'red';
         }
-        else
-        {
+        else {
           link.style.color = "white";
           no.style.color = 'white';
         }
       }
-      if (d.getHours() < 6 || d.getHours() >= 22)
-      {
+      if (d.getHours() < 6 || d.getHours() >= 22) {
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
       }

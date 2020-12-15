@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Take a break.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme6">
-    <div id='break' class='space'><u onclick="pushTheButton()">Click here.</u></div>
+    <h2 id='button' class='space'><u onclick="pushTheButton()">Click here.</u></h2>
     <audio id='press'>
       <source src="../media/Button Push.mp3" type="audio/mpeg">
     </audio>
@@ -22,7 +22,7 @@
       async function pushTheButton()
       {
         document.getElementById("press").play();
-        document.getElementById("break").style.color = 'white';
+        document.getElementById("button").style.color = 'white';
         await sleep(1750);
         location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
       }
