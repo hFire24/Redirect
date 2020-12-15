@@ -29,8 +29,10 @@ function finalTest(inputText,site)
     else
       location.href = "musicSlider.html";
   }
-  else if(found(["wait","patient"],inputText))
-    location.href = "cyoa/12.html";
+  else if(found(["wait","patient"],inputText)) {
+    $("question").innerHTML = "You may want to check your goals page while you wait.";
+    $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='goals.html'>Check Goals Page</a><a class='hfire-link' href='cyoa/12.html'>I don't feel like it</a></div>";
+  }
   else if (inputText.indexOf("tasks") >= 0) {
     $("question").innerHTML = "Just type in \"ta\" in your browser and press enter.";
     document.body.removeChild($("link"));

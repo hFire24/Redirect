@@ -765,7 +765,8 @@ function okFeeling() {
       location.href = "cyoa/48.html";
       break;
     case "impatient":
-      location.href = "cyoa/12.html";
+      message.innerHTML = "You may want to check your goals page while you wait.";
+      link.innerHTML = "<div class='two-list'><a class='hfire-link' href='goals.html'>Check Goals Page</a><a class='hfire-link' href='cyoa/12.html'>I don't feel like it</a></div>";
       break;
     case "no focus":
       location.href = "cyoa/18.html";
