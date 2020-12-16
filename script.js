@@ -869,7 +869,7 @@ function rejectSomething(time) {
   else if (time === 6)
     link.innerHTML = "<a href='gcprogress.html'>Be more religious instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
   else if (time === 7)
-    link.innerHTML = "<a class='hfire-link' href='anti-procrastination.html'>You are procrastinating on two of your goals. Not good.</a>";
+    link.innerHTML = "<a class='hfire-link' href='cyoa/35.html'>You are procrastinating on two of your goals. Not good.</a>";
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(10)' style='color:white;'>No.</strong>";
   else if(time === 10)
