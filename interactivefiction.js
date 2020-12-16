@@ -134,7 +134,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "If you love cute things so much, then why don't you draw them?";
     expressDesireForCuteness = true;
   }
-  else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0) {
+  else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "Remember what you said about quitting anime?";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
