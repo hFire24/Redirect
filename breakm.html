@@ -9,153 +9,18 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link id='apple' rel="apple-touch-icon" href="icons/apple-touch-icon 7.png">
   </head>
-  <body onLoad="randomTheme(55)">
+  <body onLoad="loadBreak(5); randomTheme(5)">
     <h2><a id='break'></a><a id='standup'></a></h2>
     <div id='hideable' class='space'>
     </div>
     <script src="script.js"></script>
-    <script>
-      var messages = [//Relaxation
-      'Listen to this.',
-      'Clear your mind.',
-      'Pray a short prayer.',
-      'Look away from the screen for about 2 minutes.',
-      'Take a deep breath.',
-      'Put on some focus/relaxation music.',
-        //Task checking
-      'Check your tasks for the day.',
-      'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
-        //Day planning
-      'Create tasks for today and tomorrow.',
-        //Music
-      'Put on some music to help you focus.',
-        //Homework
-      'Do your homework, but don\'t get overwhelmed by it.',
-      'Check your homework page and see if you can do a passive assignment.',
-        //Games
-      //'Solve a Minesweeper board on Expert.',
-      //'Play one of these short games.',
-        //Miscellaneous
-      'Say out loud the thing you need to get done.',
-      'Increase your spirituality.',
-      'Read your patriarchal blessing.',
-      'Try answering this question.',
-      'Read your journal entries on Dropbox.<br>Start from June 2012.',
-        //Goals
-      'Click here.',
-      'Listen to a General Conference talk.',
-      'Double your social skills.',
-      'Train your communication skills.',
-      'Increase your conversation skills.',
-      'Read the book <u>Atomic Habits</u>.',
-      'Learn a language with Duolingo.',
-      'Take this productivity course on Skillshare.',
-      'Take that anti-procrastination course on Skillshare.',
-      'Check your goals list. Try to knock out one of them.'];
-
-      var standup = [//Health and fitness
-      'That\'s all there is to it. Sit back down.',
-      'Drink some water.',
-      'Stare at an object 20 feet away for 20 seconds.',
-      'Eat a snack if it has been 3 hours since you ate something.'];
-
-      for(var i = 0; i < standup.length; i++)
-        messages.push('Stand up and stretch if you can.');
-
-      var index = 0;
-      function randomMobileMessage()
-      {
-        $("standup").style.display = "none";
-        index = Math.floor(Math.random() * messages.length);
-        var standIndex = index - (messages.length - standup.length);
-        var message = $("break");
-        var d = new Date();
-        if((d.getHours() <= 4 || d.getHours() >= 22) && !Math.floor(Math.random() * 4))
-        {
-          index = messages.length;
-          messages.push('Stand up and stretch if you can.');
-          message.removeAttribute("href");
-          standIndex = standup.length;
-          standup.push('Wear your pajamas and go to bed. No electronics.');
-          $("standup").removeAttribute("href");
-        }
-        $("break").innerHTML = messages[index];
-        switch(index)
-        {
-          case messages.indexOf("Listen to this."):
-          case messages.indexOf("Clear your mind."):
-            message.href = "relax.html";
-            break;
-          case messages.indexOf("Look away from the screen for about 2 minutes."):
-            message.href = "https://www.google.com/search?q=2+minute+timer";
-            break;
-          case messages.indexOf("Take a deep breath."):
-            message.href = "https://www.google.com/search?q=take+a+deep+breath";
-            break;
-          case messages.indexOf("Put on some focus/relaxation music."):
-          case messages.indexOf("Put on some music to help you focus."):
-            message.href = "https://youtu.be/FtTEFGivroY";
-            break;
-          case messages.indexOf("Do your homework, but don't get overwhelmed by it."):
-          case messages.indexOf("Check your homework page and see if you can do a passive assignment."):
-            message.href = "homework.html";
-            break;
-          case messages.indexOf("Play one of these short games."):
-            message.href = "cyoa/46.html";
-            break;
-          case messages.indexOf("Increase your spirituality."):
-            message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
-            break;
-          case messages.indexOf("Try answering this question."):
-            message.href = "question.html";
-            break;
-          case messages.indexOf("How about multiple ways to take a break?"):
-            message.href = "multiple.html";
-            break;
-          case messages.indexOf("Click here."):
-            message.addEventListener("click",pushTheButton);
-            break;
-          case messages.indexOf("Listen to a General Conference talk."):
-            message.href = "gcprogress.html";
-            break;
-          case messages.indexOf("Double your social skills."):
-            message.href = "https://skl.sh/37ueYoA";
-            break;
-          case messages.indexOf("Train your communication skills."):
-            message.href = "https://skl.sh/33mrvdU";
-            break;
-          case messages.indexOf("Increase your conversation skills."):
-            message.href = "https://skl.sh/35tGtBl";
-            break;
-          case messages.indexOf("Take this productivity course on Skillshare."):
-            message.href = "https://skl.sh/3hiV3Ow";
-            break;
-          case messages.indexOf("Take that anti-procrastination course on Skillshare."):
-            message.href = "https://skl.sh/3kb5Goj";
-            break;
-          case messages.indexOf("Learn a language with Duolingo."):
-            message.href = "https://www.duolingo.com/";
-            break;
-          default:
-            message.removeAttribute("href");
-        }
-        console.log("Message " + index);
-        if(message.innerHTML === 'Stand up and stretch if you can.')
-        {
-          console.log("Standup " + standIndex);
-          message.addEventListener("click",function() {$("standup").style.display = 'block';});
-          $("standup").innerHTML = standup[standIndex];
-        }
-      }
-
-      randomMobileMessage();
-    </script>
+    <script src="breaktime.js"></script>
     <script src="pulltorefresh.js/dist/pulltorefresh.js"></script>
     <script>
     PullToRefresh.init({
       mainElement: 'body',
       distMax: window.innerHeight / 2,
-      onRefresh: function() { randomMobileMessage() }
+      onRefresh: function() { loadBreak(5); }
     });
     </script>
   </body>
