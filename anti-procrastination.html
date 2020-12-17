@@ -14,7 +14,7 @@
     <div id='title-container' class='medium space'>It's called "<span id='video-title'></span>"</div>
     <div id='demolish' class='invisible space'><img src="media/Building Demolish Procrastination.gif" alt='A building with the label "Your Future". An explosion labeled "Too Much Procrastination" appears, then the building collapses.'></div>
     <div id='hideable'>
-      <button id='load' class='custom-button space' onclick='loadVideo(-1)'>Load Different Video</button>
+      <button id='load' class='custom-button space' onclick='loadVideo(-1)'>Load Different Video</button> <button id='load' class='custom-button space' onclick='rebel()'>But procrastination is good!</button>
     </div>
   </body>
   <script>
@@ -82,6 +82,10 @@
         playlist.splice(index,1);
       }
       times++;
+    }
+
+    function rebel() {
+      location.href = "cyoa/15.html";
     }
   </script>
   <script src='script.js'></script>

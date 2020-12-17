@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class='three-list'>
-        <div class='space'>Want a short break?<br>
+        <div class='space'>Want to take a break?<br>
           <input type="checkbox" name="something" onclick="setCheck('something')">Yes
         </div>
         <div class='space'>Overwhelmed?<br>
@@ -140,6 +140,14 @@
         function:function() {
           myObject["unproductive"] = 0;
           submit();
+        }
+      }
+      //Function used if the user rejects the advice found in the "unproductive" branch
+      const askProductive = {
+        type:"function",
+        function:function() {
+          setTitle("How long have you been being productive?");
+          setLinks(2,["&lt;45 minutes","At least 45 minutes"],["../index.html","29.html"]);
         }
       }
 
@@ -247,10 +255,12 @@
                 setTitle(document.getElementById("question").innerHTML + " Stuff is due in a week.");
               if(myObject.dueM === 1)
                 setTitle(document.getElementById("question").innerHTML + " Please set milestones for your projects.");
-              setLinks(2,["Play Games Anyway","Accept Advice"],["29.html","36.html"]);
+              setLinks(2,["Play Games Anyway","Accept Advice"],[askProductive,"36.html"]);
             }
-            else
-              location.href = "29.html";
+            else {
+              setTitle("How long have you been being productive?");
+              setLinks(2,["&lt;45 minutes","At least 45 minutes"],["../index.html","29.html"]);
+            }
             break;
           case "due7":
           case "dueM":
