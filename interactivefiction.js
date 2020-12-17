@@ -89,11 +89,11 @@ function finalTest(inputText,site)
     location.href = 'crap.html';
   else if(inputText.indexOf("nanah") >= 0)
     location.href = "cyoa/28.html";
-  else if(found(['angry', 'anger', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'offended'],inputText)) {
+  else if(found(['angry', 'anger', 'angri', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'annoy', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'offended'],inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=angry'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'nerv', 'fail in life', 'timid'],inputText)) {
+  else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'fright', 'nerv', 'fail in life', 'timid'],inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
