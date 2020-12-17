@@ -8,11 +8,12 @@ input.addEventListener("keyup", function (event) {
 
 var d = new Date();
 var expressDesireForCuteness = false;
+var unknownReason = 0;
 
 function finalTest(inputText,site)
 {
-  if (inputText.indexOf("sick") >= 0 && inputText.indexOf("sick of") < 0) {
-    $("question").innerHTML = "Your health matters. If you have some kind of disease, it's best to rest, drink plenty of fluids, and give your eyes a break.";
+  if ((found(["sick", "throw up", "throwing up", "nauseat", "vomit", "puke", " ill ", " ill."],inputText) || inputText.endsWith(" ill")) && inputText.indexOf("sick of") < 0) {
+    $("question").innerHTML = "Your health matters. If you feel ill, it's best to rest, drink plenty of fluids, and give your eyes a break.";
     $("link").innerHTML = "Go to Soundwise, followed by \"Improve Your Physical Health\", and listen to \"" + generateHealthLink() + "\"";
   }
   else if(inputText.indexOf("struggl") >= 0)
@@ -50,8 +51,12 @@ function finalTest(inputText,site)
         $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
     }
   }
+  else if(found(['hate myself', 'hate my life', 'worthless', 'i don\'t matter', 'i do not matter', 'give up in life', 'lost all hope'],inputText)) {
+    $("question").innerHTML = "<a id='relax' href='relax2.html?mood=self+hate'>You need self-love.</a>";
+    $("link").innerHTML = "<a class='hfire-link' href='stress.html'>No.</a>";
+  }
   else if(found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life'],inputText)
-  && !found(wasteTime,inputText) || found(negativity,inputText) && found(['live', 'living', 'exist', 'earth', 'planet', 'world'],inputText)
+  && !found(wasteTime,inputText) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'],inputText) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'],inputText)
   || inputText.endsWith("die") && !found(['birdie','hoodie','indie','roll a die'],inputText) || inputText.startsWith("kill") || inputText.endsWith(" kill")) {
     $("question").innerHTML = "This is very serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
     document.body.removeChild($("message"));
@@ -84,33 +89,33 @@ function finalTest(inputText,site)
     location.href = 'crap.html';
   else if(inputText.indexOf("nanah") >= 0)
     location.href = "cyoa/28.html";
-  else if(found(['hate myself', 'hate my life', 'worthless', 'i don\'t matter', 'i do not matter', 'give up in life', 'lost all hope'],inputText)) {
-    $("question").innerHTML = "<a id='relax' href='relax2.html?mood=self+hate'>You need self-love.</a>";
-    $("link").innerHTML = "<a href='stress.html'>No.</a>";
-  }
   else if(found(['angry', 'anger', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'hate ', ' hate', 'despise', 'loathe', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'offended'],inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=angry'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'nerv', 'fail in life',],inputText)) {
+  else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'nerv', 'fail in life', 'timid'],inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if(found(['stressed','upset','frustrat'],inputText)) {
+  else if(found(['stressed', 'upset', 'frustrat', 'sick of'],inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=stressed'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if(found(['sick of', 'sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless'],inputText) && !found(wasteTime,inputText)) {
+  else if(found(['sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless', 'feel down', 'feeling down'],inputText) && !found(wasteTime,inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=sad'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if (found(negativity,inputText))
+  else if(found(['unconfident', 'incapable', 'unprepared', 'unready', 'wimp'],inputText) || found(['don\'t', 'not'],inputText) && found(['confident', 'capable', 'prepared', 'ready'],inputText)) {
+    $("question").innerHTML = "<a id='relax' href='relax.html?mood=unconfident'>It's time calm down and relax.</a>";
+    $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+  }
+  else if (found(['don\'t', 'do not '],inputText))
     location.href = "cyoa/15.html";
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
   else if(found(['calm', 'relax', 'peace', 'chill', 'fresh', 'reenergize', 'meditate', 'refresh'],inputText) || found(['clear', 'reset'],inputText) && inputText.indexOf('mind') >= 0)
     location.href = 'relax.html';
-  else if(found(['tired', 'exhaust', 'sleep'],inputText)) {
+  else if(found(['tired', 'exhaust', 'sleep', 'weak'],inputText)) {
     if(d.getHours() >= 6 && d.getHours() <= 12)
       location.href = "morning/checklist.html";
     else if(d.getHours() < 17) {
@@ -212,10 +217,11 @@ function finalTest(inputText,site)
       document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
     }
   }
-  else if(found(['productive','to accomplish','get stuff done','work','to achieve'],inputText)) {
+  else if(found(['productive','to accomplish','get stuff done','work','to achieve','confiden','determined','determina'],inputText)) {
     $("question").innerHTML = "What sounds more appealing?";
     $("link").innerHTML = "";
-    $("link").classList.add("two-list");
+    var grid = document.createElement("div")
+    grid.classList.add("two-list");
     var productiveActivities = ["Completing Tasks","Achieving Goals","Creating a Task","Doing Something"];
     var links = ["cyoa/2.html","goals.html","custom.html","time.html"];
     for (var i in links) {
@@ -223,8 +229,9 @@ function finalTest(inputText,site)
       element.classList.add('hfire-link');
       element.innerHTML = productiveActivities[i];
       element.href = links[i];
-      $("link").appendChild(element);
+      grid.appendChild(element);
     }
+    $("link").appendChild(grid);
   }
   else if(found(['succe', 'accomplish',' win', ' won', 'champion','victor'],inputText)) {
     $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
@@ -282,15 +289,17 @@ function finalTest(inputText,site)
     location.href = 'cyoa/38.html';
   else if(found(['really bored','very bored'],inputText))
     location.href = 'index.html';
+  else if(inputText.indexOf("nothing") >= 0 && inputText.indexOf("want") >= 0)
+    location.href = 'cyoa/13.html';
   else if(inputText.indexOf("nothing") >= 0)
     location.href = 'multiple.html';
   else if(inputText.indexOf("habit") >= 0)
     location.href = "atomic-habits.html";
-  else if(found(["embar","embbar","emmb","awkward","cringe","weird","creep"],inputText) && expressDesireForCuteness) {
+  else if(found(["embar", "embbar", "emmb", "awkward", "cringe", "weird", "creep"],inputText) && expressDesireForCuteness) {
     $("question").innerHTML = "Who cares? If you learn how to draw cute anime girls, then you are learning a valuable skill!";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
-  else if(found(["hard","difficult","challenging","i can't","not skilled","not proficient","beginnner","novice","not good enough"],inputText)) {
+  else if(found(["hard", "difficult", "challenging", "i can't", "not skilled", "not proficient", "beginnner", "novice", "not good enough"],inputText)) {
     $("question").innerHTML = "Practice is key to mastering something hard.";
     $("link").innerHTML = "<a href='cyoa/15.html'>Click here to continue.</a>";
   }
@@ -365,17 +374,27 @@ function finalTest(inputText,site)
   }
   else if(expressDesireForCuteness)
     location.href = "animeslider.html";
-  else if(inputText.indexOf("want") >= 0) {
-    if(inputText.indexOf("nothing") >= 0)
-      location.href = "cyoa/13.html";
+  else if(inputText.indexOf("want") >= 0 && unknownReason < 1) {
+    if(inputText !== "because i want to") {
+      $("question").innerHTML = "So, you want" + $("newBreak").value.substring(inputText.indexOf("want") + 4) + ". Why?";
+      unknownReason = 1;
+    }
     else {
       $("question").innerHTML = "You want to go there, but you don't need to go there.";
       $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
     }
   }
   else if(inputText.indexOf("i can") >= 0) {
-    $("question").innerHTML = "You could, but you should be doing one of those four things instead.";
+    $("question").innerHTML = "You could, but you should be doing something else instead.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+  else if(inputText.indexOf(site) > 0 && unknownReason === 1) {
+    $("question").innerHTML = "You want to go there, but you don't need to go there.";
+    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+  else if(unknownReason < 2 && (inputText.indexOf("feel") < 0 || inputText.indexOf("feel like") >= 0)) {
+    $("question").innerHTML = "Hmm... How are you feeling?";
+    unknownReason = 2;
   }
   else if(site === "reddit") {
     $("question").innerHTML = "Reddit is bad.";
@@ -390,7 +409,6 @@ function finalTest(inputText,site)
 var required = ['need', 'have to', 'must', 'mean', 'required', 'force', 'urgent', 'emergency', 'immediate', 'important', 'critical', 'crucial', 'essential'];
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 var love = ['love','adore','enjoy','favorite','best'];
-var negativity = ['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'];
 var knowledge = ['learn','curious','to know','stud','educat','smart','knowledg'];
 var creativity = ['creat','draw','illustrat'];
 
