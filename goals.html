@@ -24,17 +24,15 @@
     </div>
     <script>
       var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
-      //{text:"Do your ENGL421 homework",link:"homework.html#ENGL421",category:"homework"},
-      //{text:"Do your THTR253 homework",link:"homework.html#THTR253",category:"homework"},
-      //{text:"Do your CNIT340 homework",link:"homework.html#CNIT340",category:"homework"},
+        //Homework Habits
+      //{text:"Do your CNIT480 homework",link:"homework.html#CNIT480",category:"homework"},
+      //{text:"Learn stuff for CNIT390",link:"homework.html#CNIT390",category:"homework"},
+      //{text:"Do your ECET224 homework",link:"homework.html#ECET224",category:"homework"},
       {text:"Practice Piano <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
-      //{text:"Do your CNIT355 homework",link:"homework.html#CNIT355",category:"homework"},
-        //Non-Homework Habits
+        //aHabits
       //{text:"Deal with Purdue E-mails",link:"pass",category:"active"},
-      {text:"*Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
-      {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
-      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
-      {text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"},
+      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"golden"}, //Golden habits are the most important
+      {text:"*Draw Cirno <span class='time'>(1+ times)</span>",link:"art.html",category:"golden"},
       //{text:"Manage money, write in journal",link:"pass",category:"active"},
         //bHabits
       {text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
@@ -43,8 +41,10 @@
       {text:"Relax/meditate <span class='time'>(2 sessions)</span>",link:"relax.html",category:"passive"},
       //{text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
       //{text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
-      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"},
-      {text:"Draw Cirno <span class='time'>(1+ times)</span>",link:"art.html",category:"acitve"},
+      {text:"Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/38rV6DT",category:"active"},
+      {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
+      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
+      {text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"pass",category:"active"},
         //cHabits
       {text:"Play 100% Orange Juice <span class='time'>(2-3 games)</span>",link:"pass",category:"active"}
       //{text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
@@ -79,17 +79,14 @@
 
       var parent = document.getElementById("goals-list");
 
-      function buildArray(array,offset)
-      {
-        for(var i = 0; i < array.length; i++)
-        {
+      function buildArray(array,offset) {
+        for(var i = 0; i < array.length; i++) {
           var element = document.createElement("a");
           var letter = String.fromCharCode(65+offset+i);
           element.id = "habit-" + letter;
           element.classList.add("hfire-link");
           element.innerHTML = letter + ": " + array[i].text;
-          if(array[i].link !== "pass")
-          {
+          if(array[i].link !== "pass") {
             element.href = array[i].link;
             element.target = "_blank";
           }
@@ -105,7 +102,9 @@
           element.style.backgroundColor = bgColor;
           console.log(array[i]);
           if(array[i].category === "passive")
-            element.style.color = "#7BF";
+            element.style.color = "#3CF";
+          else if(array[i].category === "golden")
+            element.style.color = "gold";
         }
       }
 
