@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>What's your objective?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body onLoad="randomTheme(1)" onResize="getWidth()">
+    <h2 id='objective'>Choose a randomly generated objective for your day based on a tier.</h2>
+    <div id='hideable'>
+      <div id='tiers' class='three-list space'>
+        <span class='hfire-link' onclick="loadBreak('A')">A-Tier Objective 🏅</span>
+        <span class='hfire-link' onclick="loadBreak('B')">B-Tier Objective 👍</span>
+        <span class='hfire-link' onclick="loadBreak('C')">C-Tier Objective 😐</span>
+      </div>
+    </div>
+    <div id='width'></div>
+    <script src="script.js"></script>
+    <script>
+      const aTierObjectives = ["apply to as many jobs as you can.",
+      "increase your chances of getting a job by improving your resume and interview skills.",
+      "clear out as many tasks as you can, including those in Future Tasks.",
+      "achieve every goal in your goals list."];
+      const bTierObjectives = ["practice drawing a lot. And don't just draw Cirno.",
+      "get better at Stepmania.",
+      "listen to as many General Conference talks as you can.",
+      "gain as much social skills as you can in Skillshare.",
+      "learn as much as you can from that Full Stack course on Skillshare.",
+      "digitize as much of your journal as possible.",
+      "listen to as many guided meditations as possible, whether it be through Balance or Soundwise.",
+      "read through the book Atomic Habits.",
+      "practice playing the piano as much as you can.",
+      "watch videos on the \"Get Life Advice\" playlist on shuffle."];
+      const cTierObjectives = ["get better at playing 100% Orange Juice!",
+      "watch a mom play PC games over time.",
+      "earn as many Bloons Tower Defense 6 medals as you can.",
+      "try to unlock everything in Need for Speed: Hot Pursuit.",
+      "add as many new or returning songs to your iTunes library as you can.",
+      "read through your digitized journal entries. Start from June 2012."];
+
+      function loadBreak(tier) {
+        let objective = 'shuffle through your liked videos on YouTube.';
+        let index = 0;
+        switch(tier) {
+          case 'A':
+            index = Math.floor(Math.random() * (aTierObjectives.length + 2));
+            if(index >= aTierObjectives.length) {
+              index -= aTierObjectives.length;
+              objective = bTierObjectives[index];
+            } else {
+              objective = aTierObjectives[index];
+            }
+            break;
+          case 'B':
+            index = Math.floor(Math.random() * bTierObjectives.length);
+            objective = bTierObjectives[index];
+            break;
+          case 'C':
+            index = Math.floor(Math.random() * cTierObjectives.length);
+            objective = cTierObjectives[index];
+            break;
+        }
+        document.getElementById("objective").innerHTML = "Your objective of the day is to " + objective;
+        document.getElementById("hideable").removeChild(document.getElementById("tiers"));
+      }
+
+      async function goThroughObjectives(i) {
+        let allObjectives = aTierObjectives.concat(bTierObjectives,cTierObjectives);
+        if(i < 0 || i >= allObjectives.length)
+          i = 0;
+        while(i < allObjectives.length) {
+          document.getElementById("objective").innerHTML = "Your objective of the day is to " + allObjectives[i];
+          await sleep(5000);
+          i++;
+        }
+      }
+    </script>
+  </body>
+</html>

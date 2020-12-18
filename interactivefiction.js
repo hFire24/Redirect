@@ -109,8 +109,6 @@ function finalTest(inputText,site)
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=unconfident'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if (found(['don\'t', 'do not '],inputText))
-    location.href = "cyoa/15.html";
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
   else if(found(['calm', 'relax', 'peace', 'chill', 'fresh', 'reenergize', 'meditate', 'refresh'],inputText) || found(['clear', 'reset'],inputText) && inputText.indexOf('mind') >= 0)
@@ -281,18 +279,14 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Fun things are good, but they are distractions.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-  else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need","do not need"],inputText)) {
+  else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {
     $("question").innerHTML = "Don't be addicted to the internet.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(found(love,inputText) && site === "youtube")
     location.href = 'cyoa/38.html';
-  else if(found(['really bored','very bored'],inputText))
-    location.href = 'index.html';
   else if(inputText.indexOf("nothing") >= 0 && inputText.indexOf("want") >= 0)
     location.href = 'cyoa/13.html';
-  else if(inputText.indexOf("nothing") >= 0)
-    location.href = 'multiple.html';
   else if(inputText.indexOf("habit") >= 0)
     location.href = "atomic-habits.html";
   else if(found(["embar", "embbar", "emmb", "awkward", "cringe", "weird", "creep"],inputText) && expressDesireForCuteness) {
@@ -314,6 +308,10 @@ function finalTest(inputText,site)
   else if(inputText.indexOf('commission') >= 0 && expressDesireForCuteness) {
     $("question").innerHTML = "This is the lamest excuse ever. Stop wasting money on commissions, and make your own drawings.";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
+  }
+  else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'really bored', 'very bored', 'nothing'],inputText)) {
+    $("question").innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
+    $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='cyoa/13.html'>Right.</a><a class='hfire-link' href='cyoa/54.html'>Wrong.</a></div>";
   }
   else if(found(['bored', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk', 'feel like it', 'uhh', 'umm', 'hmm', 'meme'],inputText)) {
     var messages = ['You really are bored.',

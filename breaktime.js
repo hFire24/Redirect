@@ -76,6 +76,7 @@ function loadBigBreak() {
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Make a plan for today and tomorrow.',
+  'Make an objective for today.',
     //Homework
   /*'Do homework.<br>You may need to stand up and stretch and change clothes.',
   'Get assignments done.<br>You may need to stand up and stretch and change clothes.',
@@ -91,7 +92,7 @@ function loadBigBreak() {
   'Solve a Rubik\'s cube.',
   'Play 100% Orange Juice.',
   'Solve a Minesweeper board on Expert.',
-  'Grind levels in 200% Mixed Juice',
+  'Grind levels in 200% Mixed Juice.',
   //'Play Super Smash Bros. Ultimate for about 30 minutes.',
     //Miscellaneous
   'No routine? Form one.',
@@ -111,7 +112,7 @@ function loadBigBreak() {
   'Read the book <u>Atomic Habits</u>.',
   'Practice your piano. Using SimplyPiano is recommended.',
   //'Learn a language with Duolingo.',
-  'Check your goals page. Try to knock out one of them.'];
+  'Check your goals page. Try to knock out one of your goals.'];
   //Do not upload traced art.
 
   standup = [//Health and fitness
@@ -138,6 +139,7 @@ function loadMobileBreak() {
   'Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',
     //Day planning
   'Create tasks for today and tomorrow.',
+  'Make an objective for today.',
     //Music
   'Put on some music to help you focus.',
     //Homework
@@ -162,7 +164,7 @@ function loadMobileBreak() {
   //'Learn a language with Duolingo.',
   'Take this productivity course on Skillshare.',
   'Take that anti-procrastination course on Skillshare.',
-  'Check your goals list. Try to knock out one of them.'];
+  'Check your goals page. Try to knock out one of your goals.'];
 
   var standup = [//Health and fitness
   'That\'s all there is to it. Sit back down.',
@@ -217,6 +219,9 @@ function displayBreak(index,number) {
         break;
       case messages.indexOf("Put on some music to help you focus."):
         message.href = "musicSlider.html";
+        break;
+      case messages.indexOf("Make an objective for today."):
+        message.href = "objective.html";
         break;
       case messages.indexOf("Play one of these short games."):
         message.href = "cyoa/46.html";
@@ -277,7 +282,7 @@ function displayBreak(index,number) {
       case messages.indexOf("Learn a language with Duolingo."):
         message.href = "https://www.duolingo.com/";
         break;
-      case messages.indexOf("Check your goals page. Try to knock out one of them."):
+      case messages.indexOf("Check your goals page. Try to knock out one of your goals."):
         message.href = "goals.html";
         break;
       default:
@@ -331,15 +336,19 @@ function displayBreak(index,number) {
     link.id = "link";
     parent.appendChild(link);
   }
-  link.innerHTML = "<u onclick='whyNot()'>I don't feel like it.</u>";
+  link.innerHTML = "<div class='two-list'><u onclick='reload()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div>";
   if(standIndex >= 0)
     $("link").style.display = 'none';
 }
 
+function reload() {
+  location.reload();
+}
+
 function whyNot() {
   messageComplete = false;
-  link.innerHTML = "Why not? ";
-  var textField = document.createElement("span");
+  link.innerHTML = "<div class='space'>Let me guess. You don't want to do it.</div> <div class='two-list space'><u onclick='submitReason()'>I don't want to do it.</u><u onclick='cancel()'>Actually, I'll do it.</u></div><u onclick='reload()'>Circumstances out of my control prevent me from doing it.</u>";
+  /*var textField = document.createElement("span");
   textField.id = "reason";
   var input = document.createElement("input");
   input.id = "excuse";
@@ -358,12 +367,13 @@ function whyNot() {
   submit.addEventListener("click", submitReason);
   submit.innerHTML = "Submit";
   textField.appendChild(submit);
-  link.appendChild(textField);
+  link.appendChild(textField);*/
   //<input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
 }
 
 function submitReason() {
-  var reason = $("excuse").value.toLowerCase();
+  //var reason = $("excuse").value.toLowerCase();
+  var reason = "blah";
   if(found(["already","finish","done","did","next","complete"],reason) && !found(["many"],reason) || reason.endsWith("today"))
     location.reload();
   else if(found(["class","lecture","church"],reason))
@@ -383,6 +393,10 @@ function submitReason() {
     else
       window.open("brave.html", '_blank');
   }
+}
+
+function cancel() {
+  link.innerHTML = "<div class='two-list'><u onclick='reload()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div>";
 }
 
 function $(x) {

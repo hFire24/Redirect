@@ -131,7 +131,8 @@
         type:"function",
         function:function() {
           setTitle("Enjoy your lazy, unproductive day.");
-          document.getElementById("questionnaire").innerHTML = "We all get overwhelmed from time to time. A good way to deal with being overwhelmed is to just take a day off. Days like this can feel refereshing. Hopefully you've already done a lot to deserve this lazy, unproductive day.";
+          document.getElementById("questionnaire").innerHTML = "We all get overwhelmed from time to time, and that's normal. A good way to deal with being overwhelmed is to just take a day off. Days like this can feel refereshing. Hopefully you've already done a lot to deserve this lazy, unproductive day.<br>Also, <a href='../objective.html'>click here</a>, and then pick \"C-Tier Objective\" if you want to do something you can do all day.";
+          document.getElementById("questionnaire").classList.remove("two-list");
         }
       }
       //Function used if the user rejects the advice found in the "unproductive" branch

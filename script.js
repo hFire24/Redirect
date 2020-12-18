@@ -314,7 +314,7 @@ function randomLink(index,number) {
     {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
     {text:"I feel bored 🥱",value:"bored"},
-    {text:"I feel really bored 🥱🥱",value:"multiple"},
+    {text:"I feel really bored 🥱🥱",value:"really bored"},
     {text:"I feel lazy 😪",value:"lazy"},
     {text:"I feel tired 😴",value:"tired"},
     {text:"I feel stressed 😫",value:"stressed"},
@@ -326,7 +326,7 @@ function randomLink(index,number) {
     {text:"I feel impatient 😠",value:"impatient"},
     {text:"I feel angry 😡",value:"angry"},
     {text:"I feel unmotivated 😐",value:"motivate"},
-    {text:"I got nothing to do",value:"multiple"},
+    {text:"I got nothing to do",value:"really bored"},
     {text:"I can't focus 😕",value:"no focus"},
     {text:"I am hungry <span id='food-emoji'>🍔</span>",value:"hungry"},
     {text:"I am procrastinating",value:"procrastinate"},
@@ -355,8 +355,11 @@ function randomLink(index,number) {
   }
   else if(number !== 7 || removeQuestion)
     link.innerHTML = linkMessages[linkIndex];
-  if(number === 7 && removeQuestion)
+  if(number === 7 && removeQuestion) {
     document.body.removeChild($("question"));
+    if(window.location.href.indexOf("youtube.html") >= 0)
+      $("link").classList.remove("small");
+  }
   //Put index value to the console
   console.log("Link " + linkIndex);
   //This only shows up if certain pages are loaded.
@@ -391,8 +394,9 @@ function okFeeling() {
     case "bored":
       location.href = "cyoa/35.html";
       break;
-    case "multiple":
-      location.href = "multiple.html";
+    case "really bored":
+      message.innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
+      link.innerHTML = "<div class='two-list'><a class='hfire-link' href='cyoa/13.html'>Right.</a><a class='hfire-link' href='cyoa/54.html'>Wrong.</a></div>";
       break;
     case "lazy":
       message.innerHTML = "Are you lazy, or are you just exhausted?";

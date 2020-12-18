@@ -12,7 +12,7 @@
   <body class="theme3" onload="loadWebsite(7); areYouBored('youtube');">
     <h1 id="message"></h1>
     <h2 id="question">Why did you decide to go there?</h2>
-    <div id='link'>
+    <div id='link' class='small'>
       <div id='youtube-reasons' class='two-list'>
         <a class='hfire-link' href="cyoa/39.html">To search for something</a>
         <a class='hfire-link' href="https://www.youtube.com/feed/subscriptions">Check Subscriptions</a>
@@ -32,10 +32,11 @@
       <a class='hfire-link' onclick="addicted(1)">Yes</a>
       <a class='hfire-link' onclick="restoreLink()">No</a>
     </div>
-    <div id='lazy-scale' class='medium three-list' style='display:none;'>
+    <div id='lazy-scale' class='four-list' style='display:none;'>
       <a class='hfire-link' onclick="addicted(4)">Exhausted</a>
-      <a class='hfire-link' onclick="addicted(5)">Procrastinator</a>
-      <a class='hfire-link' onclick="addicted(6)">Determined</a>
+      <a class='hfire-link' onclick="addicted(5)">Bored</a>
+      <a class='hfire-link' onclick="addicted(6)">Procrastinator</a>
+      <a class='hfire-link' onclick="addicted(7)">Determined</a>
     </div>
     <script>
     function submit() {
@@ -60,6 +61,8 @@
       else {
         finalTest(inputText,"youtube");
       }
+      if(!$("youtube-reasons"))
+        document.getElementById("link").classList.remove("small");
     }
 
     var reasons = ["Because I'm lazy",
@@ -113,6 +116,9 @@
           $("newBreak").value = 'really bored';
           break;
         case 6:
+          $("newBreak").value = 'procrastinate';
+          break;
+        case 7:
           $("question").innerHTML = 'If you have so much energy, then use it on something productive.';
           $("link").style.display = "block";
           $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
@@ -120,7 +126,7 @@
           break;
       }
 
-      if(number > 2 && number !== 6) {
+      if(number > 2 && number !== 7) {
         $("lazy-scale").style.display = "none";
         $("link").style.display = "block";
         submit();

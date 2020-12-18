@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  font-family: 'Barlow Semi Condensed', Futura Md BT, AvenirNextCondensed-Italic, sans-serif;
+  font-family: 'Barlow Semi Condensed', Futura MdCn BT, AvenirNextCondensed-Italic, sans-serif;
   color: white;
   font-size: 60px;
   text-align: center;
@@ -85,7 +85,7 @@ h3, #ok {
   font-family: Verdana, sans-serif;
 }
 
-ol, #goals-list {
+ol, #goals-list, #link.small {
   font-size: 60px;
 }
 
@@ -410,7 +410,7 @@ td {
   h3, #ok, #link, #theme, #message.tiny, .medium {
     font-size: 60px;
   }
-  body, ol, #goals-list, .relax-list {
+  body, ol, #goals-list, .relax-list, #link.small {
     font-size:40px;
   }
   td, .small {
@@ -464,7 +464,7 @@ td {
   h3, #ok, #link, #theme, #message.tiny, .medium {
     font-size: 36px;
   }
-  body, ol, #goals-list, .relax-list, .small {
+  body, ol, #goals-list, .relax-list, .small, #link.small {
     font-size: 30px;
   }
   .custom-select, input[type='text'].custom-select, .custom-button, .expand {
@@ -503,7 +503,7 @@ td {
   h3, #ok, .medium, #link, #message.tiny, #theme {
     font-size: 25px;
   }
-  body, ol, td, #goals-list, .relax-list, .small {
+  body, ol, td, #goals-list, .relax-list, #link.small, .small {
     font-size: 20px;
   }
   .relax-list {
