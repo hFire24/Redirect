@@ -69,7 +69,7 @@
           n = new Date(Date.now())
           if(!alarmOff)
             adjustTime();
-          if(a.getSeconds() <= n.getSeconds() && a.getMinutes() <= n.getMinutes() && a.getHours() <= n.getHours() && !alarmOff) {
+          if(a.getSeconds() === n.getSeconds() && a.getMinutes() === n.getMinutes() && a.getHours() === n.getHours() && !alarmOff || document.getElementById("times").innerHTML.indexOf("-") >= 0) {
             alarmOff = true;
             document.getElementById("heading").innerHTML = "What are your thoughts right now?";
             document.getElementById("times").style.display = "none";
