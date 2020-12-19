@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>The Emergency Morning Slider</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon">
+  </head>
+  <body class="morning">
+    <div id='break' class='space'>Good morning! If you're having early morning urges, don't act on them.</div>
+    <div id='slider'>
+      <div class='slidercontainer space'>
+        <input type="range" min="0" max="3" value="3" class="slider" id="urgeSlider" style="width:30%;"> <button onclick="submit()">Submit</button>
+      </div>
+      <div id="urgeLevel" class="stress">Urge Level: UNCONTROLLABLE</div>
+    </div>
+    <script>
+      const urgeLevels = ['None',
+      'Mild',
+      'Distracting',
+      'UNCONTROLLABLE'];
+      let urgeLevel = document.getElementById("urgeLevel");
+      let slider1 = document.getElementById("urgeSlider");
+      slider1.max = urgeLevels.length - 1;
+      slider1.oninput = function () {
+        urgeLevel.innerHTML = "Urge Level: " + urgeLevels[slider1.value];
+        //Adds the stress style if the genre's intensity is super high
+        switch(slider1.value) {
+          case "3":
+            urgeLevel.style.color = "red";
+            break;
+          default:
+            urgeLevel.style.color = "black";
+            break;
+        }
+      }
+
+      function submit() {
+        switch(parseInt(slider1.value)) {
+          case 3:
+            document.getElementById("break").innerHTML = "Take a cold shower, or drive your car to Dragonforce music.";
+            document.getElementById("slider").innerHTML = "<span id='stress' class='medium'>DON'T ACT ON YOUR URGES.</span>";
+            break;
+          case 2:
+            document.getElementById("break").innerHTML = "What time is it?";
+            document.getElementById("slider").innerHTML = "<div class='medium three-list'><a href='../relax2.html?mood=late+night'>Before 5:00AM</a><u style='cursor: pointer;' onclick='fiveAM(2)'>5:00-5:59AM</u><a href='../relax2.html?mood=morning'>6:00AM or later</a></div>";
+            break;
+          default:
+            document.getElementById("break").innerHTML = "What time is it?";
+            document.getElementById("slider").innerHTML = "<div class='medium three-list'><a href='../relax2.html?mood=late+night'>Before 5:00AM</a><u style='cursor: pointer;' onclick='fiveAM(1)'>5:00-5:59AM</u><a href='goals.html'>6:00AM or later</a></div>";
+            break;
+        }
+      }
+
+      function fiveAM(number) {
+        document.getElementById("break").innerHTML = "There's no need to go back to sleep at 5AM. Use that time to your advantage.";
+        let link = "../relax2.html?mood=morning";
+        if (number === 1)
+          link = "goals.html";
+        document.getElementById("slider").innerHTML = "<a id='link' href=" + link + ">Click here to continue.</a>";
+      }
+    </script>
+  </body>
+</html>
