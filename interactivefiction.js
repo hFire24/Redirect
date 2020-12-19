@@ -106,8 +106,8 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['unconfident', 'incapable', 'unprepared', 'unready', 'wimp'],inputText) || found(['don\'t', 'not'],inputText) && found(['confident', 'capable', 'prepared', 'ready'],inputText)) {
-    $("question").innerHTML = "<a id='relax' href='relax.html?mood=unconfident'>It's time calm down and relax.</a>";
-    $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
+    $("question").innerHTML = "You are capable of doing great things.";
+    $("link").innerHTML = "<a id='relax' href='relax.html?mood=unconfident'>Click here to continue.</a>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
@@ -292,10 +292,10 @@ function finalTest(inputText,site)
   else if(inputText.indexOf("habit") >= 0)
     location.href = "atomic-habits.html";
   else if(found(["embar", "embbar", "emmb", "awkward", "cringe", "weird", "creep"],inputText) && expressDesireForCuteness) {
-    $("question").innerHTML = "Who cares? If you learn how to draw cute anime girls, then you are learning a valuable skill!";
+    $("question").innerHTML = "Who cares? You are practicing a valuable skill!";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
-  else if(found(["hard", "difficult", "challenging", "i can't", "not skilled", "not proficient", "beginnner", "novice", "not good enough"],inputText)) {
+  else if((found(["hard", "difficult", "challenging", "not skilled", "not proficient", "beginnner", "novice", "amateur", "not good"],inputText) || found(cannot,inputText)) && inputText.indexOf("now") < 0 && (expressDesireForCuteness || !found(cannot,inputText))) {
     $("question").innerHTML = "Practice is key to mastering something hard.";
     $("link").innerHTML = "<a href='cyoa/15.html'>Click here to continue.</a>";
   }
@@ -309,6 +309,10 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf('commission') >= 0 && expressDesireForCuteness) {
     $("question").innerHTML = "This is the lamest excuse ever. Stop wasting money on commissions, and make your own drawings.";
+    $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
+  }
+  else if(found(['bad', 'don\'t know', 'doubt', 'suck', 'stink', 'poor', 'garbage', 'trash', 'not sure'],inputText) && expressDesireForCuteness) {
+    $("question").innerHTML = "Do it even if it's garbage.";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
   else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'really bored', 'very bored', 'nothing'],inputText)) {
@@ -384,7 +388,7 @@ function finalTest(inputText,site)
       $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
     }
   }
-  else if(inputText.indexOf("i can") >= 0) {
+  else if(inputText.indexOf("i can") >= 0 && !found(cannot,inputText)) {
     $("question").innerHTML = "You could, but you should be doing something else instead.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
@@ -411,6 +415,7 @@ var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some ti
 var love = ['love','adore','enjoy','favorite','best'];
 var knowledge = ['learn','curious','to know','stud','educat','smart','knowledg'];
 var creativity = ['creat','draw','illustrat'];
+var cannot = ['can\'t','cant','cannot','can not','wont','won\'t','will not'];
 
 function generateHealthLink() {
   var healthMeditations = ["Symptom Control","Visualise Healing"];

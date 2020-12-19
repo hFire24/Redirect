@@ -3,15 +3,15 @@ var d = new Date();
 var messageComplete = true;
 
 function loadWebsite(number) {
-  //1, 7, 55
-  if(number === 1 || number === 7 || number === 55) {
+  //1, 7-12, 55
+  if(number === 1 || number >= 7 && number <= 12 || number === 55) {
     if(number === 1)
       addBigMessages();
     randomMessage(-1,number);
   }
   else
     randomLink(-1,number);
-  if (number !== 7)
+  if (number < 7 || number > 12)
     randomTheme(number);
   //If the number is 1, then the homework iframe may pop up.
   /*if(number === 1) {
@@ -28,7 +28,7 @@ function loadWebsite(number) {
       $("hideable").appendChild(homeworkFrame);
     }
   }*/
-  if(number === 7)
+  if(number >= 7 && number <= 12)
     messageComplete = false;
 }
 
@@ -279,7 +279,7 @@ function randomMessage(index,number) {
 }
 
 function randomLink(index,number) {
-  //For pages with a number of 7 (e.g., youtube.html)
+  //For pages with a number from 7-12 (e.g., youtube.html)
   var removeQuestion = false;
   //Array for link messages below the heading text
   var linkMessages = ["Immediately close this tab."];
@@ -295,10 +295,10 @@ function randomLink(index,number) {
   if (linkIndex === 0 || message === "May this page suggest you take a short break?" || message === "Time to take a break.")
     removeQuestion = true;
   //Put link message and to screen using the index value of the array
-  if(number !== 7)
+  if(number < 7 || number > 12)
     var parent = $("hideable");
   var link = $("link");
-  if(!link && number !== 7) {
+  if(!link && (number < 7 || number > 12)) {
     link = document.createElement("div");
     link.id = "link";
     parent.appendChild(link);
@@ -308,7 +308,7 @@ function randomLink(index,number) {
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
   else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
-  else if (linkIndex > 0 && number !== 7) {
+  else if (linkIndex > 0 && (number < 7 || number > 12)) {
     link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
     {text:"I got something I need to do",value:"custom"},
@@ -353,11 +353,11 @@ function randomLink(index,number) {
     if (d.getHours() > 4 && (d.getHours() < 10 || d.getHours() === 10 && d.getMinutes() < 30))
       $("food-emoji").innerHTML = "🥓";
   }
-  else if(number !== 7 || removeQuestion)
+  else if(number < 7 || number > 12 || removeQuestion)
     link.innerHTML = linkMessages[linkIndex];
-  if(number === 7 && removeQuestion) {
+  if(number >= 7 && number <= 12 && removeQuestion) {
     document.body.removeChild($("question"));
-    if(window.location.href.indexOf("youtube.html") >= 0)
+    if(number === 7)
       $("link").classList.remove("small");
   }
   //Put index value to the console
