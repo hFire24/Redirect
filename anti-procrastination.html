@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body onload="loadVideo(-1); randomTheme(1)">
-    <h1 id='message'><a id='video-link' href=''>Here. Watch this video.</a></h1>
+    <h1 id='message'><a id='video-link' href='' target="_blank">Here. Watch this video.</a></h1>
     <div id='title-container' class='medium space'>It's called "<span id='video-title'></span>"</div>
     <div id='demolish' class='invisible space'><img src="media/Building Demolish Procrastination.gif" alt='A building with the label "Your Future". An explosion labeled "Too Much Procrastination" appears, then the building collapses.'></div>
     <div id='hideable'>
@@ -77,7 +77,7 @@
         {
           index = Math.floor(Math.random() * playlist.length);
         }
-        document.getElementById("video-link").href = "https://www.youtu.be/v=" + playlist[index].id;
+        document.getElementById("video-link").href = "https://youtu.be/" + playlist[index].id;
         document.getElementById("video-title").innerHTML = playlist[index].title;
         playlist.splice(index,1);
       }
