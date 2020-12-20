@@ -111,6 +111,7 @@ function loadBigBreak() {
   //'Try one of these C# coding projects.',
   'Read the book <u>Atomic Habits</u>.',
   'Practice your piano. Using SimplyPiano is recommended.',
+  'Take this productivity course on Skillshare.',
   //'Learn a language with Duolingo.',
   'Check your goals page. Try to knock out one of your goals.'];
   //Do not upload traced art.
@@ -175,7 +176,12 @@ function loadMobileBreak() {
 
 function loadYouTubeBreak() {
   breakArray = 'YouTube';
-  messages = ['Double your social skills.',
+  messages = ['Listen to a General Conference talk.',
+  'Double your social skills.',
+  'Train your communication skills.',
+  'Increase your conversation skills.',
+  'Take this productivity course on Skillshare.',
+  'Take that anti-procrastination course on Skillshare.',
   'Learn how to make chiptune music.',
   'Learn how to use FL Studio.',
   'Go to Skillshare, and learn programming.',
