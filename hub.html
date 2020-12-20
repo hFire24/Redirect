@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme1">
+    <h1>Welcome to the hub!</h1>
+    <h3 id='message3'>Click on a category to get started.</h3>
+    <div id="hub" class='four-list'>
+      <a class='hfire-link' onclick="openList('redirected')">Redirected Pages</a>
+      <a class='hfire-link' onclick="openList('tasks')">Break Pages</a>
+      <a class='hfire-link' onclick="openList('websites')">Website Pages</a>
+      <a class='hfire-link' onclick="openList('cyoa')">CYOA Pages</a>
+      <a class='hfire-link' onclick="openList('skills')">Skills Pages</a>
+      <a class='hfire-link' onclick="openList('calm')">Calm Pages</a>
+      <a class='hfire-link' onclick="openList('morning')">Morning Pages</a>
+      <a class='hfire-link' onclick="openList('other')">Other Pages</a>
+      <a class='hfire-link forward' onclick="openList(lastList)">Go Forward</a>
+    </div>
+    <div id="redirected" class="four-list" style="display:none;">
+      <a class='hfire-link' href="index.html">Index</a>
+      <a class='hfire-link' href="haha.html">Haha</a>
+      <a class='hfire-link' href="searchterm.html">Search Term</a>
+      <a class='hfire-link' href="404.html">404</a>
+      <a class='hfire-link' href="cirno.html">Cirno</a>
+      <a class='hfire-link' href="mobile.html">Mobile</a>
+      <a class='hfire-link' href="blocked.html">Blocked</a>
+      <a class='hfire-link' href="crap.html">Crappy</a>
+      <a class='hfire-link' href="homework.html">Homework</a>
+      <a class='hfire-link' href="homework2.html">Homework (Simple)</a>
+      <a class='hfire-link' href="whoa/index.html">Nuclear</a>
+      <a class='hfire-link' href="whoa/old.html">Nuclear (Old)</a>
+      <a class='hfire-link' href="relapse.html">Relapsed</a>
+      <a class='hfire-link close' onclick="closeList('redirected')">Go Back</a>
+    </div>
+    <div id="tasks" class="four-list" style="display:none;">
+      <a class='hfire-link' href="custom.html">Custom</a>
+      <a class='hfire-link' href="time.html">How Much Spare Time</a>
+      <a class='hfire-link' href="breaktime.html">Breaktime</a>
+      <a class='hfire-link' href="bigbreak.html">Big Break</a>
+      <a class='hfire-link' href="multiple.html">Multiple Breaks</a>
+      <a class='hfire-link' href="breakm.html">Breaktime (Mobile)</a>
+      <a class='hfire-link' href="standbreak.html">Stand Break</a>
+      <a class='hfire-link' href="breakyt.html">YouTube Break</a>
+      <a class='hfire-link' href="question.html">Question</a>
+      <a class='hfire-link' href="goals.html">Goals List</a>
+      <a class='hfire-link' href="objective.html">Objective Generator</a>
+      <a class='hfire-link close' onclick="closeList('tasks')">Go Back</a>
+    </div>
+    <div id="websites" class="three-list" style="display:none;">
+      <a class='hfire-link' href="youtube.html">YouTube</a>
+      <a class='hfire-link' href="deviantart.html">DeviantArt</a>
+      <a class='hfire-link' href="reddit.html">Reddit</a>
+      <a class='hfire-link' href="google.html?q=how+to+be+happy">Google</a>
+      <a class='hfire-link' href="newgrounds.html">Newgrounds</a>
+      <a class='hfire-link' href="facebook.html">Facebook</a>
+      <a class='hfire-link' href="youtuberesults.html?search_query=how+to+be+happy">YouTube Results</a>
+      <a class='hfire-link' href="hotanddry.html">General Version</a>
+      <a class='hfire-link close' onclick="closeList('websites')">Go Back</a>
+    </div>
+    <div id="cyoa" class="three-list" style="display:none;">
+      <a class='hfire-link' href="cyoa/1.html">1: What do you want to do right now?</a>
+      <a class='hfire-link' href="cyoa/35.html">35: What were you doing before?</a>
+      <a class='hfire-link' href="cyoa/17.html">17: Answer this questionnaire.</a>
+      <a class='hfire-link' href="cyoa/2.html">2: Check your gTasks list.</a>
+      <a class='hfire-link' href="cyoa/15.html">15: Quotes page</a>
+      <a class='hfire-link' href="cyoa/46.html">46: Play a short game.</a>
+      <a class='hfire-link' href="cyoa/28.html">28: Redirected from "Nanahira"</a>
+      <a class='hfire-link' href="cyoa/47.html">47: Rainbow redirected message</a>
+      <a class='hfire-link close' onclick="closeList('cyoa')">Go Back</a>
+    </div>
+    <div id="skills" class="three-list" style="display:none;">
+      <a class='hfire-link' href="art.html">Art</a>
+      <a class='hfire-link' href="anti-procrastination.html">Anti-Procrastination</a>
+      <a class='hfire-link' href="atomic-habits.html">Atomic Habits</a>
+      <a class='hfire-link' href="groupprojects.html">Group Projects</a>
+      <a class='hfire-link' href="stepmania.html">Stepmania</a>
+      <a class='hfire-link' href="trancelessons.html">Trance</a>
+      <a class='hfire-link' href="chiptunelessons.html">Chiptunes</a>
+      <a class='hfire-link close' onclick="closeList('skills')">Go Back</a>
+    </div>
+    <div id="calm" class="two-list" style="display:none;">
+      <a class='hfire-link' href="relax.html">Relax</a>
+      <a class='hfire-link' href="relax2.html">Relax 2</a>
+      <a class='hfire-link' href="gcprogress.html">General Conference</a>
+      <a class='hfire-link close' onclick="closeList('calm')">Go Back</a>
+    </div>
+    <div id="morning" class="two-list" style="display:none;">
+      <a class='hfire-link' href="morning/index.html">Morning Index</a>
+      <a class='hfire-link' href="morning/goals.html">Morning Goals</a>
+      <a class='hfire-link' href="morning/checklist.html">Morning Checklist</a>
+      <a class='hfire-link' href="morning/emergency.html">Emergency Slider</a>
+      <a class='hfire-link' href="church.html">Church</a>
+      <a class='hfire-link close' onclick="closeList('morning')">Go Back</a>
+    </div>
+    <div id="other" class="four-list" style="display:none;">
+      <a class='hfire-link' href="2minuterule.html">2 Minute Rule</a>
+      <a class='hfire-link' href="brave.html">No Excuses</a>
+      <a class='hfire-link' href="fiveminutetimer.html">5 Minute Timer</a>
+      <a class='hfire-link' href="kirby.html">Kirby of Disappointment</a>
+      <a class='hfire-link' href="emergency.html">Emergency Button</a>
+      <a class='hfire-link' href="musicSlider.html">Music Slider</a>
+      <a class='hfire-link' href="works247.html">works 24/7. Radio</a>
+      <a class='hfire-link' href="stress.html">Leave Me Alone</a>
+      <a class='hfire-link' href="repent.html">Repent</a>
+      <a class='hfire-link' href="repent2.html">Repent 2</a>
+      <a class='hfire-link' href="struggle.html">Struggle</a>
+      <a class='hfire-link' href="struggle2.html">Struggle 2</a>
+      <a class='hfire-link close' onclick="closeList('other')">Go Back</a>
+    </div>
+    <script>
+    var lastList = "hub";
+
+    function openList(id) {
+      let category = document.getElementById("message3");
+      switch(id) {
+        case "redirected":
+          category.innerHTML = "Redirected Pages";
+          break;
+        case "tasks":
+          category.innerHTML = "Tasks/Break Pages";
+          break;
+        case "websites":
+          category.innerHTML = "Website Pages";
+          break;
+        case "cyoa":
+          category.innerHTML = "Choose Your Own Adventure Pages";
+          break;
+        case "skills":
+          category.innerHTML = "Skills Pages";
+          break;
+        case "calm":
+          category.innerHTML = "Calm Pages";
+          break;
+        case "morning":
+          category.innerHTML = "Morning Pages";
+          break;
+        case "other":
+          category.innerHTML = "Other Pages";
+          break;
+      }
+      document.getElementById("hub").style.display = "none";
+      document.getElementById(id).style.display = "grid";
+    }
+
+    function closeList(id) {
+      document.getElementById("message3").innerHTML = "Click on a link to get started.";
+      document.getElementById(id).style.display = "none";
+      document.getElementById("hub").style.display = "grid";
+      lastList = id;
+    }
+    </script>
+  </body>
+</html>

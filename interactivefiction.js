@@ -233,7 +233,7 @@ function finalTest(inputText,site)
     }
     $("link").appendChild(grid);
   }
-  else if(found(['succe', 'accomplish',' win', ' won', 'champion','victor'],inputText)) {
+  else if(found(['succe', 'accomplish',' win', ' won', 'champion', 'victor'],inputText) && inputText.indexOf("want") < 0 && !found(required,inputText) && inputText.indexOf("?") < 0) {
     $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
