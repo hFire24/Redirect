@@ -34,7 +34,7 @@
       <button onclick='submitReason(-1)'>Submit</button>
     </div>
     <div id='colors' style='display:none;'>
-      <h3>Pick a color to continue, and never forget your life objectives.</h3>
+      <div class='medium space'>Pick a color, and never forget your life objectives.</div>
       <div class="three-list">
         <!--Box 1 is Red. Box 2 is Blue. Box 3 is Green.-->
         <div id="box1" class="theme8 box"></div> <div id="box2" class="theme2 box"></div> <div id="box3" class="theme1 box"></div>
@@ -150,29 +150,31 @@
         if(index < 0 || index >= answers.length)
           index = Math.floor(Math.random() * answers.length);
         let consequence = answers[index];
-        document.getElementById("break").innerHTML = "If you try to satisfy that craving by searching for \"" + document.getElementById("urge").value + "\" anywhere, " + consequence;
+        document.getElementById("break").innerHTML = "If you try to satisfy your cravings by searching for \"" + document.getElementById("urge").value + "\" anywhere, " + consequence;
         document.getElementById("uncontrollable2").style.display = "none";
         document.getElementById("colors").style.display = "block";
 
-        let functions = [eButton,eButton2,cShowers];
+        let functions = [eButton,godButton,cShowers];
+        shuffle(functions);
         for(let i = 1; i < 4; i++) {
-          index = Math.floor(Math.random() * functions.length);
-          document.getElementById("box" + i).addEventListener("click",functions[index]);
-          functions.splice(i-1,1);
+          document.getElementById("box" + i).addEventListener("click",functions[i-1]);
+        }
+      }
+
+      function shuffle(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * i);
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
         }
       }
 
       function eButton() {
         let array = [];
         for (let i = 0; i < 30; i++) {
-          if(i < 15)
-            array.push("https://youtu.be/iC4aV5WutY0"); //Place no more for the enemy of my soul
-          else if (i === 22)
-            array.push("https://www.thetabernaclechoir.org/listen.html");
-          else if (i === 23)
-            array.push("https://youtu.be/5i7qZxICwgQ"); //Dragonforce - Fury of the Storm
-          else if (i >= 25 && i <= 28)
-            array.push("../repent2.html");
+          if (i < 1)
+            array.push("whoa/old.html?id=24");
           else
             array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
         }
@@ -180,15 +182,17 @@
         window.open(array[i]);
       }
 
-      function eButton2() {
+      function godButton() {
         let array = [];
-        for (let i = 0; i < 30; i++) {
-          if (i >= 1 && i <= 4)
+        for (let i = 0; i < 16; i++) {
+          if (i < 8)
             array.push("../repent2.html");
-          else if (i === 22)
+          else if (i < 9)
+            array.push("https://youtu.be/iC4aV5WutY0"); //Place no more for the enemy of my soul
+          else if (i < 10)
+            array.push("../gcprogress.html");
+          else if (i < 11)
             array.push("https://www.thetabernaclechoir.org/listen.html");
-          else if (i === 23)
-            array.push("https://youtu.be/5i7qZxICwgQ");
           else
             array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
         }
@@ -197,15 +201,14 @@
       }
 
       function cShowers() {
-        document.getElementById("break").innerHTML = "Take a cold shower, or drive your car to Dragonforce music.";
-        document.getElementById("colors").innerHTML = "<span id='stress' class='medium'>DON'T ACT ON YOUR URGES.</span>";
+        window.open("cold-showers.html");
       }
 
       async function cycle(i) {
         if(i < 0 || i >= answers.length)
           i = 0;
         while(i < answers.length) {
-          document.getElementById("break").innerHTML = "If you try to satisfy that craving by searching for \"bad thing\" anywhere, " + answers[i];
+          document.getElementById("break").innerHTML = "If you try to satisfy your cravings by searching for \"bad thing\" anywhere, " + answers[i];
           await sleep(5000);
           i++;
         }
