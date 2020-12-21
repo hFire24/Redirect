@@ -45,6 +45,7 @@ function loadSmallBreak() {
   'Try answering this question.',
   'Play one of these short games.',
   'Read your journal entries.<br>Start from June 2012.',
+  'Answer this questionnaire.',
     //Goals
   'Click here.',
   //'How can you build an everlasting romantic relationship from scratch?',
@@ -155,6 +156,7 @@ function loadMobileBreak() {
   'Read your patriarchal blessing.',
   'Try answering this question.',
   'Read your journal entries on Dropbox.<br>Start from June 2012.',
+  'Answer this questionnaire.',
     //Goals
   'Click here.',
   'Listen to a General Conference talk.',
@@ -220,9 +222,6 @@ function displayBreak(index,number) {
       case "Clear your mind.":
         message.href = "relax.html";
         break;
-      case "Listen to one of these long guided meditations.":
-        message.href = "relax2.html";
-        break;
       case "Look away from the screen for about 2 minutes.":
         message.href = "https://www.google.com/search?q=2+minute+timer";
         break;
@@ -233,22 +232,43 @@ function displayBreak(index,number) {
         message.href = "https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA";
         break;
       case "Put on some music to help you focus.":
-        message.href = "musicSlider.html";
-        break;
-      case "Make an objective for today.":
-        message.href = "objective.html";
-        break;
-      case "Play one of these short games.":
-        message.href = "cyoa/46.html";
-        break;
-      case "Put on some epic music, and<br><span id=\"stress\">GET HOMEWORK DONE!</span>":
-        message.href = "https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw";
+        message.href = "works247.html";
         break;
       case "Increase your spirituality.":
         message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
         break;
       case "Try answering this question.":
         message.href = "question.html";
+        break;
+      case "Play one of these short games.":
+        message.href = "cyoa/46.html";
+        break;
+      case "Answer this questionnaire.":
+        message.href = "cyoa/17.html";
+        break;
+      case "Click here.":
+        message.addEventListener("click",pushTheButton);
+        break;
+      case "Double your social skills.":
+        message.href = "https://skl.sh/37ueYoA";
+        break;
+      case "Listen to one of these long guided meditations.":
+        message.href = "relax2.html";
+        break;
+      case "Make an objective for today.":
+        message.href = "objective.html";
+        break;
+      case "Put on some epic music, and<br><span id=\"stress\">GET HOMEWORK DONE!</span>":
+        message.href = "https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw";
+        break;
+      case "Don't suck at group projects.":
+        message.href = "groupprojects.html";
+        break;
+      case "Play Sudoku (Medium).":
+        message.href = "https://www.websudoku.com/?level=2";
+        break;
+      case "Solve a Minesweeper Board on Expert.":
+        message.href = "https://minesweeper.online/start/3";
         break;
       case "How about multiple ways to take a break?":
         message.href = "multiple.html";
@@ -257,18 +277,27 @@ function displayBreak(index,number) {
       case "Learn how to use FL Studio.":
         message.href = "chiptunelessons.html";
         break;
-      case "Click here.":
-        message.addEventListener("click",pushTheButton);
-        break;
-      case "Play Sudoku (Medium).":
-        message.href = "https://www.websudoku.com/";
-        break;
       case "Go to Skillshare, and learn programming.":
       case "Learn Full Stack so that you can host a website for free that supports FileZilla.":
         message.href = "https://skl.sh/38rV6DT";
         break;
-      case "Double your social skills.":
-        message.href = "https://skl.sh/37ueYoA";
+      case "Draw anime.":
+        message.href = "art.html";
+        break;
+      case "Listen to a General Conference talk.":
+        message.href = "gcprogress.html";
+        break;
+      case "Try one of these C# coding projects.":
+        message.href = "https://blog.udemy.com/c-sharp-projects/";
+        break;
+      case "Take this productivity course on Skillshare.":
+        message.href = "https://skl.sh/3hiV3Ow";
+        break;
+      case "Learn a language with Duolingo.":
+        message.href = "https://www.duolingo.com/";
+        break;
+      case "Check your goals page. Try to knock out one of your goals.":
+        message.href = "goals.html";
         break;
       case "Train your communication skills.":
         message.href = "https://skl.sh/33mrvdU";
@@ -276,29 +305,8 @@ function displayBreak(index,number) {
       case "Increase your conversation skills.":
         message.href = "https://skl.sh/35tGtBl";
         break;
-      case "Take this productivity course on Skillshare.":
-        message.href = "https://skl.sh/3hiV3Ow";
-        break;
       case "Take that anti-procrastination course on Skillshare.":
         message.href = "https://skl.sh/3kb5Goj";
-        break;
-      case "Don't suck at group projects.":
-        message.href = "groupprojects.html";
-        break;
-      case "Draw anime.":
-        message.href = "art.html";
-        break;
-      case "Listen to a General Conference talk.":
-        messages.href = "gcprogress.html";
-        break;
-      case "Try one of these C# coding projects.":
-        message.href = "https://blog.udemy.com/c-sharp-projects/";
-        break;
-      case "Learn a language with Duolingo.":
-        message.href = "https://www.duolingo.com/";
-        break;
-      case "Check your goals page. Try to knock out one of your goals.":
-        message.href = "goals.html";
         break;
       default:
         message.removeAttribute("href");
@@ -344,7 +352,10 @@ function displayBreak(index,number) {
 }
 
 function reload() {
-  location.reload();
+  if(location.href.indexOf("breakm") < 0 && window.innerWidth <= 1024)
+    location.href = "breakm.html";
+  else
+    location.reload();
 }
 
 function whyNot() {
