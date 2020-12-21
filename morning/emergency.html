@@ -8,16 +8,41 @@
     <link href="../style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="../icons/icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon">
+    <style>
+      .box {
+        width: 40%;
+        padding-top: 40%;
+        position: relative;
+        left: 30%;
+      }
+    </style>
   </head>
   <body class="morning">
     <div id='break' class='space'>Good morning! If you're having early morning urges, don't act on them.</div>
     <div id='slider'>
       <div class='slidercontainer space'>
-        <input type="range" min="0" max="3" value="3" class="slider" id="urgeSlider" style="width:30%;"> <button onclick="submit()">Submit</button>
+        <input type="range" min="0" max="3" value="3" class="slider" id="urgeSlider" style="width:30%;"> <button onclick="submit()">Submit</button><br>
+        <!--button onclick="takeShortcut('bad thing')">Shortcut</button> <button onclick="submit(); cycle(indexx)">Display all messages</button-->
       </div>
       <div id="urgeLevel" class="stress">Urge Level: UNCONTROLLABLE</div>
     </div>
+    <div id='uncontrollable' style='display:none;'>
+      <input id='urge' type='text'><button onclick='submitUrge()'>Search (Google)</button><br><button onclick='submitUrge()'>Search (DeviantArt)</button><button onclick='submitUrge()'>Search (DuckDuckGo)</button>
+    </div>
+    <div id='uncontrollable2' style='display:none;'>
+      <input id='reason' type='text' style='width:900px; max-width:95%;'></textarea>
+      <button onclick='submitReason(-1)'>Submit</button>
+    </div>
+    <div id='colors' style='display:none;'>
+      <h3>Pick a color to continue, and never forget your life objectives.</h3>
+      <div class="three-list">
+        <!--Box 1 is Red. Box 2 is Blue. Box 3 is Green.-->
+        <div id="box1" class="theme8 box"></div> <div id="box2" class="theme2 box"></div> <div id="box3" class="theme1 box"></div>
+      </div>
+    </div>
     <script>
+      const indexx = 29;
+
       const urgeLevels = ['None',
       'Mild',
       'Distracting',
@@ -41,8 +66,8 @@
       function submit() {
         switch(parseInt(slider1.value)) {
           case 3:
-            document.getElementById("break").innerHTML = "Take a cold shower, or drive your car to Dragonforce music.";
-            document.getElementById("slider").innerHTML = "<span id='stress' class='medium'>DON'T ACT ON YOUR URGES.</span>";
+            document.getElementById("slider").style.display = "none";
+            document.getElementById("uncontrollable").style.display = "block";
             break;
           case 2:
             document.getElementById("break").innerHTML = "What time is it?";
@@ -61,6 +86,133 @@
         if (number === 1)
           link = "goals.html";
         document.getElementById("slider").innerHTML = "<a id='link' href=" + link + ">Click here to continue.</a>";
+      }
+
+      function takeShortcut(text) {
+        submit();
+        document.getElementById("urge").value = text;
+        submitUrge();
+        submitReason(indexx);
+      }
+
+      document.getElementById("urge").addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          submitUrge();
+        }
+      });
+
+      document.getElementById("reason").addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          submitReason(-1);
+        }
+      });
+
+      function submitUrge() {
+        document.getElementById("break").innerHTML = "I won't search \"" + document.getElementById("urge").value + "\" for you. Explain why you wanted to search it.";
+        document.getElementById("uncontrollable").style.display = "none";
+        document.getElementById("uncontrollable2").style.display = "block";
+      }
+
+      const answers = ["you will be doing something <strong>abominable in the sight of God</strong>.",
+      "you will have committed <strong>the sin of lust</strong>.",
+      "you will have committed sin. <strong>Do not sin again</strong>.",
+      "you will go <strong>against the teachings of Jesus</strong>.",
+      "you <strong>will need Jesus</strong> to redeem yourself.",
+      "you will be procrasturbating. It's <strong>procrastination, but worse</strong>.",
+      "you will <strong>screw up your morning</strong> as well as the rest of your day.",
+      "your future will be <strong>potentially destroyed</strong>.",
+      "you will become a <strong>sick degenerate</strong>.",
+      "you will be <strong>throwing your life away</strong>.",
+      "you will be <strong>further corrupted</strong>.",
+      "you will be doing something clearly <strong>taboo</strong>.",
+      "you will relapse. <strong>Going back is very hard</strong> once you start.",
+      "you will prioritize <strong>immoral fantasies</strong> over everything else.",
+      "you will be a <strong>slave to your urges</strong>.",
+      "you will seek things that <strong>aren't in accordance</strong> with Article of Faith 13.",
+      "you will be doing something <strong>dangerous</strong> to your overall health.",
+      "you will be <strong>doomed to oblivion.</strong>",
+      "you <strong>won't</strong> have time for <strong>essential tasks</strong> that will help you.",
+      "14-year old you will <strong>hate you</strong>.",
+      "you will be <strong>unclean</strong> and won't make it to heaven.",
+      "you will <strong>regret it</strong>.",
+      "the <strong>Second Coming</strong> will be catastrophic if it happens in a few hours.",
+      "you will feel <strong>weak and incapable</strong>.",
+      "you will wish you <strong>had done something else</strong>.",
+      "you will give in to a <strong>terrible craving</strong>.",
+      "your <strong>addiction</strong> will get <strong>worse</strong>.",
+      "<strong>nothing good</strong> will come out of satisfying that craving.",
+      "Satan will <strong>manipulate you</strong>.",
+      "you will feel a little satisfied, but then <strong>you'll feel miserable</strong>."];
+
+      function submitReason(index) {
+        if(index < 0 || index >= answers.length)
+          index = Math.floor(Math.random() * answers.length);
+        let consequence = answers[index];
+        document.getElementById("break").innerHTML = "If you try to satisfy that craving by searching for \"" + document.getElementById("urge").value + "\" anywhere, " + consequence;
+        document.getElementById("uncontrollable2").style.display = "none";
+        document.getElementById("colors").style.display = "block";
+
+        let functions = [eButton,eButton2,cShowers];
+        for(let i = 1; i < 4; i++) {
+          index = Math.floor(Math.random() * functions.length);
+          document.getElementById("box" + i).addEventListener("click",functions[index]);
+          functions.splice(i-1,1);
+        }
+      }
+
+      function eButton() {
+        let array = [];
+        for (let i = 0; i < 30; i++) {
+          if(i < 15)
+            array.push("https://youtu.be/iC4aV5WutY0"); //Place no more for the enemy of my soul
+          else if (i === 22)
+            array.push("https://www.thetabernaclechoir.org/listen.html");
+          else if (i === 23)
+            array.push("https://youtu.be/5i7qZxICwgQ"); //Dragonforce - Fury of the Storm
+          else if (i >= 25 && i <= 28)
+            array.push("../repent2.html");
+          else
+            array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
+        }
+        let i = Math.floor(Math.random() * array.length);
+        window.open(array[i]);
+      }
+
+      function eButton2() {
+        let array = [];
+        for (let i = 0; i < 30; i++) {
+          if (i >= 1 && i <= 4)
+            array.push("../repent2.html");
+          else if (i === 22)
+            array.push("https://www.thetabernaclechoir.org/listen.html");
+          else if (i === 23)
+            array.push("https://youtu.be/5i7qZxICwgQ");
+          else
+            array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
+        }
+        let i = Math.floor(Math.random() * array.length);
+        window.open(array[i]);
+      }
+
+      function cShowers() {
+        document.getElementById("break").innerHTML = "Take a cold shower, or drive your car to Dragonforce music.";
+        document.getElementById("colors").innerHTML = "<span id='stress' class='medium'>DON'T ACT ON YOUR URGES.</span>";
+      }
+
+      async function cycle(i) {
+        if(i < 0 || i >= answers.length)
+          i = 0;
+        while(i < answers.length) {
+          document.getElementById("break").innerHTML = "If you try to satisfy that craving by searching for \"bad thing\" anywhere, " + answers[i];
+          await sleep(5000);
+          i++;
+        }
+      }
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
       }
     </script>
   </body>
