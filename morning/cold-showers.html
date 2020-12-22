@@ -13,4 +13,15 @@
     <div id='break' class='space'>Take a cold shower, or listen to Dragonforce.</div>
     <span id='stress' class='medium'>DON'T ACT ON YOUR URGES.</span>
   </body>
+  <script>
+    const query = window.location.search;
+    const parameter = new URLSearchParams(query);
+    let urgeLevel = parameter.get('level');
+    if (urgeLevel !== null) {
+      if (urgeLevel === 3)
+        document.getElementById("break").innerHTML = "Take a cold shower, or listen to Dragonforce";
+      else
+        document.getElementById("break").innerHTML = "Take a cold shower, or <a href='../relax2.html'>listen to one of these.</a>";
+    }
+  </script>
 </html>

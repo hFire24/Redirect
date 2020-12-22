@@ -26,7 +26,10 @@
       </div>
       <div id="urgeLevel" class="stress">Urge Level: UNCONTROLLABLE</div>
     </div>
-    <div id='uncontrollable' style='display:none;'>
+    <div id='times' class="medium three-list" style="display:none;">
+      <a href='../relax2.html?mood=late+night'>Before 5:00AM</a><u style='cursor: pointer;' onclick='fiveAM()'>5:00-5:59AM</u><a id="viAM" href='../relax2.html?mood=morning'>6:00AM or later</a>
+    </div>
+    <div id='uncontrollable'>
       <input id='urge' type='text'><button onclick='submitUrge()'>Search (Google)</button><br><button onclick='submitUrge()'>Search (DeviantArt)</button><button onclick='submitUrge()'>Search (DuckDuckGo)</button>
     </div>
     <div id='uncontrollable2' style='display:none;'>
@@ -56,27 +59,26 @@
         switch(slider1.value) {
           case "3":
             urgeLevel.style.color = "red";
+            uncontrollable.style.display = "block";
+            break;
+          case "2":
+            urgeLevel.style.color = "black";
+            uncontrollable.style.display = "block";
             break;
           default:
             urgeLevel.style.color = "black";
+            uncontrollable.style.display = "none";
             break;
         }
       }
 
       function submit() {
-        switch(parseInt(slider1.value)) {
-          case 3:
-            document.getElementById("slider").style.display = "none";
-            document.getElementById("uncontrollable").style.display = "block";
-            break;
-          case 2:
-            document.getElementById("break").innerHTML = "What time is it?";
-            document.getElementById("slider").innerHTML = "<div class='medium three-list'><a href='../relax2.html?mood=late+night'>Before 5:00AM</a><u style='cursor: pointer;' onclick='fiveAM(2)'>5:00-5:59AM</u><a href='../relax2.html?mood=morning'>6:00AM or later</a></div>";
-            break;
-          default:
-            document.getElementById("break").innerHTML = "What time is it?";
-            document.getElementById("slider").innerHTML = "<div class='medium three-list'><a href='../relax2.html?mood=late+night'>Before 5:00AM</a><u style='cursor: pointer;' onclick='fiveAM(1)'>5:00-5:59AM</u><a href='goals.html'>6:00AM or later</a></div>";
-            break;
+        document.getElementById("slider").style.display = "none";
+        if (parseInt(slider1.value) < 3) {
+          document.getElementById("break").innerHTML = "What time is it?";
+          document.getElementById("times").style.display = "grid";
+          if (parseInt(slider1.value) < 2)
+            document.getElementById("viAM").href = 'goals.html';
         }
       }
 
@@ -111,6 +113,8 @@
 
       function submitUrge() {
         document.getElementById("break").innerHTML = "I won't search \"" + document.getElementById("urge").value + "\" for you. Explain why you wanted to search it.";
+        document.getElementById("slider").style.display = "none";
+        document.getElementById("times").style.display = "none";
         document.getElementById("uncontrollable").style.display = "none";
         document.getElementById("uncontrollable2").style.display = "block";
       }
@@ -120,7 +124,7 @@
       "you will have committed sin. <strong>Do not sin again</strong>.",
       "you will go <strong>against the teachings of Jesus</strong>.",
       "you <strong>will need Jesus</strong> to redeem yourself.",
-      "you will be procrasturbating. It's <strong>procrastination, but worse</strong>.",
+      "you will be procrasturbating. It's <strong>worse than procrastination</strong>.",
       "you will <strong>screw up your morning</strong> as well as the rest of your day.",
       "your future will be <strong>potentially destroyed</strong>.",
       "you will become a <strong>sick degenerate</strong>.",
@@ -153,8 +157,13 @@
         document.getElementById("break").innerHTML = "If you try to satisfy your cravings by searching for \"" + document.getElementById("urge").value + "\" anywhere, " + consequence;
         document.getElementById("uncontrollable2").style.display = "none";
         document.getElementById("colors").style.display = "block";
-
-        let functions = [eButton,godButton,cShowers];
+        let functions = [cShowers];
+        if (!document.getElementById(urgeSlider))
+          functions.push(mButton,works247);
+        else if (urgeSlider.value === "2")
+          functions.push(mButton,works247);
+        else
+          functions.push(eButton,godButton);
         shuffle(functions);
         for(let i = 1; i < 4; i++) {
           document.getElementById("box" + i).addEventListener("click",functions[i-1]);
@@ -182,6 +191,18 @@
         window.open(array[i]);
       }
 
+      function mButton() {
+        window.open("https://youtu.be/sBfng6Jd4Cc"); //Thomas Frank's Bad Morning Advice Video
+      }
+
+      function works247() {
+        window.open("../works247.html");
+        window.open("../cyoa/54.html");
+        let disablePopUp = document.createElement("div");
+        disablePopUp.innerHTML = "Make sure your pop-up blocker is disabled.";
+        document.body.appendChild(disablePopUp);
+      }
+
       function godButton() {
         let array = [];
         for (let i = 0; i < 16; i++) {
@@ -201,7 +222,7 @@
       }
 
       function cShowers() {
-        window.open("cold-showers.html");
+        window.open("cold-showers.html?level=" + document.getElementById("urgeSlider").value);
       }
 
       async function cycle(i) {
