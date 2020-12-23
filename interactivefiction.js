@@ -216,7 +216,7 @@ function finalTest(inputText,site)
     }
   }
   else if(inputText.indexOf('motivat') >= 0)
-    location.href = "15.html";
+    location.href = "cyoa/15.html";
   else if(found(['productive','to accomplish','get stuff done','work','to achieve','confiden','determined','determina'],inputText)) {
     $("question").innerHTML = "What sounds more appealing?";
     $("link").innerHTML = "";
