@@ -147,7 +147,7 @@ function finalTest(inputText,site)
   }
   else if(found(['lost', 'lose', 'failed', 'pathetic', 'am defeat', 'feel defeat', 'defeated me', 'poop'],inputText)) {
     $("question").innerHTML = "You won't feel like a loser anymore after listening to one of those meditations.";
-    $("link").innerHTML = "<a href='relax2.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='relax2.html?mood=defeated'>Click here to continue.</a>";
   }
   else if(!expressDesireForCuteness && (site === "google" || site === "youtube2")) {
     if(count < 2 && !(inputText === "it's totally useless information")) {

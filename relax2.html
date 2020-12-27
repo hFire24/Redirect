@@ -12,7 +12,7 @@
   <body class="relax">
     <div id='message' class='space'>More guided meditations.</div>
     <div id='message2' class='space' style='margin-top:1em;'>
-      One of the many meditations to choose from in <a href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Soundwise</a> is called <strong id='random' style='color:darkblue'></strong> from <span id='category'></span>. It is long but worth it.
+      One of the many meditations to choose from in <a href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Soundwise</a> is called <strong id='random' style='color:darkblue'>How to Relax 1</strong> from <span id='category'>Learn to Relax</span>. It is long but worth it. <button class='custom-button space' onclick='randomMeditation()'>Random Meditation</button>
     </div>
     <!--div id='sad-grid' class='relax-list' style='display:none; margin-top:1em;'>
       <a class="hfire-link" onclick='reason("fed up")'>I feel fed up</a> <a class="hfire-link" onclick='reason("upset")'>I feel upset</a> <a class="hfire-link" onclick='reason("disappointed")'>I feel disappointed</a>
@@ -28,6 +28,7 @@
       <a class='hfire-link' onclick="openList('meditate-list')">Meditate</a>
       <a class='hfire-link' onclick="openList('mental-health-list')">Mental Health</a>
       <a class='hfire-link' onclick="openList('mindfulness-list')">Mindfulness</a>
+      <a class='hfire-link' onclick="openList('performance-list')">Performance</a>
       <a class='hfire-link' onclick="openList('physical-health-list')">Physical Health</a>
       <a class='hfire-link' onclick="openList('positivity-list')">Positivity</a>
       <a class='hfire-link' onclick="openList('relaxation-list')">Learn to Relax</a>
@@ -97,7 +98,14 @@
       <a class='hfire-link link mindfulness' id="mindfulness">Mindful Meditation</a>
       <a class='hfire-link link mindfulness' id="now_here_this">Now Here This Meditation</a>
       <a class='hfire-link link mindfulness' id="present">Living in the Present</a>
+      <a class='hfire-link link mindfulness' id="return_present">Return to the Present Moment</a>
       <a class='hfire-link close mindfulness' onclick="closeList('mindfulness-list')">Go Back</a>
+    </div>
+    <div id='performance-list' class="relax-list" style='display:none;'>
+      <!--Improve Performance-->
+      <a class='hfire-link link performance' id="moveonwards">Moving Onwards</a>
+      <a class='hfire-link link performance' id="reboot">Reboot Yourself</a>
+      <a class='hfire-link close performance' onclick="closeList('performance-list')">Go Back</a>
     </div>
     <div id='physical-health-list' class="relax-list" style='display:none;'>
       <!--Improve Your Physical Health-->
@@ -112,6 +120,7 @@
     </div>
     <div id='positivity-list' class="relax-list" style='display:none;'>
       <!--Increase Positivity-->
+      <a class='hfire-link link positivity' id="change">Intention for Change</a>
       <a class='hfire-link link positivity' id="creativity">Build Creativity</a>
       <a class='hfire-link link positivity' id="love">Attract Love</a>
       <a class='hfire-link link positivity' id="positivity">Positivity</a>
@@ -196,6 +205,12 @@
           case "self hate":
             message2.innerHTML = "You may be disappointed in yourself, but I suggest listening to <strong style='color:darkblue;'>Believe in Yourself</strong> from Mental Health. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
+          case "defeated":
+            message2.innerHTML = "You may feel like a loser, but I suggest listening to <strong style='color:darkblue;'>Let Go of Guilt</strong> from Breaking Habits. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            break;
+          case "unclear":
+            message2.innerHTML = "Looking to clear your mind? You're in luck. Listen to <strong style='color:darkblue;'>Clear Your Mind</strong> from Mental Health. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            break;
           case "morning":
             message2.innerHTML = "Good morning. Listen to <strong style='color:darkblue;'>Morning Boost</strong> from Make Use of Day for an early boost. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
@@ -205,12 +220,10 @@
           case "late night":
             message2.innerHTML = "Need to go back to sleep? <strong style='color:darkblue;'>Back to Sleep</strong> from Sleep will help you. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
-          default:
+          case "random":
             randomMeditation();
+            break;
         }
-      }
-      else {
-        randomMeditation();
       }
 
       function displayInfo(){
@@ -273,6 +286,9 @@
           case "mindfulness":
             category.innerHTML = "Mindfulness";
             break;
+          case "performance":
+            category.innerHTML = "Performance";
+            break;
           case "physical-health":
             category.innerHTML = "Physical Health";
             break;
@@ -317,6 +333,9 @@
             break;
           case "mindfulness-list":
             category.innerHTML = "Practice Mindfulness";
+            break;
+          case "performance-list":
+            category.innerHTML = "Improve Performance";
             break;
           case "physical-health-list":
             category.innerHTML = "Improve Your Physical Health";

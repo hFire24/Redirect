@@ -371,7 +371,7 @@ td {
     height: 20px;
   }
 
-  @media only screen and (max-width: 414px) {
+  @media only screen and (max-width: 413px) {
     .three-list, .four-list {
       display:grid;
       grid-template-columns:auto auto;

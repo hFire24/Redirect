@@ -219,8 +219,10 @@ function displayBreak(index,number) {
   if(number !== 6)
     switch(message.innerHTML) {
       case "Listen to this.":
-      case "Clear your mind.":
         message.href = "relax.html";
+        break;
+      case "Clear your mind.":
+        message.href = "relax.html?mood=unclear";
         break;
       case "Look away from the screen for about 2 minutes.":
         message.href = "https://www.google.com/search?q=2+minute+timer";
@@ -253,7 +255,7 @@ function displayBreak(index,number) {
         message.href = "https://skl.sh/37ueYoA";
         break;
       case "Listen to one of these long guided meditations.":
-        message.href = "relax2.html";
+        message.href = "relax2.html?mood=random";
         break;
       case "Make an objective for today.":
         message.href = "objective.html";
