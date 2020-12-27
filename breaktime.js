@@ -387,7 +387,9 @@ function whyNot() {
 function submitReason() {
   //var reason = $("excuse").value.toLowerCase();
   var reason = "blah";
-  if(found(["already","finish","done","did","next","complete"],reason) && !found(["many"],reason) || reason.endsWith("today"))
+  if (found(["Check your gTasks","Create tasks","Determine what","List everything","List all the things","Say out loud","Make a plan","Make an objective","No routine","Think of a goal","productivity","procrastination"],$("break").innerHTML))
+    reason = "no goals"
+  /*if(found(["already","finish","done","did","next","complete"],reason) && !found(["many"],reason) || reason.endsWith("today"))
     location.reload();
   else if(found(["class","lecture","church"],reason))
     location.href = "cyoa/50.html";
@@ -399,7 +401,9 @@ function submitReason() {
   else if(found(["don't have","sn't with me","not with me","not here","away","forgot my","not home","not at my home","not in my home","not inside my home","college","Purdue"],reason))
     location.href = "cyoa/46.html";
   else if(reason.indexOf("nothing") >= 0)
-    location.href = "multiple.html";
+    location.href = "multiple.html";*/
+  if(reason === "no goals")
+    location.href = "cyoa/64.html";
   else {
     if(Math.floor(Math.random() * 2) === 0)
       window.open("2minuterule.html", '_blank');
