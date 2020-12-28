@@ -11,17 +11,23 @@
   </head>
   <body class="theme4">
     <div class='space'>
-      <h2 id='command' onclick='next()'>Wiggle your toes.</div>
+      <h2 id='command' onclick='next()'>Repeat this affirmations after me.</div>
     </div>
     <span id='continue' class='hfire-link' onclick="next()">Continue</span>
     <script>
-      var scene = 0;
-      var messages = ["Wiggle your toes.",
+      var scene = -1;
+      /*var messages = ["Wiggle your toes.",
       "Wiggle your fingers.",
       "Wiggle your jaw.",
       "Take a deep breath in.",
       "Have a gentle stretch.",
-      "Now gently stand up."];
+      "Now gently stand up."];*/
+      var messages = ["I am brimming with energy.",
+      "Energy is flowing to every part of my body.",
+      "I am a strong and capable individual.",
+      "Energy is revitalizing me.",
+      "I have abundant stamina.",
+      "I am focused on completing my tasks."];
       function next() {
         scene++;
         if(scene === messages.length - 1)
