@@ -132,9 +132,13 @@
     }
 
     function addicted() {
-      $("question").innerHTML = "How much do these thoughts control you?";
+      restoreLink();
+      $("newBreak").value = "cute"
+      submit();
+      $("newBreak").value = "";
+      /*$("question").innerHTML = "How much do these thoughts control you?";
       $("yesno").style.display = "none";
-      $("dependency").style.display = "block";
+      $("dependency").style.display = "block";*/
     }
 
     var dependencyValues = ['They don’t control me',
