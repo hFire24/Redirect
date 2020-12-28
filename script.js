@@ -498,7 +498,7 @@ function okFeeling() {
       location.href = "cyoa/37.html";
       break;
     case "anime girls":
-      location.href = "animeslider.html";
+      location.href = "purple.html";
       break;
     case "game":
       message.innerHTML = "How long have you been being productive?";

@@ -30,7 +30,7 @@ function finalTest(inputText,site)
     else
       location.href = "musicSlider.html";
   }
-  else if(found(["wait","patient"],inputText)) {
+  else if(found(["wait","patien"],inputText)) {
     $("question").innerHTML = "You may want to check your goals page while you wait.";
     $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='goals.html'>Check Goals Page</a><a class='hfire-link' href='cyoa/12.html'>I don't feel like it</a></div>";
   }
@@ -97,11 +97,11 @@ function finalTest(inputText,site)
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if(found(['stressed', 'upset', 'frustrat', 'sick of'],inputText)) {
+  else if(found(['stress', 'upset', 'frustrat', 'sick of'],inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=stressed'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
-  else if(found(['sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless', 'feel down', 'feeling down'],inputText) && !found(wasteTime,inputText)) {
+  else if(found(['sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless', 'guilt', 'feel down', 'feeling down'],inputText) && !found(wasteTime,inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=sad'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
@@ -129,7 +129,7 @@ function finalTest(inputText,site)
   }
   else if(found(['cirno','crino','cinro','ciron'],inputText))
     location.href = "cirno.html?q=" + inputText;
-  else if(inputText.indexOf("lazy") >= 0 && (site !== "google" || site !== "youtube2")) {
+  else if(found(["lazy","lazi"],inputText) && (site !== "google" || site !== "youtube2")) {
     $("question").innerHTML = "Are you lazy, or are you just exhausted?";
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
   }
@@ -277,7 +277,7 @@ function finalTest(inputText,site)
     $("link").addEventListener("click",function(){$("silenyota").play();});
     $("silenyota").play();
   }
-  else if(inputText.indexOf("fun") >= 0) {
+  else if(inputText.indexOf("fun") >= 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "Fun things are good, but they are distractions.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
@@ -302,16 +302,16 @@ function finalTest(inputText,site)
     $("question").innerHTML = "The reason why you said \"boring\" is because you aren't stepping outside of your comfort zone.";
     $("link").innerHTML = "<a href='cyoa/20.html'>Click here to continue.</a>";
   }
+  else if(found(['bad', 'don\'t know if', 'don\'t know how', 'doubt', 'suck', 'stink', 'poor', 'garbage', 'trash', 'not sure if i can', 'not sure how'],inputText) && expressDesireForCuteness) {
+    $("question").innerHTML = "Draw, even if it's garbage.";
+    $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
+  }
   else if(found(creativity,inputText) || inputText.indexOf('consum') >= 0) {
     $("question").innerHTML = "Even a minute of breathing helps creativity.";
     $("link").innerHTML = "<a href='https://www.google.com/search?q=breathing+exercise'>Click here to continue.</a>";
   }
   else if(inputText.indexOf('commission') >= 0 && expressDesireForCuteness) {
     $("question").innerHTML = "This is the lamest excuse ever. Stop wasting money on commissions, and make your own drawings.";
-    $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
-  }
-  else if(found(['bad', 'don\'t know if', 'don\'t know how', 'doubt', 'suck', 'stink', 'poor', 'garbage', 'trash', 'not sure if i can', 'not sure how'],inputText) && expressDesireForCuteness) {
-    $("question").innerHTML = "Draw, even if it's garbage.";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
   else if (found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && expressDesireForCuteness) {

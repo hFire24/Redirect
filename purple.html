@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link id='apple' rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme7">
+    <h1 id="message" class="invisible"></h1>
+    <h2 id="question">What thoughts or emotions made you think about that kind of stuff?</h2>
+    <div id='link'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
+    <audio id='press'>
+      <source src="media/Button Push.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+    function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
+      console.log($("newBreak").value);
+      var inputText = '';
+      if($("custom-reason").value !== -1 && $("newBreak").value === '')
+        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
+      expressDesireForCuteness = true;
+      finalTest(inputText,"hotanddry");
+      if ($("question").innerText === "Click here.")
+        document.body.removeChild($("link"));
+    }
+
+    var reasons = ["Laziness",
+    "Boredom", "Extreme Boredom", "I have nothing to do",
+    "A desire to procrastinate",
+    "A desire to calm down",
+    "A desire for happiness",
+    "A desire for cuteness",
+    "A desire for luxury",
+    "A desire for love",
+    "A desire for fun",
+    "A desire for creativity",
+    "Cirno",
+    "Lolis",
+    "Adoration",
+    "Infatuation",
+    "Lust",
+    "I'm struggling in life",
+    "I don't know",
+    "I'm a weirdo",
+    "Lack of Focus",
+    "Stress",
+    "Fear",
+    "Impatience",
+    "Busyness",
+    "Hunger",
+    "Guilt",
+    "I already looked at bad stuff",
+    "I relapsed",
+    "I want to fap",
+    "I have an erection",
+    "I'm not good at drawing",
+    "I'm bad at drawing",
+    "I want to look at cute anime girls",
+    "I need to look at cute anime girls",
+    "I got something I need to do",
+    "I'm ready to do something else"];
+    for(var i in reasons) {
+      var option = document.createElement('option');
+      option.id = i;
+      option.value = i;
+      option.innerHTML = reasons[i];
+      document.getElementById("custom-reason").appendChild(option);
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function pushTheButtonHD()
+    {
+      $("press").play();
+      $("question").style.color = 'white';
+      await sleep(1750);
+      location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+    }
+    </script>
+    <script src="interactivefiction.js"></script>
+  </body>
+</html>
