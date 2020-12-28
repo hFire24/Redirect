@@ -10,28 +10,17 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class='morning'>
-    <h1 id='message'>Your morning routine</h1>
+    <h1>Your morning routine</h1>
     <ol id='parent'>
     </ol>
     <script>
-      var morningHabits = ["Stretch your body",
-      "Slowly drink a glass of water",
+      var morningHabits = ["Slowly drink a glass of water",
       "Brush teeth and shave (if your have facial hair)<ul><li>Skip this step if the bathroom is occupied.</li><li>Take a shower if you haven't took one in the last 48 hours.</li></ul>",
-      "Change your clothes for walking.",
-      "Take a walk outside (skip if raining)<ul><li><a href='nowalk.html'>Click here</a> if you don't feel like taking a walk outside</li></ul>",
-      "Do Step 2 if you didn't do it today.",
-      "Listen to this <a href='https://app.mysoundwise.com/mysoundcasts'>morning meditation under Make the Most of Your Day</a>",
       "Eat breakfast (Froot Loops) if you're hungry",
+      "Do Step 2 if you didn't do it today.",
       "Put on <a href='../musicSlider.html'>some music</a> to help you focus.",
       "Determine what things you need to get done today.",
       "It's time to have an awesome day! Achieve your goals!"];
-
-      var d = new Date();
-      if (d.getDay() === 2 || d.getDay() === 3)
-      {
-        morningHabits.splice(6,0,"Do laundry<ul><li>Skip this step if the washer is occupied</li></ul>");
-        morningHabits.splice(9,0,"Do Step 7 if you didn't do it today.");
-      }
 
       var parent = document.getElementById("parent");
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Good morning!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon-star.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class='morning'>
+    <h1>Your morning routine</h1>
+    <ol id='parent'>
+    </ol>
+    <script>
+      var morningHabits = ["Listen to this <a href='https://app.mysoundwise.com/mysoundcasts'>morning meditation under Make the Most of Your Day</a>",
+      "Slowly drink a glass of water",
+      "Change your clothes for walking.",
+      "Take a walk outside<ul><li><a href='nowalk.html'>Click here</a> if you don't feel like taking a walk outside</li></ul>",
+      "Brush teeth and shave (if your have facial hair)<ul><li>Skip this step if the bathroom is occupied.</li><li>Take a shower if you haven't took one in the last 48 hours.</li></ul>",
+      "Eat breakfast (Froot Loops) if you're hungry",
+      "Do Step 5 if you didn't do it today.",
+      "Put on <a href='../musicSlider.html'>some music</a> to help you focus.",
+      "Determine what things you need to get done today.",
+      "It's time to have an awesome day! Achieve your goals!"];
+
+      var parent = document.getElementById("parent");
+
+      for(var i = 0; i < morningHabits.length; i++)
+      {
+        var aElement = document.createElement("li");
+        aElement.id = "a" + i;
+        aElement.innerHTML = morningHabits[i];
+        parent.appendChild(aElement);
+        //Creates a random background color for the element
+        var x = Math.floor(Math.random() * 64) + 192;
+        var y = Math.floor(Math.random() * 64) + 192;
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
+        console.log(morningHabits[i]);
+      }
+
+    </script>
+  </body>
+</html>

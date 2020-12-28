@@ -10,12 +10,63 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class='morning'>
-    <h1 id='message'>How are you feeling this morning?<br>And how focused are you?</h1>
-    <div id='link' style='display:grid;'>
-      <a class='hfire-link' href="goals11.html">I feel tired and unfocused.</a>
-      <a class='hfire-link' href="goals12.html">I feel tired, but not distracted.</a>
-      <a class='hfire-link' href="goals21.html">I don't feel tired, but distracted.</a>
-      <a class='hfire-link' href="goals22.html">I feel wide awake and focused.</a>
+    <h1>How are you this morning?<br></h1>
+    <div id="questionnaire">
+      <div class='two-list'>
+        <div class='space'>Unfocused or Distracted?<br>
+          <input type="checkbox" id="unfocused" name="unfocused" onclick="setCheck('unfocused')">Yes
+        </div>
+        <div class='space'>Tired?<br>
+          <input type="checkbox" id="tired" name="tired" onclick="setCheck('tired')">Yes
+        </div>
+        <div class='space'>Raining outside?<br>
+          <input type="checkbox" id="raining" name="raining" onclick="setCheck('raining')">Yes
+        </div>
+        <div class='space'>Plan on doing laundry?<br>
+          <input type="checkbox" id="laundry" name="laundry" onclick="setCheck('laundry')">Yes
+        </div>
+      </div>
     </div>
+    <h3 id='submit' onclick='submit()'><strong>Submit</strong></h3>
+    </ol>
+    <script>
+
+      //Object for saving options
+      const myObject = {
+        unfocused:false,
+        tired:false,
+        raining:false,
+        laundry:false
+      };
+
+      //Executes every time a radio button is pressed.
+      function setCheck(attribute) {
+        console.log(attribute + " " + myObject[attribute]);
+        //Sets the attribute of the object to the opposite number
+        myObject[attribute] = document.getElementById(attribute).checked;
+        console.log(attribute + " " + myObject[attribute]);
+      }
+
+      function submit() {
+        var number = "";
+        if(myObject["tired"])
+          number = number + "1";
+        else
+          number = number + "2";
+        if(myObject["unfocused"])
+          number = number + "1";
+        else
+          number = number + "2";
+        if(myObject["raining"])
+          number = number + "1";
+        else
+          number = number + "2";
+        if(myObject["laundry"])
+          number = number + "2";
+        else
+          number = number + "1";
+        location.href = "goals" + number + ".html";
+      }
+    </script>
   </body>
 </html>
