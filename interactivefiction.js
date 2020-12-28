@@ -300,7 +300,10 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("boring") >= 0) {
     $("question").innerHTML = "The reason why you said \"boring\" is because you aren't stepping outside of your comfort zone.";
-    $("link").innerHTML = "<a href='cyoa/20.html'>Click here to continue.</a>";
+    if(expressDesireForCuteness)
+      $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
+    else
+      $("link").innerHTML = "<a href='cyoa/20.html'>Click here to continue.</a>";
   }
   else if(found(['bad', 'don\'t know if', 'don\'t know how', 'doubt', 'suck', 'stink', 'poor', 'garbage', 'trash', 'not sure if i can', 'not sure how'],inputText) && expressDesireForCuteness) {
     $("question").innerHTML = "Draw, even if it's garbage.";
@@ -316,7 +319,7 @@ function finalTest(inputText,site)
   }
   else if (found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && expressDesireForCuteness) {
     $("question").innerHTML = "Don't do nothing. Draw a circle in your sketch pad or any sheet of paper!";
-    $("link").innerHTML = "<a href='bigbreak.html'>I don't feel like it.</a>";
+    $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
   else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
     $("question").innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
@@ -384,7 +387,7 @@ function finalTest(inputText,site)
   }
   else if(expressDesireForCuteness) {
     $("question").innerHTML = "Get your sketch pad (or anything you can doodle on) and draw a circle.";
-    $("link").innerHTML = "<a href='bigbreak.html'>I don't feel like it.</a>";
+    $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {
     if(inputText !== "because i need to" && unknownReason < 1) {
