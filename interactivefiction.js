@@ -317,7 +317,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "This is the lamest excuse ever. Stop wasting money on commissions, and make your own drawings.";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
-  else if (found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && expressDesireForCuteness) {
+  else if ((found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText)) && expressDesireForCuteness) {
     $("question").innerHTML = "Don't do nothing. Draw a circle in your sketch pad or any sheet of paper!";
     $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
