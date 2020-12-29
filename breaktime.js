@@ -281,7 +281,7 @@ function displayBreak(index,number) {
         break;
       case "Go to Skillshare, and learn programming.":
       case "Learn Full Stack so that you can host a website for free that supports FileZilla.":
-        message.href = "https://skl.sh/38rV6DT";
+        message.href = "https://skl.sh/37XTd4g";
         break;
       case "Draw anime.":
         message.href = "art.html";

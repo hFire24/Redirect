@@ -120,7 +120,7 @@ function addBigMessages() {
   '<a href="https://skl.sh/37ueYoA">How about you go to Skillshare to double your social skills?</a>',
   '<a href="chiptunelessons.html">How about you learn how to make chiptunes?</a>',
   '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
-  '<a href="https://skl.sh/38rV6DT">Learning programming on Skillshare is a good idea.</a>',
+  '<a href="https://skl.sh/37XTd4g">Learning programming on Skillshare is a good idea.</a>',
   'Remember that Python games book? You may get something out of it by reading it.',
   //'<a href="art.html">Why don\'t you practice drawing anime?</a>',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
