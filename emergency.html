@@ -12,7 +12,8 @@
   <body class="theme6">
     <div id='break' class='space'>The emergency button is your ally. If you're having urges, don't act on them.</div>
     <div id='uncontrollable' style='display:none;'>
-      <input id='search' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("deviantart")'>Search (DeviantArt)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("duckduckgo")'>Search (Ecosia)</button>
+      <input id='search' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("deviantart")'>Search (DeviantArt)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("duckduckgo")'>Search (Ecosia)</button><br>
+      <a onclick='youLearnQuickly()'>I will not search for anything.</a>
     </div>
     <div id='uncontrollable2' style='display:none;'>
       <input id='reason' type='text' style='width:900px; max-width:95%;'>
@@ -20,6 +21,7 @@
     </div>
     <div id="never-forget" class="medium space" style="display:none;">Never forget your life objectives.</div>
     <span id='emergency-button' class='stress' onclick="pushTheButton()">EMERGENCY</span>
+    <span id='something-else-button' class='big stress' onclick="takeABreak()" style="color:#F60; display:none;">Do Something Else</span>
     <audio id='press'>
       <source src="media/Button Push.mp3" type="audio/mpeg">
     </audio>
@@ -30,12 +32,16 @@
       const query = window.location.search;
       if (query !== "") {
         const parameter = new URLSearchParams(query);
-        let searchTerm = parameter.get('q');
         let site = parameter.get('w');
-        document.getElementById('search').value = searchTerm;
         website = site;
         a = 1;
-        submitReason(-1);
+        if(website === "no")
+          youLearnQuickly();
+        else {
+          let searchTerm = parameter.get('q');
+          document.getElementById('search').value = searchTerm;
+          submitReason(-1);
+        }
       }
 
       async function pushTheButton() {
@@ -69,6 +75,18 @@
         }
       });
 
+      function youLearnQuickly() {
+        website = "no";
+        if(a !== 1)
+          location.href = "emergency.html?q=blank&w=" + website;
+        document.getElementById("break").innerHTML = "You're not going to search for anything? Wow. That was a mature move. I'll bring back the emergency button just for you.";
+        document.getElementById("something-else-button").style.display = "block";
+      }
+
+      function takeABreak() {
+        location.href = "bigbreak.html";
+      }
+
       function search(site) {
         website = site;
         document.getElementById("break").innerHTML = "Before I search for \"" + document.getElementById("search").value + "\" for you, explain why you wanted to search it.";
@@ -91,7 +109,7 @@
         "you will be doing something clearly <ins>taboo</ins>.", //Dangerous 6
         "you will relapse. <ins>Going back is very hard</ins> once you start.", //Unhealthy 2
         "you will prioritize <ins>immoral fantasies</ins> over everything else.", //Dangerous 7
-        "you will be a <ins>slave to your urges</ins>.", //Unhealthy 3
+        "you will be <ins>abused</ins> by your urges.", //Unhealthy 3
         "you will seek things that <ins>aren't in accordance</ins> with Article of Faith 13.", //Religious 6
         "you will be doing something <ins>dangerous</ins> to your overall health.", //Dangerous 8
         "you will be <ins>doomed to oblivion.</ins>", //Dangerous 9
