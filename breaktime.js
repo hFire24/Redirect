@@ -111,7 +111,6 @@ function loadBigBreak() {
   //'Try to code Card Battle Stadium in C#.',
   //'Try one of these C# coding projects.',
   'Read the book <u>Atomic Habits</u>.',
-  'Practice your piano. Using SimplyPiano is recommended.',
   'Take this productivity course on Skillshare.',
   //'Learn a language with Duolingo.',
   'Check your goals page. Try to knock out one of your goals.'];
@@ -125,7 +124,8 @@ function loadBigBreak() {
   'Declutter your room.',
   'Digitize at least two days of events from your journal.',
   'Learn how to use Pygame by reading that book.',
-  'Play some Stepmania.'];
+  'Play some Stepmania.',
+  'Practice your piano. Using SimplyPiano is recommended.'];
 }
 
 function loadMobileBreak() {
