@@ -318,7 +318,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
   else if ((found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText)) && expressDesireForCuteness) {
-    $("question").innerHTML = "Don't do nothing. Draw a circle in your sketch pad or any sheet of paper!";
+    $("question").innerHTML = "Don't do nothing. <a href='artstage.html'>Foster your creativity!</a>";
     $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
   else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
@@ -386,7 +386,7 @@ function finalTest(inputText,site)
       document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(expressDesireForCuteness) {
-    $("question").innerHTML = "Get your sketch pad (or anything you can doodle on) and draw a circle.";
+    $("question").innerHTML = "<a href='artstage.html'>Get your sketch pad (or anything you can doodle on).</a>";
     $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {
