@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Start drawing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme1">
+    <h1 id='message'>Pick a stage</h1>
+    <div id='hideable'>
+      <ol id='assignments'>
+        <li id="nothing" class='collapsible'>I drew nothing <button class='expand'>😶</button></li>
+        <ul class="content">
+          <li>Just draw a circle.</li>
+        </ul>
+
+        <li id="circle" class='collapsible'>I drew a circle <button class='expand'>⭕</button></li>
+        <ul class="content">
+          <li>Shape it into a head.</li>
+          <li>Use front view if you're lazy. Use 3/4 view if you want a challenge.</li>
+        </ul>
+
+        <li id="head" class='collapsible'>I drew a head <button class='expand'>🙃</button></li>
+        <ul class="content">
+          <li>Add hair in the front, or add a body with a 5 head proportion.</li>
+          <li>Never underestimate the power of poses.</li>
+          <li>Get inspired with <a href="https://youtu.be/JHG8AgbXXRc">this video</a>.</li>
+        </ul>
+
+        <li id="human-body" class='collapsible'>I sort of drew a body <button class='expand'>🤷‍♀️</button></li>
+        <ul class="content">
+          <li><a href="https://youtu.be/JHG8AgbXXRc">Watch this video,</a> or search for "Anime Body Draw" on YouTube.</li>
+        </ul>
+
+        <li id="human-body-2" class='collapsible'>I drew a body <button class='expand'>🙂</button></li>
+        <ul class="content">
+          <li>Music may inspire you to come up with clothes for design.</li>
+          <li>Best advice is to listen to calming music.</li>
+        </ul>
+
+        <li id="clothes" class='collapsible'>I drew some clothes <button class='expand'>👗</button></li>
+        <ul class="content">
+          <li>Your sketch is probably done.</li>
+          <li>Add more accessories, add a background, or take a picture and send to Instagram.</li>
+        </ul>
+      </ol>
+    </div>
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
