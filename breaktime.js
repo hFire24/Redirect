@@ -44,7 +44,7 @@ function loadSmallBreak() {
   'Increase your spirituality.',
   'Try answering this question.',
   'Play one of these short games.',
-  'Read your journal entries.<br>Start from August 2012.',
+  'Read your journal entries.<br>Start from September 2012.',
   'Answer this questionnaire.',
     //Goals
   'Click here.',
@@ -155,7 +155,7 @@ function loadMobileBreak() {
   'Increase your spirituality.',
   'Read your patriarchal blessing.',
   'Try answering this question.',
-  'Read your journal entries on Dropbox.<br>Start from August 2012.',
+  'Read your journal entries on Dropbox.<br>Start from September 2012.',
   'Answer this questionnaire.',
     //Goals
   'Click here.',
