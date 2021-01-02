@@ -31,9 +31,9 @@
     </div>
     <div id='dependency' style='display:none;'>
       <div class='slidercontainer space'>
-        <input type="range" min="0" max="6" value="1" class="slider" id="dependency-slider"> <button onclick="dependencySubmit()">Submit</button>
+        <input type="range" min="0" max="6" value="3" class="slider" id="dependency-slider"> <button onclick="dependencySubmit()">Submit</button>
       </div>
-      <div id="importance">It doesn’t bother me that much</div>
+      <div id="importance">I want to go to DeviantArt</div>
     </div>
     <audio id='press'>
       <source src="media/Button Push.mp3" type="audio/mpeg">
@@ -63,11 +63,11 @@
         $("question").innerHTML = "If you love Touhou so much, listen to Touhou music on MusicBee.";
         document.body.removeChild($("link"));
       }
-      else if(slider1.value < 3 && $("newBreak").value === '' && $($("custom-reason").value).innerHTML === '' && $('dependency').style.display !== 'none') {
+      else if(slider1.value < 3) {
         $("question").innerHTML = "Control these thoughts and kick them out!";
         $("link").innerHTML = "<a href='cyoa/20.html'>But I can't get them out!</a>";
       }
-      else if(slider1.value === "3") {
+      else if(slider1.value === "3" && ($("newBreak").value === '' || $($("custom-reason").value).innerHTML === '') && $('dependency').style.display !== 'none') {
         $("question").innerHTML = "You want to do it, but you don't need to do it. There are other ways to feel happiness.";
         $("link").innerHTML = "<a href='bigbreak.html'>Click here to continue.</a>";
       }
@@ -82,11 +82,13 @@
         document.body.removeChild($("question"));
         $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButtonTC()'>click here.</u>";
       }
+      else if(inputText.endsWith("i want to") || inputText.endsWith("go to deviantart")) {
+        $("question").innerHTML = "How much do you want to go to DeviantArt?";
+        $("link").style.display = "none";
+        $("dependency").style.display = "block";
+      }
       else
         finalTest(inputText,"deviantart");
-      document.body.removeChild($('dependency'));
-      if($("link"))
-        $("link").style.display = "block";
     }
 
     var reasons = ["Because I'm lazy",
@@ -141,13 +143,13 @@
       $("dependency").style.display = "block";*/
     }
 
-    var dependencyValues = ['They don’t control me',
-    'It doesn’t bother me that much',
-    'They control me somewhat',
-    'I want to look at cute anime girls',
-    'I really want to look at cute anime girls',
-    'I don’t want to do anything other than look at cute anime girls',
-    'Not looking at cute anime girls is making me depressed'];
+    var dependencyValues = ['I don\'t want to go to Deviantart',
+    'I should not be on DeviantArt',
+    'I kind of want to go to DeviantArt',
+    'I want to go to DeviantArt',
+    'I want to go to DeviantArt badly',
+    'I don’t want to do anything other than go to DeviantArt',
+    'Not going to DeviantArt is making me depressed'];
     var dependency = document.getElementById("dependency");
     var slider1 = document.getElementById("dependency-slider");
     slider1.max = dependencyValues.length - 1;
@@ -157,6 +159,8 @@
 
     function dependencySubmit() {
       submit();
+      document.body.removeChild($('dependency'));
+      $("link").style.display = "block";
     }
 
     function restoreLink() {
