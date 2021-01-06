@@ -11,9 +11,9 @@
   </head>
   <body class="theme4">
     <div class='space'>
-      <h2 id='command' onclick='next()'>Repeat this affirmations after me.</div>
+      <h2 id='command'>Listen to <a href="https://app.mysoundwise.com/mysoundcasts">Stretch Relaxation</a> under Quick Solutions to stand up.</div>
     </div>
-    <span id='continue' class='hfire-link' onclick="next()">Continue</span>
+    <a id='continue' class='hfire-link' href='2.html'>Continue</span>
     <script>
       var scene = -1;
       /*var messages = ["Wiggle your toes.",
@@ -21,20 +21,21 @@
       "Wiggle your jaw.",
       "Take a deep breath in.",
       "Have a gentle stretch.",
-      "Now gently stand up."];*/
+      "Now gently stand up."];
       var messages = ["I am brimming with energy.",
       "Energy is flowing to every part of my body.",
       "I am a strong and capable individual.",
       "Energy is revitalizing me.",
       "I have abundant stamina.",
-      "I am focused on completing my tasks."];
+      "I am focused on completing my tasks."];*/
+      var message
       function next() {
         scene++;
         if(scene === messages.length - 1)
           document.getElementById("continue").innerHTML = "Done";
         else if(scene === messages.length) {
           scene--;
-          location.href = "7.html";
+          location.href = "2.html";
         }
         console.log(scene);
         document.getElementById("command").innerHTML = messages[scene];
