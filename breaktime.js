@@ -111,7 +111,6 @@ function loadBigBreak() {
   //'Try to code Card Battle Stadium in C#.',
   //'Try one of these C# coding projects.',
   'Read the book <u>Atomic Habits</u>.',
-  'Take this productivity course on Skillshare.',
   //'Learn a language with Duolingo.',
   'Check your goals page. Try to knock out one of your goals.'];
   //Do not upload traced art.
@@ -162,10 +161,8 @@ function loadMobileBreak() {
   'Listen to a General Conference talk.',
   'Double your social skills.',
   'Train your communication skills.',
-  'Increase your conversation skills.',
   'Read the book <u>Atomic Habits</u>.',
   //'Learn a language with Duolingo.',
-  'Take this productivity course on Skillshare.',
   'Take that anti-procrastination course on Skillshare.',
   'Check your goals page. Try to knock out one of your goals.'];
 
@@ -348,7 +345,12 @@ function displayBreak(index,number) {
     link.id = "link";
     parent.appendChild(link);
   }
-  link.innerHTML = "<div class='two-list'><u onclick='reload()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div>";
+  if (found(["Check your gTasks","Create tasks","Determine what","List everything","List all the things","Say out loud","Make a plan","Make an objective","No routine","Think of a goal","productivity","procrastination"],$("break").innerHTML))
+    link.innerHTML = "<div class='two-list space'><u onclick='reload()'>I already did.</u><a href='cyoa/64.html' target='_blank'>I have nothing to do.</a></div>";
+  else if($("standup").innerHTML.indexOf("Eat") >= 0)
+    link.innerHTML = "<div class='two-list space'><u onclick='reload()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick='reload()'>I am still full, even after 3 hours.</u>";
+  else
+    link.innerHTML = "<div class='two-list space'><u onclick='reload()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div>";
   if(standIndex >= 0)
     $("link").style.display = 'none';
 }
@@ -389,9 +391,7 @@ function whyNot() {
 function submitReason() {
   //var reason = $("excuse").value.toLowerCase();
   var reason = "blah";
-  if (found(["Check your gTasks","Create tasks","Determine what","List everything","List all the things","Say out loud","Make a plan","Make an objective","No routine","Think of a goal","productivity","procrastination"],$("break").innerHTML))
-    reason = "no goals"
-  else if ($("break").innerHTML.startsWith("Read your journal entries."))
+  if ($("break").innerHTML.startsWith("Read your journal entries."))
     reason = "no read journal"
   /*if(found(["already","finish","done","did","next","complete"],reason) && !found(["many"],reason) || reason.endsWith("today"))
     location.reload();
@@ -406,9 +406,7 @@ function submitReason() {
     location.href = "cyoa/46.html";
   else if(reason.indexOf("nothing") >= 0)
     location.href = "multiple.html";*/
-  if(reason === "no goals")
-    location.href = "cyoa/64.html";
-  else if (reason === "no read journal")
+  if (reason === "no read journal")
     reload();
   else {
     if(Math.floor(Math.random() * 2) === 0)
