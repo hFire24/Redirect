@@ -234,7 +234,7 @@ function displayBreak(index,number) {
         message.href = "https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA";
         break;
       case "Put on some music to help you focus.":
-        message.href = "works247.html";
+        message.href = "https://youtu.be/xOA0T8ZjpFQ";
         break;
       case "Increase your spirituality.":
         message.href = "https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng";
