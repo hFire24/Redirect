@@ -70,7 +70,8 @@ function loadWebsite() {
   else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
     link = "../repent2.html";
   else if(messages[index] === "IMMEDIATELY LEAVE")
-    document.getElementById("lower-message").innerHTML = "Do not bring your phone with you.";
+    //document.getElementById("lower-message").innerHTML = "Do not bring your phone with you.";
+    location.href = "old.html";
   else
     link = "https://emergency.nofap.com/redirect?religious=true&cat=em";
 }
