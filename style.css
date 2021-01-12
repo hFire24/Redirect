@@ -85,6 +85,11 @@ h3, #ok {
   font-family: Verdana, sans-serif;
 }
 
+.relax h1 {
+  font-family: Verdana, sans-serif;
+  font-weight: normal;
+}
+
 ol, #goals-list, #link.small {
   font-size: 60px;
 }
