@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon-draw.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body onLoad="randomTheme(); artBlock(0)">
+    <h2 id='message' class='small'></h2>
+    <div id='link'></div>
+    <div id='hideable'>
+    </div>
+    <script>
+    function artBlock(number) {
+      switch(number) {
+        case 0:
+          $("message").innerHTML = "Do you have at least one idea on what to draw?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='artBlock(5)'>Yes</a> <a class='hfire-link' onclick='artBlock(2)'>No</a></div>";
+          break;
+        case 2:
+          $("message").innerHTML = "Don't wait for inspiration to come. In fact, here is some inspiration below!";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='artBlock(3)'>😃</a> <a class='hfire-link' onclick='artBlock(4)'>😐</a></div>";
+          break;
+        case 3:
+          $("message").innerHTML = "Draw Cirno.";
+          $("link").innerHTML = "Do it, even if it's garbage.";
+          break;
+        case 4:
+          $("message").innerHTML = "Draw an object you currently have.";
+          $("link").innerHTML = "Do it, even if it's garbage.";
+          break;
+        case 5:
+          $("message").innerHTML = "How many ideas do you have?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='artBlock(1)'>Just one.</a> <a class='hfire-link' onclick='artBlock(6)'>2-10</a> <a class='hfire-link' onclick='artBlock(7)'>A lot</a></div>";
+          break;
+        case 1:
+          $("message").innerHTML = "What is preventing you from drawing it?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='brave.html'>Laziness</a> <a class='hfire-link' href='brave.html'>Lack of Confidence</a> <a class='hfire-link' href='cyoa/48.html'>Being Overwhelmed</a></div>";
+          break;
+        case 6:
+          $("message").innerHTML = "Make a list of those ideas, and try to combine them.";
+          $("link").innerHTML = "Do it, even if it's garbage.";
+          break;
+        case 7:
+          $("message").innerHTML = "Pin-point the next thought that comes up, and draw it!";
+          $("link").innerHTML = "Do it, even if it's garbage.";
+          break;
+        default:
+          $("message").innerHTML = "Do it, even if it's garbage.";
+          $("link").innerHTML = "Do it, even if it's garbage.";
+      }
+    }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
