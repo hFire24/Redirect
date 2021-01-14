@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>It's time to end the day.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon.ico">
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+  </head>
+  <body>
+    <h1 id="message" style="display:none;"></h1>
+    <h2 id="question">Why did you decide to search for that?</h2>
+    <div id='link'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+      <div id='slider1' style='display:none;'>
+        <div class='slidercontainer space'>
+          <input type="range" min="0" max="10" value="0" class="slider" id="importance-slider"> <button onclick="submit()">Submit</button>
+        </div>
+        <div id="importance">It's totally useless information</div>
+      </div>
+      <div id='yesnomaybe' class='three-list' style='display:none;'>
+        <a class='hfire-link' onclick="ok()">Yes</a>
+        <a class='hfire-link' onclick="submit()">No</a>
+        <a class='hfire-link' onclick="submit()">Maybe</a>
+      </div>
+      <div id='urgent' style='display:none;'>
+        <span class="custom-select" style="width:200px;">
+          <select id='urgent-levels'>
+            <option id="u0" value="0">When convenient</option>
+            <option id="u1" value="1">As soon as possible</option>
+            <option id="u2" value="2">Immediately</option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
+    <script>
+    var count = 0;
+
+    var urlSearch = window.location.search;
+    console.log(urlSearch);
+    if (urlSearch !== "") {
+      var parameter = new URLSearchParams(urlSearch);
+      var website = parameter.get('website');
+    }
+
+    function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
+      console.log($("newBreak").value);
+      console.log(importanceValues[slider1.value]);
+      var inputText = '';
+      if($("newBreak").value === '' && count !== 3)
+      {
+        if(slider1.value !== "0" || count === 1)
+          inputText = importanceValues[slider1.value].toLowerCase();
+        else
+          inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+        console.log(":D");
+      }
+      else if(count === 3)
+        inputText = $("u" + $("urgent-levels").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
+      console.log(inputText);
+
+      if (found(['assignment','project','exam','college','class','related to',],inputText) || slider1.value > 6 && slider1.value < 10 || count === 3 && inputText === 'immediately') {
+        $("question").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
+        revealSearchTerm("black");
+      }
+      else if(slider1.value > 3 && slider1.value < 6 || count === 3 && inputText === 'when convenient')
+        ok();
+      else if(count === 3 && inputText === 'as soon as possible') {
+        $("question").innerHTML = "<a href='https://www.google.com/search?q=take+a+deep+breath' target='_blank'>Take deep breaths</a>, finish whatever you're doing, and do that thing next.";
+        document.body.removeChild($("link"));
+      }
+      else if(slider1.value === "6" || inputText.indexOf("research") >= 0) {
+        count = 3;
+        $("question").innerHTML = "How urgent is this? When should you do it?";
+        $("newBreak").style.display = "none";
+        $("submit").style.display = "none";
+        $("dropdown").style.display = "none";
+        $("slider1").style.display = "none";
+        $("urgent").style.display = "block";
+      }
+      else if(found(urges,inputText) || found(urges,location.href) || website === "deviantart") {
+        $("question").innerHTML = "Write down that search term in your red notepad.";
+        revealSearchTerm("red");
+      }
+      else if(found(['cirno','crino','cinro','ciron'],inputText)) {
+        $("question").innerHTML = "Don't be a <span style=font-weight:bold;>⑨</span>";
+        $("link").innerHTML = "Immediately close this tab.";
+      }
+      else if(inputText.indexOf("anime") >= 0) {
+        $("question").innerHTML = "Remember what you said about quitting anime?";
+        $("link").innerHTML = "Immediately close this tab.";
+      }
+      else if(slider1.value === "10") {
+        $("question").innerHTML = "<a id='relax' href='../relax.html?mood=stressed'>You need to calm down and relax.</a>";
+        $("link").innerHTML = "<a href='../stress.html'>I don't feel like it.</a>";
+      }
+      else if(count < 2 && !(inputText === "it's totally useless information")) {
+        console.log(count);
+        input.value = "";
+        if(found(required,inputText) || count !== 1 && (found(knowledge,inputText) || inputText === '' || inputText.indexOf('save') >= 0)) {
+          count = 1;
+          $("question").innerHTML = "Just how important is that search term?";
+          $("custom-reason").value = -1;
+          $("dropdown").style.display = "none";
+          input.style.display = "none";
+          $("submit").style.display = "none";
+          $("slider1").style.display = "block";
+        }
+        else {
+          count = 2;
+          $("question").innerHTML = "Would you like to save that search term for later?";
+          $("custom-reason").value = -1;
+          input.style.display = "none";
+          $("submit").style.display = "none";
+          $("dropdown").style.display = "none";
+          $("slider1").style.display = "none";
+          $("yesnomaybe").style.display = "grid";
+        }
+      }
+      else {
+        var messages = ['You really are bored.',
+        'Stop typing in distracting search terms!',
+        'Stop escaping from your problems!',
+        'Forget that search term!',
+        'You shouldn\'t search that term.',
+        'Don\'t you have anything better to do with your time?',
+        'Don\'t search for time-wasting things!',
+        'Your mind must be wandering off, isn\'t it?',
+        'You need to stop procrastinating.',
+        'You just wanted to sidetrack. Not good.',
+        'Nothing good will come out of searching that term.',
+        'You are procrastinating and not getting things done.',
+        'You may seem bored or lazy, but you are fearful.',
+        'Don\'t get dictated by your urges.',
+        'You have more important things to do.',
+        'Now is not the time to be doing that.',
+        'Please stop being lazy, and stop wasting your time.',
+        'You really don\'t want to search that term anyway.',
+        'Don\'t have a lazy, unproductive day.',
+        'It seems like you feel stuck.',
+        'You need motivation.',
+        'Why not use that search energy to make some progress on a task?',
+        'If you\'re bored, just try to do something productive.',
+        'You want to go there, but you don\'t need to go there.',
+        'Don\'t be addicted to the internet.',
+        'Fun things are good, but they are distractions.'];
+        if(website === "youtube2")
+          messages.push('Don\'t waste time getting distracted on YouTube.',
+          'You want to spend your life watching useless YouTube videos? 🤣');
+        else {
+          messages.push('Don\'t waste time getting distracted on Google.',
+          'You want to spend your life Googling useless stuff? 🤣');
+        }
+        document.getElementById("question").innerHTML = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById("link").innerHTML = "Immediately close this tab.";
+      }
+    }
+
+    var urges = ['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful',
+    'cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl', 'attractive', 'regress', 'shrink'];
+
+    var reasons = ["Because I'm lazy",
+    "Because I'm bored", "Because I'm tired", "Because I'm really bored", "I have nothing to do",
+    "For no reason",
+    "Because I feel like it",
+    "Because I wanted to",
+    "Because I need to",
+    "Because I feel curious",
+    "I'm struggling in life",
+    "I don't know",
+    "Because I can",
+    "To learn new things",
+    "To listen to music",
+    "For research",
+    "Because I feel stressed",
+    "Because I feel busy",
+    "Because I feel hungry",
+    "I feel like playing games",
+    "I just relapsed",
+    "Because I can't focus",
+    "Because I feel overwhelmed",
+    "Because I want to relax",
+    "To pass my classes",
+    "For a project",
+    "For a college assignment",
+    "For a college exam",
+    "Because it felt funny",
+    "I got something I need to do",
+    "I'm ready to do something else"];
+    for(var i in reasons) {
+      var option = document.createElement('option');
+      option.id = i;
+      option.value = i;
+      option.innerHTML = reasons[i];
+      document.getElementById("custom-reason").appendChild(option);
+    }
+
+    var importanceValues = ['It\'s totally useless information',
+    'It\'s probably useless information',
+    'It would be nice to know',
+    'It could help me with trivia quizzes',
+    'It could make me happier',
+    'It could come in handy',
+    'It could minimize some risks',
+    'It\'s related to what I\'m doing',
+    'It will help with college classes',
+    'It could save my life',
+    'It upsets me so much'];
+    var importance = document.getElementById("importance");
+    var slider1 = document.getElementById("importance-slider");
+    slider1.max = importanceValues.length - 1;
+    slider1.oninput = function () {
+      importance.innerHTML = importanceValues[slider1.value];
+    }
+
+    function ok() {
+      $("question").innerHTML = "OK! Add that to your blue or red notepad to search for later!";
+      revealSearchTerm("blue");
+    }
+
+    function revealSearchTerm(color) {
+      var searchTerm;
+      if(website === "youtube")
+        searchTerm = parameter.get('search_query');
+      else {
+        searchTerm = parameter.get('q');
+      }
+      $("link").innerHTML = "You searched for \"" + searchTerm + "\"";
+      if(color === "red")
+        $("link").innerHTML = $("link").innerHTML + ". Also write down why you wanted to search for it.";
+      else if(color === "black")
+        $("link").innerHTML = $("link").innerHTML + "<br><a href='https://www.ecosia.org/search?q=" + searchTerm + "'>Search for \"" + searchTerm + "\" on Ecosia</a>";
+    }
+    </script>
+    <script src="../interactivefiction.js"></script>
+  </body>
+</html>

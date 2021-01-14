@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>It's time to end the day.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon.ico">
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+  </head>
+  <body>
+    <h2 id="thing-to-finish">Finish whatever you're doing.</h2>
+    <a class="medium hfire-link" href="index.html">Done</a>
+  </body>
+  <script>
+    var urlSearch = window.location.search;
+    console.log(urlSearch);
+    var parameter = new URLSearchParams(urlSearch);
+    var mode = parameter.get('mode');
+    switch(mode) {
+      case "youtube":
+        document.getElementById("thing-to-finish").innerHTML = "Finish that one video. You can watch the other videos tomorrow.";
+        break;
+      case "task":
+        document.getElementById("thing-to-finish").innerHTML = "Complete all the tasks that need to be done today. Move less urgent tasks to tomorrow.";
+        break;
+      case "goal":
+        document.getElementById("thing-to-finish").innerHTML = "Whatever goal you're working on, finish it. You don't have to finish the other goals tonight.";
+        break;
+      case "plan":
+        document.getElementById("thing-to-finish").innerHTML = "Remember: Put less stimulating tasks up front. Put more stimulating tasks in the back.";
+        break;
+      case "journal":
+        document.getElementById("thing-to-finish").innerHTML = "Write in your jounal about your day(s).";
+        break;
+      case "hygiene":
+        document.getElementById("thing-to-finish").innerHTML = "Remember to brush your teeth and change into your pajamas.";
+        break;
+    }
+  </script>
+</html>
