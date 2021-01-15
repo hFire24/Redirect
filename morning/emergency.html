@@ -82,12 +82,14 @@
         }
       }
 
-      function fiveAM(number) {
+      function fiveAM() {
         document.getElementById("break").innerHTML = "There's no need to go back to sleep at 5AM. Use that time to your advantage.";
         let link = "../relax2.html?mood=morning";
-        if (number === 1)
+        if(parseInt(slider1.value) < 2)
           link = "goals.html";
-        document.getElementById("slider").innerHTML = "<a id='link' href=" + link + ">Click here to continue.</a>";
+        document.getElementById("times").innerHTML = "<a id='link' href=" + link + ">Click here to continue.</a>";
+        document.getElementById("times").classList.remove("three-list");
+        document.getElementById("uncontrollable").style.display = "none";
       }
 
       function takeShortcut(text) {
@@ -158,9 +160,7 @@
         document.getElementById("uncontrollable2").style.display = "none";
         document.getElementById("colors").style.display = "block";
         let functions = [cShowers];
-        if (!document.getElementById(urgeSlider))
-          functions.push(mButton,works247);
-        else if (urgeSlider.value === "2")
+        if (urgeSlider.value === "2")
           functions.push(mButton,works247);
         else
           functions.push(eButton,godButton);
@@ -183,7 +183,7 @@
         let array = [];
         for (let i = 0; i < 30; i++) {
           if (i < 1)
-            array.push("whoa/old.html?id=24");
+            array.push("../whoa/old.html?id=24");
           else
             array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
         }
@@ -196,11 +196,7 @@
       }
 
       function works247() {
-        window.open("https://youtu.be/xOA0T8ZjpFQ");
-        window.open("../cyoa/54.html");
-        let disablePopUp = document.createElement("div");
-        disablePopUp.innerHTML = "Make sure your pop-up blocker is disabled.";
-        document.body.appendChild(disablePopUp);
+        window.open("works247.html");
       }
 
       function godButton() {

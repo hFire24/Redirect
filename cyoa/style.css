@@ -301,9 +301,10 @@ td {
   h2, #break, #standup, #changeclothes, #question, #quote {
     font-size: 60px;
   }
-  h3, #ok, #link, #theme, .medium {
+  h3, body, #ok, #link, #theme, .medium {
     font-size: 45px;
   }
+}
 
 @media only screen and (max-width: 851px) {
   h1, #message, #break.big {

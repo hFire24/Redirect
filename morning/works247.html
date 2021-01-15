@@ -10,8 +10,8 @@
     <link rel="apple-touch-icon" href="apple-touch-icon">
   </head>
   <body class="morning">
-    <div id='break' class='space'>Take a cold shower, or listen to Dragonforce.</div>
-    <span id='stress' class='medium'>DON'T ACT ON YOUR URGES.</span>
+    <div id='break' class='space'>Click on <a href="https://youtu.be/xOA0T8ZjpFQ" target="_blank">this</a> first, then click <a href="../cyoa/54.html">here</a>.</div>
+    <div class='medium two-list'></div>
   </body>
   <script>
     const query = window.location.search;
@@ -19,7 +19,7 @@
     let urgeLevel = parameter.get('level');
     if (urgeLevel !== null) {
       if (urgeLevel === "3")
-        document.getElementById("break").innerHTML = "Take a cold shower, or listen to Dragonforce.";
+        document.getElementById("break").innerHTML = "Take a cold shower, or listen to Dragonforce";
       else
         document.getElementById("break").innerHTML = "Take a cold shower, or <a href='../relax2.html?mood=morning'>listen to this.</a>";
     }
