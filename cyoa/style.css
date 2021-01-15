@@ -346,7 +346,10 @@ td {
   h2, #break, #standup, #changeclothes, #question, #quote {
     font-size: 30px;
   }
-  h3, body, ol, td, #ok, #link, #theme, .medium, .small {
+  h3, body, #ok, .medium, #link, #theme {
+    font-size: 25px;
+  }
+  ol, td, .small {
     font-size: 20px;
   }
   .space2 {
