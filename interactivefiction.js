@@ -16,7 +16,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Your health matters. If you feel ill, it's best to rest, drink plenty of fluids, and give your eyes a break.";
     $("link").innerHTML = "Go to <a href='https://app.mysoundwise.com/mysoundcasts'>Soundwise</a>, followed by \"Improve Your Physical Health\", and listen to \"" + generateHealthLink() + "\"";
   }
-  else if(inputText.indexOf("struggl") >= 0)
+  else if(found(["struggl", "resist"],inputText))
     location.href = "struggle.html";
   else if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("do") >= 0 && (found(required,inputText) || inputText.indexOf("specific") >= 0))
     location.href = "custom.html";
