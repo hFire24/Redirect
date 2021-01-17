@@ -452,7 +452,7 @@ var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some ti
 var love = ['love','adore','enjoy','favorite','best'];
 var knowledge = ['learn','curious','to know','stud','educat','smart','knowledg'];
 var creativity = ['creat','draw','illustrat'];
-var cannot = ['can\'t','cant','cannot','can not','wont','won\'t','will not'];
+var cannot = ['can\'t','cant','can’t','cannot','can not','wont','won\'t','won’t','will not'];
 var boredom = ['bored', 'feel like it', 'uhh', 'umm', 'hmm', 'meme', 'lack of interest'];
 
 function generateHealthLink() {
