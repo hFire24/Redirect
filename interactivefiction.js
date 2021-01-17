@@ -131,7 +131,7 @@ function finalTest(inputText,site)
     location.href = "cirno.html?q=" + inputText;
   else if(found(["lazy","lazi"],inputText) && (site !== "google" || site !== "youtube2")) {
     $("question").innerHTML = "Are you lazy, or are you just exhausted?";
-    $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
+    $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='morning/checklist.html'>Exhausted</a></div>";
   }
   else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
     $("question").innerHTML = "What thoughts or emotions made you think about that kind of stuff?";
