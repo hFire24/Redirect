@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Good morning!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon-star.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class='morning'>
+    <h1>First, slowly drink a glass of water. Next, fill out this form.<br></h1>
+    <div id="questionnaire">
+      <div class='two-list'>
+        <div class='space'>Is the shower occupied?<br>
+          <input type="checkbox" id="shower" name="shower" onclick="setCheck('shower')">Yes
+        </div>
+        <div class='space'>Plan on doing laundry?<br>
+          <input type="checkbox" id="laundry" name="laundry" onclick="setCheck('laundry')">Yes
+        </div>
+      </div>
+    </div>
+    <h3 id='submit' onclick='submit()'><strong>Submit</strong></h3>
+    </ol>
+    <script>
+
+      //Object for saving options
+      const myObject = {
+        shower:false,
+        laundry:false
+      };
+
+      //Executes every time a radio button is pressed.
+      function setCheck(attribute) {
+        console.log(attribute + " " + myObject[attribute]);
+        //Sets the attribute of the object to the opposite number
+        myObject[attribute] = document.getElementById(attribute).checked;
+        console.log(attribute + " " + myObject[attribute]);
+      }
+
+      function submit() {
+        var number = "";
+        if(myObject["shower"])
+          number = number + "1";
+        else
+          number = number + "2";
+        if(myObject["laundry"])
+          number = number + "2";
+        else
+          number = number + "1";
+        location.href = "sunday-list.html?number=" + number;
+      }
+    </script>
+  </body>
+</html>

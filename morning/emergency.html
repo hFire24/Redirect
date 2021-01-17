@@ -69,14 +69,20 @@
         }
       }
 
+      const d = new Date();
+
       function submit() {
         document.getElementById("slider").style.display = "none";
         if (parseInt(slider1.value) < 3) {
-          document.getElementById("break").innerHTML = "What time is it?";
-          document.getElementById("uncontrollable").style.display = "none";
-          document.getElementById("times").style.display = "grid";
-          if (parseInt(slider1.value) < 2)
-            document.getElementById("viAM").href = 'goals.html';
+          if (d.getDay() === 0)
+            location.href = "sunday.html";
+          else {
+            document.getElementById("break").innerHTML = "What time is it?";
+            document.getElementById("uncontrollable").style.display = "none";
+            document.getElementById("times").style.display = "grid";
+            if (parseInt(slider1.value) < 2)
+              document.getElementById("viAM").href = 'goals.html';
+          }
         }
       }
 

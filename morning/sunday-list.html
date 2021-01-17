@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Good morning!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon-star.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class='morning'>
+    <h1>Your morning routine for Sunday</h1>
+    <ol id='parent'>
+    </ol>
+    <script>
+      const morningHabits = ["Take a shower",
+      "Go to the downstairs bathroom",
+      "Wash face, including eyes and nose",
+      "Brush teeth",
+      "Shave (if your have facial hair)",
+      "Comb your hair",
+      "Apply deodorant",
+      "Change your clothes for church",
+      "Today is Fast Sunday. Listen to <a href='https://youtu.be/EQpmPlOIhVU' target='_blank'>this General Conference talk</a>",
+      "If you have time, <a href='../gcprogress.html' target='_blank'>listen to another General Conference talk</a>",
+      "Eat breakfast (Froot Loops/bacon & eggs)<ul><li>If you plan on making bacon and eggs, <span id='stress' style='color:green;'>DO</span> make it for everyone else in the house.</li></ul>",
+      "If you have time, <a href='../gcprogress.html' target='_blank'>listen to a General Conference talk</a>",
+      "Attend your virtual church meetings",
+      "Do laundry<ul><li>Skip this step if the washer is occupied</li></ul>",
+      "Take a shower if you didn't do it yet<ul><li>If you still can't do it, then forget about it</li></ul>",
+      "Determine what things you need to get done today",
+      "Optional: Put on <a href='https://youtu.be/xOA0T8ZjpFQ' target='_blank'>some music</a> to help you focus",
+      "It's time to have an awesome day! Achieve your goals!"];
+
+      const urlSearch = window.location.search;
+      console.log(urlSearch);
+      const parameter = new URLSearchParams(urlSearch);
+      const nArray = parameter.get('number');
+
+      var mh = [];
+
+      if(nArray[0] === "2")
+        mh.push(morningHabits[0]);
+      else
+        mh.push(morningHabits[1]);
+      mh.push(morningHabits[2]);
+      mh.push(morningHabits[3]);
+      if(nArray[0] === "2")
+        mh.push(morningHabits[4]);
+      mh.push(morningHabits[5], morningHabits[6], morningHabits[7]);
+      if(fastSunday())
+        mh.push(morningHabits[8], morningHabits[9]);
+      else {
+        mh.push(morningHabits[10], morningHabits[11]);
+      }
+      mh.push(morningHabits[12]);
+      if(nArray[1] === "2")
+        mh.push(morningHabits[13]);
+      if(nArray[0] === "1")
+        mh.push(morningHabits[14]);
+      mh.push(morningHabits[15], morningHabits[16], morningHabits[17]);
+
+      const parent = document.getElementById("parent");
+
+      for(var i = 0; i < mh.length; i++)
+      {
+        let aElement = document.createElement("li");
+        aElement.id = "a" + i;
+        aElement.innerHTML = mh[i];
+        parent.appendChild(aElement);
+        //Creates a random background color for the element
+        let x = Math.floor(Math.random() * 64) + 192;
+        let y = Math.floor(Math.random() * 64) + 192;
+        let z = Math.floor(Math.random() * 256);
+        let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
+        console.log(mh[i]);
+      }
+
+      function fastSunday() {
+        let d = new Date();
+        if(d.getDay() === 0 && d.getHours() >= 1 && d.getHours() < 17 && (d.getDate() <= 7 && !generalConferenceMonth() || d.getDate() > 7 && d.getDate() <= 14 && generalConferenceMonth()))
+          return true;
+        else {
+          return false;
+        }
+      }
+
+      function generalConferenceMonth() {
+        if (d.getMonth() === 3 || d.getMonth() === 9)
+          return true;
+        else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
