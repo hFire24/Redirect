@@ -14,7 +14,7 @@ function loadWebsite(number) {
   if (number < 7 || number > 12)
     randomTheme(number);
   //If the number is 1, then the homework iframe may pop up.
-  /*if(number === 1) {
+  if(number === 1) {
     var homework = Math.floor(Math.random() * 3);
     console.log(homework);
     if(homework === 0)
@@ -27,7 +27,7 @@ function loadWebsite(number) {
       $("theme").classList.add("space");
       $("hideable").appendChild(homeworkFrame);
     }
-  }*/
+  }
   if(number >= 7 && number <= 12)
     messageComplete = false;
 }
@@ -94,11 +94,11 @@ function addBigMessages() {
   'Why don\'t you <a href="https://youtu.be/r-dMhpgj0PA">think about things</a> you want and need to do?',
   'You may want to form a routine.',
     //Homework
-  /*'How about you do your homework?',
+  'How about you do your homework?',
   'Why don\'t you get assignments done?',
   'I get that homework can be a struggle.<br>Try to change your mindset.',
   'Why don\'t you check Brightspace?',
-  'Why not get an assignment done early? You\'ll get a head start!',*/
+  'Why not get an assignment done early? You\'ll get a head start!',
     //Music
   'Sometimes just browsing your music library could be fun.',
   '<a href="https://youtu.be/xOA0T8ZjpFQ">Why don\'t you put on some music to help you focus?</a>',

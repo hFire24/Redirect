@@ -23,30 +23,30 @@
       <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
     </div>
     <script>
-      var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
+      var aHabits = [{text:"Tackle your to-do list",link:"index.html",category:"active"},
         //Homework Habits
-      //{text:"Do your CNIT480 homework",link:"homework.html#CNIT480",category:"homework"},
-      //{text:"Learn stuff for CNIT390",link:"homework.html#CNIT390",category:"homework"},
-      //{text:"Do your ECET224 homework",link:"homework.html#ECET224",category:"homework"},
+      {text:"Do your CNIT480 homework",link:"homework.html#CNIT480",category:"homework"},
+      {text:"Learn stuff for CNIT390",link:"homework.html#CNIT390",category:"homework"},
+      {text:"Do your ECET224 homework",link:"homework.html#ECET224",category:"homework"},
       {text:"Practice Piano <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
         //aHabits
-      //{text:"Deal with Purdue E-mails",link:"pass",category:"active"},
+      {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
       {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"golden"}, //Golden habits are the most important
       {text:"*Draw anime <span class='time'>(1+ times)</span>",link:"art.html",category:"golden"},
       //{text:"Manage money, write in journal",link:"pass",category:"active"},
         //bHabits
-      {text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
+      //{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
       //{text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
       {text:"Relax/meditate <span class='time'>(2 sessions)</span>",link:"relax.html",category:"passive"},
       //{text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
       //{text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
-      {text:"Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/37XTd4g",category:"active"},
-      {text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
-      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
+      //{text:"Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/37XTd4g",category:"active"},
+      //{text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
+      //{text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
       {text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"jprogress.html",category:"active"},
         //cHabits
-      {text:"Analyze songs <span class='time'>(2 songs)</span>",link:"pass",category:"active"}
+      //{text:"Analyze songs <span class='time'>(2 songs)</span>",link:"pass",category:"active"}
       //{text:"Play 100% Orange Juice <span class='time'>(2-3 games)</span>",link:"pass",category:"active"}
       //{text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://www.websudoku.com/",category:"active"},
       //{text:"Play Linkdoku <span class='time'>(3 puzzles)</span>",link:"pass",category:"active"},
@@ -57,15 +57,9 @@
       //{text:"Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>",link:"pass",category:"active"}
       //{text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}];
       ];
-      shuffle(aHabits);
-      /*do {
+      do {
         shuffle(aHabits);
-      } while (aHabits[4].text === "Manage money, write in journal" ||
-      aHabits[3].text !== "Practice Piano <span class='time'>(15 minutes)</span>" ||
-      aHabits[2].text !== "Deal with Purdue E-mails" ||
-      aHabits[0].text !== "Play Elevate <span class='time'>(5 minutes)</span>" ||
-      aHabits[1].text !== "Play Duolingo <span class='time'>(1 lesson)</span>"/*|| aHabits[aHabits.length - 1].text !== "Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>");
-      while (aHabits[0].text !== "Digitize fifth journal <span class='time'>(1 page)</span>");*/
+      } while (aHabits[0].text !== "Tackle your to-do list");
 
       //cHabits = cHabits.slice(0,5);
 
