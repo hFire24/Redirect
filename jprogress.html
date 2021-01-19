@@ -11,7 +11,7 @@
   <body class="relax">
     <h1>Your Journal Digitizing Progress</h1>
     <div class='space'>It's been <strong id="behind"></strong> days since your last digitized journal entry.</div>
-    <div class='space'>Your digitized journal entries span <strong id="digitized"></strong> days. That means about <strong id="percentage"></strong> of your journal entries are digitizied.</div>
+    <div class='space'>Your digitized journal entries span <strong id="digitized"></strong> days with no more than <strong id="actual"></strong> days written about. That means about <strong id="percentage"></strong> of your journal entries are digitizied.</div>
     <div><a href="https://youtu.be/voN_5upoW1U">Click here</a> for journal digitzing music.</div>
     <script src='script.js'></script>
     <script>
@@ -24,8 +24,10 @@
     var daysBehind = Math.floor(d.getTime()/(1000*60*60*24) - progress.getTime()/(1000*60*60*24));
     $("digitized").innerHTML = daysDigitized;
     $("behind").innerHTML = daysBehind;
-    var nonJournalDays = 236;
-    var percent = Math.floor((daysDigitized - nonJournalDays) / (daysDigitized - nonJournalDays + daysBehind) * 100);
+    var nonJournalDays = 263;
+    var actualDaysDigitized = daysDigitized - nonJournalDays;
+    $("actual").innerHTML = actualDaysDigitized
+    var percent = Math.floor((actualDaysDigitized) / (actualDaysDigitized + daysBehind) * 100);
     $("percentage").innerHTML = percent + "%";
     </script>
   </body>
