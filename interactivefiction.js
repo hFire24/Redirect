@@ -283,7 +283,7 @@ function finalTest(inputText,site)
   }
   else if(found(love,inputText) && site === "youtube")
     location.href = 'cyoa/38.html';
-  else if(inputText.indexOf("nothing") >= 0 && inputText.indexOf("want") >= 0)
+  else if(inputText.indexOf("nothing") >= 0 && inputText.indexOf("want") >= 0 && !found(["but", "other than", "except"],inputText))
     location.href = 'cyoa/13.html';
   else if(inputText.indexOf("habit") >= 0)
     location.href = "atomic-habits.html";
@@ -321,7 +321,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Don't do nothing. <a href='artstage.html'>Foster your creativity!</a>";
     $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
-  else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
+  else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && !found(["but", "other than", "except"],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
     $("question").innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
     $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='cyoa/13.html'>Right.</a><a class='hfire-link' href='cyoa/54.html'>Wrong.</a></div>";
   }
