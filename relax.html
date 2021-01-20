@@ -16,7 +16,7 @@
     </div>
     <div id='hideable' class='relax-list' style='margin-top:1em;'>
     </div>
-    <div><a id='more' href='relax2.html' class='hfire-link'><strong style='color:darkred;'>I'm Lying Down</strong></a></div>
+    <div><a id='more' href='relax2.html' class='hfire-link'><strong style='color:darkred;'>More</strong></a></div>
     <script src='script.js'></script>
     <script>
       var angerTrack = 2;
@@ -75,9 +75,8 @@
             message2.innerHTML = "You have the potential to become successful. You are on track " + confidentTrack + ".";
             break;
           case "tired":
-            while(!found(["refresh","re-energize"],action.innerHTML)) {
+            while(!found(["refresh","re-energize"],action.innerHTML))
               randomMeditation();
-            }
             break;
         }
       }

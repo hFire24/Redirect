@@ -288,7 +288,7 @@ function finalTest(inputText,site)
   else if(inputText.indexOf("habit") >= 0)
     location.href = "atomic-habits.html";
   else if(found(["embar", "embbar", "emmb", "awkward", "cringe", "weird", "creep", "neckbeard", "degenerate", "loli"],inputText) && expressDesireForCuteness) {
-    $("question").innerHTML = "Who cares how you're feeling? Use that energy to draw something you love!";
+    $("question").innerHTML = "Who cares how you're feeling? Get up and use that energy to draw something you love!";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
   else if((found(["hard", "difficult", "challenging", "not skilled", "not proficient", "beginnner", "novice", "amateur", "not good"],inputText) || found(cannot,inputText)) && inputText.indexOf("now") < 0 && (expressDesireForCuteness || !found(cannot,inputText))) {
@@ -306,7 +306,7 @@ function finalTest(inputText,site)
       $("link").innerHTML = "<a href='cyoa/20.html'>Click here to continue.</a>";
   }
   else if(found(['bad', 'don\'t know if', 'don\'t know how', 'doubt', 'suck', 'stink', 'poor', 'garbage', 'trash', 'not sure if i can', 'not sure how'],inputText) && expressDesireForCuteness) {
-    $("question").innerHTML = "Draw, even if it's garbage.";
+    $("question").innerHTML = "Get up and draw, even if it's garbage.";
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
   else if(found(creativity,inputText) || inputText.indexOf('consum') >= 0) {
@@ -318,12 +318,12 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='art.html'>Click here to continue.</a>";
   }
   else if ((found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText)) && expressDesireForCuteness) {
-    $("question").innerHTML = "Don't do nothing. <a href='artstage.html'>Foster your creativity!</a>";
+    $("question").innerHTML = "Don't do nothing. Get up and <a href='artstage.html'>foster your creativity!</a>";
     $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
   else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && !found(["but", "other than", "except"],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
     $("question").innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
-    $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='cyoa/13.html'>Right.</a><a class='hfire-link' href='cyoa/54.html'>Wrong.</a></div>";
+    $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='cyoa/13.html'>Right.</a><a class='hfire-link' href='cyoa/54.html'>Wrong.</a></div><a class='hfire-link' onclick=finalTest('bored','a')>I'm just bored. That's all.</a>";
   }
   else if(found(boredom,inputText) || found(['don\'t know', 'dunno', 'no idea', 'no reason', 'idk'], inputText)) {
     var messages = ['You really are bored.',
@@ -386,7 +386,7 @@ function finalTest(inputText,site)
       document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(expressDesireForCuteness) {
-    $("question").innerHTML = "<a href='artstage.html'>Get your sketch pad (or anything you can doodle on).</a>";
+    $("question").innerHTML = "Stand up and stretch if you can.<br><a href='artstage.html'>Get your sketch pad (or anything you can doodle on).</a>";
     $("link").innerHTML = "<div class='two-list'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div>";
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {

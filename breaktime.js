@@ -66,7 +66,8 @@ function loadStandBreak() {
     //Personal hygiene
   'Change to your pajamas. No socks.',
     //Miscellaneous Part 2
-  'Digitize at least one paragraph from your journal.'];
+  'Digitize at least one paragraph from your journal.',
+  'Read just one page of <u>Maphead</u>.'];
 }
 
 function loadBigBreak() {
@@ -79,14 +80,14 @@ function loadBigBreak() {
   'Make a plan for today and tomorrow.',
   'Make an objective for today.',
     //Homework
-  /*'Do homework.<br>You may need to stand up and stretch and change clothes.',
+  'Do homework.<br>You may need to stand up and stretch and change clothes.',
   'Get assignments done.<br>You may need to stand up and stretch and change clothes.',
   'If you\'re struggling with homework, do a different assignment.',
   'Check Brightspace for assignments, then do one of them.',
   //'Make progress on a big project.',
   'Finish a piece of homework, even if the deadline is far.',
   'Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',
-  'Don\'t suck at group projects.',*/
+  'Don\'t suck at group projects.',
     //Games
   'Drive around how you want in Need for Speed: Hot Pursuit.',
   'Play Sudoku (Medium).',
@@ -102,10 +103,9 @@ function loadBigBreak() {
     //Goals
   //'Learn how to make chiptune music.',
   //'Learn how to use FL Studio.',
-  //'Make some friends in real life. Institute is the best starting point.',
+  'Make some friends in real life. Institute is the best starting point.',
   'Go to Skillshare, and learn programming.',
   'Learn Full Stack so that you can host a website for free that supports FileZilla.',
-  'Draw anime.',
   'Listen to a General Conference talk.',
   //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
   //'Try to code Card Battle Stadium in C#.',
@@ -122,9 +122,12 @@ function loadBigBreak() {
     //Miscellaneous Part 2
   'Declutter your room.',
   'Digitize at least two days of events from your journal.',
-  'Learn how to use Pygame by reading that book.',
   'Play some Stepmania.',
-  'Practice your piano. Using SimplyPiano is recommended.'];
+  'Practice your piano. Using SimplyPiano is recommended.',
+  'Learn how to use Pygame by reading that book.',
+  'Read the book <u>Maphead</u>.',
+  'Draw anime with a sketchpad.',
+  'Draw anime with a mouse and paint.net.'];
 }
 
 function loadMobileBreak() {
@@ -144,8 +147,8 @@ function loadMobileBreak() {
     //Music
   'Put on some music to help you focus.',
     //Homework
-  /*'Do your homework, but don\'t get overwhelmed by it.',
-  'Check your homework page and see if you can do a passive assignment.',*/
+  'Do your homework, but don\'t get overwhelmed by it.',
+  'Check your homework page and see if you can do a passive assignment.',
     //Games
   'Solve a Minesweeper board on Expert.',
   'Play one of these short games.',
@@ -198,6 +201,7 @@ function displayBreak(index,number) {
     do
       index = Math.floor(Math.random() * messages.length);
     while (index - (messages.length - standup.length) === standup.indexOf("Change to your pajamas. No socks.") && (d.getHours() > 3 && d.getHours() < 20 || d.getMonth() >= 4 && d.getMonth() < 9));
+  index = 34;
   var message = $("break");
   var standupMessage = $("standup");
   var changeMessage = $("changeclothes");
@@ -310,12 +314,6 @@ function displayBreak(index,number) {
       default:
         message.removeAttribute("href");
     }
-  if (standIndex === standup.indexOf("Play some Stepmania."))
-    standupMessage.href = "stepmania.html";
-  else if (standIndex === standup.indexOf("Do planks for one minute."))
-    standupMessage.href = "https://www.youtube.com/watch?v=z6KKo85V9Ew";
-  else
-    standupMessage.removeAttribute("href");
   if(message.innerHTML === 'Stand up and stretch if you can.') {
     console.log("Standup " + standIndex);
     message.addEventListener("click",function() {$("standup").style.display = 'block'; $("link").style.display = 'block';});
@@ -325,6 +323,14 @@ function displayBreak(index,number) {
       changeMessage.innerHTML = changeclothes[changeIndex];
       standupMessage.addEventListener("click",function() {$("changeclothes").style.display = 'block';});
     }
+    if (standupMessage.innerHTML === "Play some Stepmania.")
+      standupMessage.href = "stepmania.html";
+    else if (standupMessage.innerHTML === "Do planks for one minute.")
+      standupMessage.href = "https://www.youtube.com/watch?v=z6KKo85V9Ew";
+    else if (standupMessage.innerHTML.startsWith("Draw anime"))
+      standupMessage.href = "art.html";
+    else
+      standupMessage.removeAttribute("href");
   }
   if(messages.indexOf("Listen to this.") === -1 && number !== 6 && index >= messages.indexOf("Do homework.<br>You may need to stand up and stretch and change clothes.") && index <= messages.indexOf("Finish a piece of homework, even if the deadline is far.") + 1)
     message.addEventListener("click",function() {var exists = $("vader");
