@@ -10,12 +10,25 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body class="theme5">
-    <h2><a id="meditation-link" href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Listen to <span id='meditation'></span>. It is long, but worth it.</a></h2>
+    <h2><a id="meditation-link" href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Listen to <span id='meditation'></span>.</a> <span id='situp'>You don't have to sit up for this one.</span></h2>
     <a class='hfire-link' href="15.html">Continue</a>
   </body>
   <script>
-    var meditationTitles = ['Relax Lite under Learn the Art of Relaxation',
-    'Law of Attraction under Creating Abundance',
+    var meditationTitles = ['Body Scan Relaxation under Quick Solutions',
+    'Breathing Break under Quick Solutions',
+    'Breathing Relaxation under Quick Solutions',
+    'Breathing Relaxation 1 under Quick Solutions',
+    'Breathing Relaxation 2 under Quick Solutions',
+    'Ear Massage Relaxation under Quick Solutions',
+    'Eye Relaxation under Quick Solutions',
+    'Massage Break under Quick Solutions',
+    'Memory Break under Quick Solutions',
+    'Quick Confidence under Quick Solutions',
+    'Release Break under Quick Solutions',
+    'Smiling Relaxation under Quick Solutions',
+    'Stretch Relaxation under Quick Solutions',
+    'How to Relax 1 under Learn to Relax'
+    /*'Law of Attraction under Creating Abundance',
     'Positivity under Increase Positivity',
     'Astral Flying under Meditate',
     'Believe in Yourself under Improve Your Mental Health',
@@ -27,14 +40,15 @@
     'Be Happy under Improve Mental Health',
     'Expansion Meditation under Meditate',
     'Stress Free under Improve Your Mental Health',
-    'Mindful Breathing under Practice Mindfulness',
-    'Build Creativity under Increase Positivity'];
+    'Build Creativity under Increase Positivity'*/];
     var d = new Date();
     if(d.getHours() < 11)
       meditationTitles.push('Morning Boost under Make the Most of Your Day'); //Morning Boost
+    else if(d.getHours() > 16 && d.getHours() < 20)
+      meditationTitles.push('Evening Boost under Make the Most of Your Day'); //Evening Boost
     var index = Math.floor(Math.random() * meditationTitles.length);
     document.getElementById("meditation").innerHTML = meditationTitles[index];
-    if(meditationTitles[index] === "Mindful Awareness in Insight Timer")
-      document.getElementById("meditation-link").href = "https://insighttimer.com/andrewjohnson/guided-meditations/mindful-awareness-meditation-2";
+    if(meditationTitles[index] === "Stretch Relaxation under Quick Solutions")
+      document.getElementById("situp").innerHTML = "It will get you to stand up.";
   </script>
 </html>
