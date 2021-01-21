@@ -31,12 +31,13 @@
     </div>
     <ol id='early-list' style="display:none;">
       <li>Slowly drink a glass of water</li>
+      <li>Charge your face mask</li>
       <li>Change your clothes for college</li>
       <li>Pack up your stuff</li>
-      <li>Don't forget your stuff on your Purdue Packing List</li>
+      <li>Don't forget your stuff on your packing List</li>
       <li>Get in your car</li>
       <li>Go to McDonald's (if you have time)</li>
-      <li>Park near the Physics building</li>
+      <li>Park in the nearby parking garage</li>
     </ol>
     <div id='uncontrollable'>
       <input id='urge' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("deviantart")'>Search (DeviantArt)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("ecosia")'>Search (Ecosia)</button>
@@ -85,12 +86,11 @@
         if (parseInt(slider1.value) < 3) {
           if (d.getDay() === 0)
             location.href = "sunday.html";
-          else if (d.getDay() === 2 || d.getDay() === 4) {
+          else if (d.getDay() === 3 || d.getDay() === 5) {
             document.getElementById("break").innerHTML = "You do realize that you have a 7:30AM class this morning.";
             document.getElementById("uncontrollable").style.display = "none";
             document.getElementById("early-list").style.display = "block";
-          }
-          else {
+          } else {
             document.getElementById("break").innerHTML = "What time is it?";
             document.getElementById("uncontrollable").style.display = "none";
             document.getElementById("times").style.display = "grid";
