@@ -182,7 +182,7 @@
             break;
           case "lazy":
             setTitle("Are you lazy, or are you just exhausted?");
-            setLinks(3,["Lazy","I'm not sure","Exhausted"],["15.html","https://youtu.be/B2wPs4Bd6mg","20.html"]);
+            setLinks(3,["Lazy","I'm not sure","Exhausted"],["15.html?mood=lazy","https://youtu.be/B2wPs4Bd6mg","62.html"]);
             break;
           case "unproductive":
             if(myObject.due1 === 1)
@@ -201,7 +201,7 @@
             }
             break;
           case "motivation":
-            location.href = "15.html";
+            location.href = "15.html?mood=motivation";
             break;
           case "tired":
             if(d.getHours() >= 6 && d.getHours() <= 12) {

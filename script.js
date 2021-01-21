@@ -400,7 +400,7 @@ function okFeeling() {
       break;
     case "lazy":
       message.innerHTML = "Are you lazy, or are you just exhausted?";
-      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
+      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='cyoa/20.html'>Exhausted</a></div>";
       break;
     case "tired":
       if(d.getHours() >= 6 && d.getHours() <= 12)
@@ -486,7 +486,7 @@ function okFeeling() {
       location.href = "relax.html";
       break;
     case "motivate":
-      location.href = "cyoa/15.html";
+      location.href = "cyoa/15.html?mood=motivation";
       break;
     case "tasks":
       location.href = "cyoa/2.html";

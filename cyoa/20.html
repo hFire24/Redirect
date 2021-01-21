@@ -11,7 +11,7 @@
   </head>
   <body class="theme5">
     <h2><a id="video-link" target="_blank">Listen to this. It won't take very long.</a></h2>
-    <div class='two-list'><a class='hfire-link' href="15.html">Continue</a><a class='hfire-link' href="62.html">I'm lying down</a></div>
+    <div class='three-list'><a class='hfire-link' href="15.html">Continue</a><a class='hfire-link' href="62.html">I'm lying down</a><a class='hfire-link' onclick="why()">Skip</a></div>
   </body>
   <script>
     document.getElementById("video-link").href= generateAndrewJohnsonLink();
@@ -52,6 +52,10 @@
         'https://youtu.be/caGFq6JVPCA']; //Breathing Relaxation 2
       var index = Math.floor(Math.random() * meditationLinks.length);
       return meditationLinks[index];
+    }
+
+    function why() {
+      alert("Come on. It won't take longer than 12 minutes. It should help you.");
     }
   </script>
 </html>

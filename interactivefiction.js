@@ -131,7 +131,7 @@ function finalTest(inputText,site)
     location.href = "cirno.html?q=" + inputText;
   else if(found(["lazy","lazi"],inputText) && (site !== "google" || site !== "youtube2")) {
     $("question").innerHTML = "Are you lazy, or are you just exhausted?";
-    $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html'>Lazy</a><a class='hfire-link' href='morning/checklist.html'>Exhausted</a></div>";
+    $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='62.html'>Exhausted</a></div>";
   }
   else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
     $("question").innerHTML = "What thoughts or emotions made you think about that kind of stuff?";
@@ -216,7 +216,7 @@ function finalTest(inputText,site)
     }
   }
   else if(inputText.indexOf('motivat') >= 0)
-    location.href = "cyoa/15.html";
+    location.href = "cyoa/15.html?mood=motivation";
   else if(found(['productive','to accomplish','get stuff done','work','to achieve','confiden','determined','determina'],inputText)) {
     $("question").innerHTML = "What sounds more appealing?";
     $("link").innerHTML = "";

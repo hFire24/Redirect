@@ -15,20 +15,18 @@
     </ol>
     <script>
       const morningHabits = ["Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Morning Boost Meditation</a> under Make the Most of Your Day<ul><li>Or, listen to Wake Up in Balance</li></ul>",
-      "Stretch your body",
+      "Stretch your body<ul><li>You can listen to Stretch Relaxation in Insight Timer or Wake Up in Balance</li></ul>",
       "Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Stretch Relaxation</a> under Quick Solutions",
       "Slowly drink a glass of water",
-      "Take a walk outside<ul><li>It doesn't matter what you wear, as long as it's not underwear</li><li><a href='nowalk.html' target='_blank'>Click here</a> if you don't feel like taking a walk outside</li></ul>",
+      "Get your dance mat out",
+      "<a href=../stepmania-m.html target=_blank>Play some Stepmania</a>",
       "Brush teeth and shave (if your have facial hair)<ul><li>Skip this step if the bathroom is occupied</li><li>Take a shower if you haven't took one in the last 48 hours</li></ul>",
-      "Change your clothes for walking",
-      "Change your clothes for walking<ul><li>If the shower step is skipped, just put your clothes in the dirty clothes hamper after your walk</li><li>Doesn't matter if they've been worn for 15 minutes</li></ul>",
-      "Take a walk outside <ul><li><a href='nowalk.html'>Click here</a> if you don't feel like taking a walk outside</li></ul>",
       "Do laundry<ul><li>Skip this step if the washer is occupied</li></ul>",
       "Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Morning Boost</a> under Make the Most of Your Day<ul><li>Or, listen to any meditation of your choice</li></ul>",
       "Eat breakfast (Froot Loops/bacon & eggs) if you're hungry",
       "Take a shower if you didn't do it yet<ul><li>If you still can't do it, then forget about it</li></ul>",
       "Take a shower and do laundry if you didn't do them yet<ul><li>If you still can't do them, then forget about them</li></ul>",
-      "Charge your face mask",
+      "Charge your sleep mask",
       "Determine what things you need to get done today",
       "Optional: Put on <a href='https://youtu.be/xOA0T8ZjpFQ' target='_blank'>some music</a> to help you focus",
       "It's time to have an awesome day! Achieve your goals!"];
@@ -48,29 +46,17 @@
         mh.push(morningHabits[2]);
       else
         mh.push(morningHabits[3]);
-      if(nArray[0] === "1" && nArray[1] === "1" && nArray[2] === "2")
-        mh.push(morningHabits[4]);
-      else if(nArray[0] === "2" && nArray[1] === "1" && nArray[2] === "2") {
-        mh.push(morningHabits[6]);
-        mh.push(morningHabits[8]);
-      }
-      mh.push(morningHabits[5]);
-      if (nArray[1] === "2" && nArray[2] === "2") {
+      mh.push(morningHabits[4], morningHabits[5], morningHabits[6]);
+      if (nArray[3] === "2")
         mh.push(morningHabits[7]);
-        mh.push(morningHabits[8]);
-      }
-      if (nArray[1] === "2" && nArray[2] === "2")
-        mh.push(morningHabits[12]);
-      if (nArray[3] === "2")
-        mh.push(morningHabits[9]);
       if (nArray[0] === "1" && nArray[1] === "2")
-        mh.push(morningHabits[10]);
-      mh.push(morningHabits[11]);
+        mh.push(morningHabits[8]);
+      mh.push(morningHabits[9]);
       if (nArray[3] === "1" && !(nArray[1] === "2" && nArray[2] === "2"))
-        mh.push(morningHabits[12]);
+        mh.push(morningHabits[10]);
       if (nArray[3] === "2")
-        mh.push(morningHabits[13]);
-      mh.push(morningHabits[14], morningHabits[15], morningHabits[16], morningHabits[17]);
+        mh.push(morningHabits[11]);
+      mh.push(morningHabits[12], morningHabits[13], morningHabits[14], morningHabits[15]);
 
       const parent = document.getElementById("parent");
 
