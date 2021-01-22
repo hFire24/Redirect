@@ -57,6 +57,11 @@
       //{text:"Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>",link:"pass",category:"active"}
       //{text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}];
       ];
+      var d = new Date();
+
+      if(d.getDay() < 2 || d.getDay() > 5)
+        aHabits.push({text:"Read stuff for Institute <span class='time'>2 things</span>",link:"https://myinstitute.churchofjesuschrist.org/classes",category:"active"});
+
       do {
         shuffle(aHabits);
       } while (aHabits[0].text !== "Tackle your to-do list");
@@ -122,7 +127,6 @@
       getTier(tierNumber);
 
       function getTier(tierObject) {
-        var d = new Date();
         var tiers = ["OU","UU","RU","NU","PU"];
         console.log("Tier Number is " + tierObject.getNumber());
         if(document.getElementById("tier")) {
