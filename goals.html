@@ -23,7 +23,7 @@
       <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
     </div>
     <script>
-      var aHabits = [{text:"Tackle your to-do list",link:"index.html",category:"active"},
+      var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
         //Homework Habits
       {text:"Do your CNIT480 homework",link:"homework.html#CNIT480",category:"homework"},
       {text:"Learn stuff for CNIT390",link:"homework.html#CNIT390",category:"homework"},
@@ -43,7 +43,7 @@
       //{text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
       //{text:"Learn Full Stack <span class='time'>(4 lessons)</span>",link:"https://skl.sh/37XTd4g",category:"active"},
       //{text:"Gain social skills <span class='time'>(2 lessons)</span>",link:"https://skl.sh/37ueYoA",category:"passive"},
-      //{text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
+      {text:"Listen to General Conference <span class='time'>(15 minutes)</span>",link:"gcprogress.html",category:"passive"},
       {text:"Digitize fifth journal <span class='time'>(1 page)</span>",link:"jprogress.html",category:"active"},
         //cHabits
       //{text:"Analyze songs <span class='time'>(2 songs)</span>",link:"pass",category:"active"}
@@ -61,10 +61,7 @@
 
       if(d.getDay() < 2 || d.getDay() > 5)
         aHabits.push({text:"Read stuff for Institute <span class='time'>2 things</span>",link:"https://myinstitute.churchofjesuschrist.org/classes",category:"active"});
-
-      do {
-        shuffle(aHabits);
-      } while (aHabits[0].text !== "Tackle your to-do list");
+      shuffle(aHabits);
 
       //cHabits = cHabits.slice(0,5);
 
