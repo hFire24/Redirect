@@ -16,7 +16,9 @@
     </div>
     <script>
     function artBlock(number) {
-      switch(number) {
+      $("message").innerHTML = "Draw Rumia.";
+      $("link").innerHTML = "<a href='artstage.html' target='_blank'>Do it, even if it's garbage.</a>";
+      /*switch(number) {
         case 0:
           $("message").innerHTML = "Do you have at least one idea on what to draw?";
           $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='artBlock(5)'>Yes</a> <a class='hfire-link' onclick='artBlock(2)'>No</a></div>";
@@ -26,7 +28,7 @@
           $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='artBlock(3)'>😃</a> <a class='hfire-link' onclick='artBlock(4)'>😐</a></div>";
           break;
         case 3:
-          $("message").innerHTML = "Draw Cirno.";
+          $("message").innerHTML = "Draw Rumia.";
           $("link").innerHTML = "Do it, even if it's garbage.";
           break;
         case 4:
@@ -52,7 +54,7 @@
         default:
           $("message").innerHTML = "Do it, even if it's garbage.";
           $("link").innerHTML = "Do it, even if it's garbage.";
-      }
+      }*/
     }
     </script>
     <script src="script.js"></script>

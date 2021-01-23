@@ -386,7 +386,10 @@ function finalTest(inputText,site)
       document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(expressDesireForCuteness) {
-    $("question").innerHTML = "Stand up and stretch if you can.<br><a href='artstage.html'>Get your sketch pad (or anything you can doodle on).</a>";
+    if(Math.floor(Math.random() * 2) === 0)
+      $("question").innerHTML = "Stand up and stretch if you can.<br>Get your wireless mouse.<br><a href='art.html'>Open paint.net.</a>";
+    else
+      $("question").innerHTML = "Stand up and stretch if you can.<br>Clear your desk for drawing.<br><a href='art.html'>Get your sketch pad.</a>";
     $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {

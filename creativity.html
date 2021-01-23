@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Get motivated.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body onload='randomTheme(101)'>
+    <h2 id='quote'></h2>
+    <div id='hideable'>
+    </div>
+    <script>
+      var quotes = ['Creativity is a good thing.',
+      '“To live a creative life, we must lose our fear of being wrong.” – Anonymous',
+      '“Opportunities don\'t happen, you create them.” – Chris Grosser',
+      '“No masterpiece was ever created by a lazy artist.” – Anonymous',
+      //Quotes from https://www.happier.com/blog/10-positive-quotes-to-inspire-creativity/
+      '“The creative adult is the child who survived.” – Ursula Leguin',
+      '“The desire to create is one of the deepest yearnings of the human soul.” – Dieter F. Uchtdorf',
+      '“Creativity doesn\'t wait for that perfect moment. It fashions its own perfect moments out of ordinary ones.” – Bruce Garrabrandt',
+      '“Everything you can imagine is real.” – Pablo Picasso',
+      '“You can\'t use up creativity. The more you use the more you have.” – Maya Angelou',
+      '“Creativity is intelligence having fun.” – Albert Einstein',
+      '“To practice any art, no matter how well or badly, is a way to make your soul grow. So do it.” – Kurt Vonnegut',
+      '“Creativity is inventing, experimenting, growing, taking risks, breaking rules, making mistakes, and having fun.” – Mary Lou Cook',
+      '“The chief enemy of creativity is "good" sense.” – Pablo Picasso',
+      '“Creativity involves breaking out of expected patterns in order to look at things in a different way.” – Edward de Bono'];
+      for(var i = quotes.length; i < 5; i++)
+        quotes.push("<a href='https://www.keepinspiring.me/procrastination-quotes/' target='_blank'>Here. Try reading these quotes from this page.</a>");
+
+      var index = Math.floor(Math.random() * quotes.length);
+      var quote = document.getElementById("quote");
+      quote.innerHTML = quotes[index];
+
+      if(quote.innerHTML.startsWith("“"))
+        quote.style.fontWeight = "medium";
+
+      if(quote.innerHTML.length > 200) {
+        var x = window.matchMedia("(max-width: 567px)");
+        var y = window.matchMedia("(max-width: 851px)");
+        var z = window.matchMedia("(max-width: 1135px)");
+        var a = window.matchMedia("(max-width: 1702px)");
+        resizeText(x,y,z,a);
+        x.addListener(resizeText);
+        y.addListener(resizeText);
+        z.addListener(resizeText);
+        z.addListener(resizeText);
+      }
+
+      function resizeText(verySmall,small,medium,large) {
+        if (x.matches)
+          quote.style.fontSize = "20px";
+        else if (y.matches)
+          quote.style.fontSize = "30px";
+        else if (z.matches)
+          quote.style.fontSize = "45px";
+        else if (a.mathces)
+          quote.style.fontSize = "60px";
+        else
+          quote.style.fontSize = "84px";
+      }
+    </script>
+    <script src='script.js'></script>
+  </body>
+</html>

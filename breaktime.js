@@ -126,8 +126,9 @@ function loadBigBreak() {
   'Practice your piano. Using SimplyPiano is recommended.',
   'Learn how to use Pygame by reading that book.',
   'Read the book <u>Maphead</u>.',
-  'Draw anime with a sketchpad.',
   'Draw anime with a mouse and paint.net.'];
+
+  changeclothes = ['Draw anime with a sketchpad.'];
 }
 
 function loadMobileBreak() {
@@ -193,7 +194,7 @@ function loadYouTubeBreak() {
 
 function displayBreak(index,number) {
   for(var i = 0; i < changeclothes.length; i++)
-    standup.push("Change to appropriate clothes if necessary.");
+    standup.push("Clear your desk.");
   for(i = 0; i < standup.length; i++)
     messages.push('Stand up and stretch if you can.');
   //Get random message index from messages array
@@ -317,9 +318,10 @@ function displayBreak(index,number) {
     console.log("Standup " + standIndex);
     message.addEventListener("click",function() {$("standup").style.display = 'block'; $("link").style.display = 'block';});
     standupMessage.innerHTML = standup[standIndex];
-    if(standupMessage.innerHTML === 'Change to appropriate clothes if necessary.' || standupMessage.innerHTML === 'Strip, even if it\'s cold.') {
+    if(standupMessage.innerHTML === 'Clear your desk.') {
       console.log("Change Clothes " + changeIndex);
       changeMessage.innerHTML = changeclothes[changeIndex];
+      changeMessage.href = "art.html";
       standupMessage.addEventListener("click",function() {$("changeclothes").style.display = 'block';});
     }
     if (standupMessage.innerHTML === "Play some Stepmania.")
