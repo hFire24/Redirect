@@ -10,10 +10,40 @@
     <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
   </head>
   <body>
-    <h1>Is your day over?</h1>
-    <div class="medium two-list">
-      <a class="hfire-link" href="done.html">Yes</a> <a class="hfire-link" href="not-done.html">No</a>
+    <h1>What should get done next?</h1>
+    <div class="three-list space">
+      <a class="hfire-link" href="../homework.html">Homework</a> <a class="hfire-link" href="in-progress.html?mode=youtube">YouTube Videos</a> <a class="hfire-link" href="in-progress.html?mode=plan">Day Planning</a>
+      <a class="hfire-link" href="in-progress.html?mode=task">Tasks</a> <a class="hfire-link" href="in-progress.html?mode=goal">Goals</a> <a class="hfire-link" href="in-progress.html?mode=journal">Journaling</a>
+      <a class="hfire-link" href="in-progress.html?mode=hygiene">Personal Hygiene</a> <a class="hfire-link" href="in-progress.html?mode=other">Other</a> <a class="hfire-link" href="list.html">Evening Routine</a>
     </div>
-    <a class="medium hfire-link" href="list.html">Link to Evening Routine</a>
+    <strong class='medium'>Conveniently Placed Search Engine</strong>
+    <div id='search-bar' class="space">
+      <input id='search' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("deviantart")'>Search (DeviantArt)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("ecosia")'>Search (Ecosia)</button>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+      $("search").addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          search("google");
+        }
+      });
+
+      function search(site) {
+        let query = document.getElementById("search").value;
+        query = query.replaceAll(' ','+');
+        switch(site) {
+          case "youtube":
+            window.open("search.html?website=youtube&search_query=" + query);
+            break;
+          case "deviantart":
+            window.open("search.html?website=deviantart&q=" + query);
+            break;
+          default:
+            window.open("search.html?website=google&q=" + query);
+            break;
+          }
+      }
+    </script>
   </body>
 </html>
