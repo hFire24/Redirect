@@ -233,10 +233,6 @@ function finalTest(inputText,site)
     }
     $("link").appendChild(grid);
   }
-  else if(found(['succe', 'accomplish',' win', ' won', 'champion', 'victor'],inputText) && inputText.indexOf("want") < 0 && !found(required,inputText) && inputText.indexOf("?") < 0) {
-    $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-  }
   else if(inputText.indexOf("do stuff") >= 0)
     location.href = "time.html";
   else if(found(["unblock","access","bypass"],inputText)) {
@@ -434,6 +430,10 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf(site) > 0 && unknownReason === 1) {
     $("question").innerHTML = "You want to go there, but you don't need to go there.";
+    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+  }
+  else if(found(['succe', 'accomplish',' win', ' won', 'champion', 'victor'],inputText) && inputText.indexOf("want") < 0 && !found(required,inputText) && inputText.indexOf("?") < 0) {
+    $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
   else if(unknownReason < 2 && (inputText.indexOf("feel") < 0 || inputText.indexOf("feel like") >= 0)) {
