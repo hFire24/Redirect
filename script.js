@@ -246,7 +246,8 @@ function addBigMessages() {
   'It seems like you feel lost.',
   'Yeah, yeah. I restricted your freedom. <span id="stress">DEAL WITH IT.</span>',
   //"<a href='hi'>This is <span id='stress'>SPARTA!</span></a>",
-  'Grow up and get a life!');
+  'Grow up and get a life!',
+  'If you prioritize comfort and self-indulgence over freedom and achievement, you will live a life of regret.');
 
   /*for(var i = 0; i < questions.length; i++)
     redirectMessages.push(questions[i]);*/
