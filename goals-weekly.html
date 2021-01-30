@@ -236,6 +236,8 @@
             element.style.backgroundColor = swappedGoals[i].backgroundColor;
             if(swappedGoals[i].category === "passive")
               element.style.color = "#7BF";
+            else if(swappedGoals[i].category === "golden")
+              element.style.color = "gold";
             else
               element.style.color = "white";
           }

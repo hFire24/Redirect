@@ -167,7 +167,6 @@ function loadMobileBreak() {
   'Train your communication skills.',
   'Read the book <u>Atomic Habits</u>.',
   //'Learn a language with Duolingo.',
-  'Take that anti-procrastination course on Skillshare.',
   'Check your goals page. Try to knock out one of your goals.'];
 
   var standup = [//Health and fitness
