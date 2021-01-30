@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon.ico">
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+  </head>
+  <body class="theme4">
+    <h2>Pick a number.</h2>
+    <article id='article' class='space'>
+      <p>Remember the "NO EXCUSES!" page to get you motivated? We'll get to it later. If you're feeling lazy or lethargic, pick a number.</p>
+      <span id='option1' style='display:none;'>
+        <p>You must create the emotion that's needed to get you off your butt and to start doing the thing you want to be doing. <strong>Think about death.</strong></p>
+        <p> In a week, you could die. What if you got into a car accident? What if you got a disease that will kill you in weeks or months?
+        Life is short based on your food and entertainment choices. You are living life to your fullest according to your terms.</p>
+        <p>If you are going to die in the next hour, will you spend that hour procrastinating? <a class='stress' href='../brave.html'>NO</a>.</p>
+      </span>
+      <span id='option2' style='display:none;'>
+        <p>You must create the emotion that's needed to get you off your butt and to start doing the thing you want to be doing. <strong>Think about your shadow.</strong></p>
+        <p>He's just like you, except that he always does things he's supposed to be doing. It's like a shadow of your record in a racing game.
+        When you really don't want to do something, especially if it's something that will help you, imagine your shadow just doing the thing you don't want to do.
+        Chase after that shadow version of you if you want to be successful. That is your potential.</p>
+        <p>If you don't chase after that shadow by prioritizing comfort and self-indulgence over freedom and achievement, you will live a life of regret. <a class='stress' href='../brave.html'>Chase it</a>.</p>
+      </span>
+      <span id='option3' style='display:none;'>
+        <p>You must bypass the emotion completely. Use the 5-second rule by Mel Robbins. Do not underestimate this tactic. Simply count down from 5 to 1.
+        After 1, you <a class='stress' href='../brave.html'>JUST DO IT!</a></p>
+      </span>
+    </article>
+    <div id='doors' class='three-list'>
+      <a class='medium hfire-link' onclick='door(1)'>1</a> <a class='medium hfire-link' onclick='door(2)'>2</a> <a class='medium hfire-link' onclick='door(3)'>3</a>
+    </div>
+    <script>
+      function door(number) {
+        option1.style.display = "none";
+        option2.style.display = "none";
+        option3.style.display = "none";
+        switch(number) {
+          case 1:
+            option1.style.display = "inline";
+            break;
+          case 2:
+            option2.style.display = "inline";
+            break;
+          case 3:
+            option3.style.display = "inline";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
