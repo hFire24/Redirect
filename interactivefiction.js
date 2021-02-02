@@ -251,6 +251,7 @@ function finalTest(inputText,site)
   }
   else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd', '😆', '🤣', '😂'],inputText) && inputText.indexOf('loli') < 0) {
     $("message").classList.remove("invisible");
+    $("message").classList.remove("small");
     $("message").innerHTML = "Šílený Ota";
     if(site === "hotanddry")
       $("message").classList.add("space");
@@ -265,10 +266,10 @@ function finalTest(inputText,site)
     $("link").removeChild(input);
     $("link").removeChild($("submit"));
     $("link").removeChild($("dropdown"));
-    if(site === "youtube") {
+    /*if(site === "youtube") {
       $("link").removeChild(document.getElementById("youtube-reasons"));
       $("link").removeChild(document.getElementById("other-reason"));
-    }
+    }*/
     $("message").addEventListener("click",function(){$("silenyota").play();});
     $("link").addEventListener("click",function(){$("silenyota").play();});
     $("silenyota").play();

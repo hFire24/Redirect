@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme3">
+    <h1 id="message">Find something else to do other than watch YouTube videos.</h1>
+    <h2 id="question">Got something you need to do?</h2>
+    <div id='link' class='medium two-list'>
+      <a class='hfire-link' onclick='submitBored()'>Yes</a>
+      <a class='hfire-link' href="youtube-addiction/1.html">No</a>
+      <input id="newBreak" class="invisible" type="text">
+    </div>
+    <script>
+    function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
+      console.log($("newBreak").value);
+      var inputText = '';
+      if($("custom-reason").value !== -1 && $("newBreak").value === '')
+        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
+      if(found(['music', ' one', 'certain', 'specific'],inputText))
+        location.href = "cyoa/39.html";
+      else if(found(['break', 'watch later'],inputText)) {
+        $("question").innerHTML = "All right. You should go to YouTube in this case.";
+        document.body.removeChild($("link"));
+      }
+      else if(found(['doug demuro', 'car ', 'cars'],inputText)) {
+        $("question").innerHTML = "You'll never be able to afford a nice car if you keep wasting your time watching car videos.";
+        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      }
+      else {
+        finalTest(inputText,"youtube");
+      }
+      if(!$("youtube-reasons"))
+        document.getElementById("link").classList.remove("small");
+    }
+
+    function submitBored() {
+      $("link").classList.remove("two-list");
+      finalTest("bored","youtube");
+      $("link").innerHTML = "<a href=youtube.html>Click here to continue.</a>"
+    }
+    </script>
+    <script src="interactivefiction.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

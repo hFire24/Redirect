@@ -293,7 +293,7 @@ function randomLink(index,number) {
   //If the message tells you to leave, the linkIndex will be 0.
   if (index < 2 || message === 'Return to your previous task.' || message === 'Get out of here!')
     linkIndex = 0;
-  if (linkIndex === 0 || message === "May this page suggest you take a short break?" || message === "Time to take a break.")
+  if ((linkIndex === 0 || message === "May this page suggest you take a short break?" || message === "Time to take a break.") && number !== 7)
     removeQuestion = true;
   //Put link message and to screen using the index value of the array
   if(number < 7 || number > 12)
@@ -307,7 +307,7 @@ function randomLink(index,number) {
   //Sometimes, the link will change depending on the message.
   if (message === "Get ready for church!")
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
-  else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
+  else if (message === "May this page suggest you take a short break?" && number !== 7 || message === "Time to take a break.")
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
   else if (linkIndex > 0 && (number < 7 || number > 12)) {
     link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";

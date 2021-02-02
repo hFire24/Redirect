@@ -9,17 +9,17 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
-  <body class="theme3" onload="loadWebsite(7);">
-    <h1 id="message"></h1>
-    <h2 id="question">Why did you decide to go there?</h2>
+  <body class="theme3" onload="loadWebsite(7)">
+    <h1 id="message" class="invisible"></h1>
+    <h2 id="question">Why did you decide to go to YouTube?</h2>
     <div id='link' class='small'>
-      <div id='youtube-reasons' class='two-list'>
+      <!--div id='youtube-reasons' class='two-list'>
         <a class='hfire-link' href="cyoa/39.html">To search for something</a>
         <a class='hfire-link' href="https://www.youtube.com/feed/subscriptions">Check Subscriptions</a>
         <a class='hfire-link' href="https://www.youtube.com/feed/history">Check History</a>
         <a class='hfire-link' href="https://www.youtube.com/playlist?list=WL">Check Watch Later</a>
       </div>
-      <span id='other-reason'>Other reason: </span><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <span id='other-reason'>Other reason: </span--><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
         <span class="custom-select" style="width:200px;">
           <select id='custom-reason'>
@@ -63,6 +63,8 @@
       }
       if(!$("youtube-reasons"))
         document.getElementById("link").classList.remove("small");
+      if($("link").innerHTML === "<a href=\"cyoa/35.html\">Click here to continue.</a>")
+        document.getElementById("link").innerHTML = "<a href='youtube-addiction/2.html'>Click here to continue.</a>";
     }
 
     var reasons = ["Because I'm lazy",
@@ -137,6 +139,13 @@
       $("question").innerHTML = "Then why did you decide to go there?";
       $("yesno").style.display = "none";
       $("link").style.display = "block";
+    }
+
+    function submitBored() {
+      $("newBreak").value = "bored";
+      $("link").classList.remove("two-list");
+      submit();
+      $("link").innerHTML = "<a href=hotanddry.html>Click here to continue.</a>"
     }
     </script>
     <script src="interactivefiction.js"></script>
