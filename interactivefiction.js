@@ -316,7 +316,7 @@ function finalTest(inputText,site)
   }
   else if ((found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText)) && expressDesireForCuteness) {
     $("question").innerHTML = "Don't do nothing. Get up and <a href='artstage.html'>foster your creativity!</a>";
-    $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";
+    $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='areyouhome.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";
   }
   else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && !found(["but", "other than", "except"],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
     $("question").innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
@@ -378,7 +378,7 @@ function finalTest(inputText,site)
     else
       document.getElementById("question").innerHTML = replace;
     if(expressDesireForCuteness)
-      document.getElementById("link").innerHTML = "<a href='bigbreak.html'>Click here to continue.</a>";
+      document.getElementById("link").innerHTML = "<a href='areyouhome.html'>Click here to continue.</a>";
     else
       document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
@@ -387,7 +387,7 @@ function finalTest(inputText,site)
       $("question").innerHTML = "Stand up and stretch if you can.<br>Get your wireless mouse.<br><a href='art.html'>Open paint.net.</a>";
     else
       $("question").innerHTML = "Stand up and stretch if you can.<br>Clear your desk for drawing.<br><a href='art.html'>Get your sketch pad.</a>";
-    $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='bigbreak.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";
+    $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='areyouhome.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {
     if(inputText !== "because i need to" && unknownReason < 1) {

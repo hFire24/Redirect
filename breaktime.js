@@ -362,10 +362,7 @@ function displayBreak(index,number) {
 }
 
 function reload() {
-  if(location.href.indexOf("breakm") < 0 && window.innerWidth <= 1024)
-    location.href = "breakm.html";
-  else
-    location.reload();
+  location.reload();
 }
 
 function whyNot() {
