@@ -24,7 +24,7 @@
     var daysBehind = Math.floor(d.getTime()/(1000*60*60*24) - progress.getTime()/(1000*60*60*24));
     $("digitized").innerHTML = daysDigitized;
     $("behind").innerHTML = daysBehind;
-    var nonJournalDays = 384;
+    var nonJournalDays = 431;
     var actualDaysDigitized = daysDigitized - nonJournalDays;
     $("actual").innerHTML = actualDaysDigitized
     var percent = Math.floor((actualDaysDigitized) / (actualDaysDigitized + daysBehind) * 100);
