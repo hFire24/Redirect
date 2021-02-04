@@ -19,6 +19,24 @@
       <li>Launch Stepmania on your laptop</li>
       <li>Play some Level 3-4 songs to get some light exercise</li>
     </ol>
+    <div class="small space">Steps (song): <input id="steps" type="number" min="0" value="0" step="10"> <button onclick="addToTotalSteps()">Add Steps</button></div>
+    <div class="small space">Steps (total): <input id="total" type="number" min="0" value="0" step="10" oninput="calculateCalories()"></div>
+    <div class="small">Calories Burned: <span id="calories">0</span></div>
     <script src="script.js"></script>
+    <script>
+    function addToTotalSteps() {
+      let numSteps = parseInt(steps.value);
+      let totalSteps = parseInt(total.value);
+      totalSteps += numSteps
+      total.value = totalSteps;
+      calculateCalories();
+    }
+
+    function calculateCalories() {
+      let numSteps = total.value;
+      let numCalories = Math.round(numSteps / 26.46300133);
+      calories.innerHTML = numCalories;
+    }
+    </script>
   </body>
 </html>
