@@ -29,13 +29,14 @@
       {text:"Learn stuff for CNIT390",link:"homework.html#CNIT390",category:"homework"},
       {text:"Do your ECET224 homework",link:"homework.html#ECET224",category:"homework"},
       {text:"Practice Piano <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
+      {text:"Read stuff for Institute <span class='time'>(2 things)</span>",link:"https://myinstitute.churchofjesuschrist.org/classes",category:"active"},
         //aHabits
       {text:"Deal with Purdue E-mails",link:"pass",category:"active"},
       {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"golden"}, //Golden habits are the most important
-      {text:"*Draw anime <span class='time'>(1+ times)</span>",link:"art.html",category:"golden"},
+      {text:"*Practice drawing with mouse <span class='time'>(1+ times)</span>",link:"art.html",category:"golden"},
       //{text:"Manage money, write in journal",link:"pass",category:"active"},
         //bHabits
-      //{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
+      {text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
       //{text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
       {text:"Relax/meditate <span class='time'>(2 sessions)</span>",link:"relax.html",category:"passive"},
@@ -53,14 +54,10 @@
       //{text:"Play I Love Hue <span class='time'>(15 minutes)</span>",link:"pass",category:"active"},
       //{text:"Play Minesweeper <span class='time'>(1 solve)</span>",link:"http://minesweeper.online",category:"active"},
       //{text:"Play Smash Ultimate <span class='time'>(30 minutes)</span>",link:"pass",category:"active"},
-      //{text:"Play Pokemon Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"}
+      {text:"Play Pokemon Showdown! <span class='time'>(2-3 <span id='tier'></span> battles)</span>",link:"https://play.pokemonshowdown.com",category:"active"}
       //{text:"Play Bloons Tower Defense 6 <span class='time'>(Infinity)</span>",link:"pass",category:"active"}
       //{text:"Watch Only Connect <span class='time'>(30 minutes)</span>",link:"https://www.youtube.com/playlist?list=PLrlSc8gCDlytPSFpUdu9Y64Sy5ijWUzd-",category:"passive"}];
       ];
-      var d = new Date();
-
-      if(d.getDay() < 2 || d.getDay() > 5)
-        aHabits.push({text:"Read stuff for Institute <span class='time'>(2 things)</span>",link:"https://myinstitute.churchofjesuschrist.org/classes",category:"active"});
       shuffle(aHabits);
 
       //cHabits = cHabits.slice(0,5);
@@ -124,6 +121,7 @@
       getTier(tierNumber);
 
       function getTier(tierObject) {
+        var d = new Date();
         var tiers = ["OU","UU","RU","NU","PU"];
         console.log("Tier Number is " + tierObject.getNumber());
         if(document.getElementById("tier")) {
