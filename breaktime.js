@@ -309,7 +309,7 @@ function noooo() {
 
 function finished() {
   var category = messages[globalIndex].category;
-  if(category === "plan" || category === "meditate")
+  if(category === "plan" || category === "meditate" || category === "homework")
     deleteCategory(category);
   //Splice the break away from the array.
   else {
@@ -323,7 +323,7 @@ function finished() {
 }
 
 function whyNot() {
-  link.innerHTML = "<div class='space'>Let me guess. You don't want to do it.</div> <div class='two-list space'><u onclick='submitReason()'>I don't want to do it.</u><u onclick='displayLink()'>Actually, I'll do it.</u></div><u onclick='finished()'>Circumstances out of my control prevent me from doing it.</u>";
+  link.innerHTML = "<div class='space'>Let me guess. You don't want to do it.</div> <div class='two-list space'><u onclick='submitReason()'>I don't want to do it.</u><u onclick='displayLink()'>Actually, I'll do it.</u></div><u onclick='finished()'>It is absolutely impossible to do it now.</u>";
 }
 
 function deleteCategory(category) {
