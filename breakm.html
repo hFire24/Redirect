@@ -10,7 +10,7 @@
     <link id='apple' rel="apple-touch-icon" href="icons/apple-touch-icon 7.png">
   </head>
   <body onLoad="loadBreak(5); randomTheme(5)">
-    <h2><a id='break'></a><a id='standup'></a></h2>
+    <h2 id='break' class='space'></h2>
     <div id='hideable' class='space'>
     </div>
     <script src="script.js"></script>
@@ -20,7 +20,7 @@
     PullToRefresh.init({
       mainElement: 'body',
       distMax: window.innerHeight / 2,
-      onRefresh: function() { loadBreak(5); }
+      onRefresh: function() { displayBreak(-1,5); }
     });
     </script>
   </body>
