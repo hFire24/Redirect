@@ -74,6 +74,11 @@
             purpose.innerHTML = "making you confident.";
             message2.innerHTML = "You have the potential to become successful. You are on track " + confidentTrack + ".";
             break;
+          case "lazy":
+            pack.innerHTML = "Quick Solutions";
+            purpose.innerHTML = "a short break.";
+            message2.innerHTML = "For Example: <span id='random'>Stretch Relaxation</span> <span id='action'>gets you moving.</span>";
+            break;
           case "tired":
             while(!found(["refresh","re-energize"],action.innerHTML))
               randomMeditation();
