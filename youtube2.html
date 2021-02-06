@@ -13,39 +13,25 @@
     <h1 id="message">Find something else to do other than watch YouTube videos.</h1>
     <h2 id="question">Got something you need to do?</h2>
     <div id='link' class='medium two-list'>
-      <a class='hfire-link' onclick='submitBored()'>Yes</a>
+      <a class='hfire-link' onclick='displaySomething()'>Yes</a>
       <a class='hfire-link' href="youtube-addiction/1.html">No</a>
       <input id="newBreak" class="invisible" type="text">
     </div>
+    <div id='something' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' href="custom.html?mode=youtube">Yes</a>
+      <a class='hfire-link' onclick='submitBored()'>No</a>
+      <input id="newBreak" class="invisible" type="text">
+    </div>
     <script>
-    function submit() {
-      console.log($("custom-reason").value);
-      console.log($($("custom-reason").value).innerHTML);
-      console.log($("newBreak").value);
-      var inputText = '';
-      if($("custom-reason").value !== -1 && $("newBreak").value === '')
-        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
-      else
-        inputText = $("newBreak").value.toLowerCase();
-      if(found(['music', ' one', 'certain', 'specific'],inputText))
-        location.href = "cyoa/39.html";
-      else if(found(['break', 'watch later'],inputText)) {
-        $("question").innerHTML = "All right. You should go to YouTube in this case.";
-        document.body.removeChild($("link"));
-      }
-      else if(found(['doug demuro', 'car ', 'cars'],inputText)) {
-        $("question").innerHTML = "You'll never be able to afford a nice car if you keep wasting your time watching car videos.";
-        $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
-      }
-      else {
-        finalTest(inputText,"youtube");
-      }
-      if(!$("youtube-reasons"))
-        document.getElementById("link").classList.remove("small");
+    function displaySomething() {
+      $("question").innerHTML = "Want to type in the thing you need to do?"
+      $("link").style.display = "none";
+      $("something").style.display = "grid";
     }
 
     function submitBored() {
-      $("link").classList.remove("two-list");
+      $("link").style.display = "block";
+      $("something").style.display = "none";
       finalTest("bored","youtube");
       $("link").innerHTML = "<a href=youtube.html>Click here to continue.</a>"
     }

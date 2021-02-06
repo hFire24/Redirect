@@ -278,8 +278,6 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Fun things are good, but they are distractions.";
     $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
   }
-  else if(found(love,inputText) && site === "youtube")
-    location.href = 'cyoa/38.html';
   else if(inputText.indexOf("nothing") >= 0 && inputText.indexOf("want") >= 0 && !found(["but", "other than", "except"],inputText))
     location.href = 'cyoa/13.html';
   else if(inputText.indexOf("habit") >= 0)

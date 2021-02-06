@@ -14,12 +14,18 @@
       <h3 id="instructions">Type in a task, and press "Submit" or Enter when done.<br>For multiple tasks, just split each task with "|".</h3>
       <div id="form" class="space"><input id="newBreak" type="text"><button id="messageButton" onClick="createMessage()">Submit</button></div>
       <div id="sizeselecter"><input type="checkbox" id="size">Bigger Font</div>
-      <div id="breaklink"><a href="time.html">Got nothing to do?</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="cyoa/1.html">Can't think or focus?</a></div>
+      <div id="breaklink"><a id="time" href="time.html">Got nothing to do?</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="focus" href="cyoa/1.html">Can't think or focus?</a></div>
     </div>
     <div id='hideable'>
     </div>
     <script src="script.js"></script>
     <script>
+    var urlSearch = window.location.search;
+    if (urlSearch !== "") {
+      $("time").href = "youtube-addiction/1.html";
+      $("focus").href = "youtube-addiction/2.html";
+    }
+
     function createMessage() {
       var parent = $("custom");
       var newMessage = $("newBreak");
