@@ -14,20 +14,36 @@
     <h2 id="question">Got something you need to do?</h2>
     <div id='link' class='medium two-list'>
       <a class='hfire-link' onclick='displaySomething()'>Yes</a>
-      <a class='hfire-link' onclick='addicted()'>No</a>
+      <a class='hfire-link' onclick='addicted(1)'>No</a>
       <input id="newBreak" class="invisible" type="text">
     </div>
     <div id='something' class='medium two-list' style='display:none;'>
       <a class='hfire-link' href="custom.html?mode=minesweeper">Yes</a>
-      <a class='hfire-link' onclick='addicted()'>No</a>
-      <input id="newBreak" class="invisible" type="text">
+      <a class='hfire-link' onclick='addicted(1)'>No</a>
     </div>
     <article id='addiction' class="invisible">
       <p>When you started playing Minesweeper, you thought it would be cool to solve an Expert board.
       There's lots of logic, strategy, and brain power involved with playing that game.</p>
-      Since then, you solved lots of expert boards, and most of your recent solves felt unremarkable.
+      <p>Since then, you solved lots of expert boards, and most of your recent solves felt unremarkable.
       Now, you get distracted by a boring application on your phone.
-      Wouldn't it be nice if you can <a href="areyouhome.html">do something</a> that's less boring and more fulfilling?
+      Wouldn't it be nice if you can do something that's less boring and more fulfilling?</p>
+      <div class='medium two-list'>
+        <a class='hfire-link' onclick="addicted(4)">Yeah, forget boredom.</a>
+        <a class='hfire-link' onclick='addicted(2)'>But I want to play Minesweeper.</a>
+      </div>
+    </article>
+    <div id='addiction2' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' onclick="addicted(3)">Yes</a>
+      <a class='hfire-link' onclick='addicted(4)'>No</a>
+    </div>
+    <div id='addiction3' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' onclick="addicted(5)">Right.</a>
+      <a class='hfire-link' onclick='addicted(6)'>Wrong.</a>
+    </div>
+    <article id='all-kinds' class="invisible">
+      <p>There's all kinds of everything you can do. You can write in your journal, digitize your journal, play Stepmania, play the piano,
+      listen to a General Conference talk, read Atomic Habits, listen to a guided meditation, do your homework, learn full stack on Skillshare, or draw.</p>
+      I promise that if you do one of those things, you'll feel more fulfilled than just sitting or lying down with your phone playing Minesweeper.
     </article>
     <script>
     function displaySomething() {
@@ -36,11 +52,45 @@
       $("something").style.display = "grid";
     }
 
-    function addicted() {
-      $("question").style.display = "none";
-      $("link").style.display = "none";
-      $("something").style.display = "none";
-      $("addiction").classList.remove("invisible");
+    function addicted(number) {
+      switch(number)
+      {
+        case 1:
+          $("question").style.display = "none";
+          $("link").style.display = "none";
+          $("something").style.display = "none";
+          $("addiction").classList.remove("invisible");
+          break;
+        case 2:
+          $("question").style.display = "block";
+          $("question").innerHTML = "Do you really want to play Minesweeper?";
+          $("addiction2").style.display = "grid";
+          $("addiction").classList.add("invisible");
+          break;
+        case 3:
+          $("question").innerHTML = "OK. Just remember that playing Minesweeper looks boring.";
+          $("addiction2").style.display = "none";
+          break;
+        case 4:
+          $("question").style.display = "block";
+          $("question").innerHTML = "What you really want is to be engaged with something worthwhile.";
+          $("addiction").classList.add("invisible");
+          $("addiction2").style.display = "none";
+          $("addiction3").style.display = "grid";
+          break;
+        case 5:
+          $("question").innerHTML = "If you just force yourself to do something else, you'll feel a lot better.";
+          $("addiction3").style.display = "none";
+          $("all-kinds").classList.remove("invisible");
+          break;
+        case 6:
+          $("question").innerHTML = "You need to calm down and relax <ins>properly</ins>.";
+          $("addiction3").style.display = "none";
+          $("link").style.display = "block";
+          $("link").classList.remove("two-list");
+          $("link").innerHTML = "<a href=relax.html>Click here to continue.</a>"
+          break;
+      }
     }
 
     createAtomicHabits();
@@ -51,7 +101,7 @@
       if(atomicHabits < 1)
       {
         await sleep(100);
-        alert("Instead of scrolling through YouTube, scroll through Atomic Habits.");
+        alert("Instead of playing Minesweeper, read through Atomic Habits.");
       }
     }
 

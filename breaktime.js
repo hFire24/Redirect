@@ -7,6 +7,8 @@ var putOffStand = [];
 var globalIndex = -1;
 var globalStand = -1;
 
+var bedtimeRemoved = false;
+
 class Breaktime {
   constructor(text,link,category,importance,stand) {
     this.text = text;
@@ -34,13 +36,13 @@ function loadBreak(number) {
     standup = smallStand;
   for(i = 0; i < standup.length; i++)
     messages.push(new Breaktime('Stand up and stretch if you can.',"pass",standup[i].category,standup[i].importance,true));
-  if(d.getHours() <= 4 || d.getHours() >= 22) {
-    messages.push(new Breaktime('Stand up and stretch if you can.',"pass","health",3,true));
-    standup.push(new Breaktime('Wear your pajamas and go to bed.',"pass","health",3,true));
-  }
   if(d.getHours() < 3 || d.getHours() > 19) {
     messages.push(new Breaktime('Stand up and stretch if you can.',"pass","health",3,true));
     standup.push(new Breaktime('Change to your pajamas. No socks.',"pass","health",3,true),);
+  }
+  if(d.getHours() <= 4 || d.getHours() >= 22) {
+    messages.push(new Breaktime('Stand up and stretch if you can.',"pass","sleep",2,true));
+    standup.push(new Breaktime('Wear your pajamas and go to bed.',"pass","sleep",2,true));
   }
   console.log(messages);
   console.log(standup);
@@ -221,7 +223,7 @@ function displayBreak(index) {
     $("break").appendChild(message);
   }
   // There is at least a 1 in 4 chance of the sleep message appearing at night.
-  if((d.getHours() <= 4 || d.getHours() >= 22) && !Math.floor(Math.random() * 4))
+  if((d.getHours() <= 4 || d.getHours() >= 22) && !Math.floor(Math.random() * 4) && !bedtimeRemoved)
     index = messages.length - 1;
   console.log("Message " + index);
   message.innerHTML = messages[index].text;
@@ -260,9 +262,10 @@ function displayBreak(index) {
   }
   if(messages[index].category === "homework" && messages[index].link === "pass")
     message.addEventListener("click",noooo);
-  else if($("vader")) {
-    document.body.removeChild($("vader"));
+  else
     message.removeEventListener("click",noooo);
+  if($("vader")) {
+    document.body.removeChild($("vader"));
     console.log("removed darth vader :)");
   }
 
@@ -309,10 +312,12 @@ function noooo() {
 
 function finished() {
   var category = messages[globalIndex].category;
-  if(category === "plan" || category === "meditate" || category === "homework")
+  if(category === "plan" || category === "meditate" || category === "homework" || category === "food")
     deleteCategory(category);
   //Splice the break away from the array.
   else {
+    if(category === "sleep")
+      bedtimeRemoved = true;
     if(messages[globalIndex].stand)
       standup.splice(globalStand,1);
     messages.splice(globalIndex,1);
