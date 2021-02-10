@@ -9,19 +9,26 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
-  <body class="theme3">
-    <h1 id="message">Find something else to do other than watch YouTube videos.</h1>
+  <body class="theme5">
+    <h1 id="message">Find something else to do other than play Minesweeper.</h1>
     <h2 id="question">Got something you need to do?</h2>
     <div id='link' class='medium two-list'>
       <a class='hfire-link' onclick='displaySomething()'>Yes</a>
-      <a class='hfire-link' href="youtube-addiction/1.html">No</a>
+      <a class='hfire-link' onclick='addicted()'>No</a>
       <input id="newBreak" class="invisible" type="text">
     </div>
     <div id='something' class='medium two-list' style='display:none;'>
-      <a class='hfire-link' href="custom.html?mode=youtube">Yes</a>
-      <a class='hfire-link' onclick='submitBored()'>No</a>
+      <a class='hfire-link' href="custom.html?mode=minesweeper">Yes</a>
+      <a class='hfire-link' onclick='addicted()'>No</a>
       <input id="newBreak" class="invisible" type="text">
     </div>
+    <article id='addiction' class="invisible">
+      <p>When you started playing Minesweeper, you thought it would be cool to solve an Expert board.
+      There's lots of logic, strategy, and brain power involved with playing that game.</p>
+      Since then, you solved lots of expert boards, and most of your recent solves felt unremarkable.
+      Now, you get distracted by a boring application on your phone.
+      Wouldn't it be nice if you can <a href="areyouhome.html">do something</a> that's less boring and more fulfilling?
+    </article>
     <script>
     function displaySomething() {
       $("question").innerHTML = "Want to type in the thing you need to do?"
@@ -29,11 +36,11 @@
       $("something").style.display = "grid";
     }
 
-    function submitBored() {
-      $("link").style.display = "block";
+    function addicted() {
+      $("question").style.display = "none";
+      $("link").style.display = "none";
       $("something").style.display = "none";
-      finalTest("bored","youtube");
-      $("link").innerHTML = "<a href=youtube.html>Click here to continue.</a>"
+      $("addiction").classList.remove("invisible");
     }
 
     createAtomicHabits();
