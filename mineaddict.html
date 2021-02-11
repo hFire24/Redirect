@@ -39,11 +39,18 @@
     <div id='addiction3' class='medium two-list' style='display:none;'>
       <a class='hfire-link' onclick="addicted(5)">Right.</a>
       <a class='hfire-link' onclick='addicted(6)'>Wrong.</a>
+      <a class='hfire-link' onclick='addicted(7)'>I'm in class.</a>
+      <a class='hfire-link' onclick='addicted(8)'>I'm in church.</a>
     </div>
     <article id='all-kinds' class="invisible">
       <p>There's all kinds of everything you can do. You can write in your journal, digitize your journal, play Stepmania, play the piano,
       listen to a General Conference talk, read Atomic Habits, listen to a guided meditation, do your homework, learn full stack on Skillshare, or draw.</p>
       I promise that if you do one of those things, you'll feel more fulfilled than just sitting or lying down with your phone playing Minesweeper.
+    </article>
+    <article id='paradox' class="medium invisible">
+      It may seem like that the church restricts freedom, but it's the opposite.
+      It restricts freedom in a way where your personal freedom isn't enslaved by sin.
+      For now, don't play Minesweeper. And don't play or browse stuff not related to church.
     </article>
     <script>
     function displaySomething() {
@@ -89,6 +96,15 @@
           $("link").style.display = "block";
           $("link").classList.remove("two-list");
           $("link").innerHTML = "<a href=relax.html>Click here to continue.</a>"
+          break;
+        case 7:
+          $("question").innerHTML = "Put your phone down and pay attention!";
+          $("addiction3").style.display = "none";
+          break;
+        case 8:
+          $("question").innerHTML = "";
+          $("addiction3").style.display = "none";
+          $("paradox").classList.remove("invisible");
           break;
       }
     }

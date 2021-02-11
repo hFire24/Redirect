@@ -382,7 +382,7 @@ function finalTest(inputText,site)
   }
   else if(expressDesireForCuteness) {
     if(Math.floor(Math.random() * 2) === 0)
-      $("question").innerHTML = "Stand up and stretch if you can.<br>Get your wireless mouse.<br><a href='art.html'>Open paint.net.</a>";
+      $("question").innerHTML = "Stand up and stretch if you can.<br>Get your drawing tablet.<br><a href='art.html'>Open Krita.</a>";
     else
       $("question").innerHTML = "Stand up and stretch if you can.<br>Clear your desk for drawing.<br><a href='art.html'>Get your sketch pad.</a>";
     $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='areyouhome.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";
