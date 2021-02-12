@@ -12,12 +12,13 @@
   <body class="theme5">
     <h1 id="message">Find something else to do other than play Minesweeper.</h1>
     <h2 id="question">Got something you need to do?</h2>
+    <input id="newBreak" class="invisible" type="text">
     <div id='link' class='medium two-list'>
       <a class='hfire-link' onclick='displaySomething()'>Yes</a>
       <a class='hfire-link' onclick='addicted(1)'>No</a>
       <a class='hfire-link' onclick='addicted(7)'>I'm in class.</a>
       <a class='hfire-link' onclick='addicted(8)'>I'm in church.</a>
-      <input id="newBreak" class="invisible" type="text">
+      <a class='hfire-link' onclick='addicted(9)' style='grid-column:1/3;'>I'm watching videos.</a>
     </div>
     <div id='something' class='medium two-list' style='display:none;'>
       <a class='hfire-link' href="custom.html?mode=minesweeper">Yes</a>
@@ -105,6 +106,10 @@
           $("question").innerHTML = "";
           $("link").style.display = "none";
           $("paradox").classList.remove("invisible");
+          break;
+        case 9:
+          $("question").innerHTML = "Grab your fidget cube for fidgeting.";
+          $("link").style.display = "none";
           break;
       }
     }
