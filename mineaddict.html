@@ -15,6 +15,8 @@
     <div id='link' class='medium two-list'>
       <a class='hfire-link' onclick='displaySomething()'>Yes</a>
       <a class='hfire-link' onclick='addicted(1)'>No</a>
+      <a class='hfire-link' onclick='addicted(7)'>I'm in class.</a>
+      <a class='hfire-link' onclick='addicted(8)'>I'm in church.</a>
       <input id="newBreak" class="invisible" type="text">
     </div>
     <div id='something' class='medium two-list' style='display:none;'>
@@ -39,8 +41,6 @@
     <div id='addiction3' class='medium two-list' style='display:none;'>
       <a class='hfire-link' onclick="addicted(5)">Right.</a>
       <a class='hfire-link' onclick='addicted(6)'>Wrong.</a>
-      <a class='hfire-link' onclick='addicted(7)'>I'm in class.</a>
-      <a class='hfire-link' onclick='addicted(8)'>I'm in church.</a>
     </div>
     <article id='all-kinds' class="invisible">
       <p>There's all kinds of everything you can do. You can write in your journal, digitize your journal, play Stepmania, play the piano,
@@ -99,11 +99,11 @@
           break;
         case 7:
           $("question").innerHTML = "Put your phone down and pay attention!";
-          $("addiction3").style.display = "none";
+          $("link").style.display = "none";
           break;
         case 8:
           $("question").innerHTML = "";
-          $("addiction3").style.display = "none";
+          $("link").style.display = "none";
           $("paradox").classList.remove("invisible");
           break;
       }
