@@ -74,6 +74,7 @@ new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Read your journal entries.<br>Start from September 2012.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
+new Breaktime('Take this quiz just for fun.',"quiz.html","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 //'How can you build an everlasting romantic relationship from scratch?',
@@ -131,7 +132,8 @@ new Breaktime('Listen to a General Conference talk.',"gcprogress.html","religion
 //'Try one of these C# coding projects.',
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
+new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
+new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",3,true)];
 //Do not upload traced art.
 
 var bigStand = [//Health and fitness

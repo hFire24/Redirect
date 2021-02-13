@@ -126,17 +126,17 @@ td {
 
 .four-list {
   display:grid;
-  grid-template-columns:auto auto auto auto;
+  grid-template-columns:repeat(4, 1fr);
 }
 
 .three-list {
   display:grid;
-  grid-template-columns:auto auto auto;
+  grid-template-columns:1fr 1fr 1fr;
 }
 
 .two-list {
   display:grid;
-  grid-template-columns:auto auto;
+  grid-template-columns:1fr 1fr;
 }
 
 .hfire-link {
@@ -357,7 +357,7 @@ td {
   }
   .four-list {
     display:grid;
-    grid-template-columns:auto auto auto;
+    grid-template-columns:1fr 1fr 1fr;
   }
   input[type='radio'], input[type='checkbox'] {
     width:15px;
@@ -378,7 +378,7 @@ td {
   @media only screen and (max-width: 413px) {
     .three-list, .four-list {
       display:grid;
-      grid-template-columns:auto auto;
+      grid-template-columns:1fr 1fr;
     }
   }
 }

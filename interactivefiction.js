@@ -134,8 +134,9 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='cyoa/62.html'>Exhausted</a></div>";
   }
   else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
-    $("question").innerHTML = "You do realize that drawing is one of your goals. Any other thoughts?";
-    expressDesireForCuteness = true;
+    /*$("question").innerHTML = "You do realize that drawing is one of your goals. Any other thoughts?";
+    expressDesireForCuteness = true;*/
+    location.href = "quiz.html";
   }
   else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "Remember what you said about quitting anime?";

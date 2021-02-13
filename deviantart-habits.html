@@ -16,12 +16,10 @@
         How can you apply this to your life?<br><input id="lifeAdvice" class="custom-select" type="text"><button id="submit" class="custom-button" onClick="submit()">Submit</button>
       </div>
       <h2 id="question" style='display:none;'>Let me guess. You're thinking about cute anime girls.</h2>
-      <div id='yesno' class='medium' style='display:none;'>
-        <div class='two-list'>
-          <a class='hfire-link' onclick="addicted()">Yes</a>
-          <a class='hfire-link' onclick="restoreForm()">No</a>
-        </div>
-        <a class='hfire-link' onclick="addicted()">I wasn't until now.</a>
+      <div id='yesno' class='medium two-list' style='display:none;'>
+        <a class='hfire-link' onclick="addicted()">Yes</a>
+        <a class='hfire-link' onclick="restoreForm()">No</a>
+        <a class='hfire-link extended' onclick="addicted()">I wasn't until now.</a>
       </div>
     </div>
     <script src="script.js"></script>

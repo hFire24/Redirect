@@ -165,12 +165,12 @@ td {
 
 .two-list {
   display:grid;
-  grid-template-columns:auto auto;
+  grid-template-columns:1fr 1fr;
 }
 
 .three-list, .relax-list {
   display:grid;
-  grid-template-columns:auto auto auto;
+  grid-template-columns:1fr 1fr 1fr;
 }
 
 .small {
@@ -189,7 +189,7 @@ td {
 
 .four-list {
   display:grid;
-  grid-template-columns:auto auto auto auto;
+  grid-template-columns:repeat(4, 1fr);
 }
 
 .hfire-link {
@@ -197,6 +197,10 @@ td {
   text-decoration:none;
   padding: 20px;
   cursor: pointer;
+}
+
+.extended {
+  grid-column:1/3;
 }
 
 .passive, .passive a {
@@ -513,11 +517,11 @@ td {
   }
   .relax-list {
     display:grid;
-    grid-template-columns:auto auto;
+    grid-template-columns:1fr 1fr;
   }
   .four-list {
     display:grid;
-    grid-template-columns:auto auto auto;
+    grid-template-columns:1fr 1fr 1fr;
   }
   #arrows {
     font-size: 50px;
@@ -544,7 +548,7 @@ td {
   @media only screen and (max-width: 413px) {
     .three-list, .four-list {
       display:grid;
-      grid-template-columns:auto auto;
+      grid-template-columns:1fr 1fr;
     }
   }
 }
