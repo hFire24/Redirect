@@ -27,11 +27,11 @@
       <a class='hfire-link million' onclick='addPoints(4)'>Pay someone to make my dream anime</a>
     </div>
     <div id='choices3' class='medium two-list' style='display:none;'>
-      <!--Travel-->
-      <a class='hfire-link travel' onclick='addPoints(1)'>Munich</a>
-      <a class='hfire-link travel' onclick='addPoints(2)'>Hong Kong</a>
-      <a class='hfire-link travel' onclick='addPoints(3)'>Tokyo</a>
-      <a class='hfire-link travel' onclick='addPoints(4)'>Akibahara</a>
+      <!--Music-->
+      <a class='hfire-link music' onclick='addPoints(1)'>Lo-Fi Hip Hop</a>
+      <a class='hfire-link music' onclick='addPoints(2)'>J-Core</a>
+      <a class='hfire-link music' onclick='addPoints(3)'>Kawaii Future Bass</a>
+      <a class='hfire-link music' onclick='addPoints(4)'>Denpa Music</a>
     </div>
     <div id='choices4' class='medium' style='display:none;'>
       <!--Pick a Number from 75-225-->
@@ -71,7 +71,7 @@
       <a class='hfire-link clothes' onclick='addPoints(1)'>Casual Clothes</a>
       <a class='hfire-link clothes' onclick='addPoints(2)'>Cute Clothes</a>
       <a class='hfire-link clothes' onclick='addPoints(3)'>Frilly Clothes</a>
-      <a class='hfire-link clothes' onclick='addPoints(4)'>Oversized Clothes</a>
+      <a class='hfire-link clothes' onclick='addPoints(4)'>Too Big Clothes</a>
     </div>
     <div id='choices9' class='medium two-list' style='display:none;'>
       <!--Pick an artist to aspire to-->
@@ -102,7 +102,7 @@
 
     shuffle( document.getElementsByClassName('draw') );
     shuffle( document.getElementsByClassName('million') );
-    shuffle( document.getElementsByClassName('travel') );
+    shuffle( document.getElementsByClassName('music') );
     shuffle( document.getElementsByClassName('cat') );
     shuffle( document.getElementsByClassName('anime') );
     shuffle( document.getElementsByClassName('website') );
@@ -111,7 +111,7 @@
 
     const questions = ["Pick a color!",
     "If you won a million dollars, what would you do?",
-    "Pick a place to travel to!",
+    "Pick a music genre!",
     "How tall is the anime girl you're thinking of (in centimeters)?",
     "You find a lost cat girl.",
     //"Pick the most obscure thing you recognize.",
