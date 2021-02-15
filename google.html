@@ -63,7 +63,7 @@
         inputText = $("newBreak").value.toLowerCase();
       console.log(inputText);
 
-      if (found(['assignment','project','exam','college','class','related to',],inputText) || slider1.value > 6 && slider1.value < 10 || count === 3 && inputText === 'immediately') {
+      if (found(['assignment','project','exam','college','class','related to','homework'],inputText) || slider1.value > 6 && slider1.value < 10 || count === 3 && inputText === 'immediately') {
         $("question").innerHTML = "Hopefully your search will lead to learning new things or passing assignments.<br>Don't forget to block Google soon.";
         revealSearchTerm();
       }
