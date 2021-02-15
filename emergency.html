@@ -155,18 +155,18 @@
               array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
           }
         }
-        else if (found(["screw up","destroy","degenerate","throwing your life away","corrupted","taboo","immoral fantasies","dangerous","doomed",],message)) {
-          for (i = 0; i < 9; i++) {
-            array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
-          }
-        }
         else {
-          for (i = 0; i < 12; i++) {
+          for (i = 0; i < 21; i++) {
             if (i < 1)
               array.push("whoa/old.html?id=24");
             else
               array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
           }
+        }
+        var j = 0;
+        while(j < array.length/4) {
+          array.push("bigbreak.html");
+          j++;
         }
         i = Math.floor(Math.random() * array.length);
         location.href = array[i];
