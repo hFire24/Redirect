@@ -26,10 +26,11 @@
       "Eat breakfast (Froot Loops/bacon & eggs) if you're hungry",
       "Take a shower if you didn't do it yet<ul><li>If you still can't do it, then forget about it</li></ul>",
       "Take a shower and do laundry if you didn't do them yet<ul><li>If you still can't do them, then forget about them</li></ul>",
-      "Charge your sleep mask",
       "Determine what things you need to get done today",
       "Optional: Put on <a href='https://youtu.be/xOA0T8ZjpFQ' target='_blank'>some music</a> to help you focus",
-      "It's time to have an awesome day! Achieve your goals!"];
+      "It's time to have an awesome day! Achieve your goals!",
+      "<a href='skillshare.html' target=_blank>Watch a Skillshare course.</a>",
+      "<a href='../gcprogress.html' target=_blank>Watch a General Conference talk.</a>"];
 
       const urlSearch = window.location.search;
       console.log(urlSearch);
@@ -42,10 +43,16 @@
         mh.push(morningHabits[0]);
       else if(nArray[0] === "1" && nArray[1] === "2")
         mh.push(morningHabits[1]);
-      if(nArray[0] === "1" && nArray[1] === "1")
+      if(nArray[0] === "1" && nArray[1] === "1") {
         mh.push(morningHabits[2]);
-      else
+        mh.push(morningHabits[15]);
+        mh.push(morningHabits[16]);
+      }
+      else {
+        mh.push(morningHabits[15]);
+        mh.push(morningHabits[16]);
         mh.push(morningHabits[3]);
+      }
       mh.push(morningHabits[4], morningHabits[5], morningHabits[6]);
       if (nArray[3] === "2")
         mh.push(morningHabits[7]);
@@ -56,7 +63,7 @@
         mh.push(morningHabits[10]);
       if (nArray[3] === "2")
         mh.push(morningHabits[11]);
-      mh.push(morningHabits[12], morningHabits[13], morningHabits[14], morningHabits[15]);
+      mh.push(morningHabits[12], morningHabits[13], morningHabits[14]);
 
       const parent = document.getElementById("parent");
 
