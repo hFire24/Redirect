@@ -134,8 +134,8 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='cyoa/62.html'>Exhausted</a></div>";
   }
   else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
-    /*$("question").innerHTML = "You do realize that drawing is one of your goals. Any other thoughts?";
-    expressDesireForCuteness = true;*/
+    $("question").innerHTML = "You do realize that drawing is one of your goals. Any other thoughts?";
+    expressDesireForCuteness = true;
     location.href = "quiz.html";
   }
   else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0 && !expressDesireForCuteness) {
@@ -319,7 +319,7 @@ function finalTest(inputText,site)
   }
   else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && !found(["but", "other than", "except"],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
     $("question").innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
-    $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='cyoa/13.html'>Right.</a><a class='hfire-link' href='cyoa/54.html'>Wrong.</a></div><a class='hfire-link' onclick=finalTest('bored','a')>I'm just bored. That's all.</a>";
+    $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='cyoa/13.html'>Right.</a><a class='hfire-link' href='cyoa/54.html'>Wrong.</a><a class='hfire-link extended' onclick=finalTest('bored','a')>I'm just bored. That's all.</a></div>";
   }
   else if(found(boredom,inputText) || found(['don\'t know', 'dunno', 'no idea', 'no reason', 'idk'], inputText)) {
     var messages = ['You really are bored.',
