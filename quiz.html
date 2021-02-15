@@ -10,173 +10,49 @@
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme2">
-    <h2 id="question" class="space">Take this quiz. What's your life goal?</h2>
-    <div id='choices1' class='medium two-list'>
+    <h2 id="question" class="space">Take this quiz. You life goal involves cute anime girls.</h2>
+    <div id='choices' class='four-list'>
       <!--Life goal?-->
-      <a class='hfire-link draw' onclick='addPoints(1)'>Be self-disciplined</a>
-      <a class='hfire-link draw' onclick='addPoints(2)'>Get rich</a>
-      <a class='hfire-link draw' onclick='addPoints(3)'>Be great at drawing</a>
-      <a class='hfire-link draw' onclick='addPoints(4)'>Look at the cutest anime girls</a>
-      <a class='hfire-link extended' href='cyoa/47.html'>I'm busy</a>
+      <a class='hfire-link draw' onclick='addPoints(1)'>Strongly Disagree</a>
+      <a class='hfire-link draw' onclick='addPoints(2)'>Disagree</a>
+      <a class='hfire-link draw' onclick='addPoints(3)'>Agree</a>
+      <a class='hfire-link draw' onclick='addPoints(4)'>Strongly Agree</a>
     </div>
-    <div id='choices2' class='medium two-list' style='display:none;'>
-      <!--If you had a million dollars-->
-      <a class='hfire-link million' onclick='addPoints(1)'>Donate it all to charity</a>
-      <a class='hfire-link million' onclick='addPoints(2)'>Buy an expensive car</a>
-      <a class='hfire-link million' onclick='addPoints(3)'>Take personalized anime art lessons</a>
-      <a class='hfire-link million' onclick='addPoints(4)'>Pay someone to make my dream anime</a>
-    </div>
-    <div id='choices3' class='medium two-list' style='display:none;'>
-      <!--Music-->
-      <a class='hfire-link music' onclick='addPoints(1)'>Lo-Fi Hip Hop</a>
-      <a class='hfire-link music' onclick='addPoints(2)'>J-Core</a>
-      <a class='hfire-link music' onclick='addPoints(3)'>Kawaii Future Bass</a>
-      <a class='hfire-link music' onclick='addPoints(4)'>Denpa Music</a>
-    </div>
-    <div id='choices4' class='medium' style='display:none;'>
-      <!--Pick a Number from 75-225-->
-      <input type="range" min="75" max="200" value="150" class="slider" id="number-slider"> <button class='custom-button' onclick="submit()">Submit</button>
-      <div id="number">150</div>
-    </div>
-    <div id='choices5' class='medium two-list' style='display:none;'>
-      <!--You find a lost cat girl-->
-      <a class='hfire-link cat' onclick='addPoints(1)'>Run</a>
-      <a class='hfire-link cat' onclick='addPoints(2)'>Help her</a>
-      <a class='hfire-link cat' onclick='addPoints(3)'>Protect her</a>
-      <a class='hfire-link cat' onclick='addPoints(4)'>MINE!</a>
-    </div>
-    <!--div id='choices6' class='medium two-list' style='display:none;'>
-      <Most obscure anime>
-      <a class='hfire-link anime' onclick='addPoints(1)'>Pokémon</a>
-      <a class='hfire-link anime' onclick='addPoints(2)'>My Hero Academia</a>
-      <a class='hfire-link anime' onclick='addPoints(3)'>Clannad</a>
-      <a class='hfire-link anime' onclick='addPoints(4)'>Wataten!</a>
-    </div-->
-    <div id='choices6' class='medium two-list' style='display:none;'>
-      <!--Dream anime-->
-      <a class='hfire-link anime' onclick='addPoints(1)'>No Fanservice</a>
-      <a class='hfire-link anime' onclick='addPoints(2)'>Flying and Magic</a>
-      <a class='hfire-link anime' onclick='addPoints(3)'>A European Setting</a>
-      <a class='hfire-link anime' onclick='addPoints(4)'>Gigantic Hats</a>
-    </div>
-    <div id='choices7' class='medium two-list' style='display:none;'>
-      <!--Pick a Website-->
-      <a class='hfire-link website' onclick='addPoints(1)'>Skillshare</a>
-      <a class='hfire-link website' onclick='addPoints(2)'>YouTube</a>
-      <a class='hfire-link website' onclick='addPoints(3)'>Instagram</a>
-      <a class='hfire-link website' onclick='addPoints(4)'>DeviantArt</a>
-    </div>
-    <div id='choices8' class='medium two-list' style='display:none;'>
-      <!--Clothing choice-->
-      <a class='hfire-link clothes' onclick='addPoints(1)'>Casual Clothes</a>
-      <a class='hfire-link clothes' onclick='addPoints(2)'>Cute Clothes</a>
-      <a class='hfire-link clothes' onclick='addPoints(3)'>Frilly Clothes</a>
-      <a class='hfire-link clothes' onclick='addPoints(4)'>Too Big Clothes</a>
-    </div>
-    <div id='choices9' class='medium two-list' style='display:none;'>
-      <!--Pick an artist to aspire to-->
-      <a class='hfire-link artist' onclick='addPoints(1)'>Vincent van Gogh</a>
-      <a class='hfire-link artist' onclick='addPoints(2)'>Ken Sugimori</a>
-      <a class='hfire-link artist' onclick='addPoints(3)'>alphes</a>
-      <a class='hfire-link artist' onclick='addPoints(4)'>Fujima Takuya</a>
-    </div>
-    <div id='choices10' class='medium four-list' style='display:none;'>
-      <!--Cute Anime Girls Think-->
-      <a class='hfire-link' onclick='addPoints(1)'>❌</a>
-      <a class='hfire-link' onclick='addPoints(2)'>🙂</a>
-      <a class='hfire-link' onclick='addPoints(3)'>😊</a>
-      <a class='hfire-link' onclick='addPoints(4)'>😍</a>
-    </div>
-    <div id='choices11' class='medium' style='display:none;'>
+    <div id='continue' class='medium' style='display:none;'>
       <a href='art.html'>Click here to continue.</a>
     </div>
+    <a id='am-busy' class='medium hfire-link ultra-extended' style='bottom:0px;' href='cyoa/47.html'>I'm busy</a>
     <script src='script.js'></script>
     <script>
     var score = 0;
     var question = 1;
-    var numberElement = document.getElementById("number");
-    var slider = document.getElementById("number-slider");
-    slider.oninput = function () {
-      numberElement.innerHTML = slider.value;
-    }
 
-    shuffle( document.getElementsByClassName('draw') );
-    shuffle( document.getElementsByClassName('million') );
-    shuffle( document.getElementsByClassName('music') );
-    shuffle( document.getElementsByClassName('cat') );
-    shuffle( document.getElementsByClassName('anime') );
-    shuffle( document.getElementsByClassName('website') );
-    shuffle( document.getElementsByClassName('clothes') );
-    shuffle( document.getElementsByClassName('artist') );
-
-    const questions = ["Pick a color!",
-    "If you won a million dollars, what would you do?",
-    "Pick a music genre!",
-    "How tall is the anime girl you're thinking of (in centimeters)?",
-    "You find a lost cat girl.",
-    //"Pick the most obscure thing you recognize.",
-    "What would your dream anime contain?",
-    "Pick a website!",
-    "What kind of clothes look best on an anime girl?",
-    "Pick an artist!",
-    "What do you think about cute anime girls?"];
+    const questions = ["You life goal involves cute anime girls.",
+    "Looking at cute anime girls makes you happier.",
+    "Your urges are uncontrollable.",
+    "Cuteness is a virtue.",
+    "The smaller the anime girl, the cuter she is.",
+    "Anime art is the best art.",
+    "It is a good idea to mildly lewd lolis.",
+    "Japan creates the best media and entertainment.",
+    "The baggier the better.",
+    "Cute anime girls are the best thing in the world."];
 
     function addPoints(points) {
       score += points;
       console.log("You have " + score + " points")
-      $("choices" + question).style.display = "none";
       question++;
       if(question === 11)
       {
-        if (points === 4 && score < 26)
-          score = 26;
-        else if (points === 1 && score >= 28)
-          score -= 10;
+        var randomModifier = Math.floor(Math.random() * 5) - 2;
+        score += randomModifier;
+        if (score === 42)
+          score = 40;
+        console.log("You final score is " + score + " points")
         finished();
       }
       else
         $("question").innerHTML = questions[question - 1];
-      if(question === 4 || question === 11)
-        $("choices" + question).style.display = "block";
-      else
-        $("choices" + question).style.display = "grid";
-    }
-
-    function submit() {
-      let number = slider.value;
-      if(number <= 130)
-        addPoints(4);
-      else if(number <= 150)
-        addPoints(3);
-      else if(number < 170)
-        addPoints(2);
-      else
-        addPoints(1);
-    }
-
-    //Taken from https://j11y.io/javascript/shuffling-the-dom/
-    function shuffle(elems) {
-      allElems = (function(){
-    	var ret = [], l = elems.length;
-    	while (l--) { ret[ret.length] = elems[l]; }
-    	return ret;
-        })();
-
-      var shuffled = (function(){
-        var l = allElems.length, ret = [];
-        while (l--) {
-            var random = Math.floor(Math.random() * allElems.length),
-                randEl = allElems[random].cloneNode(true);
-            allElems.splice(random, 1);
-            ret[ret.length] = randEl;
-        }
-        return ret;
-      })(), l = elems.length;
-
-      while (l--) {
-        elems[l].parentNode.insertBefore(shuffled[l], elems[l].nextSibling);
-        elems[l].parentNode.removeChild(elems[l]);
-      }
     }
 
     function takeShortcut(score) {
@@ -186,55 +62,49 @@
     }
 
     function finished() {
-      var answers = ["You should do some drawing exercises.",
-      "You should draw some eyes!",
-      "You should draw an anime face!",
-      "You should draw a Touhou character! Or more specifically, Daiyousei!",
-      "You should draw Cirno!",
-      "You should draw a cute loli! Or more specifically, Rumia!",
-      "You should draw Flandre Scarlet!",
-      "You should draw Chino-chan!",
-      "You should draw an extremely cute loli! Or more specifically, Hinata Hakamada!",
-      "You should draw an age regressed loli!"];
+      var answers = ["You should do some drawing exercises.", //Less than 22
+      "You should practice the anime drawing style.", //22-25
+      "You should draw a Touhou character! Like Daiyousei!", //26-27
+      "You should draw Cirno!", //28-29
+      "You should draw a cute loli! Like Rumia!", //30-31
+      "You should draw Chino-chan!", //32-33
+      "You should draw Flandre Scarlet!", //34-35
+      "You should draw an extremely cute loli!", //36-37
+      "You should draw an age regressed loli!"]; //38-40
 
-      if(score < 21) {
-        answer = answers[0]; //Drawing exercises
-      }
-      else if(score < 24) {
-        answer = answers[1]; //Eyes
-      }
-      else {
-        switch (Math.floor(score/2)) {
-          case 12:
-            answer = answers[2]; //Anime Face
-            break;
-          case 13:
-            answer = answers[3]; //Touhou character
-            break;
-          case 14:
-            answer = answers[4]; //Cirno
-            break;
-          case 15:
-            answer = answers[5]; //Cute loli
-            break;
-          case 16:
-            answer = answers[6]; //Flandre Scarlet
-            break;
-          case 17:
-            answer = answers[7]; //Chino-chan
-            break;
-          case 18:
-            answer = answers[8]; //Extremely cute loli
-            break;
-          case 19:
-          case 20:
-            answer = answers[9]; //Age regressed loli
-            break;
-          default:
-            answer = answers[0]; //Drawing exercises
-        }
+      switch (Math.floor(score/2)) {
+        case 11:
+        case 12:
+          answer = answers[1]; //Practice style
+          break;
+        case 13:
+          answer = answers[2]; //Touhou character
+          break;
+        case 14:
+          answer = answers[3]; //Cirno
+          break;
+        case 15:
+          answer = answers[4]; //Cute loli
+          break;
+        case 16:
+          answer = answers[5]; //Chino-chan
+          break;
+        case 17:
+          answer = answers[6]; //Flandre Scarlet
+          break;
+        case 18:
+          answer = answers[7]; //Extremely cute loli
+          break;
+        case 19:
+        case 20:
+          answer = answers[8]; //Age regressed loli
+          break;
+        default:
+          answer = answers[0]; //Drawing exercises
       }
       $("question").innerHTML = answer;
+      $("choices").style.display = "none";
+      $("continue").style.display = "block";
     }
     </script>
   </body>

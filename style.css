@@ -388,7 +388,7 @@ td {
   color: red;
 }
 
-#arrows {
+#arrows, #am-busy {
   position:absolute;
   bottom:0;
   left:0;
