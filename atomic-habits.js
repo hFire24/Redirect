@@ -20,6 +20,10 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "If you want to make a habit a big part of your life, make the cue a big part of your environment.", //Page 86
 "You can train yourself to link a particular habit with a particular context.", //Page 88
 "Divide your room into activity zones. Every habit should have a home.", //Page 89
+"The people with the best self-control are typically the ones who need to use it the least.", //Page 93
+"The way to improve [perseverance, grit, and determination] is by creating a more disciplined environment.", //Page 93
+"You can break a habit, but you're unlikely to forget it.", //Page 94
+"I have never seen someone consistently stick to positive habits in a negative environment.", //Page 94
 "Prime your environment to eliminate bad habits.",
 "Want to resist a bad habit? Make it invisible.", //Inverse of the First Law
 "Want to keep a good habit alive? Make it attractive.", //Second Law
@@ -41,6 +45,10 @@ const deviantart = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //
 "Every action you take is a vote for the type of person you wish to become.", //Page 38
 "The people who don’t have their habits handled are often the ones with the least amount of freedom.", //Page 46
 "What you crave is not the habit itself but the change in state it delivers.", //Page 48
+"The people with the best self-control are typically the ones who need to use it the least.", //Page 93
+"The way to improve [perseverance, grit, and determination] is by creating a more disciplined environment.", //Page 93
+"You can break a habit, but you're unlikely to forget it.", //Page 94
+"I have never seen someone consistently stick to positive habits in a negative environment.", //Page 94
 "Prime your environment to eliminate bad habits.",
 "Want to resist a bad habit? Make it invisible.", //Inverse of the First Law
 "Want to quit a bad habit? Make it unattractive.", //Inverse of the Second Law
