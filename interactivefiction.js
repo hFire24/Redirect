@@ -51,6 +51,10 @@ function finalTest(inputText,site)
         $("link").innerHTML = "<a href='https://www.doordash.com/en-US'>Click here if you want to spend over $10 for food delivery.</a>";
     }
   }
+  else if(found(['thirst','drink','water','hydrat'],inputText)) {
+    $("question").innerHTML = "You need to drink some water right now.";
+    document.body.removeChild($("link"));
+  }
   else if(found(['hate myself', 'hate my life', 'worthless', 'i don\'t matter', 'i do not matter', 'give up in life', 'lost all hope'],inputText)) {
     $("question").innerHTML = "<a id='relax' href='relax2.html?mood=self+hate'>You need self-love.</a>";
     $("link").innerHTML = "<a class='hfire-link' href='stress.html'>No.</a>";
