@@ -117,10 +117,10 @@ function addBigMessages() {
   'How about you digitize a paragraph from your journal?',
   'Why not preserve some journal entries into a document?',
     //Goals
-  '<a href="https://skl.sh/37ueYoA">How about you go to Skillshare to double your social skills?</a>',
+  'How about you learn social skills?',
   '<a href="chiptunelessons.html">How about you learn how to make chiptunes?</a>',
-  '<a href="https://skl.sh/2Hq5hNy">Why not learn how to use FL Studio in Skillshare?</a>',
-  '<a href="https://skl.sh/37XTd4g">Learning programming on Skillshare is a good idea.</a>',
+  'Learning programming is a good idea.',
+  'Want to earn money via Fiverr? Learn Godot.',
   'Remember that Python games book? You may get something out of it by reading it.',
   //'<a href="art.html">Why don\'t you practice drawing anime?</a>',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',

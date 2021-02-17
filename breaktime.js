@@ -78,7 +78,7 @@ new Breaktime('Take this quiz just for fun.',"quiz.html","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 //'How can you build an everlasting romantic relationship from scratch?',
-new Breaktime('Double your social skills.',"https://skl.sh/37ueYoA","watch",2,false),
+new Breaktime('Find a way to learn social skills.',"pass",2,false),
 new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false),
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false)];
 
@@ -125,13 +125,13 @@ new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
-new Breaktime('Go to Skillshare, and learn programming.',"https://skl.sh/37XTd4g","watch",3,false),
-new Breaktime('Learn Full Stack so that you can host a website for free that supports FileZilla.',"https://skl.sh/37XTd4g","watch",3,false),
+new Breaktime('Find a way to learn social skills.',"pass",2,false),
 new Breaktime('Listen to a General Conference talk.',"gcprogress.html","religion",3,false),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
+new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
 new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",3,true)];
@@ -183,8 +183,6 @@ new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"gcprogress.html","religion",3,false),
-new Breaktime('Double your social skills.',"https://skl.sh/37ueYoA","watch",2,false),
-new Breaktime('Train your communication skills.',"https://skl.sh/33mrvdU","watch",2,false),
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];

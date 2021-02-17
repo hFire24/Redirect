@@ -76,10 +76,10 @@
       fun = bool;
       if(future === true) {
         if (fun === true)
-          $("message").innerHTML = "Just keep being yourself, but please step up your Skillshare game for programming.";
+          $("message").innerHTML = "Just keep being yourself, but please learn more programming.";
         else
-          $("message").innerHTML = "It's time to pick up the pace for this Skillshare course.";
-        $("link").innerHTML = "<a href='https://skl.sh/37XTd4g'>Click here to continue.</a>";
+          $("message").innerHTML = "It's time to learn more programming.";
+          document.body.removeChild($("link"));
       }
       else if(fun === true) {
         $("message").innerHTML = "Who cares about what mom says? You're living your life to your fullest! Enjoy it while it lasts!";
