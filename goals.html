@@ -20,7 +20,7 @@
     <div class='space'></div>
     <div id='exportRegion'>
       <textarea id='exportArea' cols='50' rows='8'></textarea>
-      <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button>
+      <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button> <button onclick='undoText()'>Undo</button>
     </div>
     <script>
       var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
@@ -160,6 +160,21 @@
           document.body.removeChild(document.getElementById("exportRegion"));
           changeColor();
         }
+      }
+
+      function undoText() {
+        if (deletedElements.length === 0)
+          return;
+        var letter = deletedElements[deletedElements.length - 1].toUpperCase();
+        var aHabitsIndex = letter.charCodeAt(0) - 65;
+        var toBeRestored = document.getElementById("habit-" + letter);
+        if(aHabits[aHabitsIndex].category === "passive")
+          toBeRestored.style.color = "#3CF";
+        else if(aHabits[aHabitsIndex].category === "golden")
+          toBeRestored.style.color = "gold";
+        else
+          toBeRestored.style.color = "white"
+        deletedElements.pop();
       }
 
       function exportGoals() {
