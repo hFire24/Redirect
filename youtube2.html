@@ -13,20 +13,43 @@
     <h1 id="message">Find something else to do other than watch YouTube videos.</h1>
     <h2 id="question">Got something you need to do?</h2>
     <div id='link' class='medium two-list'>
-      <a class='hfire-link' onclick='displaySomething()'>Yes</a>
+      <a class='hfire-link' onclick='displaySomething(1)'>Yes</a>
       <a class='hfire-link' href="youtube-addiction/1.html">No</a>
+      <a class='hfire-link extended' onclick="displaySomething(2)">But I want to watch YouTube!</a>
       <input id="newBreak" class="invisible" type="text">
     </div>
     <div id='something' class='medium two-list' style='display:none;'>
       <a class='hfire-link' href="custom.html?mode=youtube">Yes</a>
       <a class='hfire-link' onclick='submitBored()'>No</a>
-      <input id="newBreak" class="invisible" type="text">
+    </div>
+    <div id='really' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' onclick="displaySomething(3)">Yes! I really want to watch YouTube videos now!</a>
+      <a class='hfire-link' href='youtube-addiction/index.html'>No. I need to stop procrastinating.</a>
+    </div>
+    <div id='really-really' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' onclick="displaySomething(4)">Yes! I got nothing to do but watch YouTube videos!</a>
+      <a class='hfire-link' href='youtube-addiction/index.html'>No. I want to kill this YouTube addiction!</a>
     </div>
     <script>
-    function displaySomething() {
-      $("question").innerHTML = "Want to type in the thing you need to do?"
+    function displaySomething(number) {
       $("link").style.display = "none";
-      $("something").style.display = "grid";
+      if(number === 1) {
+        $("question").innerHTML = "Want to type in the thing you need to do?"
+        $("something").style.display = "grid";
+      }
+      else if(number === 2) {
+        $("question").innerHTML = "Do you really want to watch YouTube videos?"
+        $("really").style.display = "grid";
+      }
+      else if(number === 3) {
+        $("question").innerHTML = "Are you absolutely sure?"
+        $("really").style.display = "none";
+        $("really-really").style.display = "grid";
+      }
+      else {
+        $("question").innerHTML = "Enjoy the rest of your life wasting your time watching YouTube videos!"
+        $("really-really").style.display = "none";
+      }
     }
 
     function submitBored() {
