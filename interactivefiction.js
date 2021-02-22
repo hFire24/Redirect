@@ -83,7 +83,7 @@ function finalTest(inputText,site)
       $("question").innerHTML = "I repeat: There's nothing beneficial to see there.";
     else
       $("question").innerHTML = "There's nothing beneficial to see there.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(found(['focus', 'concentrate'],inputText)) {
     $("question").innerHTML = "Well there's your problem.";
@@ -144,7 +144,7 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "Remember what you said about quitting anime?";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(found(['play', 'game'],inputText)) {
     question.innerHTML = "How long have you been being productive?";
@@ -217,7 +217,7 @@ function finalTest(inputText,site)
         replace = messages[Math.floor(Math.random() * messages.length)];
       else
         document.getElementById("question").innerHTML = replace;
-      document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      document.getElementById("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
     }
   }
   else if(inputText.indexOf('motivat') >= 0)
@@ -242,7 +242,7 @@ function finalTest(inputText,site)
     location.href = "time.html";
   else if(found(["unblock","access","bypass"],inputText)) {
     $("question").innerHTML = "If you unblock that website, you'll waste too much time.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("procrast") >= 0 || found(wasteTime,inputText))
     location.href = "anti-procrastination.html";
@@ -252,7 +252,7 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("research") >= 0) {
     $("question").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(found(['funny', 'laugh', 'hilarious', 'lol', 'xd', '😆', '🤣', '😂'],inputText) && inputText.indexOf('loli') < 0) {
     $("message").classList.remove("invisible");
@@ -281,7 +281,7 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("fun") >= 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "Fun things are good, but they are distractions.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("nothing") >= 0 && inputText.indexOf("want") >= 0 && !found(["but", "other than", "except"],inputText))
     location.href = 'cyoa/13.html';
@@ -383,7 +383,7 @@ function finalTest(inputText,site)
     if(expressDesireForCuteness)
       document.getElementById("link").innerHTML = "<a href='areyouhome.html'>Click here to continue.</a>";
     else
-      document.getElementById("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      document.getElementById("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(expressDesireForCuteness) {
     if(Math.floor(Math.random() * 2) === 0)
@@ -407,7 +407,7 @@ function finalTest(inputText,site)
     }
     else {
       $("question").innerHTML = "Don't be addicted to the internet.";
-      $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
     }
   }
   else if(inputText.indexOf("want") >= 0 && unknownReason < 1) {
@@ -425,20 +425,20 @@ function finalTest(inputText,site)
     }
     else {
       $("question").innerHTML = "You want to go there, but you don't need to go there.";
-      $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+      $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
     }
   }
   else if(inputText.indexOf("i can") >= 0 && !found(cannot,inputText)) {
     $("question").innerHTML = "You could, but you should be doing something else instead.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf(site) > 0 && unknownReason === 1) {
     $("question").innerHTML = "You want to go there, but you don't need to go there.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(found(['succe', 'accomplish',' win', ' won', 'champion', 'victor'],inputText) && inputText.indexOf("want") < 0 && !found(required,inputText) && inputText.indexOf("?") < 0) {
     $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else if(unknownReason < 2 && (inputText.indexOf("feel") < 0 || inputText.indexOf("feel like") >= 0)) {
     $("question").innerHTML = "Hmm... How are you feeling?";
@@ -446,11 +446,11 @@ function finalTest(inputText,site)
   }
   else if(site === "reddit") {
     $("question").innerHTML = "Reddit is bad.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
   else {
     $("question").innerHTML = "I'm gonna assume that you should be more productive instead.";
-    $("link").innerHTML = "<a href='cyoa/35.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
   }
 }
 
