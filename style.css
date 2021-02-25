@@ -203,6 +203,10 @@ td {
   grid-column:1/3;
 }
 
+.double-extended {
+  grid-column:1/4;
+}
+
 .passive, .passive a {
   color:#7FB;
 }

@@ -393,7 +393,7 @@ function okFeeling() {
       location.href = "time.html";
       break;
     case "bored":
-      location.href = "cyoa/35.html";
+      location.href = "cyoa/17.html";
       break;
     case "really bored":
       message.innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
@@ -557,7 +557,7 @@ function rejectSomething(time) {
   else if(time === 9)
     link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(10)' style='color:white;'>No.</strong>";
   else if(time === 10)
-    link.innerHTML = "<a class='hfire-link' href='cyoa/35.html'>You really are bored.</a>";
+    link.innerHTML = "<a class='hfire-link' href='cyoa/17.html'>You really are bored.</a>";
   else
     location.href = "cyoa/1.html";
 }
