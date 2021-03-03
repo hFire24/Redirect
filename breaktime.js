@@ -289,17 +289,17 @@ function displayLink() {
   if (messages[globalIndex].category === "done")
     link.innerHTML = "<div class='space'>Immediately close this tab.</div>";
   else if (messages[globalIndex].category === "task")
-    link.innerHTML = "<div class='two-list space'><u onclick='finished()'>I already did.</u><a href='cyoa/64.html' target='_blank'>I have nothing to do.</a></div>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><a href='cyoa/64.html' target='_blank'>I have nothing to do.</a></div>";
   else if (messages[globalIndex].category === "plan2")
-    link.innerHTML = "<div class='two-list space'><u onclick='finished()'>I already did.</u><u onclick='finished()'>I have nothing to do.</a></div>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='finished()'>I have nothing to do.</a></div>";
   else if(messages[globalIndex].category === "food")
-    link.innerHTML = "<div class='two-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('food')>I am still full, even after 3 hours.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('food')>I am still full, even after 3 hours.</u>";
   else if(messages[globalIndex].category === "homework")
-    link.innerHTML = "<div class='two-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('homework')>I am taking a break from homework.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('homework')>I am taking a break from homework.</u>";
   else if(messages[globalIndex].category === "exercise-heavy")
-    link.innerHTML = "<div class='two-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('exercise-heavy')>It's been less than 30 minutes since I ate.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('exercise-heavy')>It's been less than 30 minutes since I ate.</u>";
   else
-    link.innerHTML = "<div class='two-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div>";
 }
 
 function noooo() {

@@ -163,6 +163,11 @@ td {
   font-size: 45px;
 }
 
+.break-list {
+  display:grid;
+  grid-template-columns:auto auto;
+}
+
 .two-list {
   display:grid;
   grid-template-columns:1fr 1fr;
