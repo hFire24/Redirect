@@ -134,6 +134,11 @@ td {
   grid-template-columns:1fr 1fr 1fr;
 }
 
+.three-list-old {
+  display:grid;
+  grid-template-columns:auto auto auto;
+}
+
 .two-list {
   display:grid;
   grid-template-columns:1fr 1fr;
