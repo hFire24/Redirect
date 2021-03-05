@@ -56,6 +56,11 @@
         console.log("You final score is " + score + " points")
         finished();
       }
+      else if(question === 3 && points < 3)
+      {
+        $("question").innerHTML = "Control these thoughts and kick them out!";
+        $("choices").style.display = "None";
+      }
       else
         $("question").innerHTML = questions[question - 1];
     }

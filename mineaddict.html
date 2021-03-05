@@ -53,6 +53,10 @@
       It restricts freedom in a way where your personal freedom isn't enslaved by sin.
       For now, don't play Minesweeper. And don't play or browse stuff not related to church.
     </article>
+    <div id='video' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' href="breaktime.html">Yes</a>
+      <a class='hfire-link' href="cyoa/2.html">No</a>
+    </div>
     <script>
     function displaySomething() {
       $("question").innerHTML = "Want to type in the thing you need to do?"
@@ -108,8 +112,9 @@
           $("paradox").classList.remove("invisible");
           break;
         case 9:
-          $("question").innerHTML = "Grab your fidget cube for fidgeting.";
+          $("question").innerHTML = "Grab your fidget cube for fidgeting.<br>Also, do you need to watch this video?";
           $("link").style.display = "none";
+          $("video").style.display = "grid";
           break;
       }
     }
