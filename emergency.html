@@ -12,7 +12,7 @@
   <body class="theme6">
     <div id='break' class='space'>The emergency button is your ally. If you're having thoughts that could lead to a relapse, don't act on them.</div>
     <div id='uncontrollable' style='display:none;'>
-      <input id='search' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("deviantart")'>Search (DeviantArt)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("ecosia")'>Search (Ecosia)</button><br>
+      <input id='search' type='text'><button onclick='search("Google")'>Search (Google)</button><br><button onclick='search("YouTube")'>Search (YouTube)</button><button onclick='search("Twitter")'>Search (Twitter)</button><button onclick='search("DeviantArt")'>Search (DeviantArt)</button><br><button onclick='search("DuckDuckGo")'>Search (DuckDuckGo)</button><button onclick='search("Ecosia")'>Search (Ecosia)</button><br>
       <a onclick='youLearnQuickly()'>I will not search for anything.</a>
     </div>
     <div id='uncontrollable2' style='display:none;'>
@@ -89,7 +89,10 @@
 
       function search(site) {
         website = site;
-        document.getElementById("break").innerHTML = "Before I search for \"" + document.getElementById("search").value + "\" for you, explain why you wanted to search it.";
+        if(document.getElementById("search").value === "")
+          document.getElementById("break").innerHTML = "Before I take you to " + site + ", explain why you wanted to go there.";
+        else
+          document.getElementById("break").innerHTML = "Before I search for \"" + document.getElementById("search").value + "\" for you, explain why you wanted to search it.";
         document.getElementById("uncontrollable").style.display = "none";
         document.getElementById("uncontrollable2").style.display = "block";
       }
@@ -131,7 +134,10 @@
         if(index < 0 || index >= answers.length)
           index = Math.floor(Math.random() * answers.length);
         let consequence = answers[index];
-        document.getElementById("break").innerHTML = "I will not search for \"" + document.getElementById("search").value + "\" for you! If you search for it on any website, " + consequence;
+        if(document.getElementById("search").value === "")
+          document.getElementById("break").innerHTML = "I will not let you go to " + website + "! If you go there, " + consequence;
+        else
+          document.getElementById("break").innerHTML = "I will not search for \"" + document.getElementById("search").value + "\" for you! If you search for it on any website, " + consequence;
         document.getElementById("uncontrollable2").style.display = "none";
         document.getElementById("never-forget").style.display = "block";
         document.getElementById("emergency-button").style.display = "inline";
