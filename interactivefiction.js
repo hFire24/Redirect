@@ -140,7 +140,10 @@ function finalTest(inputText,site)
   else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
     $("question").innerHTML = "You do realize that drawing is one of your goals. Any other thoughts?";
     expressDesireForCuteness = true;
-    location.href = "quiz.html";
+    if(site === "searchterm")
+      location.href = "art.html?term=" + term;
+    else
+      location.href = "quiz.html";
   }
   else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "Remember what you said about quitting anime?";
@@ -358,7 +361,7 @@ function finalTest(inputText,site)
         for(var i = arrayLength; i < arrayLength * 2; i++)
           messages.push('Reddit is bad.');
       }
-      else if(site === 'deviantart') {
+      else if(site === 'deviantart' || site === 'searchterm') {
         messages.push('You wish you are a cute anime girl? 🤣🤣',
         'Your ideal self is a cute little kid? 🤣🤣',
         'Life isn\'t about seeking cuteness.');
@@ -411,7 +414,8 @@ function finalTest(inputText,site)
     }
   }
   else if(inputText.indexOf("want") >= 0 && unknownReason < 1) {
-    if(inputText !== "because i want to") {
+    var wants = ["because i want to", "because i really want to", "because i want to.", "because i really want to."]
+    if(!foundAtEnd(wants,inputText)) {
       if(inputText.endsWith("want") || inputText.endsWith("wants"))
       {
         if(inputText.indexOf("because") >= 0)
@@ -470,6 +474,13 @@ function generateHealthLink() {
 function found(array,inputText) {
   for (var i in array)
     if (inputText.indexOf(array[i]) >= 0)
+      return true;
+  return false;
+}
+
+function foundAtEnd(array,inputText) {
+  for (var i in array)
+    if (inputText.endsWith(array[i]))
       return true;
   return false;
 }

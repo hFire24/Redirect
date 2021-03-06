@@ -30,7 +30,7 @@
       <div class='slidercontainer space'>
         <input type="range" min="0" max="6" value="3" class="slider" id="dependency-slider"> <button onclick="dependencySubmit()">Submit</button>
       </div>
-      <div id="importance">I want to go to DeviantArt</div>
+      <div id="importance">I want to do it</div>
     </div>
     <audio id='nuke'>
       <source src="https://hfire24.github.io/Redirect/media/Tactical Nuke.mp3" type="audio/mpeg">
@@ -106,8 +106,8 @@
       'You are capable of doing great things.',
       'Freedom is not falling into Satan\'s temptations.',
       'If you prioritize comfort and self-indulgence over freedom and achievement, you will live a life of regret.'];
-      for(var i = 0; i < 12; i++)
-        redirectMessages.push("☢IMMEDIATELY LEAVE☢");
+      /*for(var i = 0; i < 12; i++)
+        redirectMessages.push("☢IMMEDIATELY LEAVE☢");*/
       redirectMessages.push('✝PLAY TABERNACLE CHOIR MUSIC✝',
       '☢<i>PLAY FURY OF THE STORM </i>☢');
       //Get random message index from messages array
@@ -214,22 +214,23 @@
       var random = Math.floor(Math.random() * 30)
       console.log("Random " + random);
       var urlSearch = window.location.search;
+      console.log(urlSearch);
       if(urlSearch === "")
         searchTerm = false;
-      console.log(urlSearch);
+      else {
+        var parameter = new URLSearchParams(urlSearch);
+        term = parameter.get('term');
+        //Code found from https://www.freecodecamp.org/news/how-to-capitalize-words-in-javascript/
+        var splitTerms = term.split(" ");
+        for (var i = 0; i < splitTerms.length; i++)
+          splitTerms[i] = splitTerms[i][0].toUpperCase() + splitTerms[i].substr(1);
+        term = splitTerms.join(" ");
+      }
       if(random < 16 && $("question")) {
         if(!searchTerm)
           $("question").innerHTML = "Let me guess. You're thinking about cute anime girls.";
-        else {
-          var parameter = new URLSearchParams(urlSearch);
-          term = parameter.get('term');
-          var splitTerms = term.split(" ");
-          for (var i = 0; i < splitTerms.length; i++) {
-            splitTerms[i] = splitTerms[i][0].toUpperCase() + splitTerms[i].substr(1);
-          }
-          term = splitTerms.join(" ");
+        else
           $("question").innerHTML = "Can you draw " + term + "? You're thinking about it.";
-        }
         $("link").style.display = "none";
         $("yesno").style.display = "grid";
       }
@@ -256,7 +257,7 @@
       {
         if($($("custom-reason").value).innerHTML !== '')
           inputText = $($("custom-reason").value).innerHTML.toLowerCase();
-        else
+        else if($('dependency').style.display === 'block')
           inputText = dependencyValues[slider1.value];
       }
       else
@@ -278,7 +279,7 @@
       }
       else if(slider1.value === "4" || inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
         $("question").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
+        $("link").innerHTML = "<a href='art.html?term=" + term + "'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
       }
       else if(slider1.value === "5" || inputText.indexOf("thing in the world") >= 0)
         location.href = "fiveminutetimer.html";
@@ -287,16 +288,20 @@
         document.body.removeChild($("question"));
         $("link").innerHTML = "Close tabs and programs, and <u id='thebutton' onclick='pushTheButtonTC()'>click here.</u>";
       }
-      else if(inputText.endsWith("i want to") || inputText.endsWith("go to deviantart")) {
-        $("question").innerHTML = "How much do you want to go to DeviantArt?";
+      else if(inputText.endsWith("want to") && term !== "none") {
+        $("question").innerHTML = "How much do you want to look at " + term + "?";
         $("link").style.display = "none";
         $("dependency").style.display = "block";
+        if(inputText.indexOf("really") >= 0) {
+          slider1.value = 4;
+          $("importance").innerHTML = dependencyValues[4];
+        }
       }
       else if(inputText === "11092008") {
         location.href = "art.html?term=" + term;
       }
       else
-        finalTest(inputText,"deviantart");
+        finalTest(inputText,"searchterm");
     }
 
     var reasons = ["Because I'm lazy",
@@ -354,13 +359,13 @@
       $("dependency").style.display = "block";*/
     }
 
-    var dependencyValues = ['I don\'t want to go to Deviantart',
-    'I should not be on DeviantArt',
-    'I kind of want to go to DeviantArt',
-    'I want to go to DeviantArt',
-    'I want to go to DeviantArt badly',
-    'I don’t want to do anything other than go to DeviantArt',
-    'Not going to DeviantArt is making me depressed'];
+    var dependencyValues = ['I don\'t want to do it',
+    'Meh',
+    'I kind of want to do it',
+    'I want to do it',
+    'I really want to do it',
+    'I don’t want to do anything other than that',
+    'Not looking at it is making me depressed'];
     var dependency = document.getElementById("dependency");
     var slider1 = document.getElementById("dependency-slider");
     slider1.max = dependencyValues.length - 1;
