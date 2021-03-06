@@ -15,9 +15,9 @@
       <li>You're doing this for the sake of creativity.</li>
       <!--li>You're doing this to stop spending a lot on commissions.</li-->
       <li>Draw with anything you prefer, whether it be a drawing tablet, a sketchpad, or an iPad.</li>
-      <li>Best advice for now is to draw anything you're thinking of.</li>
-      <li>Get more art advice from the /r/AnimeSketch server.</li>
+      <li>Best advice for now is to draw <span id="thing">anything you're thinking of</span>.</li>
       <li>If you are feeling resistance to draw, <a href='creativity.html'>click here</a>.</li>
+      <li>Get more art advice from the /r/AnimeSketch server.</li>
       <li>Use references and resourses! They are incredibly helpuful.</li>
       <li>Don't compare your sketches with other people except yourself.</li>
       <li>Be sure you draw every day.</li>
@@ -59,6 +59,14 @@
       <li>Once your drawings look better, consider opening commissions.</li>
       <li>In 2 years, your drawings will drastically improve, but only if you take this seriously.</li-->
     </ol>
-    <script src="script.js"></script>
+    <script>
+      var urlSearch = window.location.search;
+      if(urlSearch !== "") {
+        var parameter = new URLSearchParams(urlSearch);
+        term = parameter.get('term');
+        if (term !== "none")
+          document.getElementById("thing").innerHTML = term;
+      }
+    </script>
   </body>
 </html>

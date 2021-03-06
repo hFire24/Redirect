@@ -9,9 +9,9 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
-  <body onload="loadSearchTerm(); areYouBored('deviantart');">
+  <body onload="loadSearchTerm(); letMeGuess();">
     <h1 id="message"></h1>
-    <h2 id="question">Why did you decide to Google that?</h2>
+    <h2 id="question">Why did you decide to search for that?</h2>
     <div id='link'>
       <input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
       <div id="dropdown">
@@ -25,7 +25,6 @@
     <div id='yesno' class='two-list medium space' style='display:none;'>
       <a class='hfire-link' onclick="addicted()">Yes</a>
       <a class='hfire-link' onclick="restoreLink()">No</a>
-      <a class='hfire-link extended' onclick="addicted()">I wasn't until now.</a>
     </div>
     <div id='dependency' class='space' style='display:none;'>
       <div class='slidercontainer space'>
@@ -40,6 +39,9 @@
       <source src="media/Button Push.mp3" type="audio/mpeg">
     </audio>
     <script>
+    var searchTerm = true;
+    var term = "none";
+
     function loadSearchTerm() {
       var redirectMessages = ['YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image Boards. Facebook. Everything you find to be cute and attractive.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
       'Get back to whatever you should be doing!',
@@ -208,6 +210,31 @@
       console.log("Theme " + theme);
     }
 
+    function letMeGuess() {
+      var random = Math.floor(Math.random() * 30)
+      console.log("Random " + random);
+      var urlSearch = window.location.search;
+      if(urlSearch === "")
+        searchTerm = false;
+      console.log(urlSearch);
+      if(random < 16 && $("question")) {
+        if(!searchTerm)
+          $("question").innerHTML = "Let me guess. You're thinking about cute anime girls.";
+        else {
+          var parameter = new URLSearchParams(urlSearch);
+          term = parameter.get('term');
+          var splitTerms = term.split(" ");
+          for (var i = 0; i < splitTerms.length; i++) {
+            splitTerms[i] = splitTerms[i][0].toUpperCase() + splitTerms[i].substr(1);
+          }
+          term = splitTerms.join(" ");
+          $("question").innerHTML = "Can you draw " + term + "? You're thinking about it.";
+        }
+        $("link").style.display = "none";
+        $("yesno").style.display = "grid";
+      }
+    }
+
     function rejectSomething(time) {
       if(time === 1)
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/time.html'>Don't do nothing. Do something!</a> <span onclick='rejectSomething(2)' style='color:white;'>No.</span>";
@@ -265,6 +292,9 @@
         $("link").style.display = "none";
         $("dependency").style.display = "block";
       }
+      else if(inputText === "11092008") {
+        location.href = "art.html?term=" + term;
+      }
       else
         finalTest(inputText,"deviantart");
     }
@@ -313,7 +343,10 @@
 
     function addicted() {
       restoreLink();
-      $("newBreak").value = "cute"
+      if(searchTerm)
+        $("newBreak").value = "11092008";
+      else
+        $("newBreak").value = "cute";
       submit();
       $("newBreak").value = "";
       /*$("question").innerHTML = "How much do these thoughts control you?";
@@ -342,7 +375,7 @@
     }
 
     function restoreLink() {
-      $("question").innerHTML = "Then why did you decide to Google that?";
+      $("question").innerHTML = "Then why did you decide to search for that?";
       $("yesno").style.display = "none";
       $("link").style.display = "block";
     }
