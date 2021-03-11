@@ -233,10 +233,11 @@ function displayBreak(index) {
   message.innerHTML = messages[index].text;
   if(messages[index].link === "pushTheButton") {
     message.removeAttribute("href");
-    message.addEventListener("click",pushTheButtonBR);
+    message.onclick = pushTheButtonBR;
   }
   else {
-    message.removeEventListener("click",pushTheButtonBR);
+    message.onclick = null;
+    message.removeAttribute("target");
     if(messages[index].link === "pass")
       message.removeAttribute("href");
     else {
