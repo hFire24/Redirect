@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme3">
+    <h1 id='message'>Why are you resisting?</h1>
+    <div id='yesno' class='two-list'>
+      <a class='hfire-link' href='artstruggle.html'>I feel incapable as an artist. 😕</a>
+      <a class='hfire-link' href='cyoa/47.html'>I am "busy"!</a>
+      <a class='hfire-link' href='whoa/index.html'>☢I want to nuke these thoughts☢</a>
+      <a class='hfire-link' onclick='lazyOrExhausted()'>I am ultra lazy 😪🛋️🥔</a>
+    </div>
+    <script>
+    function lazyOrExhausted() {
+      document.getElementById("message").innerHTML = "Are you lazy, or are you just exhausted?";
+      document.getElementById("yesno").innerHTML = "<a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='cyoa/62.html'>Exhausted</a>";
+      document.getElementById("yesno").classList.add("medium");
+    }
+    </script>
+  </body>
+</html>
