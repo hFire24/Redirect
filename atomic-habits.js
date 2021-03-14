@@ -28,6 +28,7 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "I have never seen someone consistently stick to positive habits in a negative environment.", //Page 94
 "One of the most practical ways to elimiate a bad habit is to reduce exposure to the cue that causes it.", //Page 95
 "Want to keep a good habit alive? Make it attractive.", //Second Law
+"If you want to increase the odds that a behavior will occur, then you need to make it attractive.", //Page 104
 "Want to quit a bad habit? Make it unattractive.", //Inverse of the Second Law
 "Want to make a good habit? Make it easy.", //Third Law
 "Want to end a bad habit? Make it difficult.", //Inverse of the Third Law
