@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Relax</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon-meditate.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon-RL.png">
+    <style>
+    #relax-table {
+      border-collapse:collapse;
+      width: 100%;
+    }
+
+    #relax-table tr {
+      border-bottom: 1px solid #000;
+    }
+
+    #relax-table tr:hover {
+      background-color: deepskyblue;
+    }
+    </style>
+  </head>
+  <body class="relax">
+    <h1 id='message'>It's time to relax.</h1>
+    Here is a long list of guided meditations you can find on Soundwise.<br>
+    <input type="text" id="relax-search" onkeyup="search()" placeholder="Search for meditations">
+    <table id="relax-table">
+      <thead>
+        <tr><th style="width:40%;">Category</th><th style="width:40%;">Title</th><th style="Width: 20%;">Must sit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Creating Abundance</td><td>Create Abundance</td><td>No</td></tr>
+        <tr><td>Creating Abundance</td><td>Money Magnetism</td><td>No</td></tr>
+        <tr><td>Creating Abundance</td><td>Increase Prosperity</td><td>No</td></tr>
+        <tr><td>Creating Abundance</td><td>Law of Attraction Meditation</td><td>No</td></tr>
+        <tr><td>Creating Abundance</td><td>Motivation for Success</td><td>No</td></tr>
+        <tr><td>Creating Abundance</td><td>Visualise Prosperity</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Beat Procrastination</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Beat Social Phobia</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Declutter Your Life</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Let Go of Anger</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Let Go of Guilt</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Let Go of Negativity</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Move On</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Overcome Addiction</td><td>No</td></tr>
+        <tr><td>Breaking Habits</td><td>Stop Worrying</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Astral Flying</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Charka Visualization</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Cleansing Meditation</td><td>Yes</td></tr>
+        <tr><td>Meditate</td><td>Energy Healing and Balancing</td><td>Lie down</td></tr>
+        <tr><td>Meditate</td><td>Energy Meditation</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Expansion Meditation</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Freedom Meditation</td><td>Yes</td></tr>
+        <tr><td>Meditate</td><td>Ground and Centre</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Heal the Inner Child</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Meet Your Inner Guide</td><td>No</td></tr>
+        <tr><td>Meditate</td><td>Meditate</td><td>Yes</td></tr>
+        <tr><td>Meditate</td><td>Serenity Meditation</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Be Grateful</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Be Happy</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Be Peaceful</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Believe in Yourself</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Breath of Life</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Clear Your Mind</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Confidence</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Disconnect</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Don't Panic</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Emotional Strength Meditation</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Improve Your Memory</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Quiet Mind</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Self-Discipline</td><td>No</td></tr>
+        <tr><td>Improve Your Mental Health</td><td>Stress Free</td><td>No</td></tr>
+        <tr><td>Practice Mindfulness</td><td>Living in the Present</td><td>No</td></tr>
+        <tr><td>Practice Mindfulness</td><td>Mindful Breathing</td><td>Yes</td></tr>
+        <tr><td>Practice Mindfulness</td><td>Mindful Meditation</td><td>Lie down</td></tr>
+        <tr><td>Practice Mindfulness</td><td>Now Here This Meditation</td><td>Yes</td></tr>
+        <tr><td>Practice Mindfulness</td><td>Return to the Present Moment</td><td>No</td></tr>
+        <tr><td>Improve Performance</td><td>Moving Onwards</td><td>No</td></tr>
+        <tr><td>Improve Performance</td><td>Reboot Yourself</td><td>No</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Drink Water</td><td>No</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Get Fit</td><td>No</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Health Boost</td><td>No</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Improve Your Posture</td><td>Lie down</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Inner Health</td><td>Lie down</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Manage Pain</td><td>No</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Symptom Control</td><td>No</td></tr>
+        <tr><td>Improve Your Physical Health</td><td>Visualise Healing</td><td>No</td></tr>
+        <tr><td>Increase Positivity</td><td>Attract Love</td><td>No</td></tr>
+        <tr><td>Increase Positivity</td><td>Build Creativity</td><td>No</td></tr>
+        <tr><td>Increase Positivity</td><td>Intention for Change</td><td>No</td></tr>
+        <tr><td>Increase Positivity</td><td>Positive Self Image</td><td>Lie down</td></tr>
+        <tr><td>Increase Positivity</td><td>Positivity</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Body Scan Relaxation</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Body Scan Relaxation 2</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Breathing Break</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Breathing Relaxation</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Breathing Relaxation 1</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Breathing Relaxation 2</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Breathing Relaxation 3</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Ear Massage Relaxation</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Energy Boost Relaxation</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Eye Relaxation</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Favourite Place Relaxation</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Grounding Relaxation</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Head Massage Relaxation</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Heaviness Relaxation</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Massage Break</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Memory Break</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Quick Confidence</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Release Break</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Roots Break</td><td>Stand</td></tr>
+        <tr><td>Quick Solutions</td><td>Shoulder Relaxation</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Smiling Relaxation</td><td>No</td></tr>
+        <tr><td>Quick Solutions</td><td>Stomach Relaxation</td><td>Yes</td></tr>
+        <tr><td>Quick Solutions</td><td>Stretch Relaxation</td><td>No</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>How to Relax 1</td><td>No</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>How to Relax 2</td><td>No</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>How to Relax 3</td><td>No</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>How to Relax 4</td><td>No</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>Relax Lite</td><td>Yes</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>Deeper Relaxation</td><td>No</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>Relax</td><td>No</td></tr>
+        <tr><td>Learn the Art of Relaxation</td><td>Relaxation Meditation</td><td>No</td></tr>
+        <tr><td>Sleep</td><td>Back to Sleep</td><td>No</td></tr>
+        <tr><td>Sleep</td><td>Deep Sleep</td><td>No</td></tr>
+        <tr><td>Sleep</td><td>Deeper Sleep</td><td>No</td></tr>
+        <tr><td>Sleep</td><td>Power Nap</td><td>No</td></tr>
+        <tr><td>Make the Most of Your Day</td><td>Morning Boost</td><td>No</td></tr>
+        <tr><td>Make the Most of Your Day</td><td>Lunchtime Boost</td><td>Yes</td></tr>
+        <tr><td>Make the Most of Your Day</td><td>Evening Boost</td><td>No</td></tr>
+      </tbody>
+    </table>
+    <div id='width'></div>
+    <script src="script.js"></script>
+    <script>
+    function search() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("relax-search");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("relax-table");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+  </body>
+</html>
