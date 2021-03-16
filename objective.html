@@ -27,8 +27,8 @@
       "achieve every goal in your goals list.",
       "practice playing the piano as much as you can.",
       "do as much homework as you can."];
-      const bTierObjectives = ["practice drawing a lot. And don't just draw Cirno.",
-      "get better at Stepmania.",
+      const bTierObjectives = ["get better at Stepmania.",
+      "practice drawing a lot. And don't just draw Cirno.",
       "listen to as many General Conference talks as you can.",
       "gain as much social skills as you.",
       "learn Godot.",
@@ -50,7 +50,7 @@
         let index = 0;
         switch(tier) {
           case 'A':
-            index = Math.floor(Math.random() * (aTierObjectives.length + 2));
+            index = Math.floor(Math.random() * (aTierObjectives.length + 1));
             if(index >= aTierObjectives.length) {
               index -= aTierObjectives.length;
               objective = bTierObjectives[index];
