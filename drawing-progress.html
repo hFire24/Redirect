@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Start drawing.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon-draw.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <style>
+      table {
+        border-collapse:collapse;
+        max-width:100%;
+      }
+
+      table, th, td {
+        border:1px solid black;
+      }
+
+      th {
+        white-space:nowrap;
+      }
+
+      td {
+        width: 2em;
+        height: 2em;
+      }
+    </style>
+  </head>
+  <body class='theme1' onresize='getWidth()'>
+    <h1 id='message'>Your Drawing Progress</h1>
+    <div class='space'>Just remember that you don't have to draw little girls exclusively. Expand your horizions to increase your creativity.</div>
+    <div class='space'>For style, try aiming for a 2004-2014 visual novel aesthethic. Your story is right <a href='drawing-story.html'>here.</a></div>
+    <div style='text-align:left;'><strong style='text-align:left;'><a class='hfire-link' href='https://conceptartempire.com/anime-manga-drawing-tutorials/'>Click here for lessons</a></strong></div>
+    <table class='space'>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id='quote'></div>
+    <div id='width'></div>
+    <script src='script.js'></script>
+    <script>
+    var quotes = ['Creativity is a good thing.',
+    '“To live a creative life, we must lose our fear of being wrong.” – Anonymous',
+    '“Opportunities don\'t happen, you create them.” – Chris Grosser',
+    '“No masterpiece was ever created by a lazy artist.” – Anonymous',
+    //Quotes from https://www.happier.com/blog/10-positive-quotes-to-inspire-creativity/
+    '“The creative adult is the child who survived.” – Ursula Leguin',
+    '“The desire to create is one of the deepest yearnings of the human soul.” – Dieter F. Uchtdorf',
+    '“Creativity doesn\'t wait for that perfect moment. It fashions its own perfect moments out of ordinary ones.” – Bruce Garrabrandt',
+    '“Everything you can imagine is real.” – Pablo Picasso',
+    '“You can\'t use up creativity. The more you use the more you have.” – Maya Angelou',
+    '“Creativity is intelligence having fun.” – Albert Einstein',
+    '“To practice any art, no matter how well or badly, is a way to make your soul grow. So do it.” – Kurt Vonnegut',
+    '“Creativity is inventing, experimenting, growing, taking risks, breaking rules, making mistakes, and having fun.” – Mary Lou Cook',
+    '“The chief enemy of creativity is "good" sense.” – Pablo Picasso',
+    '“Creativity involves breaking out of expected patterns in order to look at things in a different way.” – Edward de Bono'];
+    for(var i = quotes.length; i < 5; i++)
+      quotes.push("<a href='https://www.keepinspiring.me/procrastination-quotes/' target='_blank'>Here. Try reading these quotes from this page.</a>");
+
+    var index = Math.floor(Math.random() * quotes.length);
+    var quote = document.getElementById("quote");
+    quote.innerHTML = quotes[index];
+
+    if(quote.innerHTML.startsWith("“"))
+      quote.style.fontWeight = "medium";
+
+    if(quote.innerHTML.length > 200) {
+      var x = window.matchMedia("(max-width: 567px)");
+      var y = window.matchMedia("(max-width: 851px)");
+      var z = window.matchMedia("(max-width: 1135px)");
+      var a = window.matchMedia("(max-width: 1702px)");
+      resizeText(x,y,z,a);
+      x.addListener(resizeText);
+      y.addListener(resizeText);
+      z.addListener(resizeText);
+      z.addListener(resizeText);
+    }
+    </script>
+  </body>
+</html>

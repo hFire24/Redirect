@@ -23,8 +23,8 @@
       </div>
     </div>
     <div id='yesno' class='two-list medium space' style='display:none;'>
-      <a class='hfire-link' onclick="addicted()">Yes</a>
-      <a class='hfire-link' onclick="restoreLink()">No</a>
+      <a class='hfire-link' onclick="restoreLink()">Not Much</a>
+      <a class='hfire-link' onclick="addicted()">A Lot</a>
     </div>
     <div id='dependency' class='space' style='display:none;'>
       <div class='slidercontainer space'>
@@ -226,11 +226,8 @@
           splitTerms[i] = splitTerms[i][0].toUpperCase() + splitTerms[i].substr(1);
         term = splitTerms.join(" ");
       }
-      if(random < 16 && $("question")) {
-        if(!searchTerm)
-          $("question").innerHTML = "Let me guess. You're thinking about cute anime girls.";
-        else
-          $("question").innerHTML = "Can you draw " + term + "? You're thinking about it.";
+      if($("question")) {
+        $("question").innerHTML = "How much time will you spare?";
         $("link").style.display = "none";
         $("yesno").style.display = "grid";
       }
@@ -279,7 +276,7 @@
       }
       else if(slider1.value === "4" || inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
         $("question").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html?term=" + term + "'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
+        $("link").innerHTML = "<a href='drawing-progress.html?term=" + term + "'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
       }
       else if(slider1.value === "5" || inputText.indexOf("thing in the world") >= 0)
         location.href = "fiveminutetimer.html";
@@ -297,9 +294,9 @@
           $("importance").innerHTML = dependencyValues[4];
         }
       }
-      else if(inputText === "11092008") {
+      /*else if(inputText === "11092008") {
         location.href = "art.html?term=" + term;
-      }
+      }*/
       else
         finalTest(inputText,"searchterm");
     }
@@ -347,13 +344,14 @@
     }
 
     function addicted() {
-      restoreLink();
+      /*restoreLink();
       if(searchTerm)
         $("newBreak").value = "11092008";
       else
         $("newBreak").value = "cute";
       submit();
-      $("newBreak").value = "";
+      $("newBreak").value = "";*/
+      location.href = "drawing-progress.html";
       /*$("question").innerHTML = "How much do these thoughts control you?";
       $("yesno").style.display = "none";
       $("dependency").style.display = "block";*/
@@ -380,7 +378,7 @@
     }
 
     function restoreLink() {
-      $("question").innerHTML = "Then why did you decide to search for that?";
+      $("question").innerHTML = "Why did you decide to search for that?";
       $("yesno").style.display = "none";
       $("link").style.display = "block";
     }

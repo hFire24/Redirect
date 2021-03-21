@@ -22,10 +22,9 @@
         </span><button onclick="submit()">Submit</button>
       </div>
     </div>
-    <div id='yesno' class='medium' style='display:none;'>
-      <a class='hfire-link' onclick="addicted()">Yes</a>
-      <a class='hfire-link' onclick="restoreLink()">No</a>
-      <a class='hfire-link extended' onclick="addicted()">I wasn't until now.</a>
+    <div id='yesno' class='two-list medium' style='display:none;'>
+      <a class='hfire-link' onclick="restoreLink()">Not Much</a>
+      <a class='hfire-link' onclick="addicted()">A Lot</a>
     </div>
     <div id='dependency' style='display:none;'>
       <div class='slidercontainer space'>
@@ -71,7 +70,7 @@
       }
       else if(slider1.value === "4" || inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
         $("question").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='art.html'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
+        $("link").innerHTML = "<a href='drawing-progress.html'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
       }
       else if(slider1.value === "5" || inputText.indexOf("thing in the world") >= 0)
         location.href = "fiveminutetimer.html";
@@ -132,10 +131,11 @@
     }
 
     function addicted() {
-      restoreLink();
+      location.href = "drawing-progress.html";
+      /*restoreLink();
       $("newBreak").value = "cute"
       submit();
-      $("newBreak").value = "";
+      $("newBreak").value = "";*/
       /*$("question").innerHTML = "How much do these thoughts control you?";
       $("yesno").style.display = "none";
       $("dependency").style.display = "block";*/
@@ -162,7 +162,7 @@
     }
 
     function restoreLink() {
-      $("question").innerHTML = "Then why did you decide to go there?";
+      $("question").innerHTML = "Why did you decide to go there?";
       $("yesno").style.display = "none";
       $("link").style.display = "block";
     }

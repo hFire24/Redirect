@@ -151,8 +151,9 @@ new Breaktime('Practice your piano.',"pass","misc",3,true),
 new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 new Breaktime('Read the book <u>Maphead</u>.',"pass","read",2,true),
 new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true),
-new Breaktime('Draw anime with a drawing tablet.',"art.html","art",3,true),
-new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html","art",3,true)];
+/*new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
+new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html","art",2,true),*/
+new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true)];
 
 var mobileBreak = [//Relaxation
 new Breaktime('Listen to this.',"relax.html","relax",3,false),
