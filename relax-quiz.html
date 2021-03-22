@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Relax.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon-meditate.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon-RL.png">
+  </head>
+  <body class="relax" onLoad="relax(2)">
+    <div id='message' class='small space'></div>
+    <div id='link'></div>
+    <div id='hideable'>
+    </div>
+    <script>
+    function relax(number) {
+      switch(number) {
+        case 0:
+          $("message").innerHTML = "Are you feeling tired?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='tired()'>Yes</a> <a class='hfire-link' onclick='relax(1)'>No</a></div>";
+          break;
+        case 1:
+          $("message").innerHTML = "Are you procrastinating?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='procrastination()'>Yes</a> <a class='hfire-link' onclick='relax(2)'>No</a></div>";
+          break;
+        case 2:
+          $("message").innerHTML = "Are you feeling unhappy or unsatisfied?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(0)'>Yes</a> <a class='hfire-link' onclick='relax(3)'>No</a></div>";
+          break;
+        case 3:
+          $("message").innerHTML = "Does your mind feel cluttered?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cluttered()'>Yes</a> <a class='hfire-link' onclick='relax(4)'>No</a></div>";
+          break;
+        case 4:
+          $("message").innerHTML = "Do you want to be successful?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='successful()'>Yes</a> <a class='hfire-link' onclick='relax(5)'>No</a></div>";
+          break;
+        case 5:
+          $("message").innerHTML = "Hate to ask it, but do you feel horny?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='horny()'>Yes</a> <a class='hfire-link' onclick='relax(6)'>No</a></div>";
+          break;
+        default:
+          $("message").innerHTML = "Based on your responses, you should continue to listen to the 8 Essential Life Skills Course.";
+          document.body.removeChild($("link"));
+      }
+    }
+
+    function tired() {
+      $("message").innerHTML = "You should listen to Power Nap if it's daytime or Deep Sleep/Deeper sleep if it's bedtime.";
+      document.body.removeChild($("link"));
+    }
+
+    function procrastination() {
+      $("message").innerHTML = "You should listen to Beat Procrastination.";
+      document.body.removeChild($("link"));
+    }
+
+    function unhappy(number) {
+      switch(number) {
+        case 0:
+          $("message").innerHTML = "Are you feeling angry?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='angry()'>Yes</a> <a class='hfire-link' onclick='unhappy(1)'>No</a></div>";
+          break;
+        case 1:
+          $("message").innerHTML = "Are you feeling worried?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='worried()'>Yes</a> <a class='hfire-link' onclick='unhappy(2)'>No</a></div>";
+          break;
+        case 2:
+          $("message").innerHTML = "Do you feel unconfident?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(3)'>Yes</a> <a class='hfire-link' onclick='unhappy(4)'>No</a></div>";
+          break;
+        case 3:
+          $("message").innerHTML = "How much spare time do you have?";
+          $("link").innerHTML = "<div class='three-list'><a class='hfire-link' onclick='confidence(1)'>Very little</a> <a class='hfire-link' onclick='confidence(2)'>Not much</a> <a class='hfire-link' onclick='confidence(3)'>Plentiful</a></div>";
+          break;
+        case 4:
+          $("message").innerHTML = "Are you dealing with addiction?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(5)'>Yes</a> <a class='hfire-link' onclick='unhappy(6)'>No</a></div>";
+          break;
+        case 5:
+          $("message").innerHTML = "Do you want to destroy those addictions?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='addicted()'>Yes</a> <a class='hfire-link' onclick='quietMind()'>No</a></div>";
+          break;
+        case 6:
+          $("message").innerHTML = "Do you just want to be happy?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='happy()'>Yes</a> <a class='hfire-link' onclick='relax(3)'>No</a></div>";
+          break;
+        default:
+          $("message").innerHTML = "OK, fine. Do whatever you want.";
+      }
+    }
+
+    function angry() {
+      $("message").innerHTML = "You should listen to Let Go of Anger. There's also a short SOS version.";
+      document.body.removeChild($("link"));
+    }
+
+    function worried() {
+      $("message").innerHTML = "You should listen to Stop Worrying. There's also SOS: Let Go of Anxiety.";
+      document.body.removeChild($("link"));
+    }
+
+    function confidence(length) {
+      if(length === 1)
+        $("message").innerHTML = "You should listen to SOS: Confidence Boost.";
+      else if(length === 2)
+        $("message").innerHTML = "You should listen to Quick Confidence Boost under Quick Solutions.";
+      else
+        $("message").innerHTML = "You should listen to Confidence under Improve Your Mental Health.";
+      document.body.removeChild($("link"));
+    }
+
+    function addicted() {
+      $("message").innerHTML = "You should listen to Overcome Addiction.";
+      document.body.removeChild($("link"));
+    }
+
+    function quietMind() {
+      $("message").innerHTML = "You should listen to Quiet Mind.";
+      document.body.removeChild($("link"));
+    }
+
+    function happy() {
+      $("message").innerHTML = "You should listen to Be Happy.";
+      document.body.removeChild($("link"));
+    }
+
+    function successful() {
+      $("message").innerHTML = "You should listen to Visualise Success.";
+      document.body.removeChild($("link"));
+    }
+
+    function cluttered() {
+      $("message").innerHTML = "You should listen to Clear Your Mind.";
+      document.body.removeChild($("link"));
+    }
+
+    function horny() {
+      $("message").innerHTML = "It's OK. What you are feeling is perfectly normal.";
+      $("link").innerHTML = "Just know that the horniness will go away. While you wait for it to disappear, just <a href='areyouhome.html'>do something</a>.";
+    }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
