@@ -23,8 +23,8 @@
       </div>
     </div>
     <div id='yesno' class='two-list medium space' style='display:none;'>
-      <a class='hfire-link' onclick="restoreLink()">Not Much</a>
-      <a class='hfire-link' onclick="addicted()">A Lot</a>
+      <a class='hfire-link' onclick="addicted()">Yes</a>
+      <a class='hfire-link' onclick="restoreLink()">No</a>
     </div>
     <div id='dependency' class='space' style='display:none;'>
       <div class='slidercontainer space'>
@@ -227,7 +227,7 @@
         term = splitTerms.join(" ");
       }
       if($("question")) {
-        $("question").innerHTML = "How much time will you spare?";
+        $("question").innerHTML = "Will you spare a lot of time to draw anime characters?";
         $("link").style.display = "none";
         $("yesno").style.display = "grid";
       }

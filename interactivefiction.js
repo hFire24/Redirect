@@ -490,7 +490,7 @@ function areYouBored(site) {
     if(site === 'youtube')
       $("question").innerHTML = "Let me guess. You're bored and feel like going to YouTube.";
     else if(site === 'deviantart')
-      $("question").innerHTML = "How much time will you spare?";
+      $("question").innerHTML = "Will you spare a lot of time to draw anime characters?";
     $("link").style.display = "none";
     $("yesno").style.display = "grid";
   }
