@@ -9,16 +9,62 @@
     <link rel="shortcut icon" href="icons/icon-meditate.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon-RL.png">
   </head>
-  <body class="relax" onLoad="relax(2)">
+  <body class="relax" onLoad="relax(0)">
     <div id='message' class='small space'></div>
     <div id='link'></div>
+    <div id='happy' class='two-list'>
+      <a class='hfire-link' onclick='happy(1)'>A happy memory</a>
+      <a class='hfire-link' onclick='happy(2)'>A happy face</a>
+      <a class='hfire-link' onclick='happy(3)'>The ability to create</a>
+      <a class='hfire-link' onclick='happy(4)'>Having friends</a>
+      <a class='hfire-link' onclick='happy(5)'>Being productive</a>
+      <a class='hfire-link' onclick='happy(6)'>Success</a>
+      <a class='hfire-link extended' onclick='happy(7)'>The thing that will make me happier is not listed here.</a>
+    </div>
     <div id='hideable'>
     </div>
     <script>
+    function happy(number) {
+      switch(number) {
+        case 0:
+          $("message").innerHTML = "What will make you happier?";
+          $("link").innerHTML = "";
+          $("happy").style.display = "grid";
+          break;
+        case 1:
+          $("message").innerHTML = "You should listen to Memory Break.";
+          document.body.removeChild($("happy"));
+          break;
+        case 2:
+          $("message").innerHTML = "You should listen to Smiling Relaxation.";
+          document.body.removeChild($("happy"));
+          break;
+        case 3:
+          $("message").innerHTML = "You should listen to Build Creativity.";
+          document.body.removeChild($("happy"));
+          break;
+        case 4:
+          $("message").innerHTML = "You should listen to Attract Love.";
+          document.body.removeChild($("happy"));
+          break;
+        case 5:
+          $("message").innerHTML = "You should listen to Motivation for Success.";
+          document.body.removeChild($("happy"));
+          break;
+        case 6:
+          successful();
+          document.body.removeChild($("happy"));
+          break;
+        default:
+          $("message").innerHTML = "You should listen to Be Happy.";
+          document.body.removeChild($("happy"));
+      }
+    }
+
     function relax(number) {
       switch(number) {
         case 0:
-          $("message").innerHTML = "Are you feeling tired?";
+          $("message").innerHTML = "Are you tired?";
           $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='tired()'>Yes</a> <a class='hfire-link' onclick='relax(1)'>No</a></div>";
           break;
         case 1:
@@ -26,20 +72,24 @@
           $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='procrastination()'>Yes</a> <a class='hfire-link' onclick='relax(2)'>No</a></div>";
           break;
         case 2:
-          $("message").innerHTML = "Are you feeling unhappy or unsatisfied?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(0)'>Yes</a> <a class='hfire-link' onclick='relax(3)'>No</a></div>";
+          $("message").innerHTML = "Are you sick and tired of not achieving your goals and tasks?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='discipline()'>Yes</a> <a class='hfire-link' onclick='relax(3)'>No</a></div>";
           break;
         case 3:
-          $("message").innerHTML = "Does your mind feel cluttered?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cluttered()'>Yes</a> <a class='hfire-link' onclick='relax(4)'>No</a></div>";
+          $("message").innerHTML = "Are you feeling unhappy or unsatisfied?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(0)'>Yes</a> <a class='hfire-link' onclick='relax(4)'>No</a></div>";
           break;
         case 4:
-          $("message").innerHTML = "Do you want to be successful?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='successful()'>Yes</a> <a class='hfire-link' onclick='relax(5)'>No</a></div>";
+          $("message").innerHTML = "Does your mind feel cluttered?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='cluttered()'>Yes</a> <a class='hfire-link' onclick='relax(5)'>No</a></div>";
           break;
         case 5:
-          $("message").innerHTML = "Hate to ask it, but do you feel horny?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='horny()'>Yes</a> <a class='hfire-link' onclick='relax(6)'>No</a></div>";
+          $("message").innerHTML = "Do you want to be happy?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='happy(0)'>Yes</a> <a class='hfire-link' onclick='relax(6)'>No</a></div>";
+          break;
+        case 6:
+          $("message").innerHTML = "Do you want to be successful?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='successful()'>Yes</a> <a class='hfire-link' onclick='relax(7)'>No</a></div>";
           break;
         default:
           $("message").innerHTML = "Based on your responses, you should continue to listen to the 8 Essential Life Skills Course.";
@@ -57,39 +107,74 @@
       document.body.removeChild($("link"));
     }
 
+    function discipline() {
+      $("message").innerHTML = "You should listen to Self Discipline.";
+      document.body.removeChild($("link"));
+    }
+
     function unhappy(number) {
       switch(number) {
         case 0:
-          $("message").innerHTML = "Are you feeling angry?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='angry()'>Yes</a> <a class='hfire-link' onclick='unhappy(1)'>No</a></div>";
+          $("message").innerHTML = "Are you upset over things you saw or heard online/in public?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='shieldsUp()'>Yes</a> <a class='hfire-link' onclick='unhappy(1)'>No</a></div>";
           break;
         case 1:
-          $("message").innerHTML = "Are you feeling worried?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='worried()'>Yes</a> <a class='hfire-link' onclick='unhappy(2)'>No</a></div>";
+          $("message").innerHTML = "Are you feeling angry?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='angry()'>Yes</a> <a class='hfire-link' onclick='unhappy(2)'>No</a></div>";
           break;
         case 2:
-          $("message").innerHTML = "Do you feel unconfident?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(3)'>Yes</a> <a class='hfire-link' onclick='unhappy(4)'>No</a></div>";
+          $("message").innerHTML = "Are you feeling worried?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='worried()'>Yes</a> <a class='hfire-link' onclick='unhappy(3)'>No</a></div>";
           break;
         case 3:
-          $("message").innerHTML = "How much spare time do you have?";
-          $("link").innerHTML = "<div class='three-list'><a class='hfire-link' onclick='confidence(1)'>Very little</a> <a class='hfire-link' onclick='confidence(2)'>Not much</a> <a class='hfire-link' onclick='confidence(3)'>Plentiful</a></div>";
+          $("message").innerHTML = "Are you feeling stressed?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='stressed()'>Yes</a> <a class='hfire-link' onclick='unhappy(4)'>No</a></div>";
           break;
         case 4:
-          $("message").innerHTML = "Are you dealing with addiction?";
+          $("message").innerHTML = "Do you feel unconfident?";
           $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(5)'>Yes</a> <a class='hfire-link' onclick='unhappy(6)'>No</a></div>";
           break;
         case 5:
-          $("message").innerHTML = "Do you want to destroy those addictions?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='addicted()'>Yes</a> <a class='hfire-link' onclick='quietMind()'>No</a></div>";
+          $("message").innerHTML = "How much spare time do you have?";
+          $("link").innerHTML = "<div class='three-list'><a class='hfire-link' onclick='confidence(1)'>Very little</a> <a class='hfire-link' onclick='confidence(2)'>Not much</a> <a class='hfire-link' onclick='confidence(3)'>Plentiful</a></div>";
           break;
         case 6:
-          $("message").innerHTML = "Do you just want to be happy?";
-          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='happy()'>Yes</a> <a class='hfire-link' onclick='relax(3)'>No</a></div>";
+          $("message").innerHTML = "Are you dealing with addiction?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='unhappy(7)'>Yes</a> <a class='hfire-link' onclick='unhappy(8)'>No</a></div>";
+          break;
+        case 7:
+          $("message").innerHTML = "Do you want to destroy those addictions?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='addicted()'>Yes</a> <a class='hfire-link' onclick='control(0)'>No</a></div>";
           break;
         default:
-          $("message").innerHTML = "OK, fine. Do whatever you want.";
+          relax(4);
       }
+    }
+
+    function control(number) {
+      switch(number) {
+        case 0:
+          $("message").innerHTML = "What time is it?";
+          $("link").innerHTML = "<div class='four-list'><a class='hfire-link' onclick='control(1)'>Morning</a> <a class='hfire-link' onclick='control(2)'>Afternoon</a> <a class='hfire-link' onclick='control(3)'>Evening</a> <a class='hfire-link' onclick='control(4)'>Night</a></div>";
+          break;
+        case 1:
+          $("message").innerHTML = "You should listen to Morning Boost Meditation.";
+          document.body.removeChild($("link"));
+          break;
+        case 4:
+          $("message").innerHTML = "You should listen to Quiet Mind.";
+          document.body.removeChild($("link"));
+          break;
+        default:
+          $("message").innerHTML = "Hate to ask it, but do you feel horny?";
+          $("link").innerHTML = "<div class='two-list'><a class='hfire-link' onclick='horny()'>Yes</a> <a class='hfire-link' onclick='unhappy(8)'>No</a></div>";
+          break;
+      }
+    }
+
+    function shieldsUp() {
+      $("message").innerHTML = "You should listen to Shields Up.";
+      document.body.removeChild($("link"));
     }
 
     function angry() {
@@ -98,7 +183,12 @@
     }
 
     function worried() {
-      $("message").innerHTML = "You should listen to Stop Worrying. There's also SOS: Let Go of Anxiety.";
+      $("message").innerHTML = "You should listen to Stop Worrying/Don't Panic. There's also SOS: Let Go of Anxiety.";
+      document.body.removeChild($("link"));
+    }
+
+    function stressed() {
+      $("message").innerHTML = "You should listen to Stress Free. There's also SOS: Let Go of Stress.";
       document.body.removeChild($("link"));
     }
 
@@ -117,16 +207,6 @@
       document.body.removeChild($("link"));
     }
 
-    function quietMind() {
-      $("message").innerHTML = "You should listen to Quiet Mind.";
-      document.body.removeChild($("link"));
-    }
-
-    function happy() {
-      $("message").innerHTML = "You should listen to Be Happy.";
-      document.body.removeChild($("link"));
-    }
-
     function successful() {
       $("message").innerHTML = "You should listen to Visualise Success.";
       document.body.removeChild($("link"));
@@ -138,8 +218,8 @@
     }
 
     function horny() {
-      $("message").innerHTML = "It's OK. What you are feeling is perfectly normal.";
-      $("link").innerHTML = "Just know that the horniness will go away. While you wait for it to disappear, just <a href='areyouhome.html'>do something</a>.";
+      $("message").innerHTML = "<img src=\"media/Accept that you're horny.jpeg\">";
+      $("link").innerHTML = "I want you to <a href='areyouhome.html'>do something else</a>.";
     }
     </script>
     <script src="script.js"></script>
