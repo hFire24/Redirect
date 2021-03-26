@@ -137,7 +137,7 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Are you lazy, or are you just exhausted?";
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='cyoa/62.html'>Exhausted</a></div>";
   }
-  else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
+  else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'waifu', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
     $("question").innerHTML = "I know you don't have much time to spare, but you could draw something. Any other thoughts?";
     expressDesireForCuteness = true;
   }
