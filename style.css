@@ -238,11 +238,19 @@ td {
   outline: none;
 }
 
+.waifuslider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 10px;
+  background: hsl(209, 22%, 87%);
+  outline: none;
+}
+
 #musicslider {
   height: 30px;
 }
 
-.slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb, .waifuslider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 60px;
@@ -251,7 +259,7 @@ td {
   cursor: pointer;
 }
 
-.slider::-moz-range-thumb {
+.slider::-moz-range-thumb, .waifuslider::-moz-range-thumb {
   width: 60px;
   height: 60px;
   background: hsl(227, 43%, 50%);
@@ -289,15 +297,15 @@ td {
   color: hsl(299, 22%, 87%);
 }
 
-.theme3 .slider::-webkit-slider-thumb {
+.theme3 .slider::-webkit-slider-thumb, .theme3 .waifuslider::-webkit-slider-thumb {
   background: hsl(317, 43%, 50%);
 }
 
-.theme3 .slider::-moz-range-thumb {
+.theme3 .slider::-moz-range-thumb, .theme3 .waifuslider::-moz-range-thumb {
   background: hsl(317, 43%, 50%);
 }
 
-.theme3 a, .theme1 .slider {
+.theme3 a, .theme3 .slider {
   color: hsl(299, 22%, 87%);
 }
 
@@ -440,11 +448,11 @@ td {
   #musicslider {
     height: 20px;
   }
-  .slider::-webkit-slider-thumb {
+  .slider::-webkit-slider-thumb, .waifuslider::-webkit-slider-thumb {
     width: 40px;
     height: 40px;
   }
-  .slider::-moz-range-thumb {
+  .slider::-moz-range-thumb, .slider::-moz-range-thumb {
     width: 40px;
     height: 40px;
   }
@@ -491,11 +499,11 @@ td {
   #musicslider {
     height: 15px;
   }
-  .slider::-webkit-slider-thumb {
+  .slider::-webkit-slider-thumb, .waifuslider::-webkit-slider-thumb {
     width: 30px;
     height: 30px;
   }
-  .slider::-moz-range-thumb {
+  .slider::-moz-range-thumb, .waifuslider::-moz-range-thumb {
     width: 30px;
     height: 30px;
   }
@@ -535,11 +543,11 @@ td {
   #musicslider {
     height: 10px;
   }
-  .slider::-webkit-slider-thumb {
+  .slider::-webkit-slider-thumb, .waifuslider::-webkit-slider-thumb {
     width: 20px;
     height: 20px;
   }
-  .slider::-moz-range-thumb {
+  .slider::-moz-range-thumb, .waifuslider:::-moz-range-thumb {
     width: 20px;
     height: 20px;
   }

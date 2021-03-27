@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme3">
+    <h2 id='message' class='small'>Create your ideal waifu.</h2>
+    <!--div>Presets: <button onclick='loadPreset(anzu)'>Anzu Futaba</button> <button onclick='loadPreset(cirno)'>Cirno</button> <button onclick='loadPreset(flandre)'>Flandre Scarlet</button>
+      <button onclick='loadPreset(chino)'>Chino</button> <button onclick='loadPreset(rem)'>Rem</button> <button onclick='loadPreset(madoka)'>Madoka</button> <button onclick='loadPreset(kaos)'>Kaos</button>
+    </div-->
+    <div id="sliders" class="space">
+      <div id='container1'>
+        <div class='medium'>Height: <span id="height">157</span>cm</div>
+        <input type="range" min="80" max="200" value="157" id='height-slider' class="waifuslider">
+      </div>
+      <div id='container2' class='invisible'>
+        <div class='medium'>Cuteness: <span id="cute">Cute</span></div>
+        <input type="range" min="0" value="4" id='cute-slider' class="waifuslider">
+      </div>
+      <div id='container3' class='invisible'>
+        <div class='medium'>Girliness: <span id="girl">Medium</span></div>
+        <input type="range" min="0" value="2" id='girly-slider' class="waifuslider">
+      </div>
+      <div id='container4' class='invisible'>
+        <div class='medium'>Love Level: <span id="love">Indifferent</span></div>
+        <input type="range" min="0" value="1" id='love-slider' class="waifuslider">
+      </div>
+      <div id='container5' class='invisible'>
+        <div class='medium'>Kindness: <span id="kind">Neutral</span></div>
+        <input type="range" min="0" value="2" id='kind-slider' class="waifuslider">
+      </div>
+      <div id='container6' class='invisible'>
+        <div class='medium'>Happiness: <span id="emotion">Neutral</span></div>
+        <input type="range" min="0" value="2" id='emotion-slider' class="waifuslider">
+      </div>
+      <div id='container7' class='invisible'>
+        <div class='medium'>Temperament: <span id="temper">Normal</span></div>
+        <input type="range" min="0" value="1" id='temper-slider' class="waifuslider">
+      </div>
+      <div id='container8' class='invisible'>
+        <div class='medium'>Passion: <span id="passion">Average</span></div>
+        <input type="range" min="0" value="1" id='passion-slider' class="waifuslider">
+      </div>
+      <div id='container9' class='invisible'>
+        <div class='medium'>Energy: <span id="energy">Normal</span></div>
+        <input type="range" min="0" value="2" id='energy-slider' class="waifuslider">
+      </div>
+      <div id='container10' class='invisible'>
+        <div class='medium'>Strength: <span id="strength">Normal</span></div>
+        <input type="range" min="0" value="2" id='strong-slider' class="waifuslider">
+      </div>
+      <div id='container11' class='invisible'>
+        <div class='medium'>Confidence: <span id="conf">Reasonable</span></div>
+        <input type="range" min="0" value="2" id='conf-slider' class="waifuslider">
+      </div>
+      <div id='container12' class='invisible'>
+        <div class='medium'>Intelligence: <span id="smart">Average</span></div>
+        <input type="range" min="0" value="2" id='smart-slider' class="waifuslider">
+      </div>
+      <div id='container13' class='invisible'>
+        <div class='medium'>Maturity: <span id="maturity">Middling</span></div>
+        <input type="range" min="0" value="2" id='mature-slider' class="waifuslider">
+      </div>
+      <div id='container14' class='invisible'>
+        <div class='medium'>Fun Level: <span id="fun">Balanced</span></div>
+        <input type="range" min="0" value="2" id='fun-slider' class="waifuslider">
+      </div>
+      <div id='container15' class='invisible'>
+        <div class='medium'>Casualness: <span id="casual">Casual</span></div>
+        <input type="range" min="0" value="2" id='casual-slider' class="waifuslider">
+      </div>
+      <div id='container16' class='invisible'>
+        <div class='medium'>Morality: <span id="moral">Balanced</span></div>
+        <input type="range" min="0" value="2" id='moral-slider' class="waifuslider">
+      </div>
+      <div id='container17' class='invisible'>
+        That's the end of the quiz. I hope it was insightful.
+      </div>
+    </div>
+    <button class='custom-button' onclick="next()">Submit</button>
+    <script>
+      const heightSlider = document.getElementById("height-slider");
+      const waifuHeight = document.getElementById("height");
+      heightSlider.oninput = function() {waifuHeight.innerHTML = heightSlider.value;};
+
+      //Cuteness Levels
+      const cuteness = ["Ugly","Not Cute","Average","Pretty","Cute","Adorable"];
+      const cuteSlider = document.getElementById("cute-slider");
+      cuteSlider.max = cuteness.length - 1;
+      cuteSlider.oninput = function() {cute.innerHTML = cuteness[cuteSlider.value];};
+
+      //Girly Levels
+      const girliness = ["Very Low","Low","Medium","High","Very High"];
+      const girlySlider = document.getElementById("girly-slider");
+      girlySlider.max = girliness.length - 1;
+      girlySlider.oninput = function() {girl.innerHTML = girliness[girlySlider.value];};
+
+      //Love Levels
+      const loveliness = ["Cold","Indifferent","Warm","Sweet","Obsessed"];
+      const loveSlider = document.getElementById("love-slider");
+      loveSlider.max = loveliness.length - 1;
+      loveSlider.oninput = function() {love.innerHTML = loveliness[loveSlider.value];};
+
+      //Kindness Levels
+      const kindness = ["Cruel","Selfish","Neutral","Friendly","Caring"];
+      const kindSlider = document.getElementById("kind-slider");
+      kindSlider.max = kindness.length - 1;
+      kindSlider.oninput = function() {kind.innerHTML = kindness[kindSlider.value];};
+
+      //Emotional Levels
+      const emotionalLevels = ["Unhappy","Stoic","Neutral","Happy","Cheerful"];
+      const emotionSlider = document.getElementById("emotion-slider");
+      emotionSlider.max = emotionalLevels.length - 1;
+      emotionSlider.oninput = function() {emotion.innerHTML = emotionalLevels[emotionSlider.value];};
+
+      //Temperament Levels
+      const temperaments = ["Relaxed","Normal","Neurotic"];
+      const temperSlider = document.getElementById("temper-slider");
+      temperSlider.max = temperaments.length - 1;
+      temperSlider.oninput = function() {temper.innerHTML = temperaments[temperSlider.value];};
+
+      //Passion Levels
+      const passions = ["Apathetic","Average","Enthusiastic"];
+      const passionSlider = document.getElementById("passion-slider");
+      passionSlider.max = passions.length - 1;
+      passionSlider.oninput = function() {passion.innerHTML = passions[passionSlider.value];};
+
+      //Energy Levels
+      const energies = ["Lazy","Low","Medium","High","Energetic"];
+      const energySlider = document.getElementById("energy-slider");
+      energySlider.max = energies.length - 1;
+      energySlider.oninput = function() {energy.innerHTML = energies[energySlider.value];};
+
+      //Strength Levels
+      const fitness = ["Fragile","Weak","Normal","Strong","Unreal"];
+      const strongSlider = document.getElementById("strong-slider");
+      strongSlider.max = fitness.length - 1;
+      strongSlider.oninput = function() {strength.innerHTML = fitness[strongSlider.value];};
+
+      //Confidence Levels
+      const confidence = ["Fearful","Shy","Reasonable","Confident","Brazen"];
+      const confSlider = document.getElementById("conf-slider");
+      confSlider.max = confidence.length - 1;
+      confSlider.oninput = function() {conf.innerHTML = confidence[confSlider.value];};
+
+      //Intelligence Levels
+      const intelligence = ["Stupid","Poor","Average","Smart","Genius"];
+      const smartSlider = document.getElementById("smart-slider");
+      smartSlider.max = intelligence.length - 1;
+      smartSlider.oninput = function() {smart.innerHTML = intelligence[smartSlider.value];};
+
+      //Maturity Levels
+      const maturities = ["Childish","Immature","Middling","Mature","Wise"];
+      const matureSlider = document.getElementById("mature-slider");
+      matureSlider.max = maturities.length - 1;
+      matureSlider.oninput = function() {maturity.innerHTML = maturities[matureSlider.value];};
+
+      //Work-Fun priorities
+      const funLevels = ["Serious","Orderly","Balanced","Fun-Loving","Pleasure-Seeking"];
+      const funSlider = document.getElementById("fun-slider");
+      funSlider.max = funLevels.length - 1;
+      funSlider.oninput = function() {fun.innerHTML = funLevels[funSlider.value];};
+
+      //Casualness Levels
+      const casualness = ["Formal","Semi-Formal","Casual","Very Casual"];
+      const casualSlider = document.getElementById("casual-slider");
+      casualSlider.max = casualness.length - 1;
+      casualSlider.oninput = function() {casual.innerHTML = casualness[casualSlider.value];};
+
+      //Morality Levels
+      const moralities = ["Naughty","Immoral","Balanced","Nice","Saintly"];
+      const moralSlider = document.getElementById("moral-slider");
+      moralSlider.max = moralities.length - 1;
+      moralSlider.oninput = function() {moral.innerHTML = moralities[moralSlider.value];};
+
+      var i = 1;
+
+      function next() {
+        if(i < 17)
+          document.getElementById('container' + i).classList.add("invisible");
+        if(i === 1) {
+          if(heightSlider.value <= 99)
+            alert("That height is ridulously tiny.");
+          else if(heightSlider.value < 133)
+            alert("Your ideal waifu is so small, that she looks like a loli compared to other lolis!");
+          else if(heightSlider.value >= 175)
+            alert("You want a tall waifu? Is it because you want to look small?");
+        }
+        if(i === 2 && cuteSlider.value === "0") {
+          alert("Really? Your ideal waifu would be ugly? Nobody wants an ugly waifu.\n\nBut okay. It's your choice.");
+        }
+        if(i === 3) {
+          if(girlySlider.value === "0")
+            alert("If your ideal waifu is THAT ungirly, then you need to man to the level of your ideal waifu.");
+          else if(girlySlider.value === "4")
+            alert("If your ideal waifu is THAT girly, then she'll be interested in things you're not interested in...\n\n...except for poofy dresses.");
+        }
+        if(i === 4) {
+          if(loveSlider.value === "0")
+            alert("Talk about a lose-lose situation! Your answer indicates that you don't value love, and your ideal waifu won't value love either!\n\nBut hey, it's your choice your heartless fool.");
+          else if(loveSlider.value === "4")
+            alert("Are you OK? Your answer indicates that you feel lonely and need love. And also, having an overly-attached waifu can get tiring.");
+        }
+        if(i === 5) {
+          if(kindSlider.value === "0")
+            alert("Are you kidding me? You want a cruel waifu? You need to keep the cruel part of you in check.");
+          else if(kindSlider.value === "4")
+            alert("Your answer suggests that you need to be more caring to everyone, including to yourself and to those who you call \"low-lives\".");
+        }
+        if(i === 6) {
+          if(emotionSlider.value === "0") {
+            alert("An unhappy waifu indicates that you have some cruelty inside of you. Imagine yourself doing cruel things to your waifu.");
+            alert("Now imagine someone else doing the same cruel things to YOU!");
+            alert("I hope you never do these cruel things to someone in real life.");
+          }
+          else if(emotionSlider.value > 2)
+            alert("You see that? You want your waifu to be happy, so why don't you become happy?");
+        }
+        if(i === 8) {
+          if(passionSlider.value === "0")
+            alert("Your answer indicates that you just don't care about anything, and neither does your ideal waifu. Do you really think an apatheic waifu would care about you?")
+          else if(passionSlider.value === "2")
+            alert("Your answer indicates that you should be more passionate towards the things you truly love!");
+        }
+        if(i === 9) {
+          if(energySlider.value === "0")
+            alert("Your answer indicates that laziness is good. It's not. A lazy marriage is BORING!");
+          else if(energySlider.value > 2)
+            alert("Your answer indicates that you want to become energetic. Go play some Stepmania right now.");
+        }
+        if(i === 10) {
+          if(strongSlider.value === "0")
+            alert("If you feel your ideal waifu is fragile, then you feel fragile as well. You are stronger than you think.");
+        }
+        if(i === 11) {
+          if(confSlider.value === "0")
+            alert("Fear. It is an emotion that must be conquered. If fear remains, then we can't have good things.");
+          else if(confSlider.value === "1")
+            alert("If your ideal waifu is shy, then you're also shy.");
+          else if(confSlider.value === "3")
+            alert("Your answer indicates that you want to become confident.");
+          else if(confSlider.value === "4")
+            alert("Confidence is good, but being too confident is taking it too far. Just look at Donald Trump!");
+        }
+        if(i === 12) {
+          if(smartSlider.value === "0")
+            alert("Come on. A stupid waifu will be a burden in your life.");
+          else if(smartSlider.value === "4")
+            alert("Your answer indicates that you want to become a genius.");
+        }
+        if(i === 13) {
+          if(matureSlider.value === "0")
+            alert("Remember Mitsuboshi Colors? This is what you're dealing with if your waifu is that immature.");
+          else if(matureSlider.value === "3")
+            alert("The only way to become mature is to get as much life advice as possible not contrary to your beliefs.");
+          else if(matureSlider.value === "4")
+            alert("Your answer indicates that you crave wisdom deep inside.");
+        }
+        if(i === 14) {
+          if(funSlider.value === "0")
+            alert("If your ideal waifu is serious, then you also need to become more serious about the objectives of life.");
+          else if(funSlider.value === "3")
+            alert("If you love fun, just play a video game.");
+          else if(funSlider.value === "4")
+            alert("Your ideal waifu will enslave you while being self-enslaved. Break free from instant gratification.");
+        }
+        if(i === 16) {
+          if(moralSlider.value < 2)
+            alert("Seriously? Your ideal waifu will drag you down to hell, and you don't want that.");
+          else if(moralSlider.value === "4")
+            alert("I think your ideal waifu would be interested in watching General Conference.");
+        }
+        i++;
+        if(i <= 17)
+          document.getElementById('container' + i).classList.remove("invisible");
+      }
+
+      var anzu = {
+        height:139,
+        cuteness:5, //Adorable
+        girliness:2, //Medium
+        love:1, //Indifferent
+        kindness:1, //Selfish
+        happy:3, //Happy
+        temper:0, //Relaxed
+        passion:1, //Average
+        energy:0, //Lazy
+        strength:1, //Weak
+        confidence:3, //Confident
+        intelligence:3, //Smart
+        maturity:1, //Immature
+        fun:4, //Pleasure-Seeking
+        casual:3, //Very casual
+        morality:2 //Balanced
+      };
+
+      var cirno = {
+        height:129,
+        cuteness:5, //Adorable
+        girliness:2, //Medium
+        love:1, //Indifferent
+        kindness:2, //Neutral
+        happy:4, //Cheerful
+        temper:2, //Neurotic
+        passion:2, //Enthusiastic
+        energy:3, //High
+        strength:1, //Weak
+        confidence:4, //Brazen
+        intelligence:0, //Stupid
+        maturity:0, //Childish
+        fun:4, //Pleasure-Seeking
+        casual:3, //Very casual
+        morality:2 //Balanced
+      };
+
+      var flandre = {
+        height:131,
+        cuteness:5, //Adorable
+        girliness:2, //Medium
+        love:1, //Indifferent
+        kindness:2, //Neutral
+        happy:3, //Happy
+        temper:2, //Neurotic
+        passion:1, //Average
+        energy:3, //High
+        strength:4, //Unreal
+        confidence:2, //Reasonable
+        intelligence:2, //Average
+        maturity:0, //Childish
+        fun:3, //Fun-Loving
+        casual:2, //Casual
+        morality:1 //Immoral
+      };
+
+      var chino = {
+        height:144,
+        cuteness:5, //Adorable
+        girliness:2, //Medium
+        love:1, //Indifferent
+        kindness:2, //Neutral
+        happy:1, //Stoic
+        temper:1, //Normal
+        passion:1, //Average
+        energy:2, //Medium
+        strength:2, //Normal
+        confidence:3, //Confident
+        intelligence:2, //Average
+        maturity:3, //Mature
+        fun:0, //Serious
+        casual:1, //Semi-Formal
+        morality:3 //Nice
+      };
+
+      var rem = {
+        height:154,
+        cuteness:4, //Cute
+        girliness:2, //Medium
+        love:3, //Sweet
+        kindness:4, //Caring
+        happy:2, //Neutral
+        temper:1, //Normal
+        passion:1, //Average
+        energy:2, //Medium
+        strength:2, //Normal
+        confidence:1, //Shy
+        intelligence:2, //Average
+        maturity:3, //Mature
+        fun:0, //Serious
+        casual:0, //Formal
+        morality:3 //Nice
+      };
+
+      var madoka = {
+        height:152,
+        cuteness:5, //Adorable
+        girliness:4, //Very High
+        love:3, //Sweet
+        kindness:4, //Caring
+        happy:4, //Cheerful
+        temper:1, //Normal
+        passion:2, //Enthusiastic
+        energy:2, //Medium
+        strength:2, //Normal
+        confidence:2, //Reasonable
+        intelligence:2, //Average
+        maturity:2, //Middling
+        fun:2, //Balanced
+        casual:1, //Semi-Formal
+        morality:4 //Saintly
+      };
+
+      var kaos = {
+        height:144,
+        cuteness:4, //Cute
+        girliness:3, //High
+        love:1, //Indifferent
+        kindness:3, //Friendly
+        happy:0, //Unhappy
+        temper:2, //Neurotic
+        passion:2, //Enthusiastic
+        energy:2, //Medium
+        strength:1, //Weak
+        confidence:0, //Fearful
+        intelligence:2, //Average
+        maturity:1, //Immature
+        fun:2, //Balanced
+        casual:2, //Casual
+        morality:3 //Nice
+      };
+
+      function loadPreset(character) {
+         heightSlider.value = character.height;
+         waifuHeight.innerHTML = heightSlider.value;
+
+         cuteSlider.value = character.cuteness;
+         cute.innerHTML = cuteness[cuteSlider.value];
+
+         girlySlider.value = character.girliness;
+         girl.innerHTML = girliness[girlySlider.value];
+
+         loveSlider.value = character.love;
+         love.innerHTML = loveliness[loveSlider.value];
+
+         kindSlider.value = character.kindness;
+         kind.innerHTML = kindness[kindSlider.value];
+
+         emotionSlider.value = character.happy;
+         emotion.innerHTML = emotionalLevels[emotionSlider.value];
+
+         temperSlider.value = character.temper;
+         temper.innerHTML = temperaments[temperSlider.value];
+
+         passionSlider.value = character.passion;
+         passion.innerHTML = passions[passionSlider.value];
+
+         energySlider.value = character.energy;
+         energy.innerHTML = energies[energySlider.value];
+
+         strongSlider.value = character.strength;
+         strength.innerHTML = fitness[strongSlider.value];
+
+         confSlider.value = character.confidence;
+         conf.innerHTML = confidence[confSlider.value];
+
+         matureSlider.value = character.maturity;
+         maturity.innerHTML = maturities[matureSlider.value];
+
+         funSlider.value = character.fun;
+         fun.innerHTML = funLevels[funSlider.value];
+
+         casualSlider.value = character.casual;
+         casual.innerHTML = casualness[casualSlider.value];
+
+         moralSlider.value = character.morality;
+         moral.innerHTML = moralities[moralSlider.value];
+
+         smartSlider.value = character.intelligence;
+         smart.innerHTML = intelligence[smartSlider.value];
+      }
+    </script>
+  </body>
+</html>
