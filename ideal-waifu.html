@@ -185,12 +185,16 @@
         if(i < 17)
           document.getElementById('container' + i).classList.add("invisible");
         if(i === 1) {
-          if(heightSlider.value <= 99)
-            alert("That height is ridulously tiny.");
-          else if(heightSlider.value < 133)
-            alert("Your ideal waifu is so small, that she looks like a loli compared to other lolis!");
+          if(heightSlider.value <= 99) {
+            alert("That height is ridulously tiny. You just want an ideal daughteru, not an ideal waifu.");
+            message.innerHTML = "Create your ideal daughteru.";
+          }
+          else if(heightSlider.value <= 125) {
+            alert("That height is so small, that you just want an ideal daughteru, not an ideal waifu.");
+            message.innerHTML = "Create your ideal daughteru.";
+          }
           else if(heightSlider.value >= 175)
-            alert("You want a tall waifu? Is it because you want to look small?");
+            alert("You want a tall waifu? Is it because you want to look small compared to her? Or is it because you love big things?");
         }
         if(i === 2 && cuteSlider.value === "0") {
           alert("Really? Your ideal waifu would be ugly? Nobody wants an ugly waifu.\n\nBut okay. It's your choice.");
