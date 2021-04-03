@@ -421,6 +421,8 @@ function finalTest(inputText,site)
         else
           $("question").innerHTML = "So," + $("newBreak").value.replace("my","your") + ". Why?";
       }
+      else if(found(['don\'t want', 'do not want'],inputText))
+        $("question").innerHTML = "So, you don't want" + $("newBreak").value.substring(inputText.indexOf("want") + 4).replace("my","your") + ". Why?";
       else
         $("question").innerHTML = "So, you want" + $("newBreak").value.substring(inputText.indexOf("want") + 4).replace("my","your") + ". Why?";
       unknownReason = 1;
