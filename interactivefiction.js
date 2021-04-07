@@ -14,7 +14,7 @@ function finalTest(inputText,site)
 {
   if ((found(["sick", "throw up", "throwing up", "nauseat", "vomit", "puke", " ill ", " ill."],inputText) || inputText.endsWith(" ill")) && inputText.indexOf("sick of") < 0) {
     $("question").innerHTML = "Your health matters. If you feel ill, it's best to rest, drink plenty of fluids, and give your eyes a break.";
-    $("link").innerHTML = "Go to <a href='https://app.mysoundwise.com/mysoundcasts'>Soundwise</a>, followed by \"Improve Your Physical Health\", and listen to \"" + generateHealthLink() + "\"";
+    $("link").innerHTML = "Go to <a href='https://app.mysoundwise.com/mysoundcasts'>Soundwise</a>, followed by \"Healthy Body\", and listen to \"" + generateHealthLink() + "\"";
   }
   else if(found(["struggl", "resist"],inputText))
     location.href = "struggle.html";
@@ -499,7 +499,7 @@ function areYouBored(site) {
 }
 
 /*function alreadyDrank() {
-  $("question").innerHTML = "<a href='https://app.mysoundwise.com/mysoundcasts'>Listen to Morning Boost under Make the Most of Your Day.</a>";
+  $("question").innerHTML = "<a href='https://app.mysoundwise.com/mysoundcasts'>Listen to Morning Boost under Daily Boost.</a>";
   $("link").innerHTML = "<ins onclick='meditated()'>Continue</ins>";
 }
 

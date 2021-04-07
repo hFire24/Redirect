@@ -438,7 +438,7 @@ function okFeeling() {
       break;
     case "unconfident":
       message.innerHTML = "You need a confidence boost.";
-      link.innerHTML = "If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Improve Your Mental Health. Otherwise, <a href='relax.html?mood=unconfident'>click here.</a>";
+      link.innerHTML = "If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Healthy Mind. Otherwise, <a href='relax.html?mood=unconfident'>click here.</a>";
       break;
     case "overwhelmed":
       location.href = "cyoa/48.html";

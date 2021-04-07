@@ -28,24 +28,24 @@
     'Smiling Relaxation under Quick Solutions',
     'Stretch Relaxation under Quick Solutions',
     'How to Relax 1 under Learn to Relax'
-    /*'Law of Attraction under Creating Abundance',
-    'Positivity under Increase Positivity',
+    /*'Law of Attraction under Abundance',
+    'Positivity under Positivity',
     'Astral Flying under Meditate',
-    'Believe in Yourself under Improve Your Mental Health',
-    'Visualise Prosperity under Creating Abundance', //Visualise Success
+    'Believe in Yourself under Healthy Mind',
+    'Visualise Prosperity under Abundance', //Visualise Success
     'Meet Your Inner Guide under Meditate',
-    'Be Grateful under Improve Your Mental Health',
-    'Confidence under Improve Your Mental Health', //Boost your confidence
+    'Be Grateful under Healthy Mind',
+    'Confidence under Healthy Mind', //Boost your confidence
     'Mindful Awareness in Insight Timer', //Mindful awareness: Only Insight Timer Link
     'Be Happy under Improve Mental Health',
     'Expansion Meditation under Meditate',
-    'Stress Free under Improve Your Mental Health',
-    'Build Creativity under Increase Positivity'*/];
+    'Stress Free under Healthy Mind',
+    'Build Creativity under Positivity'*/];
     var d = new Date();
     if(d.getHours() < 11)
-      meditationTitles.push('Morning Boost under Make the Most of Your Day'); //Morning Boost
+      meditationTitles.push('Morning Boost under Daily Boost'); //Morning Boost
     else if(d.getHours() > 16 && d.getHours() < 20)
-      meditationTitles.push('Evening Boost under Make the Most of Your Day'); //Evening Boost
+      meditationTitles.push('Evening Boost under Daily Boost'); //Evening Boost
     var index = Math.floor(Math.random() * meditationTitles.length);
     document.getElementById("meditation").innerHTML = meditationTitles[index];
     if(meditationTitles[index] === "Stretch Relaxation under Quick Solutions")
