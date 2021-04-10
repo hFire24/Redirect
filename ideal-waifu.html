@@ -15,6 +15,12 @@
       <button onclick='loadPreset(chino)'>Chino</button> <button onclick='loadPreset(rem)'>Rem</button> <button onclick='loadPreset(madoka)'>Madoka</button> <button onclick='loadPreset(kaos)'>Kaos</button>
     </div-->
     <div id="sliders" class="space">
+      <div id='container17' class='invisible'>
+        That's the end of the quiz. I hope it was insightful. In summary, your ideal <span id='wd'></span> is <span id='heightResults'></span>cm tall, <span id='cuteResults'></span>,
+        has <span id='girlyResults'></span> girliness, is <span id='loveResults'></span> towards you, <span id='kindnessResults'></span>, <span id='happyResults'></span>, <span id='tempered'></span>,
+        <span id='passionResults'></span>, and <span id='energyResults'></span>. She also <span id='is1'></span><span id='strongResults'></span>, <span id='is2'></span><span id='confidentResults'></span>,
+        <span id='smartResults'></span>, <span id='matureResults'></span>, <span id='funResults'></span>, <span id='formalResults'></span>, and <span id='moralResults'></span>.
+      </div>
       <div id='container1'>
         <div class='medium'>Height: <span id="height">157</span>cm</div>
         <input type="range" min="80" max="200" value="157" id='height-slider' class="waifuslider">
@@ -78,9 +84,6 @@
       <div id='container16' class='invisible'>
         <div class='medium'>Morality: <span id="moral">Balanced</span></div>
         <input type="range" min="0" value="2" id='moral-slider' class="waifuslider">
-      </div>
-      <div id='container17' class='invisible'>
-        That's the end of the quiz. I hope it was insightful.
       </div>
     </div>
     <button class='custom-button' onclick="next()">Submit</button>
@@ -185,98 +188,152 @@
         if(i < 17)
           document.getElementById('container' + i).classList.add("invisible");
         if(i === 1) {
+          wd.innerHTML = "waifu";
           if(heightSlider.value <= 99) {
             alert("That height is ridulously tiny. You just want an ideal daughteru, not an ideal waifu.");
             message.innerHTML = "Create your ideal daughteru.";
+            wd.innerHTML = "daughteru";
           }
           else if(heightSlider.value <= 125) {
             alert("That height is so small, that you just want an ideal daughteru, not an ideal waifu.");
             message.innerHTML = "Create your ideal daughteru.";
+            wd.innerHTML = "daughteru";
           }
           else if(heightSlider.value >= 175)
             alert("You want a tall waifu? Is it because you want to look small compared to her? Or is it because you love big things?");
+          heightResults.innerHTML = heightSlider.value;
         }
-        if(i === 2 && cuteSlider.value === "0") {
-          alert("Really? Your ideal waifu would be ugly? Nobody wants an ugly waifu.\n\nBut okay. It's your choice.");
+        if(i === 2) {
+          cuteResults.innerHTML = cute.innerHTML.toLowerCase();
+          if(cuteSlider.value === "0")
+            alert("Really? Your ideal waifu would be ugly? Nobody wants an ugly waifu.\n\nBut okay. It's your choice.");
         }
         if(i === 3) {
+          girlyResults.innerHTML = girl.innerHTML.toLowerCase();
           if(girlySlider.value === "0")
             alert("If your ideal waifu is THAT ungirly, then you need to man to the level of your ideal waifu.");
           else if(girlySlider.value === "4")
             alert("If your ideal waifu is THAT girly, then she'll be interested in things you're not interested in...\n\n...except for poofy dresses.");
         }
         if(i === 4) {
+          loveResults.innerHTML = love.innerHTML.toLowerCase();
           if(loveSlider.value === "0")
             alert("Talk about a lose-lose situation! Your answer indicates that you don't value love, and your ideal waifu won't value love either!\n\nBut hey, it's your choice your heartless fool.");
           else if(loveSlider.value === "4")
             alert("Are you OK? Your answer indicates that you feel lonely and need love. And also, having an overly-attached waifu can get tiring.");
         }
         if(i === 5) {
+          kindnessResults.innerHTML = kind.innerHTML.toLowerCase();
           if(kindSlider.value === "0")
             alert("Are you kidding me? You want a cruel waifu? You need to keep the cruel part of you in check.");
+          else if(kindSlider.value === "2")
+            kindnessResults.innerHTML = "neutral in terms of kindness";
           else if(kindSlider.value === "4")
             alert("Your answer suggests that you need to be more caring to everyone, including to yourself and to those who you call \"low-lives\".");
         }
         if(i === 6) {
+          happyResults.innerHTML = emotion.innerHTML.toLowerCase();
           if(emotionSlider.value === "0") {
             alert("An unhappy waifu indicates that you have some cruelty inside of you. Imagine yourself doing cruel things to your waifu.");
             alert("Now imagine someone else doing the same cruel things to YOU!");
             alert("I hope you never do these cruel things to someone in real life.");
           }
+          else if(emotionSlider.value === "2")
+            happyResults.innerHTML = "neutral in terms of happiness";
           else if(emotionSlider.value > 2)
             alert("You see that? You want your waifu to be happy, so why don't you become happy?");
         }
+        if(i === 7) {
+          tempered.innerHTML = temper.innerHTML.toLowerCase();
+          if(temperSlider.value === "1")
+            tempered.innerHTML = "neither relaxed nor neurotic";
+        }
         if(i === 8) {
+          passionResults.innerHTML = passion.innerHTML.toLowerCase();
           if(passionSlider.value === "0")
             alert("Your answer indicates that you just don't care about anything, and neither does your ideal waifu. Do you really think an apatheic waifu would care about you?")
+          else if(passionSlider.value === "1")
+            passionResults.innerHTML = "somewhat enthusiastic";
           else if(passionSlider.value === "2")
             alert("Your answer indicates that you should be more passionate towards the things you truly love!");
         }
         if(i === 9) {
+          energyResults.innerHTML = energy.innerHTML.toLowerCase();
           if(energySlider.value === "0")
             alert("Your answer indicates that laziness is good. It's not. A lazy marriage is BORING!");
           else if(energySlider.value > 2)
             alert("Your answer indicates that you want to become energetic. Go play some Stepmania right now.");
+          if(energySlider.value > 0 && energySlider.value < 4)
+            energyResults.innerHTML = "has " + energy.innerHTML.toLowerCase() + " energy";
         }
         if(i === 10) {
+          is1.innerHTML = "is "
+          strongResults.innerHTML = strength.innerHTML.toLowerCase();
           if(strongSlider.value === "0")
             alert("If you feel your ideal waifu is fragile, then you feel fragile as well. You are stronger than you think.");
+          else if(strongSlider.value === "2" || strongSlider.value === "4")
+          {
+            is1.innerHTML = "has ";
+            strongResults.innerHTML = strength.innerHTML.toLowerCase() + " strength";
+          }
         }
         if(i === 11) {
+          if(is1.innerHTML === "has ")
+            is2.innerHTML = "is ";
+          confidentResults.innerHTML = conf.innerHTML.toLowerCase();
           if(confSlider.value === "0")
             alert("Fear. It is an emotion that must be conquered. If fear remains, then we can't have good things.");
           else if(confSlider.value === "1")
             alert("If your ideal waifu is shy, then you're also shy.");
+          else if(confSlider.value === "2")
+            confidentResults.innerHTML = "reasonably confident";
           else if(confSlider.value === "3")
             alert("Your answer indicates that you want to become confident.");
           else if(confSlider.value === "4")
             alert("Confidence is good, but being too confident is taking it too far. Just look at Donald Trump!");
         }
         if(i === 12) {
+          smartResults.innerHTML = smart.innerHTML.toLowerCase();
           if(smartSlider.value === "0")
             alert("Come on. A stupid waifu will be a burden in your life.");
-          else if(smartSlider.value === "4")
+          else if(smartSlider.value === "1" || smartSlider.value === "2")
+            smartResults.innerHTML = "of " + smart.innerHTML.toLowerCase() + " intelligence";
+          else if(smartSlider.value === "4") {
             alert("Your answer indicates that you want to become a genius.");
+            smartResults.innerHTML = "a " + smart.innerHTML.toLowerCase();
+          }
         }
         if(i === 13) {
+          matureResults.innerHTML = maturity.innerHTML.toLowerCase();
           if(matureSlider.value === "0")
             alert("Remember Mitsuboshi Colors? This is what you're dealing with if your waifu is that immature.");
+          else if(matureSlider.value === "2")
+            matureResults.innerHTML = maturity.innerHTML.toLowerCase() + " in terms of maturity";
           else if(matureSlider.value === "3")
             alert("The only way to become mature is to get as much life advice as possible not contrary to your beliefs.");
           else if(matureSlider.value === "4")
             alert("Your answer indicates that you crave wisdom deep inside.");
         }
         if(i === 14) {
+          funResults.innerHTML = fun.innerHTML.toLowerCase();
           if(funSlider.value === "0")
             alert("If your ideal waifu is serious, then you also need to become more serious about the objectives of life.");
+          else if(funSlider.value === "2")
+            funResults.innerHTML = fun.innerHTML.toLowerCase() + " when it comes to fun/serious stuff";
           else if(funSlider.value === "3")
             alert("If you love fun, just play a video game.");
           else if(funSlider.value === "4")
             alert("Your ideal waifu will enslave you while being self-enslaved. Break free from instant gratification.");
         }
+        if(i === 15) {
+          formalResults.innerHTML = casual.innerHTML.toLowerCase();
+        }
         if(i === 16) {
+          moralResults.innerHTML = moral.innerHTML.toLowerCase();
           if(moralSlider.value < 2)
             alert("Seriously? Your ideal waifu will drag you down to hell, and you don't want that.");
+          else if(moralSlider.value === "2")
+            moralResults.innerHTML = "morally " + moral.innerHTML.toLowerCase();
           else if(moralSlider.value === "4")
             alert("I think your ideal waifu would be interested in watching General Conference.");
         }
