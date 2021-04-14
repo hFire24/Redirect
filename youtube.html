@@ -56,14 +56,14 @@
       }
       else if(found(['doug demuro', 'car ', 'cars'],inputText)) {
         $("question").innerHTML = "You'll never be able to afford a nice car if you keep wasting your time watching car videos.";
-        $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
+        $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
       }
       else {
         finalTest(inputText,"youtube");
       }
       if(!$("youtube-reasons"))
         document.getElementById("link").classList.remove("small");
-      if($("link").innerHTML === "<a href=\"cyoa/17.html\">Click here to continue.</a>")
+      if($("link").innerHTML === "<a href=\"cyoa/1.html\">Click here to continue.</a>")
         document.getElementById("link").innerHTML = "<a href='youtube-addiction/1.html'>Click here to continue.</a>";
     }
 
@@ -123,7 +123,7 @@
         case 7:
           $("question").innerHTML = 'If you have so much energy, then use it on something productive.';
           $("link").style.display = "block";
-          $("link").innerHTML = "<a href='cyoa/17.html'>Click here to continue.</a>";
+          $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
           $("lazy-scale").style.display = 'none';
           break;
       }
