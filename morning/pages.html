@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Good morning!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../icons/icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="morning">
+    <h1>How to use morning pages</h1>
+    <ol>
+      <li>Use morning pages to write down any thoughts you may have upon waking up.</li>
+      <li>Some thoughts to write down include
+        <ul>
+          <li>What your dreams were</li>
+          <li>What you want to search for along with the thoughts that come with it</li>
+          <li>What your objectives of the day are</li>
+        </ul>
+      </li>
+      <li>Why write morning pages? To prevent wasted mornings.</li>
+      <li>It doesn't matter how riculous your thoughts are. If you think about it, write it.</li>
+      <li>Some interesting patterns should emerge from your morning pages.</li>
+      <li>Once you're done writing in your morning pages, meditate to give your mornings a boost.</li>
+      <li>Or perhaps, you may listen to music to control your thoughts.</li>
+    </ol>
+    <script>
+      var scene = 0;
+      var braveQuotes = ["",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""];
+
+      function next()
+      {
+        scene++;
+        if(scene === braveQuotes.length)
+          scene--;
+        document.getElementById("message").innerHTML = braveQuotes[scene];
+        document.getElementById("number").innerHTML = scene + 1;
+      }
+      function previous()
+      {
+        scene--;
+        if(scene === -1)
+          scene++;
+        document.getElementById("message").innerHTML = braveQuotes[scene];
+        document.getElementById("number").innerHTML = scene + 1;
+      }
+    </script>
+  </body>
+</html>
