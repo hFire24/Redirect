@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Take a break.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme3">
+    <h2 id='message' class='small'>What's your ideal anime?</h2>
+    <!--div>Presets: <button onclick='loadPreset(anzu)'>Anzu Futaba</button> <button onclick='loadPreset(cirno)'>Cirno</button> <button onclick='loadPreset(flandre)'>Flandre Scarlet</button>
+      <button onclick='loadPreset(chino)'>Chino</button> <button onclick='loadPreset(rem)'>Rem</button> <button onclick='loadPreset(madoka)'>Madoka</button> <button onclick='loadPreset(kaos)'>Kaos</button>
+    </div-->
+    <div id="sliders" class="space">
+      <div id='container17' class='invisible'>
+        That's the end of the quiz. I hope it was insightful. In summary, your ideal <span id='wd'></span> is <span id='heightResults'></span>cm tall, <span id='cuteResults'></span>,
+        has <span id='girlyResults'></span> girliness, is <span id='loveResults'></span> towards you, <span id='kindnessResults'></span>, <span id='happyResults'></span>, <span id='tempered'></span>,
+        <span id='passionResults'></span>, and <span id='energyResults'></span>. She also <span id='is1'></span><span id='strongResults'></span>, <span id='is2'></span><span id='confidentResults'></span>,
+        <span id='smartResults'></span>, <span id='matureResults'></span>, <span id='funResults'></span>, <span id='formalResults'></span>, and <span id='moralResults'></span>.
+      </div>
+      <div id='container1'>
+        <div class='medium'>Loli-o-Meter: <span id="loli">Not Loli</span></div>
+        <input type="range" min="0" max="4" value="0" id='loliSlider' class="waifuslider">
+      </div>
+      <div id='container2' class='invisible'>
+        <div class='medium'>Moe-o-meter: <span id="moe">Not moe</span></div>
+        <input type="range" min="0" value="0" id='moeSlider' class="waifuslider">
+      </div>
+      <div id='container3' class='invisible'>
+        <div class='medium'>Cleanliness: <span id="cleanliness">Wholesome</span></div>
+        <input type="range" min="0" value="9" id='cleanSlider' class="waifuslider">
+      </div>
+      <div id='container4' class='invisible'>
+        <div class='medium'>Maids: <span id="maid">No</span></div>
+        <input type="range" min="0" value="0" id='maidSlider' class="waifuslider">
+      </div>
+      <div id='container5' class='invisible'>
+        <div class='medium'>Twintails: <span id="twintails">No</span></div>
+        <input type="range" min="0" value="0" id='twintailSlider' class="waifuslider">
+      </div>
+      <div id='container6' class='invisible'>
+        <div class='medium'>Gayness: <span id="gay">None</span></div>
+        <input type="range" min="0" value="0" id='gaySlider' class="waifuslider">
+      </div>
+      <div id='container7' class='invisible'>
+        <div class='medium'>Chill or Thrill: <span id="chillThrill">Chrill</span></div>
+        <input type="range" min="0" value="2" id='thrillSlider' class="waifuslider">
+      </div>
+    </div>
+    <button class='custom-button' onclick="next()">Submit</button>
+    <script>
+      const loliLevels = ["Not loli","Somewhat loli","Loli","Very loli","Extremely loli"];
+      loliSlider.max = loliLevels.length - 1;
+      loliSlider.oninput = function() {loli.innerHTML = loliLevels[loliSlider.value];};
+
+      const moeLevels = ["Not moe","Not very moe","Average moe","Good moe","Very moe","HNNNNNNG"];
+      moeSlider.max = moeLevels.length - 1;
+      moeSlider.oninput = function() {moe.innerHTML = moeLevels[moeSlider.value];};
+
+      const cleanLevels = ["Why would you do this?","Disgusting","Horrible","Dirty","Unclean","Borderline NSFW","Average","Good","Clean","Wholesome","Squeaky clean"];
+      cleanSlider.max = cleanLevels.length - 1;
+      cleanSlider.oninput = function() {cleanliness.innerHTML = cleanLevels[cleanSlider.value];};
+
+      const maidLevels = ["No","Yes"];
+      maidSlider.max = maidLevels.length - 1;
+      maidSlider.oninput = function() {maid.innerHTML = maidLevels[maidSlider.value];};
+
+      const twintailLevels = ["No","Yes"];
+      twintailSlider.max = twintailLevels.length - 1;
+      twintailSlider.oninput = function() {twintails.innerHTML = twintailLevels[twintailSlider.value];};
+
+      const gayLevels = ["None","Subtle","Mild","Moderate","Blatant"];
+      gaySlider.max = gayLevels.length - 1;
+      gaySlider.oninput = function() {gay.innerHTML = gayLevels[gaySlider.value];};
+
+      const chillLevels = ["Relaxed","Chill","Chrill","Thrill"];
+      thrillSlider.max = chillLevels.length - 1;
+      thrillSlider.oninput = function() {chillThrill.innerHTML = chillLevels[thrillSlider.value];};
+
+      var i = 1;
+
+      function next() {
+        if(i < 8)
+          document.getElementById('container' + i).classList.add("invisible");
+        i++;
+        if(i < 8)
+          document.getElementById('container' + i).classList.remove("invisible");
+        else {
+          while(i > 1) {
+            i--;
+            document.getElementById('container' + i).classList.remove("invisible");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

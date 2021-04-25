@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
-  <body onload="loadSearchTerm(); letMeGuess();">
+  <body onload="loadSearchTerm();">
     <h1 id="message"></h1>
     <h2 id="question">Why did you decide to search for that?</h2>
     <div id='link'>
@@ -208,29 +208,6 @@
       document.body.appendChild(themeText);
       document.body.className = "theme" + theme.toString();
       console.log("Theme " + theme);
-    }
-
-    function letMeGuess() {
-      var random = Math.floor(Math.random() * 30)
-      console.log("Random " + random);
-      var urlSearch = window.location.search;
-      console.log(urlSearch);
-      if(urlSearch === "")
-        searchTerm = false;
-      else {
-        var parameter = new URLSearchParams(urlSearch);
-        term = parameter.get('term');
-        //Code found from https://www.freecodecamp.org/news/how-to-capitalize-words-in-javascript/
-        var splitTerms = term.split(" ");
-        for (var i = 0; i < splitTerms.length; i++)
-          splitTerms[i] = splitTerms[i][0].toUpperCase() + splitTerms[i].substr(1);
-        term = splitTerms.join(" ");
-      }
-      if($("question")) {
-        $("question").innerHTML = "Will you spare a lot of time to draw anime characters?";
-        $("link").style.display = "none";
-        $("yesno").style.display = "grid";
-      }
     }
 
     function rejectSomething(time) {

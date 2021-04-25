@@ -138,12 +138,12 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='cyoa/62.html'>Exhausted</a></div>";
   }
   else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'waifu', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
-    $("question").innerHTML = "I know you don't have much time to spare, but you could draw something. Any other thoughts?";
+    $("question").innerHTML = "This is a sign that you need to watch some anime. Any other thoughts?";
     expressDesireForCuteness = true;
   }
   else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "If you're thinking about anime, then you should watch anime.";
-    $("link").innerHTML = "<a href='https://www.crunchyroll.com/home/queue'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='nextanime.html'>Click here to continue.</a>"
   }
   else if(found(['play', 'game'],inputText)) {
     question.innerHTML = "How long have you been being productive?";
@@ -317,7 +317,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='drawing-progress.html'>Click here to continue.</a>";
   }
   else if ((found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText)) && expressDesireForCuteness) {
-    location.href = "index.html";
+    location.href = "nextanime.html";
     /*$("question").innerHTML = "Don't do nothing. Get up and <a href='artstage.html'>foster your creativity!</a>";
     $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='areyouhome.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";*/
   }
@@ -386,7 +386,7 @@ function finalTest(inputText,site)
       document.getElementById("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
   }
   else if(expressDesireForCuteness) {
-    location.href = "index.html";
+    location.href = "nextanime.html";
     /*if(Math.floor(Math.random() * 2) === 0)
       $("question").innerHTML = "Stand up and stretch if you can.<br>Get your drawing tablet.<br><a href='drawing-progress.html'>Open Krita.</a>";
     else
@@ -491,8 +491,6 @@ function areYouBored(site) {
   if((site === 'youtube' || site === 'deviantart') && $("question")) {
     if(site === 'youtube')
       $("question").innerHTML = "Let me guess. You're bored and feel like going to YouTube.";
-    else if(site === 'deviantart')
-      $("question").innerHTML = "Will you spare a lot of time to draw anime characters?";
     $("link").style.display = "none";
     $("yesno").style.display = "grid";
   }
