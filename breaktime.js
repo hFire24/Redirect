@@ -110,7 +110,6 @@ new Breaktime('Check Brightspace/Loncapa for assignments, then do one of them.',
 new Breaktime('Make progress on a big project.',"pass","homework",4,false),
 new Breaktime('Finish a piece of homework, even if the deadline is far.',"pass","homework",4,false),
 new Breaktime('Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',"https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw","homework",4,false),
-new Breaktime('Don\'t suck at group projects.',"groupprojects.html","homework",4,false),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false),
 new Breaktime('Play Sudoku (Medium).',"https://www.websudoku.com/?level=2","game",1,false),
