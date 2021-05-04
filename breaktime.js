@@ -102,14 +102,6 @@ new Breaktime('Check your gTasks list, please.<br>Do the first unfinished task.<
   //Day planning
 new Breaktime('Make a plan for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
-  //Homework
-new Breaktime('Do homework.<br>You may need to stand up and stretch and change clothes.',"pass","homework",4,false),
-new Breaktime('Get assignments done.<br>You may need to stand up and stretch and change clothes.',"pass","homework",4,false),
-new Breaktime('If you\'re struggling with homework, do a different assignment.',"pass","homework",4,false),
-new Breaktime('Check Brightspace/Loncapa for assignments, then do one of them.',"pass","homework",4,false),
-new Breaktime('Make progress on a big project.',"pass","homework",4,false),
-new Breaktime('Finish a piece of homework, even if the deadline is far.',"pass","homework",4,false),
-new Breaktime('Put on some epic music, and<br><span id="stress">GET HOMEWORK DONE!</span>',"https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw","homework",4,false),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false),
 new Breaktime('Play Sudoku (Medium).',"https://www.websudoku.com/?level=2","game",1,false),
@@ -169,9 +161,6 @@ new Breaktime('Create tasks for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Music
 new Breaktime('Put on some music to help you focus.',"https://youtu.be/xOA0T8ZjpFQ","music",2,false),
-  //Homework
-new Breaktime('Do your homework, but don\'t get overwhelmed by it.',"pass","homework",4,false),
-new Breaktime('Check your homework page and see if you can do a passive assignment.',"pass","homework",4,false),
   //Games
 new Breaktime('Solve a Minesweeper board on Expert.',"pass","game",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),

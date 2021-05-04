@@ -15,8 +15,8 @@ function loadWebsite(number) {
     randomTheme(number);
   //If the number is 1, then the homework iframe may pop up.
   if(number === 1) {
-    var homework = Math.floor(Math.random() * 3);
-    console.log(homework);
+    var homework = 1;
+    /*console.log(homework);
     if(homework === 0)
     {
       var homeworkFrame = document.createElement("IFRAME");
@@ -26,7 +26,7 @@ function loadWebsite(number) {
       homeworkFrame.id = "homework";
       $("theme").classList.add("space");
       $("hideable").appendChild(homeworkFrame);
-    }
+    }*/
   }
   if(number >= 7 && number <= 12)
     messageComplete = false;
