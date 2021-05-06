@@ -68,13 +68,13 @@ new Breaktime('List all the things you want to do, and order them by priority.',
 new Breaktime('Add a new song to your iTunes library.',"pass","misc",1,false),
 new Breaktime('Put on some music to help you focus.',"https://youtu.be/xOA0T8ZjpFQ","music",2,false),
   //Miscellaneous
+new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false),
 new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Read your journal entries.<br>Start from September 17, 2012.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
-new Breaktime('Take this quiz just for fun.',"quiz.html","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 //'How can you build an everlasting romantic relationship from scratch?',
@@ -102,12 +102,22 @@ new Breaktime('Check your gTasks list, please.<br>Do the first unfinished task.<
   //Day planning
 new Breaktime('Make a plan for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
+  //Job hunting
+new Breaktime('Apply for a job.',"pass","job",4,false),
+new Breaktime('Go to Glassdoor, and find jobs.',"pass","job",4,false),
+new Breaktime('Update your Codementor profile.',"https://www.codementor.io","job",3,false),
+new Breaktime('Update your Indeed information.',"https://www.indeed.com/","job",3,false),
+  //Anime watching
+new Breaktime('Watch anime.',"nextanime","anime",2,false),
+new Breaktime('If you\'re watching anime, watch a different anime.',"nextanime","anime",2,false),
+new Breaktime('Watch anime.',"nextanime","anime",2,false),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false),
 new Breaktime('Play Sudoku (Medium).',"https://www.websudoku.com/?level=2","game",1,false),
 new Breaktime('Play 100% Orange Juice.',"pass","game",1,false),
 new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online/start/3","game",1,false),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false),
+new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
 //'Play Super Smash Bros. Ultimate for about 30 minutes.',
   //Miscellaneous
 new Breaktime('No routine? Form one.',"pass","plan",2,false),
@@ -124,10 +134,11 @@ new Breaktime('Listen to a General Conference talk.',"gcprogress.html","religion
 //'Try one of these C# coding projects.',
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
 new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
+new Breaktime('Learn Bootstrap to build your portfolio.',"https://youtu.be/5GcQtLDGXy8","coding",4,false),
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
-new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",3,true),
-new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religion",2,false)];
+new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
+//new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
+//new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religion",2,false)];
 //Do not upload traced art.
 
 var bigStand = [//Health and fitness
@@ -138,9 +149,10 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
 new Breaktime('Declutter your room.',"pass","misc",2,true),
 new Breaktime('Digitize at least two days of events from your journal.',"pass","misc",3,true),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true),
-new Breaktime('Practice your piano.',"pass","misc",3,true),
+new Breaktime('Play whatever you want on the piano.',"pass","misc",2,true),
 new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 new Breaktime('Read the book <u>Maphead</u>.',"pass","read",2,true),
+new Breaktime('Read the book <u>How To Win at Adulting</u>.',"pass","read",2,true),
 new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true),
 /*new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
 new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html","art",2,true),*/
@@ -164,6 +176,9 @@ new Breaktime('Put on some music to help you focus.',"https://youtu.be/xOA0T8Zjp
   //Games
 new Breaktime('Solve a Minesweeper board on Expert.',"pass","game",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
+  //Anime
+new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false),
+new Breaktime('Watch anime.',"nextanime","anime",2,false),
   //Miscellaneous
 new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
@@ -176,8 +191,7 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"gcprogress.html","religion",3,false),
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
-new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religion",2,false)];
+new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
 
 var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
@@ -254,7 +268,7 @@ function displayBreak(index) {
       standupMessage.removeAttribute("href");
     globalStand = standIndex;
   }
-  if(messages[index].category === "homework" && messages[index].link === "pass")
+  if(messages[index].category === "job" && messages[index].link === "pass")
     message.addEventListener("click",noooo);
   else
     message.removeEventListener("click",noooo);
