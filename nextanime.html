@@ -11,23 +11,23 @@
   </head>
   <body>
     <h1 id='message'>Your current anime with links</h1>
-    <div class='space'><a href='animeutilities.html'>Click here for anime watching utilities.</a></div>
+    <div class='space'>If you can't decide what to watch, just roll a die. <a href='animeutilities.html'>Click here for anime watching utilities.</a></div>
     <div class='four-list'>
       <a id='a0' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
-      <a id='b0' class='hfire-link'>Ro-Kyu-Bu!</a>
-      <a id='a1' class='hfire-link'>Gonna be the Twin-Tail!!</a>
-      <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/shadows-house'>Shadows House</a>
-      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GW4HM79VM/Ive-Been-Killing-Slimes-For-300-Years-And-Maxed-Out-My-Level' style="grid-column:auto/span 4;">I've Been Killing Slimes For 300 Years And Maxed Out My Level</a>
+      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/silver-spoon'>Silver Spoon</a>
+      <a id='a2' class='hfire-link'>Gonna be the Twin-Tail!!</a>
+      <a id='a3' class='hfire-link' href='https://www.funimation.com/shows/shadows-house'>Shadows House</a>
+      <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/GW4HM79VM/Ive-Been-Killing-Slimes-For-300-Years-And-Maxed-Out-My-Level' style="grid-column:auto/span 4;">I've Been Killing Slimes For 300 Years And Maxed Out My Level</a>
     </div>
     <script>
-      for(var i = 0; i < 4; i++) {
+      for(var i = 0; i < 5; i++) {
         var x = Math.floor(Math.random() * 128);
         var y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
         var bgColor = "rgb(" + x + "," + y + "," + z + ")";
         document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
       }
-      for(var i = 0; i < 1; i++) {
+      for(var i = 0; i < 0; i++) {
         x = Math.floor(Math.random() * 128);
         y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
