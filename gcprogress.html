@@ -8,6 +8,18 @@
     <link rel="shortcut icon" href="icons/icon-meditate.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
     <style>
+      a.conference-link {
+        color:darkblue;
+      }
+
+      a.conference-link:hover {
+        color:teal;
+      }
+
+      a.conference-link:active {
+        color:green;
+      }
+
       table {
         border-collapse:collapse;
         max-width:100%;
@@ -36,8 +48,8 @@
   </head>
   <body class="relax" onresize='getWidth()'>
     <div id='message' class='space'>Your General Conference Progress</div>
-    <div class='small space'>It's highly recommended that you say a prayer before watching a conference talk.</div>
-    <div style='text-align:left;'><strong style='text-align:left;'><a class='hfire-link' style='color:darkblue;' href='https://www.churchofjesuschrist.org/general-conference/2010/10?lang=eng'>October 2010</a></strong></div>
+    <div class='small space'>It's highly recommended that you say a prayer before watching a conference talk. Dark blue squares indicate watched talks, dark red squares indicate skipped talks, and blank squares indicate unwatched talks. Each square corresponds to a talk from each session.</div>
+    <div style='text-align:left;'><strong><a class='conference-link' href='https://www.churchofjesuschrist.org/general-conference/2010/10?lang=eng'>October 2010</a></strong></div>
     <table>
       <tbody>
         <tr>
@@ -101,7 +113,8 @@
       <a href="https://youtu.be/vWCUNWQy-J4">October 2008: Happiness, Your Heritage</a><br>
       <a href="https://youtu.be/__-9MapYDGQ">April 2019: Build a Fortress of Spirituality and Protection</a>
     </div>
-    <div id='width'></div>
+    <!--Used for displaying the width of the page in pixels-->
+    <!--div id='width'></div-->
     <script src='script.js'></script>
   </body>
 </html>
