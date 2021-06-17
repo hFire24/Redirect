@@ -93,7 +93,7 @@ function finalTest(inputText,site)
     location.href = 'crap.html';
   else if(inputText.indexOf("nanah") >= 0)
     location.href = "cyoa/28.html";
-  else if(found(['angry', 'anger', 'angri', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'annoy', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'offended'],inputText)) {
+  else if(found(['angry', 'anger', 'angri', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'annoy', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'offended'],inputText) && inputText.indexOf("hatter") < 0) {
     $("question").innerHTML = "<a id='relax' href='relax.html?mood=angry'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
@@ -394,7 +394,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='areyouhome.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";*/
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {
-    if(inputText !== "because i need to" && unknownReason < 1) {
+    if(inputText.indexOf("need") >= 0 && inputText !== "because i need to" && unknownReason < 1) {
       if(inputText.endsWith("need") || inputText.endsWith("needs"))
       {
         if(inputText.indexOf("because") >= 0)
