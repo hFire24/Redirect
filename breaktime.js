@@ -94,8 +94,8 @@ new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo
   //Miscellaneous Part 2
 new Breaktime('Digitize at least one paragraph from your journal.',"pass","misc",3,true),
 new Breaktime('Read just one page of that green book.',"pass","read",4,true),
-new Breaktime('Read just one page of <u>How to Win at Adulting</u>.',"pass","read",2,true),
-new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
+new Breaktime('Read just one page of <u>How to Win at Adulting</u>.',"pass","read",2,true)];
+//new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
 new Breaktime('Listen to one of these long guided meditations.',"relax2.html?mood=random","meditate2",3,false),
