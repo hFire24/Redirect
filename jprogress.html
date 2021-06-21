@@ -16,7 +16,7 @@
     <script src='script.js'></script>
     <script>
     var d = new Date();
-    var progress = new Date(Date.UTC(2019, 0, 9));
+    var progress = new Date(Date.UTC(2019, 0, 22));
     progress.setMinutes(progress.getTimezoneOffset());
     var startDate = new Date(Date.UTC(2012, 0, 2));
     startDate.setMinutes(progress.getTimezoneOffset());
@@ -24,10 +24,10 @@
     var daysBehind = Math.floor(d.getTime()/(1000*60*60*24) - progress.getTime()/(1000*60*60*24));
     $("digitized").innerHTML = daysDigitized;
     $("behind").innerHTML = daysBehind;
-    var nonJournalDays = 457;
+    var nonJournalDays = 461;
     var actualDaysDigitized = daysDigitized - nonJournalDays;
     $("actual").innerHTML = actualDaysDigitized
-    var percent = Math.floor((actualDaysDigitized) / (actualDaysDigitized + daysBehind - 19) * 100);
+    var percent = Math.floor((actualDaysDigitized) / (actualDaysDigitized + daysBehind - 43) * 100);
     $("percentage").innerHTML = percent + "%";
     </script>
   </body>
