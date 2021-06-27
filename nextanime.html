@@ -11,15 +11,76 @@
   </head>
   <body>
     <h1 id='message'>Your current anime with links</h1>
-    <div class='space'>If you can't decide what to watch, just roll a die. Each number  <a href='animeutilities.html'>Click here for anime watching utilities.</a></div>
+    <div class='space'>If you can't decide what to watch, just roll a die. <a href='animeutilities.html'>Click here for anime watching utilities.</a></div>
+    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button></div>
+    <div id='diceResults' class='space'></div>
     <div class='four-list'>
-      <a id='a0' class='hfire-link' href='https://beta.crunchyroll.com/series/GW4HM79VM/Ive-Been-Killing-Slimes-For-300-Years-And-Maxed-Out-My-Level' style="grid-column:auto/span 4;">I've Been Killing Slimes For 300 Years And Maxed Out My Level</a>
-      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/by-the-grace-of-the-gods'>1/2 By the Grace of the Gods</a>
-      <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/shadows-house'>3/4 Shadows House</a>
-      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/non-non-biyori'>5/6 Non Non Biyori</a>
+      <a id='a0' class='hfire-link' href='https://www.funimation.com/shows/by-the-grace-of-the-gods'>2 By the Grace of the Gods</a>
+      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/shadows-house'>3 Shadows House</a>
+      <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/1000512'>4 Silver Spoon</a>
+      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/non-non-biyori'>5 Non Non Biyori</a>
       <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
     </div>
     <script>
+      var diceRoll = 0;
+
+      function rollDice() {
+        if(diceRoll === 0) {
+          diceRoll = Math.ceil(Math.random() * 6);
+          switch(diceRoll) {
+            case 1:
+              diceResults.innerHTML = "You rolled a 1! That means it's time to put money in the special reserve!";
+              break;
+            case 2:
+              diceResults.innerHTML = "You rolled a 2!";
+              break;
+            case 3:
+              diceResults.innerHTML = "You rolled a 3!";
+              break;
+            case 4:
+              diceResults.innerHTML = "You rolled a 4!";
+              break;
+            case 5:
+              diceResults.innerHTML = "You rolled a 5!";
+              break;
+            case 6:
+              diceResults.innerHTML = "You rolled a 6! <a href='random-anime'>Use the randomizer!</a>";
+              break;
+            default:
+              diceResults.innerHTML = "You rolled an invalid number!";
+          }
+        }
+        else if(diceRoll === 1) {
+          diceRoll = Math.ceil(Math.random() * 6);
+          switch(diceRoll) {
+            case 1:
+              diceResults.innerHTML = "You rolled a 1! Put $5 in the special reserve.";
+              diceRoll = 2;
+              break;
+            case 2:
+              diceResults.innerHTML = "You rolled a 2! Put $5 in the special reserve.";
+              break;
+            case 3:
+              diceResults.innerHTML = "You rolled a 3! Put $10 in the special reserve.";
+              break;
+            case 4:
+              diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
+              break;
+            case 5:
+              diceResults.innerHTML = "You rolled a 5! Put $20 in the special reserve.";
+              break;
+            case 6:
+              diceResults.innerHTML = "You rolled a 6! Commission someone right now, or put $30 in the special reserve.";
+              break;
+            default:
+              diceResults.innerHTML = "You rolled an invalid number!";
+          }
+        }
+        else {
+          alert("Hey. Wait 30 minutes or watch one anime episode before rolling the dice again.");
+        }
+      }
+
       for(var i = 0; i < 5; i++) {
         var x = Math.floor(Math.random() * 128);
         var y = Math.floor(Math.random() * 128);
