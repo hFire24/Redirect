@@ -29,7 +29,7 @@
           diceRoll = Math.ceil(Math.random() * 6);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = "You rolled a 1! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 1! <a href='random-anime'>Use the randomizer!</a>";
               break;
             case 2:
               diceResults.innerHTML = "You rolled a 2!";
@@ -44,13 +44,13 @@
               diceResults.innerHTML = "You rolled a 5!";
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! <a href='random-anime'>Use the randomizer!</a>";
+              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
           }
         }
-        else if(diceRoll === 1) {
+        else if(diceRoll === 6) {
           diceRoll = Math.ceil(Math.random() * 6);
           switch(diceRoll) {
             case 1:
