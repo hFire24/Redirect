@@ -14,13 +14,13 @@
     <div id='times'>
       <h3 class='space2'>
         <span style='left:10%; position:absolute;' onclick="moveTime(-1)">⬅️</span>
-        <span id='time'>5 minutes (For forgetting)</span>
+        <span id='time'>30 minutes (For watching anime)</span>
         <span style='right:10%; position:absolute;' onclick="moveTime(1)">➡️</span>
       </h3>
       <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='startTimer()'>Start</span>
     </div>
     <div id='additionalTimes' class='space2' style='display:none;'>
-      <a id='ten-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(600)'>Add 10 Minutes</a>
+      <a id='ten-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(600)'>Add 10 Minutes (3)</a>
     </div>
     <div id='controls' class='two-list' style='display:none;'>
       <a id='pause' class='timerbutton' style='background-color:yellow; color:black;' onclick='pauseTimer()'>Pause Timer</a>
@@ -39,15 +39,15 @@
       //global variable that detects if the alarm has gone off.
       var alarmOff = false;
       //initializes the tp variable for the moveTime function as an array pointer.
-      var tp = 1;
-      //initializes the addTimes variable for the adjustTime function. It keeps track of the number of times the addTime button is pressed.
-      var addTimes = 0;
+      var tp = 2;
+      //initializes the addTimes variable for the adjustTime function. It keeps track of how many more times the addTime button can be pressed.
+      var addTimes = 3;
 
       function moveTime(distance) {
         //Each array element describes the length of the timer.
         var times = ["5 Seconds (Test the timer)",
         "5 Minutes (For forgetting)",
-        "30 Minutes (Take a break)",
+        "30 Minutes (For watching anime)",
         "1 Hour (Take a break)",
         "2 Hours (Take a break)"];
         //moves the array position via the distance parameter.
@@ -179,10 +179,11 @@
         //Set the current alarm to the new alarm.
         a = aa;
         //Increments the addTimes variable
-        addTimes++;
+        addTimes--;
+        var timerButton = document.getElementById("ten-minutes-plus");
+        timerButton.innerHTML = "Add 10 Minutes (" + addTimes + ")";
         //If button is pressed 3 times, disables the add 10 minutes button by removing the onclick attribute and changing the appearance to black with the text "BUTTON DISABLED".
-        if(addTimes >= 3) {
-          var timerButton = document.getElementById("ten-minutes-plus");
+        if(addTimes <= 0) {
           timerButton.removeAttribute("onclick");
           timerButton.innerHTML = "BUTTON DISABLED";
           timerButton.style.color = timerButton.style.backgroundColor;
