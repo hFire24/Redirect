@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme5">
+    <h1 id="message">Find something else to do other than play Toy Blast.</h1>
+    <h2 id="question">Got something you need to do?</h2>
+    <input id="newBreak" class="invisible" type="text">
+    <div id='link' class='medium two-list'>
+      <a class='hfire-link' onclick='displaySomething()'>Yes</a>
+      <a class='hfire-link' onclick='addicted(1)'>No</a>
+      <a class='hfire-link' onclick='addicted(7)'>I'm in class.</a>
+      <a class='hfire-link' onclick='addicted(8)'>I'm in church.</a>
+      <a class='hfire-link extended' onclick='addicted(9)'>I'm watching videos.</a>
+    </div>
+    <div id='something' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' href="custom.html?mode=toyblast">Yes</a>
+      <a class='hfire-link' onclick='addicted(1)'>No</a>
+    </div>
+    <article id='addiction' class="invisible">
+      <p>Toy Blast is basically Candy Crush. It is severely addictive, and you lost many hours to this game.
+        Wouldn't it be nice if you can do something that's more productive and fulfilling?</p>
+      <div class='medium two-list'>
+        <a class='hfire-link' onclick="addicted(4)">Yeah, forget Toy Blast.</a>
+        <a class='hfire-link' onclick='addicted(2)'>Just one level, please.</a>
+      </div>
+    </article>
+    <div id='addiction2' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' onclick="addicted(3)">Yes</a>
+      <a class='hfire-link' onclick='addicted(4)'>No</a>
+    </div>
+    <div id='addiction3' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' onclick="addicted(5)">Right.</a>
+      <a class='hfire-link' onclick='addicted(6)'>Wrong.</a>
+    </div>
+    <article id='addiction4' style='display:none;'>
+      Are you absolutely sure? Your time spent with Toy Blast will be completely wasted, and just 2 minutes can turn into 6 hours.
+      <div class='medium two-list'>
+        <a class='hfire-link' onclick="addicted(10)">Yes</a>
+        <a class='hfire-link' onclick='addicted(4)'>No</a>
+      </div>
+    </article>
+    <article id='all-kinds' class="invisible">
+      <p>There's all kinds of everything you can do. You can write in your journal, digitize your journal, play Stepmania, play the piano,
+      listen to a General Conference talk, read Atomic Habits, listen to a guided meditation, do your homework, learn Godot, or draw.</p>
+      I promise that if you do one of those things, you'll feel more fulfilled than just sitting or lying down with your phone playing Toy Blast.
+    </article>
+    <article id='paradox' class="invisible">
+      It may seem like that the church restricts freedom, but it's the opposite.
+      It restricts freedom in a way where your personal freedom isn't enslaved by sin.
+      For now, don't play Toy Blast. And don't play or browse stuff not related to church.
+    </article>
+    <div id='video' class='medium two-list' style='display:none;'>
+      <a class='hfire-link' href="breaktime.html">Yes</a>
+      <a class='hfire-link' href="cyoa/2.html">No</a>
+    </div>
+    <script>
+    function displaySomething() {
+      $("question").innerHTML = "Want to type in the thing you need to do?"
+      $("link").style.display = "none";
+      $("something").style.display = "grid";
+    }
+
+    function addicted(number) {
+      switch(number)
+      {
+        case 1:
+          $("question").style.display = "none";
+          $("link").style.display = "none";
+          $("something").style.display = "none";
+          $("addiction").classList.remove("invisible");
+          break;
+        case 2:
+          $("question").style.display = "block";
+          $("question").innerHTML = "Do you really want to play Toy Blast?";
+          $("addiction2").style.display = "grid";
+          $("addiction").classList.add("invisible");
+          break;
+        case 3:
+          $("question").style.display = "none";
+          $("addiction4").style.display = "grid";
+          $("addiction2").style.display = "none";
+          break;
+        case 4:
+          $("question").style.display = "block";
+          $("question").innerHTML = "What you really want is to be engaged with something worthwhile.";
+          $("addiction").classList.add("invisible");
+          $("addiction2").style.display = "none";
+          $("addiction4").style.display = "none";
+          $("addiction3").style.display = "grid";
+          break;
+        case 5:
+          $("question").innerHTML = "If you just force yourself to do something else, you'll feel a lot better.";
+          $("addiction3").style.display = "none";
+          $("all-kinds").classList.remove("invisible");
+          break;
+        case 6:
+          $("question").innerHTML = "I tell you what. Click the link below and tell that page how you're feeling.";
+          $("addiction3").style.display = "none";
+          $("link").style.display = "block";
+          $("link").classList.remove("two-list");
+          $("link").innerHTML = "<a href=hotanddry.html>Click here to continue.</a>"
+          break;
+        case 7:
+          $("question").innerHTML = "Put your phone down and pay attention!";
+          $("link").style.display = "none";
+          break;
+        case 8:
+          $("question").innerHTML = "";
+          $("link").style.display = "none";
+          $("paradox").classList.remove("invisible");
+          break;
+        case 9:
+          $("question").innerHTML = "Grab your fidget cube for fidgeting.<br>Also, do you need to watch this video?";
+          $("link").style.display = "none";
+          $("video").style.display = "grid";
+          break;
+        case 10:
+          $("question").style.display = "block";
+          $("question").innerHTML = "Enjoy the rest of your life wasting your time playing Toy Blast!";
+          $("addiction4").style.display = "none";
+          break;
+      }
+    }
+
+    createAtomicHabits();
+
+    async function createAtomicHabits() {
+      var atomicHabits = Math.floor(Math.random() * 10);
+      console.log("Atomic Habits " + atomicHabits);
+      if(atomicHabits < 1)
+      {
+        await sleep(100);
+        alert("Instead of playing Toy Blast, read through Atomic Habits.");
+      }
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    </script>
+    <script src="interactivefiction.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
