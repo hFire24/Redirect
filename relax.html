@@ -12,26 +12,37 @@
     <div id='message' class='space'>It's time to relax.</div>
     Go to <a href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Soundwise</a>, followed by <strong id='pack' style='color:darkblue;'></strong> to listen to audio files for <span id='purpose'></span><br>
     <div id='message2' class='space' style='margin-top:1em;'>
-      For Example: <span id='random'></span> <span id='action'></span>
+      For Example: <span id='random'></span> <span id='action'></span> <button onclick=increment('relaxTrack')>Next</button>
     </div>
     <div id='hideable' class='relax-list' style='margin-top:1em;'>
     </div>
     <div class="two-list"><a id='more' href='relax2.html' class='hfire-link'><strong style='color:darkred;'>More (Grid View)</strong></a><a id='more' href='relax-table.html' class='hfire-link'><strong style='color:darkred;'>More (Table View)</strong></a></div>
     <script src='script.js'></script>
     <script>
-      var angerTrack = 2;
-      var worryTrack = 1;
-      var stressTrack = 4;
-      var confidentTrack = 3;
+      if(!sessionStorage.getItem('angerTrack')) {
+        sessionStorage.setItem('angerTrack', 2);
+      }
+      if(!sessionStorage.getItem('worryTrack')) {
+        sessionStorage.setItem('worryTrack', 1);
+      }
+      if(!sessionStorage.getItem('stressTrack')) {
+        sessionStorage.setItem('stressTrack', 1);
+      }
+      if(!sessionStorage.getItem('confidenceTrack')) {
+        sessionStorage.setItem('confidenceTrack', 3);
+      }
+      if(!sessionStorage.getItem('relaxTrack')) {
+        sessionStorage.setItem('relaxTrack', 25);
+      }
 
       pack.innerHTML = "Quick Solutions";
       purpose.innerHTML = "a short break.";
 
-      randomMeditation();
+      randomMeditation(sessionStorage.getItem('relaxTrack'));
 
-      function randomMeditation()
+      function randomMeditation(index)
       {
-        var relaxText = generateAndrewJohnsonLink();
+        var relaxText = getAndrewJohnsonMeditation(index);
         document.getElementById("random").innerHTML = relaxText;
 
         if(relaxText.startsWith("Body Scan") || relaxText.startsWith("Breathing")) //6
@@ -57,22 +68,22 @@
           case "angry":
             pack.innerHTML = "SOS - Let Go of Anger";
             purpose.innerHTML = "calming the mind.";
-            message2.innerHTML = "Good job on making the first step to control your anger. You are on track " + angerTrack + ".";
+            message2.innerHTML = "Good job on making the first step to control your anger. You are on track " + sessionStorage.getItem('angerTrack') + ". <button onclick=increment('angerTrack')>Next</button>";
             break;
           case "worried":
             pack.innerHTML = "SOS - Let Go of Anxiety";
             purpose.innerHTML = "calming the mind.";
-            message2.innerHTML = "You do not want to keep this feeling with you. You are on track " + worryTrack + ".";
+            message2.innerHTML = "You do not want to keep this feeling with you. You are on track " + sessionStorage.getItem('worryTrack') + ". <button onclick=increment('worryTrack')>Next</button>";
             break;
           case "stressed":
             pack.innerHTML = "SOS - Let Go of Stress";
             purpose.innerHTML = "destressing.";
-            message2.innerHTML = "You are on track " + stressTrack + ". Listening to it is a strategic move in life.";
+            message2.innerHTML = "You are on track " + sessionStorage.getItem('stressTrack') + ". Listening to it is a strategic move in life. <button onclick=increment('stressTrack')>Next</button>";
             break;
           case "unconfident":
             pack.innerHTML = "SOS - Confidence Boost";
             purpose.innerHTML = "making you confident.";
-            message2.innerHTML = "You have the potential to become successful. You are on track " + confidentTrack + ".";
+            message2.innerHTML = "You have the potential to become successful. You are on track " + sessionStorage.getItem('confidentTrack') + ". <button onclick=increment('confidentTrack')>Next</button>";
             break;
           case "lazy":
             pack.innerHTML = "Quick Solutions";
@@ -81,9 +92,18 @@
             break;
           case "tired":
             while(!found(["refresh","re-energize"],action.innerHTML))
-              randomMeditation();
+              randomMeditation(-1);
             break;
         }
+      }
+
+      function increment(track) {
+        var incremented = sessionStorage.getItem(track);
+        incremented++;
+        if(incremented === 4 && (track === 'worryTrack' || track === 'angerTrack') || incremented === 7 && (track === 'stressTrack' || track === 'confidenceTrack') || incremented === 24 && track === 'relaxTrack')
+          incremented = 1;
+        sessionStorage.setItem(track,incremented);
+        location.reload();
       }
     </script>
   </body>

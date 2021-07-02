@@ -674,31 +674,35 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function generateAndrewJohnsonLink() {
-  var meditationLinks = ['Body Scan Relaxation 2',
+function getAndrewJohnsonMeditation(index) {
+  var meditations = ['Body Scan Relaxation',
   'Breathing Relaxation',
+  'Body Scan Relaxation 2',
   'Breathing Break',
   'Breathing Relaxation 1',
   'Breathing Relaxation 2',
   'Breathing Relaxation 3',
+  'Massage Break',
   'Ear Massage Relaxation',
   'Energy Boost Meditation',
   'Eye Relaxation',
+  'Memory Break',
   'Favourite Place Relaxation',
   'Grounding Relaxation',
   'Head Massage Relaxation',
-  'Heaviness Relaxation',
-  'Massage Break',
-  'Memory Break',
-  'Quick Confidence',
   'Release Break',
-  'Roots Break',
+  'Heaviness Relaxation',
+  'Quick Confidence',
   'Shoulder Relaxation',
+  'Roots Break',
   'Stomach Relaxation',
   'Smiling Relaxation',
   'Stretch Relaxation'];
-  var index = Math.floor(Math.random() * meditationLinks.length);
-  return meditationLinks[index];
+  if(index < 1 || index > meditations.length)
+    index = Math.floor(Math.random() * meditations.length);
+  else
+    index--;
+  return meditations[index];
 }
 
 function generalConferenceMonth() {
