@@ -50,8 +50,8 @@ function loadBreak(number) {
 }
 
 var smallBreak = [//Relaxation
-new Breaktime('Listen to this.',"relax.html","meditate",3,false),
-new Breaktime('Clear your mind.',"relax.html?mood=unclear","meditate",3,false),
+new Breaktime('Listen to this.',"https://cfreeze-relax.herokuapp.com","meditate",3,false),
+new Breaktime('Clear your mind.',"https://cfreeze-relax.herokuapp.com/index.html?mood=unclear","meditate",3,false),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"https://www.google.com/search?q=2+minute+timer","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
@@ -130,7 +130,7 @@ new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
-new Breaktime('Listen to a General Conference talk.',"gcprogress.html","religion",3,false),
+new Breaktime('Listen to a General Conference talk.',"https://cfreeze-gcprogress.herokuapp.com","religion",3,false),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
@@ -164,8 +164,8 @@ new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html"
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true)];*/
 
 var mobileBreak = [//Relaxation
-new Breaktime('Listen to this.',"relax.html","relax",3,false),
-new Breaktime('Clear your mind.',"relax.html?mood=unclear","relax",3,false),
+new Breaktime('Listen to this.',"https://cfreeze-relax.herokuapp.com","relax",3,false),
+new Breaktime('Clear your mind.',"https://cfreeze-relax.herokuapp.com/index.html?mood=unclear","relax",3,false),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
@@ -194,7 +194,7 @@ new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://youtu.be/wNscQ3bGxNk?t=110","exercise",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
-new Breaktime('Listen to a General Conference talk.',"gcprogress.html","religion",3,false),
+new Breaktime('Listen to a General Conference talk.',"https://cfreeze-gcprogress.herokuapp.com","religion",3,false),
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
 new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),

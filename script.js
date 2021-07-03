@@ -140,7 +140,7 @@ function addBigMessages() {
   '<a href="goals.html">Check out the goals page for the big things you want to do!</a>',
   //'Try solving a Rubik\'s cube.',
   'Those Purdue e-mails aren\'t going to read themselves.',
-  '<a href="gcprogress.html">How about you listen to a General Conference talk?</a>',
+  '<a href="https://cfreeze-gcprogress.herokuapp.com">How about you listen to a General Conference talk?</a>',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
@@ -429,19 +429,19 @@ function okFeeling() {
         location.href = "cyoa/14.html";
       break;
     case "angry":
-      message.innerHTML = "<a href='relax.html?mood=angry'>You need to calm down and relax.</a>";
+      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=angry'>You need to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "worried":
-      message.innerHTML = "<a href='relax.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
+      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "stressed":
-      message.innerHTML = "<a href='relax.html?mood=stressed'>You need to calm down and relax.</a>";
+      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=stressed'>You need to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "sad":
-      message.innerHTML = "<a href='relax.html?mood=sad'>It's time to calm down and relax.</a>";
+      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=sad'>It's time to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "busy":
@@ -449,7 +449,7 @@ function okFeeling() {
       break;
     case "unconfident":
       message.innerHTML = "You need a confidence boost.";
-      link.innerHTML = "If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Healthy Mind. Otherwise, <a href='relax.html?mood=unconfident'>click here.</a>";
+      link.innerHTML = "If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Healthy Mind. Otherwise, <a href='https://cfreeze-relax.herokuapp.com/index.html?mood=unconfident'>click here.</a>";
       break;
     case "overwhelmed":
       location.href = "cyoa/48.html";
@@ -495,7 +495,7 @@ function okFeeling() {
       location.href = "whoa/index.html";
       break;
     case "relax":
-      location.href = "relax.html";
+      location.href = "https://cfreeze-relax.herokuapp.com";
       break;
     case "motivate":
       location.href = "cyoa/15.html?mood=motivation";
@@ -559,7 +559,7 @@ function rejectSomething(time) {
   else if (time === 6) {
     var d = new Date();
     if(d.getDay() === 0)
-      link.innerHTML = "It's a Sunday! <a href='gcprogress.html'>Be more religious instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
+      link.innerHTML = "It's a Sunday! <a href='https://cfreeze-gcprogress.herokuapp.com'>Be more religious instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
     else
       link.innerHTML = "<a href='stepmania.html'>Play Stepmania instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
   }
