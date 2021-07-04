@@ -80,7 +80,7 @@ new Breaktime('Do some mouth exercises.',"https://youtu.be/wNscQ3bGxNk?t=110","e
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 //'How can you build an everlasting romantic relationship from scratch?',
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
-new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
+//new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false),
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false)];
 
@@ -106,9 +106,9 @@ new Breaktime('Check your gTasks list, please.<br>Do the first unfinished task.<
 new Breaktime('Make a plan for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Job hunting
-new Breaktime('Apply for a job.',"pass","job",4,false),
+/*new Breaktime('Apply for a job.',"pass","job",4,false),
 new Breaktime('Go to Ascend Indiana, and find jobs.',"pass","job",4,false),
-new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
+new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),*/
   //Anime watching
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
 new Breaktime('If you\'re watching anime, watch a different anime.',"nextanime","anime",2,false),
@@ -136,10 +136,10 @@ new Breaktime('Listen to a General Conference talk.',"https://cfreeze-gcprogress
 //'Try one of these C# coding projects.',
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
 //new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
-new Breaktime('Learn Full Stack on Skillshare.',"pass","coding",3,false),
+/*new Breaktime('Learn Full Stack on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
-new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),
+new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
@@ -154,9 +154,8 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
 new Breaktime('Declutter your room.',"pass","misc",2,true),
 new Breaktime('Digitize at least two pages from your journal.',"pass","misc",3,true),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true),
-new Breaktime('Play whatever you want on the piano.',"pass","misc",2,true),
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
-new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
+//new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
 new Breaktime('Read the book <u>How To Win at Adulting</u>.',"pass","read",2,true),
 new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true)];
 /*new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
@@ -197,7 +196,7 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://cfreeze-gcprogress.herokuapp.com","religion",3,false),
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
-new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
+//new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
 
