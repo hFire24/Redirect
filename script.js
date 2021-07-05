@@ -100,11 +100,11 @@ function addBigMessages() {
   'Why don\'t you check Brightspace?',
   'Why not get an assignment done early? You\'ll get a head start!',*/
     //Jobs
-  'Why don\'t you apply for tech jobs?',
+  /*'Why don\'t you apply for tech jobs?',
   'I get that applying for tech jobs can be a struggle.<br>Try to change your mindset.',
   'How about you check job searching websites for tech jobs?',
   'Why not apply for a job at a company you look up to? You might get the job!',
-  'How about you build a portfolio? You did a lot of things on this website.',
+  'How about you build a portfolio? You did a lot of things on this website.',*/
     //Anime
   '<a href="nextanime">If you need some happiness, watch at least 30 seconds of anime!</a>',
   '<a href="nextanime">Why don\'t you watch some anime?</a>',
@@ -129,14 +129,14 @@ function addBigMessages() {
   'Reading <u>Atomic Habits</u> could lead you towards a better life.',
     //Goals
   'How about you learn social skills?',
-  '<a href="chiptunelessons.html">How about you learn how to make chiptunes?</a>',
+  /*'<a href="chiptunelessons.html">How about you learn how to make chiptunes?</a>',
   'Learning programming is a good idea.',
   'Want to earn money via Fiverr? Learn Godot.',
   'Remember that Python games book? You may get something out of it by reading it.',
-  //'<a href="art.html">Why don\'t you practice drawing anime?</a>',
+  '<a href="art.html">Why don\'t you practice drawing anime?</a>',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
   'Why don\'t you read that book you bought on Amazon?',
-  '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?</a>',
+  '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?</a>',*/
   '<a href="goals.html">Check out the goals page for the big things you want to do!</a>',
   //'Try solving a Rubik\'s cube.',
   'Those Purdue e-mails aren\'t going to read themselves.',
