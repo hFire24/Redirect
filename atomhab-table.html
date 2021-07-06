@@ -9,14 +9,13 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
-  <body onload="jamesClearQuote(jcQuotes,-1)" onresize="getWidth()">
-    <h1 id='message'></h1>
+  <body class="theme1" onload="loadAllQuotes()">
+    <h1>All the Atomic Habits quotes</h1>
+    <div id="atomhab-list">
+      <strong>Quote</strong><strong>Page #</strong>
+    </div>
     <div id='hideable' class='medium'>
-      <div id='form' class='space'>
-        How can you apply this to your life?<br>
-        <input id="lifeAdvice" class="custom-select" type="text"><button id="submit" class="custom-button" onClick="submit()">Submit</button><br>
-        <button class="custom-button" onclick="location.href='atomhab-table.html'">View all Atomic Habits quotes</button>
-      </div>
+      <button class="custom-button space" onclick="location.href='atomic-habits.html'">Pull one random quote</button>
     </div>
     <script src="script.js"></script>
     <script src="atomic-habits.js"></script>

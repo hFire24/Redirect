@@ -90,7 +90,7 @@ h3, #ok {
   font-weight: normal;
 }
 
-ol, #goals-list, #link.small {
+ol, #goals-list, #link.small, #atomhab-list {
   font-size: 60px;
 }
 
@@ -163,9 +163,19 @@ td {
   font-size: 45px;
 }
 
-.break-list {
+.break-list, #atomhab-list {
   display:grid;
   grid-template-columns:auto auto;
+}
+
+#atomhab-list {
+  background-color: inherit;
+}
+
+#atomhab-list > span {
+  padding: 10px 0px;
+  background-color: inherit;
+  font-size:45px;
 }
 
 .two-list {
@@ -426,7 +436,7 @@ td {
   h3, #ok, #link, #theme, #message.tiny, .medium {
     font-size: 60px;
   }
-  body, ol, #goals-list, .relax-list, #link.small {
+  body, ol, #goals-list, .relax-list, #link.small, #atomhab-list {
     font-size:40px;
   }
   td, .small {
@@ -480,7 +490,7 @@ td {
   h3, #ok, #link, #theme, #message.tiny, .medium {
     font-size: 36px;
   }
-  body, ol, #goals-list, .relax-list, .small, #link.small {
+  body, ol, #goals-list, .relax-list, .small, #link.small, #atomhab-list {
     font-size: 30px;
   }
   .custom-select, input[type='text'].custom-select, .custom-button, .expand {
@@ -519,7 +529,7 @@ td {
   h3, #ok, .medium, #link, #message.tiny, #theme {
     font-size: 25px;
   }
-  body, ol, td, #goals-list, .relax-list, #link.small, .small {
+  body, ol, td, #goals-list, .relax-list, #link.small, .small, #atomhab-list {
     font-size: 20px;
   }
   .relax-list {

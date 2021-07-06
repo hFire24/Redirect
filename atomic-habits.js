@@ -8,24 +8,24 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "Want to start a good habit? Make it obvious.", //First Law
 "Become aware of your habits. Identify which habits are good, and which are bad.", //Page 62
 "Check out <a href='https://s3.amazonaws.com/jamesclear/Atomic+Habits/The+Habits+Scorecard.pdf'>The Habits Scorecard</a>! RescueTime and iOS Screen Time can help you with that.", //Pages 62-64
-"Plan your week using Implementation Intention.", //Implementation Intention
+"Plan your week using Implementation Intention.", //Page 70
 "For good habits, determine where, when (day and time), and how you're going to do them.", //Implementation Intention
-"I will [action] for [duration] at [time] in [location].", //Implementation Intention
+"I will [action] for [duration] at [time] in [location].", //Page 71
 "If implementation intentions aren't working, add plans to ensure that these actions will be done.", //Coping plans
 "I will [action] for [duration] at [time] in [location]. And if I can't do it, I'll do it at [time]/in [location].", //Implementation Intention 2
 "I will [action] for [duration] at [time] in [location]. And if I don't feel like doing it, I'll do just a little.", //Implementation Intention 3
 "One of the best ways to build a new habit is to identify a current habit you already have and then stack your new behavior on top.", //Page 74
-"After I [current habit], I will [new habit].", //Fogg's habit stacking formula
+"After I [current habit], I will [new habit].", //74
 "Prime your environment by making cues of good habits obvious.", //Chapter 6
 "If you want to make a habit a big part of your life, make the cue a big part of your environment.", //Page 86
 "You can train yourself to link a particular habit with a particular context.", //Page 88
 "Divide your room into activity zones. Every habit should have a home.", //Page 89
-"Want to resist a bad habit? Make it invisible.", //Inverse of the First Law
 "Prime your environment to eliminate bad habits.",
 "The people with the best self-control are typically the ones who need to use it the least.", //Page 93
 "The way to improve [perseverance, grit, and determination] is by creating a more disciplined environment.", //Page 93
 "You can break a habit, but you're unlikely to forget it.", //Page 94
 "I have never seen someone consistently stick to positive habits in a negative environment.", //Page 94
+"Want to resist a bad habit? Make it invisible.", //Inverse of the First Law
 "One of the most practical ways to elimiate a bad habit is to reduce exposure to the cue that causes it.", //Page 95
 "Want to keep a good habit alive? Make it attractive.", //Second Law
 "If you want to increase the odds that a behavior will occur, then you need to make it attractive.", //Page 104
@@ -39,6 +39,8 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "Eliminate, automate, or streamline certain behaviors of a given habit.", //Third Law Bonus Material
 "Rather than focusing on the results of a habit, focus on how it makes you feel." //Fourth Law Bonus Material
 ];
+
+const jcPages = ["15", "27", "34", "38", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "TBD", "TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
 
 //Quotes that should help me stop my DeviantArt habit.
 const deviantart = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Page 15
@@ -78,17 +80,42 @@ function jamesClearQuote(array,index) {
     document.getElementById("message").classList.remove("small");
     document.getElementById("message").classList.remove("tiny");
   }
+  messageComplete = false;
+  var input = $("lifeAdvice");
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      submit();
+    }
+  });
+}
+
+function loadAllQuotes() {
+  var i = 0;
+  var parent = document.getElementById("atomhab-list");
+  while(i < jcQuotes.length) {
+    var brighten = false;
+    if (i % 2 === 0)
+      brighten = true;
+    var quote = document.createElement("span");
+    quote.innerHTML = jcQuotes[i];
+    quote.className = "small";
+    parent.appendChild(quote);
+    var pageNum = document.createElement("span");
+    pageNum.innerHTML = jcPages[i];
+    pageNum.className = "small";
+    parent.appendChild(pageNum);
+    if(brighten) {
+      quote.style.backgroundColor = document.body.backgroundColor;
+      pageNum.style.backgroundColor = quote.style.backgroundColor;
+      quote.style.filter = "brightness(125%)";
+      pageNum.style.filter = quote.style.filter;
+    }
+    i++;
+  }
 }
 
 randomTheme(7);
-messageComplete = false;
-var input = $("lifeAdvice");
-input.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    submit();
-  }
-});
 
 function submit()
 {
