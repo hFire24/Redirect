@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class="theme2">
-    <h2 id="question" class="space">Take this quiz. Your life goal involves raising a family.</h2>
+    <h2 id="question" class="space">Take this quiz. Your life goal involves cute anime girls.</h2>
     <div id='choices' class='four-list'>
       <!--Life goal?-->
       <a class='hfire-link draw' onclick='addPoints(1)'>Strongly Disagree</a>
@@ -27,16 +27,21 @@
     var score = 0;
     var question = 1;
 
-    const questions = ["Your life goal involves raising a family.",
-    "Your love to eat.",
-    "You enjoy watching movies.",
-    "The best city in the world is in Europe.",
-    "It is a good idea to donate to charity.",
+    const questions = ["Your life goal involves cute anime girls.",
+    //"Looking at cute anime girls makes you happier.",
+    "Your urges are uncontrollable.",
+    "Anime art is the best art.",
+    //"Cuteness is a virtue.",
+    "The smaller the anime girl, the cuter she is.",
+    "It is a good idea to mildly lewd lolis.",
+    /*"Japan creates the best media and entertainment.",
+    "The baggier the better.",
+    "Cute anime girls are the best thing in the world."*/
     "You are good at drawing.",
-    "You have a pet.",
-    "When you work, you feel happy.",
-    "You want to become rich.",
-    "It is a good idea for you to be sociable."];
+    "You have lots of time to draw.",
+    "After you draw something, you feel satisfied.",
+    "You want to illustrate your ideas yourself.",
+    "It is a good idea for you to be creative."];
 
     function addPoints(points) {
       score += points;
@@ -51,6 +56,11 @@
         console.log("You final score is " + score + " points")
         finished();
       }
+      else if(question === 3 && points < 3)
+      {
+        $("question").innerHTML = "Control these thoughts and kick them out!";
+        $("choices").style.display = "None";
+      }
       else
         $("question").innerHTML = questions[question - 1];
     }
@@ -62,51 +72,45 @@
     }
 
     function finished() {
-      var answers = ["Your color is black!", //Less than 16
-      "Your color is brown!", //16-17
-      "Your color is gray!", //18-19
-      "Your color is red!", //20-23
-      "Your color is orange!", //24-25
-      "Your color is yellow!", //26-29
-      "Your color is green!", //30-31
-      "Your color is blue!", //32-35
-      "Your color is purple!", //36-37
-      "Your color is white!"]; //38-40
+      var answers = ["You should do some drawing exercises.", //Less than 22
+      "You should practice the anime drawing style.", //22-25
+      "You should draw Yuno from Hidamari Sketch!", //26-27
+      "You should draw a Touhou character! Like Daiyousei!", //28-29
+      "You should draw Cirno!", //30-31
+      "You should draw a cute loli! Like Rumia!", //32-33
+      "You should draw Flandre Scarlet!", //34-35
+      "You should draw an extremely cute loli!", //36-37
+      "You should draw an age regressed loli!"]; //38-40
 
       switch (Math.floor(score/2)) {
-        case 8:
-          answer = answers[1]; //Brown
-          break;
-        case 9:
-          answer = answers[2]; //Gray
-          break;
-        case 10:
         case 11:
-          answer = answers[3]; //Red
-          break;
         case 12:
-          answer = answers[4]; //Orange
+          answer = answers[1]; //Practice style
           break;
         case 13:
+          answer = answers[2]; //Touhou character
+          break;
         case 14:
-          answer = answers[5]; //Yellow
+          answer = answers[3]; //Cirno
           break;
         case 15:
-          answer = answers[6]; //Green
+          answer = answers[4]; //Cute loli
           break;
         case 16:
+          answer = answers[5]; //Chino-chan
+          break;
         case 17:
-          answer = answers[7]; //Blue
+          answer = answers[6]; //Flandre Scarlet
           break;
         case 18:
-          answer = answers[8]; //Purple
+          answer = answers[7]; //Extremely cute loli
           break;
         case 19:
         case 20:
-          answer = answers[9]; //White
+          answer = answers[8]; //Age regressed loli
           break;
         default:
-          answer = answers[0]; //Black
+          answer = answers[0]; //Drawing exercises
       }
       $("question").innerHTML = answer;
       $("choices").style.display = "none";

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>hFire24's Portfolio</title>
+    <title>You got redirected!</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icons/icon.ico">
@@ -12,7 +12,6 @@
   <body class="theme1">
     <h1>Welcome to the hub!</h1>
     <h3 id='message3'>Click on a category to get started.</h3>
-    <div id='message4' class='space'>This is a list of random web applications developed by hFire24 (Jeffrey Wright).</div>
     <div id="hub" class='four-list'>
       <a class='hfire-link' onclick="openList('redirected')">Redirected Pages</a>
       <a class='hfire-link' onclick="openList('websites')">Website Pages</a>
@@ -33,10 +32,15 @@
       <a class='hfire-link' href="haha.html">Haha</a>
       <a class='hfire-link' href="searchterm.html">Search Term</a>
       <a class='hfire-link' href="404.html">404</a>
+      <a class='hfire-link' href="cirno.html">Cirno</a>
       <a class='hfire-link' href="mobile.html">Mobile</a>
       <a class='hfire-link' href="blocked.html">Blocked</a>
+      <a class='hfire-link' href="crap.html">Crappy</a>
       <a class='hfire-link' href="homework.html">Homework</a>
       <a class='hfire-link' href="homework2.html">Homework (Simple)</a>
+      <a class='hfire-link' href="whoa/index.html">Nuclear</a>
+      <a class='hfire-link' href="whoa/old.html">Nuclear (Old)</a>
+      <a class='hfire-link' href="relapse.html">Relapsed</a>
       <a class='hfire-link close' onclick="closeList('redirected')">Go Back</a>
     </div>
     <div id="websites" class="three-list" style="display:none;">
@@ -76,6 +80,11 @@
       <a class='hfire-link close' onclick="closeList('cyoa')">Go Back</a>
     </div>
     <div id="skills" class="four-list" style="display:none;">
+      <a class='hfire-link' href="art.html">Art</a>
+      <a class='hfire-link' href="artstage.html">Art Stage</a>
+      <a class='hfire-link' href="artstruggle.html">Art Struggle</a>
+      <a class='hfire-link' href="drawing-progress.html">Drawing Progress</a>
+      <a class='hfire-link' href="drawing-story.html">Drawing Story</a>
       <a class='hfire-link' href="atomic-habits.html">Atomic Habits</a>
       <a class='hfire-link' href="groupprojects.html">Group Projects</a>
       <a class='hfire-link' href="stepmania.html">Stepmania</a>
@@ -130,9 +139,17 @@
       <a class='hfire-link' href="anti-procrastination.html">Anti-Procrastination</a>
       <a class='hfire-link' href="fiveminutetimer.html">5 Minute Timer</a>
       <a class='hfire-link' href="kirby.html">Kirby of Disappointment</a>
+      <a class='hfire-link' href="emergency.html">Emergency Button</a>
       <a class='hfire-link' href="musicSlider.html">Music Slider</a>
+      <a class='hfire-link' href="https://youtu.be/xOA0T8ZjpFQ">works 24/7. Radio</a>
+      <a class='hfire-link' href="stress.html">Leave Me Alone</a>
+      <a class='hfire-link' href="repent.html">Repent</a>
+      <a class='hfire-link' href="repent2.html">Repent 2</a>
+      <a class='hfire-link' href="struggle.html">Struggle</a>
+      <a class='hfire-link' href="struggle2.html">Struggle 2</a>
       <a class='hfire-link' href="mineaddict.html">Mine Addict</a>
-      <a class='hfire-link' href="quiz.html">Color Personality Quiz</a>
+      <a class='hfire-link' href="quiz.html">Drawing Quiz</a>
+      <a class='hfire-link' href="ideal-waifu.html">Waifu Quiz</a>
       <a class='hfire-link close' onclick="closeList('other')">Go Back</a>
     </div>
     <script>
@@ -140,51 +157,30 @@
 
     function openList(id) {
       let category = document.getElementById("message3");
-      let description = document.getElementById("message4");
       switch(id) {
         case "redirected":
           category.innerHTML = "Redirected Pages";
-          description.innerHTML = "I use a website redirector extension on my web browser, and these pages are displayed whenever I visit a blacklisted website. The extension redirects me to those pages."
           break;
         case "tasks":
           category.innerHTML = "Tasks/Break Pages";
-          description.innerHTML = "These pages are all about typing in something to do and doing something."
           break;
         case "websites":
           category.innerHTML = "Website Pages";
-          description.innerHTML = "I use a website redirector extension on my web browser, and these pages are displayed whenever I visit one of those websites. The extension redirects me to those pages."
           break;
         case "cyoa":
           category.innerHTML = "Choose Your Own Adventure Pages";
-          description.innerHTML = "A bunch of various pages I made for when I got nothing to do."
           break;
         case "skills":
           category.innerHTML = "Skills Pages";
-          description.innerHTML = "Pages that are all about skills."
           break;
         case "calm":
           category.innerHTML = "Calm Pages";
-          description.innerHTML = "Pages that are all about calming activities."
           break;
         case "morning":
           category.innerHTML = "Morning Pages";
-          description.innerHTML = "Pages that are suited for the morning."
-          break;
-        case "sleep":
-          category.innerHTML = "Sleep Pages";
-          description.innerHTML = "Pages that are suited for the night before bedtime."
-          break;
-        case "youtube":
-          category.innerHTML = "YouTube Pages";
-          description.innerHTML = "Pages that are designed to help me watch less YouTube."
-          break;
-        case "anime":
-          category.innerHTML = "Anime Pages";
-          description.innerHTML = "Pages that are designed to help me watch anime."
           break;
         case "other":
           category.innerHTML = "Other Pages";
-          description.innerHTML = "Just some miscellaneous pages I made."
           break;
       }
       document.getElementById("hub").style.display = "none";
@@ -193,7 +189,6 @@
 
     function closeList(id) {
       document.getElementById("message3").innerHTML = "Click on a link to get started.";
-      document.getElementById("message4").innerHTML = "This is a list of random web applications developed by hFire24 (Jeffrey Wright).";
       document.getElementById(id).style.display = "none";
       document.getElementById("hub").style.display = "grid";
       lastList = id;
