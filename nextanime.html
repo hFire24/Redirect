@@ -16,10 +16,9 @@
     <div id='diceResults' class='space'></div>
     <div class='four-list'>
       <a id='a0' class='hfire-link' href='https://www.funimation.com/shows/by-the-grace-of-the-gods'>2 By the Grace of the Gods</a>
-      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/shadows-house'>3 Shadows House</a>
-      <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/1000512'>4 Silver Spoon</a>
-      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/non-non-biyori'>5 Non Non Biyori</a>
-      <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
+      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/1000512'>4 Silver Spoon</a>
+      <a id='a2' class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/non-non-biyori'>5 Non Non Biyori</a>
+      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
     </div>
     <script>
       var diceRoll = 0;
@@ -35,7 +34,7 @@
               diceResults.innerHTML = "You rolled a 2!";
               break;
             case 3:
-              diceResults.innerHTML = "You rolled a 3!";
+              diceResults.innerHTML = "You rolled a 3! <a href='random-anime'>Use the randomizer!</a>";
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4!";
@@ -55,7 +54,6 @@
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = "You rolled a 1! Put $5 in the special reserve.";
-              diceRoll = 2;
               break;
             case 2:
               diceResults.innerHTML = "You rolled a 2! Put $5 in the special reserve.";
@@ -71,6 +69,7 @@
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Commission someone right now, or put $30 in the special reserve.";
+              diceRoll = 5;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
