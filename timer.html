@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Anime Timer</title>
+    <title>Timer</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icons/icon-clock.ico">
@@ -12,17 +12,17 @@
   <body class="theme5">
     <h1 id="message">Set the timer.</h1>
     <div id='times'>
-      <h3 class='space2'>
-        <span style='left:10%; position:absolute;' onclick="moveTime(-1)">⬅️</span>
-        <span id='time'>30 minutes (For watching anime)</span>
-        <span style='right:10%; position:absolute;' onclick="moveTime(1)">➡️</span>
-      </h3>
+      <div class='space2'>
+        <label for="hoursInput">H: </label> <input id="hoursInput" type="number" min="0" max="23" value="0" class="custom-select" style="font-family:inherit;">
+        <label for="minutesInput">M: </label> <input id="minutesInput" type="number" min="0" max="59" value="1" class="custom-select" style="font-family:inherit;">
+        <label for="secondsInput">S: </label> <input id="secondsInput" type="number" min="0" max="59" value="0" class="custom-select" style="font-family:inherit;">
+      </div>
       <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='startTimer()'>Start</span>
     </div>
     <div id='additionalTimes' class='space2' style='display:none;'>
-      <a id='ten-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(600)'>Add 10 Minutes (3)</a>
     </div>
     <div id='controls' class='two-list' style='display:none;'>
+      <a id='one-minute-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(60)'>Add 1 Minute</a>
       <a id='pause' class='timerbutton' style='background-color:yellow; color:black;' onclick='pauseTimer()'>Pause Timer</a>
       <a id='stop' class='timerbutton' style='background-color:red; color:black;' onclick='stopAlarm()'>Stop Timer</a>
     </div>
@@ -40,39 +40,18 @@
       var alarmOff = false;
       //initializes the tp variable for the moveTime function as an array pointer.
       var tp = 2;
-      //initializes the addTimes variable for the adjustTime function. It keeps track of how many more times the addTime button can be pressed.
-      var addTimes = 3;
-
-      function moveTime(distance) {
-        //Each array element describes the length of the timer.
-        var times = ["5 Seconds (Test the timer)",
-        "5 Minutes (For forgetting)",
-        "30 Minutes (For watching anime)",
-        "1 Hour (Take a break)",
-        "2 Hours (Take a break)"];
-        //moves the array position via the distance parameter.
-        tp = tp + distance;
-        //corrects the array's position if it's too low or too high
-        if(tp === 5)
-          tp = 0;
-        else if(tp === -1)
-          tp = 4;
-        console.log(tp);
-        //Changes the value in the selection area
-        document.getElementById("time").innerHTML = times[tp];
-      }
 
       function startTimer() {
-        //This matrix is used to store hours, minutes, and seconds for the timer.
-        var timeArray = [
-        [0,0,0,1,2],
-        [0,5,30,0,0],
-        [5,0,0,0,0]];
         //The hours, minutes, and seconds are set depending on the timer's setting when starting for the first time.
-        var hours = timeArray[0][tp];
-        var minutes= timeArray[1][tp];
-        var seconds = timeArray[2][tp];
-        setTimer(hours,minutes,seconds);
+        var hours = parseInt(hoursInput.value);
+        var minutes = parseInt(minutesInput.value);
+        var seconds = parseInt(secondsInput.value);
+        console.log(hours + ":" + minutes + ":" + seconds);
+        if(hours === 0 && minutes === 0 && seconds === 0) {
+          alert("You can't have a timer that lasts 0 seconds.");
+        }
+        else
+          setTimer(hours,minutes,seconds);
       }
 
       function setTimer(hours,minutes,seconds) {
@@ -119,26 +98,15 @@
             alarmOff = true;
             playAlarm();
             document.getElementById("message").innerHTML = "<span id='stress' onclick='stopAlarm()'>STOP TIMER</span>";
+            document.getElementById("one-minute-plus").style.display = "none";
+            document.getElementById("pause").style.display = "none";
           }
           if(alarmOff && (n.getSeconds() === a.getSeconds() + 30 || n.getSeconds() === a.getSeconds() - 30))
             stopAlarm();
         }, 1000);
 
         document.getElementById("times").style.display = "none";
-        //Only when the timer is set to 30 minutes does this element display for adding time to the timer.
-        if(hours === 0 && minutes === 30 && seconds === 0)
-          document.getElementById("additionalTimes").style.display = "block";
-        /*else if(hours === 2)
-        {
-          var music = document.createElement("iframe");
-          music.id = "music";
-          music.width = 0.5 * window.innerWidth;
-          music.height = 0.6 * window.innerHeight;
-          music.frameborder = 0;
-          music.style.marginTop = '1em';
-          music.src = "musicSlider.html";
-          document.body.appendChild(music);
-        }*/
+        document.getElementById("additionalTimes").style.display = "block";
         //This displays the controls for pausing and stopping the timer.
         document.getElementById("controls").style.display = "block";
       }
@@ -160,6 +128,10 @@
       }
 
       function addTime(seconds) {
+        if(hours.innerHTML === "23" && minutes.innerHTML === "59") {
+          alert("This timer can only support values under 24 hours.");
+          return;
+        }
         //A new alarm is made.
         var aa = new Date();
         //Displays old alarm's time
@@ -179,19 +151,9 @@
           aa.setDate(aa.getDate() + 1);
         //Displays new alarm's time
         console.log("But now it will got off at " + aa.getHours() + ":" + aa.getMinutes() + ":" + aa.getSeconds());
+
         //Set the current alarm to the new alarm.
         a = aa;
-        //Increments the addTimes variable
-        addTimes--;
-        var timerButton = document.getElementById("ten-minutes-plus");
-        timerButton.innerHTML = "Add 10 Minutes (" + addTimes + ")";
-        //If button is pressed 3 times, disables the add 10 minutes button by removing the onclick attribute and changing the appearance to black with the text "BUTTON DISABLED".
-        if(addTimes <= 0) {
-          timerButton.removeAttribute("onclick");
-          timerButton.innerHTML = "BUTTON DISABLED";
-          timerButton.style.color = timerButton.style.backgroundColor;
-          timerButton.style.backgroundColor = 'black';
-        }
         adjustTime();
       }
 
@@ -232,7 +194,7 @@
       function stopAlarm()
       {
         //Basically refreshes the page.
-        location.href = "animetimer.html";
+        location.href = "timer.html";
       }
     </script>
   </body>

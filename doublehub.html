@@ -12,6 +12,7 @@
   <body class="theme1">
     <h1>Welcome to the hub!</h1>
     <h3 id='message3'>Click on a category to get started.</h3>
+    <div id='message4' class='space'>This is a list of random web applications developed by hFire24.</div>
     <div id="hub" class='four-list'>
       <a class='hfire-link' onclick="openList('redirected')">Redirected Pages</a>
       <a class='hfire-link' onclick="openList('websites')">Website Pages</a>
@@ -157,30 +158,55 @@
 
     function openList(id) {
       let category = document.getElementById("message3");
+      let description = document.getElementById("message4");
       switch(id) {
         case "redirected":
           category.innerHTML = "Redirected Pages";
+          description.innerHTML = "I use a website redirector extension on my web browser, and these pages are displayed whenever I visit a blacklisted website. The extension redirects me to those pages."
           break;
         case "tasks":
           category.innerHTML = "Tasks/Break Pages";
+          description.innerHTML = "These pages are all about typing in something to do and doing something."
           break;
         case "websites":
           category.innerHTML = "Website Pages";
+          description.innerHTML = "I use a website redirector extension on my web browser, and these pages are displayed whenever I visit one of those websites. The extension redirects me to those pages."
           break;
         case "cyoa":
           category.innerHTML = "Choose Your Own Adventure Pages";
+          description.innerHTML = "A bunch of various pages I made for when I got nothing to do."
           break;
         case "skills":
           category.innerHTML = "Skills Pages";
+          description.innerHTML = "Pages that are all about skills."
           break;
         case "calm":
           category.innerHTML = "Calm Pages";
+          description.innerHTML = "Pages that are all about calming activities."
           break;
         case "morning":
           category.innerHTML = "Morning Pages";
+          description.innerHTML = "Pages that are suited for the morning."
+          break;
+        case "sleep":
+          category.innerHTML = "Sleep Pages";
+          description.innerHTML = "Pages that are suited for the night before bedtime."
+          break;
+        case "youtube":
+          category.innerHTML = "YouTube Pages";
+          description.innerHTML = "Pages that are designed to help me watch less YouTube."
+          break;
+        case "anime":
+          category.innerHTML = "Anime Pages";
+          description.innerHTML = "Pages that are designed to help me watch anime."
+          break;
+        case "games":
+          category.innerHTML = "Games";
+          description.innerHTML = "Some games I made."
           break;
         case "other":
           category.innerHTML = "Other Pages";
+          description.innerHTML = "Just some miscellaneous pages I made."
           break;
       }
       document.getElementById("hub").style.display = "none";
@@ -189,6 +215,7 @@
 
     function closeList(id) {
       document.getElementById("message3").innerHTML = "Click on a link to get started.";
+      document.getElementById("message4").innerHTML = "This is a list of random web applications developed by hFire24 (Jeffrey Wright).";
       document.getElementById(id).style.display = "none";
       document.getElementById("hub").style.display = "grid";
       lastList = id;

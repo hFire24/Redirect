@@ -196,14 +196,39 @@ td {
   color:darkred;
 }
 
+.hfire-link.close {
+  font-weight:bold;
+  color:red;
+}
+
 .relax .forward {
   font-weight:bold;
   color:darkblue;
 }
 
+.hfire-link.forward {
+  font-weight:bold;
+  color:hsl(200, 100%, 75%);
+}
+
 .four-list {
   display:grid;
   grid-template-columns:repeat(4, 1fr);
+}
+
+.hub-list {
+  display:none;
+  grid-template-columns:auto;
+}
+
+.hub-list > span {
+  margin-bottom: 30px;
+}
+
+.hub-list > .hfire-link {
+  font-weight:bold;
+  padding: 0px;
+  text-decoration: underline;
 }
 
 .hfire-link {
