@@ -28,11 +28,15 @@
       var alarmOff = false;
       //Sets the timer for one minute
       a.setMinutes(1 + n.getMinutes());
-      if(a.getMinutes() < n.getMinutes())
-      {
+      if(a.getMinutes() < n.getMinutes()) {
         console.log("Hey. It is known that the minute value of the alarm " + a.getMinutes() + " is less than the minute value of the current time " + n.getMinutes());
         //Adds one hour to the alarm's minute value.
         a.setHours(1 + a.getHours());
+      }
+      if (a.getHours() < n.getHours()) {
+        console.log("Hey. It is known that the hour value of the alarm " + a.getHours() + " is less than the hour value of the current time " + n.getHours());
+        //Adds one day to the alarm's hour value.
+        a.setDate(1 + a.getDate());
       }
 
       //Displays remaining time to the webpage

@@ -29,6 +29,8 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "One of the most practical ways to elimiate a bad habit is to reduce exposure to the cue that causes it.", //Page 95
 "Want to keep a good habit alive? Make it attractive.", //Second Law
 "If you want to increase the odds that a behavior will occur, then you need to make it attractive.", //Page 104
+"Your brain has far more neural circuitry allocated for wanting rewards than for liking them.", //Page 108
+"We need to make our habits attractive because it is the expectation of a rewarding experience that motivates us to act in the first place.", //Page 108
 "Want to quit a bad habit? Make it unattractive.", //Inverse of the Second Law
 "Want to make a good habit? Make it easy.", //Third Law
 "Want to end a bad habit? Make it difficult.", //Inverse of the Third Law
@@ -40,7 +42,9 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "Rather than focusing on the results of a habit, focus on how it makes you feel." //Fourth Law Bonus Material
 ];
 
-const jcPages = ["15", "27", "34", "38", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "TBD", "TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
+const jcPages = ["15", "27", "34", "38", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108",
+//Want to quit a bad habit? Make it unattractive
+"TBD", "TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
 
 //Quotes that should help me stop my DeviantArt habit.
 const deviantart = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Page 15
@@ -106,10 +110,8 @@ function loadAllQuotes() {
     pageNum.className = "small";
     parent.appendChild(pageNum);
     if(brighten) {
-      quote.style.backgroundColor = document.body.backgroundColor;
-      pageNum.style.backgroundColor = quote.style.backgroundColor;
-      quote.style.filter = "brightness(125%)";
-      pageNum.style.filter = quote.style.filter;
+      quote.classList.add("brighter");
+      pageNum.classList.add("brighter");
     }
     i++;
   }

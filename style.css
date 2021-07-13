@@ -317,6 +317,14 @@ td {
   color: hsl(104, 22%, 87%);
 }
 
+.theme1 .brighter {
+  background-color: hsl(122, 43%, 50%);
+}
+
+.theme1 #atomhab-list .brighter {
+  background-color: hsl(122, 30%, 40%);
+}
+
 .theme2 {
   background-color: hsl(227, 30%, 32%);
   color: hsl(209, 22%, 87%);
@@ -324,6 +332,14 @@ td {
 
 .theme2 a {
   color: hsl(209, 22%, 87%);
+}
+
+.theme2 .brighter {
+  background-color: hsl(227, 43%, 50%);
+}
+
+.theme2 #atomhab-list .brighter {
+  background-color: hsl(227, 30%, 40%);
 }
 
 .theme3 {
@@ -343,6 +359,14 @@ td {
   color: hsl(299, 22%, 87%);
 }
 
+.theme3 .brighter {
+  background-color: hsl(317, 43%, 50%);
+}
+
+.theme3 #atomhab-list .brighter {
+  background-color: hsl(317, 30%, 40%);
+}
+
 .theme4 {
   background-color: hsl(47, 21%, 40%);
   color: hsl(29, 22%, 87%);
@@ -352,6 +376,14 @@ td {
   color: hsl(29, 22%, 87%);
 }
 
+.theme4 .brighter {
+  background-color: hsl(47, 43%, 50%);
+}
+
+.theme4 #atomhab-list .brighter {
+  background-color: hsl(47, 21%, 48%);
+}
+
 .theme5 {
   background-color: hsl(0, 0%, 32%);
   color: hsl(0, 0%, 87%);
@@ -359,6 +391,14 @@ td {
 
 .theme5 a {
   color: hsl(0, 0%, 87%);
+}
+
+.theme5 .brighter {
+  background-color: hsl(0, 0%, 50%);
+}
+
+.theme5 #atomhab-list .brighter {
+  background-color: hsl(0, 0%, 40%);
 }
 
 .theme6 {

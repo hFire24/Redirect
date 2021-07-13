@@ -50,6 +50,9 @@
         if(hours === 0 && minutes === 0 && seconds === 0) {
           alert("You can't have a timer that lasts 0 seconds.");
         }
+        else if(hours * 3600 + minutes * 60 + seconds >= 86400) {
+          alert("This timer only supports values no more than 24 hours.");
+        }
         else
           setTimer(hours,minutes,seconds);
       }

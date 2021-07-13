@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Time Divider</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon-clock.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme2">
+    <h1 class="no-space">Time Divider</h2>
+    <div id='times' class='brighter' style="display:inline-block; padding: 0 0.3em 0.3em 0.3em;">
+      <h3 class="no-space">Current Progress</h3>
+      <div class='space'>
+        <label for="minInp1">M: </label> <input id="minInp1" type="number" min="0" max="999" value="11" class="custom-select" style="font-family:inherit;">
+        <label for="secInp1">S: </label> <input id="secInp1" type="number" min="0" max="59" value="0" class="custom-select" style="font-family:inherit;">
+      </div>
+      <h3 id="timeMode" style="margin-bottom:0px;">Total Time</h3>
+      <div class='space'>
+        <label for="minInp2">M: </label> <input id="minInp2" type="number" min="0" max="999" value="24" class="custom-select" style="font-family:inherit;">
+        <label for="secInp2">S: </label> <input id="secInp2" type="number" min="0" max="59" value="0" class="custom-select" style="font-family:inherit;">
+      </div>
+      <div id="modeSelector" class="space"><input type="checkbox" id="mode" onclick="switchMode()">Calculate using remaining time</div>
+      <div id='calculate' class='timerbutton' style='background-color:rgb(0,255,0); color:black; display:inline-block;' onclick='calculate()'>Calculate</div>
+    </div>
+    <div id="timeResult"></div>
+    <script src='script.js'></script>
+    <script>
+      var mode = 1;
+
+      function switchMode() {
+        if(mode === 1) {
+          mode = 2;
+          timeMode.innerHTML = "Remaining Time";
+          return;
+        }
+        mode = 1;
+        timeMode.innerHTML = "Total Time";
+      }
+
+      function calculate() {
+        let min1 = parseInt(minInp1.value);
+        let sec1 = parseInt(secInp1.value);
+        let min2 = parseInt(minInp2.value);
+        let sec2 = parseInt(secInp2.value);
+
+        if(min2 + sec2 === 0 && mode === 1 || min1 + sec1 === 0 && min2 + sec2 === 0 && mode === 2) {
+          timeResult.innerHTML = "ERROR: Divide by zero";
+          return;
+        }
+
+        let result = divideTime(min1,sec1,min2,sec2)
+        timeResult.innerHTML = Math.round(result,-2) + "%";
+      }
+
+      function divideTime(a1,a2,b1,b2) {
+        if(mode === 1)
+          return (a1+a2/60)/(b1+b2/60) * 100;
+        return (a1+a2/60)/(a1+b1+(a2+b2)/60) * 100;
+      }
+    </script>
+  </body>
+</html>
