@@ -3,6 +3,11 @@ var d = new Date();
 var messageComplete = true;
 
 function loadWebsite(number) {
+  if(number === 9) {
+    redirectMessages.splice(redirectMessages.indexOf('YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'),1,'Forget about Googling distracting stuff!');
+    redirectMessages.splice(redirectMessages.indexOf('Cute or fun things are good, but they are distractions.'),1,'Fun things are good, but they are distractions.');
+    redirectMessages.splice(redirectMessages.indexOf('Life isn\'t about seeking cuteness.'),1);
+  }
   //1, 7-12, 55
   if(number === 1 || number >= 7 && number <= 12 || number === 55) {
     if(number === 1)
@@ -300,6 +305,8 @@ function randomLink(index,number) {
     linkMessages.push("How are you feeling?");
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
+  if(number === 9)
+    linkIndex = 1;
   var message = $("message").innerHTML;
   //If the message tells you to leave, the linkIndex will be 0.
   if (index < 2 || message === 'Return to your previous task.' || message === 'Get out of here!')
@@ -536,7 +543,7 @@ async function createAdvice() {
     if (hydrate < 1)
       alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
     else {
-      alert("Here's a tip: Some music can help you focus.\n\nPress OK and then \"Ctrl + M\" for more info.");
+      alert("Here's a tip: Some music can help you focus.\n\nPress OK and then \"Ctrl + M\" for focus music.");
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 77 && event.ctrlKey) {
           event.preventDefault();

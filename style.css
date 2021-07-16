@@ -490,6 +490,11 @@ td {
   color:#0F0;
 }
 
+.gb-image {
+  max-width: 90%;
+  height:auto;
+}
+
 @media only screen and (max-width: 1702px) {
   h1, #message, #trance, #survivor, #break.big, #arrows, #emergency-button, .huge {
     font-size: 100px;

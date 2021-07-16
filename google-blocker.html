@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Google Blocker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme2" onload="loadWebsite(9);">
+    <h1 id="message"></h1>
+    <h2 id="question">Just how important is that search term?</h2>
+    <div id='link'>
+      <div id='slider1'>
+        <div class='slidercontainer space'>
+          <input type="range" min="0" max="10" value="0" class="slider" id="importance-slider"> <button onclick="submit()">Submit</button>
+        </div>
+        <div id="importance" class="space">It's totally useless information</div>
+        <a href="gb-instructions.html">Google Blocker Setup Instructions</a>
+      </div>
+      <div id='yesnomaybe' class='three-list' style='display:none;'>
+        <a class='hfire-link' onclick="ok()">Yes</a>
+        <a class='hfire-link' onclick="submit()">No</a>
+        <a class='hfire-link' onclick="submit()">Maybe</a>
+      </div>
+      <div id='urgent' style='display:none;'>
+        <span class="custom-select" style="width:200px;">
+          <select id='urgent-levels'>
+            <option id="u0" value="0">When convenient</option>
+            <option id="u1" value="1">As soon as possible</option>
+            <option id="u2" value="2">Immediately</option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
+    </div>
+    <script>
+    var count = 1;
+    function submit() {
+      console.log(importanceValues[slider1.value]);
+      var inputText = '';
+      if(count === 3)
+        inputText = $("u" + $("urgent-levels").value).innerHTML.toLowerCase();
+      else
+        inputText = importanceValues[slider1.value].toLowerCase();
+
+      console.log(inputText);
+
+      if (slider1.value > 6 && slider1.value < 10 || count === 3 && inputText === 'immediately') {
+        $("question").innerHTML = "Hopefully your search will lead to you becoming a better individual.<br>Don't forget to block Google soon.";
+        revealSearchTerm();
+      }
+      else if(slider1.value > 3 && slider1.value < 6 || count === 3 && inputText === 'when convenient')
+        ok();
+      else if(count === 3 && inputText === 'as soon as possible') {
+        $("question").innerHTML = "<a href='https://www.google.com/search?q=take+a+deep+breath' target='_blank'>Take deep breaths</a>, finish whatever you're doing, and do that thing next.";
+        document.body.removeChild($("link"));
+      }
+      else if(slider1.value === "10") {
+        $("question").innerHTML = "<a href='https://www.google.com/search?q=take+a+deep+breath' target='_blank'>Take deep breaths</a>. Don't worry about that thing for now.";
+        document.body.removeChild($("link"));
+      }
+      else if(slider1.value === "6") {
+        count = 3;
+        $("question").innerHTML = "How urgent is this? When should you do it?";
+        $("slider1").style.display = "none";
+        $("urgent").style.display = "block";
+      }
+      else if(count < 2 && slider1.value !== "0") {
+        count = 2;
+        $("question").innerHTML = "Would you like to save that search term for later?";
+        $("slider1").style.display = "none";
+        $("yesnomaybe").style.display = "grid";
+      }
+      else {
+        var messages = ['You really are bored.',
+        'Stop typing in distracting search terms!',
+        'Stop escaping from your problems!',
+        'Forget that search term!',
+        'You shouldn\'t search that term.',
+        'Don\'t you have anything better to do with your time?',
+        'Don\'t search for time-wasting things!',
+        'Your mind must be wandering off, isn\'t it?',
+        'You need to stop procrastinating.',
+        'You just wanted to sidetrack. Not good.',
+        'Nothing good will come out of searching that term.',
+        'You are procrastinating and not getting things done.',
+        'You may seem bored or lazy, but you are fearful.',
+        'Don\'t get dictated by your urges.',
+        'You have more important things to do.',
+        'Now is not the time to be doing that.',
+        'Please stop being lazy, and stop wasting your time.',
+        'You really don\'t want to search that term anyway.',
+        'Don\'t have a lazy, unproductive day.',
+        'It seems like you feel stuck.',
+        'You need motivation.',
+        'Why not use that search energy to make some progress on a task?',
+        'If you\'re bored, just try to do something productive.',
+        'You want to go there, but you don\'t need to go there.',
+        'Don\'t be addicted to the internet.',
+        'Fun things are good, but they are distractions.',
+        'Don\'t waste time getting distracted on Google.',
+        'You want to spend your life Googling useless stuff? 🤣'];
+        var replace = messages[Math.floor(Math.random() * messages.length)];
+        while (replace === $("message").innerHTML) {
+          replace = messages[Math.floor(Math.random() * messages.length)];
+        }
+        document.getElementById("question").innerHTML = replace;
+        document.getElementById("link").innerHTML = "Immediately close this tab.";
+      }
+    }
+
+    var importanceValues = ['It\'s totally useless information',
+    'It\'s probably useless information',
+    'It would be nice to know',
+    'It could help me with trivia quizzes',
+    'It could make me happier',
+    'It could come in handy',
+    'It could minimize some risks',
+    'It\'s related to what I\'m doing',
+    'It will help with college classes',
+    'It could save my life',
+    'It upsets me so much'];
+    var importance = document.getElementById("importance");
+    var slider1 = document.getElementById("importance-slider");
+    slider1.max = importanceValues.length - 1;
+    slider1.oninput = function () {
+      importance.innerHTML = importanceValues[slider1.value];
+    }
+
+    function ok() {
+      $("question").innerHTML = "OK! Write down that search term to search for later!";
+      revealSearchTerm();
+    }
+
+    function revealSearchTerm() {
+      var urlSearch = window.location.search;
+      console.log(urlSearch);
+      if (urlSearch === "") {
+        document.body.removeChild($("link"));
+        return;
+      }
+      let parameter = new URLSearchParams(urlSearch);
+      let searchTerm = parameter.get('q')
+      $("link").innerHTML = "You searched for \"" + searchTerm + "\"<br><a href='https://www.ecosia.org/search?q=" + searchTerm + "'>Search for \"" + searchTerm + "\" on Ecosia</a>";
+    }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

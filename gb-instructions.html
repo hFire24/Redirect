@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Google Blocker Instructions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body class="theme5" onload="loadWebsite(9);">
+    <h1>Google Blocker Setup Instructions</h1>
+    <h2>1. Install a redirector extension</h2>
+    <img class='gb-image' src="media/gb-instructions/01.png">
+    <div class='space'>Install a redirector extension for your web browser of choice (mobile web broswers not supported). In this case, the exctension <a href='https://chrome.google.com/webstore/detail/redirector/ocgpenflpmgnfapjedencafcfakcekcd'>"Redirector"</a> by Einar Egilsson was installed. It's available on Chrome, Firefox, and Opera.</div>
+    <h2>2. Access redirector settings</h2>
+    <img class='gb-image' src="media/gb-instructions/02.png">
+    <div class='space'>Find the recently installed extension in the extensions menu, and press "Edit Redirects". Results may vary depending on the extension installed.</div>
+    <h2>3. Create a new redirect</h2>
+    <img class='gb-image' src="media/gb-instructions/03.png">
+    <h2>4. Add in the following information. You can do this for any search engine.</h2>
+    <img class='gb-image' src="media/gb-instructions/04.png">
+    <div class='space'>
+      <strong>Description</strong>: Google Blocker<br>
+      <strong>Example URL</strong>: https://www.google.com/search?q=tetris&<br>
+      <strong>Include Pattern</strong>: *://www.google.*/search?q=*&#38;*<br>
+      <strong>Redirect to</strong>: $1://hfire24.github.io/Redirect/google-blocker?q=$3<br>
+      <strong>Pattern Type</strong>: Wildcard
+    </div>
+    <h2>5. Hit "Save" and ensure the Google Blocker is enabled.</h2>
+    <img class='gb-image' src="media/gb-instructions/05.png">
+    <h2>6. If you search for anything on Google, you will be redirected to the google-blocker page.</h2>
+    <img class='gb-image' src="media/gb-instructions/06.png">
+    <div class="space">The same applies for every redirect of a search engine.</div>
+    <h2>7. To disable the redirector, find the extension, and click "Disable Redirector".</h2>
+    <img class='gb-image' src="media/gb-instructions/07.png">
+    <div class="space">Alternatively, you could go into "Edit Redirects" and disable one redirect.</div>
+  </body>
+</html>
