@@ -12,13 +12,12 @@
   <body>
     <h1 id='message'>Your current anime with links</h1>
     <div class='space'>If you can't decide what to watch, just roll a die. <a href='animeutilities.html'>Click here for anime watching utilities.</a></div>
-    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button></div>
+    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer()'>Go to timer</button></div>
     <div id='diceResults' class='space'></div>
-    <div class='four-list'>
-      <a id='a0' class='hfire-link' href='https://www.funimation.com/shows/by-the-grace-of-the-gods'>2 By the Grace of the Gods</a>
-      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/1000512'>4 Silver Spoon</a>
-      <a id='a2' class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/non-non-biyori'>5 Non Non Biyori</a>
-      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
+    <div class='three-list'>
+      <a id='a0' class='hfire-link' href='https://beta.crunchyroll.com/series/GYX08020R/Knights-Magic'>1 Knight's & Magic</a>
+      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>3 Majo no Tabitabi</a>
+      <a id='a2' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
     </div>
     <script>
       var diceRoll = 0;
@@ -28,19 +27,19 @@
           diceRoll = Math.ceil(Math.random() * 6);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = "You rolled a 1! <a href='random-anime'>Use the randomizer!</a>";
+              diceResults.innerHTML = "You rolled a 1!";
               break;
             case 2:
-              diceResults.innerHTML = "You rolled a 2!";
+              diceResults.innerHTML = "You rolled a 2! <a href='random-anime'>Use the randomizer!</a>";
               break;
             case 3:
-              diceResults.innerHTML = "You rolled a 3! <a href='random-anime'>Use the randomizer!</a>";
+              diceResults.innerHTML = "You rolled a 3!";
               break;
             case 4:
-              diceResults.innerHTML = "You rolled a 4!";
+              diceResults.innerHTML = "You rolled a 4! <a href='random-anime'>Use the randomizer!</a>";
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5!";
+              diceResults.innerHTML = "You rolled a 5! <a href='random-anime'>Use the randomizer!</a>";
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
@@ -80,7 +79,11 @@
         }
       }
 
-      for(var i = 0; i < 5; i++) {
+      function goToTimer() {
+        location.href = "animetimer.html";
+      }
+
+      for(var i = 0; i < 3; i++) {
         var x = Math.floor(Math.random() * 128);
         var y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
