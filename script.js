@@ -332,6 +332,7 @@ function randomLink(index,number) {
     var feelings = [{text:"Select an emotion",value:"lazy"},
     {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
+    {text:"I want to watch anime",value:"anime"},
     {text:"I feel bored 🥱",value:"bored"},
     {text:"I feel really bored 🥱🥱",value:"really bored"},
     {text:"I feel lazy 😪",value:"lazy"},
@@ -409,6 +410,9 @@ function okFeeling() {
       break;
     case "time":
       location.href = "time.html";
+      break;
+    case "anime":
+      location.href = "nextanime.html";
       break;
     case "bored":
       location.href = "cyoa/54.html";
