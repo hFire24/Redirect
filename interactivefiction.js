@@ -243,8 +243,21 @@ function finalTest(inputText,site)
     $("question").innerHTML = "If you unblock that website, you'll waste too much time.";
     $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
   }
-  else if(inputText.indexOf("procrast") >= 0 || found(wasteTime,inputText))
-    location.href = "anti-procrastination.html";
+  else if(inputText.indexOf("procrast") >= 0 || found(wasteTime,inputText)) {
+    document.body.removeChild($("question"));
+    var video = document.createElement("video");
+    video.id = "nevergiveup";
+    var source = document.createElement("source");
+    source.src = "media/Never Give up.mp4";
+    source.type = "video/mp4";
+    video.appendChild(source);
+    $("link").appendChild(video);
+    $("link").removeChild(input);
+    $("link").removeChild($("submit"));
+    $("link").removeChild($("dropdown"));
+    $("link").addEventListener("click",function(){$("nevergiveup").play();});
+    $("nevergiveup").play();
+  }
   else if(site === "busy") {
     $("question").innerHTML = "You need an energy boost.";
     $("link").innerHTML = "<a id='relax' href='https://cfreeze-relax.herokuapp.com'>Click here to continue.</a>";
