@@ -20,7 +20,8 @@
       <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='startTimer()'>Start</span>
     </div>
     <div id='additionalTimes' class='space2' style='display:none;'>
-      <a id='ten-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black;' onclick='addTime(600)'>Add 10 Minutes (3)</a>
+      <a id='ten-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black; display:none;' onclick='addTime(600)'>Add 10 Minutes (3)</a>
+      <a id='twenty-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black; display:none;' onclick='addTime(1200)'>Add 20 Minutes (3)</a>
     </div>
     <div id='controls' class='two-list' style='display:none;'>
       <a id='pause' class='timerbutton' style='background-color:yellow; color:black;' onclick='pauseTimer()'>Pause Timer</a>
@@ -48,7 +49,7 @@
         var times = ["5 Seconds (Test the timer)",
         "5 Minutes (For forgetting)",
         "30 Minutes (For watching anime)",
-        "1 Hour (Take a break)",
+        "1 Hour (For watching anime)",
         "2 Hours (Take a break)"];
         //moves the array position via the distance parameter.
         tp = tp + distance;
@@ -125,9 +126,13 @@
         }, 1000);
 
         document.getElementById("times").style.display = "none";
-        //Only when the timer is set to 30 minutes does this element display for adding time to the timer.
-        if(hours === 0 && minutes === 30 && seconds === 0)
+        //Only when the timer is set to 30 minutes or 1 hour does this element display for adding time to the timer.
+        if(hours === 0 && minutes === 30 && seconds === 0 || hours === 1 && minutes === 0 && seconds === 0)
           document.getElementById("additionalTimes").style.display = "block";
+        if(hours === 0 && minutes === 30 && seconds === 0)
+          document.getElementById("ten-minutes-plus").style.display = "inline";
+        else if(hours === 1 && minutes === 0 && seconds === 0)
+          document.getElementById("twenty-minutes-plus").style.display = "inline";
         /*else if(hours === 2)
         {
           var music = document.createElement("iframe");
@@ -183,8 +188,15 @@
         a = aa;
         //Increments the addTimes variable
         addTimes--;
-        var timerButton = document.getElementById("ten-minutes-plus");
-        timerButton.innerHTML = "Add 10 Minutes (" + addTimes + ")";
+        var timerButton;
+        if(document.getElementById("ten-minutes-plus").style.display === "inline") {
+          timerButton = document.getElementById("ten-minutes-plus");
+          timerButton.innerHTML = "Add 10 Minutes (" + addTimes + ")";
+        }
+        else if(document.getElementById("twenty-minutes-plus").style.display === "inline") {
+          timerButton = document.getElementById("twenty-minutes-plus");
+          timerButton.innerHTML = "Add 20 Minutes (" + addTimes + ")";
+        }
         //If button is pressed 3 times, disables the add 10 minutes button by removing the onclick attribute and changing the appearance to black with the text "BUTTON DISABLED".
         if(addTimes <= 0) {
           timerButton.removeAttribute("onclick");
