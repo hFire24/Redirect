@@ -18,8 +18,8 @@
       <a id='a0' class='hfire-link' href='https://beta.crunchyroll.com/series/GYX08020R/Knights-Magic'>1 Knight's & Magic</a>
       <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/sleepy-princess-in-the-demon-castle'>2 Sleepy Princess in the Demon Castle</a>
       <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>3 Wandering Witch: The Journey of Elaina</a>
-      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GR9P3EP36/Comical-Psychosomatic-Medicine'>4 Comic Psychosomatic Medicine</a>
-      <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>5 Little Busters!</a>
+      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GKEH2GZX9/remake-our-life'>5 Remake Our Life!</a>
+      <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a id='a5' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
       <a id='a6' class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
     </div>
@@ -40,19 +40,19 @@
               diceResults.innerHTML = "You rolled a 3!";
               break;
             case 4:
-              diceResults.innerHTML = "You rolled a 4!";
+              diceResults.innerHTML = "You rolled a 4! That means it's time to put money in the special reserve!";
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5!";
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 6!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
           }
         }
-        else if(diceRoll === 6) {
+        else if(diceRoll === 4) {
           diceRoll = Math.ceil(Math.random() * 6);
           switch(diceRoll) {
             case 1:
@@ -66,13 +66,13 @@
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
+              diceRoll = 5;
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $20 in the special reserve.";
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Commission someone right now, or put $30 in the special reserve.";
-              diceRoll = 5;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
