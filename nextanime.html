@@ -18,17 +18,19 @@
       <a id='a0' class='hfire-link' href='https://beta.crunchyroll.com/series/GYX08020R/Knights-Magic'>1 Knight's & Magic</a>
       <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/sleepy-princess-in-the-demon-castle'>2 Sleepy Princess in the Demon Castle</a>
       <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>3 Wandering Witch: The Journey of Elaina</a>
-      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GKEH2GZX9/remake-our-life'>5 Remake Our Life!</a>
-      <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
-      <a id='a5' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
-      <a id='a6' class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
+      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>4 Pita-Ten</a>
+      <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/GKEH2GZX9/remake-our-life'>5 Remake Our Life!</a>
+      <a id='a5' class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
+      <a id='a6' class='hfire-link' href='https://beta.crunchyroll.com/series/GYQW9J0ZY/Ms-Vampire-who-lives-in-my-neighborhood'>7 Ms. Vampire who lives in my neighborhood.</a>
+      <a id='a7' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
+      <a id='a8' class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
     </div>
     <script>
       var diceRoll = 0;
 
       function rollDice() {
         if(diceRoll === 0) {
-          diceRoll = Math.ceil(Math.random() * 6);
+          diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = "You rolled a 1!";
@@ -40,7 +42,7 @@
               diceResults.innerHTML = "You rolled a 3!";
               break;
             case 4:
-              diceResults.innerHTML = "You rolled a 4! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 4!";
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5!";
@@ -48,12 +50,19 @@
             case 6:
               diceResults.innerHTML = "You rolled a 6!";
               break;
+            case 7:
+              diceResults.innerHTML = "You rolled a 7!";
+              break;
+            case 8:
+              diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
+              break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
+              diceRoll = 0;
           }
         }
-        else if(diceRoll === 4) {
-          diceRoll = Math.ceil(Math.random() * 6);
+        else if(diceRoll === 8) {
+          diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = "You rolled a 1! Put $5 in the special reserve.";
@@ -62,17 +71,23 @@
               diceResults.innerHTML = "You rolled a 2! Put $5 in the special reserve.";
               break;
             case 3:
-              diceResults.innerHTML = "You rolled a 3! Put $10 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 3! Put $5 in the special reserve.";
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
-              diceRoll = 5;
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5! Put $20 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! Commission someone right now, or put $30 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
+              break;
+            case 7:
+              diceResults.innerHTML = "You rolled a 7! Put $20 in the special reserve.";
+              break;
+            case 8:
+              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $30 in the special reserve.";
+              diceRoll = 7;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -91,7 +106,7 @@
         location.href = "animetimer.html";
       }
 
-      for(var i = 0; i < 7; i++) {
+      for(var i = 0; i < 9; i++) {
         var x = Math.floor(Math.random() * 128);
         var y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
