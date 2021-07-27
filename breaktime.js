@@ -285,11 +285,11 @@ function displayBreak(index) {
   }
 
   var parent = $("hideable");
-  var link = $("link");
-  if(!link) {
-    link = document.createElement("div");
-    link.id = "link";
-    parent.appendChild(link);
+  var cirno = $("link");
+  if(!cirno) {
+    cirno = document.createElement("div");
+    cirno.id = "link";
+    parent.appendChild(cirno);
   }
   displayLink();
   if(standIndex >= 0)
