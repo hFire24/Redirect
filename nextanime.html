@@ -12,9 +12,9 @@
   <body>
     <h1 id='message'>Your current anime with links</h1>
     <div class='space'>If you can't decide what to watch, just roll a die.</div>
-    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer()'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
+    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
-    <div class='four-list'>
+    <div class='four-list' onclick='goToTimer(true)'>
       <a id='a0' class='hfire-link' href='https://beta.crunchyroll.com/series/GYX08020R/Knights-Magic'>1 Knight's & Magic</a>
       <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/sleepy-princess-in-the-demon-castle'>2 Sleepy Princess in the Demon Castle</a>
       <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>3 Wandering Witch: The Journey of Elaina</a>
@@ -102,8 +102,11 @@
         location.href = "animeutilities.html";
       }
 
-      function goToTimer() {
-        location.href = "animetimer.html";
+      function goToTimer(newTab) {
+        if(newTab)
+          window.open("animetimer.html");
+        else
+          location.href = "animetimer.html";
       }
 
       for(var i = 0; i < 9; i++) {

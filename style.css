@@ -238,6 +238,10 @@ td {
   cursor: pointer;
 }
 
+.hfire-span {
+  padding: 20px;
+}
+
 .extended {
   grid-column:1/3;
 }
