@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
-  <body onload='createAdvice()'>
+  <body class='theme4' onload='createAdvice()'>
     <h1 id='message'></h1>
     <div id='hideable'>
     </div>
@@ -29,21 +29,17 @@
         parent.appendChild(link);
       }
       if (index === 0)
-        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:red;'>No.</strong>";
+        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
       else
-        link.innerHTML = "<a href='nextanime.html'>Here are the anime you need to watch.</a> <strong onclick='rejectSomething(0)' style='color:red;'>No.</strong>";
+        link.innerHTML = "<a href='nextanime.html'>Here are the anime you need to watch.</a> <strong onclick='rejectSomething(0)' style='color:white;'>No.</strong>";
 
       function rejectSomething(time) {
         if (time === 0)
-          link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <strong onclick='rejectSomething(1)' style='color:red;'>No.</strong>";
+          link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
         else if(time === 1)
-          link.innerHTML = "Can you digitize your journal a little? <strong onclick='rejectSomething(4)' style='color:red;'>No.</strong>";
+          link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
         else if(time === 3)
-          link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:red;'>No.</strong>";
-        else if(time === 4)
-          link.innerHTML = "<a href='art.html'>Can you practice drawing?</a> <strong onclick='rejectSomething(5)' style='color:red;'>No.</strong>";
-        else if(time === 5)
-          link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:red;'>No.</strong>";
+          link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
         else
           location.href = "cyoa/1.html";
       }
