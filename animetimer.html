@@ -143,7 +143,7 @@
             playAlarm();
             document.getElementById("message").innerHTML = "<span id='stress' onclick='stopAlarm()'>STOP TIMER</span>";
           }
-          if(alarmOff && (n.getSeconds() === a.getSeconds() + 30 || n.getSeconds() === a.getSeconds() - 30))
+          if(alarmOff && (n.getSeconds() === a.getSeconds() + 30 || n.getSeconds() === a.getSeconds() - 30) || n.getHours() < 0 && !alarmOff)
             stopAlarm();
         }, 1000);
 
@@ -157,6 +157,8 @@
           document.getElementById("twenty-minutes-plus").style.display = "inline";
         else if(tp === 4) {
           document.getElementById("two-hours").style.display = "block";
+        }
+        if(tp > 1) {
           alert("NOTE: Make sure this tab is in a window with no other tabs.");
         }
         //This displays the controls for pausing and stopping the timer.
