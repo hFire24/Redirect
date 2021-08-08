@@ -46,7 +46,7 @@
               diceResults.innerHTML = "You rolled a 4!";
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5!";
+              diceResults.innerHTML = "You rolled a 5! That means it's time to put money in the special reserve!";
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6!";
@@ -55,14 +55,14 @@
               diceResults.innerHTML = "You rolled a 7!";
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled an 8!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
         }
-        else if(diceRoll === 8) {
+        else if(diceRoll === 5) {
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
@@ -79,6 +79,7 @@
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
+              diceRoll = 7;
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
@@ -88,7 +89,6 @@
               break;
             case 8:
               diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $30 in the special reserve.";
-              diceRoll = 7;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -104,10 +104,7 @@
       }
 
       function goToTimer(newTab) {
-        if(newTab)
-          window.open("animetimer.html");
-        else
-          location.href = "animetimer.html";
+        newTab ? window.open("animetimer.html") : location.href = "animetimer.html";
       }
 
       for(var i = 0; i < 10; i++) {
