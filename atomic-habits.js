@@ -31,6 +31,12 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "If you want to increase the odds that a behavior will occur, then you need to make it attractive.", //Page 104
 "Your brain has far more neural circuitry allocated for wanting rewards than for liking them.", //Page 108
 "We need to make our habits attractive because it is the expectation of a rewarding experience that motivates us to act in the first place.", //Page 108
+"Temptation bundling works by linking an action you want to do with an action you need to do.", //Page 109
+"You’re more likely to find a behavior attractive if you get to do one of your favorite things at the same time.", //Page 109
+"After I [CURRENT HABIT], I will [HABIT I NEED]. After [HABIT I NEED], I will [HABIT I WANT].", //Page 110
+"Of course, peer pressure is bad only if you’re surrounded by bad influences.", //Page 117
+"One of the most effective things you can do to build better habits is to join a culture where your desired behavior is the normal behavior.", //Page 117
+"Nothing sustains motivation better than belonging to the tribe. It transforms a personal quest into a shared one.", //Page 118
 "Want to quit a bad habit? Make it unattractive.", //Inverse of the Second Law
 "Want to make a good habit? Make it easy.", //Third Law
 "Want to end a bad habit? Make it difficult.", //Inverse of the Third Law
@@ -42,7 +48,7 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "Rather than focusing on the results of a habit, focus on how it makes you feel." //Fourth Law Bonus Material
 ];
 
-const jcPages = ["15", "27", "34", "38", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108",
+const jcPages = ["15", "27", "34", "38", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108", "109", "109", "110", "117", "117", "118",
 //Want to quit a bad habit? Make it unattractive
 "TBD", "TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
 
