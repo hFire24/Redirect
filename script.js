@@ -333,6 +333,7 @@ function randomLink(index,number) {
     {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
     {text:"I want to watch anime",value:"anime"},
+    {text:"I want to go to DeviantArt",value:"deviantart"},
     {text:"I feel bored 🥱",value:"bored"},
     {text:"I feel really bored 🥱🥱",value:"really bored"},
     {text:"I feel lazy 😪",value:"lazy"},
@@ -413,6 +414,10 @@ function okFeeling() {
       break;
     case "anime":
       location.href = "nextanime.html";
+      break;
+    case "deviantart":
+      message.innerHTML = "This is a sign that you need to watch some anime.";
+      link.innerHTML = "<a href=nextanime.html>Click here to continue.</a>";
       break;
     case "bored":
       location.href = "cyoa/54.html";
