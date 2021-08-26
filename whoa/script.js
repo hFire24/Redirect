@@ -98,7 +98,7 @@ async function createAdvice()
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 77 && event.ctrlKey) {
           event.preventDefault();
-          location.href = "https://youtu.be/Es7nHl2Bb04";
+          location.href = "https://youtu.be/4yxRxsJv1-I";
         }
       });
     }

@@ -66,7 +66,7 @@ new Breaktime('List everything you\'re currently doing, and order them by priori
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan2",3,false),
   //Music
 new Breaktime('Add a new song to your iTunes library.',"pass","misc",1,false),
-new Breaktime('Put on some music to help you focus.',"https://youtu.be/Es7nHl2Bb04","music",2,false),
+new Breaktime('Put on some music to help you focus.',"https://youtu.be/4yxRxsJv1-I","music",2,false),
   //Miscellaneous
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false),
 new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,false),
@@ -176,7 +176,7 @@ new Breaktime('Check your gTasks list, please.<br>Do the first unfinished task.<
 new Breaktime('Create tasks for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Music
-new Breaktime('Put on some music to help you focus.',"https://youtu.be/Es7nHl2Bb04","music",2,false),
+new Breaktime('Put on some music to help you focus.',"https://youtu.be/4yxRxsJv1-I","music",2,false),
   //Games
 new Breaktime('Solve a Minesweeper board on Expert.',"pass","game",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),

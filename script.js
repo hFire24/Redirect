@@ -116,7 +116,7 @@ function addBigMessages() {
   '<a href="nextanime">You love anime. Right? Why don\'t you watch some?</a>',
     //Music
   'Sometimes just browsing your music library could be fun.',
-  '<a href="https://youtu.be/Es7nHl2Bb04">Why don\'t you put on some music to help you focus?</a>',
+  '<a href="https://youtu.be/4yxRxsJv1-I">Why don\'t you put on some music to help you focus?</a>',
   '<a href="musicSlider.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
   '<a href="https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
@@ -556,7 +556,7 @@ async function createAdvice() {
       window.addEventListener("keyup", function (event) {
         if (event.keyCode === 77 && event.ctrlKey) {
           event.preventDefault();
-          location.href = "https://youtu.be/Es7nHl2Bb04";
+          location.href = "https://youtu.be/4yxRxsJv1-I";
         }
       });
     }
