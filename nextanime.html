@@ -15,23 +15,21 @@
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list' onclick='goToTimer(true)'>
-      <a id='a0' class='hfire-link' href='https://beta.crunchyroll.com/series/GYX08020R/Knights-Magic'>1 Knight's & Magic</a>
-      <a id='a1' class='hfire-link' href='https://www.funimation.com/shows/sleepy-princess-in-the-demon-castle'>2 Sleepy Princess in the Demon Castle</a>
-      <a id='a2' class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>3 Wandering Witch: The Journey of Elaina</a>
-      <a id='a3' class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>4 Pita-Ten</a>
-      <a id='a4' class='hfire-link' href='https://beta.crunchyroll.com/series/GKEH2GZX9/remake-our-life'>5 Remake Our Life!</a>
-      <a id='a5' class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
-      <a id='a6' class='hfire-link' href='https://beta.crunchyroll.com/series/GYQW9J0ZY/Ms-Vampire-who-lives-in-my-neighborhood'>7 Ms. Vampire who lives in my neighborhood.</a>
-      <a id='a7' class='hfire-link' href='https://www.funimation.com/shows/isekai-quartet'>8 Isekai Quartet</a>
-      <a id='a8' class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
-      <a id='a9' class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GYX08020R/Knights-Magic'>1 Knight's & Magic</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>2 Wandering Witch</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>3 Pita-Ten</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GKEH2GZX9/remake-our-life'>4 Remake Our Life!</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>5 Little Busters!</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/dragon-goes-house-hunting/'>6 Dragon Goes House-Hunting</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
     </div>
     <script>
       var diceRoll = 0;
 
       function rollDice() {
         if(diceRoll === 0) {
-          diceRoll = Math.ceil(Math.random() * 8);
+          diceRoll = Math.ceil(Math.random() * 6);
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = "You rolled a 1!";
@@ -43,26 +41,20 @@
               diceResults.innerHTML = "You rolled a 3!";
               break;
             case 4:
-              diceResults.innerHTML = "You rolled a 4!";
+              diceResults.innerHTML = "You rolled a 4! That means it's time to put money in the special reserve!";
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 5!";
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6!";
-              break;
-            case 7:
-              diceResults.innerHTML = "You rolled a 7!";
-              break;
-            case 8:
-              diceResults.innerHTML = "You rolled an 8!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
         }
-        else if(diceRoll === 5) {
+        else if(diceRoll === 4) {
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
@@ -76,10 +68,10 @@
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
+              diceRoll = 5;
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
-              diceRoll = 7;
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
@@ -107,22 +99,20 @@
         newTab ? window.open("animetimer.html") : location.href = "animetimer.html";
       }
 
-      var links = document.getElementsByClassName("hfire-link");
+      var links = document.getElementsByTagName("a");
 
       for(var i = 0; i < links.length; i++) {
         var x = Math.floor(Math.random() * 128);
         var y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
         var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-        document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
+        links[i].style.backgroundColor = bgColor;
       }
       for(var i = 0; i < 0; i++) {
         x = Math.floor(Math.random() * 128);
         y = Math.floor(Math.random() * 128);
         var z = Math.floor(Math.random() * 32) + 96;
         bgColor = "rgb(" + x + "," + y + "," + z + ")";
-        document.getElementById("b" + parseInt(i)).style.backgroundColor = bgColor;
-        document.getElementById("b" + parseInt(i)).style.color = 'orange';
       }
     </script>
   </body>
