@@ -16,45 +16,49 @@
     <div id='diceResults' class='space'></div>
     <div class='four-list' onclick='goToTimer(true)'>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GYX08020R/Knights-Magic'>1 Knight's & Magic</a>
-      <a class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>2 Wandering Witch</a>
-      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>3 Pita-Ten</a>
-      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GKEH2GZX9/remake-our-life'>4 Remake Our Life!</a>
-      <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>5 Little Busters!</a>
-      <a class='hfire-link' href='https://www.funimation.com/shows/dragon-goes-house-hunting/'>6 Dragon Goes House-Hunting</a>
+      <a class='hfire-link' href='https://streamanimetv.net/anime/himesama-goyoujin/'>2 Himesama Goyoujin</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/wandering-witch-the-journey-of-elaina'>3 Wandering Witch</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>4 Pita-Ten</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GQWH0MXPQ/Anime-AzurLane-Slow-Ahead'>5 Azur Lane: Slow Ahead!</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/dragon-goes-house-hunting/'>8 Dragon Goes House-Hunting</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
     </div>
     <script>
       var diceRoll = 0;
+      const queueAnime = "Knight's & Magic";
 
       function rollDice() {
         if(diceRoll === 0) {
           diceRoll = Math.ceil(Math.random() * 6);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = "You rolled a 1!";
+              diceResults.innerHTML = `You rolled a 1! Watch ${queueAnime}.`;
               break;
             case 2:
-              diceResults.innerHTML = "You rolled a 2!";
+              diceResults.innerHTML = `You rolled a 2! Watch ${queueAnime}.`;
               break;
             case 3:
-              diceResults.innerHTML = "You rolled a 3!";
+              diceResults.innerHTML = `You rolled a 3! Watch ${queueAnime}.`;
               break;
             case 4:
-              diceResults.innerHTML = "You rolled a 4! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = `You rolled a 4! Watch whatever to your heart's content.`;
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5!";
+              diceResults.innerHTML = `You rolled a 5! Watch whatever to your heart's content.`;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6!";
+              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
         }
-        else if(diceRoll === 4) {
+        else if(diceRoll === 6) {
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
@@ -68,13 +72,13 @@
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
-              diceRoll = 5;
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
+              diceRoll = 5;
               break;
             case 7:
               diceResults.innerHTML = "You rolled a 7! Put $20 in the special reserve.";
