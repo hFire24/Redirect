@@ -29,7 +29,7 @@
     <div id='times' class="medium three-list" style="display:none;">
       <a href='../relax2.html?mood=late+night'>Before 5:00AM</a><u style='cursor: pointer;' onclick='fiveAM()'>5:00-5:59AM</u><a id="viAM" href='../relax2.html?mood=morning'>6:00AM or later</a>
     </div>
-    <ol id='early-list' style="display:none;">
+    <!--ol id='early-list' style="display:none;">
       <li>Slowly drink a glass of water</li>
       <li>Charge your sleep mask</li>
       <li>Change your clothes for college</li>
@@ -38,7 +38,7 @@
       <li>Get in your car</li>
       <li>Go to McDonald's (if you have time)</li>
       <li>Park in the nearby parking garage</li>
-    </ol>
+    </ol-->
     <div id='uncontrollable'>
       <input id='urge' type='text'><button onclick='search("Google")'>Search (Google)</button><br><button onclick='search("YouTube")'>Search (YouTube)</button><button onclick='search("Twitter")'>Search (Twitter)</button><button onclick='search("DeviantArt")'>Search (DeviantArt)</button><br><button onclick='search("DuckDuckGo")'>Search (DuckDuckGo)</button><button onclick='search("Ecosia")'>Search (Ecosia)</button>
     </div>
@@ -87,11 +87,7 @@
         if (parseInt(slider1.value) < 3) {
           if (d.getDay() === 0)
             location.href = "sunday.html";
-          else if (d.getDay() === 3 || d.getDay() === 5) {
-            document.getElementById("break").innerHTML = "You do realize that you have a 7:30AM class this morning.";
-            document.getElementById("uncontrollable").style.display = "none";
-            document.getElementById("early-list").style.display = "block";
-          } else {
+          else {
             document.getElementById("break").innerHTML = "What time is it?";
             document.getElementById("uncontrollable").style.display = "none";
             document.getElementById("times").style.display = "grid";
