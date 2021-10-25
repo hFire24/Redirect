@@ -11,54 +11,59 @@
   </head>
   <body>
     <h1 id='message'>Your current anime with links</h1>
-    <div class='space'>If you can't decide what to watch, just roll a die.</div>
+    <div class='space'>If you can't decide what to watch, just roll a die.<br>
+    Order: World Conquest Zvezda Plot ➡ Azur Lane: Slow Ahead! ➡ Pita-Ten ➡ Little Busters! ➡ Himesama Goyoujin ➡ Mushoku Tensei: Jobless Reincarnation</div>
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list' onclick='goToTimer(true)'>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GQWH0MXPQ/Anime-AzurLane-Slow-Ahead'>1 Azur Lane: Slow Ahead!</a>
       <a class='hfire-link' href='https://streamanimetv.net/anime/himesama-goyoujin/'>2 Himesama Goyoujin</a>
-      <a class='hfire-link' href='https://www.funimation.com/shows/world-conquest-zvezda-plot/' style='color:black;'>3 World Conquest Zvezda Plot</a>
-      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten' style='color:#999;'>4 Pita-Ten (On-hold)</a>
-      <a class='hfire-link' href='https://spin.moe' style='color:black;'>5 spin.moe anime (178B?)</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/world-conquest-zvezda-plot/'>3 World Conquest Zvezda Plot</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>4 Pita-Ten</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/is-this-a-zombie'>5 Is This a Zombie? OVA</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
-      <a class='hfire-link' href='https://www.funimation.com/shows/is-this-a-zombie'>8 Is This a Zombie? OVA</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
     </div>
     <script>
       var diceRoll = 0;
-      const queueAnime = "Mushoku Tensei";
 
       function rollDice() {
         if(diceRoll === 0) {
-          diceRoll = Math.ceil(Math.random() * 6);
+          diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1! Watch ${queueAnime}.`;
+              diceResults.innerHTML = `You rolled a 1!`;
               break;
             case 2:
-              diceResults.innerHTML = `You rolled a 2! Watch ${queueAnime}.`;
+              diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Watch ${queueAnime}.`;
+              diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4! Watch ${queueAnime}.`;
+              diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! Watch ${queueAnime}.`;
+              diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 6!";
+              break;
+            case 7:
+              diceResults.innerHTML = "You rolled a 7!";
+              break;
+            case 8:
+              diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
         }
-        else if(diceRoll === 6) {
+        else if(diceRoll === 8) {
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
@@ -68,23 +73,23 @@
               diceResults.innerHTML = "You rolled a 2! Put $5 in the special reserve.";
               break;
             case 3:
-              diceResults.innerHTML = "You rolled a 3! Put $5 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 3! Put $10 in the special reserve.";
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 5! Put $20 in the special reserve.";
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
-              diceRoll = 5;
+              diceResults.innerHTML = "You rolled a 6! Put $30 in the special reserve.";
               break;
             case 7:
-              diceResults.innerHTML = "You rolled a 7! Put $20 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 7! Put $40 in the special reserve.";
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $30 in the special reserve.";
+              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $50 in the special reserve.";
+              diceRoll = 5;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
