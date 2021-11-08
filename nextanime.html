@@ -16,13 +16,14 @@
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list' onclick='goToTimer(true)'>
-      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GQWH0MXPQ/Anime-AzurLane-Slow-Ahead'>1 Azur Lane: Slow Ahead!</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/my-senpai-is-annoying'>1 My Senpai is Annoying</a>
       <a class='hfire-link' href='https://streamanimetv.net/anime/himesama-goyoujin/'>2 Himesama Goyoujin</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/world-conquest-zvezda-plot/'>3 World Conquest Zvezda Plot</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>4 Pita-Ten</a>
-      <a class='hfire-link' href='https://www.funimation.com/shows/is-this-a-zombie'>5 Is This a Zombie? OVA</a>
+      <a class='hfire-link' href=''>5 🎲🎲🎲🎲</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
+      <a class='hfire-link' href=''>8 💲💲💲💲💲</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
@@ -35,7 +36,8 @@
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1!`;
+              diceResults.innerHTML = `You rolled a 1! Roll again or watch the latest English episode.`;
+              diceRoll = 0;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
@@ -47,7 +49,8 @@
               diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5!`;
+              diceResults.innerHTML = `You rolled a 5! Roll again.`;
+              diceRoll = 0;
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6!";
