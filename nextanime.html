@@ -12,12 +12,11 @@
   <body>
     <h1 id='message'>Your current anime with links</h1>
     <div class='space'>If you can't decide what to watch, just roll a die.<br>
-    Order: World Conquest Zvezda Plot ➡ Azur Lane: Slow Ahead! ➡ Pita-Ten ➡ Little Busters! ➡ Himesama Goyoujin ➡ Mushoku Tensei: Jobless Reincarnation</div>
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list' onclick='goToTimer(true)'>
       <a class='hfire-link' href='https://www.funimation.com/shows/my-senpai-is-annoying'>1 My Senpai is Annoying</a>
-      <a class='hfire-link' href='https://streamanimetv.net/anime/himesama-goyoujin/'>2 Himesama Goyoujin</a>
+      <a class='hfire-link' href=''>2 🎲🎲🎲🐻</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/world-conquest-zvezda-plot/'>3 World Conquest Zvezda Plot</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR75KN0ZY/Pita-Ten'>4 Pita-Ten</a>
       <a class='hfire-link' href=''>5 🎲🎲🎲🎲</a>
@@ -40,7 +39,8 @@
               diceRoll = 0;
               break;
             case 2:
-              diceResults.innerHTML = `You rolled a 2!`;
+              diceResults.innerHTML = `You rolled a 2! Roll again or start watching Kuma Kuma Kuma Bear.`;
+              diceRoll = 0;
               break;
             case 3:
               diceResults.innerHTML = `You rolled a 3!`;
@@ -76,23 +76,23 @@
               diceResults.innerHTML = "You rolled a 2! Put $5 in the special reserve.";
               break;
             case 3:
-              diceResults.innerHTML = "You rolled a 3! Put $10 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 3! Put $5 in the special reserve.";
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5! Put $20 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 5! Put $15 in the special reserve.";
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! Put $30 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 6! Put $20 in the special reserve.";
               break;
             case 7:
-              diceResults.innerHTML = "You rolled a 7! Put $40 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 7! Put $25 in the special reserve.";
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $50 in the special reserve.";
-              diceRoll = 5;
+              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve.";
+              diceRoll = 7;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
