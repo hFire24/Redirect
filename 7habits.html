@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Read!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <style>
+      .independent {
+        color:#99F;
+      }
+
+      .interdependent {
+        color:#F99;
+      }
+
+      .continual {
+        color:#9F9;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="title">Read The 7 Habits of Highly Effective People</h2>
+    <button class="custom-button" onclick="customTask()">Got something you need to do?</button>
+    <div>
+      <ol>
+        <h3 class="no-space">Independent</h3>
+        <li class='independent'>Be proactive</li>
+        <li class='independent'>Begin with the end in mind</li>
+        <li class='independent'>Put first things first</li>
+        <h3 class="no-space">Interdependent</h3>
+        <li class='interdependent'>Think win-win</li>
+        <li class='interdependent'>Seek first to understand, then to be understood</li>
+        <li class='interdependent'>Synergize</li>
+        <h3 class="no-space">Continual Improvement</h3>
+        <li class='continual'>Sharpen the saw</li>
+      </ol>
+    </div>
+    <script>
+      let urlSearch = window.location.search;
+      console.log(urlSearch);
+      if (urlSearch !== "") {
+        let parameter = new URLSearchParams(urlSearch);
+        let mode = parameter.get('mode')
+        if(mode === "politics")
+          document.getElementById("title").innerHTML = "Instead of browsing stuff related to the political compass, read The 7 Habits of Highly Effective People";
+        else if(mode === "reddit")
+          document.getElementById("title").innerHTML = "Instead of browsing Reddit, read The 7 Habits of Highly Effective People";
+        else if(mode === "twitter")
+          document.getElementById("title").innerHTML = "Instead of checking Twitter, read The 7 Habits of Highly Effective People";
+        else if(mode === "youtube")
+          document.getElementById("title").innerHTML = "Instead of watching YouTube videos, read The 7 Habits of Highly Effective People";
+        $("link").innerHTML = "You searched for \"" + searchTerm + "\"<br><a href='https://www.ecosia.org/search?q=" + searchTerm + "'>Search for \"" + searchTerm + "\" on Ecosia</a>";
+      }
+
+      function customTask() {
+        location.href = "custom.html";
+      }
+    </script>
+  </body>
+</html>
