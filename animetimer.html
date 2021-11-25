@@ -20,6 +20,7 @@
       <span id='start' class='timerbutton' style='background-color:rgb(0,255,0); color:black;' onclick='startTimer()'>Start</span>
     </div>
     <div id='additionalTimes' class='space2' style='display:none;'>
+      <a id='thirty-seconds-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black; display:none;' onclick='addTime(30)'>Add 30 Seconds (3)</a>
       <a id='ten-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black; display:none;' onclick='addTime(600)'>Add 10 Minutes (3)</a>
       <a id='twenty-minutes-plus' class='timerbutton' style='background-color:rgb(0,102,255); color:black; display:none;' onclick='addTime(1200)'>Add 20 Minutes (3)</a>
     </div>
@@ -32,8 +33,8 @@
       <div class='two-list'>
         <a class='hfire-link extended' href='animeutilities.html' target='_blank'>Update AniList and Anime Spreadsheet</a>
         <span class='hfire-span'>Drink water</span><a class='hfire-link' href='https://cfreeze-relax.herokuapp.com/' target='_blank'>Relax/Meditate</a>
-        <span class='hfire-span'>Check your Thoughts note</span><span class='hfire-span'>Take a 5-minute walk outside</span>
-        <span class='hfire-span'>Read a chapter of the green book</span><a class='hfire-link' href='https://skl.sh/3lhunmI' target='_blank'>Take that JavaScript course on Skillshare (2x)</a>
+        <span class='hfire-span'>Tackle your search terms list</span><span class='hfire-span'>Take a 5-minute walk outside</span>
+        <a class='hfire-link' href='https://read.amazon.com/' target='_blank'>Read 7 Habits of Highly Effective People</a><a class='hfire-link' href='https://skl.sh/3lhunmI' target='_blank'>Take that JavaScript course on Skillshare (2x)</a>
         <a class='hfire-link' href='https://read.amazon.com/' target='_blank'>Read Atomic Habits</a><a class='hfire-link' href='stepmania.html' target='_blank'>Play Stepmania (pad)</a>
         <a class='hfire-link' href='https://cfreeze-jprogress.herokuapp.com' target='_blank'>Digitize your journal</a><span class='hfire-span'>Play a game like BeamNG.drive</span>
       </div>
@@ -138,28 +139,29 @@
           n = new Date(Date.now())
           if(!alarmOff)
             adjustTime();
-          if(n.getSeconds() === a.getSeconds() && n.getMinutes() === a.getMinutes() && n.getHours() === a.getHours()) {
+          if(n.getTime() >= a.getTime())
+          /*if(n.getSeconds() === a.getSeconds() && n.getMinutes() === a.getMinutes() && n.getHours() === a.getHours())*/ {
             alarmOff = true;
             playAlarm();
+            document.getElementById("additionalTimes").style.display = "none";
             document.getElementById("message").innerHTML = "<span id='stress' onclick='stopAlarm()'>STOP TIMER</span>";
           }
-          if(alarmOff && (n.getSeconds() === a.getSeconds() + 30 || n.getSeconds() === a.getSeconds() - 30) || n.getHours() < 0 && !alarmOff)
+          if(n.getTime() - a.getTime() >= 30000)
             stopAlarm();
         }, 1000);
 
         document.getElementById("times").style.display = "none";
         //Only when the timer is set to 30 minutes or 1 hour does this element display for adding time to the timer.
-        if(tp === 2 || tp === 3)
+        if(tp === 0 || tp === 2 || tp === 3)
           document.getElementById("additionalTimes").style.display = "block";
-        if(tp === 2)
+        if(tp === 0)
+          document.getElementById("thirty-seconds-plus").style.display = "inline";
+        else if(tp === 2)
           document.getElementById("ten-minutes-plus").style.display = "inline";
         else if(tp === 3)
           document.getElementById("twenty-minutes-plus").style.display = "inline";
         else if(tp === 4) {
           document.getElementById("two-hours").style.display = "block";
-        }
-        if(tp > 1) {
-          alert("NOTE: Make sure this tab is in a window with no other tabs.");
         }
         //This displays the controls for pausing and stopping the timer.
         document.getElementById("controls").style.display = "block";
@@ -206,7 +208,11 @@
         //Increments the addTimes variable
         addTimes--;
         var timerButton;
-        if(document.getElementById("ten-minutes-plus").style.display === "inline") {
+        if(document.getElementById("thirty-seconds-plus").style.display === "inline") {
+          timerButton = document.getElementById("thirty-seconds-plus");
+          timerButton.innerHTML = "Add 30 Seconds (" + addTimes + ")";
+        }
+        else if(document.getElementById("ten-minutes-plus").style.display === "inline") {
           timerButton = document.getElementById("ten-minutes-plus");
           timerButton.innerHTML = "Add 10 Minutes (" + addTimes + ")";
         }
