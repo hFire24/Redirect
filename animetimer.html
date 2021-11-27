@@ -60,6 +60,7 @@
       "5 Minutes (For forgetting)",
       "30 Minutes (For watching anime)",
       "1 Hour (For watching anime)",
+      "1 Hour (Take a break)",
       "2 Hours (Take a break)"];
 
       var urlSearch = window.location.search;
@@ -68,7 +69,7 @@
         var parameter = new URLSearchParams(urlSearch);
         var defaultTime = parameter.get('time');
         if(defaultTime = "2h") {
-          tp = 4;
+          tp = 5;
           document.getElementById("time").innerHTML = times[tp];
         }
       }
@@ -77,10 +78,10 @@
         //moves the array position via the distance parameter.
         tp = tp + distance;
         //corrects the array's position if it's too low or too high
-        if(tp === 5)
+        if(tp === 6)
           tp = 0;
         else if(tp === -1)
-          tp = 4;
+          tp = 5;
         console.log(tp);
         //Changes the value in the selection area
         document.getElementById("time").innerHTML = times[tp];
@@ -89,9 +90,9 @@
       function startTimer() {
         //This matrix is used to store hours, minutes, and seconds for the timer.
         var timeArray = [
-        [0,0,0,1,2],
-        [0,5,30,0,0],
-        [5,0,0,0,0]];
+        [0,0,0,1,1,2],
+        [0,5,30,0,0,0],
+        [5,0,0,0,0,0]];
         //The hours, minutes, and seconds are set depending on the timer's setting when starting for the first time.
         var hours = timeArray[0][tp];
         var minutes = timeArray[1][tp];
@@ -160,7 +161,7 @@
           document.getElementById("ten-minutes-plus").style.display = "inline";
         else if(tp === 3)
           document.getElementById("twenty-minutes-plus").style.display = "inline";
-        else if(tp === 4) {
+        else if(tp >= 4) {
           document.getElementById("two-hours").style.display = "block";
         }
         //This displays the controls for pausing and stopping the timer.
@@ -266,7 +267,7 @@
 
       function stopAlarm()
       {
-        if(tp === 4)
+        if(tp >= 4)
           location.href = "anime.html";
         else if(tp === 2 || tp === 3)
           location.href = "animetimer.html?time=2h";
