@@ -146,6 +146,7 @@
             playAlarm();
             document.getElementById("additionalTimes").style.display = "none";
             document.getElementById("message").innerHTML = "<span id='stress' onclick='stopAlarm()'>STOP TIMER</span>";
+            document.title = "0:00";
           }
           if(n.getTime() - a.getTime() >= 30000)
             stopAlarm();
@@ -176,11 +177,15 @@
         var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
         //Add zeroes to minutes and seconds if the number is a single digit long.
-        if(minutes.toString().length === 1)
-          minutes = "0" + minutes;
         if(seconds.toString().length === 1)
           seconds = "0" + seconds;
+        if(minutes.toString().length === 1 && hours > 0)
+          minutes = "0" + minutes;
+        //Updates the document title
+        document.title = hours > 0 ? hours + ":" + minutes + ":" + seconds : minutes + ":" + seconds;
         //Displays updated remaining time to the webpage
+        if(minutes.toString().length === 1)
+          minutes = "0" + minutes;
         document.getElementById("message").innerHTML = "<span id='hours'>" + hours + "</span>:<span id='minutes'>" + minutes + "</span>:<span id='seconds'>" + seconds + "</span>";
       }
 
