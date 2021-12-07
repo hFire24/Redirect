@@ -201,7 +201,7 @@ function addBigMessages() {
   "Get important things done! You will feel a sense of accomplishment!",
   "I know you can become a better person! Just don't rush it.",
   "Freedom is not being dictated by your urges. Show those urges who's boss.",
-  "Life is a game. Know the rules and strategies. Apply them, and you'll win.",
+  "Life is a game. Know the rules. Use strategies, and you'll win.",
   "When you get things done, you feel happy and accomplished!",
   "You are a really good person. Did you know that?",
   "If you keep doing great things, you'll get a Tesla!",

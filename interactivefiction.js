@@ -321,10 +321,6 @@ function finalTest(inputText,site)
     $("question").innerHTML = "Get up and draw, even if it's garbage.";
     $("link").innerHTML = "<a href='drawing-progress.html'>Click here to continue.</a>";
   }
-  else if(found(creativity,inputText) || inputText.indexOf('consum') >= 0) {
-    $("question").innerHTML = "Even a minute of breathing helps creativity.";
-    $("link").innerHTML = "<a href='https://www.google.com/search?q=breathing+exercise'>Click here to continue.</a>";
-  }
   else if(inputText.indexOf('commission') >= 0 && expressDesireForCuteness) {
     $("question").innerHTML = "This is the lamest excuse ever. Stop wasting money on commissions, and make your own drawings.";
     $("link").innerHTML = "<a href='drawing-progress.html'>Click here to continue.</a>";
@@ -456,6 +452,10 @@ function finalTest(inputText,site)
   else if(found(['succe', 'accomplish',' win', ' won', 'champion', 'victor'],inputText) && inputText.indexOf("want") < 0 && !found(required,inputText) && inputText.indexOf("?") < 0) {
     $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
     $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
+  }
+  else if(found(creativity,inputText) || inputText.indexOf('consum') >= 0) {
+    $("question").innerHTML = "Even a minute of breathing helps creativity.";
+    $("link").innerHTML = "<a href='https://www.google.com/search?q=breathing+exercise'>Click here to continue.</a>";
   }
   else if(unknownReason < 2 && (inputText.indexOf("feel") < 0 || inputText.indexOf("feel like") >= 0)) {
     $("question").innerHTML = "Hmm... How are you feeling?";
