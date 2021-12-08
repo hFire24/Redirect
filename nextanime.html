@@ -6,6 +6,7 @@
     <title>Your current anime</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="csshake.css" />
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
@@ -29,6 +30,7 @@
     </div>
     <script>
       var diceRoll = 0;
+      const rollTime = 750;
 
       function rollDice() {
         if(diceRoll === 0) {
@@ -63,33 +65,42 @@
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
+          shake(5, rollTime);
         }
         else if(diceRoll === 8) {
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = "You rolled a 1! Put $5 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 1. Put $5 in the special reserve.";
+              shake(1, 300);
               break;
             case 2:
-              diceResults.innerHTML = "You rolled a 2! Put $5 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 2. Put $5 in the special reserve.";
+              shake(1, 300);
               break;
             case 3:
-              diceResults.innerHTML = "You rolled a 3! Put $5 in the special reserve.";
+              diceResults.innerHTML = "You rolled a 3. Put $5 in the special reserve.";
+              shake(1, 300);
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
+              shake(2, 600);
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $15 in the special reserve.";
+              shake(2, 750);
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Put $20 in the special reserve.";
+              shake(3, 900);
               break;
             case 7:
               diceResults.innerHTML = "You rolled a 7! Put $25 in the special reserve.";
+              shake(3, 1000);
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve. Congratulations!";
+              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
+              shake(4, 4000);
               diceRoll = 7;
               break;
             default:
@@ -107,6 +118,33 @@
 
       function goToTimer(newTab) {
         newTab ? window.open("animetimer.html") : location.href = "animetimer.html";
+      }
+
+      function shake(num, time) {
+        let shake = "";
+        switch(num) {
+          case 1:
+            shake = "shake-little";
+            break;
+          case 2:
+            shake = "shake";
+            break;
+          case 3:
+            shake = "shake-hard";
+            break;
+          case 4:
+            shake = "shake-crazy";
+            break;
+          default:
+            shake = "shake-horizontal"
+            break;
+        }
+        diceResults.classList.add("shake-constant");
+        diceResults.classList.add(shake);
+        setTimeout(() => {
+          diceResults.classList.remove("shake-constant");
+          diceResults.classList.remove(shake);
+        }, time);
       }
 
       var links = document.getElementsByTagName("a");
