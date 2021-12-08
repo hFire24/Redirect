@@ -74,7 +74,7 @@ function finalTest(inputText,site)
     location.href = 'relapse.html';
   else if(found(['peeked', 'already looked', 'already saw', 'too late', 'already watched', 'already viewed', 'already browsed', 'fantasiz'],inputText))
     location.href = 'kirby.html';
-  else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful'],inputText))
+  else if(found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'busting a nut', 'nutting', 'to fuck', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful'],inputText))
     location.href = 'whoa/index.html';
   else if(found(['whoa', 'nuke', 'emergency button'],inputText))
     location.href = 'whoa/old.html'
