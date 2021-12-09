@@ -90,13 +90,13 @@
         $("slider1").style.display = "none";
         $("urgent").style.display = "block";
       }
-      else if(found(urges,inputText) || found(urges,location.href) || website === "deviantart") {
-        $("question").innerHTML = "Write down that search term in your red notepad.";
-        revealSearchTerm("red");
-      }
       else if(found(['cirno','crino','cinro','ciron'],inputText)) {
         $("question").innerHTML = "Don't be a <span style=font-weight:bold;>⑨</span>";
         $("link").innerHTML = "Immediately close this tab.";
+      }
+      else if(found(urges,inputText) || found(urges,location.href) || website === "deviantart") {
+        $("question").innerHTML = "Don't act on that thought. Just let it go after observing it.";
+        revealSearchTerm("red");
       }
       else if(inputText.indexOf("anime") >= 0) {
         $("question").innerHTML = "Remember what you said about quitting anime?";
@@ -216,7 +216,7 @@
     }
 
     function ok() {
-      $("question").innerHTML = "OK! Add that to your blue or red notepad to search for later!";
+      $("question").innerHTML = "OK! Add that to your thoughts list to search for later!";
       revealSearchTerm("blue");
     }
 
@@ -229,7 +229,7 @@
       }
       $("link").innerHTML = "You searched for \"" + searchTerm + "\"";
       if(color === "red")
-        $("link").innerHTML = $("link").innerHTML + ". Also write down why you wanted to search for it.";
+        $("link").innerHTML = $("link").innerHTML + ". Think about why you wanted to search for it, and don't act on it.";
       else if(color === "black")
         $("link").innerHTML = $("link").innerHTML + "<br><a href='https://www.ecosia.org/search?q=" + searchTerm + "'>Search for \"" + searchTerm + "\" on Ecosia</a>";
     }
