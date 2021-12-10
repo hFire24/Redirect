@@ -14,7 +14,7 @@
     <div id='title-container' class='medium space'>It's called "<span id='video-title'></span>"</div>
     <div id='demolish' class='invisible space'><img src="media/Building Demolish Procrastination.gif" alt='A building with the label "Your Future". An explosion labeled "Too Much Procrastination" appears, then the building collapses.'></div>
     <div id='hideable'>
-      <!--button id='load' class='custom-button space' onclick='loadVideo(-1)'>Load Different Video</button--> <button id='load' class='custom-button space' onclick='rebel()'>But procrastination is good!</button>
+      <button id='load' class='custom-button space' onclick='loadVideo(-1)'>Load Different Video</button> <button id='load' class='custom-button space' onclick='rebel()'>But procrastination is good!</button>
     </div>
   </body>
   <script>
@@ -46,12 +46,12 @@
       }
     }
 
-    const playlist = [new Video("KxGRhd_iWuE","Matsuoka Shuzo [松岡修造 ] - あきらめかけているあなた (NEVER GIVE UP!!) [English]",1)];
+    const playlist = [/*new Video("KxGRhd_iWuE","Matsuoka Shuzo [松岡修造 ] - あきらめかけているあなた (NEVER GIVE UP!!) [English]",1)*/];
 
-    /*playlist.push(//new Video("Y1NcEs2ZT14","How To Use Procrastination To Your Advantage (Productive Procrastination)",5),
+    playlist.push(new Video("Y1NcEs2ZT14","How To Use Procrastination To Your Advantage (Productive Procrastination)",5),
     new Video("aehoGGCHkyw","You're Not Lazy, Bored, or Unmotivated",11),
     new Video("F52UZxv2X2Q","what is PROCRASTURBATION NoFAP on another level",14),
-    //new Video("-3QJke9_Z4o","Break Your Mental Resistance With The 2 Minute Rule",17),
+    new Video("-3QJke9_Z4o","Break Your Mental Resistance With The 2 Minute Rule",17),
     new Video("AfRWeybdF2c","New Study Reveals Why You Prorastinate (Not Laziness or Time-Management)",28),
     new Video("Tbp5BQiqa38","I Can't Stick To My Habits (HERE'S WHY)",31),
     new Video("TGfN9297Yq8","How to finally overcome procrastination.",73),
@@ -60,10 +60,10 @@
     new Video("9oWOsocN7qg","How to Make Yourself Study When You Have ZERO Motivation",86),
     new Video("LE8mNTJOYmQ","How to Stay Focused For Long Periods of Time (even on boring things)",91),
     new Video("arj7oStGLkU","Inside the mind of a master procrastinator | Tim Urban",104),
-    new Video("HHiWRNuKCcY","This SpongeBob Episode Will Make You Stop Procrastinating",105));*/
+    new Video("HHiWRNuKCcY","This SpongeBob Episode Will Make You Stop Procrastinating",105));
 
     function loadVideo(index) {
-      if(times >= playlist.length) {
+      if(times >= playlist.length / 2) {
         document.body.classList.add("theme10");
         message.classList.add("invisible");
         document.getElementById("title-container").classList.add("invisible");
@@ -73,8 +73,7 @@
         hideable.innerHTML = "☢STOP PROCRASTINATING☢";
       }
       else {
-        if(index < 0 || index >= playlist.length)
-        {
+        if(index < 0 || index >= playlist.length) {
           index = Math.floor(Math.random() * playlist.length);
         }
         document.getElementById("video-link").href = "https://youtu.be/" + playlist[index].id;
