@@ -44,6 +44,19 @@
       var diceRoll = 0;
       const rollTime = 750;
 
+      function getLucky() {
+        if(diceRoll === 0) {
+          diceRoll = 8;
+          diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
+          shake(5, rollTime);
+        }
+        else if(diceRoll === 8) {
+          diceRoll = 7;
+          diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
+          shake(4, 4000);
+        }
+      }
+
       function rollDice() {
         if(diceRoll === 0) {
           diceRoll = Math.ceil(Math.random() * 8);
@@ -111,9 +124,9 @@
               shake(3, 1000);
               break;
             case 8:
+              diceRoll = 7;
               diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
               shake(4, 4000);
-              diceRoll = 7;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
