@@ -50,15 +50,15 @@ function loadBreak(number) {
 }
 
 var smallBreak = [//Relaxation
-new Breaktime('Listen to this.',"https://cfreeze-relax.herokuapp.com","meditate",3,false),
-new Breaktime('Clear your mind.',"https://cfreeze-relax.herokuapp.com/index.html?mood=unclear","meditate",3,false),
+new Breaktime('Listen to this.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","meditate",3,false),
+new Breaktime('Clear your mind.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","meditate",3,false),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"https://www.google.com/search?q=2+minute+timer","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
 new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false),
   //Task checking
 new Breaktime('Check your tasks for the day.',"pass","task",3,false),
-new Breaktime('Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
+new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
   //Day planning
 new Breaktime('Create tasks for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Determine what you need to do and what you want to do today.',"pass","plan",3,false),
@@ -98,10 +98,11 @@ new Breaktime('Read just one page of <u>How to Win at Adulting</u>.',"pass","rea
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
-new Breaktime('Listen to one of these long guided meditations.',"relax2.html?mood=random","meditate2",3,false),
+//new Breaktime('Listen to one of these long guided meditations.',"relax2.html?mood=random","meditate2",3,false),
+new Breaktime('Build the Relax. Change. Create. Guided Meditations List.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea","meditate2",3,false),
 new Breaktime('Make progress on your 8 Essential Life Skills Course.',"pass","meditate2",3,false),
 //Task checking
-new Breaktime('Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
+new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
   //Day planning
 new Breaktime('Make a plan for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
@@ -115,22 +116,26 @@ new Breaktime('If you\'re watching anime, watch a different anime.',"nextanime",
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false),
+new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false),
 new Breaktime('Play Sudoku (Medium).',"https://www.websudoku.com/?level=2","game",1,false),
 new Breaktime('Play 100% Orange Juice.',"pass","game",1,false),
 new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online/start/3","game",1,false),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false),
-new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
+new Breaktime('Play Hyperdimension Neptunia Re;Birth',"pass","game",1,false),
+//new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
 //'Play Super Smash Bros. Ultimate for about 30 minutes.',
   //Miscellaneous
 new Breaktime('No routine? Form one.',"pass","plan",2,false),
 new Breaktime('How about multiple ways to take a break?',"multiple.html","misc",2,false),
 new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
+new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
+new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
   //Goals
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
-new Breaktime('Listen to a General Conference talk.',"https://cfreeze-gcprogress.herokuapp.com","religion",3,false),
+new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
@@ -163,15 +168,15 @@ new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html"
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true)];*/
 
 var mobileBreak = [//Relaxation
-new Breaktime('Listen to this.',"https://cfreeze-relax.herokuapp.com","relax",3,false),
-new Breaktime('Clear your mind.',"https://cfreeze-relax.herokuapp.com/index.html?mood=unclear","relax",3,false),
+new Breaktime('Listen to this.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","relax",3,false),
+new Breaktime('Clear your mind.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","relax",3,false),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
 new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false),
   //Task checking
 new Breaktime('Check your tasks for the day.',"pass","task",3,false),
-new Breaktime('Check your gTasks list, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
+new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
   //Day planning
 new Breaktime('Create tasks for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
@@ -191,9 +196,11 @@ new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Read your journal entries.<br>Start from September 17, 2012.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://youtu.be/wNscQ3bGxNk?t=110","exercise",2,false),
+new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
+new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
-new Breaktime('Listen to a General Conference talk.',"https://cfreeze-gcprogress.herokuapp.com","religion",3,false),
+new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),

@@ -91,7 +91,7 @@ function addBigMessages() {
   '<a href="https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA">Need help? Put on some relaxing music.</a>',
     //Task checking
   'Why don\'t you check your tasks for the day?',
-  'How about you check your gTasks list?',
+  'How about you check your Dynalist?',
   'Just do your tasks!',
     //Day planning
   'Sometimes just managing your tasks can be motivating.',
@@ -144,12 +144,12 @@ function addBigMessages() {
   '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?</a>',*/
   '<a href="goals.html">Check out the goals page for the big things you want to do!</a>',
   //'Try solving a Rubik\'s cube.',
-  'Those Purdue e-mails aren\'t going to read themselves.',
-  '<a href="https://cfreeze-gcprogress.herokuapp.com">How about you listen to a General Conference talk?</a>',
+  //'Those Purdue e-mails aren\'t going to read themselves.',
+  '<a href="https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T">How about you listen to a General Conference talk?</a>',
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
-  'Why not get on the treadmill if you feel like it?',
+  //'Why not get on the treadmill if you feel like it?',
   'Have you been searching for food terms lately? You should eat some food.',
   'Consider tidying up your room.',
   '<a href="stepmania.html">How about you play some Stepmania?</a>',
@@ -208,7 +208,8 @@ function addBigMessages() {
   "Win a million dollars! It's harder to do than earning $1000000.",
   "The road to productivity. Take it, and you'll be successful.",
   "Be a productive human being! Do something good!",
-  "Make John Purdue proud! Be a <u>successful</u> student!",
+  //"Make John Purdue proud! Be a <u>successful</u> student!",
+  "Make your mama proud! Be a <u>successful</u> worker!",
   "What will it take for you to become successful? Imagine the iceberg of success.",
   "Would you rather live in a large house with a rich and happy life with people who love you? Or would you rather live all alone, poor and miserable, with nobody to support you? Your choices determine the consequences.",
   "Don't let the lazy part of you define your lifestyle.",
@@ -237,8 +238,8 @@ function addBigMessages() {
   'Drop all your distracting habits.',
   'All distracting thoughts need to go away.',
   'You thought about something you shouldn\'t think of.',
-  'Don\'t procrastinate and fail the semester.',
-  'Do you want to fail your classes or not?',
+  'Don\'t procrastinate and lose your job.',
+  'Do you want to lose your job or not?',
   'Control yourself, or else you will lose in life.',
   'Forget about things that are currently distracting you.',
   'Why would you do this? You stupid idiot!',
@@ -445,15 +446,15 @@ function okFeeling() {
         location.href = "cyoa/14.html";
       break;
     case "angry":
-      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=angry'>You need to calm down and relax.</a>";
+      message.innerHTML = "<a href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=bd04689cae5b4de5b416435d93748323'>You need to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "worried":
-      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
+      message.innerHTML = "<a href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=bd04689cae5b4de5b416435d93748323'>Don't worry. Just calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "stressed":
-      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=stressed'>You need to calm down and relax.</a>";
+      message.innerHTML = "<a href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=bd04689cae5b4de5b416435d93748323'>You need to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "sad":
@@ -465,7 +466,7 @@ function okFeeling() {
       break;
     case "unconfident":
       message.innerHTML = "You need a confidence boost.";
-      link.innerHTML = "If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Healthy Mind. Otherwise, <a href='https://cfreeze-relax.herokuapp.com/index.html?mood=unconfident'>click here.</a>";
+      link.innerHTML = "If you have plenty of time, listen to <a href='https://app.mysoundwise.com/mysoundcasts'>Confidence</a> under Healthy Mind. Otherwise, <a href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=d68c527c66b24334843c784f47aaa5af'>click here.</a>";
       break;
     case "overwhelmed":
       location.href = "cyoa/48.html";
@@ -511,7 +512,7 @@ function okFeeling() {
       location.href = "whoa/index.html";
       break;
     case "relax":
-      location.href = "https://cfreeze-relax.herokuapp.com";
+      location.href = "https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e";
       break;
     case "motivate":
       location.href = "cyoa/15.html?mood=motivation";
@@ -575,7 +576,7 @@ function rejectSomething(time) {
   else if (time === 6) {
     var d = new Date();
     if(d.getDay() === 0)
-      link.innerHTML = "It's a Sunday! <a href='https://cfreeze-gcprogress.herokuapp.com'>Be more religious instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
+      link.innerHTML = "It's a Sunday! <a href='https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T'>Be more religious instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
     else
       link.innerHTML = "<a href='stepmania.html'>Play Stepmania instead!</a> <strong onclick='rejectSomething(7)' style='color:white;'>No.</strong>";
   }

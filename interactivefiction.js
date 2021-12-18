@@ -94,15 +94,15 @@ function finalTest(inputText,site)
   else if(inputText.indexOf("nanah") >= 0)
     location.href = "cyoa/28.html";
   else if(found(['angry', 'anger', 'angri', 'furi', 'rage', ' mad ', 'mad.', 'mad!', 'annoy', 'punch', 'attack', 'bully', 'hating', 'hated', 'shut up', 'offended'],inputText) && inputText.indexOf("hatter") < 0) {
-    $("question").innerHTML = "<a id='relax' href='https://cfreeze-relax.herokuapp.com/index.html?mood=angry'>You need to calm down and relax.</a>";
+    $("question").innerHTML = "<a id='relax' href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=bd04689cae5b4de5b416435d93748323'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['worr', 'anxi', 'scared', 'afraid', 'fear', 'bad memories', 'trigger', 'haunt', 'trauma', 'panic', 'fright', 'nerv', 'fail in life', 'timid'],inputText)) {
-    $("question").innerHTML = "<a id='relax' href='https://cfreeze-relax.herokuapp.com/index.html?mood=worried'>Don't worry. Just calm down and relax.</a>";
+    $("question").innerHTML = "<a id='relax' href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=bd04689cae5b4de5b416435d93748323'>Don't worry. Just calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['stress', 'upset', 'frustrat', 'sick of'],inputText)) {
-    $("question").innerHTML = "<a id='relax' href='https://cfreeze-relax.herokuapp.com/index.html?mood=stressed'>You need to calm down and relax.</a>";
+    $("question").innerHTML = "<a id='relax' href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=bd04689cae5b4de5b416435d93748323'>You need to calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless', 'guilt', 'feel down', 'feeling down'],inputText) && !found(wasteTime,inputText)) {
@@ -111,12 +111,12 @@ function finalTest(inputText,site)
   }
   else if(found(['unconfident', 'incapable', 'unprepared', 'unready', 'wimp'],inputText) || found(['don\'t', 'not'],inputText) && found(['confident', 'capable', 'prepared', 'ready'],inputText)) {
     $("question").innerHTML = "You are capable of doing great things.";
-    $("link").innerHTML = "<a id='relax' href='https://cfreeze-relax.herokuapp.com/index.html?mood=unconfident'>Click here to continue.</a>";
+    $("link").innerHTML = "<a id='relax' href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=d68c527c66b24334843c784f47aaa5af'>Click here to continue.</a>";
   }
   else if(found(['overwhelm', 'too much', 'too many', 'burnt out', 'burnout'],inputText))
     location.href = 'cyoa/48.html';
   else if(found(['calm', 'relax', 'peace', 'chill', 'fresh', 'reenergize', 'meditate', 'refresh'],inputText) || found(['clear', 'reset'],inputText) && inputText.indexOf('mind') >= 0)
-    location.href = 'https://cfreeze-relax.herokuapp.com';
+    location.href = 'https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e';
   else if(found(['tired', 'exhaust', 'sleep', 'weak', 'overeat', 'overate', 'ate too much', 'eaten too much', 'full', 'stuff', 'bloated'],inputText)) {
     if(d.getHours() >= 6 && d.getHours() <= 12)
       location.href = "morning/checklist.html";
@@ -260,7 +260,7 @@ function finalTest(inputText,site)
   }
   else if(site === "busy") {
     $("question").innerHTML = "You need an energy boost.";
-    $("link").innerHTML = "<a id='relax' href='https://cfreeze-relax.herokuapp.com'>Click here to continue.</a>";
+    $("link").innerHTML = "<a id='relax' href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("research") >= 0) {
     $("question").innerHTML = "Aww, yes. \"Research.\" One of the most common excuses for procrastination.";
