@@ -23,7 +23,7 @@
       <a class='hfire-link' href=''>5 Planetarian</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
-      <a class='hfire-link' href=''>8 💲💲💲💲💲</a>
+      <a class='hfire-link' id='money' href=''>8 💲💲💲💲💲</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
@@ -179,6 +179,8 @@
         let y = Math.floor(Math.random() * 128);
         let z = Math.floor(Math.random() * 32) + 96;
         let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        if(links[i].id === "money")
+          bgColor = "rgb(0,0,120)";
         links[i].style.backgroundColor = bgColor;
       }
       for(var i = 0; i < 0; i++) {
