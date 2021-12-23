@@ -147,7 +147,7 @@ function finalTest(inputText,site)
   }
   else if(found(['play', 'game'],inputText)) {
     question.innerHTML = "How long have you been being productive?";
-    link.innerHTML = "<div class='two-list space'><a class='hfire-link' href='index.html'>&lt;45 minutes</a><a class='hfire-link' href='cyoa/29.html'>At least 45 minutes</a></div>";
+    link.innerHTML = "<div class='two-list space'><a class='hfire-link' href='index.html'>&lt;45 minutes</a><a class='hfire-link' href='gameflow/29.html'>At least 45 minutes</a></div>";
   }
   else if(found(['lost', 'lose', 'failed', 'pathetic', 'am defeat', 'feel defeat', 'defeated me', 'poop'],inputText)) {
     $("question").innerHTML = "You won't feel like a loser anymore after listening to one of those meditations.";

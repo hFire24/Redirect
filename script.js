@@ -531,7 +531,7 @@ function okFeeling() {
       break;
     case "game":
       message.innerHTML = "How long have you been being productive?";
-      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href=''>&lt;45 minutes</a><a class='hfire-link' href='cyoa/29.html'>At least 45 minutes</a></div>";
+      link.innerHTML = "<div class='two-list space'><a class='hfire-link' href=''>&lt;45 minutes</a><a class='hfire-link' href='gameflow/29.html'>At least 45 minutes</a></div>";
       break;
     default:
       location.href = "cyoa/1.html";
