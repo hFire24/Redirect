@@ -18,10 +18,10 @@
     <div class='four-list space' onclick='goToTimer(true)'>
       <a class='hfire-link' href='https://www.funimation.com/shows/my-senpai-is-annoying'>1 My Senpai is Annoying</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
-      <a class='hfire-link' href='https://www.funimation.com/shows/world-conquest-zvezda-plot/'>3 World Conquest Zvezda Plot</a>
-      <a class='hfire-link' href='https://www.funimation.com/shows/world-conquest-zvezda-plot/'>4 Go to 3</a>
-      <a class='hfire-link' href=''>5 🎲🎲🎲🎲</a>
-      <a class='hfire-link' style='color: silver;' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters! (On-hold)</a>
+      <a class='hfire-link' href='https://www.funimation.com/shows/a-certain-magical-index'>3 A Certain Magical Index</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GRWEW95KR/laid-back-camp'>4 Laid Back Camp</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKNWXW/the-great-jahy-will-not-be-defeated'>5 Jahy-sama</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
       <a class='hfire-link' id='money' href=''>8 💲💲💲💲💲</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
@@ -33,11 +33,12 @@
       Sgt. Frog
       <h4 class="no-space">Great for cuteness</h4>
       <b>Airing</b>: My Senpai is Annoying<br>
-      <b>Non-story-focused</b>: GochiUsa<br>
+      <b>Non-story-focused</b>: Laid Back Camp<br>
       <b>Story-focused</b>: Little Busters!
       <h4 class="no-space">Great if you're alone</h4>
-      <b>Non-story-focused</b>: World Conquest Zvezda Plot (Focus on this anime second)<br>
-      <b>Story-focused</b>: Mushoku Tensei
+      <b>Non-story-focused</b>: The Great Jahy Will Not be Defeated!<br>
+      <b>Story-focused</b>: Mushoku Tensei<br>
+      <b>Also story-focused</b>: A Certain Magical Index
     </div>
     <script>
       var diceRoll = 0;
@@ -71,14 +72,13 @@
               diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4! Watch the anime in Spot 3.`;
+              diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! Roll again.`;
-              diceRoll = 0;
+              diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6, but focus on finishing other anime first.";
+              diceResults.innerHTML = "You rolled a 6!";
               break;
             case 7:
               diceResults.innerHTML = "You rolled a 7!";
