@@ -2,6 +2,7 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "You do not rise to the level of your goals. You fall to the level of your systems.", //Page 27
 "True behavior change is identity change.", //Page 34
 "Every action you take is a vote for the type of person you wish to become.", //Page 38
+"Decide the type of person you want to be. Prove it to yourself with small wins.", //Page 39
 "The people who don’t have their habits handled are often the ones with the least amount of freedom.", //Page 46
 "The process of building a habit can be divided into four simple steps: cue, craving, response, and reward.", //Page 47
 "What you crave is not the habit itself but the change in state it delivers.", //Page 48
@@ -48,7 +49,7 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "Rather than focusing on the results of a habit, focus on how it makes you feel." //Fourth Law Bonus Material
 ];
 
-const jcPages = ["15", "27", "34", "38", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108", "109", "109", "110", "117", "117", "118",
+const jcPages = ["15", "27", "34", "38", "39", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108", "109", "109", "110", "117", "117", "118",
 //Want to quit a bad habit? Make it unattractive
 "TBD", "TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
 
@@ -57,6 +58,7 @@ const deviantart = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //
 "You do not rise to the level of your goals. You fall to the level of your systems.", //Page 27
 "True behavior change is identity change.", //Page 34
 "Every action you take is a vote for the type of person you wish to become.", //Page 38
+"Decide the type of person you want to be. Prove it to yourself with small wins.", //Page 39
 "The people who don’t have their habits handled are often the ones with the least amount of freedom.", //Page 46
 "What you crave is not the habit itself but the change in state it delivers.", //Page 48
 "The people with the best self-control are typically the ones who need to use it the least.", //Page 93
