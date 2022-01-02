@@ -38,6 +38,7 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "Of course, peer pressure is bad only if you’re surrounded by bad influences.", //Page 117
 "One of the most effective things you can do to build better habits is to join a culture where your desired behavior is the normal behavior.", //Page 117
 "Nothing sustains motivation better than belonging to the tribe. It transforms a personal quest into a shared one.", //Page 118
+"The normal behavior of the tribe often overpowers the desired behavior of the individual.", //Page 120
 "Want to quit a bad habit? Make it unattractive.", //Inverse of the Second Law
 "Want to make a good habit? Make it easy.", //Third Law
 "Want to end a bad habit? Make it difficult.", //Inverse of the Third Law
@@ -49,9 +50,8 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 "Rather than focusing on the results of a habit, focus on how it makes you feel." //Fourth Law Bonus Material
 ];
 
-const jcPages = ["15", "27", "34", "38", "39", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108", "109", "109", "110", "117", "117", "118",
-//Want to quit a bad habit? Make it unattractive
-"TBD", "TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
+const jcPages = ["15", "27", "34", "38", "39", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108", "109", "109", "110", "117", "117", "118", "120", "126",
+"TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
 
 //Quotes that should help me stop my DeviantArt habit.
 const deviantart = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Page 15
