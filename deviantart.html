@@ -35,6 +35,7 @@
     <audio id='press'>
       <source src="media/Button Push.mp3" type="audio/mpeg">
     </audio>
+    <script src="interactivefiction.js"></script>
     <script>
     function submit() {
       console.log($("custom-reason").value);
@@ -70,7 +71,7 @@
       }
       else if(slider1.value === "4" || inputText.indexOf("really want") >= 0 && found(['cute','anime','loli','girl'],inputText)) {
         $("question").innerHTML = "You are being deceived by your urges!";
-        $("link").innerHTML = "<a href='drawing-progress.html'>Be more creative instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
+        $("link").innerHTML = "<a href='nextanime.html'>Watch anime instead!</a> <strong onclick='rejectSomething(6)' style='color:white;'>No.</strong>";
       }
       else if(slider1.value === "5" || inputText.indexOf("thing in the world") >= 0)
         location.href = "fiveminutetimer.html";
@@ -86,6 +87,8 @@
       }
       else
         finalTest(inputText,"deviantart");
+      if ($("question").innerText === "Click here.")
+        document.body.removeChild($("link"));
     }
 
     var reasons = ["Because I'm lazy",
@@ -178,8 +181,15 @@
       await sleep(1750);
       location.href = "https://www.thetabernaclechoir.org/listen.html";
     }
+
+    async function pushTheButtonDA()
+    {
+      $("press").play();
+      $("question").style.color = 'white';
+      await sleep(1750);
+      location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+    }
     </script>
-    <script src="interactivefiction.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

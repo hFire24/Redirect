@@ -370,10 +370,17 @@ function finalTest(inputText,site)
       else if(site === 'deviantart' || site === 'searchterm') {
         messages.push('You wish you are a cute anime girl? 🤣🤣',
         'Your ideal self is a cute little kid? 🤣🤣',
-        'Life isn\'t about seeking cuteness.');
+        'Life isn\'t about seeking cuteness.',
+        "If you believe DevinatArt is an addiction, you might as well abandon DeviantArt.",
+        "You allowed DeviantArt to corrupt yourself, so don't further corrupt yourself.",
+        "DeviantArt was a source of your many relapses, and relapses are unacceptable.",
+        "DeviantArt's reputation is not very good due to some of its art.",
+        "Like YouTube, DeviantArt can be a major timesink.",
+        "Time is money. Don't let DeviantArt waste more of your time.",
+        "<span onclick='pushTheButtonDA()'>Click here.</span>");
       }
     }
-    else if(window.innerWidth <= 812) {
+    if(window.innerWidth <= 812) {
       messages.push('Stop sporadically checking your phone!',
       'Your phone is like a prison. Break out of it.',
       'You shouldn\'t use your phone just because you\'re bored.',
@@ -415,6 +422,8 @@ function finalTest(inputText,site)
         $("question").innerHTML = "So, you need" + $("newBreak").value.substring(inputText.indexOf("need") + 4).replace("my","your") + ". Why?";
       unknownReason = 1;
     }
+    else if(site === "deviantart")
+      antiDeviantArt();
     else {
       $("question").innerHTML = "Don't be addicted to the internet.";
       $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
@@ -446,8 +455,12 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf(site) > 0 && unknownReason === 1) {
-    $("question").innerHTML = "You want to go there, but you don't need to go there.";
-    $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
+    if(site === "deviantart")
+      antiDeviantArt()
+    else {
+      $("question").innerHTML = "You want to go there, but you don't need to go there.";
+      $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
+    }
   }
   else if(found(['succe', 'accomplish',' win', ' won', 'champion', 'victor'],inputText) && inputText.indexOf("want") < 0 && !found(required,inputText) && inputText.indexOf("?") < 0) {
     $("question").innerHTML = "Congratulations! Give yourself a pat on the back, and keep that winning streak alive!";
@@ -464,6 +477,9 @@ function finalTest(inputText,site)
   else if(site === "reddit") {
     $("question").innerHTML = "Reddit is bad.";
     $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
+  }
+  else if(site === "deviantart") {
+    antiDeviantArt();
   }
   else {
     $("question").innerHTML = "I'm gonna assume that you should be more productive instead.";
@@ -504,6 +520,8 @@ function areYouBored(site) {
   if((site === 'youtube' || site === 'deviantart') && $("question")) {
     if(site === 'youtube')
       $("question").innerHTML = "Let me guess. You're bored and feel like going to YouTube.";
+    else if(site === 'deviantart')
+      $("question").innerHTML = "Let me guess. You're bored and feel like going to DeviantArt.";
     $("link").style.display = "none";
     $("yesno").style.display = "grid";
   }
@@ -592,6 +610,18 @@ function displayAdvice() {
 function disappear() {
   document.getElementById("hydrate").style.display = "none";
   document.getElementById("musictip").style.display = "none";
+}
+
+function antiDeviantArt() {
+  var noDeviantArtReasons = ["If you believe DevinatArt is an addiction, you might as well abandon DeviantArt.",
+  "You allowed DeviantArt to corrupt yourself, so don't further corrupt yourself.",
+  "DeviantArt was a source of your many relapses, and relapses are unacceptable.",
+  "DeviantArt's reputation is not very good due to some of its art.",
+  "Like YouTube, DeviantArt can be a major timesink.",
+  "Time is money. Don't let DeviantArt waste more of your time.",
+  "<span onclick='pushTheButtonHD()'>Click here.</span>"];
+  $("question").innerHTML = noDeviantArtReasons[Math.floor(Math.random() * noDeviantArtReasons.length)];
+  $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
 }
 
 function $(x) {
