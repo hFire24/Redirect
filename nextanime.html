@@ -13,7 +13,7 @@
   <body>
     <h1 id='message'>Your current anime with links</h1>
     <div class='space'>If you can't decide what to watch, just roll a die.<br>
-    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
+    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll4Dice()'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space' onclick='goToTimer(true)'>
       <a class='hfire-link' href='https://www.funimation.com/shows/my-senpai-is-annoying'>1 My Senpai is Annoying</a>
@@ -137,6 +137,24 @@
         else {
           alert("Hey. Wait 30 minutes or watch one anime episode before rolling the dice again.");
         }
+      }
+
+      function roll4Dice() {
+        if(diceRoll === 0) {
+          let diceRolls = [];
+          for(let i = 0; i < 4; i++)
+            diceRolls.push(Math.ceil(Math.random() * 8));
+          diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + `${diceRolls[0]}, ${diceRolls[1]}, ${diceRolls[2]}, & ${diceRolls[3]}!`;
+          diceRoll = 2;
+          if(diceRolls.filter(x => x === 1).length > 1)
+          {
+            diceResults.innerHTML += " Roll again.";
+            diceRoll = 0;
+          }
+          shake(5, rollTime);
+        }
+        else
+          alert("Hey. Wait until tomorrow before rolling four dice again.");
       }
 
       function openUtilities() {
