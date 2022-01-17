@@ -64,8 +64,7 @@
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1! Roll again or watch the latest English episode.`;
-              diceRoll = 0;
+              diceResults.innerHTML = `You rolled a 1! Watch the latest English episode, or roll again to put money in the special reserve!`;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
@@ -94,12 +93,13 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 9) {
+        else if(diceRoll === 1) {
           diceRoll = Math.ceil(Math.random() * 8);
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = "You rolled a 1. Put $5 in the special reserve.";
               shake(1, 300);
+              diceRoll = 2;
               break;
             case 2:
               diceResults.innerHTML = "You rolled a 2. Put $5 in the special reserve.";
@@ -126,7 +126,6 @@
               shake(3, 1000);
               break;
             case 8:
-              diceRoll = 7;
               diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
               shake(4, 4000);
               break;
