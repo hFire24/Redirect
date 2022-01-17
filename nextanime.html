@@ -146,9 +146,9 @@
             diceRolls.push(Math.ceil(Math.random() * 8));
           diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + `${diceRolls[0]}, ${diceRolls[1]}, ${diceRolls[2]}, & ${diceRolls[3]}!`;
           diceRoll = 2;
-          if(diceRolls.filter(x => x === 1).length > 1)
+          if(diceRolls.filter(x => x === 1).length >= 1)
           {
-            diceResults.innerHTML += " Roll again.";
+            diceResults.innerHTML += " Roll again or watch the latest My Senpai is Annoying dubbed episode.";
             diceRoll = 0;
           }
           shake(5, rollTime);
