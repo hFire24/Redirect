@@ -24,6 +24,7 @@
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/the-vampire-dies-in-no-time/'>8 The Vampire Dies in No Time</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/GMEHME51P/in-the-land-of-leadale'>9 In the Land of the Leadale</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
       <a class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
       <a class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
@@ -33,7 +34,8 @@
       Sgt. Frog<br>
       The Vampire Dies in No Time
       <h4 class="no-space">Great for cuteness</h4>
-      <b>Airing</b>: My Senpai is Annoying<br>
+      <b>Airing Subbed</b>: In the Land of the Leadale<br>
+      <b>Airing Dubbed</b>: My Senpai is Annoying<br>
       <b>Non-story-focused</b>: Laid Back Camp<br>
       <b>Story-focused</b>: Little Busters!
       <h4 class="no-space">Great if you're alone</h4>
@@ -48,23 +50,24 @@
 
       function getLucky() {
         if(diceRoll === 0) {
-          diceRoll = 8;
-          diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
+          diceRoll = 10;
+          diceResults.innerHTML = "You rolled a 10! That means it's time to put money in the special reserve!";
           shake(5, rollTime);
         }
-        else if(diceRoll === 8) {
-          diceRoll = 7;
-          diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
+        else if(diceRoll === 10) {
+          diceRoll = 8;
+          diceResults.innerHTML = "You rolled an 10! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
           shake(4, 4000);
         }
       }
 
       function rollDice() {
         if(diceRoll === 0) {
-          diceRoll = Math.ceil(Math.random() * 8);
+          diceRoll = Math.ceil(Math.random() * 10);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1! Watch the latest English episode, or roll again to put money in the special reserve!`;
+              diceResults.innerHTML = `You rolled a 1! Roll again or watch the latest English episode.`;
+              diceRoll = 0;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
@@ -87,46 +90,61 @@
             case 8:
               diceResults.innerHTML = "You rolled an 8!";
               break;
+            case 9:
+              diceResults.innerHTML = "You rolled a 9! Roll again or watch the latest episode.";
+              diceRoll = 0;
+              break;
+            case 10:
+              diceResults.innerHTML = "You rolled a 10! That means it's time to put money in the special reserve!";
+              break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 1) {
-          diceRoll = Math.ceil(Math.random() * 8);
+        else if(diceRoll === 10) {
+          diceRoll = Math.ceil(Math.random() * 10);
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = "You rolled a 1. Put $5 in the special reserve.";
-              shake(1, 300);
-              diceRoll = 2;
+              shake(1, 200);
               break;
             case 2:
               diceResults.innerHTML = "You rolled a 2. Put $5 in the special reserve.";
-              shake(1, 300);
+              shake(1, 200);
               break;
             case 3:
               diceResults.innerHTML = "You rolled a 3. Put $5 in the special reserve.";
-              shake(1, 300);
+              shake(1, 200);
               break;
             case 4:
               diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
-              shake(2, 600);
+              shake(2, 400);
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $15 in the special reserve.";
-              shake(2, 750);
+              shake(2, 600);
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Put $20 in the special reserve.";
-              shake(3, 900);
+              shake(2, 800);
               break;
             case 7:
-              diceResults.innerHTML = "You rolled a 7! Put $25 in the special reserve.";
-              shake(3, 1000);
+              diceResults.innerHTML = "You rolled a 7! Put $30 in the special reserve.";
+              shake(3, 1200);
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
+              diceResults.innerHTML = "You rolled an 8! Put $40 in the special reserve.";
+              shake(3, 1600);
+              break;
+            case 9:
+              diceResults.innerHTML = "You rolled a 9! Put $50 in the special reserve.";
+              shake(3, 2000);
+              break;
+            case 10:
+              diceRoll = 9;
+              diceResults.innerHTML = "You rolled a 10! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
               shake(4, 4000);
               break;
             default:
@@ -139,21 +157,28 @@
       }
 
       function roll4Dice() {
-        if(diceRoll === 0) {
+        if(diceRoll === 0)
+        {
           let diceRolls = [];
           for(let i = 0; i < 4; i++)
-            diceRolls.push(Math.ceil(Math.random() * 8));
+            diceRolls.push(Math.ceil(Math.random() * 9));
           diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + `${diceRolls[0]}, ${diceRolls[1]}, ${diceRolls[2]}, & ${diceRolls[3]}!`;
           diceRoll = 2;
-          if(diceRolls.filter(x => x === 1).length >= 1)
-          {
-            diceResults.innerHTML += " Roll again or watch the latest My Senpai is Annoying dubbed episode.";
+          let containsOne = diceRolls.filter(x => x === 1).length >= 1;
+          let containsNine = diceRolls.filter(x => x === 9).length >= 1;
+          if(containsOne || containsNine)
             diceRoll = 0;
-          }
+          if(containsOne && containsNine)
+            diceResults.innerHTML += " Roll again or watch both of the latest episodes.";
+          else if(containsOne)
+            diceResults.innerHTML += " Roll again or watch the latest My Senpai is Annoying dubbed episode.";
+          else if(containsNine)
+            diceResults.innerHTML += " Roll again or watch the latest In the Land of the Leadale episode.";
           shake(5, rollTime);
         }
-        else
-          alert("Hey. Wait until tomorrow before rolling four dice again.");
+        else {
+          alert("Hey. Wait until tommorow or watch four anime episodes to roll these four dice again.");
+        }
       }
 
       function openUtilities() {
