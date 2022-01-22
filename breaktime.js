@@ -92,9 +92,7 @@ new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pas
 new Breaktime('Listen to your own music, and don\'t be afraid to dance to it.',"pass","music",1,true),
 new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo85V9Ew","exercise-heavy",3,true),
   //Miscellaneous Part 2
-new Breaktime('Digitize at least one paragraph from your journal.',"pass","misc",3,true),
-new Breaktime('Read just one page of that green book.',"pass","read",4,true),
-new Breaktime('Read just one page of <u>How to Win at Adulting</u>.',"pass","read",2,true)];
+new Breaktime('Digitize at least one paragraph from your journal.',"pass","misc",3,true)];
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
@@ -161,7 +159,6 @@ new Breaktime('Digitize at least two pages from your journal.',"pass","misc",3,t
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true),
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
-new Breaktime('Read the book <u>How To Win at Adulting</u>.',"pass","read",2,true),
 new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true)];
 /*new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
 new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html","art",2,true),
