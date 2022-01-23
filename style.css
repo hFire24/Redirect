@@ -499,6 +499,32 @@ td {
   height:auto;
 }
 
+/* Tooltip information is provided by http://jsfiddle.net/AndreaLigios/jtLbpy62/2281/ */
+[data-tooltip]:before {
+    /* needed - do not touch */
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+
+    /* customizable */
+    transition: all 0.15s ease;
+    padding: 10px;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px silver;
+    font-size: 50%;
+}
+
+[data-tooltip]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+
+    /* customizable */
+    background: yellow;
+    margin-top: -50px;
+    margin-left: 20px;
+}
+
 @media only screen and (max-width: 1702px) {
   h1, #message, #trance, #survivor, #break.big, #arrows, #emergency-button, .huge {
     font-size: 100px;
