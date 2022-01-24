@@ -73,7 +73,7 @@ new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,fal
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
-new Breaktime('Read your journal entries.<br>Start from September 17, 2012.',"pass","read",1,false),
+new Breaktime('Read your journal entries.<br>Start from September 24, 2012.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://youtu.be/wNscQ3bGxNk?t=110","exercise",2,false),
   //Goals
@@ -190,7 +190,7 @@ new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,fal
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
-new Breaktime('Read your journal entries.<br>Start from September 17, 2012.',"pass","read",1,false),
+new Breaktime('Read your journal entries.<br>Start from September 24, 2012.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://youtu.be/wNscQ3bGxNk?t=110","exercise",2,false),
 new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
