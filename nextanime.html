@@ -13,7 +13,7 @@
   <body>
     <h1 id='message'>Your current anime with links</h1>
     <div class='space'>If you can't decide what to watch, just roll a die.<br>
-    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll4Dice()'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
+    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space' onclick='goToTimer(true)'>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/my-senpai-is-annoying'>1 My Senpai is Annoying</a>
@@ -47,6 +47,8 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
+      const forbiddenNumbers = [];
+      var askToBan = false;
 
       function getLucky() {
         if(diceRoll === 0) {
@@ -156,29 +158,98 @@
         }
       }
 
-      function roll4Dice() {
+      function roll2Dice() {
         if(diceRoll === 0)
         {
-          let diceRolls = [];
-          for(let i = 0; i < 4; i++)
-            diceRolls.push(Math.ceil(Math.random() * 9));
-          diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + `${diceRolls[0]}, ${diceRolls[1]}, ${diceRolls[2]}, & ${diceRolls[3]}!`;
+          if(askToBan)
+            banANumber();
+          let firstDiceRoll = Math.ceil(Math.random() * 9);
+          while (forbiddenNumbers.includes(firstDiceRoll))
+            firstDiceRoll = Math.ceil(Math.random() * 9);
+          let secondDiceRoll = Math.ceil(Math.random() * 9);
+          while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll))
+            secondDiceRoll = Math.ceil(Math.random() * 9);
+          diceResults.innerHTML = (firstDiceRoll === 8 ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
-          let containsOne = diceRolls.filter(x => x === 1).length >= 1;
-          let containsNine = diceRolls.filter(x => x === 9).length >= 1;
+          let containsOne = firstDiceRoll === 1 || secondDiceRoll === 1;
+          let containsNine = firstDiceRoll === 9 || secondDiceRoll === 9;
           if(containsOne || containsNine)
             diceRoll = 0;
           if(containsOne && containsNine)
-            diceResults.innerHTML += " Roll again or watch both of the latest episodes.";
+          {
+            diceResults.innerHTML += " Roll again or watch both of the latest episodes in tandem.";
+            askToBan = true;
+          }
           else if(containsOne)
-            diceResults.innerHTML += " Roll again or watch the latest My Senpai is Annoying dubbed episode.";
+          {
+            diceResults.innerHTML += " Roll again or watch the latest dubbed episode in tandem with the other episode.";
+            forbiddenNumbers.push(1);
+          }
           else if(containsNine)
-            diceResults.innerHTML += " Roll again or watch the latest In the Land of the Leadale episode.";
+          {
+            diceResults.innerHTML += " Roll again or watch the latest episode in tandem with the other episode.";
+            forbiddenNumbers.push(9);
+          }
+          else if((firstDiceRoll === 7 || secondDiceRoll === 7) && (firstDiceRoll === 8 || secondDiceRoll === 8))
+            diceResults.innerHTML += " 😈";
           shake(5, rollTime);
         }
         else {
+          alert("Hey. Wait 1 hour or watch both anime episodes before rolling the dice again.");
+        }
+      }
+
+      function rollManyDice(amount) {
+        let diceArrayString = "";
+        if(diceRoll === 0)
+        {
+          if(askToBan)
+            banANumber();
+          let diceRolls = [];
+          for(let i = 0; i < amount; i++) {
+            diceRolls.push(Math.ceil(Math.random() * 9));
+            while (forbiddenNumbers.includes(diceRolls[i]))
+              diceRolls[i] = Math.ceil(Math.random() * 9);
+            diceArrayString += i === amount - 1 ? "& " + diceRolls[i] + "!" : diceRolls[i] + ", ";
+          }
+          diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + diceArrayString;
+          diceRoll = amount;
+          let containsOne = diceRolls.filter(x => x === 1).length >= 1;
+          let containsNine = diceRolls.filter(x => x === 9).length >= 1;
+          let forbidden = diceRolls.filter(x => x === 1).length > 1 || diceRolls.filter(x => x === 9).length > 1;
+          if(containsOne || containsNine)
+            diceRoll = 0;
+          if(forbidden)
+            diceResults.innerHTML += " Roll again.";
+          else if(containsOne && containsNine)
+          {
+            diceResults.innerHTML += " Roll again or watch both of the latest episodes.";
+            askToBan = true;
+          }
+          else if(containsOne)
+          {
+            diceResults.innerHTML += " Roll again or watch the latest My Senpai is Annoying dubbed episode.";
+            forbiddenNumbers.push(1);
+          }
+          else if(containsNine)
+          {
+            diceResults.innerHTML += " Roll again or watch the latest In the Land of the Leadale episode.";
+            forbiddenNumbers.push(9);
+          }
+          shake(5, rollTime);
+        }
+        else if(diceRoll === 4) {
           alert("Hey. Wait until tommorow or watch four anime episodes to roll these four dice again.");
         }
+      }
+
+      function banANumber() {
+        let numberPrompt = prompt("Which number would you like to ban? Type 1 or 9.");
+        if(numberPrompt === "1")
+          forbiddenNumbers.push(1);
+        else if(numberPrompt === "9")
+          forbiddenNumbers.push(9);
+        askToBan = false;
       }
 
       function openUtilities() {
