@@ -49,6 +49,8 @@
       const rollTime = 750;
       const forbiddenNumbers = [];
       var askToBan = false;
+      var watchedBanished = false;
+      var askIfWatchedBanished = false;
 
       function getLucky() {
         if(diceRoll === 0) {
@@ -65,7 +67,14 @@
 
       function rollDice() {
         if(diceRoll === 0) {
-          diceRoll = Math.ceil(Math.random() * 10);
+          if(askIfWatchedBanished == false) {
+            watchBanished = confirm("Press OK if you watched Banished from the Party today.");
+            askIfWatchedBanished = true;
+          }
+          if (!watchBanished)
+            diceRoll = 3;
+          else
+            diceRoll = Math.ceil(Math.random() * 10);
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = `You rolled a 1! Roll again or watch the latest English episode.`;
@@ -161,9 +170,15 @@
       function roll2Dice() {
         if(diceRoll === 0)
         {
+          if(askIfWatchedBanished == false) {
+            watchBanished = confirm("Press OK if you watched Banished from the Party today.");
+            askIfWatchedBanished = true;
+          }
           if(askToBan)
             banANumber();
           let firstDiceRoll = Math.ceil(Math.random() * 9);
+          if(!watchBanished)
+            firstDiceRoll = 3;
           while (forbiddenNumbers.includes(firstDiceRoll))
             firstDiceRoll = Math.ceil(Math.random() * 9);
           let secondDiceRoll = Math.ceil(Math.random() * 9);
@@ -203,11 +218,21 @@
         let diceArrayString = "";
         if(diceRoll === 0)
         {
+          if(askIfWatchedBanished == false) {
+            watchBanished = confirm("Press OK if you watched Banished from the Party today.");
+            askIfWatchedBanished = true;
+          }
           if(askToBan)
             banANumber();
           let diceRolls = [];
           for(let i = 0; i < amount; i++) {
             diceRolls.push(Math.ceil(Math.random() * 9));
+            if(!watchBanished && i === 0)
+              diceRolls[0] = 3;
+            if(i === 1)
+              diceRolls[1] = 1;
+            if(i === 2)
+              diceRolls[2] = 9;
             while (forbiddenNumbers.includes(diceRolls[i]))
               diceRolls[i] = Math.ceil(Math.random() * 9);
             diceArrayString += i === amount - 1 ? "& " + diceRolls[i] + "!" : diceRolls[i] + ", ";
