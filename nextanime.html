@@ -31,18 +31,18 @@
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
-      Sgt. Frog<br>
-      The Vampire Dies in No Time
+      <b>Funnier</b>: Sgt. Frog<br>
+      <b>Weirder</b>: The Vampire Dies in No Time
       <h4 class="no-space">Great for cuteness</h4>
-      <b>Airing Subbed</b>: In the Land of the Leadale<br>
-      <b>Airing Dubbed</b>: My Senpai is Annoying<br>
+      <b>Airing</b>: My Senpai is Annoying<br>
       <b>Non-story-focused</b>: Laid Back Camp<br>
       <b>Story-focused</b>: Little Busters!
       <h4 class="no-space">Great if you're alone</h4>
       <b>Non-story-focused</b>: The Great Jahy Will Not be Defeated!<br>
       <b>Story-focused</b>: Mushoku Tensei
       <h4 class="no-space">Something quiet</h4>
-      Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside
+      <b>Airing Subbed</b>: In the Land of the Leadale<br>
+      <b>Airing Dubbed</b>: Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside
     </div>
     <script>
       var diceRoll = 0;
@@ -67,10 +67,8 @@
 
       function rollDice() {
         if(diceRoll === 0) {
-          if(askIfWatchedBanished == false) {
-            watchBanished = confirm("Press OK if you watched Banished from the Party today.");
-            askIfWatchedBanished = true;
-          }
+          if(askIfWatchedBanished == false)
+            watchBanished = haveYouWatchedBanished();
           if (!watchBanished)
             diceRoll = 3;
           else
@@ -170,10 +168,8 @@
       function roll2Dice() {
         if(diceRoll === 0)
         {
-          if(askIfWatchedBanished == false) {
-            watchBanished = confirm("Press OK if you watched Banished from the Party today.");
-            askIfWatchedBanished = true;
-          }
+          if(askIfWatchedBanished == false)
+            watchBanished = haveYouWatchedBanished();
           if(askToBan)
             banANumber();
           let firstDiceRoll = Math.ceil(Math.random() * 9);
@@ -218,10 +214,8 @@
         let diceArrayString = "";
         if(diceRoll === 0)
         {
-          if(askIfWatchedBanished == false) {
-            watchBanished = confirm("Press OK if you watched Banished from the Party today.");
-            askIfWatchedBanished = true;
-          }
+          if(askIfWatchedBanished == false)
+            watchBanished = haveYouWatchedBanished();
           if(askToBan)
             banANumber();
           let diceRolls = [];
@@ -229,10 +223,6 @@
             diceRolls.push(Math.ceil(Math.random() * 9));
             if(!watchBanished && i === 0)
               diceRolls[0] = 3;
-            if(i === 1)
-              diceRolls[1] = 1;
-            if(i === 2)
-              diceRolls[2] = 9;
             while (forbiddenNumbers.includes(diceRolls[i]))
               diceRolls[i] = Math.ceil(Math.random() * 9);
             diceArrayString += i === amount - 1 ? "& " + diceRolls[i] + "!" : diceRolls[i] + ", ";
@@ -266,6 +256,11 @@
         else if(diceRoll === 4) {
           alert("Hey. Wait until tommorow or watch four anime episodes to roll these four dice again.");
         }
+      }
+
+      function haveYouWatchedBanished() {
+        askIfWatchedBanished = true;
+        return confirm("Press OK if you watched Banished from the Hero's Party today.");
       }
 
       function banANumber() {
