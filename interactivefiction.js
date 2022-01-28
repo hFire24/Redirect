@@ -28,7 +28,7 @@ function finalTest(inputText,site)
     if(inputText.indexOf("listening") >= 0)
       location.href = "cyoa/9.html";
     else
-      location.href = "musicSlider.html";
+      location.href = "musicflow/1.html";
   }
   else if(found(["wait","patien"],inputText)) {
     $("question").innerHTML = "You may want to check your goals page while you wait.";

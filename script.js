@@ -117,7 +117,7 @@ function addBigMessages() {
     //Music
   'Sometimes just browsing your music library could be fun.',
   '<a href="musicflow/1">Why don\'t you put on some music to help you focus?</a>',
-  '<a href="musicSlider.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
+  '<a href="musicflow/1.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
   '<a href="https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw">If things aren\'t going your way, put on some epic music!</a>',
   '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
     //Games
@@ -521,7 +521,7 @@ function okFeeling() {
       location.href = "cyoa/2.html";
       break;
     case "music":
-      location.href = "musicSlider.html";
+      location.href = "musicflow/1.html";
       break;
     case "youtube":
       location.href = "cyoa/37.html";
