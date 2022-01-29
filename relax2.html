@@ -21,19 +21,27 @@
       <a class="hfire-link" onclick='reason("awful")'>I feel awful</a> <a class="hfire-link" onclick='reason("waste")'>I feel stuck</a> <a class="hfire-link" onclick='reason("grief")'>I'm dealing with loss</a>
       <a class="hfire-link" onclick='reason("unconfident")'>I don't feel confident</a> <a class="hfire-link" onclick='reason("self hate")'>I hate myself</a> <a class="hfire-link" onclick='reason("sad")'>I just feel sad</a>
     </div-->
-    <div id='message3' style='font-weight:bold;'>Choose a Category</div>
+    <a id='message3' style='font-weight:bold;'>Choose a Category</a>
     <div id='category-list' class="relax-list">
       <a class='hfire-link' onclick="openList('abundance-list')">Abundance</a>
-      <a class='hfire-link' onclick="openList('habits-list')">Breaking Habits</a>
+      <a class='hfire-link' onclick="openList('anger-list')">Anger</a>
+      <a class='hfire-link' onclick="openList('anxiety-list')">Anxiety</a>
+      <a class='hfire-link' onclick="openList('calm-list')">Calm</a>
+      <a class='hfire-link' onclick="openList('confidence-list')">Confidence</a>
+      <a class='hfire-link' onclick="openList('time-list')">Daily Boost</a>
+      <a class='hfire-link' onclick="openList('fears-list')">Fears</a>
+      <a class='hfire-link' onclick="openList('gratitude-list')">Gratitude</a>
+      <a class='hfire-link' onclick="openList('grief-list')">Grief</a>
+      <a class='hfire-link' onclick="openList('guilt-list')">Guilt</a>
+      <a class='hfire-link' onclick="openList('happy-list')">Happiness</a>
+      <a class='hfire-link' onclick="openList('health-list')">Health</a>
       <a class='hfire-link' onclick="openList('meditate-list')">Meditation</a>
-      <a class='hfire-link' onclick="openList('mental-health-list')">Healthy Mind</a>
       <a class='hfire-link' onclick="openList('mindfulness-list')">Mindfulness</a>
+      <a class='hfire-link' onclick="openList('pain-list')">Pain</a>
       <a class='hfire-link' onclick="openList('performance-list')">Performance</a>
-      <a class='hfire-link' onclick="openList('physical-health-list')">Healthy Body</a>
       <a class='hfire-link' onclick="openList('positivity-list')">Positivity</a>
       <a class='hfire-link' onclick="openList('relaxation-list')">Relaxation</a>
       <a class='hfire-link' onclick="openList('sleep-list')">Sleep</a>
-      <a class='hfire-link' onclick="openList('time-list')">Daily Boost</a>
       <a class='hfire-link forward' onclick="openList(lastList)">Go Forward</a>
     </div>
     <div id='abundance-list' class="relax-list" style='display:none;'>
@@ -46,18 +54,90 @@
       <a class='hfire-link link abundance' id="prosperity_v">Visualise Prosperity</a>
       <a class='hfire-link close abundance' onclick="closeList('abundance-list')">Go Back</a>
     </div>
-    <div id='habits-list' class="relax-list" style='display:none;'>
-      <!--Breaking Habits-->
-      <a class='hfire-link link habits' id="addiction">Overcome Addiction</a>
-      <a class='hfire-link link habits' id="anger">Let Go of Anger</a>
-      <a class='hfire-link link habits' id="declutter">Declutter Your Life</a>
-      <a class='hfire-link link habits' id="guilt">Let Go of Guilt</a>
-      <a class='hfire-link link habits' id="moveon">Move On</a>
-      <a class='hfire-link link habits' id="negativity">Let Go of Negativity</a>
-      <a class='hfire-link link habits' id="procrastination">Beat Procrastination</a>
-      <a class='hfire-link link habits' id="social-phobia">Beat Social Phobia</a>
-      <a class='hfire-link link habits' id="worrying">Stop Worrying</a>
-      <a class='hfire-link close habits' onclick="closeList('habits-list')">Go Back</a>
+    <div id='addiction-list' class="relax-list" style='display:none;'>
+      <!--Addiction-->
+      <a class='hfire-link link addiction' id="addiction">Overcome Addiction</a>
+      <a class='hfire-link close addiction' onclick="closeList('addiction-list')">Go Back</a>
+    </div>
+    <div id='anger-list' class="relax-list" style='display:none;'>
+      <!--Anger-->
+      <a class='hfire-link link anger' id="anger">Let Go of Anger</a>
+      <a class='hfire-link link anger' id="moveon">Move On</a>
+      <a class='hfire-link close anger' onclick="closeList('anger-list')">Go Back</a>
+    </div>
+    <div id='anxiety-list' class="relax-list" style='display:none;'>
+      <!--Anxiety-->
+      <a class='hfire-link link' id="boxballoon">Box and Balloon Meditation</a>
+      <a class='hfire-link link anxiety' id="declutter">Declutter Your Life</a>
+      <a class='hfire-link link anxiety' id="panic">Don't Panic</a>
+      <a class='hfire-link close anxiety' onclick="closeList('anxiety-list')">Go Back</a>
+    </div>
+    <div id='calm-list' class="relax-list" style='display:none;'>
+      <!--Calm and Peace of Mind-->
+      <a class='hfire-link link calm' id="boxballoon2">Box and Balloon Meditation</a>
+      <a class='hfire-link link calm' id="breath">Breath of Life</a>
+      <a class='hfire-link link calm' id="clear">Clear Your Mind</a>
+      <a class='hfire-link link calm' id="disconnect">Disconnect</a>
+      <a class='hfire-link link calm' id="overthink">Stop Overthinking</a>
+      <a class='hfire-link link calm' id="peaceful">Be Peaceful</a>
+      <a class='hfire-link link calm' id="quiet">Quiet Mind</a>
+      <a class='hfire-link link calm' id="worrying">Stop Worrying</a>
+      <a class='hfire-link close calm' onclick="closeList('calm-list')">Go Back</a>
+    </div>
+    <div id='confidence-list' class="relax-list" style='display:none;'>
+      <!--Confidence and Self-Belief-->
+      <a class='hfire-link link confidence' id="believe">Believe in Yourself</a>
+      <a class='hfire-link link confidence' id="confidence">Confidence</a>
+      <a class='hfire-link link confidence' id="future">Future Self Meditation</a>
+      <a class='hfire-link link confidence' id="shields-up">Shields Up</a>
+      <a class='hfire-link close confidence' onclick="closeList('confidence-list')">Go Back</a>
+    </div>
+    <div id='time-list' class="relax-list" style='display:none;'>
+      <!--Daily Boost-->
+      <a class='hfire-link link day' id="morning">Morning Boost</a>
+      <a class='hfire-link link day' id="lunch">Lunchtime Boost</a>
+      <a class='hfire-link link day' id="evening">Evening Boost</a>
+      <a class='hfire-link close day' onclick="closeList('time-list')">Go Back</a>
+    </div>
+    <div id='fears-list' class="relax-list" style='display:none;'>
+      <!--Fears and Phobias-->
+      <a class='hfire-link link fear' id="social-phobia">Beat Social Phobia</a>
+      <a class='hfire-link close fear' onclick="closeList('fears-list')">Go Back</a>
+    </div>
+    <div id='gratitude-list' class="relax-list" style='display:none;'>
+      <!--Gratitude-->
+      <a class='hfire-link link gratitude' id="gratitude5">5 Minute Mindful Gratitude</a>
+      <a class='hfire-link link gratitude' id="gratitute">Be Grateful</a>
+      <a class='hfire-link close gratitude' onclick="closeList('gratitude-list')">Go Back</a>
+    </div>
+    <div id='grief-list' class="relax-list" style='display:none;'>
+      <!--Grief-->
+      <a class='hfire-link link grief' id="grief">Resolve Grief</a>
+      <a class='hfire-link link' id="moveon2">Move On</a>
+      <a class='hfire-link close grief' onclick="closeList('grief-list')">Go Back</a>
+    </div>
+    <div id='guilt-list' class="relax-list" style='display:none;'>
+      <!--Fears and Phobias-->
+      <a class='hfire-link link guilt' id="guilt">Let Go of Guilt</a>
+      <a class='hfire-link close guilt' onclick="closeList('guilt-list')">Go Back</a>
+    </div>
+    <div id='happy-list' class="relax-list" style='display:none;'>
+      <!--Happiness-->
+      <a class='hfire-link link happy' id="comfort">5 Minute Comfort and Happiness</a>
+      <a class='hfire-link link happy' id="loving-kindness">5 Minute Loving Kindness</a>
+      <a class='hfire-link link happy' id="emotional">Emotional Strength Meditation</a>
+      <a class='hfire-link link happy' id="happy">Be Happy</a>
+      <a class='hfire-link link' id="moveon3">Move On</a>
+      <a class='hfire-link close happy' onclick="closeList('happy-list')">Go Back</a>
+    </div>
+    <div id='health-list' class="relax-list" style='display:none;'>
+      <!--Health and Fitness-->
+      <a class='hfire-link link health' id="fit">Get Fit</a>
+      <a class='hfire-link link health' id="health">Health Boost</a>
+      <a class='hfire-link link health' id="inner_health">Inner Health</a>
+      <a class='hfire-link link health' id="posture">Improve Posture</a>
+      <a class='hfire-link link health' id="water">Drink Water</a>
+      <a class='hfire-link close health' onclick="closeList('health-list')">Go Back</a>
     </div>
     <div id='meditate-list' class="relax-list" style='display:none;'>
       <!--Meditation-->
@@ -76,60 +156,41 @@
       <a class='hfire-link link meditate' id="serenity">Serenity Meditation</a>
       <a class='hfire-link close meditate' onclick="closeList('meditate-list')">Go Back</a>
     </div>
-    <div id='mental-health-list' class="relax-list" style='display:none;'>
-      <!--Healthy Mind-->
-      <a class='hfire-link link mental-health' id="believe">Believe in Yourself</a>
-      <a class='hfire-link link mental-health' id="breath">Breath of Life</a>
-      <a class='hfire-link link mental-health' id="clear">Clear Your Mind</a>
-      <a class='hfire-link link mental-health' id="confidence">Confidence</a>
-      <a class='hfire-link link mental-health' id="discipline">Self-Discipline</a>
-      <a class='hfire-link link mental-health' id="disconnect">Disconnect</a>
-      <a class='hfire-link link mental-health' id="emotional">Emotional Strength Meditation</a>
-      <a class='hfire-link link mental-health' id="gratitute">Be Grateful</a>
-      <a class='hfire-link link mental-health' id="happy">Be Happy</a>
-      <a class='hfire-link link mental-health' id="panic">Don't Panic</a>
-      <a class='hfire-link link mental-health' id="peaceful">Be Peaceful</a>
-      <a class='hfire-link link mental-health' id="memory">Improve Your Memory</a>
-      <a class='hfire-link link mental-health' id="quiet">Quiet Mind</a>
-      <a class='hfire-link link mental-health' id="shields-up">Shields Up</a>
-      <a class='hfire-link link mental-health' id="stress-free">Stress Free</a>
-      <a class='hfire-link close mental-health' onclick="closeList('mental-health-list')">Go Back</a>
-    </div>
     <div id='mindfulness-list' class="relax-list" style='display:none;'>
       <!--Mindfulness-->
-      <a class='hfire-link link mindfulness' id="presence_points">5 Points of Presence</a>
       <a class='hfire-link link mindfulness' id="breathing">Mindful Breathing</a>
       <a class='hfire-link link mindfulness' id="mindfulness">Mindful Meditation</a>
       <a class='hfire-link link mindfulness' id="now_here_this">Now Here This Meditation</a>
+      <a class='hfire-link link mindfulness' id="presence_points">5 Points of Presence</a>
       <a class='hfire-link link mindfulness' id="present">Living in the Present</a>
       <a class='hfire-link link mindfulness' id="return_present">Return to the Present Moment</a>
       <a class='hfire-link close mindfulness' onclick="closeList('mindfulness-list')">Go Back</a>
     </div>
+    <div id='pain-list' class="relax-list" style='display:none;'>
+      <!--Pain and Healing-->
+      <a class='hfire-link link pain' id="healing">Visualise Healing</a>
+      <a class='hfire-link link pain' id="pain">Manage Pain</a>
+      <a class='hfire-link link pain' id="symptom">Symptom Control</a>
+      <a class='hfire-link close pain' onclick="closeList('pain-list')">Go Back</a>
+    </div>
     <div id='performance-list' class="relax-list" style='display:none;'>
       <!--Performance-->
+      <a class='hfire-link link performance' id="discipline">Self-Discipline</a>
+      <a class='hfire-link link performance' id="memory">Improve Your Memory</a>
       <a class='hfire-link link performance' id="moveonwards">Moving Onwards</a>
+      <a class='hfire-link link performance' id="procrastination">Beat Procrastination</a>
       <a class='hfire-link link performance' id="reboot">Reboot Yourself</a>
       <a class='hfire-link close performance' onclick="closeList('performance-list')">Go Back</a>
-    </div>
-    <div id='physical-health-list' class="relax-list" style='display:none;'>
-      <!--Healthy Body-->
-      <a class='hfire-link link physical-health' id="fit">Get Fit</a>
-      <a class='hfire-link link physical-health' id="healing">Visualise Healing</a>
-      <a class='hfire-link link physical-health' id="health">Health Boost</a>
-      <a class='hfire-link link physical-health' id="inner_health">Inner Health</a>
-      <a class='hfire-link link physical-health' id="pain">Manage Pain</a>
-      <a class='hfire-link link physical-health' id="posture">Improve Posture</a>
-      <a class='hfire-link link physical-health' id="symptom">Symptom Control</a>
-      <a class='hfire-link link physical-health' id="water">Drink Water</a>
-      <a class='hfire-link close physical-health' onclick="closeList('physical-health-list')">Go Back</a>
     </div>
     <div id='positivity-list' class="relax-list" style='display:none;'>
       <!--Positivity-->
       <a class='hfire-link link positivity' id="change">Intention for Change</a>
       <a class='hfire-link link positivity' id="creativity">Build Creativity</a>
       <a class='hfire-link link positivity' id="love">Attract Love</a>
+      <a class='hfire-link link positivity' id="negativity">Let Go of Negativity</a>
       <a class='hfire-link link positivity' id="positivity">Positivity</a>
       <a class='hfire-link link positivity' id="self-image">Positive Self Image</a>
+      <a class='hfire-link link positivity' id="wake">Wake Up Positive</a>
       <a class='hfire-link close positivity' onclick="closeList('positivity-list')">Go Back</a>
     </div>
     <div id='relaxation-list' class="relax-list" style='display:none;'>
@@ -152,14 +213,12 @@
       <a class='hfire-link link sleep' id="nap">Power Nap</a>
       <a class='hfire-link close sleep' onclick="closeList('sleep-list')">Go Back</a>
     </div>
-    <div id='time-list' class="relax-list" style='display:none;'>
-      <!--Daily Boost-->
-      <a class='hfire-link link day' id="morning">Morning Boost</a>
-      <a class='hfire-link link day' id="lunch">Lunchtime Boost</a>
-      <a class='hfire-link link day' id="evening">Evening Boost</a>
-      <a class='hfire-link close day' onclick="closeList('time-list')">Go Back</a>
+    <div id='stress-list' class="relax-list" style='display:none;'>
+      <!--Stress Free-->
+      <a class='hfire-link link stress' id="stress-free">Stress Free</a>
+      <a class='hfire-link close stress' onclick="closeList('stress-list')">Go Back</a>
     </div>
-    <a id='back-button' href='https://cfreeze-relax.herokuapp.com' class='hfire-link'><strong style='color:darkred;'>Back</strong></a>
+    <a id='back-button' href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea' class='hfire-link'><strong>Go to Notion Database</strong></a>
     <!--a id='one' href='https://insighttimer.com/andrewjohnson/guided-meditations/power-nap' class='hfire-link link'>Power Nap</a>
     <a href='https://insighttimer.com/andrewjohnson/guided-meditations/relax-lite' class='hfire-link link'>Relax Lite</a>
     <a href='https://insighttimer.com/andrewjohnson/guided-meditations/law-of-attraction-meditation' class='hfire-link link'>Law of Attraction</a>
@@ -190,34 +249,34 @@
         let mood = parameter.get('mood');
         switch(mood) {
           case "angry":
-            message2.innerHTML = "I notice that you are angry. I suggest listening to <strong style='color:darkblue;'>Let Go of Anger</strong> from Breaking Habits. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "I notice that you are angry. I suggest listening to <strong style='color:darkblue;'>Let Go of Anger</strong> from Anger. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "worried":
-            message2.innerHTML = "I notice that you are worried. I suggest listening to <strong style='color:darkblue;'>Stop Worrying</strong> from Breaking Habits. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "I notice that you are worried. I suggest listening to <strong style='color:darkblue;'>Stop Worrying</strong> from Calm or strong style='color:darkblue;'>Don't Panic</strong> from Anxiety. They are long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "stressed":
-            message2.innerHTML = "I notice that you are stressed. I suggest listening to <strong style='color:darkblue;'>Stress Free</strong> from Healthy Mind. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "I notice that you are stressed. I suggest listening to <strong style='color:darkblue;'>Stress Free</strong> from Stree Free. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "lazy":
-            message2.innerHTML = "I notice that you are lazy. I suggest listening to <strong style='color:darkblue;'>Improve Posture</strong> from Healthy Body. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "I notice that you are lazy. I suggest listening to <strong style='color:darkblue;'>Improve Posture</strong> from Health and Fitness. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "very lazy":
             message2.innerHTML = "I notice that you are very lazy. I suggest listening to <strong style='color:darkblue;'>Power Nap</strong> from Sleep. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "unconfident":
-            message2.innerHTML = "I notice that you feel unconfident. I suggest listening to <strong style='color:darkblue;'>Confidence</strong> from Healthy Mind. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "I notice that you feel unconfident. I suggest listening to <strong style='color:darkblue;'>Confidence</strong> from Confidence. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "sad":
             message2.innerHTML = "I notice that you feel sad. I suggest exploring the Healhty Mind category to find something you like. These guided meditations are long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "self hate":
-            message2.innerHTML = "You may be disappointed in yourself, but I suggest listening to <strong style='color:darkblue;'>Believe in Yourself</strong> from Healhty Mind. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "You may be disappointed in yourself, but I suggest listening to <strong style='color:darkblue;'>Attract Love</strong> from Positivity. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "defeated":
-            message2.innerHTML = "You may feel like a loser, but I suggest listening to <strong style='color:darkblue;'>Let Go of Guilt</strong> from Breaking Habits. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "You may feel like a loser, but I suggest listening to <strong style='color:darkblue;'>Let Go of Guilt</strong> from Guilt. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "unclear":
-            message2.innerHTML = "Looking to clear your mind? You're in luck. Listen to <strong style='color:darkblue;'>Clear Your Mind</strong> from Healhty Mind. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
+            message2.innerHTML = "Looking to clear your mind? You're in luck. Listen to <strong style='color:darkblue;'>Clear Your Mind</strong> from Calm. It is long, but worth it. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
             break;
           case "morning":
             message2.innerHTML = "Good morning. Listen to <strong style='color:darkblue;'>Morning Boost</strong> from Daily Boost for an early boost. Here's the <a href=\"https://app.mysoundwise.com/mysoundcasts\" target=\"_blank\">Soundwise</a> link.";
@@ -282,23 +341,50 @@
           case "abundance":
             category.innerHTML = "Abundance";
             break;
-          case "habits":
-            category.innerHTML = "Breaking Habits";
+          case "addiction":
+            category.innerHTML = "Addiction";
+            break;
+          case "anger":
+            category.innerHTML = "Anger";
+            break;
+          case "calm":
+            category.innerHTML = "Calm and Peace of Mind";
+            break;
+          case "confidence":
+            category.innerHTML = "Confidence and Self-Belief";
+            break;
+          case "day":
+            category.innerHTML = "Daily Boost";
+            break;
+          case "fear":
+            category.innerHTML = "Fears and Phobias";
+            break;
+          case "gratitude":
+            category.innerHTML = "Gratitude";
+            break;
+          case "grief":
+            category.innerHTML = "Grief";
+            break;
+          case "guilt":
+            category.innerHTML = "Guilt";
+            break;
+          case "happy":
+            category.innerHTML = "Happiness";
+            break;
+          case "health":
+            category.innerHTML = "Health and Fitness";
             break;
           case "meditate":
             category.innerHTML = "Meditation";
             break;
-          case "mental-health":
-            category.innerHTML = "Healthy Mind";
-            break;
           case "mindfulness":
             category.innerHTML = "Mindfulness";
             break;
+          case "pain":
+            category.innerHTML = "Pain and Healing";
+            break;
           case "performance":
             category.innerHTML = "Performance";
-            break;
-          case "physical-health":
-            category.innerHTML = "Healthy Body";
             break;
           case "positivity":
             category.innerHTML = "Positivity";
@@ -309,8 +395,8 @@
           case "sleep":
             category.innerHTML = "Sleep";
             break;
-          case "day":
-            category.innerHTML = "Daily Boost";
+          case "stress":
+            category.innerHTML = "Stress Free";
             break;
         }
       }
@@ -330,23 +416,47 @@
           case "abundance-list":
             category.innerHTML = "Abundance";
             break;
-          case "habits-list":
-            category.innerHTML = "Breaking Habits";
+          case "anger-list":
+            category.innerHTML = "Anger";
+            break;
+          case "anxiety-list":
+            category.innerHTML = "Anxiety";
+            break;
+          case "calm-list":
+            category.innerHTML = "Calm and Peace of Mind";
+            break;
+          case "confidence-list":
+            category.innerHTML = "Confidence and Self-Belief";
+            break;
+          case "fear-list":
+            category.innerHTML = "Fears and Phobias";
+            break;
+          case "gratitude-list":
+            category.innerHTML = "Gratitude";
+            break;
+          case "grief-list":
+            category.innerHTML = "Grief";
+            break;
+          case "guilt-list":
+            category.innerHTML = "Guilt";
+            break;
+          case "happy-list":
+            category.innerHTML = "Happiness";
+            break;
+          case "health-list":
+            category.innerHTML = "Health and Fitness";
             break;
           case "meditate-list":
-            category.innerHTML = "Meditate";
-            break;
-          case "mental-health-list":
-            category.innerHTML = "Healthy Mind";
+            category.innerHTML = "Meditation";
             break;
           case "mindfulness-list":
             category.innerHTML = "Mindfulness";
             break;
+          case "pain-list":
+            category.innerHTML = "Pain and Healing";
+            break;
           case "performance-list":
             category.innerHTML = "Performance";
-            break;
-          case "physical-health-list":
-            category.innerHTML = "Healthy Body";
             break;
           case "positivity-list":
             category.innerHTML = "Positivity";
@@ -356,6 +466,9 @@
             break;
           case "sleep-list":
             category.innerHTML = "Sleep";
+            break;
+          case "stress-list":
+            category.innerHTML = "Stress Free";
             break;
           case "time-list":
             category.innerHTML = "Daily Boost";

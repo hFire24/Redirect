@@ -458,7 +458,7 @@ function okFeeling() {
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "sad":
-      message.innerHTML = "<a href='https://cfreeze-relax.herokuapp.com/index.html?mood=sad'>It's time to calm down and relax.</a>";
+      message.innerHTML = "<a href=relax2.html?mood=sad'>It's time to calm down and relax.</a>";
       link.innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
       break;
     case "busy":

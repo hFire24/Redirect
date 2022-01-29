@@ -106,7 +106,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['sad', 'disappointed', 'miserable', 'depress', 'feel lost', 'fail in life', 'failure', 'waste', 'awful', 'stuck', 'hopeless', 'guilt', 'feel down', 'feeling down'],inputText) && !found(wasteTime,inputText)) {
-    $("question").innerHTML = "<a id='relax' href='https://cfreeze-relax.herokuapp.com/index.html?mood=sad'>It's time calm down and relax.</a>";
+    $("question").innerHTML = "<a id='relax' href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e'>It's time calm down and relax.</a>";
     $("link").innerHTML = "<a href='stress.html'>I don't feel like it.</a>";
   }
   else if(found(['unconfident', 'incapable', 'unprepared', 'unready', 'wimp'],inputText) || found(['don\'t', 'not'],inputText) && found(['confident', 'capable', 'prepared', 'ready'],inputText)) {

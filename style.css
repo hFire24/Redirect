@@ -208,7 +208,7 @@ td {
 
 .hfire-link.forward {
   font-weight:bold;
-  color:hsl(200, 100%, 75%);
+  color:darkblue;/*hsl(200, 100%, 75%);*/
 }
 
 .four-list {
