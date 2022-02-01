@@ -62,8 +62,8 @@ new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>
   //Day planning
 new Breaktime('Create tasks for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Determine what you need to do and what you want to do today.',"pass","plan",3,false),
-new Breaktime('List everything you\'re currently doing, and order them by priority.',"pass","plan2",3,false),
-new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan2",3,false),
+new Breaktime('List everything you\'re currently doing, and order them by priority.',"pass","plan",3,false),
+new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false),
   //Music
 new Breaktime('Add a new song to your iTunes library.',"pass","misc",1,false),
 new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
@@ -305,7 +305,7 @@ function displayLink() {
     link.innerHTML = "<div class='space'>Immediately close this tab.</div>";
   else if (messages[globalIndex].category === "task")
     link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><a href='cyoa/64.html' target='_blank'>I have nothing to do.</a></div>";
-  else if (messages[globalIndex].category === "plan2")
+  else if (messages[globalIndex].category === "plan")
     link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='finished()'>I have nothing to do.</a></div>";
   else if(messages[globalIndex].category === "food")
     link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('food')>I am still full, even after 3 hours.</u>";
