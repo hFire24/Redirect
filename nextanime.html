@@ -18,9 +18,9 @@
     <div class='four-list space' onclick='goToTimer(true)'>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/my-senpai-is-annoying'>1 My Senpai is Annoying</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
-      <a data-tooltip="Cleanliness: ☹️" class='hfire-link' href='https://www.funimation.com/shows/banished-from-the-heros-party-i-decided-to-live-a-quiet-life-in-the-countryside/'>3 Banished from the Party</a>
+      <a data-tooltip="Next: KONOSUBA" class='hfire-link' href=''>3 🎲🎲🎲</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/GRWEW95KR/laid-back-camp'>4 Laid Back Camp</a>
-      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKNWXW/the-great-jahy-will-not-be-defeated'>5 Jahy-sama</a>
+      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKNWXW/the-great-jahy-will-not-be-defeated'>5 Jahy-sama</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a data-tooltip="Cleanliness: 😈" class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
       <a data-tooltip="Cleanliness: ☹️" class='hfire-link' href='https://www.funimation.com/shows/the-vampire-dies-in-no-time/'>8 The Vampire Dies in No Time</a>
@@ -47,7 +47,7 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [];
+      const forbiddenNumbers = [3];
       var askToBan = false;
       var watchedBanished = false;
       var askIfWatchedBanished = false;
@@ -77,7 +77,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest English episode.`;
+              diceResults.innerHTML = `You rolled a 3! Roll again.`;
               diceRoll = 0;
               break;
             case 4:
@@ -175,16 +175,15 @@
           diceResults.innerHTML = (firstDiceRoll === 8 ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
           let containsOne = firstDiceRoll === 1 || secondDiceRoll === 1;
-          let containsThree = firstDiceRoll === 3 || secondDiceRoll === 3;
           let containsNine = firstDiceRoll === 9 || secondDiceRoll === 9;
-          if(containsOne || containsThree || containsNine)
+          if(containsOne || containsNine)
             diceRoll = 0;
-          if(containsOne && containsNine || containsThree && containsNine || containsOne && containsThree)
+          if(containsOne && containsNine)
           {
             diceResults.innerHTML += " Roll again or watch both of the latest episodes in tandem.";
             askToBan = true;
           }
-          else if(containsOne || containsThree)
+          else if(containsOne)
           {
             diceResults.innerHTML += " Roll again or watch the latest dubbed episode in tandem with the other episode.";
             containsOne ? forbiddenNumbers.push(1) : forbiddenNumbers.push(3);
@@ -219,14 +218,13 @@
           diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + diceArrayString;
           diceRoll = amount;
           let containsOne = diceRolls.filter(x => x === 1).length >= 1;
-          let containsThree = diceRolls.filter(x => x === 3).length >= 1;
           let containsNine = diceRolls.filter(x => x === 9).length >= 1;
-          let forbidden = diceRolls.filter(x => x === 1).length > 1 || diceRolls.filter(x => x === 3).length > 1 || diceRolls.filter(x => x === 9).length > 1;
-          if(containsOne || containsThree || containsNine)
+          let forbidden = diceRolls.filter(x => x === 1).length > 1 || diceRolls.filter(x => x === 9).length > 1;
+          if(containsOne || containsNine)
             diceRoll = 0;
           if(forbidden)
             diceResults.innerHTML += " Roll again.";
-          else if(containsOne && containsNine || containsThree && containsNine || containsOne && containsThree)
+          else if(containsOne && containsNine)
           {
             diceResults.innerHTML += " Roll again or watch both of the latest episodes.";
             askToBan = true;
@@ -235,11 +233,6 @@
           {
             diceResults.innerHTML += " Roll again or watch the latest My Senpai is Annoying dubbed episode.";
             forbiddenNumbers.push(1);
-          }
-          else if(containsThree)
-          {
-            diceResults.innerHTML += " Roll again or watch the latest Banished dubbed episode.";
-            forbiddenNumbers.push(3);
           }
           else if(containsNine)
           {
@@ -254,11 +247,9 @@
       }
 
       function banANumber() {
-        let numberPrompt = prompt("Which number would you like to ban? Type 1, 3, or 9.");
+        let numberPrompt = prompt("Which number would you like to ban? Type 1 or 9.");
         if(numberPrompt === "1")
           forbiddenNumbers.push(1);
-        else if(numberPrompt === "3")
-          forbiddenNumbers.push(3);
         else if(numberPrompt === "9")
           forbiddenNumbers.push(9);
         askToBan = false;
