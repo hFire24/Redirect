@@ -138,8 +138,9 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<div class='two-list space'><a class='hfire-link' href='cyoa/15.html?mood=lazy'>Lazy</a><a class='hfire-link' href='cyoa/62.html'>Exhausted</a></div>";
   }
   else if(found(['cute', 'aww', 'adorable', 'chino', 'rem', 'waifu', 'maid', 'dress', 'loli', 'onii-chan', 'anime girl'],inputText) && !found(creativity,inputText) && !expressDesireForCuteness) {
-    $("question").innerHTML = "This is a sign that you need to watch some anime. Any other thoughts?";
+    $("question").innerHTML = "Hmm... How are you feeling?";
     expressDesireForCuteness = true;
+    unknownReason = 2;
   }
   else if(inputText.indexOf("anime") >= 0 && !found(creativity,inputText) && inputText.indexOf('anime girl') < 0 && !expressDesireForCuteness) {
     $("question").innerHTML = "If you're thinking about anime, then you should watch anime.";
@@ -299,36 +300,21 @@ function finalTest(inputText,site)
     location.href = 'cyoa/13.html';
   else if(inputText.indexOf("habit") >= 0)
     location.href = "atomic-habits.html";
-  else if(found(["embar", "embbar", "emmb", "awkward", "cringe", "weird", "creep", "neckbeard", "degenerate", "lolicon"],inputText) && expressDesireForCuteness) {
+  /*else if(found(["embar", "embbar", "emmb", "awkward", "cringe", "weird", "creep", "neckbeard", "degenerate", "lolicon"],inputText) && expressDesireForCuteness) {
     $("question").innerHTML = "Who cares how you're feeling? Get up and use that energy to draw something you love!";
     $("link").innerHTML = "<a href='drawing-progress.html'>Click here to continue.</a>";
-  }
+  }*/
   else if((found(["hard", "difficult", "challenging", "not skilled", "not proficient", "beginnner", "novice", "amateur", "not good"],inputText) || found(cannot,inputText)) && inputText.indexOf("now") < 0 && (expressDesireForCuteness || !found(cannot,inputText))) {
-    if(expressDesireForCuteness)
-      $("question").innerHTML = "If you <a href='drawing-progress.html'>practice drawing</a>, you'll become a little better at drawing.";
-    else
-      $("question").innerHTML = "Practice is key to mastering something hard.";
+    $("question").innerHTML = "Practice is key to mastering something hard.";
     $("link").innerHTML = "<a href='atomic-habits.html'>Click here to continue.</a>";
   }
   else if(inputText.indexOf("boring") >= 0) {
     $("question").innerHTML = "The reason why you said \"boring\" is because you aren't stepping outside of your comfort zone.";
-    if(expressDesireForCuteness)
-      $("link").innerHTML = "<a href='drawing-progress.html'>Click here to continue.</a>";
-    else
-      $("link").innerHTML = "<a href='cyoa/20.html'>Click here to continue.</a>";
+    $("link").innerHTML = "<a href='cyoa/20.html'>Click here to continue.</a>";
   }
   else if(found(['bad', 'don\'t know if', 'don\'t know how', 'doubt', 'suck', 'stink', 'poor', 'garbage', 'trash', 'not sure if i can', 'not sure how'],inputText) && expressDesireForCuteness) {
     $("question").innerHTML = "Get up and draw, even if it's garbage.";
     $("link").innerHTML = "<a href='drawing-progress.html'>Click here to continue.</a>";
-  }
-  else if(inputText.indexOf('commission') >= 0 && expressDesireForCuteness) {
-    $("question").innerHTML = "This is the lamest excuse ever. Stop wasting money on commissions, and make your own drawings.";
-    $("link").innerHTML = "<a href='drawing-progress.html'>Click here to continue.</a>";
-  }
-  else if ((found(boredom,inputText) || found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText)) && expressDesireForCuteness) {
-    location.href = "nextanime.html";
-    /*$("question").innerHTML = "Don't do nothing. Get up and <a href='artstage.html'>foster your creativity!</a>";
-    $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='areyouhome.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";*/
   }
   else if(found(['don\'t know what', 'dunno what', 'no idea what', 'idk what', 'nothing'],inputText) && !found(["but", "other than", "except"],inputText) || found(['very', 'really', 'super', 'extreme, extremely', 'severe'],inputText) && found(boredom,inputText)) {
     $("question").innerHTML = "You must be so bored, that you don't feel like doing anything. Right?";
@@ -367,7 +353,7 @@ function finalTest(inputText,site)
         for(var i = arrayLength; i < arrayLength * 2; i++)
           messages.push('Reddit is bad.');
       }
-      else if(site === 'deviantart' || site === 'searchterm') {
+      else if(site === 'deviantart' || site === 'searchterm' || expressDesireForCuteness === true) {
         messages.push('You wish you are a cute anime girl? 🤣🤣',
         'Your ideal self is a cute little kid? 🤣🤣',
         'Life isn\'t about seeking cuteness.',
@@ -397,17 +383,12 @@ function finalTest(inputText,site)
     else
       document.getElementById("question").innerHTML = replace;
     if(expressDesireForCuteness)
-      document.getElementById("link").innerHTML = "<a href='areyouhome.html'>Click here to continue.</a>";
+      document.getElementById("link").innerHTML = "<a href='nextanime.html'>Watch anime</a>, or <a href='areyouhome.html'>click here to continue.</a>";
     else
       document.getElementById("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";
   }
   else if(expressDesireForCuteness) {
-    location.href = "nextanime.html";
-    /*if(Math.floor(Math.random() * 2) === 0)
-      $("question").innerHTML = "Stand up and stretch if you can.<br>Get your drawing tablet.<br><a href='drawing-progress.html'>Open Krita.</a>";
-    else
-      $("question").innerHTML = "Stand up and stretch if you can.<br>Clear your desk for drawing.<br><a href='drawing-progress.html'>Get your sketch pad.</a>";
-    $("link").innerHTML = "<div class='two-list space'><a href='cyoa/47.html'>I was doing something.</a><a href='areyouhome.html'>I don't feel like it.</a></div><a href='custom.html'>I have something else I need to do.</a>";*/
+    location.href = "animeslider.html";
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {
     if(inputText.indexOf("need") >= 0 && inputText !== "because i need to" && unknownReason < 1) {
