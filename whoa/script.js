@@ -121,4 +121,5 @@ async function pushTheButton()
   document.getElementById("link").style.color = 'white';
   await sleep(1750);
   location.href = link;
+  document.getElementById("link").style.color = 'red';
 }

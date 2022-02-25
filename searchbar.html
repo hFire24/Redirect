@@ -12,7 +12,7 @@
   <body class="theme6">
     <h2>You opened up a new tab. Use it to search for something.</h2>
     <div id='search-bar' class='space'>
-      <input id='search' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("deviantart")'>Search (DeviantArt)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("ecosia")'>Search (Ecosia)</button>
+      <input id='search' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("deviantart")'>Search (DeviantArt)</button><button onclick='search("safebooru")'>Search (Safebooru)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("ecosia")'>Search (Ecosia)</button>
     </div>
     <a class='hfire-link' href="hub.html">Go to the hub</a>
     <script>
@@ -35,6 +35,9 @@
             break;
           case "deviantart":
             location.href = "https://www.deviantart.com/search/deviations?q=" + query;
+            break;
+          case "safebooru":
+            location.href = "https://safebooru.org/index.php?page=post&s=list&tags=" + query;
             break;
           case "duckduckgo":
             location.href = "https://duckduckgo.com/?q=" + query;
