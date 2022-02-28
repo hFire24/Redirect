@@ -23,7 +23,7 @@
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/G68VMVZ16/little-busters'>6 Little Busters!</a>
       <a data-tooltip="Cleanliness: 😈" class='hfire-link' href='https://www.funimation.com/shows/mushoku-tensei-jobless-reincarnation'>7 Mushoku Tensei</a>
-      <a data-tooltip="Cleanliness: ☹️" class='hfire-link' href='https://www.funimation.com/shows/the-vampire-dies-in-no-time/'>8 The Vampire Dies in No Time</a>
+      <a data-tooltip="🎲🎲🎲" class='hfire-link' href=''>8 🎲🎲🎲</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GMEHME51P/in-the-land-of-leadale'>9 In the Land of the Leadale</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
@@ -32,7 +32,6 @@
     <div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
       <b>More Consistent</b>: Sgt. Frog<br>
-      <b>More Risky</b>: The Vampire Dies in No Time<br>
       <b>Makes fun of Isekais</b>: KONOSUBA
       <h4 class="no-space">Great for cuteness</h4>
       <b>Airing</b>: My Senpai is Annoying<br>
@@ -47,7 +46,7 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [3];
+      const forbiddenNumbers = [8];
       var askToBan = false;
       var watchedBanished = false;
       var askIfWatchedBanished = false;
@@ -77,8 +76,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again.`;
-              diceRoll = 0;
+              diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4!`;
@@ -93,7 +91,8 @@
               diceResults.innerHTML = "You rolled a 7!";
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8!";
+              diceResults.innerHTML = "You rolled an 8! Roll again.";
+              diceRoll = 0;
               break;
             case 9:
               diceResults.innerHTML = "You rolled a 9! Roll again or watch the latest episode.";
@@ -193,8 +192,6 @@
             diceResults.innerHTML += " Roll again or watch the latest episode in tandem with the other episode.";
             forbiddenNumbers.push(9);
           }
-          else if((firstDiceRoll === 7 || secondDiceRoll === 7) && (firstDiceRoll === 8 || secondDiceRoll === 8))
-            diceResults.innerHTML += " 😈";
           shake(5, rollTime);
         }
         else {
