@@ -180,7 +180,7 @@
           j++;
         }
         i = Math.floor(Math.random() * array.length);
-        window.open(array[i],"_blank");
+        window.innerWidth > 812 ? window.open(array[i],"_blank") : location.href = array[i];
       }
 
       function found(array,inputText) {
