@@ -249,7 +249,7 @@ function finalTest(inputText,site)
     var video = document.createElement("video");
     video.id = "nevergiveup";
     var source = document.createElement("source");
-    source.src = "media/Never Give up.mp4";
+    source.src = "media/NeverGiveUp.mp4";
     source.type = "video/mp4";
     video.appendChild(source);
     $("link").appendChild(video);
