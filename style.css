@@ -490,6 +490,10 @@ td {
   padding:10px 30px;
 }
 
+#time {
+  padding: 0 18%;
+}
+
 .listen:link, .listen:visited {
   color:#0F0;
 }
