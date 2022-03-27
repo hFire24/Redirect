@@ -16,33 +16,27 @@
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space' onclick='goToTimer(true)'>
-      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball?</a>
+      <a data-tooltip="Spy x Family" class='hfire-link'>1 Go to 2</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
-      <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/GRVN31D5Y/encouragement-of-climb'>3 Encouragement of Climb</a>
+      <a data-tooltip="Kaguya-sama" class='hfire-link'>3 Go to 4</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKNWXW/the-great-jahy-will-not-be-defeated'>4 Jahy-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
-      <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://animepahe.com/anime/426321e8-a49d-c842-0839-17794864c905'>6 Little Busters! EX</a>
+      <a data-tooltip="Little Busters! EX" class='hfire-link'>6 Go to 5</a>
+      <!--a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://animepahe.com/anime/426321e8-a49d-c842-0839-17794864c905'>6 Little Busters! EX</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
-      <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a>
+      <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a-->
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
-      <b>More Consistent</b>: Sgt. Frog<br>
-      <b>Makes fun of Isekais</b>: KONOSUBA
-      <h4 class="no-space">Great for cuteness</h4>
-      <b>Non-story-focused</b>: Encouragement of Climb<br>
-      <b>Story-focused</b>: Little Busters!
-      <h4 class="no-space">Great if you're alone</h4>
-      <b>Non-story-focused</b>: The Great Jahy Will Not be Defeated!<br>
-      <b>Story-focused</b>: Mushoku Tensei
-      <h4 class="no-space">Something quiet</h4>
-      <b>Airing Subbed</b>: In the Land of the Leadale<br>
+      <b>Long-running</b>: Sgt. Frog<br>
+      <b>Makes fun of Isekais</b>: KONOSUBA<br>
+      <b>Apartment life</b>: The Great Jahy Will Not be Defeated!
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [1];
+      const forbiddenNumbers = [1, 3, 6];
       const maxRoll = 6;
       var askToBan = false;
       var watchedBanished = false;
@@ -66,7 +60,7 @@
           diceRoll = Math.ceil(Math.random() * maxRoll);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1! Start watching Dragon Ball.`;
+              diceResults.innerHTML = `You rolled a 1!`;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
@@ -81,7 +75,7 @@
               diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6, but start watching Dragon Ball first.";
+              diceResults.innerHTML = "You rolled a 6!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -89,11 +83,10 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 8) {
+        else if(diceRoll === 10) {
           diceRoll = Math.ceil(Math.random() * 10);
           switch(diceRoll) {
             case 1:
-              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 1. Put $5 in the special reserve.";
               shake(1, 200);
               break;
@@ -130,6 +123,7 @@
               shake(3, 2000);
               break;
             case 10:
+              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 10! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
               shake(4, 4000);
               break;
