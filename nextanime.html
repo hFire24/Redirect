@@ -17,27 +17,33 @@
     <div id='diceResults' class='space'></div>
     <div class='four-list space' onclick='goToTimer(true)'>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
-      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GRK5P9W76/rewrite'>2 Rewrite</a>
-      <a data-tooltip="186" class='hfire-link' href='random-anime.html'>3 ???</a>
-      <!--a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
+      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GRK5P9W76/rewrite'>2 Rewrite: Moon and Terra</a>
+      <!--a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
+      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKNWXW/the-great-jahy-will-not-be-defeated'>4 Jahy-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://animepahe.com/anime/426321e8-a49d-c842-0839-17794864c905'>6 Little Busters! EX</a>
-      <!--a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/GR2P1P2KR/Is-the-Order-a-Rabbit'>GochiUsa</a>
-      <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://beta.crunchyroll.com/series/G63VW2VWY/Non-Non-Biyori'>Non Non Biyori</a>
-      <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a-->
+      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GR75Q4QKY/umi-monogatari'>7 Umi Monogatari</a>
+      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G79H23V0G/the-duke-of-death-and-his-maid'>8 The Duke of Death</a>
+      <!--a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a-->
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
-      <b>Long-running</b>: Sgt. Frog<br>
-      <b>Makes fun of Isekais</b>: KONOSUBA<br>
-      <b>Apartment life</b>: The Great Jahy Will Not be Defeated!
+      <b>Long-running</b>: Dragon Ball<br>
+      <b>Apartment life</b>: The Great Jahy Will Not be Defeated!<br>
+      <b>Makes fun of Isekais</b>: KONOSUBA
+      <h4 class="no-space">Great for drama</h4>
+      <b>Key Visual Novel</b>: Rewrite: Moon and Terra<br>
+      <b>Ocean-themed</b>: Umi Monogatari<br>
+      <b>Deadly curse</b>: The Duke of Death and His Maid
+      <h4 class="no-space">Great for mediocrity</h4>
+      <b>Action and cute girls</b>: LBX Girls
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [3, 6];
-      const maxRoll = 6;
+      const forbiddenNumbers = [];
+      const maxRoll = 8;
       var askToBan = false;
       var watchedJahy = false;
       var askIfWatchedJahy = true;
@@ -71,7 +77,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Use the randomizer under utilities.`;
+              diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4!`;
@@ -80,7 +86,13 @@
               diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6, but use the randomizer under utilities first.";
+              diceResults.innerHTML = "You rolled a 6!";
+              break;
+            case 7:
+              diceResults.innerHTML = "You rolled a 7!";
+              break;
+            case 8:
+              diceResults.innerHTML = "You rolled an 8!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
