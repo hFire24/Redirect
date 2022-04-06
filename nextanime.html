@@ -23,8 +23,9 @@
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKNWXW/the-great-jahy-will-not-be-defeated'>4 Jahy-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://animepahe.com/anime/426321e8-a49d-c842-0839-17794864c905'>6 Little Busters! EX</a>
-      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GR75Q4QKY/umi-monogatari'>7 Umi Monogatari</a>
-      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G79H23V0G/the-duke-of-death-and-his-maid'>8 The Duke of Death</a>
+      <!--a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GR75Q4QKY/umi-monogatari'>7 Umi Monogatari</a-->
+      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G79H23V0G/the-duke-of-death-and-his-maid'>7 The Duke of Death</a>
+      <a id='money' data-tooltip="Cleanliness: 🤑" class='hfire-link' href=''>8 💲💲💲</a>
       <!--a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a-->
     </div>
     <div style="text-align:left;">
@@ -42,11 +43,11 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [];
+      const forbiddenNumbers = [8];
       const maxRoll = 8;
       var askToBan = false;
-      var watchedJahy = false;
-      var askIfWatchedJahy = true;
+      var watchedJahy = true;
+      var askIfWatchedJahy = false;
 
       function getLucky() {
         if(diceRoll === 0) {
@@ -92,7 +93,7 @@
               diceResults.innerHTML = "You rolled a 7!";
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8!";
+              diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -100,7 +101,7 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 10) {
+        else if(diceRoll === 8) {
           diceRoll = Math.ceil(Math.random() * 10);
           switch(diceRoll) {
             case 1:
@@ -133,6 +134,7 @@
               break;
             case 8:
               diceResults.innerHTML = "You rolled an 8! Put $40 in the special reserve.";
+              diceRoll = 7;
               shake(3, 1600);
               break;
             case 9:
