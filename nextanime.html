@@ -20,7 +20,7 @@
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GRK5P9W76/rewrite'>2 Rewrite: Moon and Terra</a>
       <!--a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a>
-      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKNWXW/the-great-jahy-will-not-be-defeated'>4 Jahy-sama</a>
+      <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GRJ0J828Y/kaguya-sama-love-is-war'>4 Kaguya-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
       <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://animepahe.com/anime/426321e8-a49d-c842-0839-17794864c905'>6 Little Busters! EX</a>
       <!--a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GR75Q4QKY/umi-monogatari'>7 Umi Monogatari</a-->
@@ -31,7 +31,7 @@
     <div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
       <b>Long-running</b>: Dragon Ball<br>
-      <b>Apartment life</b>: The Great Jahy Will Not be Defeated!<br>
+      <b>Romantic war</b>: Kaguya-sama: Love is War<br>
       <b>Makes fun of Isekais</b>: KONOSUBA
       <h4 class="no-space">Great for drama</h4>
       <b>Key Visual Novel</b>: Rewrite: Moon and Terra<br>
@@ -43,11 +43,11 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [8];
+      const forbiddenNumbers = [4];
       const maxRoll = 8;
       var askToBan = false;
-      var watchedJahy = true;
-      var askIfWatchedJahy = false;
+      var watchedFocus = true;
+      var askIfWatchedFocus = false;
 
       function getLucky() {
         if(diceRoll === 0) {
@@ -64,9 +64,9 @@
 
       function rollDice() {
         if(diceRoll === 0) {
-          if(askIfWatchedJahy)
-            watchedJahy = confirmJahy();
-          if(!watchedJahy)
+          if(askIfWatchedFocus)
+            watchedFocus = confirmFocus();
+          if(!watchedFocus)
             diceRoll = 4;
           else
             diceRoll = Math.ceil(Math.random() * maxRoll);
@@ -81,7 +81,8 @@
               diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4!`;
+              diceResults.innerHTML = `You rolled a 4! Roll again or watch the latest episode.`;
+              diceRoll = 0;
               break;
             case 5:
               diceResults.innerHTML = `You rolled a 5!`;
@@ -238,9 +239,9 @@
         }
       }
 
-      function confirmJahy() {
-        askIfWatchedJahy = false;
-        return confirm("Press OK if you watched Jahy-sama today.");
+      function confirmFocus() {
+        askIfWatchedFocus = false;
+        return confirm("Press OK if you watched X today.");
       }
 
       function banANumber() {
