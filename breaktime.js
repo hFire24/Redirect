@@ -82,23 +82,25 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false),
-new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false)];
+new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false),
+new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false)];
 
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true),
-new Breaktime('Go up and down the stairs for one minute.',"pass","exercise",3,true),
+new Breaktime('Walk up to the sixth floor of your apartment and walk down to the first floor.',"pass","exercise",3,true),
 new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true),
 new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true),
 new Breaktime('Listen to your own music, and don\'t be afraid to dance to it.',"pass","music",1,true),
 new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo85V9Ew","exercise-heavy",3,true),
   //Miscellaneous Part 2
-new Breaktime('Digitize at least one paragraph from your journal.',"pass","misc",3,true)];
+new Breaktime('Digitize at least one paragraph from your journal.',"pass","misc",3,true),
+new Breaktime('Back up your hard drive.',"pass","misc",2,true)];
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
-//new Breaktime('Listen to one of these long guided meditations.',"relax2.html?mood=random","meditate2",3,false),
-new Breaktime('Build the Relax. Change. Create. Guided Meditations List.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea","meditate2",3,false),
+new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea">the database</a>.',"relax2.html?mood=random","meditate2",3,false),
 new Breaktime('Make progress on your 8 Essential Life Skills Course.',"pass","meditate2",3,false),
+new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false),
 //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
   //Day planning
@@ -112,6 +114,7 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
 new Breaktime('If you\'re watching anime, watch a different anime.',"nextanime","anime",2,false),
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
+new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",2,false),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false),
@@ -119,19 +122,21 @@ new Breaktime('Play Sudoku (Medium).',"https://www.websudoku.com/?level=2","game
 new Breaktime('Play 100% Orange Juice.',"pass","game",1,false),
 new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online/start/3","game",1,false),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false),
-new Breaktime('Play Hyperdimension Neptunia Re;Birth',"pass","game",1,false),
+new Breaktime('Play Portal 2.',"pass","game",1,false),
 //new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
 //'Play Super Smash Bros. Ultimate for about 30 minutes.',
   //Miscellaneous
 new Breaktime('No routine? Form one.',"pass","plan",2,false),
 new Breaktime('How about multiple ways to take a break?',"multiple.html","misc",2,false),
 new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
-new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
+//new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
 new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
+new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"pass",3,false),
   //Goals
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
+new Breaktime('Download the Mutual app.',"pass","social",3,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
@@ -156,10 +161,10 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
   //Miscellaneous Part 2
 new Breaktime('Declutter your room.',"pass","misc",2,true),
 new Breaktime('Digitize at least two pages from your journal.',"pass","misc",3,true),
-new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true),
+new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true)];
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
-new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true)];
+//new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true)];
 /*new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
 new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html","art",2,true),
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true)];*/
@@ -185,6 +190,7 @@ new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
   //Anime
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false),
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
+new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",2,false),
   //Miscellaneous
 new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
@@ -193,12 +199,13 @@ new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Read your journal entries.<br>Start from September 24, 2012.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://youtu.be/wNscQ3bGxNk?t=110","exercise",2,false),
-new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
 new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
+new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
+new Breaktime('Download the Mutual app.',"pass","social",3,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
