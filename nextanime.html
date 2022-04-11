@@ -22,28 +22,32 @@
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GRJ0J828Y/kaguya-sama-love-is-war'>4 Kaguya-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
-      <a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://animepahe.com/anime/426321e8-a49d-c842-0839-17794864c905'>6 Little Busters! EX</a>
+      <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://animepahe.com/anime/426321e8-a49d-c842-0839-17794864c905'>6 Little Busters! EX</a>
       <!--a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GR75Q4QKY/umi-monogatari'>7 Umi Monogatari</a-->
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G79H23V0G/the-duke-of-death-and-his-maid'>7 The Duke of Death</a>
-      <a id='money' data-tooltip="Cleanliness: 🤑" class='hfire-link' href=''>8 💲💲💲</a>
+      <a data-tooltip="Cleanliness: 😐💣 | 😊💋" class='hfire-link' href='https://beta.crunchyroll.com/series/G4PH0WXVJ/spy-x-family'>8 Spy x Family</a>
       <!--a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a-->
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
       <b>Long-running</b>: Dragon Ball<br>
+      <b>Makes fun of Isekais</b>: KONOSUBA<br>
       <b>Romantic war</b>: Kaguya-sama: Love is War<br>
-      <b>Makes fun of Isekais</b>: KONOSUBA
+      <b>Cute family-oriented spy comedy</b>: Spy x Family
+      <h4 class="no-space">Great for laughs and drama</h4>
+      <b>Deadly curse</b>: The Duke of Death and His Maid<br>
+      <b>Key Visual Novel</b>: Little Busters! EX
       <h4 class="no-space">Great for drama</h4>
-      <b>Key Visual Novel</b>: Rewrite: Moon and Terra<br>
-      <b>Ocean-themed</b>: Umi Monogatari<br>
-      <b>Deadly curse</b>: The Duke of Death and His Maid
+      <b>Ocean-themed</b>: Umi Monogatari
       <h4 class="no-space">Great for mediocrity</h4>
-      <b>Action and cute girls</b>: LBX Girls
+      <b>Action and cute girls</b>: LBX Girls<br>
+      <b>Key Visual Novel</b>: Rewrite: Moon and Terra
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [4];
+      const forbiddenNumbers = [];
+      const airingNumbers = [4, 8];
       const maxRoll = 8;
       var askToBan = false;
       var watchedFocus = true;
@@ -94,7 +98,7 @@
               diceResults.innerHTML = "You rolled a 7!";
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled an 8! Watch the latest episode or roll again to put money in the special reserve!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -122,25 +126,25 @@
               shake(2, 400);
               break;
             case 5:
-              diceResults.innerHTML = "You rolled a 5! Put $15 in the special reserve.";
-              shake(2, 600);
+              diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
+              shake(2, 400);
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! Put $20 in the special reserve.";
-              shake(2, 800);
+              diceResults.innerHTML = "You rolled a 6! Put $15 in the special reserve.";
+              shake(2, 600);
               break;
             case 7:
-              diceResults.innerHTML = "You rolled a 7! Put $30 in the special reserve.";
-              shake(3, 1200);
+              diceResults.innerHTML = "You rolled a 7! Put $20 in the special reserve.";
+              shake(3, 800);
               break;
             case 8:
-              diceResults.innerHTML = "You rolled an 8! Put $40 in the special reserve.";
+              diceResults.innerHTML = "You rolled an 8! Put $25 in the special reserve.";
               diceRoll = 7;
-              shake(3, 1600);
+              shake(3, 1000);
               break;
             case 9:
-              diceResults.innerHTML = "You rolled a 9! Put $50 in the special reserve.";
-              shake(3, 2000);
+              diceResults.innerHTML = "You rolled a 9! Put $30 in the special reserve.";
+              shake(3, 1200);
               break;
             case 10:
               diceRoll = 2;
@@ -157,8 +161,7 @@
       }
 
       function roll2Dice() {
-        if(diceRoll === 0)
-        {
+        if(diceRoll === 0) {
           if(askToBan)
             banANumber();
           let firstDiceRoll = Math.ceil(Math.random() * maxRoll);
@@ -169,25 +172,20 @@
             secondDiceRoll = Math.ceil(Math.random() * maxRoll);
           diceResults.innerHTML = (firstDiceRoll === 8 ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
-          /*let containsOne = firstDiceRoll === 1 || secondDiceRoll === 1;
-          let containsNine = firstDiceRoll === 9 || secondDiceRoll === 9;
-          if(containsOne || containsNine)
+          let containsAN1 = firstDiceRoll === airingNumbers[0] || secondDiceRoll === airingNumbers[0];
+          let containsAN2 = firstDiceRoll === airingNumbers[1] || secondDiceRoll === airingNumbers[1];
+          if(containsAN1 || containsAN2)
             diceRoll = 0;
-          if(containsOne && containsNine)
-          {
+          if(containsAN1 && containsAN2) {
             diceResults.innerHTML += " Roll again or watch both of the latest episodes in tandem.";
             askToBan = true;
           }
-          else if(containsOne)
-          {
-            diceResults.innerHTML += " Roll again or watch the latest dubbed episode in tandem with the other episode.";
-            containsOne ? forbiddenNumbers.push(1) : forbiddenNumbers.push(3);
-          }
-          else if(containsNine)
-          {
+          else if(containsAN1 || containsAN2) {
             diceResults.innerHTML += " Roll again or watch the latest episode in tandem with the other episode.";
-            forbiddenNumbers.push(9);
-          }*/
+            containsAN1 ? forbiddenNumbers.push(airingNumbers[0]) : forbiddenNumbers.push(airingNumbers[1]);
+          }
+          else if(firstDiceRoll === 2 && secondDiceRoll === 3 || firstDiceRoll === 3 && secondDiceRoll === 2)
+            diceResults.innerHTML += " 😑";
           shake(5, rollTime);
         }
         else {
@@ -197,41 +195,37 @@
 
       function rollManyDice(amount) {
         let diceArrayString = "";
-        if(diceRoll === 0)
-        {
+        if(diceRoll === 0) {
           if(askToBan)
             banANumber();
           let diceRolls = [];
           for(let i = 0; i < amount; i++) {
             diceRolls.push(Math.ceil(Math.random() * maxRoll));
-            while (forbiddenNumbers.includes(diceRolls[i]))
+            while (forbiddenNumbers.includes(diceRolls[i]) || diceRolls.filter(x => x === airingNumbers[0]).length > 1 || diceRolls.filter(x => x === airingNumbers[1]).length > 1)
               diceRolls[i] = Math.ceil(Math.random() * maxRoll);
             diceArrayString += i === amount - 1 ? "& " + diceRolls[i] + "!" : diceRolls[i] + ", ";
           }
           diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + diceArrayString;
           diceRoll = amount;
-          /*let containsOne = diceRolls.filter(x => x === 1).length >= 1;
-          let containsNine = diceRolls.filter(x => x === 9).length >= 1;
-          let forbidden = diceRolls.filter(x => x === 1).length > 1 || diceRolls.filter(x => x === 9).length > 1;
-          if(containsOne || containsNine)
+          let containsAN1 = diceRolls.filter(x => x === airingNumbers[0]).length >= 1;
+          let containsAN2 = diceRolls.filter(x => x === airingNumbers[1]).length >= 1;
+          let forbidden = diceRolls.filter(x => x === airingNumbers[0]).length > 1 || diceRolls.filter(x => x === airingNumbers[1]).length > 1;
+          if(containsAN1 || containsAN2)
             diceRoll = 0;
           if(forbidden)
             diceResults.innerHTML += " Roll again.";
-          else if(containsOne && containsNine)
-          {
+          else if(containsAN1 && containsAN2) {
             diceResults.innerHTML += " Roll again or watch both of the latest episodes.";
             askToBan = true;
           }
-          else if(containsOne)
-          {
-            diceResults.innerHTML += " Roll again or watch the latest My Senpai is Annoying dubbed episode.";
-            forbiddenNumbers.push(1);
+          else if(containsAN1) {
+            diceResults.innerHTML += " Roll again or watch the latest Kaguya-sama episode.";
+            forbiddenNumbers.push(airingNumbers[0]);
           }
-          else if(containsNine)
-          {
-            diceResults.innerHTML += " Roll again or watch the latest In the Land of the Leadale episode.";
-            forbiddenNumbers.push(9);
-          }*/
+          else if(containsAN2) {
+            diceResults.innerHTML += " Roll again or watch the latest Spy x Family episode.";
+            forbiddenNumbers.push(airingNumbers[1]);
+          }
           shake(5, rollTime);
         }
         else {
@@ -245,11 +239,11 @@
       }
 
       function banANumber() {
-        let numberPrompt = prompt("Which number would you like to ban? Type 1 or 9.");
-        if(numberPrompt === "1")
-          forbiddenNumbers.push(1);
-        else if(numberPrompt === "9")
-          forbiddenNumbers.push(9);
+        let numberPrompt = prompt(`Which number would you like to ban? Type ${airingNumbers[0]} or ${airingNumbers[1]}.`);
+        if(numberPrompt == airingNumbers[0])
+          forbiddenNumbers.push(airingNumbers[0]);
+        else if(numberPrompt == airingNumbers[1])
+          forbiddenNumbers.push(airingNumbers[1]);
         askToBan = false;
       }
 
