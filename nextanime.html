@@ -15,9 +15,9 @@
     <div class='space'>If you came here to procrastinate, watch anime for 30 seconds minimum.<br>
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
-    <div class='four-list space' onclick='goToTimer(true)'>
+    <div class='four-list space'>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
-      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href=''>2 🎲🎲🎲</a>
+      <a data-tooltip="Cleanliness: ❓" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKN72N/aharen-san-wa-hakarenai'>2 Aharen-san</a>
       <!--a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GRJ0J828Y/kaguya-sama-love-is-war'>4 Kaguya-sama</a>
@@ -33,6 +33,7 @@
       <b>Long-running</b>: Dragon Ball<br>
       <b>Makes fun of Isekais</b>: KONOSUBA<br>
       <b>Romantic war</b>: Kaguya-sama: Love is War<br>
+      <b>Another school romance</b>: Aharen-san wa Hakarenai<br>
       <b>Cute family-oriented spy comedy</b>: Spy x Family
       <h4 class="no-space">Great for laughs and drama</h4>
       <b>Deadly curse</b>: The Duke of Death and His Maid<br>
@@ -40,14 +41,13 @@
       <h4 class="no-space">Great for drama</h4>
       <b>Ocean-themed</b>: Umi Monogatari
       <h4 class="no-space">Great for mediocrity</h4>
-      <b>Action and cute girls</b>: LBX Girls<br>
-      <b>Key Visual Novel</b>: Rewrite: Moon and Terra
+      <b>Action and cute girls</b>: LBX Girls
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [2];
-      const airingNumbers = [4, 8];
+      const forbiddenNumbers = [];
+      const airingNumbers = [2, 4, 8];
       const maxRoll = 8;
       var askToBan = false;
       var watchedFocus = true;
@@ -79,7 +79,8 @@
               diceResults.innerHTML = `You rolled a 1!`;
               break;
             case 2:
-              diceResults.innerHTML = `You rolled a 2!`;
+              diceResults.innerHTML = `You rolled a 2! Roll again or watch the latest episode.`;
+              diceRoll = 0;
               break;
             case 3:
               diceResults.innerHTML = `You rolled a 3!`;
@@ -147,7 +148,6 @@
               shake(3, 1200);
               break;
             case 10:
-              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 10! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
               shake(4, 4000);
               break;
@@ -172,20 +172,19 @@
             secondDiceRoll = Math.ceil(Math.random() * maxRoll);
           diceResults.innerHTML = (firstDiceRoll === 8 ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
-          let containsAN1 = firstDiceRoll === airingNumbers[0] || secondDiceRoll === airingNumbers[0];
-          let containsAN2 = firstDiceRoll === airingNumbers[1] || secondDiceRoll === airingNumbers[1];
-          if(containsAN1 || containsAN2)
+          let containsAN = [airingNumbers.includes(firstDiceRoll), airingNumbers.includes(secondDiceRoll)];
+          if(containsAN[0] || containsAN[1])
+          {
             diceRoll = 0;
-          if(containsAN1 && containsAN2) {
-            diceResults.innerHTML += " Roll again or watch both of the latest episodes in tandem.";
-            askToBan = true;
+            if(containsAN[0] && containsAN[1]) {
+              diceResults.innerHTML += " Roll again or watch both of the latest episodes in tandem.";
+              askToBan = true;
+            }
+            else {
+              diceResults.innerHTML += " Roll again or watch the latest episode in tandem with the other episode.";
+              containsAN[0] ? forbid(firstDiceRoll) : forbid(secondDiceRoll);
+            }
           }
-          else if(containsAN1 || containsAN2) {
-            diceResults.innerHTML += " Roll again or watch the latest episode in tandem with the other episode.";
-            containsAN1 ? forbiddenNumbers.push(airingNumbers[0]) : forbiddenNumbers.push(airingNumbers[1]);
-          }
-          else if(firstDiceRoll === 2 && secondDiceRoll === 3 || firstDiceRoll === 3 && secondDiceRoll === 2)
-            diceResults.innerHTML += " 😑";
           shake(5, rollTime);
         }
         else {
@@ -199,32 +198,27 @@
           if(askToBan)
             banANumber();
           let diceRolls = [];
+          let containsAN = [];
           for(let i = 0; i < amount; i++) {
             diceRolls.push(Math.ceil(Math.random() * maxRoll));
-            while (forbiddenNumbers.includes(diceRolls[i]) || diceRolls.filter(x => x === airingNumbers[0]).length > 1 || diceRolls.filter(x => x === airingNumbers[1]).length > 1)
+            while (forbiddenNumbers.includes(diceRolls[i]) || twoOfTheSameAiringNumbers(diceRolls))
               diceRolls[i] = Math.ceil(Math.random() * maxRoll);
+            containsAN.push(airingNumbers.includes(diceRolls[i]));
             diceArrayString += i === amount - 1 ? "& " + diceRolls[i] + "!" : diceRolls[i] + ", ";
           }
           diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + diceArrayString;
           diceRoll = amount;
-          let containsAN1 = diceRolls.filter(x => x === airingNumbers[0]).length >= 1;
-          let containsAN2 = diceRolls.filter(x => x === airingNumbers[1]).length >= 1;
-          let forbidden = diceRolls.filter(x => x === airingNumbers[0]).length > 1 || diceRolls.filter(x => x === airingNumbers[1]).length > 1;
-          if(containsAN1 || containsAN2)
+          if(containsAN.filter(x => x === true).length >= 1)
+          {
             diceRoll = 0;
-          if(forbidden)
-            diceResults.innerHTML += " Roll again.";
-          else if(containsAN1 && containsAN2) {
-            diceResults.innerHTML += " Roll again or watch both of the latest episodes.";
-            askToBan = true;
-          }
-          else if(containsAN1) {
-            diceResults.innerHTML += " Roll again or watch the latest Kaguya-sama episode.";
-            forbiddenNumbers.push(airingNumbers[0]);
-          }
-          else if(containsAN2) {
-            diceResults.innerHTML += " Roll again or watch the latest Spy x Family episode.";
-            forbiddenNumbers.push(airingNumbers[1]);
+            if(containsAN.filter(x => x === true).length > 1) {
+              diceResults.innerHTML += " Roll again or watch all the latest episodes.";
+              askToBan = true;
+            }
+            else {
+              diceResults.innerHTML += " Roll again or watch the latest episode.";
+              forbid(diceRolls[containsAN.indexOf(true)]);
+            }
           }
           shake(5, rollTime);
         }
@@ -233,18 +227,41 @@
         }
       }
 
+      function twoOfTheSameAiringNumbers(array) {
+        for(let i = 0; i < airingNumbers.length; i++)
+          if(array.filter(x => x === airingNumbers[i]).length > 1)
+            return true;
+        return false;
+      }
+
       function confirmFocus() {
         askIfWatchedFocus = false;
         return confirm("Press OK if you watched X today.");
       }
 
       function banANumber() {
-        let numberPrompt = prompt(`Which number would you like to ban? Type ${airingNumbers[0]} or ${airingNumbers[1]}.`);
-        if(numberPrompt == airingNumbers[0])
-          forbiddenNumbers.push(airingNumbers[0]);
-        else if(numberPrompt == airingNumbers[1])
-          forbiddenNumbers.push(airingNumbers[1]);
+        let numberPrompt = prompt("Which number would you like to ban? Type " + listAiringNumbers(airingNumbers.length) + ".");
+        let number = parseInt(numberPrompt);
+        if(airingNumbers.includes(number))
+          forbid(number);
         askToBan = false;
+      }
+
+      function forbid(number) {
+        forbiddenNumbers.push(number);
+        airingNumbers.splice(airingNumbers.indexOf(number), 1);
+      }
+
+      function listAiringNumbers(amount) {
+        if(amount === 2)
+          return airingNumbers[0] + " or " + airingNumbers[1];
+        else {
+          let airingString = "";
+          for(let i = 0; i < amount; i++) {
+            airingString += i === amount - 1 ? "or " + airingNumbers[i] : airingNumbers[i] + ", ";
+          }
+          return airingString;
+        }
       }
 
       function openUtilities() {
