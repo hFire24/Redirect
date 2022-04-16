@@ -85,7 +85,7 @@
       'Do not ruin, darken, or destroy your future.',
       'Do not throw your life away.',
       'Don\'t be dictated by your urges.',
-      'You have more important things to do than browse some websites.',
+      'You have more important things to do than browse Google.',
       'Think of something else.',
       'Resist temptations.',
       '<a href="repent2.html">Do not forsake God.</a>',
@@ -159,11 +159,11 @@
       else if (message === "May this page suggest you take a short break?")
         link.innerHTML = "<a href='https://hfire24.github.io/Redirect/breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
       else if (message.startsWith('✝'))
-        link.innerHTML = "<u onclick='pushTheButton2(3)'>Click here.</u> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
+        link.innerHTML = "<u id='thebutton' onclick='pushTheButton2(3)'>Click here.</u> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
       else if (message.startsWith('☢<i>PLAY'))
-        link.innerHTML = "<u onclick='pushTheButton2(4)'>Click here.</u> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
+        link.innerHTML = "<u id='thebutton' onclick='pushTheButton2(4)'>Click here.</u> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
       else if (index >= redirectMessages.indexOf('☢ERADICATE THE SIN OF LUST☢') && index <= redirectMessages.indexOf('☢YOU NEED MORE JESUS☢'))
-        link.innerHTML = "<u onclick='pushTheButton2(2)'>Click here.</u> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
+        link.innerHTML = "<u id='thebutton' onclick='pushTheButton2(2)'>Click here.</u> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
       else if (message.startsWith('☢'))
         link.innerHTML = "Do not bring your phone with you.";
       if(removeQuestion) {
@@ -372,7 +372,7 @@
       var emergency = '';
       document.getElementById("nuke").pause();
       document.getElementById("press").play();
-      link.style.color = 'white';
+      $("thebutton").style.color = 'white';
       await sleep(1750);
       switch(number)
       {
@@ -388,6 +388,7 @@
         default:
           emergency = 'https://emergency.nofap.com/redirect?religious=true&cat=em&cat=rel';
       }
+      $("thebutton").style.color = 'red';
       location.href = emergency;
     }
 
@@ -396,6 +397,7 @@
       document.getElementById("press").play();
       document.getElementById("thebutton").style.color = 'white';
       await sleep(1750);
+      document.getElementById("thebutton").style.color = 'red';
       location.href = "https://www.thetabernaclechoir.org/listen.html";
     }
     </script>
