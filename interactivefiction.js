@@ -35,7 +35,7 @@ function finalTest(inputText,site)
     $("link").innerHTML = "<div class='two-list'><a class='hfire-link' href='goals.html'>Check Goals Page</a><a class='hfire-link' href='cyoa/12.html'>I don't feel like it</a></div>";
   }
   else if (inputText.indexOf("tasks") >= 0) {
-    $("question").innerHTML = "Just type in \"ta\" in your browser and press enter.";
+    $("question").innerHTML = "Just type in \"dy\" in your browser and press enter.";
     document.body.removeChild($("link"));
   }
   else if(found(['hunger', 'hungry', 'hangry', ' eat', 'food', 'famished', 'starving', 'stomach', 'devour', 'swallow', 'delicious', 'yummy', 'tasty'],inputText)) {
