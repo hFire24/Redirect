@@ -118,7 +118,7 @@ new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W2
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false),
-new Breaktime('Play Sudoku (Medium).',"https://www.websudoku.com/?level=2","game",1,false),
+new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false),
 new Breaktime('Play 100% Orange Juice.',"pass","game",1,false),
 new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online/start/3","game",1,false),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false),

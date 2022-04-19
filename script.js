@@ -123,7 +123,7 @@ function addBigMessages() {
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
-  '<a href="https://www.websudoku.com/">Why don\'t you play Sudoku?</a>',
+  '<a href="https://sudoku.com/">Why don\'t you play Sudoku?</a>',
     //Miscellaneous
   'Try saying out loud the thing you need to get done.',
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
