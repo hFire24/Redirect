@@ -94,7 +94,7 @@ new Breaktime('Listen to your own music, and don\'t be afraid to dance to it.',"
 new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo85V9Ew","exercise-heavy",3,true),
   //Miscellaneous Part 2
 new Breaktime('Digitize at least one paragraph from your journal.',"pass","misc",3,true),
-new Breaktime('Back up your hard drive.',"pass","misc",2,true)];
+new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true)];
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
@@ -144,8 +144,8 @@ new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJ
 //'Try one of these C# coding projects.',
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
 //new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
-/*new Breaktime('Learn Full Stack on Skillshare.',"pass","coding",3,false),
-new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
+new Breaktime('Learn Full Stack on Skillshare.',"https://skl.sh/3lhunmI","coding",3,false),
+/*new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
@@ -161,7 +161,9 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
   //Miscellaneous Part 2
 new Breaktime('Declutter your room.',"pass","misc",2,true),
 new Breaktime('Digitize at least two pages from your journal.',"pass","misc",3,true),
-new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true)];
+new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true),
+new Breaktime('Back up your hard drive.',"pass","misc",2,true),
+new Breaktime('Use the Stretch app.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true)];
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
 //new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true)];
@@ -215,7 +217,9 @@ var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
 new Breaktime('Drink some water.',"pass","health",3,true),
 new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true),
-new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true)];
+new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true),
+new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true),
+new Breaktime('Use the Stretch app.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true)];
 
 function displayBreak(index) {
   if($("standup")) {
