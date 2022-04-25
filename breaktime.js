@@ -164,7 +164,8 @@ new Breaktime('Declutter your room.',"pass","misc",2,true),
 new Breaktime('Digitize at least two pages from your journal.',"pass","misc",3,true),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true),
 new Breaktime('Back up your hard drive.',"pass","misc",2,true),
-new Breaktime('Use the Stretch app.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true)];
+new Breaktime('Use the Stretch app.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true),
+new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true)];
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
 //new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true)];
