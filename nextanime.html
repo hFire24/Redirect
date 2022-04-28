@@ -18,8 +18,9 @@
     <div class='four-list space'>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Cleanliness: 😊" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKN72N/aharen-san-wa-hakarenai'>2 Aharen-san</a>
-      <!--a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
-      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a>
+      <!--a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
+      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a-->
+      <a id="money" data-tooltip="Cleanliness: 🤑" class='hfire-link'>3 💲💲💲</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GRJ0J828Y/kaguya-sama-love-is-war'>4 Kaguya-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GR75Q4QKY/umi-monogatari'>6 Umi Monogatari</a>
@@ -37,13 +38,13 @@
       <h4 class="no-space">Great for laughs and drama</h4>
       <b>Deadly curse</b>: The Duke of Death and His Maid<br>
       <b>Ocean-themed</b>: Umi Monogatari
-      <h4 class="no-space">Great for mediocrity</h4>
-      <b>Action and cute girls</b>: LBX Girls
+      <!--h4 class="no-space">Great for mediocrity</h4>
+      <b>Action and cute girls</b>: LBX Girls-->
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [];
+      const forbiddenNumbers = [3];
       const airingNumbers = [2, 4, 8];
       const maxRoll = 8;
       var askToBan = false;
@@ -80,7 +81,7 @@
               diceRoll = 0;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3!`;
+              diceResults.innerHTML = `You rolled a 3! That means it's time to put money in the special reserve!`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4! Roll again or watch the latest episode.`;
@@ -97,6 +98,7 @@
               break;
             case 8:
               diceResults.innerHTML = "You rolled an 8! Watch the latest episode or roll again to put money in the special reserve!";
+              diceRoll = 0;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -104,7 +106,7 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 8) {
+        else if(diceRoll === 3) {
           diceRoll = Math.ceil(Math.random() * 10);
           switch(diceRoll) {
             case 1:
@@ -116,6 +118,7 @@
               shake(1, 200);
               break;
             case 3:
+              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 3. Put $5 in the special reserve.";
               shake(1, 200);
               break;
@@ -137,7 +140,6 @@
               break;
             case 8:
               diceResults.innerHTML = "You rolled an 8! Put $25 in the special reserve.";
-              diceRoll = 7;
               shake(3, 1000);
               break;
             case 9:
