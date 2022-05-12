@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="icons/icon.ico">
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
-  <body class='relapse' onload='createAdvice()'>
+  <body class='relapse'>
     <div id='message' class='space'></div>
     <div class='medium space'><a id='link' href="https://emergency.nofap.com/redirect?religious=true&cat=rel">Click here</a> and
     <a href="areyouhome.html">do something else.</a></div>
@@ -52,6 +52,7 @@
         link.href = "repent.html";
       if(message.innerHTML.length > 200)
         document.getElementById("message").classList.add("tiny");
+      createAdvice();
     </script>
     <script src='script.js'></script>
   </body>

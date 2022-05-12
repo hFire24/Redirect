@@ -74,6 +74,7 @@ function loadWebsite() {
     location.href = "old.html";
   else
     link = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+  createAdvice();
 }
 
 function setLink(song) {
@@ -81,15 +82,12 @@ function setLink(song) {
     link = "https://youtu.be/5i7qZxICwgQ";
 }
 
-createAdvice();
-
-async function createAdvice()
+function createAdvice()
 {
   var hydrate = Math.floor(Math.random() * 30);
   console.log("Hydrate " + hydrate);
   if(hydrate < 3)
   {
-    await sleep(100);
     if (hydrate < 1)
       alert("Just a reminder to stay hydrated.\nYou may need to stand up and stretch.");
     else
