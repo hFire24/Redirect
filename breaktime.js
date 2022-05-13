@@ -153,7 +153,9 @@ new Breaktime('Learn Full Stack on Skillshare.',"https://skl.sh/3lhunmI","coding
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
+new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
+new Breaktime('Learn how to use gym equipment for weight training.',"pass","exercise",2,false),
+new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false)];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
 //new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religon",2,false)];
 //Do not upload traced art.
