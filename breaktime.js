@@ -125,6 +125,7 @@ new Breaktime('Play 100% Orange Juice.',"pass","game",1,false),
 new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online/start/3","game",1,false),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false),
 new Breaktime('Play Portal 2.',"pass","game",1,false),
+new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false),
 //new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
 //'Play Super Smash Bros. Ultimate for about 30 minutes.',
   //Miscellaneous
@@ -198,6 +199,7 @@ new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,fal
   //Games
 new Breaktime('Solve a Minesweeper board on Expert.',"pass","game",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
+new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false),
   //Anime
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false),
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
