@@ -102,8 +102,9 @@ var bigBreak = [//relaxation
 new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea">the database</a>.',"relax2.html?mood=random","meditate2",3,false),
 new Breaktime('Make progress on your 8 Essential Life Skills Course.',"pass","meditate2",3,false),
 new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false),
-//Task checking
+  //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
+new Breaktime('Check your Notion Habits database, please.<br>Do one of the habits not done today.',"pass","task",3,false),
   //Day planning
 new Breaktime('Make a plan for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
@@ -143,6 +144,7 @@ new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?l
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",3,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religon",3,false),
+new Breaktime('Write in journal.',"pass","misc",3,false),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
@@ -154,7 +156,6 @@ new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
-new Breaktime('Learn how to use gym equipment for weight training.',"pass","exercise",2,false),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false)];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
 //new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religon",2,false)];
@@ -188,6 +189,7 @@ new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/c
   //Task checking
 new Breaktime('Check your tasks for the day.',"pass","task",3,false),
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
+new Breaktime('Check your Notion Habits database, please.<br>Do one of the habits not done today.',"pass","task",3,false),
   //Day planning
 new Breaktime('Create tasks for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
@@ -222,7 +224,8 @@ new Breaktime('Download the Mutual app.',"pass","social",3,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",3,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
+new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
+new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false)];
 
 var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
@@ -311,11 +314,11 @@ function displayBreak(index) {
   }
 
   var parent = $("hideable");
-  var cirno = $("link");
-  if(!cirno) {
-    cirno = document.createElement("div");
-    cirno.id = "link";
-    parent.appendChild(cirno);
+  var child = $("link");
+  if(!child) {
+    child = document.createElement("div");
+    child.id = "link";
+    parent.appendChild(child);
   }
   displayLink();
   if(standIndex >= 0)
