@@ -598,7 +598,11 @@ function randomTheme(number) {
   var themeText = document.createElement("strong");
   themeText.id = "theme";
   themeText.style.display = "block";
-  if(number === 101)
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 0;
+    document.documentElement.style.backgroundColor = "black";
+  }
+  else if(number === 101)
     theme = Math.floor(Math.random() * 5) + 5;
   else
     theme = Math.floor(Math.random() * 5) + 1;
