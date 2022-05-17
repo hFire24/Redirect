@@ -85,7 +85,9 @@ new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false),
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false),
-new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false)];
+new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false),
+new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false)];
 
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true),
@@ -226,7 +228,9 @@ new Breaktime('Find a way to learn social skills.',"pass","social",2,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
-new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false)];
+new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
+new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false)];
 
 var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
