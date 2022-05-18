@@ -107,11 +107,10 @@
           shake(5, rollTime);
         }
         else if(diceRoll === 8) {
-          diceRoll = Math.ceil(Math.random() * 10);
+          diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = "You rolled a 1. Put $5 in the special reserve.";
-              shake(1, 200);
+              diceResults.innerHTML = "You rolled a 1. Put $0 in the special reserve. Whether this is a good thing or a bad thing is up to you."
               break;
             case 2:
               diceResults.innerHTML = "You rolled a 2. Put $5 in the special reserve.";
@@ -122,36 +121,45 @@
               shake(1, 200);
               break;
             case 4:
-              diceResults.innerHTML = "You rolled a 4! Put $10 in the special reserve.";
-              shake(2, 400);
+              diceResults.innerHTML = "You rolled a 4. Put $5 in the special reserve.";
+              shake(1, 200);
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
               shake(2, 400);
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! Put $15 in the special reserve.";
-              shake(2, 600);
+              diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
+              shake(2, 400);
               break;
             case 7:
-              diceResults.innerHTML = "You rolled a 7! Put $20 in the special reserve.";
-              shake(3, 800);
+              diceResults.innerHTML = "You rolled a 7! Put $15 in the special reserve.";
+              shake(2, 600);
               break;
             case 8:
               diceRoll = 2;
-              diceResults.innerHTML = "You rolled an 8! Put $25 in the special reserve.";
-              shake(3, 1000);
+              diceResults.innerHTML = "You rolled an 8! Put $20 in the special reserve.";
+              shake(3, 800);
               break;
             case 9:
-              diceResults.innerHTML = "You rolled a 9! Put $30 in the special reserve.";
-              shake(3, 1200);
+              diceResults.innerHTML = "You rolled a 9! Put $25 in the special reserve.";
+              shake(3, 1000);
               break;
             case 10:
-              diceResults.innerHTML = "You rolled a 10! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
+              diceResults.innerHTML = "You rolled a 10! Put $30 in the special reserve.";
+              shake(3, 1200);
+              break;
+            case 11:
+              diceResults.innerHTML = "You rolled an 11! Put $40 in the special reserve.";
+              shake(3, 1600);
+              break;
+            case 12:
+              diceResults.innerHTML = "You rolled a 12! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
               shake(4, 4000);
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
+              shake(5, rollTime);
           }
         }
         else {
