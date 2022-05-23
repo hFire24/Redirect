@@ -404,7 +404,7 @@ function deleteCategory(category) {
 }
 
 function submitReason() {
-  if (messages[globalIndex].importance < 3)
+  if (messages[globalIndex].importance < 4)
     putOffBreak();
   else {
     if(Math.floor(Math.random() * 2) === 0)
