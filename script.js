@@ -149,7 +149,7 @@ function addBigMessages() {
   'Are there any goals in life you have?',
     //Health and fitness
   'Try standing up and walking for a bit. Look away from the screen.',
-  //'Why not get on the treadmill if you feel like it?',
+  'Why not get on the treadmill if you feel like it?',
   'Have you been searching for food terms lately? You should eat some food.',
   'Consider tidying up your room.',
   '<a href="stepmania.html">How about you play some Stepmania?</a>',
