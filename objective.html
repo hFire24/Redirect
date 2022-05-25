@@ -21,37 +21,37 @@
     <div id='width'></div>
     <script src="script.js"></script>
     <script>
-      const aTierObjectives = [//"apply to as many tech jobs as you can.",
-      //"increase your chances of getting a job by reading that green book.",
-      "learn as many new tech skills as you can.",
-      "gain as much social skills as you can.",
-      //"get as much work done as you can.",
+      const aTierObjectives = ["get certified or prepare for certification.",
+      "complete all your user stories on time."];
+      const bTierObjectives = ["learn as many new tech skills as you can.",
+      "gain as many social skills as you can.",
       "make as much progress on your personal projects as you can.",
-      "clear out as many tasks as you can.",
-      "achieve every goal in your goals list."];
-      const bTierObjectives = ["get better at Stepmania.",
+      "get better at Stepmania.",
+      "clear out as many Dynalist tasks as you can, especially in B and C tasks.",
+      "do every daily habit in your habits list.",
       "listen to as many General Conference talks as you can.",
       "digitize as much of your journal as possible.",
       "listen to as many guided meditations as possible.",
-      "read through the book Atomic Habits or 7 Habits of Highly Effective People.",
-      "watch videos on the \"Get Life Advice\" playlist on shuffle."];
+      //"read through the book Atomic Habits or 7 Habits of Highly Effective People.",
+      "watch videos on the \"Get Life Advice\" playlist in order."];
       const cTierObjectives = ["watch as much anime as you can.",
-      //"get better at playing Touhou.",
-      "tackle your Watch Later playlist. If cleared, go down a YouTube rabbit hole.",
+      "clear your watch later list. If cleared, go down a YouTube rabbit hole.",
       "earn as many Bloons Tower Defense 6 medals as you can.",
       "try to unlock everything in Need for Speed: Hot Pursuit.",
+      "play lots of BeamNG.drive.",
       "find an 8 while playing Minesweeper.",
       "add as many new or returning songs to your iTunes library as you can.",
-      "read through your digitized journal entries. Start from October 1, 2012.",
+      "read through your digitized journal entries. Start from November 2, 2012.",
       "play through Flashpoint games. You can focus on one game or many games.",
-      "make as many blog posts on your anime blog as you can."];
+      "make as many blog posts on your anime blog as you can.",
+      "make progress on NGU Idle."];
 
       function loadBreak(tier) {
         let objective = 'shuffle through your liked videos on YouTube.';
         let index = 0;
         switch(tier) {
           case 'A':
-            index = Math.floor(Math.random() * (aTierObjectives.length + 1));
+            index = Math.floor(Math.random() * (aTierObjectives.length));
             if(index >= aTierObjectives.length) {
               index -= aTierObjectives.length;
               objective = bTierObjectives[index];
