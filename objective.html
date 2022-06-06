@@ -40,40 +40,34 @@
       "try to unlock everything in Need for Speed: Hot Pursuit.",
       "play lots of BeamNG.drive.",
       "find an 8 while playing Minesweeper.",
-      "add as many new or returning songs to your iTunes library as you can.",
+      "analyze as many songs in your iTunes library as you can.",
+      //"add as many new or returning songs to your iTunes library as you can.",
       "read through your digitized journal entries. Start from November 2, 2012.",
       "play through Flashpoint games. You can focus on one game or many games.",
       "make as many blog posts on your anime blog as you can.",
-      "make progress on NGU Idle."];
+      "make as much progress on NGU Idle as you can."];
 
       function loadBreak(tier) {
         let objective = 'shuffle through your liked videos on YouTube.';
         let index = 0;
         switch(tier) {
           case 'A':
-            index = Math.floor(Math.random() * (aTierObjectives.length));
-            if(index >= aTierObjectives.length) {
-              index -= aTierObjectives.length;
-              objective = bTierObjectives[index];
-            } else {
-              objective = aTierObjectives[index];
-            }
+            var numObjectives = aTierObjectives.length;
+            var objectiveList = aTierObjectives;
+            var nextObjectiveList = bTierObjectives;
             break;
           case 'B':
-            index = Math.floor(Math.random() * bTierObjectives.length + 1);
-            if(index >= bTierObjectives.length) {
-              index -= bTierObjectives.length;
-              objective = cTierObjectives[index];
-            } else {
-              objective = bTierObjectives[index];
-            }
-            objective = bTierObjectives[index];
+            var numObjectives = bTierObjectives.length;
+            var objectiveList = bTierObjectives;
+            var nextObjectiveList = cTierObjectives;
             break;
           case 'C':
-            index = Math.floor(Math.random() * cTierObjectives.length);
-            objective = cTierObjectives[index];
+            var numObjectives = cTierObjectives.length;
+            var objectiveList = cTierObjectives;
             break;
         }
+        index = tier === 'B' ? Math.floor(Math.random() * (numObjectives + 1)) : Math.floor(Math.random() * numObjectives);
+        objective = index >= numObjectives ? nextObjectiveList[index - numObjectives] : objectiveList[index];
         document.getElementById("objective").innerHTML = "Your objective of the day is to " + objective;
         document.getElementById("hideable").removeChild(document.getElementById("tiers"));
       }
