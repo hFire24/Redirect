@@ -114,6 +114,7 @@ function addBigMessages() {
   '<a href="nextanime">If you need some happiness, watch at least 30 seconds of anime!</a>',
   '<a href="nextanime">Why don\'t you watch some anime?</a>',
   '<a href="nextanime">You love anime. Right? Why don\'t you watch some?</a>',
+  '<a href="https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball">How about you watch some Dragon Ball?</a>',
     //Music
   'Sometimes just browsing your music library could be fun.',
   '<a href="musicflow/1">Why don\'t you put on some music to help you focus?</a>',
