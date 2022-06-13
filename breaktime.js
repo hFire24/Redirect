@@ -87,7 +87,8 @@ new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false),
 new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false),
 new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
-new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false)];
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false),
+new Breaktime('Digitize at least one paragraph of your journal.',"pass","misc",3,false)];
 
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true),
@@ -96,7 +97,6 @@ new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3
 new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true),
 new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo85V9Ew","exercise-heavy",3,true),
   //Miscellaneous Part 2
-new Breaktime('Digitize at least one paragraph from your journal.',"pass","misc",3,true),
 new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true)];
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
@@ -158,7 +158,8 @@ new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
-new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false)];
+new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
+new Breaktime('Digitize at least two pages of your journal.',"pass","misc",3,false)];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
 //new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religon",2,false)];
 //Do not upload traced art.
@@ -169,7 +170,6 @@ new Breaktime('Eat a meal if it has been 3 hours since you ate something.',"pass
 new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your room.',"pass","health",3,true),
   //Miscellaneous Part 2
 new Breaktime('Declutter your room.',"pass","misc",2,true),
-new Breaktime('Digitize at least two pages from your journal.',"pass","misc",3,true),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true),
 new Breaktime('Back up your hard drive.',"pass","misc",2,true),
 new Breaktime('Use the Stretch app.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true),
