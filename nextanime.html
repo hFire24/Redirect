@@ -17,13 +17,13 @@
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
-      <a data-tooltip="Cleanliness: 😊" class='hfire-link' href='https://beta.crunchyroll.com/series/GNVHKN72N/aharen-san-wa-hakarenai'>2 Aharen-san</a>
+      <a class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>2 🐲🏀</a>
       <!--a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a-->
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/GMEHME4PQ/rpg-real-estate'>3 RPG Real Estate</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GRJ0J828Y/kaguya-sama-love-is-war'>4 Kaguya-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
-      <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://www.youtube.com/playlist?list=PLrrh84y760v9pRbnDHud288rcIvhwFE5W'>6 Umi Monogatari</a>
+      <a class='hfire-link' href=''>6 🎲🎲🎲</a>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G79H23V0G/the-duke-of-death-and-his-maid'>7 The Duke of Death</a>
       <a data-tooltip="Cleanliness: 😐💣🤬 | 😊💋" class='hfire-link' href='https://beta.crunchyroll.com/series/G4PH0WXVJ/spy-x-family'>8 Spy x Family</a>
       <!--a data-tooltip="Cleanliness: 🙂" class='hfire-link' href='https://www.funimation.com/shows/lucky-star'>Lucky Star</a-->
@@ -44,8 +44,8 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [];
-      const airingNumbers = [2, 3, 4, 8];
+      const forbiddenNumbers = [2, 6];
+      const airingNumbers = [3, 4, 8];
       const maxRoll = 8;
       var askToBan = false;
       var watchedFocus = true;
@@ -77,8 +77,7 @@
               diceResults.innerHTML = `You rolled a 1!`;
               break;
             case 2:
-              diceResults.innerHTML = `You rolled a 2! Roll again or watch the latest episode.`;
-              diceRoll = 0;
+              diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
               diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
@@ -92,7 +91,8 @@
               diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6!";
+              diceResults.innerHTML = "You rolled a 6! Roll again.";
+              diceRoll = 0;
               break;
             case 7:
               diceResults.innerHTML = "You rolled a 7!";
@@ -172,13 +172,16 @@
           if(askToBan)
             banANumber();
           let firstDiceRoll = Math.ceil(Math.random() * maxRoll);
+          //To do: If the range has forbidden numbers only, then don't enter into the endless loop.
           while (forbiddenNumbers.includes(firstDiceRoll))
             firstDiceRoll = Math.ceil(Math.random() * maxRoll);
           let secondDiceRoll = Math.ceil(Math.random() * maxRoll);
+          //To do: If the range has forbidden numbers only and the value of the first dice roll, then don't enter into the endless loop.
           while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll))
             secondDiceRoll = Math.ceil(Math.random() * maxRoll);
           diceResults.innerHTML = (firstDiceRoll === 8 ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
+          //To do: If a forbidden number has to be rolled, then a shrug emoji will be shown. 🤷‍♀️
           let containsAN = [airingNumbers.includes(firstDiceRoll), airingNumbers.includes(secondDiceRoll)];
           if(containsAN[0] || containsAN[1])
           {
