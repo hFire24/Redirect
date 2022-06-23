@@ -17,10 +17,10 @@
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
-      <a class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>2 🐲🏀</a>
+      <a class='hfire-link' href=''>2 🎲🎲🎲</a>
       <!--a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
       <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://www.funimation.com/shows/lbx-girls/'>3 LBX Girls</a-->
-      <a data-tooltip="Cleanliness: 🙁" class='hfire-link' href='https://beta.crunchyroll.com/series/GMEHME4PQ/rpg-real-estate'>3 RPG Real Estate</a>
+      <a class='hfire-link' href=''>3 🎲🎲🎲</a>
       <a data-tooltip="Cleanliness: 😐" class='hfire-link' href='https://beta.crunchyroll.com/series/GRJ0J828Y/kaguya-sama-love-is-war'>4 Kaguya-sama</a>
       <a data-tooltip="Cleanliness: 😕" class='hfire-link' href='https://beta.crunchyroll.com/series/GYE5K3GQR/konosuba--gods-blessing-on-this-wonderful-world'>5 KONOSUBA</a>
       <a class='hfire-link' href=''>6 🎲🎲🎲</a>
@@ -32,20 +32,17 @@
       <h4 class="no-space">Great for laughs</h4>
       <b>Makes fun of Isekais</b>: KONOSUBA<br>
       <b>Romantic war</b>: Kaguya-sama: Love is War<br>
-      <b>Another school romance</b>: Aharen-san wa Hakarenai<br>
       <b>Cute family-oriented spy comedy</b>: Spy x Family<br>
-      <b>Fantasy Real Estate</b>: RPG Real Estate
       <h4 class="no-space">Great for laughs and drama</h4>
       <b>Deadly curse</b>: The Duke of Death and His Maid<br>
-      <b>Ocean-themed</b>: Umi Monogatari
       <h4 class="no-space">Great for fights</h4>
       <b>Long-running</b>: Dragon Ball<br>
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [2, 6];
-      const airingNumbers = [3, 4, 8];
+      const forbiddenNumbers = [2, 3, 6];
+      const airingNumbers = [4, 8];
       const maxRoll = 8;
       var askToBan = false;
       var watchedFocus = true;
@@ -77,10 +74,11 @@
               diceResults.innerHTML = `You rolled a 1!`;
               break;
             case 2:
-              diceResults.innerHTML = `You rolled a 2!`;
+              diceResults.innerHTML = `You rolled a 2! Roll again`;
+              diceRoll = 0;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
+              diceResults.innerHTML = `You rolled a 3! Roll again.`;
               diceRoll = 0;
               break;
             case 4:
