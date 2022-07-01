@@ -25,15 +25,15 @@
       const aTierObjectives = ["get certified or prepare for certification.",
       "complete all your user stories on time."];
       const bTierObjectives = ["get better at Stepmania.",
-      "watch as much anime as you can.",
-      "digitize as much of your journal as possible.",
+      //"watch as much anime as you can.",
+      //"digitize as much of your journal as possible.",
       "clear out as many Dynalist tasks as you can, especially in B and C tasks.",
       "do every daily habit in your habits list on Finch and Notion."];
-      const cTierObjectives = ["learn as many new tech skills as you can.",
+      const cTierObjectives = ["listen to as many General Conference talks as you can.",
+      "make as much progress on Come Follow Me as you can.",
+      "learn as many new tech skills as you can.",
       //"gain as many social skills as you can.",
       "make as much progress on your personal projects as you can.",
-      "listen to as many General Conference talks as you can.",
-      "make as much progress on Come Follow Me as you can.",
       //"listen to as many guided meditations as possible.",
       //"read through the book Atomic Habits or 7 Habits of Highly Effective People.",
       "watch videos on the \"Get Life Advice\" playlist in order.",
@@ -59,23 +59,27 @@
             var numObjectives = aTierObjectives.length;
             var objectiveList = aTierObjectives;
             var nextObjectiveList = bTierObjectives;
+            var addObjectives = 0;
             break;
           case 'B':
             var numObjectives = bTierObjectives.length;
             var objectiveList = bTierObjectives;
             var nextObjectiveList = cTierObjectives;
+            var addObjectives = 2;
             break;
           case 'C':
             var numObjectives = cTierObjectives.length;
             var objectiveList = cTierObjectives;
             var nextObjectiveList = dTierObjectives;
+            var addObjectives = 1;
             break;
           case 'D':
             var numObjectives = dTierObjectives.length;
             var objectiveList = dTierObjectives;
+            var addObjectives = 0;
             break;
         }
-        index = tier === 'C' ? Math.floor(Math.random() * (numObjectives + 1)) : Math.floor(Math.random() * numObjectives);
+        index = Math.floor(Math.random() * (numObjectives + addObjectives));
         objective = index >= numObjectives ? nextObjectiveList[index - numObjectives] : objectiveList[index];
         document.getElementById("objective").innerHTML = "Your objective of the day is to " + objective;
         document.getElementById("hideable").removeChild(document.getElementById("tiers"));
