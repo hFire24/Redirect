@@ -18,8 +18,8 @@
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Very anime-like" class='hfire-link' href='https://zoro.to/watch/magical-girl-lyrical-nanoha-1818'>2 Lyrical Nanoha</a>
-      <a data-tooltip="To clear: On-hold list" class='hfire-link' href='https://beta.crunchyroll.com/series/GRVNZK5PY/a-certain-magical-index'>3 A Certain Magical Index</a>
-      <a data-tooltip="Clean" class='hfire-link' href=''>4 ???</a>
+      <a data-tooltip="Clean" class='hfire-link' href=''>3 Kemono Friends</a>
+      <a data-tooltip="To clear: On-hold list" class='hfire-link' href='https://beta.crunchyroll.com/series/GRVNZK5PY/a-certain-magical-index'>4 A Certain Magical Index</a>
       <a data-tooltip="Super appealing" class='hfire-link' href=''>5 ???</a>
       <a id="money" data-tooltip="🤑" class='hfire-link' href=''>6 💲💲💲</a>
     </div>
@@ -38,7 +38,7 @@
       const rollTime = 750;
       const forbiddenNumbers = [];
       const airingNumbers = [];
-      const maxRoll = 6;
+      const maxRoll = 5;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -78,16 +78,11 @@
               diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5!`;
+              diceResults.innerHTML = `You rolled a 5! Roll again if you want to.`;
+              diceRoll = 0;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6!";
-              break;
-            case 7:
-              diceResults.innerHTML = "You rolled a 7!";
-              break;
-            case 8:
-              diceResults.innerHTML = "You rolled an 8! Watch the latest episode or roll again to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -95,7 +90,7 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 8) {
+        else if(diceRoll === 6) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
@@ -118,6 +113,7 @@
               shake(2, 400);
               break;
             case 6:
+              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
               shake(2, 400);
               break;
@@ -126,7 +122,6 @@
               shake(2, 600);
               break;
             case 8:
-              diceRoll = 2;
               diceResults.innerHTML = "You rolled an 8! Put $20 in the special reserve.";
               shake(3, 800);
               break;
