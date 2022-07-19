@@ -11,7 +11,16 @@
   <body onload="goToNanoha()">
     <script>
       function goToNanoha() {
-        location.href = "https://zoro.to/watch/magical-girl-lyrical-nanoha-1818";
+        var redirectPath = "https://zoro.to/watch/magical-girl-lyrical-nanoha-1818";
+        //get query
+        var urlSearch = window.location.search;
+        if(urlSearch !== "") {
+          var parameter = new URLSearchParams(urlSearch);
+          redirect = parameter.get('r');
+          if (redirect === "false")
+            redirectPath = "https://cfreeze-redirected.herokuapp.com/?mode=anime"
+        }
+        location.href = redirectPath;
       }
     </script>
   </body>
