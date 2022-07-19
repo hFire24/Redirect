@@ -44,6 +44,11 @@
         }
       }
 
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.className = "theme0";
+        document.documentElement.style.backgroundColor = "black";
+      }
+
       async function pushTheButton() {
         document.getElementById("press").play();
         document.getElementById("emergency-button").style.color = 'white';
