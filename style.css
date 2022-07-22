@@ -145,7 +145,7 @@ input:where([type='checkbox'], [type='radio']) {
     border-radius:5px;
     border:2px solid #555;
 }
-input:where([type='checkbox'], input[type='radio']):checked {
+input:where([type='checkbox'], [type='radio']):checked {
     background:#0F0;
 }
 
@@ -554,7 +554,7 @@ td {
   .space2 {
     margin-bottom:0.6em;
   }
-  input[type='checkbox'] {
+  input:where([type='checkbox'], [type='radio']) {
     width:30px;
     height:30px;
   }
@@ -605,7 +605,7 @@ td {
   .space2 {
     margin-bottom:1em;
   }
-  input[type='checkbox'] {
+  input:where([type='checkbox'], [type='radio']) {
     width:20px;
     height:20px;
   }
@@ -649,7 +649,7 @@ td {
   .space2 {
     margin-bottom:1.25em;
   }
-  input[type='checkbox'] {
+  input:where([type='checkbox'], [type='radio']) {
     width:15px;
     height:15px;
   }
