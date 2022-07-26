@@ -46,12 +46,8 @@ function loadBreak(number) {
     standup.push(new Breaktime('Wear your pajamas and go to bed.',"pass","sleep",3,true,"lazy"));
   }
   if(number === 4) {
-    for (let i in messages)
-      if(messages[i].lazy !== "lazy")
-        messages.splice(i,1);
-    for (let i in standup)
-      if(standup[i].lazy !== "lazy")
-        standup.splice(i,1);
+    messages = messages.filter(item => item.lazy === "lazy");
+    standup = standup.filter(item => item.lazy === "lazy");
   }
   console.log(messages);
   console.log(standup);
