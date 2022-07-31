@@ -20,7 +20,7 @@
       <a data-tooltip="Very anime-like" class='hfire-link' href='https://zoro.to/watch/magical-girl-lyrical-nanoha-1818'>2 Lyrical Nanoha</a>
       <a data-tooltip="Clean" class='hfire-link' href='https://beta.crunchyroll.com/series/GRGGK327R/kemono-friends'>3 Kemono Friends</a>
       <a data-tooltip="To clear: On-hold list" class='hfire-link' href='https://beta.crunchyroll.com/series/GRVNZK5PY/a-certain-magical-index'>4 A Certain Magical Index</a>
-      <a data-tooltip="Super appealing" class='hfire-link' href=''>5 ???</a>
+      <a data-tooltip="Super appealing" class='hfire-link' href='https://beta.crunchyroll.com/series/G24H1NJJD/parallel-world-pharmacy'>5 Parallel World Pharmacy</a>
       <a id="money" data-tooltip="🤑" class='hfire-link' href=''>6 💲💲💲</a>
     </div>
     <!--div style="text-align:left;">
@@ -36,9 +36,9 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [];
-      const airingNumbers = [];
-      const maxRoll = 5;
+      const forbiddenNumbers = [6];
+      const airingNumbers = [5];
+      const maxRoll = 6;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -78,7 +78,7 @@
               diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! Roll again if you want to.`;
+              diceResults.innerHTML = `You rolled a 5! Roll again or watch the latest episode.`;
               diceRoll = 0;
               break;
             case 6:
