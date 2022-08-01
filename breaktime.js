@@ -55,8 +55,8 @@ function loadBreak(number) {
 }
 
 var smallBreak = [//Relaxation
-new Breaktime('Listen to this.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","meditate",3,false,"lazy"),
-new Breaktime('Clear your mind.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","meditate",3,false,"lazy"),
+new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
+new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"https://www.google.com/search?q=2+minute+timer","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
@@ -107,7 +107,7 @@ new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
-new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea">the database</a>.',"relax2.html?mood=random","meditate2",3,false,"lazy"),
+new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF">the flowchart</a>.',"relax2.html?mood=random","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on your 8 Essential Life Skills Course.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
@@ -188,8 +188,8 @@ new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html"
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true)];*/
 
 var mobileBreak = [//Relaxation
-new Breaktime('Listen to this.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","relax",3,false),
-new Breaktime('Clear your mind.',"https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=612e0d0470f34ff4bb722f1177531b4e","relax",3,false),
+new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","relax",3,false),
+new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","relax",3,false),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
