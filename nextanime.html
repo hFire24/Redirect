@@ -66,7 +66,8 @@
             diceRoll = Math.ceil(Math.random() * maxRoll);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1!`;
+              diceResults.innerHTML = `You rolled a 1! Roll again if you haven't watched an anime episode today.`;
+              diceRoll = 0;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
