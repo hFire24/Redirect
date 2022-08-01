@@ -21,7 +21,8 @@
       <a data-tooltip="Clean" class='hfire-link' href='https://beta.crunchyroll.com/series/GRGGK327R/kemono-friends'>3 Kemono Friends</a>
       <a data-tooltip="To clear: On-hold list" class='hfire-link' href='https://beta.crunchyroll.com/series/GRVNZK5PY/a-certain-magical-index'>4 A Certain Magical Index</a>
       <a data-tooltip="Super appealing" class='hfire-link' href='https://beta.crunchyroll.com/series/G24H1NJJD/parallel-world-pharmacy'>5 Parallel World Pharmacy</a>
-      <a id="money" data-tooltip="🤑" class='hfire-link' href=''>6 💲💲💲</a>
+      <a data-tooltip="Rewatching" class='hfire-link' href=''>6 Gonna be the Twin-Twil!!</a>
+      <!--a id="money" data-tooltip="🤑" class='hfire-link' href=''>6 💲💲💲</a-->
     </div>
     <!--div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
@@ -36,7 +37,7 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [6];
+      const forbiddenNumbers = [];
       const airingNumbers = [5];
       const maxRoll = 6;
       var askToBan = false;
@@ -83,7 +84,7 @@
               diceRoll = 0;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 6!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -91,7 +92,7 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 6) {
+        else if(diceRoll === 7) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
