@@ -58,7 +58,7 @@ var smallBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
 new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false,"lazy"),
-new Breaktime('Look away from the screen for about 2 minutes.',"https://www.google.com/search?q=2+minute+timer","relax",3,false,"lazy"),
+new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
 new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false,"lazy"),
   //Task checking
