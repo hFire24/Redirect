@@ -102,6 +102,7 @@ new Breaktime('Walk up to the sixth floor of your apartment and walk down to the
 new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true,"lazy"),
 new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true,"active"),
 new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo85V9Ew","exercise-heavy",3,true,"active"),
+new Breaktime('Brush your teeth if you haven\'t done so this morning or this evening after dinner',"pass","health",3,true,"lazy"),
   //Miscellaneous Part 2
 new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true,"active")];
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
