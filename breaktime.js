@@ -109,8 +109,9 @@ new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://
 
 var bigBreak = [//relaxation
 new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF">the flowchart</a>.',"relax2.html?mood=random","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on your 8 Essential Life Skills Course.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Finish your 8 Essential Life Skills Course.',"pass","meditate2",3,false,"lazy"), //After that, it's off to the How to Relax tracks.
 new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on a non-Foundations/Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
 new Breaktime('Check your Notion Habits database, please.<br>Do one of the habits not done today.',"pass","task",3,false,"active"),
@@ -135,7 +136,6 @@ new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"
 new Breaktime('Play Portal 2.',"pass","game",1,false,"active"),
 new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false,"lazy"),
 //new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
-//'Play Super Smash Bros. Ultimate for about 30 minutes.',
   //Miscellaneous
 new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 new Breaktime('How about multiple ways to take a break?',"multiple.html","misc",2,false,"active"),
@@ -191,6 +191,8 @@ new Breaktime('Make progress on this drawing course.',"drawing-progress.html","a
 var mobileBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","relax",3,false),
 new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","relax",3,false),
+new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on a non-Foundations/Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
@@ -205,7 +207,6 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Music
 new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
   //Games
-new Breaktime('Solve a Minesweeper board on Expert.',"pass","game",1,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false),
   //Anime
@@ -229,7 +230,7 @@ new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?l
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religon",3,false),
-new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
+//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 new Breaktime('Find a way to learn social skills.',"pass","social",2,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
