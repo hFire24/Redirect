@@ -72,7 +72,7 @@ new Breaktime('List all the things you want to do, and order them by priority.',
 new Breaktime('Make an objective for today.',"objective.html","task",2,false,"lazy"),
   //Music
 new Breaktime('Add a new song to your iTunes library.',"pass","misc",1,false,"active"),
-new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.'."pass","misc",1,false,"active"),
+new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.',"pass","misc",1,false,"active"),
 new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false,"lazy"),
