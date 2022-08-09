@@ -382,9 +382,47 @@ function finished() {
     messages.splice(globalIndex,1);
     console.log(messages);
     console.log(standup);
+  }
+  if(confirm("Got something you need to do?")) {
+    var custom = prompt("Type in a task, and press \"Submit\" or Enter when done.");
+    if(!filtered(custom)) {
+      messages.unshift(new Breaktime(custom,"pass","custom",3,false,"lazy"));
+      displayBreak(0);
+    }
+  }
+  else
+    displayBreak(-1);
+}
+
+function filtered(newBreak) {
+  let rValue = true;
+  let newBreakLC = newBreak.toLowerCase();
+  if (newBreakLC.indexOf("cirno") >= 0)
+    location.href = "https://hfire24.github.io/Redirect/cirno.html";
+  else if (found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'to nut', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful', 'make love'], newBreakLC))
+    location.href = "https://hfire24.github.io/Redirect/whoa/old.html";
+  else if (found(["loli", "flandre", "chino", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv"], newBreakLC) || newBreakLC.endsWith(" rem")) {
+    alert("Lolis/Waifus should not be a priority.");
     displayBreak(-1);
   }
+  else if (found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life', 'noose'], newBreakLC)
+    && !found(wasteTime, newBreakLC) && !found(["watch", "listen", "read", "play"],newBreakLC) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'], newBreakLC) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'], newBreakLC)
+    || newBreakLC.endsWith("die") && !found(['birdie', 'hoodie', 'indie'], newBreakLC) || newBreakLC.startsWith("kill") && !found(wasteTime,newBreakLC) || newBreakLC.endsWith(" kill") && !found(["watch", "listen", "read", "play"],newBreakLC)) {
+    $("break").innerHTML = "This is very serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
+    document.body.removeChild($("hideable"));
+    document.body.style.color = "black";
+    document.body.style.backgroundColor = "white";
+  }
+  else if (found(['bored', 'bore', 'nothing', 'don\'t feel like doing', 'uhh', 'umm', 'hmm', 'lack of interest', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk'], newBreakLC)
+    || found(wasteTime,newBreakLC) || newBreak.length === 0)
+    displayBreak(-1);
+  else {
+    rValue = false;
+  }
+  return rValue;
 }
+
+var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 
 function whyNot() {
   link.innerHTML = "<div class='space'>Let me guess. You don't want to do it.</div> <div class='two-list space'><u onclick='submitReason()'>I don't want to do it.</u><u onclick='displayLink()'>Actually, I'll do it.</u></div><u onclick='finished()'>It is absolutely impossible to do it now.</u>";
@@ -408,7 +446,6 @@ function deleteCategory(category) {
   }
   console.log(messages);
   console.log(standup);
-  displayBreak(-1);
 }
 
 function submitReason() {

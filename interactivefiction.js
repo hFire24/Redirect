@@ -59,9 +59,9 @@ function finalTest(inputText,site)
     $("question").innerHTML = "<a id='relax' href='relax2.html?mood=self+hate'>You need self-love.</a>";
     $("link").innerHTML = "<a class='hfire-link' href='stress.html'>No.</a>";
   }
-  else if(found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life'],inputText)
-  && !found(wasteTime,inputText) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'],inputText) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'],inputText)
-  || inputText.endsWith("die") && !found(['birdie','hoodie','indie','roll a die'],inputText) || inputText.startsWith("kill") || inputText.endsWith(" kill")) {
+  else if(found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life', 'noose'],inputText)
+  && !found(wasteTime,inputText) && !found(["watch","listen","read","play"],inputText) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'],inputText) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'],inputText)
+  || inputText.endsWith("die") && !found(['birdie','hoodie','indie','roll a die'],inputText) || inputText.startsWith("kill") && !found(wasteTime,inputText) || inputText.endsWith(" kill") && !found(["watch","listen","read","play"],inputText)) {
     $("question").innerHTML = "This is very serious. Immediately call the national helpline, or talk to someone you absolutely trust about your issues.";
     document.body.removeChild($("message"));
     document.body.removeChild($("link"));
