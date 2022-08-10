@@ -103,9 +103,7 @@ new Breaktime('Walk up to the sixth floor of your apartment and walk down to the
 new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true,"lazy"),
 new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true,"active"),
 new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo85V9Ew","exercise-heavy",3,true,"active"),
-new Breaktime('Brush your teeth if you haven\'t done so this morning or this evening after dinner',"pass","health",3,true,"lazy"),
-  //Miscellaneous Part 2
-new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true,"active")];
+new Breaktime('Brush your teeth if you haven\'t done so this morning or this evening after dinner',"pass","health",3,true,"lazy")];
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
@@ -178,7 +176,6 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
 new Breaktime('Declutter your room.',"pass","misc",2,true,"active"),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"lazy"),
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
-new Breaktime('Use the Stretch app.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"pass","misc",3,true,"active"),
 new Breaktime('Learn how to use the gym equipment.',"pass","exercise-heavy",3,true,"active")];
@@ -245,9 +242,7 @@ var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
 new Breaktime('Drink some water.',"pass","health",3,true),
 new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true),
-new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true),
-new Breaktime('Use the Stretch app for one of the 1-minute stretches.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true),
-new Breaktime('Use the Stretch app.',"https://dynalist.io/d/PORfVkIV-oGAAi3MlwPuSGlS","exercise",3,true)];
+new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true)];
 
 function displayBreak(index) {
   if($("standup")) {
