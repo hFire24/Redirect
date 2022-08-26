@@ -156,7 +156,7 @@ new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 //'Try one of these C# coding projects.',
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
 //new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
-new Breaktime('Learn Full Stack on Skillshare.',"https://skl.sh/3lhunmI","coding",3,false,"active"),
+new Breaktime('Learn Full Stack on Skillshare.',"https://skl.sh/3FMbwZa","coding",3,false,"active"),
 /*new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
