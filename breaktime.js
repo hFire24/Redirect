@@ -134,6 +134,7 @@ new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
 new Breaktime('Play Portal 2.',"pass","game",1,false,"active"),
 new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false,"lazy"),
+new Breaktime('Play TERA Online. Gain some levels and finish quests.',"game",1,false,"active"),
 //new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
   //Miscellaneous
 new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
