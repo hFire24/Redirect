@@ -56,7 +56,7 @@ function loadBreak(number) {
 
 var smallBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
-new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
+new Breaktime('Clear your mind with Balance.',"pass","meditate",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
@@ -124,7 +124,7 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 new Breaktime('Watch anime.',"nextanime","anime",2,false,"lazy"),
 new Breaktime('If you\'re watching anime, watch a different anime.',"nextanime","anime",2,false,"lazy"),
 new Breaktime('Watch anime.',"nextanime","anime",2,false,"lazy"),
-new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",2,false,"lazy"),
+//new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",2,false,"lazy"),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false,"active"),
@@ -188,8 +188,8 @@ new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html"
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true)];*/
 
 var mobileBreak = [//Relaxation
-new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","relax",3,false),
-new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","relax",3,false),
+new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false),
+new Breaktime('Clear your mind with Balance.',"pass","meditate",3,false),
 new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on a non-Foundations/Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false),
