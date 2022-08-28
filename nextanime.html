@@ -22,7 +22,8 @@
       <a data-tooltip="Short anime" class='hfire-link' href='https://beta.crunchyroll.com/series/GY49PE8WR/recorder-and-randsell'>4 Recorder and Randsell</a>
       <a data-tooltip="Super appealing" class='hfire-link' href='https://beta.crunchyroll.com/series/G24H1NJJD/parallel-world-pharmacy'>5 Parallel World Pharmacy</a>
       <a data-tooltip="To clear: On-hold list" class='hfire-link' href='https://zoro.to/watch/okami-san-and-her-seven-companions-2596'>6 Okami-San</a>
-      <!--a id="money" data-tooltip="🤑" class='hfire-link' href=''>6 💲💲💲</a-->
+      <a data-tooltip="Amazing fights" class='hfire-link' href='https://beta.crunchyroll.com/series/GY190DKQR/mob-psycho-100'>7 Mob Psycho 100 II</a>
+      <a id="money" data-tooltip="🤑" class='hfire-link' href=''>8 💲💲💲</a>
     </div>
     <!--div style="text-align:left;">
       <h4 class="no-space">Great for laughs</h4>
@@ -37,9 +38,9 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [];
+      const forbiddenNumbers = [8];
       const airingNumbers = [5];
-      const maxRoll = 6;
+      const maxRoll = 8;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -86,13 +87,19 @@
             case 6:
               diceResults.innerHTML = "You rolled a 6!";
               break;
+            case 7:
+              diceResults.innerHTML = "You rolled a 7!";
+              break;
+            case 8:
+              diceResults.innerHTML = "You rolled an 8! That means it's time to put money in the special reserve!";
+              break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 7) {
+        else if(diceRoll === 8) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
