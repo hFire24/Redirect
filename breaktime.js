@@ -87,7 +87,6 @@ new Breaktime('Read the verse of the day.',"pass","religon",2,false,"lazy"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
-new Breaktime('Find a way to learn social skills.',"pass","social",2,false,"active"),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false),
@@ -149,7 +148,7 @@ new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?l
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
-new Breaktime('Find a way to learn social skills.',"pass","social",2,false,"active"),
+new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religon",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
