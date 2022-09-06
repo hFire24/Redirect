@@ -107,12 +107,11 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 
 var bigBreak = [//relaxation
 new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF">the flowchart</a>.',"relax2.html?mood=random","meditate2",3,false,"lazy"),
-new Breaktime('Finish your 8 Essential Life Skills Course.',"pass","meditate2",3,false,"lazy"), //After that, it's off to the How to Relax tracks.
-new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on a non-Foundations/Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
-new Breaktime('Check your Notion Habits database, please.<br>Do one of the habits not done today.',"pass","task",3,false,"active"),
+new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false,"active"),
   //Day planning
 new Breaktime('Make a plan for today and tomorrow.',"pass","plan",3,false,"active"),
   //Job hunting
@@ -175,7 +174,7 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
   //Miscellaneous Part 2
 new Breaktime('Declutter your room.',"pass","misc",2,true,"active"),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"lazy"),
-new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
+new Breaktime('Get Backblaze and back up your hard drive.',"https://www.backblaze.com/cloud-backup.html","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
 new Breaktime('Learn how to use the gym equipment.',"pass","exercise-heavy",3,true,"active")];
@@ -198,7 +197,7 @@ new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/c
   //Task checking
 new Breaktime('Check your tasks for the day.',"pass","task",3,false),
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
-new Breaktime('Check your Notion Habits database, please.<br>Do one of the habits not done today.',"pass","task",3,false),
+new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false),
   //Day planning
 new Breaktime('Create tasks for today and tomorrow.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
