@@ -163,7 +163,8 @@ new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
-new Breaktime('Digitize at least two pages of your journal.',"pass","misc",3,false,"lazy")];
+new Breaktime('Digitize at least two pages of your journal.',"pass","misc",3,false,"lazy"),
+new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy")];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
 //new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religon",2,false)];
 //Do not upload traced art.
@@ -236,7 +237,8 @@ new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false),
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
 new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
-new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false)];
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false),
+new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy")];
 
 var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
