@@ -56,7 +56,7 @@ function loadBreak(number) {
 
 var smallBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
-new Breaktime('Clear your mind with Balance.',"pass","meditate",3,false,"lazy"),
+new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
@@ -107,8 +107,8 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 
 var bigBreak = [//relaxation
 new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF">the flowchart</a>.',"relax2.html?mood=random","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+// new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+// new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
 new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false,"active"),
@@ -139,6 +139,7 @@ new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
 new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 new Breaktime('How about multiple ways to take a break?',"multiple.html","misc",2,false,"active"),
 new Breaktime('Read your patriarchal blessing.',"pass","religon",2,false,"active"),
+new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religon",2,false),
 //new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
 new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false,"active"),
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"pass",3,false,"active"),
@@ -164,9 +165,10 @@ new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
 new Breaktime('Digitize at least two pages of your journal.',"pass","misc",3,false,"lazy"),
-new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy")];
+new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy"),
+new Breaktime('Learn C# on Lex on your work laptop.',"pass","coding",3,false,"active")];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
-//new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religon",2,false)];
+//new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religon",2,false),;
 //Do not upload traced art.
 
 var bigStand = [//Health and fitness
@@ -182,16 +184,16 @@ new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"htt
 new Breaktime('Learn how to use the gym equipment.',"pass","exercise-heavy",3,true,"active")];
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
-//new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true)];
+//new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true),
 /*new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
 new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html","art",2,true),
-new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true)];*/
+new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true),*/
 
 var mobileBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false),
-new Breaktime('Clear your mind with Balance.',"pass","meditate",3,false),
-new Breaktime('Make progress on your Foundations Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on a non-Foundations/Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Clear your mind.',"https://whimsical.com/meditation-skill-tree-5QHXveb3tWj9S7ZasP7oLF","meditate",3,false),
+// new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+// new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religon",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
@@ -222,7 +224,7 @@ new Breaktime('Read your journal entries.<br>Start from March, 2013.',"pass","re
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false),
 new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
-new Breaktime('Read the verse of the day.',"pass","religon",2,false),
+new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religon",2,false),
 new Breaktime('The special reserve needs some money. Add $1 to the reserve. You can do this on mobile.',"pass","misc",1,false),
 new Breaktime('Tackle your search terms list.',"pass",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false),
