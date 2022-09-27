@@ -17,10 +17,10 @@
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
-      <a data-tooltip="Very anime-like" class='hfire-link' href='https://zoro.to/watch/magical-girl-lyrical-nanoha-as-536'>2 Lyrical Nanoha</a>
+      <a data-tooltip="Very anime-like" class='hfire-link' href='https://zoro.to/watch/magical-girl-lyrical-nanoha-the-movie-1st-652'>2 Lyrical Nanoha</a>
       <a data-tooltip="Super appealing" class='hfire-link' href='https://zoro.to/dog-days-3056'>3 Dog Days'</a>
       <a data-tooltip="Focus on other anime" class='hfire-link'>4 🎲🎲🎲</a>
-      <a data-tooltip="Clean" class='hfire-link' href='https://beta.crunchyroll.com/series/G24H1NJJD/parallel-world-pharmacy'>5 Parallel World Pharmacy</a>
+      <a data-tooltip="Focus on other anime" class='hfire-link'>5 🎲🎲🎲</a>
       <a data-tooltip="To clear: On-hold list" class='hfire-link' href='https://animixplay.to/anime/7769/Ookami-san_to_Shichinin_no_Nakama-tachi'>6 Okami-San</a>
       <a data-tooltip="Amazing animation" class='hfire-link' href='https://beta.crunchyroll.com/series/GY190DKQR/mob-psycho-100'>7 Mob Psycho 100 II</a>
       <a id="money" data-tooltip="🤑" class='hfire-link' href=''>8 💲💲💲</a>
@@ -35,14 +35,12 @@
       <h4 class="no-space">Great for laughs</h4>
       <!--b>Misunderstandings</b>: Recorder and Randsell ⭐⭐⭐<br-->
       <b>Weird Narrator</b>: Okami-san and Her Seven Companions ⭐⭐<br>
-      <h4 class="no-space">Great for drama</h4>
-      <b>Medical Isekai</b>: Parallel World Pharmacy ⭐⭐⭐⭐<br>
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [4, 8];
-      const airingNumbers = [5];
+      const forbiddenNumbers = [4, 5, 8];
+      const airingNumbers = [];
       const maxRoll = 8;
       var askToBan = false;
       var watchedFocus = true;
