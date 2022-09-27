@@ -129,7 +129,7 @@ function addBigMessages() {
   'Try saying out loud the thing you need to get done.',
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
   'Why not read your patriarchal blessing? It could put you on a better path in life.',
-  'Why don\'t you read your journal entries?<br>Start from March, 2013.',
+  'Why don\'t you read your journal entries?<br>Start from April, 2013.',
   'How about you digitize a paragraph from your journal?',
   'Why not preserve some journal entries into a document?',
   'Reading <u>Atomic Habits</u> could lead you towards a better life.',
