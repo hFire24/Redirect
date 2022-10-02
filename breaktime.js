@@ -178,7 +178,7 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
   //Miscellaneous Part 2
 new Breaktime('Declutter your room.',"pass","misc",2,true,"active"),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"lazy"),
-new Breaktime('Get Backblaze and back up your hard drive.',"https://www.backblaze.com/cloud-backup.html","misc",2,true,"active"),
+new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
 new Breaktime('Learn how to use the gym equipment.',"pass","exercise-heavy",3,true,"active")];
