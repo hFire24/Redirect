@@ -89,12 +89,11 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
-//new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false),
+new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false,"active"),
 new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false,"active"),
 new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false,"lazy"),
-new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"active"),
-new Breaktime('Digitize at least one paragraph of your journal.',"pass","misc",3,false,"lazy")];
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"active")];
 
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true,"lazy"),
@@ -155,7 +154,7 @@ new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
-//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false),
+new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 //new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
 new Breaktime('Learn Full Stack on Skillshare.',"https://skl.sh/3FMbwZa","coding",3,false,"active"),
 /*new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
@@ -164,7 +163,6 @@ new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
-new Breaktime('Digitize at least two pages of your journal.',"pass","misc",3,false,"lazy"),
 new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy"),
 new Breaktime('Learn C# on Lex on your work laptop.',"pass","coding",3,false,"active")];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
