@@ -20,8 +20,8 @@
       <a data-tooltip="Very anime-like" class='hfire-link' href='https://zoro.to/watch/magical-girl-lyrical-nanoha-the-movie-1st-652'>2 Lyrical Nanoha</a>
       <a data-tooltip="Super appealing" class='hfire-link' href='https://zoro.to/dog-days-3056'>3 Dog Days'</a>
       <a data-tooltip="Focus on other anime" class='hfire-link'>4 🎲🎲🎲</a>
-      <a id="money" data-tooltip="🤑" class='hfire-link' href=''>5 💲💲💲</a>
-      <a data-tooltip="To clear: On-hold list" class='hfire-link' href='https://animixplay.to/anime/7769/Ookami-san_to_Shichinin_no_Nakama-tachi'>6 Okami-San</a>
+      <a data-tooltip="Focus on other anime" class='hfire-link'>5 🎲🎲🎲</a>
+      <a id="money" data-tooltip="🤑" class='hfire-link' href=''>6 💲💲💲</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
@@ -29,9 +29,9 @@
       <!--b>Fantastic Animation</b>: Mob Psycho 100 III ⭐⭐⭐⭐⭐<br-->
       <h4 class="no-space">Great for action and cuteness</h4>
       <b>Isekai</b>: Dog Days' ⭐⭐⭐⭐<br>
-      <b>Magical Girl</b>: Lyrical Nanoha A's ⭐⭐⭐⭐<br>
-      <h4 class="no-space">Great for laughs</h4>
-      <b>Weird Narrator</b>: Okami-san and Her Seven Companions ⭐⭐<br>
+      <b>Magical Girl</b>: Lyrical Nanoha ⭐⭐⭐⭐<br>
+      <!--h4 class="no-space">Great for laughs</h4>
+      <b>Weird Narrator</b>: Okami-san and Her Seven Companions ⭐⭐<br-->
     </div>
     <script>
       var diceRoll = 0;
@@ -79,10 +79,11 @@
               diceRoll = 0;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! That means it's time to put money in the special reserve!`;
+              diceResults.innerHTML = `You rolled a 5! Roll again.`;
+              diceRoll = 0;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6!";
+              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -110,7 +111,6 @@
               break;
             case 5:
               diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
-              diceRoll = 1;
               shake(2, 400);
               break;
             case 6:
