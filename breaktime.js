@@ -82,6 +82,7 @@ new Breaktime('Read your journal entries.<br>Start from April, 2013.',"pass","re
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false,"lazy"),
 new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false,"lazy"),
 new Breaktime('Read the verse of the day.',"pass","religon",2,false,"lazy"),
+new Breaktime('Explore the world through StreetView.',"https://randomstreetview.com/","misc",1,false,"lazy"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
@@ -129,6 +130,7 @@ new Breaktime('Play Portal 2.',"pass","game",1,false,"active"),
 new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false,"lazy"),
 new Breaktime('Play TERA Online. Gain some levels and finish quests.',"game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
+new Breaktime('Play Bus Derby',"pass","game",1,false,"active"),
 //new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
@@ -140,6 +142,7 @@ new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"pass",3,false,"active"),
 new Breaktime('Tackle your search terms list.',"pass",2,false,"active"),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false,"lazy"),
+new Breaktime('Call one of your immediate family members.',"pass","misc",2,false,"active"),
   //Goals
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
@@ -196,14 +199,15 @@ new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/c
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
 new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false),
   //Day planning
-new Breaktime('List everything you\'re currently doing, and order them by priority.',"pass","plan",3,false,"active"),
-new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false,"active"),
+new Breaktime('List everything you\'re currently doing, and order them by priority.',"pass","plan",3,false),
+new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Music
 new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
   //Games
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false),
+new Breaktime('Play Bus Derby',"pass","game",1,false),
   //Anime
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false),
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
@@ -222,6 +226,7 @@ new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https
 new Breaktime('The special reserve needs some money. Add $1 to the reserve. You can do this on mobile.',"pass","misc",1,false),
 new Breaktime('Tackle your search terms list.',"pass",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false),
+new Breaktime('Call one of your immediate family members.',"pass","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religon",3,false),
