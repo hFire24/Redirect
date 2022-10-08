@@ -93,7 +93,8 @@ new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,fals
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false,"active"),
 new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false,"active"),
 new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false,"lazy"),
-new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"active")];
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"active"),
+new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
 
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true,"lazy"),
@@ -238,7 +239,8 @@ new Breaktime('Check your goals page. Try to knock out one of your goals.',"goal
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
 new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
 new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false),
-new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy")];
+new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy"),
+new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
 
 var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
