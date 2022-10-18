@@ -57,7 +57,7 @@ function loadBreak(number) {
 var smallBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false,"lazy"),
 new Breaktime('Clear your mind.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false,"lazy"),
-new Breaktime('Pray a short prayer.',"pass","religon",3,false,"lazy"),
+new Breaktime('Pray a short prayer.',"pass","religion",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
 new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false,"lazy"),
@@ -68,20 +68,20 @@ new Breaktime('List everything you\'re currently doing, and order them by priori
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false,"active"),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false,"lazy"),
   //Music
-new Breaktime('Add a new song to your iTunes library.',"pass","misc",1,false,"active"),
+new Breaktime('Add a song to your iTunes library.',"pass","misc",1,false,"active"),
 new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.',"pass","misc",1,false,"active"),
-new Breaktime('Analyze a song already on you iTunes library.',"pass","misc",1,false,"active"),
+new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
 new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false,"lazy"),
-new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,false,"lazy"),
-//new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religon",3,false),
+new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false,"lazy"),
+//new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false,"lazy"),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false,"lazy"),
-new Breaktime('Read your journal entries.<br>Start from May, 2013.',"pass","read",1,false,"active"),
+new Breaktime('Read your journal entries.<br>Start from August 26, 2013.',"pass","read",1,false,"active"),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false,"lazy"),
 new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false,"lazy"),
-new Breaktime('Read the verse of the day.',"pass","religon",2,false,"lazy"),
+new Breaktime('Read the verse of the day.',"pass","religion",2,false,"lazy"),
 new Breaktime('Explore the world through StreetView.',"https://randomstreetview.com/","misc",1,false,"lazy"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
@@ -135,8 +135,8 @@ new Breaktime('Play Bus Derby',"pass","game",1,false,"active"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 new Breaktime('How about multiple ways to take a break?',"multiple.html","misc",2,false,"active"),
-new Breaktime('Read your patriarchal blessing.',"pass","religon",2,false,"active"),
-new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religon",2,false),
+new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
+new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false),
 //new Breaktime('Watch an episode of Only Connect',"https://www.youtube.com/playlist?list=PLuwZNHZuhcKErNewGEx8wvS38W8c3ozL-","misc",1,false),
 new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false,"active"),
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"pass",3,false,"active"),
@@ -148,7 +148,7 @@ new Breaktime('Call one of your immediate family members.',"pass","misc",2,false
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
 new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
-new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religon",3,false,"lazy"),
+new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
@@ -165,7 +165,7 @@ new Breaktime('Check your goals page. Try to knock out one of your goals.',"goal
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy")];
 //new Breaktime('Learn C# on Lex on your work laptop.',"pass","coding",3,false,"active")];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
-//new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religon",2,false),;
+//new Breaktime('Read stuff for Institute.',"https://myinstitute.churchofjesuschrist.org/classes","religion",2,false),;
 //Do not upload traced art.
 
 var bigStand = [//Health and fitness
@@ -191,7 +191,7 @@ new Breaktime('Listen to this.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0
 new Breaktime('Clear your mind.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false),
 // new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 // new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-new Breaktime('Pray a short prayer.',"pass","religon",3,false),
+new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
 new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false),
@@ -213,23 +213,23 @@ new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",2,false),
 new Breaktime('Watch anime.',"nextanime","anime",2,false),
 new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",2,false),
   //Miscellaneous
-new Breaktime('Say out loud the thing you need to get done.',"pass","task",2,false),
-//new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religon",3,false),
-new Breaktime('Read your patriarchal blessing.',"pass","religon",2,false),
+new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
+//new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
+new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Read the verse of the day in Gospel Library app.',"pass","religion",2,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Read your journal entries.<br>Start from May, 2013.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false),
 new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
-new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religon",2,false),
+new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false),
 new Breaktime('The special reserve needs some money. Add $1 to the reserve. You can do this on mobile.',"pass","misc",1,false),
 new Breaktime('Tackle your search terms list.',"pass",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false),
 new Breaktime('Call one of your immediate family members.',"pass","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
-new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religon",3,false),
+new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
 new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false),
@@ -400,7 +400,7 @@ function filtered(newBreak) {
     location.href = "https://hfire24.github.io/Redirect/cirno.html";
   else if (found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'to nut', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful', 'make love'], newBreakLC))
     location.href = "https://hfire24.github.io/Redirect/whoa/old.html";
-  else if (found(["loli", "flandre", "chino", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv"], newBreakLC) || newBreakLC.endsWith(" rem")) {
+  else if (found(["loli", "flandre", "chino", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv", "waifu"], newBreakLC) || newBreakLC.endsWith(" rem")) {
     alert("Lolis/Waifus should not be a priority.");
     displayBreak(-1);
   }
