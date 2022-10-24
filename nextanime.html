@@ -17,27 +17,27 @@
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
-      <a data-tooltip="Very anime-like" class='hfire-link' href='https://zoro.to/watch/magical-girl-lyrical-nanoha-the-movie-1st-652'>2 Lyrical Nanoha</a>
-      <a data-tooltip="Super appealing" class='hfire-link' href='https://zoro.to/dog-days-3056'>3 Dog Days'</a>
-      <a data-tooltip="Focus on other anime" class='hfire-link'>4 🎲🎲🎲</a>
-      <a data-tooltip="Focus on other anime" class='hfire-link'>5 🎲🎲🎲</a>
-      <a id="money" data-tooltip="🤑" class='hfire-link' href=''>6 💲💲💲</a>
+      <a data-tooltip="Long-running comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
+      <a data-tooltip="Historical spy-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family'>3 Spy x Family</a>
+      <a data-tooltip="Futuristic military-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N81X/lbx-girls'>4 LBX Girls</a>
+      <a data-tooltip="Fantastic animation" class='hfire-link' href='https://www.crunchyroll.com/series/GY190DKQR/mob-psycho-100'>5 Mob Psycho 100</a>
+      <a id="money" data-tooltip="🤑" class='hfire-link'>6 💲💲💲</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
       <b>Long-running</b>: Dragon Ball ⭐⭐⭐⭐⭐<br>
-      <!--b>Fantastic Animation</b>: Mob Psycho 100 III ⭐⭐⭐⭐⭐<br-->
+      <b>Fantastic animation</b>: Mob Psycho 100 III ⭐⭐⭐⭐⭐<br>
       <h4 class="no-space">Great for action and cuteness</h4>
-      <b>Isekai</b>: Dog Days' ⭐⭐⭐⭐<br>
-      <b>Magical Girl</b>: Lyrical Nanoha ⭐⭐⭐⭐<br>
-      <!--h4 class="no-space">Great for laughs</h4>
-      <b>Weird Narrator</b>: Okami-san and Her Seven Companions ⭐⭐<br-->
+      <b>Spy comedy</b>: Spy x Family ⭐⭐⭐⭐⭐<br>
+      <b>Futuristic military</b>: LBX Girls ⭐⭐
+      <h4 class="no-space">Great for laughs</h4>
+      <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐<br>
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [4, 5];
-      const airingNumbers = [];
+      const forbiddenNumbers = [6];
+      const airingNumbers = [3, 5];
       const maxRoll = 6;
       var askToBan = false;
       var watchedFocus = true;
@@ -72,14 +72,14 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3!`;
-              break;
-            case 4:
-              diceResults.innerHTML = `You rolled a 4! Roll again.`;
+              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
               diceRoll = 0;
               break;
+            case 4:
+              diceResults.innerHTML = `You rolled a 4!`;
+              break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! Roll again.`;
+              diceResults.innerHTML = `You rolled a 5! Roll again or watch the latest episode.`;
               diceRoll = 0;
               break;
             case 6:
@@ -91,7 +91,7 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 5) {
+        else if(diceRoll === 6) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
