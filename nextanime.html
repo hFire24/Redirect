@@ -20,8 +20,10 @@
       <a data-tooltip="Long-running comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
       <a data-tooltip="Historical spy-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family'>3 Spy x Family</a>
       <a data-tooltip="Futuristic military-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N81X/lbx-girls'>4 LBX Girls</a>
-      <a data-tooltip="Fantastic animation" class='hfire-link' href='https://www.crunchyroll.com/series/GY190DKQR/mob-psycho-100'>5 Mob Psycho 100</a>
-      <a id="money" data-tooltip="🤑" class='hfire-link'>6 💲💲💲</a>
+      <a data-tooltip="Ghostly iyashikei" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XEJ7/miss-shachiku-and-the-little-baby-ghost'>5 Miss Shachiku</a>
+      <a data-tooltip="Fantastic animation" class='hfire-link' href='https://www.crunchyroll.com/series/GY190DKQR/mob-psycho-100'>6 Mob Psycho 100</a>
+      <!--a data-tooltip="Morning iyashikei" class='hfire-link'>6 🎲🎲🎲</a-->
+      <!--a id="money" data-tooltip="🤑" class='hfire-link'>6 💲💲💲</a-->
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
@@ -31,13 +33,15 @@
       <b>Spy comedy</b>: Spy x Family ⭐⭐⭐⭐⭐<br>
       <b>Futuristic military</b>: LBX Girls ⭐⭐
       <h4 class="no-space">Great for laughs</h4>
-      <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐<br>
+      <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐
+      <h4 class="no-space">Great for relaxation</h4>
+      <b>Post-work anime</b>: Miss Shachiku and the Little Baby Ghost
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [6];
-      const airingNumbers = [3, 5];
+      const forbiddenNumbers = [];
+      const airingNumbers = [3, 6];
       const maxRoll = 6;
       var askToBan = false;
       var watchedFocus = true;
@@ -79,11 +83,11 @@
               diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! Roll again or watch the latest episode.`;
-              diceRoll = 0;
+              diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = "You rolled a 6! That means it's time to put money in the special reserve!";
+              diceResults.innerHTML = "You rolled a 6! Roll again or watch the latest episode.";
+              diceRoll = 0;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
@@ -91,7 +95,7 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 6) {
+        else if(diceRoll === 7) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
