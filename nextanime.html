@@ -166,7 +166,7 @@
             firstDiceRoll = Math.ceil(Math.random() * maxRoll);
           let secondDiceRoll = Math.ceil(Math.random() * maxRoll);
           //To do: If the range has forbidden numbers only and the value of the first dice roll, then don't enter into the endless loop.
-          while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll))
+          while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll) || firstDiceRoll + secondDiceRoll === 7 && (firstDiceRoll === 1 || firstDiceRoll === 6))
             secondDiceRoll = Math.ceil(Math.random() * maxRoll);
           diceResults.innerHTML = (firstDiceRoll === 8 ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;

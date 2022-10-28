@@ -126,7 +126,6 @@ new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false
 new Breaktime('Play 100% Orange Juice.',"pass","game",1,false,"active"),
 new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online/start/3","game",1,false,"lazy"),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
-new Breaktime('Play Portal 2.',"pass","game",1,false,"active"),
 new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false,"lazy"),
 new Breaktime('Play TERA Online. Gain some levels and finish quests.',"game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
