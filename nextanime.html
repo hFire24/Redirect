@@ -13,7 +13,7 @@
   <body>
     <h1 id='message'>Your current anime with links</h1>
     <div class='space'>If you came here to procrastinate, watch anime for 30 seconds minimum.<br>
-    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
+    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(3)'>Roll 3 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
@@ -21,19 +21,19 @@
       <a data-tooltip="Historical spy-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family'>3 Spy x Family</a>
       <a data-tooltip="Futuristic military-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N81X/lbx-girls'>4 LBX Girls</a>
       <a data-tooltip="Ghostly iyashikei" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XEJ7/miss-shachiku-and-the-little-baby-ghost'>5 Miss Shachiku</a>
-      <a data-tooltip="Fantastic animation" class='hfire-link' href='https://www.crunchyroll.com/series/GY190DKQR/mob-psycho-100'>6 Mob Psycho 100</a>
+      <a data-tooltip="CGDCT" class='hfire-link' href='https://www.crunchyroll.com/series/GXJHM3P19/bocchi-the-rock'>6 Bocchi the Rock!</a>
       <!--a data-tooltip="Morning iyashikei" class='hfire-link'>6 🎲🎲🎲</a-->
       <!--a id="money" data-tooltip="🤑" class='hfire-link'>6 💲💲💲</a-->
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
       <b>Long-running</b>: Dragon Ball ⭐⭐⭐⭐⭐<br>
-      <b>Fantastic animation</b>: Mob Psycho 100 III ⭐⭐⭐⭐⭐<br>
       <h4 class="no-space">Great for action and cuteness</h4>
       <b>Spy comedy</b>: Spy x Family ⭐⭐⭐⭐⭐<br>
       <b>Futuristic military</b>: LBX Girls ⭐⭐
       <h4 class="no-space">Great for cuteness</h4>
-      <b>Post-work anime</b>: Miss Shachiku and the Little Baby Ghost ⭐⭐⭐⭐
+      <b>Post-work anime</b>: Miss Shachiku and the Little Baby Ghost ⭐⭐⭐⭐<br>
+      <b>Social anxiety</b>: Bocchi the Rock!
       <h4 class="no-space">Great for laughs</h4>
       <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐
     </div>
@@ -70,7 +70,7 @@
             diceRoll = Math.ceil(Math.random() * maxRoll);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1!`;
+              diceResults.innerHTML = `You rolled a 1! Watch Dragon Ball, or pay up.`;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
@@ -95,10 +95,11 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 7) {
+        else if(diceRoll === 1) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
+              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 1. Put $0 in the special reserve. Whether this is a good thing or a bad thing is up to you."
               break;
             case 2:
@@ -118,7 +119,6 @@
               shake(2, 400);
               break;
             case 6:
-              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
               shake(2, 400);
               break;
@@ -207,8 +207,7 @@
           }
           diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + diceArrayString;
           diceRoll = amount;
-          if(containsAN.filter(x => x === true).length >= 1)
-          {
+          if(containsAN.filter(x => x === true).length >= 1) {
             diceRoll = 0;
             if(containsAN.filter(x => x === true).length > 1) {
               diceResults.innerHTML += " Roll again or watch all the latest episodes.";
@@ -228,7 +227,7 @@
 
       function twoOfTheSameAiringNumbers(array) {
         for(let i = 0; i < airingNumbers.length; i++)
-          if(array.filter(x => x === airingNumbers[i]).length > 1)
+          if(array.filter(x => x === airingNumbers[i]).length > 2)
             return true;
         return false;
       }
