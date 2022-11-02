@@ -46,6 +46,8 @@
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
+      let d = new Date();
+      let isEvening = d.getHours() >= 16;
 
       function getLucky() {
         if(diceRoll === 0) {
@@ -83,7 +85,7 @@
               diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5!`;
+              diceResults.innerHTML = `You rolled a 5!` + (!isEvening ? ` Roll again.` : ``);
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Roll again or watch the latest episode.";
@@ -151,6 +153,10 @@
               shake(5, rollTime);
           }
         }
+        else if(diceRoll === 5 && !isEvening) {
+          diceRoll = 0;
+          rollDice();
+        }
         else {
           alert("Hey. Wait 30 minutes or watch one anime episode before rolling the dice again.");
         }
@@ -160,6 +166,8 @@
         if(diceRoll === 0) {
           if(askToBan)
             banANumber();
+          if(!isEvening)
+            forbiddenNumbers.push(5);
           let firstDiceRoll = Math.ceil(Math.random() * maxRoll);
           //To do: If the range has forbidden numbers only, then don't enter into the endless loop.
           while (forbiddenNumbers.includes(firstDiceRoll))
