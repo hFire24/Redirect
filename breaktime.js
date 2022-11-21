@@ -78,9 +78,9 @@ new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,fal
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false,"lazy"),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false,"lazy"),
-new Breaktime('Read your journal entries.<br>Start from August 26, 2013.',"pass","read",1,false,"active"),
+new Breaktime('Read your journal entries.<br>Start from June 2014.',"pass","read",1,false,"active"),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false,"lazy"),
-new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false,"lazy"),
+//new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false,"lazy"),
 new Breaktime('Read the verse of the day.',"pass","religion",2,false,"lazy"),
 new Breaktime('Explore the world through StreetView.',"https://randomstreetview.com/","misc",1,false,"lazy"),
   //Goals
@@ -88,12 +88,12 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
-new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
+//new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false,"active"),
 new Breaktime('The special reserve needs some money. Add $1 to the reserve.',"pass","misc",1,false,"active"),
-new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false,"lazy"),
-new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"active"),
-new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
+//new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false,"lazy"),
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"active")];
+//new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
 
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true,"lazy"),
@@ -106,8 +106,6 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 
 var bigBreak = [//relaxation
 new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b">the flowchart</a>.',"relax2.html?mood=random","meditate2",3,false,"lazy"),
-// new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-// new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
 new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false,"active"),
@@ -127,9 +125,9 @@ new Breaktime('Play 100% Orange Juice.',"pass","game",1,false,"active"),
 new Breaktime('Solve a Minesweeper board on Expert.',"https://minesweeper.online/start/3","game",1,false,"lazy"),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
 new Breaktime('Do a mental workout on Elevate.',"pass","game",2,false,"lazy"),
-//new Breaktime('Play TERA Online. Gain some levels and finish quests.',"game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
-new Breaktime('Play Bus Derby',"pass","game",1,false,"active"),
+new Breaktime('Play Bus Derby.',"pass","game",1,false,"active"),
+new Breaktime('Play American Truck Simulator.',"pass","game",1,false,"active"),
 //new Breaktime('Try to beat Touhou 18 with a character/difficulty you haven\'t beaten yet.',"game",1,false),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
@@ -176,8 +174,8 @@ new Breaktime('Declutter your room.',"pass","misc",2,true,"active"),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"lazy"),
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
-new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
-new Breaktime('Learn how to use the gym equipment.',"pass","exercise-heavy",3,true,"active")];
+new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active")];
+//new Breaktime('Learn how to use the gym equipment.',"pass","exercise-heavy",3,true,"active")];
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
 //new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true),
@@ -217,9 +215,9 @@ new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,fal
 new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Read the verse of the day in Gospel Library app.',"pass","religion",2,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
-new Breaktime('Read your journal entries.<br>Start from May, 2013.',"pass","read",1,false),
+new Breaktime('Read your journal entries.<br>Start from June 2014.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
-new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false),
+//new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false),
 new Breaktime('Make a new blog post',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
 new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false),
 new Breaktime('The special reserve needs some money. Add $1 to the reserve. You can do this on mobile.',"pass","misc",1,false),
@@ -238,8 +236,8 @@ new Breaktime('Check your goals page. Try to knock out one of your goals.',"goal
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
 new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
 new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false),
-new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy"),
-new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
+new Breaktime('Make progress on your Book of Mormon study plan.','pass',"misc",3,false,"lazy")];
+//new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
 
 var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),

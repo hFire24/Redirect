@@ -22,8 +22,9 @@
       <a data-tooltip="Futuristic military-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N81X/lbx-girls'>4 LBX Girls</a>
       <a data-tooltip="Ghostly iyashikei" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XEJ7/miss-shachiku-and-the-little-baby-ghost'>5 Miss Shachiku</a>
       <a data-tooltip="CGDCT" class='hfire-link' href='https://www.crunchyroll.com/series/GXJHM3P19/bocchi-the-rock'>6 Bocchi the Rock!</a>
+      <a data-tooltip="Lolis" class='hfire-link' href='https://www.crunchyroll.com/series/G6NQV5WQ6/astarottes-toy'>7 Astarotte's Toy</a>
       <!--a data-tooltip="Morning iyashikei" class='hfire-link'>6 🎲🎲🎲</a-->
-      <!--a id="money" data-tooltip="🤑" class='hfire-link'>6 💲💲💲</a-->
+      <a id="money" data-tooltip="🤑" class='hfire-link'>8 💲💲💲</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
@@ -32,17 +33,18 @@
       <b>Spy comedy</b>: Spy x Family ⭐⭐⭐⭐⭐<br>
       <b>Futuristic military</b>: LBX Girls ⭐⭐
       <h4 class="no-space">Great for cuteness</h4>
-      <b>Post-work anime</b>: Miss Shachiku and the Little Baby Ghost ⭐⭐⭐⭐<br>
-      <b>Social anxiety</b>: Bocchi the Rock! ⭐⭐⭐⭐⭐
+      <b>Post-work anime</b>: Miss Shachiku and the Little Baby Ghost ⭐⭐⭐<br>
+      <b>Social anxiety</b>: Bocchi the Rock! ⭐⭐⭐⭐⭐<br>
+      <b>Ecchi isekai</b>: Astarotte's Toy ⭐⭐⭐⭐
       <h4 class="no-space">Great for laughs</h4>
       <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [];
+      const forbiddenNumbers = [8];
       const airingNumbers = [3, 6];
-      const maxRoll = 6;
+      const maxRoll = 8;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -72,7 +74,7 @@
             diceRoll = Math.ceil(Math.random() * maxRoll);
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1! Watch Dragon Ball, or pay up.`;
+              diceResults.innerHTML = `You rolled a 1!`;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
@@ -91,17 +93,22 @@
               diceResults.innerHTML = "You rolled a 6! Roll again or watch the latest episode.";
               diceRoll = 0;
               break;
+            case 7:
+              diceResults.innerHTML = `You rolled a 7!`;
+              break;
+            case 8:
+              diceResults.innerHTML = `You rolled an 8! That means it's time to put money in the special reserve!`;
+              break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 1) {
+        else if(diceRoll === 8) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
-              diceRoll = 2;
               diceResults.innerHTML = "You rolled a 1. Put $0 in the special reserve. Whether this is a good thing or a bad thing is up to you."
               break;
             case 2:
@@ -129,6 +136,7 @@
               shake(2, 600);
               break;
             case 8:
+              diceRoll = 2;
               diceResults.innerHTML = "You rolled an 8! Put $20 in the special reserve.";
               shake(3, 800);
               break;
@@ -235,7 +243,7 @@
 
       function twoOfTheSameAiringNumbers(array) {
         for(let i = 0; i < airingNumbers.length; i++)
-          if(array.filter(x => x === airingNumbers[i]).length > 2)
+          if(array.filter(x => x === airingNumbers[i]).length > 1)
             return true;
         return false;
       }
