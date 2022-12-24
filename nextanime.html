@@ -18,29 +18,20 @@
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Long-running comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
-      <a data-tooltip="Historical spy-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family'>3 Spy x Family</a>
-      <a data-tooltip="Futuristic military-themed" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N81X/lbx-girls'>4 LBX Girls</a>
-      <a data-tooltip="Ghostly iyashikei" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XEJ7/miss-shachiku-and-the-little-baby-ghost'>5 Miss Shachiku</a>
-      <a data-tooltip="CGDCT" class='hfire-link' href='https://www.crunchyroll.com/series/GXJHM3P19/bocchi-the-rock'>6 Bocchi the Rock!</a>
+      <a data-tooltip="???" class='hfire-link' href=''>3 ???</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
       <b>Long-running</b>: Dragon Ball ⭐⭐⭐⭐⭐<br>
-      <h4 class="no-space">Great for action and cuteness</h4>
-      <b>Spy comedy</b>: Spy x Family ⭐⭐⭐⭐⭐<br>
-      <b>Futuristic military</b>: LBX Girls ⭐⭐
-      <h4 class="no-space">Great for cuteness</h4>
-      <b>Corporate slave</b>: Miss Shachiku and the Little Baby Ghost ⭐⭐⭐<br>
-      <b>Social anxiety</b>: Bocchi the Rock! ⭐⭐⭐⭐⭐
       <h4 class="no-space">Great for laughs</h4>
       <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [7, 8];
-      const airingNumbers = [3, 6];
-      const maxRoll = 6;
+      const forbiddenNumbers = [3];
+      const airingNumbers = [];
+      const maxRoll = 3;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -76,8 +67,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
-              diceRoll = 0;
+              diceResults.innerHTML = `You rolled a 3! You can pick up a new anime or rewatch an old anime.`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4!`;
