@@ -11,10 +11,74 @@
   </head>
   <body class="theme2" onload="createAdvice();">
     <h1 id="message">This mediocre website is blocked.</h1>
-    <div id='hideable'>
-      <div id='link'><a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong></div>
-      <h3 id='theme'>Brought to you by the blue theme.</h3>
+    <h2 id="question" class="space">Why did you decide to go there?</h2>
+    <div id='link'><input id="newBreak" type="text"><button id="submit" onClick="submit()">Submit</button>
+      <div id="dropdown">
+        <span class="custom-select" style="width:200px;">
+          <select id='custom-reason'>
+            <option id="-1" value="-1"></option>
+          </select>
+        </span><button onclick="submit()">Submit</button>
+      </div>
     </div>
+    <script>
+    function submit() {
+      console.log($("custom-reason").value);
+      console.log($($("custom-reason").value).innerHTML);
+      console.log($("newBreak").value);
+      var inputText = '';
+      if($("custom-reason").value !== -1 && $("newBreak").value === '')
+        inputText = $($("custom-reason").value).innerHTML.toLowerCase();
+      else
+        inputText = $("newBreak").value.toLowerCase();
+      finalTest(inputText,"facebook");
+    }
+
+    var reasons = ["Because I'm lazy",
+    "Because I'm bored", "Because I'm tired", "Because I'm really bored", "I have nothing to do",
+    "For no reason",
+    "Because I feel like it",
+    "Because I feel tired",
+    "To check what my friends are doing",
+    "Because I feel stressed",
+    "Because I feel worried",
+    "Because I feel busy",
+    "Because I feel disappointed",
+    "Because I feel unconfident",
+    "Because I want to visit Facebook",
+    "Because I feel overwhelmed",
+    "Because I feel impatient",
+    "Because I feel angry",
+    "Because I feel like procrastinating",
+    "Because I feel unmotivated",
+    "I feel like checking status updates",
+    "Because I can't focus",
+    "Because I want to relax",
+    "I'm struggling in life",
+    "I feel like playing a game",
+    "Because I feel hungry",
+    "I don't know",
+    "I want to do nothing",
+    "To look at old posts",
+    "I am waiting for something",
+    "I want to get motivated",
+    "I want to accomplish goals",
+    "I want to complete tasks",
+    "I want to listen to music",
+    "I want to browse YouTube",
+    "I already looked at bad stuff",
+    "I just relapsed",
+    "I got something I need to do",
+    "I'm ready to do something else"];
+    for(var i in reasons) {
+      var option = document.createElement('option');
+      option.id = i;
+      option.value = i;
+      option.innerHTML = reasons[i];
+      document.getElementById("custom-reason").appendChild(option);
+    }
+    </script>
+    <script src="interactivefiction.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
