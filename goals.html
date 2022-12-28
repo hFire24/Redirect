@@ -23,25 +23,26 @@
       <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button> <button onclick='undoText()'>Undo</button>
     </div>
     <script>
-      var aHabits = [{text:"Tackle your to-do list",link:"index.html",category:"active"},
+      var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
         //aHabits
-      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"golden"}, //Golden habits are the most important
+      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"}, //Golden habits are the most important
       //{text:"Apply for a job <span class='time'>(1 job)</span>",link:"pass",category:"golden"},
       //{text:"*Draw something <span class='time'>(1+ times)</span>",link:"quiz.html",category:"golden"},
-      //{text:"Manage money, write in journal",link:"pass",category:"active"},
+      {text:"Manage money, write in journal",link:"pass",category:"active"},
         //bHabits
       {text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter/2 quotes to add)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
       //{text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
-      {text:"Relax/meditate <span class='time'>(1 session)</span>",link:"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b",category:"passive"},
-      //{text:"Code some stuff in C# <span class='time'>(10 minutes)</span>",link:"pass",category:"active"},
+      //{text:"Relax/meditate <span class='time'>(1 session)</span>",link:"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b",category:"passive"},
+      {text:"Use the Brillaint app <span class='time'>(1 lesson)</span>",link:"https://brilliant.org/home/",category:"active"},
       //{text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
       {text:"Listen to General Conference <span class='time'>(1 talk)</span>",link:"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T",category:"passive"},
       {text:"Watch anime <span class='time'>(1 episode)</span>",link:"nextanime.html",category:"active"},
       {text:"Read the scriptures <span class='time'>(1-2 chapters)</span>",link:"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng",category:"active"},
         //cHabits
       {text:"Analyze songs <span class='time'>(1 song)</span>",link:"pass",category:"active"},
-      {text:"Read a programming book <span class='time'>(1 chapter)</span>",link:"pass",category:"active"},
+      {text:"Learn programming <span class='time'>(1 section/project)</span>",link:"https://vuejs.org/guide/introduction.html",category:"golden"},
+      {text:"Go to the gym <span class='time'>(15 minutes)</span>",link:"pass",category:"active"}
       //{text:"Play Touhou <span class='time'>(2 games)</span>",link:"pass",category:"active"}
       //{text:"Play 100% Orange Juice <span class='time'>(2-3 games)</span>",link:"pass",category:"active"}
       //{text:"Play Sudoku (Medium) <span class='time'>(1 puzzle)</span>",link:"https://sudoku.com/medium",category:"active"},
