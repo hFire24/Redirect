@@ -170,7 +170,7 @@
         var message = document.getElementById("message").innerHTML;
         var linkMessages = ["Immediately put your phone away."];
         for (var i = 1; i <= 6; i++)
-          linkMessages.push("How are you feeling?");
+          linkMessages.push("Got something you need to do?");
         var linkIndex = Math.floor(Math.random() * linkMessages.length);
         if (index < 5)
           linkIndex = 0;
@@ -186,53 +186,8 @@
           link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
         else if (message === "May this page suggest you take a short break?" || message === "Time to take a break.")
           link.innerHTML = "<a href='breakm.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
-        else if (linkIndex > 0) {
-          link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
-          var feelings = [{text:"Select an emotion",value:"lazy"},
-          {text:"I got something I need to do",value:"custom"},
-          {text:"I'm ready to do something else",value:"time"},
-          {text:"I want to watch anime",value:"anime"},
-          {text:"I want to go to DeviantArt",value:"deviantart"},
-          {text:"I feel bored 🥱",value:"bored"},
-          {text:"I feel really bored 🥱🥱",value:"really bored"},
-          {text:"I feel lazy 😪",value:"lazy"},
-          {text:"I feel tired 😴",value:"tired"},
-          {text:"I feel stressed 😫",value:"stressed"},
-          {text:"I feel worried 😟",value:"worried"},
-          {text:"I feel busy 🏢",value:"busy"},
-          {text:"I feel disappointed 😞",value:"sad"},
-          {text:"I feel unconfident 😩",value:"unconfident"},
-          {text:"I feel overwhelmed 😵",value:"overwhelmed"},
-          {text:"I feel impatient 😠",value:"impatient"},
-          {text:"I feel angry 😡",value:"angry"},
-          {text:"I feel unmotivated 😐",value:"motivate"},
-          {text:"I got nothing to do",value:"really bored"},
-          {text:"I can't focus 😕",value:"no focus"},
-          {text:"I am hungry <span id='food-emoji'>🍔</span>",value:"hungry"},
-          {text:"I am procrastinating",value:"procrastinate"},
-          {text:"I am struggling in life 😣",value:"struggle"},
-          {text:"I am waiting for something ⌚",value:"impatient"},
-          {text:"I already looked at bad stuff 🙁",value:"disappointed"},
-          {text:"I relapsed ☹️",value:"relapse"},
-          {text:"I really want to do nothing",value:"nothing"},
-          {text:"I want to do someting bad 😈",value:"whoa"},
-          {text:"I want to relax 🧘‍♂️",value:"relax"},
-          {text:"I want to get motivated 🔥",value:"motivate"},
-          {text:"I want to accomplish goals 🏅",value:"tasks"},
-          {text:"I want to complete tasks ✅",value:"tasks"},
-          {text:"I want to listen to music 🎶",value:"music"},
-          {text:"I want to browse YouTube",value:"youtube"},
-          {text:"I want to look at cute anime girls",value:"anime girls"},
-          {text:"I feel like playing a game 🎮",value:"game"}];
-          for(var i = 0; i < feelings.length; i++) {
-            var option = document.createElement("option");
-            option.innerHTML = feelings[i].text;
-            option.value = feelings[i].value;
-            document.getElementById("dropdownMenu").appendChild(option);
-          }
-          if (d.getHours() > 4 && (d.getHours() < 10 || d.getHours() === 10 && d.getMinutes() < 30))
-          document.getElementById("food-emoji").innerHTML = "🥓";
-        }
+        else if (linkIndex > 0)
+          link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>";
         else
           link.innerHTML = linkMessages[linkIndex];
         //Put index value to the console
