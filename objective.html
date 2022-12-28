@@ -68,14 +68,8 @@
           case 'C':
             var numObjectives = cTierObjectives.length;
             var objectiveList = cTierObjectives;
-            var nextObjectiveList = dTierObjectives;
-            var addObjectives = 1;
-            break;
-          /*case 'D':
-            var numObjectives = dTierObjectives.length;
-            var objectiveList = dTierObjectives;
             var addObjectives = 0;
-            break;*/
+            break;
         }
         index = Math.floor(Math.random() * (numObjectives + addObjectives));
         objective = index >= numObjectives ? nextObjectiveList[index - numObjectives] : objectiveList[index];
