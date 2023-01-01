@@ -18,25 +18,25 @@
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Long-running comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
-      <a data-tooltip="???" class='hfire-link' href=''>3 ???</a>
+      <a data-tooltip="Iyashikei" class='hfire-link' href='https://www.crunchyroll.com/series/GYZXDEXX6/amanchu'>3 Amanchu!</div>a>
+      <a data-tooltip="???" class='hfire-link' href=''>4 ???</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
       <b>Long-running</b>: Dragon Ball ⭐⭐⭐⭐⭐<br>
       <h4 class="no-space">Great for laughs</h4>
-      <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐
+      <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐<br>
+      <b>Ocean Themed</b>: Amanchu! ⭐⭐⭐⭐
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [3];
+      const forbiddenNumbers = [4];
       const airingNumbers = [];
-      const maxRoll = 3;
+      const maxRoll = 4;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
-      let d = new Date();
-      let isEvening = d.getHours() >= 16;
 
       function getLucky() {
         if(diceRoll === 0) {
@@ -67,13 +67,13 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! You can pick up a new anime or rewatch an old anime.`;
+              diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4!`;
+              diceResults.innerHTML = `You rolled a 4! You can pick up a new anime or rewatch an old anime.`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5!` + (!isEvening ? ` Roll again.` : ``);
+              diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Roll again or watch the latest episode.";
