@@ -396,8 +396,9 @@ function filtered(newBreak) {
     location.href = "https://hfire24.github.io/Redirect/cirno.html";
   else if (found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'to nut', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful', 'make love'], newBreakLC))
     location.href = "https://hfire24.github.io/Redirect/whoa/old.html";
-  else if (found(["loli", "flandre", "chino", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv", "waifu"], newBreakLC) || newBreakLC.endsWith(" rem")) {
-    alert("Lolis/Waifus should not be a priority.");
+  else if (found(["loli", "flandre", "chino", "koishi", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv", "waifu", 
+    "cute", "attractive", "regress", "shrink", "adorable"], newBreakLC) || newBreakLC.endsWith(" rem")) {
+    alert("That should not be a priority.");
     displayBreak(-1);
   }
   else if (found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life', 'noose'], newBreakLC)
