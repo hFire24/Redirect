@@ -20,7 +20,7 @@ input[type='text'], select, button {
   font-size: 36px;
 }
 
-h1, h2, h3, strong, .theme10 {
+h1, h2, h3, h4, b, strong, .theme10 {
   font-family: 'Barlow Semi Condensed', Futura XBlkCnIt BT, AvenirNextCondensed-HeavyItalic, sans-serif;
 }
 
