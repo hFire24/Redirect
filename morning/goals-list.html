@@ -14,53 +14,72 @@
     <ol id='parent'>
     </ol>
     <script>
-      const morningHabits = ["Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Morning Boost Meditation</a> under Daily Boost<ul><li>Or, listen to Wake Up in Balance</li></ul>",
-      "Stretch your body<ul><li>You can listen to Stretch Relaxation in Insight Timer or Wake Up in Balance</li></ul>",
-      "Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Stretch Relaxation</a> under Quick Solutions",
-      "Slowly drink a glass of water",
-      "Get your dance mat out",
-      "<a href=../stepmania-m.html target=_blank>Play some Stepmania</a>",
-      "Brush teeth and shave (if your have facial hair)<ul><li>Skip this step if the bathroom is occupied</li><li>Take a shower if you haven't took one in the last 48 hours</li></ul>",
-      "Do laundry<ul><li>Skip this step if the washer is occupied</li></ul>",
-      "Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Morning Boost</a> under Daily Boost<ul><li>Or, listen to any meditation of your choice</li></ul>",
-      "Eat breakfast (Froot Loops/bacon & eggs) if you're hungry",
-      "Take a shower if you didn't do it yet<ul><li>If you still can't do it, then forget about it</li></ul>",
-      "Take a shower and do laundry if you didn't do them yet<ul><li>If you still can't do them, then forget about them</li></ul>",
-      "Determine what things you need to get done today",
-      "Optional: Put on <a href='../musicflow/1' target='_blank'>some music</a> to help you focus",
-      "It's time to have an awesome day! Achieve your goals!",
-      "Read a chapter of Atomic Habits.<ul><li>Feel free to take notes for your Atomic Habits and DeviantArt Habits pages.</li></ul>",
-      "<a href='https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T' target=_blank>Watch a General Conference talk.</a>",
-      "Wait 15 minutes doing anything else."];
-
       const urlSearch = window.location.search;
       console.log(urlSearch);
       const parameter = new URLSearchParams(urlSearch);
       const nArray = parameter.get('number');
 
+      const morningHabits = ["Check YouTube and Twitter",
+      "Play Wordle",
+      "Use the Brilliant App",
+      "Say a prayer",
+      "Slowly drink a glass of water",
+      "Take a shower and shave",
+      "Put on some clothes",
+      "Get your dance pad out",
+      "<a href=../stepmania-m.html target=_blank>Play some Stepmania</a>",
+      "<a href=nowalk.html?number=" + nArray + ">Take a walk outside</a>",
+      "Do laundry<ul><li>Skip this step if all the washers are occupied</li></ul>",
+      "Eat breakfast if you're hungry<ul><li>Don't forget your Vitamin D gummies</li></ul>",
+      "Brush your teeth",
+      "Determine what things you need to get done today",
+      "Optional: Put on <a href='../musicflow/1' target='_blank'>some music</a> to help you focus",
+      "Learn and practice code on your own<ul><li><a href=https://vuejs.org/guide/quick-start.html>You are learning Vue.JS</a></li></ul>",
+      "It's time to have a productive day at work! Stay focused!",
+      "It's time to have a wonderful sabbath day! Keep it holy!",
+      "It's time to have an awesome day! Achieve your goals!"];
+
+      /*"Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Morning Boost Meditation</a> under Daily Boost<ul><li>Or, listen to Wake Up in Balance</li></ul>",
+      "Stretch your body<ul><li>You can listen to Stretch Relaxation in Relax. Change. Create. or Wake Up in Balance</li></ul>",
+      "Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Stretch Relaxation</a> under Quick Solutions",
+      "Listen to <a href='https://app.mysoundwise.com/mysoundcasts' target='_blank'>Morning Boost</a> under Daily Boost<ul><li>Or, listen to any meditation of your choice</li></ul>",
+      "Read a chapter of Atomic Habits.<ul><li>Feel free to take notes for your Atomic Habits and DeviantArt Habits pages.</li></ul>",
+      "<a href='https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T' target=_blank>Watch a General Conference talk.</a>",
+      "Wait 15 minutes doing anything else."*/
+      
+
       var mh = [];
 
-      if(nArray[1] === "1")
-        mh.push(morningHabits[0]);
-      else if(nArray[0] === "1" && nArray[1] === "2")
-        mh.push(morningHabits[1]);
-      if(nArray[0] === "1" && nArray[1] === "1") {
-        mh.push(morningHabits[2]);
-      }
-      else {
-        mh.push(morningHabits[3]);
-      }
-      mh.push(morningHabits[4], morningHabits[5], morningHabits[17], morningHabits[6]);
+      /*
+          nArray[0]: 1: tired, 2: not tired
+          nArray[1]: 1: unfocused, 2: focused
+          nArray[2]: 1: bad weather, 2: good weather
+          nArray[3]: 1: no laundry, 2: laundry
+          nArray[4]: 1: work, 2: church, 3: day off
+      */
+
+      for(let i = 0; i < 7; i++)
+        mh.push(morningHabits[i]);
+      if(nArray[2] === "1")
+        mh.push(morningHabits[7], morningHabits[8]);
+      else
+        mh.push(morningHabits[9]);
       if (nArray[3] === "2")
-        mh.push(morningHabits[7]);
-      if (nArray[0] === "1" && nArray[1] === "2")
-        mh.push(morningHabits[8]);
-      mh.push(morningHabits[9]);
-      if (nArray[3] === "1" && !(nArray[1] === "2" && nArray[2] === "2"))
         mh.push(morningHabits[10]);
-      if (nArray[3] === "2")
-        mh.push(morningHabits[11]);
-      mh.push(morningHabits[12], morningHabits[13], morningHabits[14]);
+      for(let i = 11; i < morningHabits.length - 3; i++)
+        mh.push(morningHabits[i]);
+      switch(nArray[4]) {
+        case "1":
+          mh.push(morningHabits[morningHabits.length - 3]);
+          break;
+        case "2":
+          mh.pop();
+          mh.pop();
+          mh.push(morningHabits[morningHabits.length - 2]);
+          break;
+        default:
+          mh.push(morningHabits[morningHabits.length - 1]);
+      }
 
       const parent = document.getElementById("parent");
 

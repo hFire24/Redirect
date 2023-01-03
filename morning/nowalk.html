@@ -13,10 +13,17 @@
     <h1 id='message'>Why not?</h1>
     <div class='medium two-list'>
       <a class='hfire-link' href="nospeed.html">I feel like driving fast</a>
-      <a class='hfire-link' href="goals.html">I'm hungry</a>
-      <a class='hfire-link' href="../stepmania.html">It's dark and cold outside</a>
+      <a id='hungry' class='hfire-link' href="goals-list.html">I'm hungry</a>
+      <a class='hfire-link' href="../stepmania.html">It's dark outside</a>
       <a class='hfire-link' href="../brave.html">I feel too tired/lazy</a>
       <a class='hfire-link' href="../brave.html">I'm not interested</a>
     </div>
+    <script>
+      const urlSearch = window.location.search;
+      const parameter = new URLSearchParams(urlSearch);
+      const nArray = parameter.get('number');
+
+      document.getElementById("hungry").href="goals-list.html?number=" + nArray;
+    </script>
   </body>
 </html>

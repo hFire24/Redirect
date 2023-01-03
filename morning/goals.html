@@ -18,11 +18,22 @@
       <div class='space'>Tired or Lazy?<br>
         <input type="checkbox" id="tired" name="tired" onclick="setCheck('tired')">Yes
       </div>
-      <div class='space'>Raining outside?<br>
+      <div class='space'>Bad weather outside?<br>
         <input type="checkbox" id="raining" name="raining" onclick="setCheck('raining')">Yes
       </div>
       <div class='space'>Plan on doing laundry?<br>
         <input type="checkbox" id="laundry" name="laundry" onclick="setCheck('laundry')">Yes
+      </div>
+      <div class="extended space">
+        <label class="space" for="day">What do you have for today?</label>
+        <span class="medium-select" style="width:200px;">
+          <select id='day' name='day' class="medium-select">
+            <option id="1" value="1">Work 🏢</option>
+            <option id="2" value="2">Church ⛪</option>
+            <option id="3" value="3">Something Else</option>
+            <option id="4" value="4">Nothing</option>
+          </select>
+        </span>
       </div>
     </div>
     <h3 id='submit' onclick='submit()'><strong>Submit</strong></h3>
@@ -36,6 +47,12 @@
         raining:false,
         laundry:false
       };
+
+      const d = new Date();
+      if(d.getDay() === 0)
+        document.getElementById("day").value = "2";
+      else if(d.getDay() === 6)
+        document.getElementById("day").value = "4";
 
       //Executes every time a radio button is pressed.
       function setCheck(attribute) {
@@ -63,6 +80,7 @@
           number = number + "2";
         else
           number = number + "1";
+        number = number + document.getElementById("day").value;
         location.href = "goals-list.html?number=" + number;
       }
     </script>
