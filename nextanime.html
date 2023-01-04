@@ -19,21 +19,23 @@
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Long-running comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
       <a data-tooltip="Iyashikei" class='hfire-link' href='https://www.crunchyroll.com/series/GYZXDEXX6/amanchu'>3 Amanchu!</a>
-      <a data-tooltip="???" class='hfire-link' href=''>4 ???</a>
+      <a data-tooltip="CGDMT" class='hfire-link' href='https://zoro.to/watch/magical-doremi-2687'>4 Ojamajo Doremi</a>
+      <a data-tooltip="???" class='hfire-link extended' href=''>5 ???</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
       <b>Long-running</b>: Dragon Ball ⭐⭐⭐⭐⭐<br>
       <h4 class="no-space">Great for laughs</h4>
       <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐<br>
-      <b>Ocean Themed</b>: Amanchu! ⭐⭐⭐⭐
+      <b>Cute Girls Doing Magical Things</b>: Ojamajo Doremi ⭐⭐⭐⭐<br>
+      <b>Ocean-Themed</b>: Amanchu! ⭐⭐⭐⭐
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [4];
+      const forbiddenNumbers = [5];
       const airingNumbers = [];
-      const maxRoll = 4;
+      const maxRoll = 5;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -70,10 +72,10 @@
               diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4! You can pick up a new anime or rewatch an old anime.`;
+              diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5!`;
+              diceResults.innerHTML = `You rolled a 5! You can pick up a new anime or rewatch an old anime.`;
               break;
             case 6:
               diceResults.innerHTML = "You rolled a 6! Roll again or watch the latest episode.";
@@ -92,7 +94,7 @@
           }
           shake(5, rollTime);
         }
-        else if(diceRoll === 8) {
+        else if(diceRoll === 99) {
           diceRoll = Math.ceil(Math.random() * 12);
           switch(diceRoll) {
             case 1:
