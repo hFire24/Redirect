@@ -12,11 +12,11 @@
   <body class='morning'>
     <h1>How are you this morning?<br></h1>
     <div id="questionnaire" class='two-list'>
-      <div class='space'>Unfocused or Distracted?<br>
-        <input type="checkbox" id="unfocused" name="unfocused" onclick="setCheck('unfocused')">Yes
+      <div class='space'>Hungry?<br>
+        <input type="checkbox" id="hungry" name="hungry" onclick="setCheck('hungry')">Yes
       </div>
-      <div class='space'>Tired or Lazy?<br>
-        <input type="checkbox" id="tired" name="tired" onclick="setCheck('tired')">Yes
+      <div class='space'>Need to take a shower?<br>
+        <input type="checkbox" id="shower" name="shower" onclick="setCheck('shower')">Yes
       </div>
       <div class='space'>Bad weather outside?<br>
         <input type="checkbox" id="raining" name="raining" onclick="setCheck('raining')">Yes
@@ -39,11 +39,10 @@
     <h3 id='submit' onclick='submit()'><strong>Submit</strong></h3>
     </ol>
     <script>
-
       //Object for saving options
       const myObject = {
-        unfocused:false,
-        tired:false,
+        hungry:false,
+        shower:false,
         raining:false,
         laundry:false
       };
@@ -63,24 +62,7 @@
       }
 
       function submit() {
-        var number = "";
-        if(myObject["tired"])
-          number = number + "1";
-        else
-          number = number + "2";
-        if(myObject["unfocused"])
-          number = number + "1";
-        else
-          number = number + "2";
-        if(myObject["raining"])
-          number = number + "1";
-        else
-          number = number + "2";
-        if(myObject["laundry"])
-          number = number + "2";
-        else
-          number = number + "1";
-        number = number + document.getElementById("day").value;
+        var number = (myObject["hungry"] ? "1" : "2") + (myObject["shower"] ? "1" : "2") + (myObject["raining"] ? "1" : "2") + (myObject["laundry"] ? "2" : "1") + document.getElementById("day").value;
         location.href = "goals-list.html?number=" + number;
       }
     </script>

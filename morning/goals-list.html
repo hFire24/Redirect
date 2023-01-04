@@ -21,7 +21,6 @@
 
       const morningHabits = ["Check YouTube and Twitter",
       "Play Wordle",
-      "Use the Brilliant App",
       "Say a prayer",
       "Slowly drink a glass of water",
       "Take a shower and shave",
@@ -30,8 +29,9 @@
       "<a href=../stepmania-m.html target=_blank>Play some Stepmania</a>",
       "<a href=nowalk.html?number=" + nArray + ">Take a walk outside</a>",
       "Do laundry<ul><li>Skip this step if all the washers are occupied</li></ul>",
-      "Eat breakfast if you're hungry<ul><li>Don't forget your Vitamin D gummies</li></ul>",
+      "Eat breakfast<ul><li>Don't forget your Vitamin D gummies</li></ul>",
       "Brush your teeth",
+      "Make adjustments to your morning routine if you need to",
       "Determine what things you need to get done today",
       "Optional: Put on <a href='../musicflow/1' target='_blank'>some music</a> to help you focus",
       "Learn and practice code on your own<ul><li><a href=https://vuejs.org/guide/quick-start.html>You are learning Vue.JS</a></li></ul>",
@@ -51,30 +51,36 @@
       var mh = [];
 
       /*
-          nArray[0]: 1: tired, 2: not tired
-          nArray[1]: 1: unfocused, 2: focused
-          nArray[2]: 1: bad weather, 2: good weather
-          nArray[3]: 1: no laundry, 2: laundry
-          nArray[4]: 1: work, 2: church, 3: day off
+          nArray[0]: 1: hungry, 2: not hungry                 This will affect when you eat breakfast.
+          nArray[1]: 1: shower, 2: no shower                  This will affect when you take a shower.
+          nArray[2]: 1: bad weather, 2: good weather          This will affect whether you walk or play Stepmania.
+          nArray[3]: 1: no laundry, 2: laundry                This will affect when you do the laundry.
+          nArray[4]: 1: work, 2: church, 3: day off           This will affect the last few messages.
       */
 
-      for(let i = 0; i < 7; i++)
+      for(let i = 0; i < 3; i++)
         mh.push(morningHabits[i]);
-      if(nArray[2] === "1")
-        mh.push(morningHabits[7], morningHabits[8]);
-      else
-        mh.push(morningHabits[9]);
+      if(nArray[0] === "1")
+        mh.push(morningHabits[10], morningHabits[11]);
+      if(nArray[1] === "1")
+        mh.push(morningHabits[4], morningHabits[5]);
       if (nArray[3] === "2")
-        mh.push(morningHabits[10]);
-      for(let i = 11; i < morningHabits.length - 3; i++)
+        mh.push(morningHabits[9]);
+      if(nArray[2] === "1")
+        mh.push(morningHabits[6], morningHabits[7]);
+      else
+        mh.push(morningHabits[8]);
+      for(let i = 12; i < morningHabits.length - 3; i++)
         mh.push(morningHabits[i]);
+      if(nArray[0] === "2")
+        mh.push(morningHabits[10], morningHabits[11]);
+      if(nArray[1] === "2")
+        mh.push(morningHabits[4] + " if you need to", "Change or " + morningHabits[5].toLowerCase());
       switch(nArray[4]) {
         case "1":
           mh.push(morningHabits[morningHabits.length - 3]);
           break;
         case "2":
-          mh.pop();
-          mh.pop();
           mh.push(morningHabits[morningHabits.length - 2]);
           break;
         default:
