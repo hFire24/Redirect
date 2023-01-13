@@ -31,6 +31,7 @@
       "Do laundry<ul><li>Skip this step if all the washers are occupied</li></ul>",
       "Eat breakfast<ul><li>Don't forget your Vitamin D gummies</li></ul>",
       "Brush your teeth",
+      "Listen to a General Conference talk",
       "Make adjustments to your morning routine if you need to",
       "Determine what things you need to get done today",
       "Optional: Put on <a href='../musicflow/1' target='_blank'>some music</a> to help you focus",
@@ -58,7 +59,7 @@
           nArray[4]: 1: work, 2: church, 3: day off           This will affect the last few messages.
       */
 
-      for(let i = 0; i < 3; i++)
+      for(let i = 2; i < 4; i++)
         mh.push(morningHabits[i]);
       if(nArray[0] === "1")
         mh.push(morningHabits[10], morningHabits[11]);
