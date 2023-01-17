@@ -24,7 +24,8 @@
       <a data-tooltip="Beautiful romance" class='hfire-link' href='https://www.crunchyroll.com/series/G9VHN91DJ/the-angel-next-door-spoils-me-rotten'>6 The Angel Next Door</a>
       <a data-tooltip="VR gaming" class='hfire-link' href='https://www.crunchyroll.com/series/GKEH2G428/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense'>7 BOFURI</a>
       <a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>8 FMA: B</a>
-      <a data-tooltip="CGDCT Dub" class='hfire-link' href=''>9 ???</a>
+      <a data-tooltip="CGDCT Dub" class='hfire-link' href='https://www.crunchyroll.com/series/GDKHZEW97/akebis-sailor-uniform'>9 Akebi's Sailor Uniform</a>
+      <a data-tooltip="???" class='hfire-link' href=''>10 ???</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
@@ -34,17 +35,19 @@
       <b>Overpowered Defense</b>: BOFURI ⭐⭐⭐⭐⭐<br>
       <h4 class="no-space">Great for laughs</h4>
       <b>Long-running</b>: Sgt. Frog ⭐⭐⭐⭐<br>
-      <b>Cute Girls Doing Magical Things</b>: Ojamajo Doremi ⭐⭐⭐⭐<br>
-      <b>Ocean-Themed</b>: Amanchu! ⭐⭐⭐⭐<br>
+      <b>Cute Girls Doing Magical Things</b>: Ojamajo Doremi ⭐⭐⭐<br>
       <b>Gender-Bender</b>: Onimai: I'm Now Your Sister ⭐⭐⭐⭐⭐<br>
-      <b>Lovey-Dovey Romance</b>: The Angel Next Door Spoils Me Rotten ⭐⭐⭐⭐
+      <h4 class="no-space">Great for peace and quiet</h4>
+      <b>Lovey-Dovey Romance</b>: The Angel Next Door Spoils Me Rotten ⭐⭐⭐⭐<br>
+      <b>Ocean-Themed</b>: Amanchu! ⭐⭐⭐<br>
+      <b>Sailor Uniforms</b>: Akebi's Sailor Uniform ⭐⭐⭐
     </div>
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [9];
+      const forbiddenNumbers = [10];
       const airingNumbers = [5, 6, 7];
-      const maxRoll = 9;
+      const maxRoll = 10;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -96,10 +99,13 @@
               diceRoll = 0;
               break;
             case 8:
-              diceResults.innerHTML = `You rolled an 8!W`;
+              diceResults.innerHTML = `You rolled an 8!`;
               break;
             case 9:
-              diceResults.innerHTML = `You rolled a 9! Pick up a new anime or rewatch an old anime.`;
+              diceResults.innerHTML = `You rolled a 9!`;
+              break;
+            case 10:
+              diceResults.innerHTML = `You rolled a 10! Pick up a new anime or rewatch an old anime.`;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
