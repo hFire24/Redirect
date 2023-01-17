@@ -42,9 +42,9 @@
     <script>
       var diceRoll = 0;
       const rollTime = 750;
-      const forbiddenNumbers = [8];
+      const forbiddenNumbers = [9];
       const airingNumbers = [5, 6, 7];
-      const maxRoll = 8;
+      const maxRoll = 9;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -96,7 +96,10 @@
               diceRoll = 0;
               break;
             case 8:
-              diceResults.innerHTML = `You rolled an 8! That does not mean it's time to put money in the special reserve. Instead, pick up a new anime or rewatch an old anime.`;
+              diceResults.innerHTML = `You rolled an 8!W`;
+              break;
+            case 9:
+              diceResults.innerHTML = `You rolled a 9! Pick up a new anime or rewatch an old anime.`;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
