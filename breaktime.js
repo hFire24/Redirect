@@ -139,7 +139,7 @@ new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isX
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"pass",3,false,"active"),
 new Breaktime('Tackle your search terms list.',"pass",2,false,"active"),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false,"lazy"),
-new Breaktime('Call one of your immediate family members.',"pass","misc",2,false,"active"),
+new Breaktime('Call one of your family members.',"pass","misc",2,false,"active"),
   //Goals
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
@@ -175,7 +175,8 @@ new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"l
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
-new Breaktime('Go to the gym and use the gym equipment.',"pass","exercise-heavy",3,true,"active")];
+new Breaktime('Go to the gym and use the gym equipment.',"pass","exercise-heavy",3,true,"active"),
+new Breaktime('Draw some stuff using an iPad or a drawing tablet.',"pass","art",2,true)];
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
 //new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true),
@@ -223,7 +224,7 @@ new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isX
 new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false),
 new Breaktime('Tackle your search terms list.',"pass",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false),
-new Breaktime('Call one of your immediate family members.',"pass","misc",2,false),
+new Breaktime('Call one of your family members.',"pass","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
@@ -235,7 +236,8 @@ new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false),
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
 //new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
-new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false)];
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false),
+new Breaktime('Draw some stuff using an iPad.',"pass","art",2,false)];
 //new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
 
 var mobileStand = [//Health and fitness
