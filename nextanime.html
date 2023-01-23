@@ -12,7 +12,8 @@
   </head>
   <body>
     <h1 id='message'>Your current anime with links</h1>
-    <div class='space'>If you came here to procrastinate, watch anime for 30 seconds minimum.<br>
+    <div>If you came here to procrastinate, watch anime for 30 seconds minimum.</div>
+    <div><input type="checkbox" id="canBeRolled" checked="true" onClick="changeMaxValue()"><span id="maxValue"></span> can<span id="not"></span> be rolled.</div>
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(3)'>Roll 3 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
@@ -47,10 +48,22 @@
       const rollTime = 750;
       const forbiddenNumbers = [10];
       const airingNumbers = [5, 6, 7];
-      const maxRoll = 10;
+      let maxRoll = 10;
+      maxValue.innerHTML = maxRoll;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
+
+      function changeMaxValue() {
+        if(not.innerHTML === "") {
+          not.innerHTML = "not";
+          maxRoll--;
+        }
+        else {
+          not.innerHTML = "";
+          maxRoll++;
+        }
+      }
 
       function getLucky() {
         if(diceRoll === 0) {
