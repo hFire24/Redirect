@@ -13,72 +13,77 @@
     <h2 id='objective'>Choose a randomly generated objective for your day based on a tier.</h2>
     <div id='hideable'>
       <div id='tiers' class='three-list space'>
-        <span class='hfire-link' onclick="loadBreak('A')">A-Tier Objective 🏅</span>
-        <span class='hfire-link' onclick="loadBreak('B')">B-Tier Objective 👍</span>
-        <span class='hfire-link' onclick="loadBreak('C')">C-Tier Objective 😐</span>
+        <span class='hfire-link' onclick="loadBreak('easy')">Easy Objective ⭐</span>
+        <span class='hfire-link' onclick="loadBreak('medium')">Medium Objective ⭐⭐</span>
+        <span class='hfire-link' onclick="loadBreak('hard')">Hard Objective ⭐⭐⭐</span>
         <!--span class='hfire-link' onclick="loadBreak('D')">D-Tier Objective 😴</span-->
       </div>
     </div>
     <div id='width'></div>
     <script src="script.js"></script>
     <script>
-      const aTierObjectives = ["learn more programming skills.",
-      "make as much progress on your personal projects as you can."];
-      const bTierObjectives = ["get better at Stepmania.",
-      "clear out as many Dynalist tasks as you can, especially in B and C tasks.",
-      "do every daily habit in your habits list on Notion.",
-      "use the gym equipment. Don't get gymtimidated.",
-      "listen to as many General Conference talks as you can.",
-      "make as much progress on Come Follow Me as you can."];
-      const cTierObjectives = [
-      //"gain as many social skills as you can.",
-      //"listen to as many guided meditations as possible.",
-      "read through the book Atomic Habits or 7 Habits of Highly Effective People.",
-      "watch videos on the \"Get Life Advice\" playlist in order.",
-      "read through your digitized journal entries. Start from June 2014.",
-      "watch as much anime as you can.",
-      "clear your watch later list. If cleared, go down a YouTube rabbit hole.",
-      //"earn as many Bloons Tower Defense 6 medals as you can.",
-      //"try to unlock everything in Need for Speed: Hot Pursuit.",
-      "play lots of American Truck Simulator.",
-      //"find an 8 while playing Minesweeper.",
-      "analyze as many songs in your iTunes library as you can.",
-      //"add as many new or returning songs to your iTunes library as you can.",
-      //"play through Flashpoint games. You can focus on one game or many games.",
-      "play as much video games as you can.",
-      "make as many blog posts on your blogs as you can.",
-      "make as much progress on NGU Idle as you can."];
+      const hardObjectives = [
+        "learn more programming skills and make lots of progress on your personal projects.",
+        "play some Stepmania. Try to beat some courses.",
+        "clear out as many Dynalist tasks as you can, especially in B and C tasks.",
+        "do every daily habit in your habit tracker.",
+        "listen to about 6-10 General Conference talks.",
+        "binge watch videos on the \"Get Life Advice\" playlist in order.",
+        "watch at least 6 anime episodes.",
+        "analyze an entire album on your iTunes Library.",
+        "make as many blog posts on your anime blog as you can.",
+      ];
+      const mediumObjectives = [
+        "play some Stepmania. Focus on Hard 8s.",
+        "do your Dynalist tasks. More specifically, all your A tasks.",
+        "do half of your daily habits in your habit tracker.",
+        "listen to a General Conference talk.",
+        "watch a few videos on the \"Get Life Advice\" playlist in order.",
+        "watch 2 anime episodes.",
+        "clear your watch later list. If cleared, go down a YouTube rabbit hole.",
+        "analyze 5 songs on you iTunes Library.",
+        "make a post on your anime blog.",
+        "complete a lesson on Brilliant."
+      ];
+      const easyObjectives = [
+        "play some Stepmania. Focus on completing packs in Medium difficulty.",
+        "get at least one thing in your habit tracker done.",
+        "put on a General Conference talk, but you don't have to listen.",
+        "play the \"Get Life Advice\" playlist, but you don't have to listen.",
+        "watch an anime episode.",
+        "watch one video in your watch later list. If cleared, go down a YouTube rabbit hole.",
+        "play lots of American Truck Simulator.",
+        "analyze a song on you iTunes Library.",
+        "play as much video games as you can.",
+        "make as much progress on NGU Idle as you can.",
+        "get a rough draft up for a blog post on your anime blog.",
+      ]; //Be like Anzu Futaba.
 
       function loadBreak(tier) {
         let objective = 'shuffle through your liked videos on YouTube.';
         let index = 0;
         switch(tier) {
-          case 'A':
-            var numObjectives = aTierObjectives.length;
-            var objectiveList = aTierObjectives;
-            var nextObjectiveList = bTierObjectives;
-            var addObjectives = 0;
+          case 'easy':
+            var numObjectives = easyObjectives.length;
+            var objectiveList = easyObjectives;
             break;
-          case 'B':
-            var numObjectives = bTierObjectives.length;
-            var objectiveList = bTierObjectives;
-            var nextObjectiveList = cTierObjectives;
-            var addObjectives = 2;
+          case 'medium':
+            var numObjectives = mediumObjectives.length;
+            var objectiveList = mediumObjectives;
             break;
-          case 'C':
-            var numObjectives = cTierObjectives.length;
-            var objectiveList = cTierObjectives;
-            var addObjectives = 0;
+          case 'hard':
+            var numObjectives = hardObjectives.length;
+            var objectiveList = hardObjectives;
             break;
         }
-        index = Math.floor(Math.random() * (numObjectives + addObjectives));
-        objective = index >= numObjectives ? nextObjectiveList[index - numObjectives] : objectiveList[index];
+        index = Math.floor(Math.random() * (numObjectives));
+        objective = objectiveList[index];
         document.getElementById("objective").innerHTML = "Your objective of the day is to " + objective;
         document.getElementById("hideable").removeChild(document.getElementById("tiers"));
       }
 
       async function goThroughObjectives(i) {
-        let allObjectives = aTierObjectives.concat(bTierObjectives,cTierObjectives,dTierObjectives);
+        let allObjectives = easyObjectives.concat(mediumObjectives,hardObjectives);
         if(i < 0 || i >= allObjectives.length)
           i = 0;
         while(i < allObjectives.length) {

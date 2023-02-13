@@ -78,7 +78,6 @@ new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,fal
 new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false,"lazy"),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false,"lazy"),
-new Breaktime('Read your journal entries.<br>Start from June 2014.',"pass","read",1,false,"active"),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false,"lazy"),
 new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false,"lazy"),
 new Breaktime('Read the verse of the day.',"pass","religion",2,false,"lazy"),
@@ -135,6 +134,7 @@ new Breaktime('Review your break messages. Add, edit, or remove them when needed
 new Breaktime('Tackle your search terms list.',"pass",2,false,"active"),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false,"lazy"),
 new Breaktime('Call one of your family members.',"pass","misc",2,false,"active"),
+new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
   //Goals
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
@@ -211,7 +211,6 @@ new Breaktime('Do one thing to increase your spirituality.',"https://www.churcho
 new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Read the verse of the day in Gospel Library app.',"pass","religion",2,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
-new Breaktime('Read your journal entries.<br>Start from June 2014.',"pass","read",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
@@ -219,6 +218,7 @@ new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https
 new Breaktime('Tackle your search terms list.',"pass",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false),
 new Breaktime('Call one of your family members.',"pass","misc",2,false),
+new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
