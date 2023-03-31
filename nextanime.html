@@ -52,7 +52,7 @@
       var diceRoll = 0;
       const rollTime = 750;
       const cannotRoll = [];
-      const forbiddenNumbers = [3, 5, 7, 10];
+      const forbiddenNumbers = [7, 10];
       const airingNumbers = [6];
       let maxRoll = 10;
       maxValue.innerHTML = maxRoll;
@@ -104,15 +104,13 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! It's grayed out, so roll again.`;
-              diceRoll = resetDice(3);
+              diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! It's grayed out, so roll again.`;
-              diceRoll = resetDice(5);
+              diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
               diceResults.innerHTML = `You rolled a 6! Roll again or watch the latest episode.`;
