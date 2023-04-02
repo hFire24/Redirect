@@ -10,17 +10,17 @@
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   </head>
   <body class='theme4'>
-    <h1 id='message'></h1>
+    <h2></h2>
     <div id='hideable'>
     </div>
     <script>
       var messages = ["Time to take a break."];
       for (var i = 1; i < 50; i++)
-        messages.push("Catch up on anime!");
+        messages.push("Why do you want to watch anime?");
       //Get random message index from messages array
       var index = Math.floor(Math.random() * messages.length);
       //Put message to screen using the index value of the array
-      document.getElementById("message").innerHTML = messages[index];
+      document.querySelector("h2").innerHTML = messages[index];
       var parent = document.getElementById("hideable");
       var link = document.getElementById("link");
       if(!link) {
@@ -29,9 +29,9 @@
         parent.appendChild(link);
       }
       if (index === 0)
-        link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
+        link.innerHTML = "<<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>>";
       else
-        link.innerHTML = "<a href='nextanime.html'>Here are the anime you need to watch.</a> <strong onclick='rejectSomething(0)' style='color:white;'>No.</strong>";
+        link.innerHTML = "<div class=two-list><a class=hfire-link href=nextanime.html>Because I'm bored</a><a class=hfire-link onclick=rejectSomething(4)>To look at cute anime girls</a></div>";
 
       function rejectSomething(time) {
         if (time === 0)
@@ -40,6 +40,11 @@
           link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
         else if(time === 3)
           link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
+        else if(time === 4)
+        {
+          document.querySelector("h2").innerHTML = "Are you thinking about relapsing?"
+          link.innerHTML = "<div class=two-list space><a class=hfire-link href=whoa/old.html>Yes</a><a class=hfire-link href=nextanime.html>No</a><a class='hfire-link extended' href=relapse.html>I already relapsed</a><div>"
+        }
         else
           location.href = "cyoa/1.html";
       }
