@@ -134,11 +134,15 @@
               diceResults.innerHTML = `You rolled a 9! Roll again or watch the latest episode.`;
               diceRoll = resetDice(9);
               break;
-            case 10:
-              diceResults.innerHTML = `You rolled a 10! Watch the anime you have been neglecting to watch for the longest time.`;
+            case 9:
+              diceResults.innerHTML = `You rolled a 10! Roll again or watch the latest episode.`;
+              diceRoll = resetDice(10);
               break;
             case 11:
-              diceResults.innerHTML = `You rolled an 11! Time to fork over some money to an artist in exchange for art.`;
+              diceResults.innerHTML = `You rolled an 11! Watch the anime you have been neglecting to watch for the longest time.`;
+              break;
+            case 12:
+              diceResults.innerHTML = `You rolled a 12! Time to fork over some money to an artist in exchange for art.`;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
