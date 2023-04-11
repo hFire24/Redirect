@@ -596,6 +596,10 @@ td {
   body, ol, #goals-list, .relax-list, .small, #link.small, #atomhab-list {
     font-size: 30px;
   }
+  .four-list {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+  }
   .medium-select, input[type='text'].medium-select {
     font-size: 24px;
   }
