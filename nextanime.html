@@ -25,12 +25,14 @@
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
       <a data-tooltip="Diving iyashikei" class='hfire-link' href='https://www.crunchyroll.com/series/GYZXDEXX6/amanchu'>3 Amanchu!</a>
-      <a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>4 FMA: B</a>
+      <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>6 FMA: B</a-->
+      <a data-tooltip="Megumin" class='hfire-link' href='https://www.crunchyroll.com/series/GJ0H7Q5V7/konosuba--an-explosion-on-this-wonderful-world'>4 KONOSUBA</a>
       <a data-tooltip="VR gaming" class='hfire-link' href='https://www.crunchyroll.com/series/GKEH2G428/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense'>5 BOFURI</a>
-      <a data-tooltip="CGDCT dub" class='hfire-link' href='https://www.crunchyroll.com/series/GW4HM79VM/ive-been-killing-slimes-for-300-years-and-maxed-out-my-level'>6 Slime Killer</a>
-      <a data-tooltip="Tokyo Nightlife" class='hfire-link' href='https://www.hidive.com/tv/ya-boy-kongming'>7 Ya Boy Kongming!</a>
-      <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>8 Kuma Kuma Kuma Bear</a>
-      <a data-tooltip="Megumin" class='hfire-link' href='https://www.crunchyroll.com/series/GJ0H7Q5V7/konosuba--an-explosion-on-this-wonderful-world'>9 KONOSUBA</a>
+      <a data-tooltip="Tokyo Nightlife" class='hfire-link' href='https://www.hidive.com/tv/ya-boy-kongming'>6 Ya Boy Kongming!</a>
+      <a data-tooltip="CGDCT dub" class='hfire-link' href='https://www.crunchyroll.com/series/GW4HM79VM/ive-been-killing-slimes-for-300-years-and-maxed-out-my-level'>7 Slime Killer</a>
+      <!--a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>8 Kuma Kuma Kuma Bear</a-->
+      <a data-tooltip="Dark Idol" class='hfire-link' href='https://www.hidive.com/tv/oshi-no-ko'>8 Oshi no Ko</a>
+      <a data-tooltip="Light Idol" class='hfire-link' href='https://www.crunchyroll.com/series/GZJH3D0EP/the-idolmster-cinderella-girls-u149'>9 iM@S U149</a>
       <a data-tooltip="Not an anime" class='hfire-link' href='https://skl.sh/3kUGEj8'>10 Skillshare</a>
       <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>11 ⌛⌛</a>
       <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link' href=''>12 💲💲💲</a>
@@ -38,9 +40,9 @@
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
-      Dragon Ball, Fullmetal Alchemist: Brotherhood
+      Dragon Ball
       <h4 class="no-space">Great for laughs and action</h4>
-      BOFURI Season 2, Kuma Kuma Kuma Bear Punch!
+      BOFURI Season 2
       <h4 class="no-space">Great for laughs</h4>
       Sgt. Frog, Ya Boy Kongming!, KONOSUBA Megumin Spinoff
       <h4 class="no-space">Great for peace and quiet</h4>
@@ -55,7 +57,7 @@
       const rollTime = 750;
       const cannotRoll = [];
       const forbiddenNumbers = [10, 12];
-      const airingNumbers = [5, 8, 9];
+      const airingNumbers = [5, 4, 8, 9];
       let maxRoll = 12;
       maxValue.innerHTML = maxRoll;
       var askToBan = false;
@@ -110,7 +112,8 @@
               diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4!`;
+              diceResults.innerHTML = `You rolled a 4! Roll again or watch the latest episode.`;
+              diceRoll = resetDice(4);
               break;
             case 5:
               diceResults.innerHTML = `You rolled a 5! Roll again or watch the latest episode.`;
@@ -219,7 +222,7 @@
           //To do: If the range has forbidden numbers only and the value of the first dice roll, then don't enter into the endless loop.
           while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll) || firstDiceRoll + secondDiceRoll === 7 && (firstDiceRoll === 1 || firstDiceRoll === 6))
             secondDiceRoll = Math.ceil(Math.random() * maxRoll);
-          diceResults.innerHTML = (firstDiceRoll === 8 ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
+          diceResults.innerHTML = ((firstDiceRoll === 8 || firstDiceRoll === 11) ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
           //To do: If a forbidden number has to be rolled, then a shrug emoji will be shown. 🤷‍♀️
           let containsAN = [airingNumbers.includes(firstDiceRoll), airingNumbers.includes(secondDiceRoll)];
