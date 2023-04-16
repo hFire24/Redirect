@@ -30,9 +30,9 @@
       <a data-tooltip="VR gaming" class='hfire-link' href='https://www.crunchyroll.com/series/GKEH2G428/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense'>5 BOFURI</a>
       <a data-tooltip="Tokyo Nightlife" class='hfire-link' href='https://www.hidive.com/tv/ya-boy-kongming'>6 Ya Boy Kongming!</a>
       <a data-tooltip="CGDCT dub" class='hfire-link' href='https://www.crunchyroll.com/series/GW4HM79VM/ive-been-killing-slimes-for-300-years-and-maxed-out-my-level'>7 Slime Killer</a>
-      <!--a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>8 Kuma Kuma Kuma Bear</a-->
       <a data-tooltip="Dark Idol" class='hfire-link' href='https://www.hidive.com/tv/oshi-no-ko'>8 Oshi no Ko</a>
-      <a data-tooltip="Light Idol" class='hfire-link' href='https://www.crunchyroll.com/series/GZJH3D0EP/the-idolmster-cinderella-girls-u149'>9 iM@S U149</a>
+      <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>9 Kuma Kuma Kuma Bear</a>
+      <!--a data-tooltip="Light Idol" class='hfire-link' href='https://www.crunchyroll.com/series/GZJH3D0EP/the-idolmster-cinderella-girls-u149'>9 iM@S U149</a-->
       <a data-tooltip="Not an anime" class='hfire-link' href='https://skl.sh/3kUGEj8'>10 Skillshare</a>
       <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>11 ⌛⌛</a>
       <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link' href=''>12 💲💲💲</a>
@@ -42,7 +42,7 @@
       <h4 class="no-space">Great for action</h4>
       Dragon Ball
       <h4 class="no-space">Great for laughs and action</h4>
-      BOFURI Season 2
+      BOFURI Season 2, Kuma Kuma Kuma Bear
       <h4 class="no-space">Great for laughs</h4>
       Sgt. Frog, Ya Boy Kongming!, KONOSUBA Megumin Spinoff
       <h4 class="no-space">Great for peace and quiet</h4>
@@ -57,7 +57,7 @@
       const rollTime = 750;
       const cannotRoll = [];
       const forbiddenNumbers = [10, 12];
-      const airingNumbers = [5, 4, 8, 9];
+      const airingNumbers = [5, 4, 8];
       let maxRoll = 12;
       maxValue.innerHTML = maxRoll;
       var askToBan = false;
@@ -130,8 +130,7 @@
               diceRoll = resetDice(8);
               break;
             case 9:
-              diceResults.innerHTML = `You rolled a 9! Roll again or watch the latest episode.`;
-              diceRoll = resetDice(9);
+              diceResults.innerHTML = `You rolled a 9!`;
               break;
             case 10:
               diceResults.innerHTML = `You rolled a 10! Roll again if you're on mobile.`;
