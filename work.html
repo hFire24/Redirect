@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Work!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body>
+    <h1 id='message'></h1>
+    <div id='hideable'>
+    </div>
+  </body>
+  <script>
+    var messages = ["Time to take a break."];
+    for (var i = 1; i < 50; i++)
+      messages.push("Work!");
+    //Get random message index from messages array
+    var index = Math.floor(Math.random() * messages.length);
+    //Put message to screen using the index value of the array
+    document.getElementById("message").innerHTML = messages[index];
+    var d = new Date();
+    if (index === 0) {
+      var linkOuter = document.createElement("div");
+      linkOuter.id = "link";
+      var link = document.createElement("a");
+      link.href = "breaktime.html";
+      link.innerHTML = "Ready to do something else?";
+      linkOuter.appendChild(link);
+      var no = document.createElement("strong");
+      no.innerHTML = " NO";
+      no.addEventListener("click",function() {location.href = "cyoa/1.html";});
+      linkOuter.appendChild(no);
+      document.getElementById("hideable").appendChild(linkOuter);
+      if (d.getHours() < 6 || d.getHours() >= 22) {
+        link.style.color = "black";
+        no.style.color = 'red';
+      }
+      else {
+        link.style.color = "white";
+        no.style.color = 'white';
+      }
+    }
+    if (d.getHours() < 6 || d.getHours() >= 22) {
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    }
+  </script>
+</html>
