@@ -168,11 +168,16 @@ td {
   grid-template-columns:auto auto;
 }
 
-#atomhab-list {
+#break-list {
+  display:grid;
+  grid-template-columns: auto;
+}
+
+#atomhab-list, #break-list {
   background-color: inherit;
 }
 
-#atomhab-list > span {
+#atomhab-list > span, #break-list > span {
   padding: 10px 0px;
   background-color: inherit;
 }
@@ -325,7 +330,7 @@ td {
   background-color: hsl(122, 43%, 50%);
 }
 
-.theme1 #atomhab-list .brighter {
+.theme1 #atomhab-list .brighter, .theme1 #break-list .brighter {
   background-color: hsl(122, 30%, 40%);
 }
 
@@ -342,7 +347,7 @@ td {
   background-color: hsl(227, 43%, 50%);
 }
 
-.theme2 #atomhab-list .brighter {
+.theme2 #atomhab-list .brighter, .theme2 #break-list .brighter {
   background-color: hsl(227, 30%, 40%);
 }
 
@@ -367,7 +372,7 @@ td {
   background-color: hsl(317, 43%, 50%);
 }
 
-.theme3 #atomhab-list .brighter {
+.theme3 #atomhab-list .brighter, .theme3 #break-list .brighter {
   background-color: hsl(317, 30%, 40%);
 }
 
@@ -384,7 +389,7 @@ td {
   background-color: hsl(47, 43%, 50%);
 }
 
-.theme4 #atomhab-list .brighter {
+.theme4 #atomhab-list .brighter, .theme4 #break-list .brighter {
   background-color: hsl(47, 21%, 48%);
 }
 
@@ -401,7 +406,7 @@ td {
   background-color: hsl(0, 0%, 50%);
 }
 
-.theme5 #atomhab-list .brighter {
+.theme5 #atomhab-list .brighter, .theme5 #break-list .brighter {
   background-color: hsl(0, 0%, 40%);
 }
 

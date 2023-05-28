@@ -141,10 +141,10 @@ new Breaktime('Write down what happened on this day in your life.',"pass","misc"
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
-new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
+//new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
-new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
+//new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
@@ -240,6 +240,25 @@ new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,tru
 new Breaktime('Drink some water.',"pass","health",3,true),
 new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true),
 new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true)];
+
+function loadAllBreaks() {
+  var i = 0;
+  var parent = document.getElementById("break-list");
+  messages = messages.concat(smallBreak,bigBreak,smallStand,bigStand);
+  while(i < messages.length) {
+    var brighten = false;
+    if (i % 2 === 0)
+      brighten = true;
+    var quote = document.createElement("span");
+    quote.innerHTML = messages[i].text;
+    quote.className = "small";
+    parent.appendChild(quote);
+    if(brighten) {
+      quote.classList.add("brighter");
+    }
+    i++;
+  }
+}
 
 function displayBreak(index) {
   if($("standup")) {
