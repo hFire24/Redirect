@@ -64,7 +64,6 @@ new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/c
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
   //Day planning
-new Breaktime('List everything you\'re currently doing, and order them by priority.',"pass","plan",3,false,"active"),
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false,"active"),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false,"lazy"),
   //Music
@@ -88,8 +87,8 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
-new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false,"active"),
-new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
+new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false,"active")];
+//new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 //new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false,"lazy"),
 //new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"lazy")];
 //new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
@@ -115,20 +114,20 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",1,false,"lazy"),
 new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
+new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga.',"pass","anime",1,false),
 new Breaktime('Read the Kuma Kuma Kuma Bear manga.',"pass","anime",1,false),
   //Games
-new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
+//new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false,"active"),
 new Breaktime('Drive around safely in American Truck Simulator.',"pass","game",1,false,"active"),
 new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game",1,false,"active"),
 new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"active"),
-new Breaktime('Play 100% Orange Juice.',"pass","game",1,false,"active"),
+//new Breaktime('Play 100% Orange Juice.',"pass","game",1,false,"active"),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
-new Breaktime('How about multiple ways to take a break?',"multiple.html","misc",2,false,"active"),
 new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
 //new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false,"active"),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false,"active"),
@@ -194,7 +193,6 @@ new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/c
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false),
   //Day planning
-new Breaktime('List everything you\'re currently doing, and order them by priority.',"pass","plan",3,false),
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Music
@@ -206,6 +204,7 @@ new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false),
 new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",1,false),
 new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
+new Breaktime('Watch anime.',"nextanime","anime",1,false),
   //Miscellaneous
 new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
@@ -213,9 +212,7 @@ new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Read the verse of the day in Gospel Library app.',"pass","religion",2,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
-new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
-new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false),
 new Breaktime('Tackle your search terms list.',"pass",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false),
 new Breaktime('Call one of your family members.',"pass","misc",2,false),
@@ -225,12 +222,11 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
-new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
-new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
-new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
+new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
+//new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
+//new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 //new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
 //new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false)];
 //new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
