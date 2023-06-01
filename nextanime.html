@@ -54,7 +54,7 @@
       var diceRoll = 0;
       const rollTime = 750;
       const cannotRoll = [];
-      const forbiddenNumbers = [3, 10];
+      const forbiddenNumbers = [10];
       const airingNumbers = [4, 5, 8];
       let maxRoll = 10;
       maxValue.innerHTML = maxRoll;
@@ -106,8 +106,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again or start watching something mediocre.`;
-              diceRoll = resetDice(3);
+              diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4! Roll again or watch the latest episode.`;
