@@ -24,14 +24,13 @@
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
-      <a data-tooltip="Dark Idol" class='hfire-link' href='https://www.hidive.com/tv/oshi-no-ko'>3 Oshi no Ko</a>
+      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>3 ⌛⌛</a>
+      <!--a data-tooltip="Immersive Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation'>3 Mushoku Tensei</a-->
       <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>4 Kuma Kuma Kuma Bear</a>
+      <a data-tooltip="Light Idol" class='hfire-link' href='https://www.crunchyroll.com/series/GZJH3D0EP/the-idolmster-cinderella-girls-u149'>5 iM@S U149</a>
       <!--a data-tooltip="Your #1 anime" class='hfire-link' href='https://www.hidive.com/tv/no-game-no-life'>3 No Game No Life</a--->
       <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>6 FMA: B</a-->
-      <a data-tooltip="Light Idol" class='hfire-link' href='https://www.crunchyroll.com/series/GZJH3D0EP/the-idolmster-cinderella-girls-u149'>5 iM@S U149</a>
-      <a data-tooltip="Tokyo Nightlife" class='hfire-link' href='https://www.hidive.com/tv/ya-boy-kongming'>6 Ya Boy Kongming!</a>
-      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>7 ⌛⌛</a>
-      <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>8 💲💲💲</a>
+      <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>6 💲💲💲</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
@@ -39,11 +38,9 @@
       <h4 class="no-space">Great for laughs and action</h4>
       Kuma Kuma Kuma Bear
       <h4 class="no-space">Great for laughs</h4>
-      Sgt. Frog, Ya Boy Kongming!
+      Sgt. Frog
       <h4 class="no-space">Great for cuteness</h4>
       The iDOLM@STER Cinderella Girls U149
-      <h4 class="no-space">Great for drama</h4>
-      Oshi no Ko>
       <h4 class="no-space">Artists to commission</h4>
       <b>AR</b>: <a href="https://www.deviantart.com/mikola19">Mikola19</a><br>
       <b>GochiUsa Style</b>: <a href="https://twitter.com/yukijanc_">yukijanc_</a><br>
@@ -54,9 +51,9 @@
       var diceRoll = 0;
       const rollTime = 750;
       const cannotRoll = [];
-      const forbiddenNumbers = [8];
-      const airingNumbers = [3, 5];
-      let maxRoll = 8;
+      const forbiddenNumbers = [6];
+      const airingNumbers = [5];
+      let maxRoll = 6;
       maxValue.innerHTML = maxRoll;
       var askToBan = false;
       var watchedFocus = true;
@@ -106,8 +103,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
-              diceRoll = resetDice(3);
+              diceResults.innerHTML = `You rolled a 3! Watch the anime you have been neglecting to watch for the longest time.`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4!`;
@@ -115,15 +111,9 @@
             case 5:
               diceResults.innerHTML = `You rolled a 5! Roll again or watch the latest episode.`;
               diceRoll = resetDice(5);
-              break;
-            case 6:
-              diceResults.innerHTML = `You rolled a 6!`;
-              break;
-            case 7:
-              diceResults.innerHTML = `You rolled a 7! Watch the anime you have been neglecting to watch for the longest time.`;
               break; 
-            case 8:
-              diceResults.innerHTML = `You rolled an 8! Time to fork over some money to an artist in exchange for art.`;
+            case 6:
+              diceResults.innerHTML = `You rolled a 6! Time to fork over some money to an artist in exchange for art.`;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
