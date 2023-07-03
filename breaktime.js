@@ -96,7 +96,6 @@ new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass"
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true,"lazy"),
 //new Breaktime('Walk up to the sixth floor of your apartment and walk down to the first floor.',"pass","exercise",3,true,"active"),
-new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true,"lazy"),
 new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true,"active"),
 new Breaktime('Do planks for one minute.',"https://www.youtube.com/watch?v=z6KKo85V9Ew","exercise-heavy",3,true,"active"),
 new Breaktime('Brush your teeth if you haven\'t done so this morning or this evening after dinner',"pass","health",3,true,"lazy")];
@@ -112,11 +111,8 @@ new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>
 new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),*/
   //Anime watching
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",1,false,"lazy"),
-new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Read the Slime Killer manga.',"pass","anime",1,false),
-new Breaktime('Read the Kuma Kuma Kuma Bear manga.',"pass","anime",1,false),
+new Breaktime('Read manga. Slime Killer or Kuma Bear, either one is fine.',"pass","anime",1,false),
   //Games
 //new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false,"active"),
@@ -155,8 +151,8 @@ new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),
-new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy")];
+new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active")];
+//new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy")];
 //new Breaktime('Learn C# on Lex on your work laptop.',"pass","coding",3,false,"active")];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
 //Do not upload traced art.
@@ -202,8 +198,6 @@ new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
   //Anime
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false),
-new Breaktime('Watch Dragon Ball.',"https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball","anime",1,false),
-new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false),
   //Miscellaneous
 new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
@@ -234,7 +228,6 @@ new Breaktime('Check your goals page. Try to knock out one of your goals.',"goal
 var mobileStand = [//Health and fitness
 new Breaktime('That\'s all there is to it. Sit back down.',"pass","health",3,true),
 new Breaktime('Drink some water.',"pass","health",3,true),
-new Breaktime('Stare at an object 20 feet away for 20 seconds.',"pass","relax",3,true),
 new Breaktime('Eat a snack if it has been 3 hours since you ate something.',"pass","food",2,true)];
 
 function loadAllBreaks() {
