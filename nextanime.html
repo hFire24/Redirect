@@ -24,12 +24,11 @@
     <div class='four-list space'>
       <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
-      <a data-tooltip="Immersive Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation'>3 Mushoku Tensei</a>
-      <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>4 Kuma Kuma Kuma Bear</a>
-      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>5 ⌛⌛</a>
+      <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>3 Kuma Kuma Kuma Bear</a>
+      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>4 ⌛⌛</a>
       <!--a data-tooltip="Your #1 anime" class='hfire-link' href='https://www.hidive.com/tv/no-game-no-life'>3 No Game No Life</a--->
       <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>6 FMA: B</a-->
-      <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>6 💲💲💲</a>
+      <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>5 💲💲💲</a>
     </div>
     <div style="text-align:left;">
       <h4 class="no-space">Great for action</h4>
@@ -38,8 +37,6 @@
       Kuma Kuma Kuma Bear
       <h4 class="no-space">Great for laughs</h4>
       Sgt. Frog
-      <h4 class="no-space">Great for drama</h4>
-      Mushoku Tensei: Jobless Reincarnation
       <h4 class="no-space">Artists to commission</h4>
       <b>AR</b>: <a href="https://www.deviantart.com/mikola19">Mikola19</a><br>
       <b>GochiUsa Style</b>: <a href="https://twitter.com/yukijanc_">yukijanc_</a><br>
@@ -51,9 +48,9 @@
       var diceRoll = 0;
       const rollTime = 750;
       const cannotRoll = [];
-      const forbiddenNumbers = [6];
-      const airingNumbers = [3];
-      let maxRoll = 6;
+      const forbiddenNumbers = [5];
+      const airingNumbers = [];
+      let maxRoll = 5;
       maxValue.innerHTML = maxRoll;
       var askToBan = false;
       var watchedFocus = true;
@@ -103,17 +100,14 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
+              diceResults.innerHTML = `You rolled a 3!`;
               diceRoll = resetDice(3);
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4!`;
+              diceResults.innerHTML = `You rolled a 4! Watch the anime you have been neglecting to watch for the longest time.`;
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! Watch the anime you have been neglecting to watch for the longest time.`;
-              break; 
-            case 6:
-              diceResults.innerHTML = `You rolled a 6! Time to fork over some money to an artist in exchange for art.`;
+              diceResults.innerHTML = `You rolled a 5! Time to fork over some money to an artist in exchange for art.`;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
