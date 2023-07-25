@@ -124,12 +124,13 @@ function addBigMessages() {
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',
+  'How about you drive?... in Euro Truck Simulator 2?',
   '<a href="https://sudoku.com/">Why don\'t you play Sudoku?</a>',
     //Miscellaneous
   'Try saying out loud the thing you need to get done.',
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
   'Why not read your patriarchal blessing? It could put you on a better path in life.',
-  'Why don\'t you read your journal entries?<br>Start from June 2014.',
+  'Why don\'t you read your journal entries?',
   'Reading <u>Atomic Habits</u> could lead you towards a better life.',
     //Goals
   'How about you learn social skills?',
@@ -140,8 +141,8 @@ function addBigMessages() {
   '<a href="art.html">Why don\'t you practice drawing anime?</a>',
   '<a href="https://blog.udemy.com/c-sharp-projects/">How about you code one of those projects?</a>',
   'Why don\'t you read that book you bought on Amazon?',
-  '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?</a>',*/
-  'Why not make some progress on the Brilliant app?',
+  '<a href="https://www.duolingo.com/">Learn a new language at Duolingo, because why not?</a>',
+  'Why not make some progress on the Brilliant app?',*/
   '<a href="goals.html">Check out the goals page for the big things you want to do!</a>',
   //'Try solving a Rubik\'s cube.',
   //'Those Purdue e-mails aren\'t going to read themselves.',
@@ -205,7 +206,7 @@ function addBigMessages() {
   "Life is a game. Know the rules. Use strategies, and you'll win.",
   "When you get things done, you feel happy and accomplished!",
   "You are a really good person. Did you know that?",
-  "If you keep doing great things, you'll get a Tesla!",
+  "If you keep doing great things, you'll get your dream car!",
   "Win a million dollars! It's harder to do than earning $1000000.",
   "The road to productivity. Take it, and you'll be successful.",
   "Be a productive human being! Do something good!",
@@ -231,7 +232,7 @@ function addBigMessages() {
   'Feel free to do things you want and need to do.',
   'Go do something you want to do the most.',
   'You figured out a way to redirect away from distracting websites.',
-  'Your dream car is a Tesla! Would you like one?',
+  'Your dream car is a midsize luxury sedan! Would you like one?',
   'Your mind must be like a carnival inside!',
   'You\'re the type of person who values fun things!',
     //Rejected negative messages
