@@ -110,7 +110,7 @@
               diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
               diceRoll = resetDice(3);
               break;
-            case 3:
+            case 4:
               diceResults.innerHTML = `You rolled a 4! Roll again or watch the latest episode.`;
               diceRoll = resetDice(4);
               break;
@@ -190,10 +190,10 @@
           }
         }
         else {
-          //alert("Hey. Wait 30 minutes or watch one anime episode before rolling the dice again.");
-          diceRoll = 0;
+          alert("Hey. Wait 30 minutes or watch one anime episode before rolling the dice again.");
+          /*diceRoll = 0;
           cannotRoll.length = 0;
-          rollDice();
+          rollDice();*/
         }
       }
 
