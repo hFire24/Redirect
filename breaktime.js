@@ -102,7 +102,7 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
-new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b">the flowchart</a>.',"relax2.html?mood=random","meditate2",3,false,"lazy"),
+new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false,"active"),
@@ -112,7 +112,7 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
   //Anime watching
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Read manga. Slime Killer or Kuma Bear, either one is fine.',"pass","anime",1,false),
+new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false),
   //Games
 //new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false,"active"),
@@ -139,6 +139,7 @@ new Breaktime('Write down what happened on this day in your life.',"pass","misc"
 //new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
+new Breaktime('Learn Google Cloud skills on your work laptop',"coding",3,false,"active"),
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
