@@ -139,7 +139,7 @@ new Breaktime('Write down what happened on this day in your life.',"pass","misc"
 //new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
-new Breaktime('Learn Google Cloud skills on your work laptop',"coding",3,false,"active"),
+new Breaktime('Learn Google Cloud skills on your work laptop',"pass","coding",3,false,"active"),
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
