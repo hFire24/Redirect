@@ -57,6 +57,7 @@ function loadBreak(number) {
 var smallBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false,"lazy"),
 new Breaktime('Clear your mind.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false,"lazy"),
+new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
@@ -180,6 +181,7 @@ new Breaktime('Make progress on this drawing course.',"drawing-progress.html","a
 var mobileBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false),
 new Breaktime('Clear your mind.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false),
+new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 // new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 // new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
