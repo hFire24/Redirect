@@ -141,13 +141,13 @@ new Breaktime('Write down what happened on this day in your life.',"pass","misc"
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn Google Cloud skills on your work laptop',"pass","coding",3,false,"active"),
+//Learn vercel
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 //new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
-//new Breaktime('Learn Google CGP on Lex on your work laptop.<br>Compute and Network Services',"pass","coding",3,false,"active"),
 //new Breaktime('Use your money to buy a programming e-book.',"https://www.amazon.com","coding",3,false,"active"),
 /*new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
