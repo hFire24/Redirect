@@ -61,7 +61,7 @@ new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
-new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false,"lazy"),
+new Breaktime('Listen to some focus/relaxation music. Do not continue until you listened to at least one song.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
   //Day planning
@@ -71,7 +71,7 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false,"la
 new Breaktime('Add a song to your iTunes library.',"pass","misc",1,false,"active"),
 new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.',"pass","misc",1,false,"active"),
 new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
-new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
+//new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false,"lazy"),
@@ -104,6 +104,8 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 
 var bigBreak = [//relaxation
 new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on the Energy on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false,"active"),
@@ -113,14 +115,15 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
   //Anime watching
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false),
+new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
 //new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
-new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false,"active"),
+new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false,"lazy"),
 new Breaktime('Drive around safely in American Truck Simulator.',"pass","game",1,false,"active"),
-new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game",1,false,"active"),
+new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game",1,false,"lazy"),
 new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"active"),
-new Breaktime('Play Q Remastered.',"pass","game",1,false,"active"),
+new Breaktime('Play Q Remastered.',"pass","game",1,false,"lazy"),
+new Breaktime('Play Pokemon Infinite Fusion.',"pass","game",1,false,"lazy"),
 //new Breaktime('Play 100% Orange Juice.',"pass","game",1,false,"active"),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
@@ -183,12 +186,12 @@ var mobileBreak = [//Relaxation
 new Breaktime('Listen to this.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false),
 new Breaktime('Clear your mind.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false),
 new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
-// new Breaktime('Make progress on your Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-// new Breaktime('Make progress on a non-Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
-new Breaktime('Put on some focus/relaxation music.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false),
+new Breaktime('Listen to some focus/relaxation music. Do not continue until you listened to at least one song.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false),
@@ -196,7 +199,7 @@ new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false),
 new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Music
-new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
+//new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
   //Games
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
   //Anime
