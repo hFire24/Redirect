@@ -22,7 +22,7 @@
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(3)'>Roll 3 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
-      <a data-tooltip="Important classic" class='hfire-link' href='https://beta.crunchyroll.com/series/G8DHV7W21/dragon-ball'>1 Dragon Ball</a>
+      <a data-tooltip="Will replace with Pokemon XY" class='hfire-link' href=''>1 🎲🎲🎲</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
       <a data-tooltip="Even at Level 1" class='hfire-link' href='https://www.crunchyroll.com/series/G1XHJV0VV/my-unique-skill-makes-me-op-even-at-level-1'>3 My Unique Skill Makes Me OP</a>
       <a data-tooltip="Generic Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/G9VHN9QED/am-i-actually-the-strongest'>4 Am I Actually the Strongest?</a>
@@ -101,7 +101,8 @@
           }
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1!`;
+              diceResults.innerHTML = `You rolled a 1! Roll again or resume watching FMA:B`;
+              diceRoll = resetDice(1);
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
