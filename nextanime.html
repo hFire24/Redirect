@@ -22,7 +22,7 @@
     <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(3)'>Roll 3 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
-      <a data-tooltip="Will replace with Pokemon XY" class='hfire-link' href=''>1 🎲🎲🎲</a>
+      <a data-tooltip="Not an isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GR49WNQE6/recovery-of-an-mmo-junkie'>1 Recovery of an MMO Junkie</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
       <a data-tooltip="Even at Level 1" class='hfire-link' href='https://www.crunchyroll.com/series/G1XHJV0VV/my-unique-skill-makes-me-op-even-at-level-1'>3 My Unique Skill Makes Me OP</a>
       <a data-tooltip="Generic Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/G9VHN9QED/am-i-actually-the-strongest'>4 Am I Actually the Strongest?</a>
@@ -34,12 +34,14 @@
       <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>9 💲💲💲</a>
     </div>
     <div style="text-align:left;">
-      <h4 class="no-space">Great for action</h4>
-      Dragon Ball
+      <h4 class="no-space">Great for romance</h4>
+      Recovery of an MMO Junkie
       <h4 class="no-space">Great for laughs and action</h4>
       Kuma Kuma Kuma Bear
       <h4 class="no-space">Great for laughs</h4>
       Sgt. Frog
+      <h4 class="no-space">Great for awesomeness</h4>
+      No Game No Life
       <h4 class="no-space">Great for drama</h4>
       Mushoku Tensei: Jobless Reincarnation
       <h4 class="no-space">Great for turning off your mind to</h4>
@@ -101,8 +103,7 @@
           }
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1! Roll again or resume watching FMA:B`;
-              diceRoll = resetDice(1);
+              diceResults.innerHTML = `You rolled a 1!`;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
