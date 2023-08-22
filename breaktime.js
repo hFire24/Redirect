@@ -61,7 +61,7 @@ new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false,"lazy"),
-new Breaktime('Listen to some focus/relaxation music. Do not continue until you listened to at least one song.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false,"lazy"),
+new Breaktime('Listen to some focus/relaxation music. Wait until you listened to one song.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
   //Day planning
@@ -191,7 +191,7 @@ new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
-new Breaktime('Listen to some focus/relaxation music. Do not continue until you listened to at least one song.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false),
+new Breaktime('Listen to some focus/relaxation music. Do not continue until you listened to one song.',"https://music.youtube.com/channel/UC4r3AhGZWUGeh2AprrEJ_PA","music",2,false),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false),
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false),
