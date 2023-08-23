@@ -29,11 +29,13 @@
       <a data-tooltip="Jobless Reincarnation" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation'>5 Mushoku Tensei</a>
       <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>6 Kuma Kuma Kuma Bear</a>
       <a data-tooltip="Your #1 Iskeai anime" class='hfire-link' href='https://www.hidive.com/tv/no-game-no-life'>7 No Game No Life</a>
-      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>8 ⌛⌛</a>
-      <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>6 FMA: B</a-->
-      <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>9 💲💲💲</a>
+      <a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>8 FMA: B</a>
+      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>9 ⌛⌛</a>
+      <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>10 💲💲💲</a>
     </div>
     <div style="text-align:left;">
+      <h4 class="no-space">Great for action</h4>
+      Fullmetal Alchemist: Brotherhood
       <h4 class="no-space">Great for romance</h4>
       Recovery of an MMO Junkie
       <h4 class="no-space">Great for laughs and action</h4>
@@ -55,11 +57,11 @@
     </div>
     <script>
       var diceRoll = 0;
+      let maxRoll = 10;
       const rollTime = 750;
       const cannotRoll = [];
-      const forbiddenNumbers = [9];
+      const forbiddenNumbers = [maxRoll];
       const airingNumbers = [3, 4, 5];
-      let maxRoll = 9;
       maxValue.innerHTML = maxRoll;
       var askToBan = false;
       var watchedFocus = true;
@@ -127,10 +129,13 @@
               diceResults.innerHTML = `You rolled a 7!`;
               break;
             case 8:
-              diceResults.innerHTML = `You rolled an 8! Watch the anime you have been neglecting to watch for the longest time.`;
+              diceResults.innerHTML = `You rolled an 8!`;
               break;
             case 9:
-              diceResults.innerHTML = `You rolled an 9! Time to fork over some money to an artist in exchange for art.`;
+              diceResults.innerHTML = `You rolled a 9! Watch the anime you have been neglecting to watch for the longest time.`;
+              break;
+            case 10:
+              diceResults.innerHTML = `You rolled a 10! Time to fork over some money to an artist in exchange for art.`;
               break;
             default:
               diceResults.innerHTML = "You rolled an invalid number!";
