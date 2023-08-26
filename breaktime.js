@@ -129,7 +129,7 @@ new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
-new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
+//new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
 //new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false,"active"),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false,"active"),
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"pass",3,false,"active"),
@@ -209,7 +209,7 @@ new Breaktime('Watch anime.',"nextanime","anime",1,false),
   //Miscellaneous
 new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
-new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
+//new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Read the verse of the day in Gospel Library app.',"pass","religion",2,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
 new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
