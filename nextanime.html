@@ -233,11 +233,11 @@
       }
 
       function roll2Dice() {
-        if(forbiddenNumbers.length >= maxRoll - 1 || askToBan && forbiddenNumbers.length >= maxRoll - 2)
-          alert("Hey. You can't roll any numbers! Enable at least two or three numbers besides 10, and then try again.");
+        if(askToBan)
+          banANumber();
+        if(forbiddenNumbers.length >= maxRoll - 1)
+          alert("Hey. You can't roll any numbers! Enable at least two numbers besides " + maxRoll + ", and then try again.");
         else if(diceRoll === 0) {
-          if(askToBan)
-            banANumber();
           let firstDiceRoll = Math.ceil(Math.random() * maxRoll);
           //To do: If the range has forbidden numbers only, then don't enter into the endless loop.
           while (forbiddenNumbers.includes(firstDiceRoll))
@@ -271,11 +271,11 @@
 
       function rollManyDice(amount) {
         let diceArrayString = "";
+        if(askToBan)
+          banANumber();
         if(forbiddenNumbers.length >= maxRoll)
-          alert("Hey. You can't roll any numbers! Enable at least one number besides 10, and then try again.");
+          alert("Hey. You can't roll any numbers! Enable at least one number besides " + maxRoll + ", and then try again.");
         else if(diceRoll === 0) {
-          if(askToBan)
-            banANumber();
           let diceRolls = [];
           let containsAN = [];
           for(let i = 0; i < amount; i++) {
