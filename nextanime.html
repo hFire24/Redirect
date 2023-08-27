@@ -33,14 +33,15 @@
     <div class='space'>
       <button class='custom-button' onclick='rollDice()'>Roll a die</button> 
       <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> 
-      <button class='custom-button' onclick='rollManyDice(3)' disabled>Roll 3 dice</button> 
-      <button class='custom-button' onclick='rollManyDice(4)' disabled>Roll 4 dice</button> 
+      <button class='custom-button' onclick='rollManyDice(3)'>Roll 3 dice</button> 
+      <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> 
       <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> 
       <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a data-tooltip="Not an isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GR49WNQE6/recovery-of-an-mmo-junkie'>1 Recovery of an MMO Junkie</a>
-      <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a>
+      <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.pokeflix.tv/browse/pokemon-xy'>2 Pokemon XY</a>
+      <!--a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
       <a data-tooltip="Even at Level 1" class='hfire-link' href='https://www.crunchyroll.com/series/G1XHJV0VV/my-unique-skill-makes-me-op-even-at-level-1'>3 My Unique Skill Makes Me OP</a>
       <a data-tooltip="Generic Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/G9VHN9QED/am-i-actually-the-strongest'>4 Am I Actually the Strongest?</a>
       <a data-tooltip="Jobless Reincarnation" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation'>5 Mushoku Tensei</a>
@@ -57,8 +58,8 @@
       Recovery of an MMO Junkie
       <h4 class="no-space">Great for laughs and action</h4>
       Kuma Kuma Kuma Bear
-      <h4 class="no-space">Great for laughs</h4>
-      Sgt. Frog
+      <!--h4 class="no-space">Great for laughs</h4>
+      <Sgt. Frog-->
       <h4 class="no-space">Great for awesomeness</h4>
       No Game No Life
       <h4 class="no-space">Great for drama</h4>
@@ -238,14 +239,16 @@
         if(forbiddenNumbers.length >= maxRoll - 1)
           alert("Hey. You can't roll any numbers! Enable at least two numbers besides " + maxRoll + ", and then try again.");
         else if(diceRoll === 0) {
-          let firstDiceRoll = Math.ceil(Math.random() * maxRoll);
+          let firstDiceRoll;
           //To do: If the range has forbidden numbers only, then don't enter into the endless loop.
-          while (forbiddenNumbers.includes(firstDiceRoll))
+          do {
             firstDiceRoll = Math.ceil(Math.random() * maxRoll);
-          let secondDiceRoll = Math.ceil(Math.random() * maxRoll);
+          } while (forbiddenNumbers.includes(firstDiceRoll))
+          let secondDiceRoll;
           //To do: If the range has forbidden numbers only and the value of the first dice roll, then don't enter into the endless loop.
-          while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll) || firstDiceRoll + secondDiceRoll === 7 && (firstDiceRoll === 1 || firstDiceRoll === 6))
+          do {
             secondDiceRoll = Math.ceil(Math.random() * maxRoll);
+          } while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll));
           diceResults.innerHTML = ((firstDiceRoll === 8 || firstDiceRoll === 11) ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
           //To do: If a forbidden number has to be rolled, then a shrug emoji will be shown. 🤷‍♀️
@@ -273,20 +276,30 @@
         let diceArrayString = "";
         if(askToBan)
           banANumber();
-        if(forbiddenNumbers.length >= maxRoll)
-          alert("Hey. You can't roll any numbers! Enable at least one number besides " + maxRoll + ", and then try again.");
+        let availableNumbers = [];
+        for (let i = 1; i <= maxRoll; i++) {
+          if (!forbiddenNumbers.includes(i)) {
+            availableNumbers.push(i);
+          }
+        }
+        let hasOnlyAiringNumbers = availableNumbers.every(num => airingNumbers.includes(num));
+        console.log(hasOnlyAiringNumbers);
+        if(forbiddenNumbers.length >= maxRoll || hasOnlyAiringNumbers && availableNumbers.length < amount)
+          alert("Hey. You can't roll any numbers! Enable at least one more number besides " + maxRoll + ", and then try again.");
         else if(diceRoll === 0) {
           let diceRolls = [];
           let containsAN = [];
+          //To do: If the range has airing numbers only and the length of airing numbers is less than the amount, then don't enter into the endless loop.
           for(let i = 0; i < amount; i++) {
-            diceRolls.push(Math.ceil(Math.random() * maxRoll));
-            while (forbiddenNumbers.includes(diceRolls[i]) || twoOfTheSameAiringNumbers(diceRolls)) {
-              diceRolls[i] = Math.ceil(Math.random() * maxRoll);
-            }
-            containsAN.push(airingNumbers.includes(diceRolls[i]));
-            diceArrayString += i === amount - 1 ? "& " + diceRolls[i] + "!" : diceRolls[i] + ", ";
+            let diceRoll;
+            do {
+              diceRoll = Math.ceil(Math.random() * maxRoll);
+            } while (forbiddenNumbers.includes(diceRoll) || twoOfTheSameAiringNumbers(diceRolls,diceRoll));
+            diceRolls.push(diceRoll);
+            containsAN.push(airingNumbers.includes(diceRoll));
+            diceArrayString += i === amount - 1 ? "& " + diceRoll + "!" : diceRoll + ", ";
           }
-          diceResults.innerHTML = (diceRolls[0] === 8 ? "You rolled an " : "You rolled a ") + diceArrayString;
+          diceResults.innerHTML = ((diceRolls[0] === 8 || diceRolls[0] === 11) ? "You rolled an " : "You rolled a ") + diceArrayString;
           diceRoll = amount;
           if(containsAN.filter(x => x === true).length >= 1) {
             diceRoll = 0;
@@ -311,9 +324,9 @@
         return 0;
       }
 
-      function twoOfTheSameAiringNumbers(array) {
+      function twoOfTheSameAiringNumbers(array,number) {
         for(let i = 0; i < airingNumbers.length; i++)
-          if(array.filter(x => x === airingNumbers[i]).length > 1)
+          if(airingNumbers.includes(number) && array.includes(number))
             return true;
         return false;
       }
@@ -333,7 +346,6 @@
 
       function forbid(number) {
         toggle(number,false);
-        airingNumbers.splice(airingNumbers.indexOf(number), 1);
       }
 
       function listAiringNumbers(amount) {
