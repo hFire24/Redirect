@@ -8,6 +8,7 @@ var globalIndex = -1;
 var globalStand = -1;
 
 var bedtimeRemoved = false;
+var consecutivePasses = 0;
 
 class Breaktime {
   constructor(text,link,category,importance,stand,lazy) {
@@ -257,12 +258,19 @@ function loadAllBreaks() {
 }
 
 function displayBreak(index) {
+  //Get rid of the standup element
   if($("standup")) {
     $("standup").style.display = "none";
     $("standup").innerHTML = "";
   }
+  if(index === -2) {
+    messages.length = 0;
+  }
   if(messages.length === 0) {
-    if(putOff.length > 0) {
+    if(index === -2) {
+      location.href = "https://hfire24.github.io/Redirect/kirby.html";
+    }
+    else if(putOff.length > 0) {
       for(var i in putOff)
         messages.push(putOff[i]);
       putOff = [];
@@ -348,18 +356,16 @@ function displayBreak(index) {
 function displayLink() {
   if (messages[globalIndex].category === "done")
     link.innerHTML = "<div class='space'>Immediately close this tab.</div>";
-  else if (messages[globalIndex].category === "task")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><a href='cyoa/64.html' target='_blank'>I have nothing to do.</a></div>";
   else if (messages[globalIndex].category === "plan")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='finished()'>I have nothing to do.</a></div>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='finished(false)'>I have nothing to do.</a></div>";
   else if(messages[globalIndex].category === "food")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('food')>I am still full, even after 3 hours.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('food')>I am still full, even after 3 hours.</u>";
   else if(messages[globalIndex].category === "homework")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('homework')>I am taking a break from homework.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('homework')>I am taking a break from homework.</u>";
   else if(messages[globalIndex].category === "exercise-heavy")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div><u onclick=deleteCategory('exercise-heavy')>It's been less than 30 minutes since I ate.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('exercise-heavy')>It's been less than 30 minutes since I ate.</u>";
   else
-    link.innerHTML = "<div class='break-list space'><u onclick='finished()'>I already did.</u><u onclick='whyNot()'>It's impossible.</u></div>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div>";
 }
 
 function noooo() {
@@ -376,7 +382,7 @@ function noooo() {
   $("vader").play();
 }
 
-function finished() {
+function finished(did) {
   var category = messages[globalIndex].category;
   if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music")
     deleteCategory(category);
@@ -390,6 +396,8 @@ function finished() {
     console.log(messages);
     console.log(standup);
   }
+  consecutivePasses = did === true ? 0 : consecutivePasses + 1;
+  console.log(consecutivePasses + " skips");
   if(confirm("Got something you need to do?")) {
     var custom = prompt("Type in a task, and press \"Submit\" or Enter when done.");
     if(!filtered(custom)) {
@@ -398,7 +406,7 @@ function finished() {
     }
   }
   else
-    displayBreak(-1);
+    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);    
 }
 
 function filtered(newBreak) {
@@ -411,7 +419,7 @@ function filtered(newBreak) {
   else if (found(["loli", "flandre", "chino", "koishi", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv", "waifu", 
     "cute", "attractive", "regress", "shrink", "adorable"], newBreakLC) || newBreakLC.endsWith(" rem")) {
     alert("That should not be a priority.");
-    displayBreak(-1);
+    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);    
   }
   else if (found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life', 'noose'], newBreakLC)
     && !found(wasteTime, newBreakLC) && !found(["watch", "listen", "read", "play"],newBreakLC) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'], newBreakLC) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'], newBreakLC)
@@ -423,7 +431,7 @@ function filtered(newBreak) {
   }
   else if (found(['bored', 'bore', 'nothing', 'don\'t feel like doing', 'uhh', 'umm', 'hmm', 'lack of interest', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk'], newBreakLC)
     || found(wasteTime,newBreakLC) || newBreak.length === 0)
-    displayBreak(-1);
+    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);    
   else {
     rValue = false;
   }
@@ -431,10 +439,6 @@ function filtered(newBreak) {
 }
 
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
-
-function whyNot() {
-  link.innerHTML = "<div class='space'>Let me guess. You don't want to do it.</div> <div class='two-list space'><u onclick='submitReason()'>I don't want to do it.</u><u onclick='displayLink()'>Actually, I'll do it.</u></div><u onclick='finished()'>It is absolutely impossible to do it now.</u>";
-}
 
 function deleteCategory(category) {
   var i = 0;
@@ -456,22 +460,11 @@ function deleteCategory(category) {
   console.log(standup);
 }
 
-function submitReason() {
-  if (messages[globalIndex].importance < 4)
-    putOffBreak();
-  else {
-    if(Math.floor(Math.random() * 2) === 0)
-      window.open("2minuterule.html", '_blank');
-    else
-      window.open("brave.html", '_blank');
-  }
-}
-
 function putOffBreak() {
   if(messages[globalIndex].stand)
     putOffStand.push(standup[globalStand]);
   putOff.push(messages[globalIndex]);
-  finished();
+  finished(false);
 }
 
 function $(x) {
