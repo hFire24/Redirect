@@ -18,8 +18,25 @@
   <body>
     <h1 id='message'>Your current anime with links</h1>
     <div>If you came here to procrastinate, watch anime for 30 seconds minimum.</div>
-    <div><input type="checkbox" id="canBeRolled" checked="true" onClick="changeMaxValue()"><span id="maxValue"></span> can<span id="not"></span> be rolled.</div>
-    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> <button class='custom-button' onclick='rollManyDice(3)'>Roll 3 dice</button> <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
+    <div class="small">
+      <input type="checkbox" checked="true" onClick="toggle(1,true)" id="cb1"><span>1</span>
+      <input type="checkbox" checked="true" onClick="toggle(2,true)" id="cb2"><span>2</span>
+      <input type="checkbox" checked="true" onClick="toggle(3,true)" id="cb3"><span>3</span>
+      <input type="checkbox" checked="true" onClick="toggle(4,true)" id="cb4"><span>4</span>
+      <input type="checkbox" checked="true" onClick="toggle(5,true)" id="cb5"><span>5</span>
+      <input type="checkbox" checked="true" onClick="toggle(6,true)" id="cb6"><span>6</span>
+      <input type="checkbox" checked="true" onClick="toggle(7,true)" id="cb7"><span>7</span>
+      <input type="checkbox" checked="true" onClick="toggle(8,true)" id="cb8"><span>8</span>
+      <input type="checkbox" checked="true" onClick="toggle(9,true)" id="cb9"><span>9</span>
+      <input type="checkbox" checked="true" onClick="toggle(10,true)" id="cb10"><span>10</span>
+    </div>
+    <div class='space'>
+      <button class='custom-button' onclick='rollDice()'>Roll a die</button> 
+      <button class='custom-button' onclick='roll2Dice()'>Roll 2 dice</button> 
+      <button class='custom-button' onclick='rollManyDice(3)' disabled>Roll 3 dice</button> 
+      <button class='custom-button' onclick='rollManyDice(4)' disabled>Roll 4 dice</button> 
+      <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> 
+      <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a data-tooltip="Not an isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GR49WNQE6/recovery-of-an-mmo-junkie'>1 Recovery of an MMO Junkie</a>
@@ -62,20 +79,26 @@
       const cannotRoll = [];
       const forbiddenNumbers = [maxRoll];
       const airingNumbers = [3, 4, 5];
-      maxValue.innerHTML = maxRoll;
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
 
-      function changeMaxValue() {
-        if(not.innerHTML === "") {
-          not.innerHTML = "not";
-          maxRoll--;
-        }
-        else {
-          not.innerHTML = "";
-          maxRoll++;
-        }
+      function toggle(num,canReallyToggle) {
+        var checkedElement = document.getElementById("cb" + num)
+        if(cannotRoll.indexOf(num) < 0)
+          cannotRoll.push(num);
+        else if(cannotRoll.indexOf(num) >= 0 && canReallyToggle)
+          cannotRoll.splice(cannotRoll.indexOf(num),1);
+        if(forbiddenNumbers.indexOf(num) < 0)
+          forbiddenNumbers.push(num);
+        else if(forbiddenNumbers.indexOf(num) >= 0 && canReallyToggle && num !== maxRoll)
+          forbiddenNumbers.splice(forbiddenNumbers.indexOf(num),1);
+        if(cannotRoll.indexOf(num) >= 0 && checkedElement.checked)
+          checkedElement.checked = false;
+        else if(cannotRoll.indexOf(num) < 0 && !checkedElement.checked)
+          checkedElement.checked = true;
+        console.log(cannotRoll);
+        console.log(forbiddenNumbers);
       }
 
       function getLucky() {
@@ -92,7 +115,9 @@
       }
 
       function rollDice() {
-        if(diceRoll === 0) {
+        if(cannotRoll.length >= maxRoll)
+          alert("Hey. You can't roll any numbers! Enable at least one number, and then try again.");
+        else if(diceRoll === 0) {
           if(askIfWatchedFocus)
             watchedFocus = confirmFocus();
           if(!watchedFocus)
@@ -208,7 +233,9 @@
       }
 
       function roll2Dice() {
-        if(diceRoll === 0) {
+        if(forbiddenNumbers.length >= maxRoll - 1 || askToBan && forbiddenNumbers.length >= maxRoll - 2)
+          alert("Hey. You can't roll any numbers! Enable at least two or three numbers besides 10, and then try again.");
+        else if(diceRoll === 0) {
           if(askToBan)
             banANumber();
           let firstDiceRoll = Math.ceil(Math.random() * maxRoll);
@@ -244,15 +271,18 @@
 
       function rollManyDice(amount) {
         let diceArrayString = "";
-        if(diceRoll === 0) {
+        if(forbiddenNumbers.length >= maxRoll)
+          alert("Hey. You can't roll any numbers! Enable at least one number besides 10, and then try again.");
+        else if(diceRoll === 0) {
           if(askToBan)
             banANumber();
           let diceRolls = [];
           let containsAN = [];
           for(let i = 0; i < amount; i++) {
             diceRolls.push(Math.ceil(Math.random() * maxRoll));
-            while (forbiddenNumbers.includes(diceRolls[i]) || twoOfTheSameAiringNumbers(diceRolls))
+            while (forbiddenNumbers.includes(diceRolls[i]) || twoOfTheSameAiringNumbers(diceRolls)) {
               diceRolls[i] = Math.ceil(Math.random() * maxRoll);
+            }
             containsAN.push(airingNumbers.includes(diceRolls[i]));
             diceArrayString += i === amount - 1 ? "& " + diceRolls[i] + "!" : diceRolls[i] + ", ";
           }
@@ -277,7 +307,7 @@
       }
 
       function resetDice(number) {
-        cannotRoll.push(number);
+        toggle(number);
         return 0;
       }
 
@@ -302,7 +332,7 @@
       }
 
       function forbid(number) {
-        forbiddenNumbers.push(number);
+        toggle(number,false);
         airingNumbers.splice(airingNumbers.indexOf(number), 1);
       }
 

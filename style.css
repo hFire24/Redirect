@@ -148,6 +148,10 @@ input:where([type='checkbox'], [type='radio']) {
 input:where([type='checkbox'], [type='radio']):checked {
     background:#0F0;
 }
+.small input:where([type='checkbox'], [type='radio']) {
+  width:30px;
+  height:30px;
+}
 
 #stress, .stress {
   font-family: 'Barlow', Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
@@ -562,6 +566,10 @@ td {
   input:where([type='checkbox'], [type='radio']) {
     width:30px;
     height:30px;
+  }
+  .small input:where([type='checkbox'], [type='radio']) {
+    width:20px;
+    height:20px;
   }
   #musicslider {
     height: 20px;
