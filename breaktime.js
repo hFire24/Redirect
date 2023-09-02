@@ -87,6 +87,7 @@ new Breaktime('Explore the world through StreetView.',"https://randomstreetview.
 new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
+new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false,"active")];
@@ -128,6 +129,7 @@ new Breaktime('Play Pokemon Infinite Fusion.',"pass","game",1,false,"lazy"),
 //new Breaktime('Play 100% Orange Juice.',"pass","game",1,false,"active"),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
+new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
@@ -224,6 +226,7 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
+new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
 new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false)];
@@ -406,7 +409,7 @@ function finished(did) {
     }
   }
   else
-    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);    
+    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);
 }
 
 function filtered(newBreak) {
@@ -419,7 +422,7 @@ function filtered(newBreak) {
   else if (found(["loli", "flandre", "chino", "koishi", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv", "waifu", 
     "cute", "attractive", "regress", "shrink", "adorable"], newBreakLC) || newBreakLC.endsWith(" rem")) {
     alert("That should not be a priority.");
-    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);    
+    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);
   }
   else if (found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life', 'noose'], newBreakLC)
     && !found(wasteTime, newBreakLC) && !found(["watch", "listen", "read", "play"],newBreakLC) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'], newBreakLC) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'], newBreakLC)
@@ -431,7 +434,7 @@ function filtered(newBreak) {
   }
   else if (found(['bored', 'bore', 'nothing', 'don\'t feel like doing', 'uhh', 'umm', 'hmm', 'lack of interest', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk'], newBreakLC)
     || found(wasteTime,newBreakLC) || newBreak.length === 0)
-    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);    
+    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);
   else {
     rValue = false;
   }
