@@ -56,8 +56,8 @@ function loadBreak(number) {
 }
 
 var smallBreak = [//Relaxation
-new Breaktime('Listen to this.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false,"lazy"),
-new Breaktime('Clear your mind.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false,"lazy"),
+new Breaktime('Listen to this.',"relax.html","meditate",3,false,"lazy"),
+new Breaktime('Clear your mind.',"relax.html","meditate",3,false,"lazy"),
 new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
@@ -186,8 +186,8 @@ new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html"
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true),*/
 
 var mobileBreak = [//Relaxation
-new Breaktime('Listen to this.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false),
-new Breaktime('Clear your mind.',"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b","meditate",3,false),
+new Breaktime('Listen to this.',"relax.html","meditate",3,false),
+new Breaktime('Clear your mind.',"relax.html","meditate",3,false),
 new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
