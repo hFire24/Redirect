@@ -10,14 +10,14 @@
   </head>
   <body class="relax">
     <div id='message' class='space'>It's time to relax.</div>
-    Go to <a href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Soundwise</a>, followed by <strong id='pack' style='color:darkblue;'></strong> to listen to audio files for <span id='purpose'></span><br>
+    Go to <a href="https://app.mysoundwise.com/mysoundcasts" target="_blank">Soundwise</a>, followed by <strong id='pack'></strong> to listen to audio files for <span id='purpose'></span><br>
     <button onclick=randomMeditation(-1) class="custom-button">Random</button>
     <div id='message2' class='space' style='margin-top:1em;'>
       Suggestion: <span id='random'></span> <span id='action'></span> 
     </div>
     <div id='hideable' class='relax-list' style='margin-top:1em;'>
     </div>
-    <div class="two-list"><a id='more' href='https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b' class='hfire-link'><strong style='color:darkred;'>Flowchart</strong></a><a href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea' class='hfire-link'><strong style='color:darkred;'>Database</strong></a></div>
+    <div class="two-list"><a id='more' href='https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b' class='hfire-link'><strong class="relax-external">Flowchart</strong></a><a href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea' class='hfire-link'><strong class="relax-external">Database</strong></a></div>
     <script src='script.js'></script>
     <script>
       let previousIndex = -1;
@@ -153,6 +153,10 @@
           incremented = 1;
         sessionStorage.setItem(track,incremented);
         location.reload();
+      }
+
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.className = "relax-dark"
       }
     </script>
   </body>
