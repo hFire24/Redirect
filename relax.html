@@ -89,8 +89,10 @@
           action.innerHTML = 'relaxes you.';
         else if(relaxText === "Energy Boost Meditation") //1
           action.innerHTML = 're-energizes you.';
-        else if(found(["Quick Confidence","Overcome Imposter Syndrome","Building Discipline","Using Time Wisely"],relaxText)) //4
+        else if(found(["Quick Confidence","Building Discipline","Overcome Imposter Syndrome"],relaxText)) //3
           action.innerHTML = 'boosts your confidence.';
+        else if(relaxText === "Using Time Wisely") //1
+          action.innerHTML = 'boosts your productivity.';
         else //Ears, Eyes, Head, Massage, Release, Shoulder, Stomach, Stretch, Mindful Walking
           action.innerHTML = 'refreshes you.';
         
