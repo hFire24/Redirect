@@ -362,11 +362,11 @@ function displayLink() {
   else if (messages[globalIndex].category === "plan")
     link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='finished(false)'>I have nothing to do.</a></div>";
   else if(messages[globalIndex].category === "food")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('food')>I am still full, even after 3 hours.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('food',true)>I am still full, even after 3 hours.</u>";
   else if(messages[globalIndex].category === "homework")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('homework')>I am taking a break from homework.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('homework',true)>I am taking a break from homework.</u>";
   else if(messages[globalIndex].category === "exercise-heavy")
-    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('exercise-heavy')>It's been less than 30 minutes since I ate.</u>";
+    link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div><u onclick=deleteCategory('exercise-heavy',true)>It's been less than 30 minutes since I ate.</u>";
   else
     link.innerHTML = "<div class='break-list space'><u onclick='finished(true)'>I already did.</u><u onclick='putOffBreak()'>Don't feel like it.</u></div>";
 }
@@ -388,7 +388,7 @@ function noooo() {
 function finished(did) {
   var category = messages[globalIndex].category;
   if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music")
-    deleteCategory(category);
+    deleteCategory(category,false);
   //Splice the break away from the array.
   else {
     if(category === "sleep")
@@ -398,7 +398,11 @@ function finished(did) {
     messages.splice(globalIndex,1);
     console.log(messages);
     console.log(standup);
+    finished2(did);
   }
+}
+
+function finished2(did) {
   consecutivePasses = did === true ? 0 : consecutivePasses + 1;
   console.log(consecutivePasses + " skips");
   if(confirm("Got something you need to do?")) {
@@ -443,7 +447,7 @@ function filtered(newBreak) {
 
 var wasteTime = ['kill time', 'kill some time', 'killing time', 'killing some time', 'waste time', 'waste some time', 'wasting time', 'wasting some time'];
 
-function deleteCategory(category) {
+function deleteCategory(category, calledFromButton) {
   var i = 0;
   while(i < messages.length) {
     if(messages[i].category === category)
@@ -461,6 +465,10 @@ function deleteCategory(category) {
   }
   console.log(messages);
   console.log(standup);
+
+  if(calledFromButton) {
+    finished2(false);
+  }
 }
 
 function putOffBreak() {
