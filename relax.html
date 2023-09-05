@@ -20,6 +20,40 @@
     <div class="two-list"><a id='more' href='https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b' class='hfire-link'><strong class="relax-external">Flowchart</strong></a><a href='https://www.notion.so/cb8aa85e9b8e4ad98d432242a771288e?v=419d6adc03d84e5d810851d47e9dfeea' class='hfire-link'><strong class="relax-external">Database</strong></a></div>
     <script src='script.js'></script>
     <script>
+      const meditations = ['5 Minute Comfort and Happiness',
+      '5 Minute Loving Kindness',
+      '5 Minute Mindful Graditude',
+      'Body Scan Relaxation',
+      'Breathing Relaxation',
+      'Body Scan Relaxation 2',
+      'Breathing Break',
+      'Breathing Relaxation 1',
+      'Breathing Relaxation 2',
+      'Breathing Relaxation 3',
+      'Building Discipline',
+      'Massage Break',
+      'Ear Massage Relaxation',
+      'Energy Boost Meditation',
+      'Eye Relaxation',
+      'Memory Break',
+      'Favourite Place Relaxation',
+      'Gentle Headache Relief',
+      'Grounding Relaxation',
+      'Head Massage Relaxation',
+      'Metta - Loving Kindness',
+      'Mindful Walking Meditation',
+      'Release Break',
+      'Heaviness Relaxation',
+      'Overcome Imposter Syndrome',
+      'Relaxing Under Pressure',
+      'Quick Confidence',
+      'Shoulder Relaxation',
+      'Roots Break',
+      'Stomach Relaxation',
+      'Smiling Relaxation',
+      'Stretch Relaxation',
+      'The Science of Gratitude',
+      'Using Time Wisely'];
       let previousIndex = -1;
 
       if(!sessionStorage.getItem('angerTrack')) {
@@ -38,7 +72,6 @@
         sessionStorage.setItem('relaxTrack', 25);
       }
 
-      pack.innerHTML = "Quick Solutions";
       purpose.innerHTML = "a short break.";
 
       randomMeditation(-1);
@@ -50,53 +83,30 @@
 
         if(relaxText.startsWith("Body Scan") || relaxText.startsWith("Breathing")) //6
           action.innerHTML = 'helps you concentrate.';
-        else if(relaxText === "Favourite Place Relaxation" || relaxText === "Memory Break" || relaxText === "Smiling Relaxation" || relaxText.startsWith("5 Minute") || relaxText === "Metta - Loving Kindness" || relaxText === "The Science of Gratitude") //8
+        else if(found(["Favourite Place Relaxation","Memory Break","Smiling Relaxation","5 Minute","Metta - Loving Kindness","The Science of Gratitude"],relaxText)) //8
           action.innerHTML = 'makes you happier.';
-        else if(relaxText === "Grounding Relaxation" || relaxText === "Heaviness Relaxation" || relaxText === "Roots Break" || relaxText === "Relaxing Under Pressure") //4
+        else if(found(["Grounding Relaxation","Heaviness Relaxation" ,"Roots Break","Relaxing Under Pressure"],relaxText)) //4
           action.innerHTML = 'relaxes you.';
         else if(relaxText === "Energy Boost Meditation") //1
           action.innerHTML = 're-energizes you.';
-        else if(relaxText === "Quick Confidence" || relaxText === "Overcome Imposter Syndrome" || relaxText === "Building Discipline" || relaxText === "Using Time Wisely") //2
+        else if(found(["Quick Confidence","Overcome Imposter Syndrome","Building Discipline","Using Time Wisely"],relaxText)) //4
           action.innerHTML = 'boosts your confidence.';
         else //Ears, Eyes, Head, Massage, Release, Shoulder, Stomach, Stretch, Mindful Walking
           action.innerHTML = 'refreshes you.';
+        
+        if(found(["Building Disipline","Gentle Headache Relief","Metta - Loving Kindness","Overcome Imposter Syndrome","Relaxing Under Pressure","Using Time Wisely"],relaxText))
+          pack.innerHTML = "New Releases";
+        else if(relaxText === "5 Minute Comfort and Happiness" || relaxText === "5 Minute Loving Kindness")
+          pack.innerHTML = "Happiness";
+        else if(relaxText === "5 Minute Mindful Gratitude" || relaxText === "The Science of Gratitude")
+          pack.innerHTML = "Gratitude";
+        else if(relaxText === "Mindful Walking Meditation")
+          pack.innerHTML = "Mindfulness";
+        else
+          pack.innerHTML = "Quick Solutions";
       }
 
       function getAndrewJohnsonMeditation(index) {
-        var meditations = ['5 Minute Comfort and Happiness',
-        '5 Minute Loving Kindness',
-        '5 Minute Mindful Graditude',
-        'Body Scan Relaxation',
-        'Breathing Relaxation',
-        'Body Scan Relaxation 2',
-        'Breathing Break',
-        'Breathing Relaxation 1',
-        'Breathing Relaxation 2',
-        'Breathing Relaxation 3',
-        'Building Discipline',
-        'Massage Break',
-        'Ear Massage Relaxation',
-        'Energy Boost Meditation',
-        'Eye Relaxation',
-        'Memory Break',
-        'Favourite Place Relaxation',
-        'Gentle Headache Relief',
-        'Grounding Relaxation',
-        'Head Massage Relaxation',
-        'Metta - Loving Kindness',
-        'Mindful Walking Meditation',
-        'Release Break',
-        'Heaviness Relaxation',
-        'Overcome Imposter Syndrome',
-        'Relaxing Under Pressure',
-        'Quick Confidence',
-        'Shoulder Relaxation',
-        'Roots Break',
-        'Stomach Relaxation',
-        'Smiling Relaxation',
-        'Stretch Relaxation',
-        'The Science of Gratitude',
-        'Using Time Wisely'];
         if(index < 1 || index > meditations.length) {
           do {
             index = Math.floor(Math.random() * meditations.length);
@@ -157,6 +167,13 @@
 
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.className = "relax-dark"
+      }
+
+      function found(array,inputText) {
+        for (var i in array)
+          if (inputText.indexOf(array[i]) >= 0)
+            return true;
+        return false;
       }
     </script>
   </body>
