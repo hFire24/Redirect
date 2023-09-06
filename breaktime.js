@@ -117,6 +117,7 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
   //Anime watching
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
+new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
 //new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
