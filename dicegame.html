@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>The dice game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="csshake.css" />
+    <link rel="shortcut icon" href="icons/icon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  </head>
+  <body>
+    <h1 id='message'>Roll the dice.</h1>
+    <div id="checkboxes" class="small">
+    </div>
+    <div class='space'>
+      <button class='custom-button' onclick='rollDice()'>Roll a die</button> 
+    <div id='diceResults' class='space'></div>
+    <div class='four-list space'>
+      <span class='hfire-link'>1: 0 Points</span>
+      <span class='hfire-link'>2-4: 5 Points</span>
+      <span class='hfire-link'>5-6: 10 Points</span>
+      <span class='hfire-link'>7: 15 Points</span>
+      <span class='hfire-link'>8: 20 Points</span>
+      <span class='hfire-link'>9: 25 Points</span>
+      <span class='hfire-link'>10: 30 Points</span>
+      <span class='hfire-link'>11: 40 Points</span>
+      <span id='money' class='hfire-link'>12: 100 Points</span>
+    </div>
+    <script>
+    let diceRoll = 0;
+
+    function rollDice() {
+        diceRoll = Math.ceil(Math.random() * 12);
+        switch(diceRoll) {
+            case 1:
+                diceResults.innerHTML = "You rolled a 1. You get no points."
+                break;
+            case 2:
+            case 3:
+            case 4:
+                diceResults.innerHTML = `You rolled a ${diceRoll}. You get 5 points.`;
+                shake(1, 200);
+                break;
+            case 5:
+            case 6:
+                diceResults.innerHTML = `You rolled a ${diceRoll}! You get 10 points.`;
+                shake(2, 400);
+                break;
+            case 7:
+                diceResults.innerHTML = "You rolled a 7! You get 15 points.";
+                shake(2, 600);
+                break;
+            case 8:
+                diceResults.innerHTML = "You rolled an 8! You get 20 points.";
+                shake(3, 800);
+                break;
+            case 9:
+                diceResults.innerHTML = "You rolled a 9! You get 25 points.";
+                shake(3, 1000);
+                break;
+            case 10:
+                diceResults.innerHTML = "You rolled a 10! You get 30 points.";
+                shake(3, 1200);
+                break;
+            case 11:
+                diceResults.innerHTML = "You rolled an 11! You get 40 points.";
+                shake(3, 1600);
+                break;
+            case 12:
+                diceResults.innerHTML = "You rolled a 12! You get 100 points! Awesome!!!!!";
+                shake(4, 4000);
+                break;
+            default:
+                diceResults.innerHTML = "You rolled an invalid number!";
+                shake(5, 750);
+        }
+    }
+
+    function shake(num, time) {
+        let shake = "";
+        switch(num) {
+            case 1:
+                shake = "shake-little";
+                break;
+            case 2:
+                shake = "shake";
+                break;
+            case 3:
+                shake = "shake-hard";
+                break;
+            case 4:
+                shake = "shake-crazy";
+                break;
+            default:
+                shake = "shake-horizontal"
+                break;
+        }
+        diceResults.classList.add("shake-constant");
+        diceResults.classList.add(shake);
+        setTimeout(() => {
+            diceResults.classList.remove("shake-constant");
+            diceResults.classList.remove(shake);
+            }, time);
+    }
+    var links = document.getElementsByClassName("hfire-link")
+      
+    for(let i = 0; i < links.length; i++) {
+        let x = Math.floor(Math.random() * 128);
+        let y = Math.floor(Math.random() * 128);
+        let z = Math.floor(Math.random() * 128);
+        let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        if(links[i].id === "money")
+            bgColor = "rgb(0,0,120)";
+        links[i].style.backgroundColor = bgColor;
+        links[i].style.cursor = "inherit";
+    }
+    for(var i = 0; i < 0; i++) {
+        let x = Math.floor(Math.random() * 128);
+        let y = Math.floor(Math.random() * 128);
+        let z = Math.floor(Math.random() * 32) + 96;
+        let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    }
+    </script>
+  </body>
+</html>
