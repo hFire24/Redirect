@@ -12,62 +12,44 @@
   </head>
   <body>
     <h1 id='message'>Your current games</h1>
-    <div class='space'>If you can't decide what to play, just roll a die.<br>
-    <div class='space'><button class='custom-button' onclick='rollDice()'>Roll a die</button> <button class='custom-button' onclick='goToTimer(false)'>Start timer</button> <button class='custom-button' onclick='openFlowchart()'>Flowchart</button></div>
+    <div class='space'>If you can't decide what to play, just select one at random.<br>
+    <div class='space'><button class='custom-button' onclick='randomGame()'>Random game</button> <button class='custom-button' onclick='openFlowchart()'>Flowchart</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
       <a class='hfire-link' href='stepmania.html'>Stepmania</a>
+      <a class='hfire-link'>Pokemon Infinite Fusion</a>
       <a class='hfire-link'>BeamNG.drive</a>
       <a class='hfire-link'>American Truck Simulator</a>
       <a class='hfire-link'>Euro Truck Simulator 2</a>
       <a class='hfire-link'>100% Orange Juice</a>
       <a class='hfire-link'>Need for Speed: Hot Pursuit</a>
+      <a class='hfire-link'>Puyo Puyo Tetris</a>
+      <a class='hfire-link'>Q Remastered</a>
       <a class='hfire-link'>A Dance of Fire and Ice</a>
       <a class='hfire-link'>Bloons Tower Defense 6</a>
       <a class='hfire-link' href='https://sudoku.com/'>Sudoku</a>
       <a class='hfire-link'>Minecraft</a>
-      <!--a class='hfire-link'>Hyperdimension Neptunia</a>
-      <a class='hfire-link'>Sonic Adventure DX</a>
+      <a class='hfire-link'>Hyperdimension Neptunia</a>
+      <!--a class='hfire-link'>Sonic Adventure DX</a>
       <a class='hfire-link'>Sonic Adventure 2</a-->
     </div>
     <script>
       var diceRoll = 0;
-      const rollTime = 750;
+      const shakeTime = 750;
       const links = document.getElementsByTagName("a");
 
-      function rollDice() {
+      function randomGame() {
         diceRoll = Math.floor(Math.random() * links.length);
         diceResults.innerHTML = `Play ${links[diceRoll].innerHTML}`
-        shake(5, rollTime);
+        shake(shakeTime);
       }
 
       function openFlowchart() {
         location.href = "gameflow/29.html";
       }
 
-      function goToTimer(newTab) {
-        newTab ? window.open("https://cfreeze-timer.herokuapp.com") : location.href = "https://cfreeze-timer.herokuapp.com";
-      }
-
-      function shake(num, time) {
-        let shake = "";
-        switch(num) {
-          case 1:
-            shake = "shake-little";
-            break;
-          case 2:
-            shake = "shake";
-            break;
-          case 3:
-            shake = "shake-hard";
-            break;
-          case 4:
-            shake = "shake-crazy";
-            break;
-          default:
-            shake = "shake-horizontal"
-            break;
-        }
+      function shake(time) {
+        let shake = "shake-horizontal";
         diceResults.classList.add("shake-constant");
         diceResults.classList.add(shake);
         setTimeout(() => {
@@ -81,8 +63,6 @@
         let y = Math.floor(Math.random() * 128);
         let z = Math.floor(Math.random() * 32) + 96;
         let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-        if(links[i].id === "money")
-          bgColor = "rgb(0,0,120)";
         links[i].style.backgroundColor = bgColor;
       }
     </script>
