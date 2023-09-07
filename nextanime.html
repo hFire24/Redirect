@@ -39,7 +39,6 @@
       <a data-tooltip="Your #1 Iskeai anime" class='hfire-link' href='https://www.hidive.com/tv/no-game-no-life'>7 No Game No Life</a>
       <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>8 FMA: B</a-->
       <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>8 ⌛⌛</a>
-      <a id="money" data-tooltip="Potentially lose money to an artist in exchange for art" class='hfire-link'>9 💲💲💲</a>
     </div>
     <div style="text-align:left;">
       <!--h4 class="no-space">Great for action</h4>
@@ -56,19 +55,12 @@
       Mushoku Tensei: Jobless Reincarnation
       <h4 class="no-space">Great for turning off your mind to</h4>
       My Unique Skill Makes Me OP even at Level 1, Am I Actually the Strongest?
-      <h4 class="no-space">Artists to commission</h4>
-      <b>AR</b>: <a href="https://www.deviantart.com/mikola19">Mikola19</a><br>
-      <b>GochiUsa Style</b>: <a href="https://twitter.com/yukijanc_">yukijanc_</a><br>
-      <b>Pokemon/Madoka Style</b>: <a href="https://www.deviantart.com/Kiddysart">Kiddysart</a><br>
-      <b>Touhou/Onimai Style</b>: <a href="https://t.co/ire4C65Yeb">べーにゃん</a><br>
-      <b>Original</b>: <a href="https://www.deviantart.com/agnesar/journal/Commission-Is-OPEN-887779784">AgnesAR</a>
     </div>
     <script>
       var diceRoll = 0;
-      let maxRoll = 9;
+      let maxRoll = 8;
       const rollTime = 750;
       const cannotRoll = [];
-      const forbiddenNumbers = [maxRoll];
       const airingNumbers = [3, 4, 5];
       var askToBan = false;
       var watchedFocus = true;
@@ -93,29 +85,11 @@
           cannotRoll.push(num);
         else if(cannotRoll.indexOf(num) >= 0 && canReallyToggle)
           cannotRoll.splice(cannotRoll.indexOf(num),1);
-        if(forbiddenNumbers.indexOf(num) < 0)
-          forbiddenNumbers.push(num);
-        else if(forbiddenNumbers.indexOf(num) >= 0 && canReallyToggle && num !== maxRoll)
-          forbiddenNumbers.splice(forbiddenNumbers.indexOf(num),1);
         if(cannotRoll.indexOf(num) >= 0 && checkedElement.checked)
           checkedElement.checked = false;
         else if(cannotRoll.indexOf(num) < 0 && !checkedElement.checked)
           checkedElement.checked = true;
         console.log(cannotRoll);
-        console.log(forbiddenNumbers);
-      }
-
-      function getLucky() {
-        if(diceRoll === 0) {
-          diceRoll = 1;
-          diceResults.innerHTML = "You rolled a 1! That means it's time to put money in the special reserve!";
-          shake(5, rollTime);
-        }
-        else if(diceRoll === 1) {
-          diceRoll = 8;
-          diceResults.innerHTML = "You rolled an 10! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
-          shake(4, 4000);
-        }
       }
 
       function rollDice() {
@@ -161,7 +135,7 @@
               diceResults.innerHTML = `You rolled an 8! Watch the anime you have been neglecting to watch for the longest time.`;
               break;
             case 9:
-              diceResults.innerHTML = `You rolled a 9! Time to fork over some money to an artist in exchange for art.`;
+              diceResults.innerHTML = `You rolled a 9!`;
               break;
             case 10:
               diceResults.innerHTML = `You rolled a 10! `;
@@ -170,63 +144,7 @@
               diceResults.innerHTML = "You rolled an invalid number!";
               diceRoll = 0;
           }
-          shake(5, rollTime);
-        }
-        else if(diceRoll === 99) {
-          diceRoll = Math.ceil(Math.random() * 12);
-          switch(diceRoll) {
-            case 1:
-              diceResults.innerHTML = "You rolled a 1. Put $0 in the special reserve. Whether this is a good thing or a bad thing is up to you."
-              break;
-            case 2:
-              diceResults.innerHTML = "You rolled a 2. Put $5 in the special reserve.";
-              shake(1, 200);
-              break;
-            case 3:
-              diceResults.innerHTML = "You rolled a 3. Put $5 in the special reserve.";
-              shake(1, 200);
-              break;
-            case 4:
-              diceResults.innerHTML = "You rolled a 4. Put $5 in the special reserve.";
-              shake(1, 200);
-              break;
-            case 5:
-              diceResults.innerHTML = "You rolled a 5! Put $10 in the special reserve.";
-              shake(2, 400);
-              break;
-            case 6:
-              diceResults.innerHTML = "You rolled a 6! Put $10 in the special reserve.";
-              shake(2, 400);
-              break;
-            case 7:
-              diceResults.innerHTML = "You rolled a 7! Put $15 in the special reserve.";
-              shake(2, 600);
-              break;
-            case 8:
-              diceRoll = 2;
-              diceResults.innerHTML = "You rolled an 8! Put $20 in the special reserve.";
-              shake(3, 800);
-              break;
-            case 9:
-              diceResults.innerHTML = "You rolled a 9! Put $25 in the special reserve.";
-              shake(3, 1000);
-              break;
-            case 10:
-              diceResults.innerHTML = "You rolled a 10! Put $30 in the special reserve.";
-              shake(3, 1200);
-              break;
-            case 11:
-              diceResults.innerHTML = "You rolled an 11! Put $40 in the special reserve.";
-              shake(3, 1600);
-              break;
-            case 12:
-              diceResults.innerHTML = "You rolled a 12! Commission someone right now, or put $100 in the special reserve. Congratulations!!!!!";
-              shake(4, 4000);
-              break;
-            default:
-              diceResults.innerHTML = "You rolled an invalid number!";
-              shake(5, rollTime);
-          }
+          shake(rollTime);
         }
         else {
           alert("Hey. Wait 30 minutes or watch one anime episode before rolling the dice again.");
@@ -239,19 +157,19 @@
       function roll2Dice() {
         if(askToBan)
           banANumber();
-        if(forbiddenNumbers.length >= maxRoll - 1)
-          alert("Hey. You can't roll any numbers! Enable at least two numbers besides " + maxRoll + ", and then try again.");
+        if(cannotRoll.length >= maxRoll - 1)
+          alert("Hey. You can't roll any numbers! Enable at least two numbers, and then try again.");
         else if(diceRoll === 0) {
           let firstDiceRoll;
-          //To do: If the range has forbidden numbers only, then don't enter into the endless loop.
+          //To do: If the range has only numbers that cannot be rolled, then don't enter into the endless loop.
           do {
             firstDiceRoll = Math.ceil(Math.random() * maxRoll);
-          } while (forbiddenNumbers.includes(firstDiceRoll))
+          } while (cannotRoll.includes(firstDiceRoll))
           let secondDiceRoll;
-          //To do: If the range has forbidden numbers only and the value of the first dice roll, then don't enter into the endless loop.
+          //To do: If the range has only numbers that cannot be rolled and the value of the first dice roll, then don't enter into the endless loop.
           do {
             secondDiceRoll = Math.ceil(Math.random() * maxRoll);
-          } while(secondDiceRoll === firstDiceRoll || forbiddenNumbers.includes(secondDiceRoll));
+          } while(secondDiceRoll === firstDiceRoll || cannotRoll.includes(secondDiceRoll));
           diceResults.innerHTML = ((firstDiceRoll === 8 || firstDiceRoll === 11) ? "You rolled an " : "You rolled a ") + `${firstDiceRoll} & ${secondDiceRoll}!`;
           diceRoll = 2;
           //To do: If a forbidden number has to be rolled, then a shrug emoji will be shown. 🤷‍♀️
@@ -268,7 +186,7 @@
               containsAN[0] ? forbid(firstDiceRoll) : forbid(secondDiceRoll);
             }
           }
-          shake(5, rollTime);
+          shake(rollTime);
         }
         else {
           alert("Hey. Wait 1 hour or watch both anime episodes before rolling the dice again.");
@@ -281,14 +199,14 @@
           banANumber();
         let availableNumbers = [];
         for (let i = 1; i <= maxRoll; i++) {
-          if (!forbiddenNumbers.includes(i)) {
+          if (!cannotRoll.includes(i)) {
             availableNumbers.push(i);
           }
         }
         let hasOnlyAiringNumbers = availableNumbers.every(num => airingNumbers.includes(num));
         console.log(hasOnlyAiringNumbers);
-        if(forbiddenNumbers.length >= maxRoll || hasOnlyAiringNumbers && availableNumbers.length < amount)
-          alert("Hey. You can't roll any numbers! Enable at least one more number besides " + maxRoll + ", and then try again.");
+        if(cannotRoll.length >= maxRoll || hasOnlyAiringNumbers && availableNumbers.length < amount)
+          alert("Hey. You can't roll any numbers! Enable at least one more number, and then try again.");
         else if(diceRoll === 0) {
           let diceRolls = [];
           let containsAN = [];
@@ -297,7 +215,7 @@
             let diceRoll;
             do {
               diceRoll = Math.ceil(Math.random() * maxRoll);
-            } while (forbiddenNumbers.includes(diceRoll) || twoOfTheSameAiringNumbers(diceRolls,diceRoll));
+            } while (cannotRoll.includes(diceRoll) || twoOfTheSameAiringNumbers(diceRolls,diceRoll));
             diceRolls.push(diceRoll);
             containsAN.push(airingNumbers.includes(diceRoll));
             diceArrayString += i === amount - 1 ? "& " + diceRoll + "!" : diceRoll + ", ";
@@ -315,7 +233,7 @@
               forbid(diceRolls[containsAN.indexOf(true)]);
             }
           }
-          shake(5, rollTime);
+          shake(rollTime);
         }
         else {
           alert("Hey. Wait until tomorrow or watch four anime episodes to roll these four dice again.");
@@ -371,25 +289,8 @@
         newTab ? window.open("https://cfreeze-timer.herokuapp.com") : location.href = "https://cfreeze-timer.herokuapp.com";
       }
 
-      function shake(num, time) {
-        let shake = "";
-        switch(num) {
-          case 1:
-            shake = "shake-little";
-            break;
-          case 2:
-            shake = "shake";
-            break;
-          case 3:
-            shake = "shake-hard";
-            break;
-          case 4:
-            shake = "shake-crazy";
-            break;
-          default:
-            shake = "shake-horizontal"
-            break;
-        }
+      function shake(time) {
+        let shake = "shake-horizontal";
         diceResults.classList.add("shake-constant");
         diceResults.classList.add(shake);
         setTimeout(() => {
@@ -405,15 +306,7 @@
         let y = Math.floor(Math.random() * 128);
         let z = Math.floor(Math.random() * 32) + 96;
         let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-        if(links[i].id === "money")
-          bgColor = "rgb(0,0,120)";
         links[i].style.backgroundColor = bgColor;
-      }
-      for(var i = 0; i < 0; i++) {
-        let x = Math.floor(Math.random() * 128);
-        let y = Math.floor(Math.random() * 128);
-        let z = Math.floor(Math.random() * 32) + 96;
-        let bgColor = "rgb(" + x + "," + y + "," + z + ")";
       }
     </script>
   </body>
