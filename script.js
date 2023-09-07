@@ -4,7 +4,7 @@ var messageComplete = true;
 
 function loadWebsite(number) {
   if(number === 9) {
-    redirectMessages.splice(redirectMessages.indexOf('YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'),1,'Forget about Googling distracting stuff!');
+    redirectMessages.splice(redirectMessages.indexOf('YouTube. Twitter. Reddit. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>'),1,'Forget about Googling distracting stuff!');
     redirectMessages.splice(redirectMessages.indexOf('Cute or fun things are good, but they are distractions.'),1,'Fun things are good, but they are distractions.');
     redirectMessages.splice(redirectMessages.indexOf('Life isn\'t about seeking cuteness.'),1);
   }
@@ -41,7 +41,7 @@ function $(x) {
   return document.getElementById(x);
 }
 
-var redirectMessages = ['YouTube. Twitter. DeviantArt. Reddit. Newgrounds. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
+var redirectMessages = ['YouTube. Twitter. Reddit. Image boards. Facebook.<br><span id="stress">FORGET ABOUT \'EM ALL!</span>',
 'Get back to whatever you should be doing!',
 'You were redirected from a blacklisted website.',
 'You shouldn\'t access that website now.',
@@ -336,7 +336,6 @@ function randomLink(index,number) {
     {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
     {text:"I want to watch anime",value:"anime"},
-    {text:"I want to go to DeviantArt",value:"deviantart"},
     {text:"I feel bored 🥱",value:"bored"},
     {text:"I feel really bored 🥱🥱",value:"really bored"},
     {text:"I feel lazy 😪",value:"lazy"},
@@ -416,9 +415,6 @@ function okFeeling() {
       location.href = "time.html";
       break;
     case "anime":
-      location.href = "nextanime.html";
-      break;
-    case "deviantart":
       message.innerHTML = "This is a sign that you need to watch some anime.";
       link.innerHTML = "<a href=nextanime.html>Click here to continue.</a>";
       break;

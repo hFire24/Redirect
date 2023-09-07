@@ -357,12 +357,13 @@ function finalTest(inputText,site)
         messages.push('You wish you are a cute anime girl? 🤣🤣',
         'Your ideal self is a cute little kid? 🤣🤣',
         'Life isn\'t about seeking cuteness.',
-        "If you believe DevinatArt is an addiction, you might as well abandon DeviantArt.",
+        "If you believe DeviantArt is an addiction, you might as well abandon DeviantArt.",
         "You allowed DeviantArt to corrupt yourself, so don't further corrupt yourself.",
         "DeviantArt was a source of your many relapses, and relapses are unacceptable.",
         "DeviantArt's reputation is not very good due to some of its art.",
         "Like YouTube, DeviantArt can be a major timesink.",
         "Time is money. Don't let DeviantArt waste more of your time.",
+        "DeviantArt has become a shell of its former self. It's best not to visit it.",
         "<span onclick='pushTheButtonDA()'>Click here.</span>");
       }
     }
@@ -594,12 +595,13 @@ function disappear() {
 }
 
 function antiDeviantArt() {
-  var noDeviantArtReasons = ["If you believe DevinatArt is an addiction, you might as well abandon DeviantArt.",
+  var noDeviantArtReasons = ["If you believe DeviantArt is an addiction, you might as well abandon DeviantArt.",
   "You allowed DeviantArt to corrupt yourself, so don't further corrupt yourself.",
   "DeviantArt was a source of your many relapses, and relapses are unacceptable.",
   "DeviantArt's reputation is not very good due to some of its art.",
   "Like YouTube, DeviantArt can be a major timesink.",
   "Time is money. Don't let DeviantArt waste more of your time.",
+  "DeviantArt has become a shell of its former self. It's best not to visit it.",
   "<span onclick='pushTheButtonHD()'>Click here.</span>"];
   $("question").innerHTML = noDeviantArtReasons[Math.floor(Math.random() * noDeviantArtReasons.length)];
   $("link").innerHTML = "<a href='cyoa/1.html'>Click here to continue.</a>";

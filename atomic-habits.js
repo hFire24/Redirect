@@ -53,26 +53,6 @@ const jcQuotes = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Pa
 const jcPages = ["15", "27", "34", "38", "39", "46", "47", "48", "57", "62", "62-64", "70", "70", "71", "N/A", "N/A", "N/A", "74", "74", "N/A", "86", "88", "89", "N/A", "93", "93", "94", "94", "95", "95", "99", "104", "108", "108", "109", "109", "110", "117", "117", "118", "120", "126",
 "TBD", "TBD", "TBD", "TBD", "N/A", "N/A", "N/A", "N/A"];
 
-//Quotes that should help me stop my DeviantArt habit.
-const deviantart = ["1.01<sup>365</sup> = 37.8<br>0.99<sup>365</sup> = 0.03", //Page 15
-"You do not rise to the level of your goals. You fall to the level of your systems.", //Page 27
-"True behavior change is identity change.", //Page 34
-"Every action you take is a vote for the type of person you wish to become.", //Page 38
-"Decide the type of person you want to be. Prove it to yourself with small wins.", //Page 39
-"The people who don’t have their habits handled are often the ones with the least amount of freedom.", //Page 46
-"What you crave is not the habit itself but the change in state it delivers.", //Page 48
-"The people with the best self-control are typically the ones who need to use it the least.", //Page 93
-"The way to improve [perseverance, grit, and determination] is by creating a more disciplined environment.", //Page 93
-"You can break a habit, but you're unlikely to forget it.", //Page 94
-"I have never seen someone consistently stick to positive habits in a negative environment.", //Page 94
-"Prime your environment to eliminate bad habits.",
-"Want to resist a bad habit? Make it invisible.", //Inverse of the First Law
-"Want to quit a bad habit? Make it unattractive.", //Inverse of the Second Law
-"Want to end a bad habit? Make it difficult.", //Inverse of the Third Law
-"Want to get rid of a bad habit? Make it unsatisfying.", //Inverse of the Fourth Law
-"Identify cues that cause bad habits." //First Law Bonus Material
-];
-
 function jamesClearQuote(array,index) {
   if (index < 0 || index >= array.length)
     index = Math.floor(Math.random() * array.length)
