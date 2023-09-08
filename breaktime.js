@@ -131,6 +131,7 @@ new Breaktime('Play Pokemon Infinite Fusion.',"pass","game",1,false,"lazy"),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
 new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
+new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
@@ -206,6 +207,7 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false),
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
   //Games
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
+new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false),
