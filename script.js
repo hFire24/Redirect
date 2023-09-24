@@ -492,7 +492,7 @@ function okFeeling() {
       }
       break;
     case "procrastinate":
-      location.href = "anti-procrastination.html";
+      location.href = "cyoa/15.html?mood=procrastination";
       break;
     case "struggle":
       location.href = "struggle.html";
