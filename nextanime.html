@@ -32,9 +32,9 @@
       <a data-tooltip="Not an isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GR49WNQE6/recovery-of-an-mmo-junkie'>1 Recovery of an MMO Junkie</a>
       <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.pokeflix.tv/browse/pokemon-xy'>2 Pokemon XY</a>
       <!--a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
-      <a data-tooltip="Even at Level 1" class='hfire-link' href='https://www.crunchyroll.com/series/G1XHJV0VV/my-unique-skill-makes-me-op-even-at-level-1'>3 My Unique Skill Makes Me OP</a>
+      <a data-tooltip="Can't be rolled" class='hfire-link' href=''>3 🚫🚫</a>
       <a data-tooltip="Generic Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/G9VHN9QED/am-i-actually-the-strongest'>4 Am I Actually the Strongest?</a>
-      <a data-tooltip="Jobless Reincarnation" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation'>5 Mushoku Tensei</a>
+      <a data-tooltip="Can't be rolled" class='hfire-link' href=''>5 🚫🚫</a>
       <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>6 Kuma Kuma Kuma Bear</a>
       <a data-tooltip="Your #1 Iskeai anime" class='hfire-link' href='https://www.hidive.com/tv/no-game-no-life'>7 No Game No Life</a>
       <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>8 FMA: B</a-->
@@ -51,17 +51,15 @@
       <Sgt. Frog-->
       <h4 class="no-space">Great for awesomeness</h4>
       No Game No Life
-      <h4 class="no-space">Great for drama</h4>
-      Mushoku Tensei: Jobless Reincarnation
       <h4 class="no-space">Great for turning off your mind to</h4>
-      My Unique Skill Makes Me OP even at Level 1, Am I Actually the Strongest?
+      Am I Actually the Strongest?
     </div>
     <script>
       var diceRoll = 0;
       let maxRoll = 8;
       const rollTime = 750;
-      const cannotRoll = [];
-      const airingNumbers = [3, 4, 5];
+      const cannotRoll = [3, 5];
+      const airingNumbers = [4];
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -70,7 +68,7 @@
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.onclick = function () { toggle(i,true); }
-        checkbox.checked = true;
+        checkbox.checked = !cannotRoll.includes(i); // Check if i is in cannotRoll
         checkbox.id = "cb" + i;
         document.getElementById("checkboxes").appendChild(checkbox);
         let label = document.createElement("label");
@@ -114,7 +112,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
+              diceResults.innerHTML = `You rolled a 3! Roll again.`;
               diceRoll = resetDice(3);
               break;
             case 4:
@@ -122,7 +120,7 @@
               diceRoll = resetDice(4);
               break;
             case 5:
-              diceResults.innerHTML = `You rolled a 5! Roll again or watch the latest episode.`;
+              diceResults.innerHTML = `You rolled a 5! Roll again.`;
               diceRoll = resetDice(5);
               break;
             case 6:
