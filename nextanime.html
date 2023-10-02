@@ -29,22 +29,19 @@
       <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
-      <a data-tooltip="Not an isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GR49WNQE6/recovery-of-an-mmo-junkie'>1 Recovery of an MMO Junkie</a>
+      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>1 ⌛⌛</a>
       <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.pokeflix.tv/browse/pokemon-xy'>2 Pokemon XY</a>
       <!--a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>2 Sgt. Frog</a-->
-      <a data-tooltip="Can't be rolled" class='hfire-link' href=''>3 🚫🚫</a>
-      <a data-tooltip="Can't be rolled" class='hfire-link' href=''>4 🚫🚫</a>
-      <a data-tooltip="Can't be rolled" class='hfire-link' href=''>5 🚫🚫</a>
+      <a data-tooltip="Can't be rolled" class='hfire-link hold' href=''>3 🚫🚫</a>
+      <a data-tooltip="Can't be rolled" class='hfire-link hold' href=''>4 🚫🚫</a>
+      <a data-tooltip="Can't be rolled" class='hfire-link hold' href=''>5 🚫🚫</a>
       <a data-tooltip="Bear Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GQWH0M990/kuma-kuma-kuma-bear'>6 Kuma Kuma Kuma Bear</a>
       <a data-tooltip="Your #1 Iskeai anime" class='hfire-link' href='https://www.hidive.com/tv/no-game-no-life'>7 No Game No Life</a>
       <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>8 FMA: B</a-->
-      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>8 ⌛⌛</a>
     </div>
     <div style="text-align:left;">
       <!--h4 class="no-space">Great for action</h4>
       Fullmetal Alchemist: Brotherhood-->
-      <h4 class="no-space">Great for romance</h4>
-      Recovery of an MMO Junkie
       <h4 class="no-space">Great for laughs and action</h4>
       Kuma Kuma Kuma Bear, Pokemon XY
       <!--h4 class="no-space">Great for laughs</h4>
@@ -54,7 +51,7 @@
     </div>
     <script>
       var diceRoll = 0;
-      let maxRoll = 8;
+      let maxRoll = 7;
       const rollTime = 750;
       const cannotRoll = [3, 4, 5];
       const airingNumbers = [];
@@ -104,7 +101,7 @@
           }
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1!`;
+              diceResults.innerHTML = `You rolled a 1! Watch the anime you have been neglecting to watch for the longest time.`;
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
@@ -114,7 +111,7 @@
               diceRoll = resetDice(3);
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4! Roll again or watch the latest episode.`;
+              diceResults.innerHTML = `You rolled a 4! Roll again.`;
               diceRoll = resetDice(4);
               break;
             case 5:
@@ -128,7 +125,7 @@
               diceResults.innerHTML = `You rolled a 7!`;
               break;
             case 8:
-              diceResults.innerHTML = `You rolled an 8! Watch the anime you have been neglecting to watch for the longest time.`;
+              diceResults.innerHTML = `You rolled an 8!`;
               break;
             case 9:
               diceResults.innerHTML = `You rolled a 9!`;
