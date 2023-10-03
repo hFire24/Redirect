@@ -46,6 +46,10 @@ function loadBreak(number) {
     messages.push(new Breaktime('Stand up and stretch if you can.',"pass","sleep",3,true,"lazy"));
     standup.push(new Breaktime('Wear your pajamas and go to bed.',"pass","sleep",3,true,"lazy"));
   }
+  if (d.getDay() >= 1 && d.getDay() <= 5 && d.getHours() >= 9 && d.getHours() < 17) {
+    // Filter out the message that contains "Call one of your family members"
+    messages = messages.filter(message => !message.text.includes("Call one of your family members"));
+  }
   if(number === 4) {
     messages = messages.filter(item => item.lazy === "lazy");
     standup = standup.filter(item => item.lazy === "lazy");
@@ -104,7 +108,7 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
-new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b" target="_blank">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on the Energy on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
