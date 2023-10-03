@@ -20,7 +20,7 @@
     <div class='space'></div>
     <div id='exportRegion'>
       <textarea id='exportArea' cols='50' rows='8'></textarea>
-      <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button> <button onclick='undoText()'>Undo</button>
+      <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button> <button onclick='undoText()'>Undo</button> <button onclick='swapGoalsButton()'>Swap</button>
     </div>
     <script>
       var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
@@ -93,7 +93,7 @@
             bgColor = "rgb(30,105,192)";
           element = document.getElementById("habit-" + letter)
           element.style.backgroundColor = bgColor;
-          console.log(array[i]);
+          //console.log(array[i]);
           if(array[i].category === "passive")
             element.style.color = "#3CF";
           else if(array[i].category === "golden")
@@ -101,7 +101,7 @@
         }
       }
 
-      class Tier {
+      /*class Tier {
         constructor(number) {
           this.number = number;
         }
@@ -111,12 +111,12 @@
         setNumber(number) {
           this.number = number;
         }
-      }
+      }*/
 
       buildArray(aHabits,0);
       //buildArray(bHabits,aHabits.length);
       //buildArray(cHabits,aHabits.length + bHabits.length);
-      var tierNumber = new Tier(-1);
+      /*var tierNumber = new Tier(-1);
       getTier(tierNumber);
 
       function getTier(tierObject) {
@@ -131,7 +131,7 @@
           tier.innerHTML = tiers[tierObject.getNumber()];
           console.log("The Tier Number is " + tierObject.getNumber());
         }
-      }
+      }*/
 
       window.onbeforeunload = function() { return "Would you really like to leave this page?"; }
       window.onkeyup = function(){deleteText(event)};
@@ -139,16 +139,16 @@
       var deletedElements = [];
 
       function deleteText(id) {
-        console.log(id.key.toUpperCase());
+        let keyToDelete = id.key.toUpperCase();
         //For potential future proofing
-        if(document.getElementById("habit-" + id.key.toUpperCase()) === null)
+        if(document.getElementById("habit-" + keyToDelete) === null)
           return;
-        var toBeDisabled = document.getElementById("habit-" + id.key.toUpperCase());
+        var toBeDisabled = document.getElementById("habit-" + keyToDelete);
         toBeDisabled.style.color = toBeDisabled.style.backgroundColor;
         toBeDisabled.removeAttribute("href");
-        deletedElements.push(id.key);
+        deletedElements.push(keyToDelete);
         for(var i = 0; i < deletedElements.length - 1; i++) {
-          if(deletedElements[i] === id.key) {
+          if(deletedElements[i] === keyToDelete) {
             deletedElements.pop();
             break;
           }
@@ -208,49 +208,66 @@
         alert("Copied the text: " + copyText.value);
       }
 
-      function swapGoals(a, b) {
+      function swapGoalsButton() {
+        let letters = prompt("What letter goals do you want to swap? Must be in format \"A,B\"");
+        letters = letters.replace(/\s/g, '');
+        let a = letters.charAt(0).toUpperCase();
+        let b = letters.charAt(2).toUpperCase();
+        if(a === '')
+          a = '0';
+        if(b === '')
+          b = '0'
+        swapGoals(a, b);
+      }
+
+      function swapGoals(charA, charB) {
         //Converts the letters to numbers for the array
-        a = a.toUpperCase().charCodeAt(0) - 65;
-        b = b.toUpperCase().charCodeAt(0) - 65;
+        let a = charA.charCodeAt(0) - 65;
+        let b = charB.charCodeAt(0) - 65;
         console.log(a + " " + b);
         //Throws this error if one of the values is out of range
-        if(a < 0 || b < 0 || a >= aHabits.length || b >= aHabits.length)
-          console.log("ERROR: One of the goal letters does not exist");
-        else {
-          //Swaps the goals within the array
-          var temp = aHabits[a];
-          aHabits[a] = aHabits[b];
-          aHabits[b] = temp;
-          //Creates a new temporary array for the swapped elements for the loop
-          var swappedGoals = [aHabits[a],aHabits[b]];
-          //Adds the number and background color properties for the elements
-          swappedGoals[0].num = a;
-          swappedGoals[1].num = b;
-          //These are reversed so that when the elements are swapped, they get to keep their background colors.
-          swappedGoals[0].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[1].num)).style.backgroundColor;
-          swappedGoals[1].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[0].num)).style.backgroundColor;
-          //This is where the swapping takes place. All the swapped elements come from the newly created swappedGoals array.
-          for(var i = 0; i < swappedGoals.length; i++) {
-            //Gets the position of one of the swapped goals.
-            var letter = String.fromCharCode(65+swappedGoals[i].num);
-            var element = document.getElementById("habit-" + letter);
-            //The text, link, and color data are transferred to the other HTML element being swapped.
-            element.innerHTML = letter + ": " + swappedGoals[i].text;
-            if(swappedGoals[i].link !== "pass") {
-              element.href = swappedGoals[i].link;
-              element.target = "_blank";
-            }
-            console.log(swappedGoals[i].backgroundColor);
-            element.style.backgroundColor = swappedGoals[i].backgroundColor;
-            if(swappedGoals[i].category === "passive")
-              element.style.color = "#7BF";
-            else if(swappedGoals[i].category === "golden")
-              element.style.color = "gold";
-            else
-              element.style.color = "white";
-          }
-          getTier(tierNumber);
+        if(a < 0 || b < 0 || a >= aHabits.length || b >= aHabits.length) {
+          alert("ERROR: " + charA + " or " + charB + " is not valid.");
+          return;
         }
+        // Check if a or b is in deletedElements array
+        if (deletedElements.includes(charA) || deletedElements.includes(charB)) {
+          alert("ERROR: Cannot swap with letters in deleted elements.");
+          return; // Exit the function
+        }
+        //Swaps the goals within the array
+        var temp = aHabits[a];
+        aHabits[a] = aHabits[b];
+        aHabits[b] = temp;
+        //Creates a new temporary array for the swapped elements for the loop
+        var swappedGoals = [aHabits[a],aHabits[b]];
+        //Adds the number and background color properties for the elements
+        swappedGoals[0].num = a;
+        swappedGoals[1].num = b;
+        //These are reversed so that when the elements are swapped, they get to keep their background colors.
+        swappedGoals[0].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[1].num)).style.backgroundColor;
+        swappedGoals[1].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[0].num)).style.backgroundColor;
+        //This is where the swapping takes place. All the swapped elements come from the newly created swappedGoals array.
+        for(var i = 0; i < swappedGoals.length; i++) {
+          //Gets the position of one of the swapped goals.
+          var letter = String.fromCharCode(65+swappedGoals[i].num);
+          var element = document.getElementById("habit-" + letter);
+          //The text, link, and color data are transferred to the other HTML element being swapped.
+          element.innerHTML = letter + ": " + swappedGoals[i].text;
+          if(swappedGoals[i].link !== "pass") {
+            element.href = swappedGoals[i].link;
+            element.target = "_blank";
+          }
+          console.log(swappedGoals[i].backgroundColor);
+          element.style.backgroundColor = swappedGoals[i].backgroundColor;
+          if(swappedGoals[i].category === "passive")
+            element.style.color = "#7BF";
+          else if(swappedGoals[i].category === "golden")
+            element.style.color = "gold";
+          else
+            element.style.color = "white";
+        }
+        //getTier(tierNumber);
       }
 
       function sleep(ms) {
