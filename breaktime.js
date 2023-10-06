@@ -118,14 +118,15 @@ new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>
 /*new Breaktime('Apply for a job.',"pass","job",4,false),
 new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),*/
   //Anime watching
-new Breaktime('Watch anime (1).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch anime (2).',"nextanime","anime",1,false,"lazy"),
+new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (1).',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (2).',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (4).',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (5).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch anime (6).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch anime (7).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (6).',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (7).',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
