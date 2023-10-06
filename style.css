@@ -96,7 +96,7 @@ h3, #ok {
   font-weight: normal;
 }
 
-ol, #goals-list, #link.small, #atomhab-list {
+ol, #goals-list, #link.small, #atomhab-list, .break-button {
   font-size: 60px;
 }
 
@@ -107,6 +107,10 @@ ol {
 
 ol a {
   color: yellowgreen;
+}
+
+.break-button {
+  padding:0.1em 0.2em;
 }
 
 #trance {
@@ -178,9 +182,25 @@ td {
   grid-template-columns:auto auto;
 }
 
+.break-list {
+  justify-content: center;
+  align-items: center;
+  gap:25%;
+}
+
 #break-list {
   display:grid;
   grid-template-columns: auto;
+}
+
+.good-button {
+  background-color: #4caf50; /* Green */
+  color:white;
+}
+
+.bad-button {
+  background-color: #f44336; /* Red */
+  color:white;
 }
 
 #atomhab-list, #break-list {
@@ -559,7 +579,7 @@ td {
   h3, #ok, #link, #theme, #message.tiny, .medium {
     font-size: 60px;
   }
-  body, ol, #goals-list, .relax-list, #link.small, #atomhab-list {
+  body, ol, #goals-list, .relax-list, #link.small, #atomhab-list, .break-button {
     font-size:40px;
   }
   td, .small, .medium-select, input[type='text'].medium-select {
@@ -617,7 +637,7 @@ td {
   h3, #ok, #link, #theme, #message.tiny, .medium {
     font-size: 36px;
   }
-  body, ol, #goals-list, .relax-list, .small, #link.small, #atomhab-list {
+  body, ol, #goals-list, .relax-list, .small, #link.small, #atomhab-list, .break-button {
     font-size: 30px;
   }
   .four-list {
@@ -663,7 +683,7 @@ td {
   h3, #ok, .medium, #link, #message.tiny, #theme {
     font-size: 25px;
   }
-  body, ol, td, #goals-list, .relax-list, #link.small, .small, #atomhab-list, .medium-select, input[type='text'].medium-select {
+  body, ol, td, #goals-list, .relax-list, #link.small, .small, #atomhab-list, .medium-select, input[type='text'].medium-select, .break-button {
     font-size: 20px;
   }
   .relax-list {
