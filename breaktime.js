@@ -79,7 +79,7 @@ new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"ac
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false,"lazy"),
+//new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false,"lazy"),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false,"lazy"),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false,"lazy"),
@@ -228,7 +228,7 @@ new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anim
 // new Breaktime('Watch anime (7).',"nextanime","anime",1,false),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
   //Miscellaneous
-new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
+//new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Read the verse of the day in Gospel Library app.',"pass","religion",2,false),
