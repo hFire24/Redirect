@@ -108,9 +108,9 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 //new Breaktime('Do this drawing exercise with a drawing tablet.',"https://youtu.be/35rju_APLqQ","art",2,true)];
 
 var bigBreak = [//relaxation
-new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b" target="_blank">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
+//new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b" target="_blank">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on the Energy on Balance.',"pass","meditate2",3,false,"lazy"),
+new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false,"active"),
