@@ -129,14 +129,14 @@ new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anim
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
-new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game",1,false,"actve"),
-new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game",1,false,"lazy"),
-new Breaktime('Drive around safely in American Truck Simulator.',"pass","game",1,false,"lazy"),
-new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game",1,false,"lazy"),
+new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game-drive",1,false,"active"),
+new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game-drive",1,false,"lazy"),
+new Breaktime('Drive around safely in American Truck Simulator.',"pass","game-drive",1,false,"lazy"),
+new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"lazy"),
 new Breaktime('Play PowerWash Simulator.',"pass","game",1,false,"active"),
-new Breaktime('Play 100% Orange Juice.',"pass","game",1,false,"active"),
-new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game",1,false,"active"),
+new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
+new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
 new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
 new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
@@ -186,8 +186,8 @@ new Breaktime('Declutter your room.',"pass","misc",2,true,"active"),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"lazy"),
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
-new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
-new Breaktime('Go to the gym to improve your core strength and stamina.',"pass","exercise-heavy",3,true,"active")];
+new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active")];
+//new Breaktime('Go to the gym to improve your core strength and stamina.',"pass","exercise-heavy",3,true,"active")];
 //new Breaktime('Draw some stuff using an iPad or a drawing tablet.',"pass","art",2,true),
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
 //new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
@@ -219,14 +219,14 @@ new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false),
-new Breaktime('Watch anime (1).',"nextanime","anime",1,false),
-new Breaktime('Watch anime (2).',"nextanime","anime",1,false),
-new Breaktime('Watch anime (3).',"nextanime","anime",1,false),
-new Breaktime('Watch anime (4).',"nextanime","anime",1,false),
-new Breaktime('Watch anime (5).',"nextanime","anime",1,false),
-new Breaktime('Watch anime (6).',"nextanime","anime",1,false),
-new Breaktime('Watch anime (7).',"nextanime","anime",1,false),
-new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
+new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anime",1,false),
+// new Breaktime('Watch anime (2).',"nextanime","anime",1,false),
+// new Breaktime('Watch anime (3).',"nextanime","anime",1,false),
+// new Breaktime('Watch anime (4).',"nextanime","anime",1,false),
+// new Breaktime('Watch anime (5).',"nextanime","anime",1,false),
+// new Breaktime('Watch anime (6).',"nextanime","anime",1,false),
+// new Breaktime('Watch anime (7).',"nextanime","anime",1,false),
+//new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
   //Miscellaneous
 new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
@@ -406,7 +406,7 @@ function noooo() {
 
 function finished(did) {
   var category = messages[globalIndex].category;
-  if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music")
+  if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music" || category === "game-drive")
     deleteCategory(category,false,did);
   //Splice the break away from the array.
   else {
