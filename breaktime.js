@@ -135,6 +135,7 @@ new Breaktime('Drive around safely in American Truck Simulator.',"pass","game-dr
 new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"lazy"),
 new Breaktime('Play PowerWash Simulator.',"pass","game",1,false,"active"),
+new Breaktime('Play Rabi-Ribi.',"pass","game",1,false,"active"),
 new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
