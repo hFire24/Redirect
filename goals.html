@@ -13,38 +13,38 @@
     <h1 id='message'>Your current goals</h1>
     <div id='best-results' class='space'>For best results, keep this page open during the day.<br>
     If you're done with a goal, press the key corresponding to that goal to hide it.<br>
-    If you're struggling to do the next goal, <a href='struggle2.html' target='_blank'>click here.</a><br>
-    To export your tasks, <a href='#exportArea' onclick='exportGoals()'>click here.</a></div>
+    If you're struggling to do the next goal, <a href='struggle2.html' target='_blank'>click here.</a></div>
     <div id='goals-list' class='two-list' style="width:95%; margin:auto;">
     </div>
     <div class='space'></div>
-    <div id='exportRegion'>
+    <!--div id='exportRegion'>
       <textarea id='exportArea' cols='50' rows='8'></textarea>
-      <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button> <button onclick='undoText()'>Undo</button> <button onclick='swapGoalsButton()'>Swap</button>
+      <button onclick='exportGoals()'>Export</button> <button onclick='copyToClipboard()'>Copy</button> 
     </div>
+    <button id="swapButton" class='custom-button' onclick='swapGoalsButton()'>Swap</button-->
     <script>
-      var aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
+      const aHabits = [//{text:"Tackle your to-do list",link:"index.html",category:"active"},
         //aHabits
-      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active"}, //Golden habits are the most important
+      {text:"Play Stepmania on pad <span class='time'>(3 songs)</span>",link:"stepmania.html",category:"active",name:"stepmania"}, //Golden habits are the most important
       //{text:"Apply for a job <span class='time'>(1 job)</span>",link:"pass",category:"golden"},
       //{text:"*Draw something <span class='time'>(1+ times)</span>",link:"quiz.html",category:"golden"},
-      {text:"Manage money, write in journal",link:"pass",category:"active"},
-      {text:"Write down what happened on this day.",link:"pass",category:"active"},
+      {text:"Manage money, write in journal",link:"pass",category:"active",name:"money"},
+      {text:"Write down what happened on this day.",link:"pass",category:"active",name:"journal"},
         //bHabits
       //{text:"Read the book <u>Atomic Habits</u> <span class='time'>(1 chapter/2 quotes to add)</span>",link:"https://read.amazon.com/",category:"active"},
       //{text:"Learn Rubik's Cube algorithms <span class='time'>(2 mintues)</span>",link:"https://www.rubiks.com/media/guides/RBL_solve_guide_CUBE_US_5.375x8.375in_AW_27Feb2020_VISUAL.pdf/",category:"active"},
       //{text:"Play Duolingo <span class='time'>(1 lesson)</span>",link:"https://www.duolingo.com/",category:"active"},
-      {text:"Relax/meditate <span class='time'>(1 session)</span>",link:"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b",category:"passive"},
+      {text:"Relax/meditate <span class='time'>(1 session)</span>",link:"https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b",category:"passive",name:"meditate"},
       //{text:"Use the Brillaint app <span class='time'>(1 lesson)</span>",link:"https://brilliant.org/home/",category:"active"},
       //{text:"Play Elevate <span class='time'>(5 minutes)</span>",link:"pass",category:"active"},
-      {text:"Listen to General Conference <span class='time'>(1 talk)</span>",link:"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T",category:"passive"},
-      {text:"Watch anime <span class='time'>(1 episode)</span>",link:"nextanime.html",category:"active"},
+      {text:"Listen to General Conference <span class='time'>(1 talk)</span>",link:"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T",category:"passive",name:"conference"},
+      {text:"Watch anime <span class='time'>(1 episode)</span>",link:"nextanime.html",category:"active",name:"anime"},
       //{text:"Read manga <span class='time'>(1/2 volume)</span>",link:"pass",category:"active"},
-      {text:"Learn tech skills <span class='time'>(15 minutes)</span>",link:"techskills.html",category:"active"},
-      {text:"Read the scriptures <span class='time'>(1-2 chapters)</span>",link:"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng",category:"active"},
+      {text:"Learn tech skills <span class='time'>(15 minutes)</span>",link:"techskills.html",category:"active",name:"coding"},
+      {text:"Read the scriptures <span class='time'>(1-2 chapters)</span>",link:"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng",category:"active",name:"scriptures"},
         //cHabits
-      {text:"Analyze songs <span class='time'>(1 song)</span>",link:"pass",category:"active"},
-      {text:"Complete Dynalist tasks <span class='time'>(variable)</span>",link:"pass",category:"active"}
+      {text:"Analyze songs <span class='time'>(1 song)</span>",link:"pass",category:"active",name:"music"},
+      {text:"Complete Dynalist tasks <span class='time'>(variable)</span>",link:"pass",category:"active",name:"tasks"}
       //{text:"Learn programming <span class='time'>(1 section/project)</span>",link:"https://vuejs.org/guide/introduction.html",category:"golden"},
       //{text:"Learn more programming <span class='time'>(1-3 videos)</span>",link:"https://skl.sh/3kUGEj8",category:"golden"},
       //{text:"Go to the gym <span class='time'>(15 minutes)</span>",link:"pass",category:"active"}
@@ -62,33 +62,47 @@
       //cHabits = cHabits.slice(0,5);
 
       function shuffle(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * i);
-          var temp = array[i];
+        for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * i);
+          let temp = array[i];
           array[i] = array[j];
           array[j] = temp;
         }
       }
 
-      var parent = document.getElementById("goals-list");
+      const parent = document.getElementById("goals-list");
 
       function buildArray(array,offset) {
-        for(var i = 0; i < array.length; i++) {
-          var element = document.createElement("a");
-          var letter = String.fromCharCode(65+offset+i);
+        for(let i = 0; i < array.length; i++) {
+          let element = document.createElement("span");
+          let checkbox = document.createElement("input");
+          let link = document.createElement("a");
+          let letter = String.fromCharCode(65+offset+i);
           element.id = "habit-" + letter;
           element.classList.add("hfire-link");
-          element.innerHTML = letter + ": " + array[i].text;
+          element.style.cursor = "auto";
+          checkbox.type = "checkbox";
+          checkbox.name = array[i].name;
+          checkbox.id = "checkbox-" + letter;
+          element.appendChild(checkbox);
           if(array[i].link !== "pass") {
-            element.href = array[i].link;
-            element.target = "_blank";
+            link.href = array[i].link;
+            link.target = "_blank";
+            link.innerHTML = array[i].text;
+            link.style.color = "inherit";
+            element.innerHTML += " " + letter + ": ";
+            element.appendChild(link);
           }
+          else
+            element.innerHTML += " " + letter + ": " + array[i].text;
           parent.appendChild(element);
+          checkbox = checkbox.id;
+          document.getElementById(checkbox).onclick = () => { checkText(letter) };
           //Creates a random background color for the element
-          var x = Math.floor(Math.random() * 128);
-          var y = Math.floor(Math.random() * 128);
-          var z = Math.floor(Math.random() * 32) + 96;
-          var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+          let x = Math.floor(Math.random() * 128);
+          let y = Math.floor(Math.random() * 128);
+          let z = Math.floor(Math.random() * 32) + 96;
+          let bgColor = "rgb(" + x + "," + y + "," + z + ")";
           if(array[i].text.indexOf("Cirno") >= 0)
             bgColor = "rgb(30,105,192)";
           element = document.getElementById("habit-" + letter)
@@ -116,12 +130,12 @@
       buildArray(aHabits,0);
       //buildArray(bHabits,aHabits.length);
       //buildArray(cHabits,aHabits.length + bHabits.length);
-      /*var tierNumber = new Tier(-1);
+      /*let tierNumber = new Tier(-1);
       getTier(tierNumber);
 
       function getTier(tierObject) {
-        var d = new Date();
-        var tiers = ["OU","UU","RU","NU","PU"];
+        let d = new Date();
+        let tiers = ["OU","UU","RU","NU","PU"];
         console.log("Tier Number is " + tierObject.getNumber());
         if(document.getElementById("tier")) {
           if(d.getDay() >= 1 && d.getDay() <= 5)
@@ -134,59 +148,61 @@
       }*/
 
       window.onbeforeunload = function() { return "Would you really like to leave this page?"; }
-      window.onkeyup = function(){deleteText(event)};
 
-      var deletedElements = [];
+      const checkedElements = [];
 
-      function deleteText(id) {
-        let keyToDelete = id.key.toUpperCase();
+      function checkText(id) {
+        let keyToCheck = id.toUpperCase();
         //For potential future proofing
-        if(document.getElementById("habit-" + keyToDelete) === null)
+        if(document.getElementById("habit-" + keyToCheck) === null)
           return;
-        var toBeDisabled = document.getElementById("habit-" + keyToDelete);
-        toBeDisabled.style.color = toBeDisabled.style.backgroundColor;
-        toBeDisabled.removeAttribute("href");
-        deletedElements.push(keyToDelete);
-        for(var i = 0; i < deletedElements.length - 1; i++) {
-          if(deletedElements[i] === keyToDelete) {
-            deletedElements.pop();
+        if(!document.getElementById("checkbox-" + keyToCheck).checked) {
+          undoCheck(keyToCheck);
+          return;
+        }
+        let toBeChecked = document.getElementById("habit-" + keyToCheck);
+        toBeChecked.style.textDecoration = "line-through";
+        checkedElements.push(keyToCheck);
+        for(let i = 0; i < checkedElements.length - 1; i++) {
+          if(checkedElements[i] === keyToCheck) {
+            checkedElements.pop();
             break;
           }
         }
-        console.log(deletedElements);
-        if(deletedElements.length === aHabits.length) {
+        console.log(checkedElements);
+        if(checkedElements.length === aHabits.length) {
           document.getElementById("message").innerHTML = "CONGRATULATIONS!";
           document.getElementById("best-results").innerHTML = "You did them all in one day!";
-          document.getElementById("best-results").className = "medium";
-          document.body.removeChild(parent);
-          document.body.removeChild(document.getElementById("exportRegion"));
+          document.getElementById("best-results").classList.add("medium");
+          //document.body.removeChild(document.getElementById("exportRegion"));
+          //document.body.removeChild(document.getElementById("swapButton"));
+          for(let i = 0; i < aHabits.length; i++) {
+            let letter = String.fromCharCode(65+i);
+            undoCheck(letter);
+          }
           changeColor();
         }
       }
 
-      function undoText() {
-        if (deletedElements.length === 0)
+      function undoCheck(id) {
+        if (checkedElements.length === 0)
           return;
-        var letter = deletedElements[deletedElements.length - 1].toUpperCase();
-        var aHabitsIndex = letter.charCodeAt(0) - 65;
-        var toBeRestored = document.getElementById("habit-" + letter);
-        if(aHabits[aHabitsIndex].category === "passive")
-          toBeRestored.style.color = "#3CF";
-        else if(aHabits[aHabitsIndex].category === "golden")
-          toBeRestored.style.color = "gold";
-        else
-          toBeRestored.style.color = "white"
-        deletedElements.pop();
+        let letter = id.toUpperCase();
+        let aHabitsIndex = letter.charCodeAt(0) - 65;
+        let toBeRestored = document.getElementById("habit-" + letter);
+        toBeRestored.style.textDecoration = "none";
+        checkedElements.pop();
+        console.log(checkedElements);
       }
 
-      function exportGoals() {
-        var text = document.getElementById("exportArea");
+      /*function exportGoals() {
+        let text = document.getElementById("exportArea");
         text.value = "";
-        var bigArray = document.getElementsByClassName("hfire-link");
-        for(var i = 0; i < bigArray.length; i++)
+        let bigArray = document.getElementsByClassName("hfire-link");
+        for(let i = 0; i < bigArray.length; i++)
           if(bigArray[i].style.color !== bigArray[i].style.backgroundColor)
           {
-            var preText = bigArray[i].innerText || bigArray[i].textContent;
+            let preText = bigArray[i].innerText || bigArray[i].textContent;
             text.value = text.value + preText;
             if(i < bigArray.length-1)
               text.value = text.value + "\r\n";
@@ -194,21 +210,21 @@
       }
 
       function copyToClipboard() {
-        /* Get the text field */
-        var copyText = document.getElementById("exportArea");
+        // Get the text field
+        let copyText = document.getElementById("exportArea");
 
-        /* Select the text field */
+        // Select the text field
         copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        copyText.setSelectionRange(0, 99999); //For mobile devices
 
-        /* Copy the text inside the text field */
+        // Copy the text inside the text field
         document.execCommand("copy");
 
-        /* Alert the copied text */
+        // Alert the copied text
         alert("Copied the text: " + copyText.value);
-      }
+      }*/
 
-      function swapGoalsButton() {
+      /*function swapGoalsButton() {
         let letters = prompt("What letter goals do you want to swap? Must be in format \"A,B\"");
         letters = letters.replace(/\s/g, '');
         let a = letters.charAt(0).toUpperCase();
@@ -230,17 +246,17 @@
           alert("ERROR: " + charA + " or " + charB + " is not valid.");
           return;
         }
-        // Check if a or b is in deletedElements array
-        if (deletedElements.includes(charA) || deletedElements.includes(charB)) {
-          alert("ERROR: Cannot swap with letters in deleted elements.");
+        // Check if a or b is in checkedElements array
+        if (checkedElements.includes(charA) || checkedElements.includes(charB)) {
+          alert("ERROR: Cannot swap with letters in checked elements.");
           return; // Exit the function
         }
         //Swaps the goals within the array
-        var temp = aHabits[a];
+        let temp = aHabits[a];
         aHabits[a] = aHabits[b];
         aHabits[b] = temp;
         //Creates a new temporary array for the swapped elements for the loop
-        var swappedGoals = [aHabits[a],aHabits[b]];
+        let swappedGoals = [aHabits[a],aHabits[b]];
         //Adds the number and background color properties for the elements
         swappedGoals[0].num = a;
         swappedGoals[1].num = b;
@@ -248,10 +264,10 @@
         swappedGoals[0].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[1].num)).style.backgroundColor;
         swappedGoals[1].backgroundColor = document.getElementById("habit-" + String.fromCharCode(65+swappedGoals[0].num)).style.backgroundColor;
         //This is where the swapping takes place. All the swapped elements come from the newly created swappedGoals array.
-        for(var i = 0; i < swappedGoals.length; i++) {
+        for(let i = 0; i < swappedGoals.length; i++) {
           //Gets the position of one of the swapped goals.
-          var letter = String.fromCharCode(65+swappedGoals[i].num);
-          var element = document.getElementById("habit-" + letter);
+          let letter = String.fromCharCode(65+swappedGoals[i].num);
+          let element = document.getElementById("habit-" + letter);
           //The text, link, and color data are transferred to the other HTML element being swapped.
           element.innerHTML = letter + ": " + swappedGoals[i].text;
           if(swappedGoals[i].link !== "pass") {
@@ -268,7 +284,7 @@
             element.style.color = "white";
         }
         //getTier(tierNumber);
-      }
+      }*/
 
       function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -288,8 +304,8 @@
         }
       }
 
-      var bgHue = 137;
-      var textHue = 104;
+      let bgHue = 137;
+      let textHue = 104;
     </script>
   </body>
 </html>
