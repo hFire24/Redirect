@@ -207,7 +207,7 @@ td {
   background-color: inherit;
 }
 
-#atomhab-list > span, #break-list > span {
+#atomhab-list > span, #break-list > span, #break-list > a {
   padding: 10px 0px;
   background-color: inherit;
 }

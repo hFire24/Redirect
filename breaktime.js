@@ -146,7 +146,7 @@ new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","ga
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
 new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false,"active"),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false,"active"),
-new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"pass",3,false,"active"),
+new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"breaktable.html",3,false,"active"),
 new Breaktime('Tackle your search terms list.',"pass",2,false,"lazy"),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false,"lazy"),
 new Breaktime('Call one of your family members.',"pass","misc",2,false,"lazy"),
@@ -269,7 +269,16 @@ function loadAllBreaks() {
     var brighten = false;
     if (i % 2 === 0)
       brighten = true;
-    var quote = document.createElement("span");
+    var quote;
+    if(messages[i].link !== "pass") {
+      quote = document.createElement("a");
+      quote.href = messages[i].link;
+      if(messages[i].link === "pushTheButton") {
+        quote.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+      }
+    }
+    else
+      quote = document.createElement("span");
     quote.innerHTML = messages[i].text;
     quote.className = "small";
     parent.appendChild(quote);
