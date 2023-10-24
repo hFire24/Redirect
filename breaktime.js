@@ -91,10 +91,9 @@ new Breaktime('Explore the world through StreetView.',"https://randomstreetview.
 new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
-new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
+new Breaktime('Read or listen to the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",3,false,"active")];
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
-new Breaktime('Think of a goal. Any one. Set that as your break message.',"pass","misc",2,false,"active")];
 //new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 //new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"lazy")];
 //new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
@@ -144,7 +143,6 @@ new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","ga
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
-new Breaktime('Read the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",2,false,"active"),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false,"active"),
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"breaktable.html",3,false,"active"),
 new Breaktime('Tackle your search terms list.',"pass",2,false,"lazy"),
