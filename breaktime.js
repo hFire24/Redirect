@@ -118,6 +118,7 @@ new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>
 new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),*/
   //Anime watching
 new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anime",1,false,"lazy"),
+new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (1).',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (2).',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
