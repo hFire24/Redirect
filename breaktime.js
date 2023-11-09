@@ -79,7 +79,6 @@ new Breaktime('Remove a song from your iTunes library. You may also need to dele
 new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
-new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false,"lazy"),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false,"lazy"),
@@ -213,7 +212,6 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false),
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
-new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false),
 new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
