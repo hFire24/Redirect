@@ -60,8 +60,9 @@ function loadBreak(number) {
 }
 
 var smallBreak = [//Relaxation
-new Breaktime('Listen to this.',"relax.html","meditate",3,false,"lazy"),
-new Breaktime('Clear your mind.',"relax.html","meditate",3,false,"lazy"),
+//new Breaktime('Listen to this.',"relax.html","meditate",3,false,"lazy"),
+//new Breaktime('Clear your mind.',"relax.html","meditate",3,false,"lazy"),
+new Breaktime('Buy a lifetime Relax. Change. Create. subscription.',"relax.html","meditate",3,false,"active"),
 new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
@@ -119,13 +120,7 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
   //Anime watching
 new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anime",1,false,"lazy"),
 new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
-//new Breaktime('Watch anime (1).',"nextanime","anime",1,false,"lazy"),
-//new Breaktime('Watch anime (2).',"nextanime","anime",1,false,"lazy"),
-//new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
-//new Breaktime('Watch anime (4).',"nextanime","anime",1,false,"lazy"),
-//new Breaktime('Watch anime (5).',"nextanime","anime",1,false,"lazy"),
-//new Breaktime('Watch anime (6).',"nextanime","anime",1,false,"lazy"),
-//new Breaktime('Watch anime (7).',"nextanime","anime",1,false,"lazy"),
+new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
@@ -219,13 +214,8 @@ new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
 new Breaktime('Watch anime for 30 seconds.',"nextanime","anime",1,false),
-new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anime",1,false),
-// new Breaktime('Watch anime (2).',"nextanime","anime",1,false),
-// new Breaktime('Watch anime (3).',"nextanime","anime",1,false),
-// new Breaktime('Watch anime (4).',"nextanime","anime",1,false),
-// new Breaktime('Watch anime (5).',"nextanime","anime",1,false),
-// new Breaktime('Watch anime (6).',"nextanime","anime",1,false),
-// new Breaktime('Watch anime (7).',"nextanime","anime",1,false),
+new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
+new Breaktime('Watch anime.',"nextanime","anime",1,false),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
