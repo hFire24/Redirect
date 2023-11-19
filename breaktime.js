@@ -76,7 +76,7 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false,"la
   //Music
 new Breaktime('Add a song to your iTunes library.',"pass","misc",1,false,"active"),
 new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.',"pass","misc",1,false,"active"),
-new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
+//new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false,"lazy"),
@@ -152,9 +152,9 @@ new Breaktime('Have a chat with ChatGPT.',"https://chat.openai.com/","misc",1,fa
 //new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
-//new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
+new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
 //Learn vercel
-//new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
+new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
