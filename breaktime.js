@@ -62,7 +62,7 @@ function loadBreak(number) {
 var smallBreak = [//Relaxation
 //new Breaktime('Listen to this.',"relax.html","meditate",3,false,"lazy"),
 //new Breaktime('Clear your mind.',"relax.html","meditate",3,false,"lazy"),
-new Breaktime('Buy a lifetime Relax. Change. Create. subscription.',"relax.html","meditate",3,false,"active"),
+//new Breaktime('Buy a lifetime Relax. Change. Create. subscription.',"relax.html","meditate",3,false,"active"),
 new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false,"lazy"),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false,"lazy"),
