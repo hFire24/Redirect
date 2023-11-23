@@ -154,7 +154,7 @@ new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJ
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
 //Learn vercel
-new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
+//new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
