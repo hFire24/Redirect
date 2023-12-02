@@ -143,7 +143,7 @@ new Breaktime('Review your break messages. Add, edit, or remove them when needed
 new Breaktime('Tackle your search terms list.',"pass",2,false,"lazy"),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false,"lazy"),
 new Breaktime('Call one of your family members.',"pass","misc",2,false,"lazy"),
-//new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"lazy"),
+new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"lazy"),
 new Breaktime('Have a chat with ChatGPT.',"https://chat.openai.com/","misc",1,false,"lazy"),
   //Goals
 //'Learn how to make chiptune music.',
@@ -227,7 +227,7 @@ new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isX
 new Breaktime('Tackle your search terms list.',"pass",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL",2,false),
 new Breaktime('Call one of your family members.',"pass","misc",2,false),
-//new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
+new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
 new Breaktime('Have a chat with ChatGPT.',"https://chat.openai.com/","misc",1,false,"lazy"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
