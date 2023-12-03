@@ -120,6 +120,7 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anime",1,false,"lazy"),
 new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
 new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
+new Breaktime('Watch something.',"nextwatch","anime",1,false,"lazy"),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
@@ -215,6 +216,7 @@ new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","ga
   //Anime
 new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
 new Breaktime('Watch anime.',"nextanime","anime",1,false),
+new Breaktime('Watch something.',"nextwatch","anime",1,false),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
