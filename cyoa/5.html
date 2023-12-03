@@ -3,28 +3,113 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Take a break.</title>
+    <title>The emergency button</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="icon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
-  <body class="theme6">
-    <h2 id='button' class='space'><u onclick="pushTheButton()">Click here.</u></h2>
+  <body class="theme7" onload="submitReason(-1)">
+    <div id='break' class='space'>The emergency button is your ally. If you're having thoughts that could lead to a relapse, don't act on them.</div>
+    <div id="never-forget" class="medium space">Never forget your life objectives.</div>
+    <span id='emergency-button' class='stress' onclick="pushTheButton()">EMERGENCY</span>
     <audio id='press'>
       <source src="../media/Button Push.mp3" type="audio/mpeg">
     </audio>
     <script>
+      let a = 1;
+
       function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
-      async function pushTheButton()
-      {
+      function submitReason(index) {
+        let answers = ["you will be doing something <ins>abominable in the sight of God</ins>.", //Religious 1
+        "you will have committed <ins>the sin of lust</ins>.", //Religious 2
+        "you will have committed a sin. <ins>Do not sin again</ins>.", //Religious 3
+        "you will go <ins>against the teachings of Jesus</ins>.", //Religious 4
+        "you <ins>will need Jesus</ins> to redeem yourself.", //Religious 5
+        "you will be procrasturbating. It's <ins>worse than procrastination</ins>.", //Unhealthy 1
+        "you will <ins>screw up your morning</ins> as well as the rest of your day.", //Dangerous 1
+        "your future will be <ins>potentially destroyed</ins>.", //Dangerous 2
+        "you will become a <ins>sick degenerate</ins>.", //Dangerous 3
+        "you will be <ins>throwing your life away</ins>.", //Dangerous 4
+        "you will be <ins>further corrupted</ins>.", //Dangerous 5
+        "you will be doing something clearly <ins>taboo</ins>.", //Dangerous 6
+        "you will relapse. <ins>Going back is very hard</ins> once you start.", //Unhealthy 2
+        "you will prioritize <ins>immoral fantasies</ins> over everything else.", //Dangerous 7
+        "you will be <ins>abused</ins> by your urges.", //Unhealthy 3
+        "you will seek things that <ins>aren't in accordance</ins> with Article of Faith 13.", //Religious 6
+        "you will be doing something <ins>dangerous</ins> to your overall health.", //Dangerous 8
+        "you will be <ins>doomed to oblivion.</ins>", //Dangerous 9
+        "you <ins>won't</ins> have time for <ins>essential tasks</ins> that will help you.", //Unhealthy 4
+        "14-year old you will <ins>hate you</ins>.", //Unhealthy 5
+        "you will be <ins>unclean</ins> and won't make it to heaven.", //Religous 7
+        "you will <ins>regret it</ins>.", //Unhealthy 6
+        "the <ins>Second Coming</ins> will be catastrophic if it happens in a few hours.", //Religious 8
+        "you will feel <ins>weak and incapable</ins>.", //Unhealthy 7
+        "you will wish you <ins>had done something else</ins>.", //Unhealthy 8
+        "you will give in to a <ins>terrible craving</ins>.", //Unhealthy 9
+        "your <ins>addiction</ins> will get <ins>worse</ins>.", //Unhealthy 10
+        "<ins>nothing good</ins> will come out of satisfying that craving.", //Unhealthy 11
+        "Satan will <ins>manipulate you</ins>.", //Religious 9
+        "you will feel a little satisfied, but then <ins>you'll feel miserable</ins>."]; //Unhealthy 12
+
+        if(index < 0 || index >= answers.length)
+          index = Math.floor(Math.random() * answers.length);
+        let consequence = answers[index];
+        document.getElementById("break").innerHTML = "If you give in to your urges, " + consequence;
+      }
+
+      async function pushTheButton() {
         document.getElementById("press").play();
-        document.getElementById("button").style.color = 'white';
+        document.getElementById("emergency-button").style.color = 'white';
         await sleep(1750);
-        location.href = "https://emergency.nofap.com/redirect?religious=true&cat=em";
+        eButton();
+        await sleep(1750);
+        document.getElementById("emergency-button").style.color = 'red';
+      }
+
+      function eButton() {
+        let array = [];
+        let message = document.getElementById("break").innerHTML;
+        let i = 0;
+        if(found(["God","Jesus","Faith","sin","heaven","Second Coming"],message)) {
+          for (i = 0; i < 8; i++) {
+            if (i < 4)
+              array.push("../repent2.html");
+            else if (i < 5)
+              array.push("https://youtu.be/iC4aV5WutY0"); //Place no more for the enemy of my soul
+            else if (i < 6)
+              array.push("https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T");
+            else
+              array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
+          }
+          if(message.indexOf("Second Coming") >= 0)
+            array.push("https://www.thetabernaclechoir.org/listen.html");
+        }
+        else {
+          for (i = 0; i < 21; i++) {
+            if (i < 1)
+              array.push("../whoa/old.html?id=24");
+            else
+              array.push("https://emergency.nofap.com/redirect?religious=true&cat=em");
+          }
+        }
+        let j = 0;
+        while(j < array.length/4) {
+          array.push("../breaklazy.html");
+          j++;
+        }
+        i = Math.floor(Math.random() * array.length);
+        window.innerWidth > 812 ? window.open(array[i],"_blank") : location.href = array[i];
+      }
+
+      function found(array,inputText) {
+        for (var i in array)
+          if (inputText.indexOf(array[i]) >= 0)
+            return true;
+        return false;
       }
     </script>
   </body>

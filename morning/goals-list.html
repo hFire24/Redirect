@@ -21,8 +21,8 @@
 
       const morningHabits = ["Check YouTube and Twitter",
       "Play Wordle",
-      "Say a prayer",
       "Slowly drink a glass of water",
+      "Review your to-do list",
       "Take a shower and shave",
       "Do some stretches",
       "Put on some clothes",
@@ -34,10 +34,11 @@
       "Brush your teeth",
       "Write down what happened on this day",
       "Write in morning journal",
+      "Generate a mantra",
+      "Say a prayer",
       "Make adjustments to your morning routine if you need to",
-      "Determine what things you need to get done today",
       "Optional: Put on <a href='../musicflow/1' target='_blank'>some music</a> to help you focus",
-      "Learn and practice code on your own<ul><li><a href=https://vuejs.org/guide/quick-start.html>You are learning Vue.JS</a></li></ul>",
+      //"Learn and practice code on your own<ul><li><a href=https://vuejs.org/guide/quick-start.html>You are learning Vue.JS</a></li></ul>",
       "It's time to have a productive day at work! Stay focused!",
       "It's time to have a wonderful sabbath day! Keep it holy!",
       "It's time to have an awesome day! Achieve your goals!"];
@@ -93,6 +94,10 @@
 
       const parent = document.getElementById("parent");
 
+      let x = 0;
+      let y = 0;
+      let z = 0;
+
       for(var i = 0; i < mh.length; i++)
       {
         let aElement = document.createElement("li");
@@ -100,9 +105,16 @@
         aElement.innerHTML = mh[i];
         parent.appendChild(aElement);
         //Creates a random background color for the element
-        let x = Math.floor(Math.random() * 64) + 192;
-        let y = Math.floor(Math.random() * 64) + 192;
-        let z = Math.floor(Math.random() * 256);
+        if(i === 0) {
+          x = Math.floor(Math.random() * 64) + 192;
+          y = Math.floor(Math.random() * 64) + 192;
+          z = Math.floor(Math.random() * 256);
+        }
+        else {
+          x -= 5
+          y += 10
+          z += 10
+        }
         let bgColor = "rgb(" + x + "," + y + "," + z + ")";
         document.getElementById("a" + parseInt(i)).style.backgroundColor = bgColor;
         console.log(mh[i]);

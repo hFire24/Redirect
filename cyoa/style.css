@@ -34,11 +34,11 @@ h3, #ok {
   margin-bottom: 0.5em;
 }
 
-#message, #break.big {
+#message, #break.big, #emergency-button {
   font-size: 140px;
 }
 
-#break, #question, #standup, #changeclothes, #quote {
+#break, #question, #standup, #changeclothes, #quote, #message.small {
   font-size:105px;
 }
 
@@ -105,6 +105,11 @@ img {
   max-width:100%;
   height:auto;
   width:auto;
+}
+
+#stress, .stress {
+  font-family: 'Barlow', Futura XBlkIt BT, AvenirNext-HeavyItalic, 'Arial Black', sans-serif;
+  color: red;
 }
 
 #stress a {
@@ -180,6 +185,26 @@ td {
   width: 60px;
   height: 60px;
   background: hsl(227, 43%, 50%);
+  cursor: pointer;
+}
+
+#urge-slider {
+  background: hsl(167, 22%, 87%);
+}
+
+#urge-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  height: 60px;
+  background: hsl(149, 43%, 50%);
+  cursor: pointer;
+}
+
+#urge-slider::-moz-range-thumb {
+  width: 60px;
+  height: 60px;
+  background: hsl(149, 43%, 50%);
   cursor: pointer;
 }
 
@@ -265,10 +290,10 @@ td {
 }
 
 @media only screen and (max-width: 1702px) {
-  h1, #message, #break.big {
+  h1, #message, #break.big, #emergency-button {
     font-size: 100px;
   }
-  h2, #break, #standup, #changeclothes, #question, #quote {
+  h2, #break, #standup, #changeclothes, #question, #quote, #message.small {
     font-size: 75px;
   }
   h3, body, #link, #theme, .medium {
@@ -304,10 +329,10 @@ td {
 }
 
 @media only screen and (max-width: 1135px) {
-  h1, #message, #break.big {
+  h1, #message, #break.big, #emergency-button {
     font-size: 80px;
   }
-  h2, #break, #standup, #changeclothes, #question, #quote {
+  h2, #break, #standup, #changeclothes, #question, #quote, #message.small {
     font-size: 60px;
   }
   h3, body, #ok, #link, #theme, .medium {
@@ -316,10 +341,10 @@ td {
 }
 
 @media only screen and (max-width: 851px) {
-  h1, #message, #break.big {
+  h1, #message, #break.big, #emergency-button {
     font-size: 60px;
   }
-  h2, #break, #standup, #changeclothes, #question, #quote {
+  h2, #break, #standup, #changeclothes, #question, #quote, #message.small {
     font-size: 44px;
   }
   h3, body, ol, #ok, #link, #theme, .medium, .small {
@@ -349,10 +374,10 @@ td {
 }
 
 @media only screen and (max-width: 567px) {
-  h1, #message, #break.big {
+  h1, #message, #break.big, #emergency-button {
     font-size: 40px;
   }
-  h2, #break, #standup, #changeclothes, #question, #quote {
+  h2, #break, #standup, #changeclothes, #question, #quote, #message.small {
     font-size: 30px;
   }
   h3, body, #ok, .medium, #link, #theme {

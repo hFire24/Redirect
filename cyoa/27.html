@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>You got redirected!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500;1,800&family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  </head>
+  <body class="theme6">
+    <h1 id="message">How strong are these urges?</h1>
+    <div id='slider1' class='space'>
+      <div class='slidercontainer space'>
+        <input type="range" min="0" max="3" value="0" class="slider" id="urge-slider"> <button class='custom-button' onclick="submit()">Submit</button>
+      </div>
+      <div id="urge-level">Nonexistent</div>
+    </div>
+    <a id="link" class='hfire-link' href="40.html" style="display:none;">Go Back</a>
+    <script>
+      var urgeLevels = ['Nonexistent',
+      'Mild',
+      'Distracting',
+      'Uncontrollable'];
+      var urgeLevel = document.getElementById("urge-level");
+      var slider = document.getElementById("urge-slider");
+      slider.max = urgeLevels.length - 1;
+      slider.oninput = function () {
+        urgeLevel.innerHTML = urgeLevels[slider.value];
+      }
+
+      function submit() {
+        slider1.style.display = "none";
+        switch(slider.value) {
+          case '0':
+            message.innerHTML = "No urges? You must be struggling with something else.";
+            break;
+          case '1':
+            message.innerHTML = "<a href=https://g.co/kgs/NsEozH>Take a deep breath</a> or do a quick mindfulness meditation on Balance. They might help.";
+            message.className = "small";
+            link.innerHTML = "Done";
+            link.href = "2.html";
+            link.style.display = "inline";
+            break;
+          case '2':
+            message.innerHTML = "You want to do it, but you don't need to do it. There are other ways to feel happiness.";
+            message.className = "small";
+            link.innerHTML = "Continue";
+            link.href = "12.html";
+            link.style.display = "inline";
+            break;
+          case '3':
+            location.href = "5.html";
+            break;
+          default:
+            location.href = "2.html"
+        }
+        link.style.display = "inline";
+      }
+    </script>
+  </body>
+</html>
