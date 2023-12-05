@@ -11,38 +11,14 @@
   </head>
   <body>
     <h1>Is your day over?</h1>
-    <div class="medium two-list">
+    <div class="medium two-list space">
       <a class="hfire-link" href="list.html">Yes</a> <a class="hfire-link" href="not-done.html">No</a>
     </div>
-    <div class="space"><strong class='medium'>If any thoughts were to arise that could lead to relapsing, don't act on them.</strong></div>
-    <div><strong class='medium'>Conveniently Placed Search Engine</strong></div>
-    <div id='search-bar' class="space">
-      <input id='search' type='text'><button onclick='search("google")'>Search (Google)</button><br><button onclick='search("youtube")'>Search (YouTube)</button><button onclick='search("twitter")'>Search (Twitter)</button><button onclick='search("pixiv")'>Search (Pixiv)</button><button onclick='search("safebooru")'>Search (Safebooru)</button><br><button onclick='search("duckduckgo")'>Search (DuckDuckGo)</button><button onclick='search("ecosia")'>Search (Ecosia)</button>
-    </div>
-    <script src="../script.js"></script>
-    <script>
-      $("search").addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          event.preventDefault();
-          search("google");
-        }
-      });
-
-      function search(site) {
-        let query = document.getElementById("search").value;
-        query = query.replaceAll(' ','+');
-        switch(site) {
-          case "youtube":
-            window.open("search.html?website=youtube&search_query=" + query);
-            break;
-          case "pixiv":
-            window.open("search.html?website=pixiv&q=" + query);
-            break;
-          default:
-            window.open("search.html?website=google&q=" + query);
-            break;
-          }
-      }
-    </script>
+    <div><strong class='medium'>Conveniently Placed NoFap Emergency Button</strong></div>
+    <span id='emergency-button' class='stress' onclick="pushTheButton()">EMERGENCY</span>
+    <audio id='press'>
+      <source src="../media/Button Push.mp3" type="audio/mpeg">
+    </audio>
+    <script src="nightEmergency.js"></script>
   </body>
 </html>
