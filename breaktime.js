@@ -108,7 +108,7 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 
 var bigBreak = [//relaxation
 //new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b" target="_blank">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
+//new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
@@ -132,9 +132,9 @@ new Breaktime('Drive around safely in American Truck Simulator.',"pass","game-dr
 new Breaktime('Play PowerWash Simulator.',"pass","game",1,false,"active"),
 new Breaktime('Play Rabi-Ribi.',"pass","game",1,false,"active"),
 //new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
-new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
+//new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
-new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
+//new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
 new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
@@ -153,7 +153,7 @@ new Breaktime('Have a chat with ChatGPT.',"https://chat.openai.com/","misc",1,fa
 //new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
-new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
+//new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
 //Learn vercel
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
