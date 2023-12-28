@@ -88,6 +88,7 @@ new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false,"la
 ///new Breaktime('Do some mouth exercises.',"https://www.notion.so/54bf9b8021da453a8eda76bd1d39a23d?v=2af1f2bd5d154c2dbd78444d115eb653","exercise",2,false,"lazy"),
 new Breaktime('Read the verse of the day.',"pass","religion",2,false,"lazy"),
 new Breaktime('Explore the world through StreetView.',"https://randomstreetview.com/","misc",1,false,"lazy"),
+new Breaktime('Read this quote.',"cyoa/15.html","misc",2,false,"lazy"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
@@ -120,26 +121,26 @@ new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
   //Anime watching
 new Breaktime('Watch Pokemon.',"https://www.pokeflix.tv/browse/pokemon-xy","anime",1,false,"lazy"),
 new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
-new Breaktime('Watch anime.',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch something.',"nextwatch","anime",1,false,"lazy"),
+new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false,"lazy"),
+new Breaktime('Watch The Price is Right.',"https://pluto.tv/en/live-tv/643f035d5a0cd50008361534","anime",1,false,"lazy"),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game-drive",1,false,"active"),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Drive around safely in American Truck Simulator.',"pass","game-drive",1,false,"lazy"),
-//new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game-drive",1,false,"lazy"),
-//new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"lazy"),
+new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game-drive",1,false,"lazy"),
+new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"lazy"),
 new Breaktime('Play PowerWash Simulator.',"pass","game",1,false,"active"),
 new Breaktime('Play Rabi-Ribi.',"pass","game",1,false,"active"),
 //new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
-//new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
+new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
-//new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
+new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
 new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
-//new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
+new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false,"active"),
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"breaktable.html",3,false,"active"),
 new Breaktime('Tackle your search terms list.',"pass",2,false,"lazy"),
@@ -154,7 +155,7 @@ new Breaktime('Have a chat with ChatGPT.',"https://chat.openai.com/","misc",1,fa
 //new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
-//new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
+new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
 //Learn vercel
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
@@ -183,7 +184,8 @@ new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"l
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
-new Breaktime('Do your laundry or put away your clothes.',"pass","misc",3,true,"active")];
+new Breaktime('Do your laundry or put away your clothes.',"pass","misc",3,true,"active"),
+new Breaktime('Play WarioWare: Move It.',"pass","exercise-heavy",2,true,"active")];
 //new Breaktime('Go to the gym to improve your core strength and stamina.',"pass","exercise-heavy",3,true,"active")];
 //new Breaktime('Draw some stuff using an iPad or a drawing tablet.',"pass","art",2,true),
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
@@ -194,10 +196,9 @@ new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html"
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true),*/
 
 var mobileBreak = [//Relaxation
-new Breaktime('Listen to this.',"relax.html","meditate",3,false),
-new Breaktime('Clear your mind.',"relax.html","meditate",3,false),
+//new Breaktime('Listen to this.',"relax.html","meditate",3,false),
+//new Breaktime('Clear your mind.',"relax.html","meditate",3,false),
 new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
-new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
@@ -216,8 +217,8 @@ new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
 new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
-new Breaktime('Watch anime.',"nextanime","anime",1,false),
-new Breaktime('Watch something.',"nextwatch","anime",1,false),
+new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false),
+//new Breaktime('Watch something.',"nextwatch","anime",1,false),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
@@ -225,6 +226,7 @@ new Breaktime('Watch something.',"nextwatch","anime",1,false),
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false),
 new Breaktime('Read the verse of the day in Gospel Library app.',"pass","religion",2,false),
 new Breaktime('Try answering this question.',"question.html","misc",1,false),
+new Breaktime('Read this quote.',"cyoa/15.html","misc",2,false,"lazy"),
 //new Breaktime('Answer this questionnaire.',"cyoa/17.html","misc",2,false),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
 new Breaktime('Tackle your search terms list.',"pass",2,false),
