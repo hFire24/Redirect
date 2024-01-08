@@ -28,10 +28,10 @@
       <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
-      <a data-tooltip="" class='hfire-link' href=''>1 ???</a>
+      <a data-tooltip="Mega Cute Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GZJH3D858/fluffy-paradise'>1 Fluffy Paradise</a>
       <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.pokeflix.tv/browse/pokemon-xy'>2 Pokemon XY</a>
       <a data-tooltip="" class='hfire-link' href=''>3 ???</a>
-      <a data-tooltip="2011 School Anime" class="hfire-link" href='https://www.crunchyroll.com/series/G9VHN97GM/ground-control-to-psychoelectric-girl'>4 Denpa Onna to Seishun Otoko</a>
+      <a data-tooltip="" class="hfire-link" href=''>4 ???</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>5 Sgt. Frog</a>
       <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>6 ⌛⌛</a>
       <!--a data-tooltip="The ultimate anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood'>8 FMA: B</a-->
@@ -54,8 +54,8 @@
       var diceRoll = 0;
       let maxRoll = 6;
       const rollTime = 750;
-      const cannotRoll = [1, 3];
-      const airingNumbers = [];
+      const cannotRoll = [4, 3];
+      const airingNumbers = [1];
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -102,7 +102,7 @@
           }
           switch(diceRoll) {
             case 1:
-              diceResults.innerHTML = `You rolled a 1! Roll again.`;
+              diceResults.innerHTML = `You rolled a 1! Roll again or watch the latest episode.`;
               diceRoll = resetDice(1);
               break;
             case 2:
