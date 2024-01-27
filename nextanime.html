@@ -30,7 +30,7 @@
     <div class='four-list space'>
       <a data-tooltip="Mega Cute Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/GZJH3D858/fluffy-paradise'>1 Fluffy Paradise</a>
       <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.amazon.com/gp/video/detail/B00OGM0NXC/ref=atv_dp_share_cu_r'>2 Pokemon XY</a>
-      <a data-tooltip="" class='hfire-link' href=''>3 ???</a>
+      <a data-tooltip="Giant Sword Isekai" class='hfire-link' href='https://www.hidive.com/tv/reincarnated-as-a-sword'>3 Reincarnated as a Sword</a>
       <a data-tooltip="" class="hfire-link" href=''>4 ???</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>5 Sgt. Frog</a>
       <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>6 ⌛⌛</a>
@@ -40,21 +40,19 @@
       <!--h4 class="no-space">Great for action</h4>
       Fullmetal Alchemist: Brotherhood-->
       <h4 class="no-space">Great for laughs and action</h4>
-      Spy x Family, Pokemon XY
-      <h4 class="no-space">Great for laughs and history</h4>
-      Tearmoon Empire
+      Pokemon XY
       <h4 class="no-space">Great for laughs and sci-fi</h4>
       Sgt. Frog
-      <h4 class="no-space">Great for relaxation</h4>
-      Flying Witch
-      <h4 class="no-space">Great for nostalgia</h4>
-      Denpa Onna to Seishun Otoko
+      <h4 class="no-space">Great for cuteness</h4>
+      Fluffy Paradise
+      <h4 class="no-space">Great for action</h4>
+      Reincarnated as a Sword
     </div>
     <script>
       var diceRoll = 0;
       let maxRoll = 6;
       const rollTime = 750;
-      const cannotRoll = [4, 3];
+      const cannotRoll = [4];
       const airingNumbers = [1];
       var askToBan = false;
       var watchedFocus = true;
@@ -109,8 +107,7 @@
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again.`;
-              diceRoll = resetDice(3);
+              diceResults.innerHTML = `You rolled a 3!`;
               break;
             case 4:
               diceResults.innerHTML = `You rolled a 4!`;
