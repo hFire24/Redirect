@@ -413,7 +413,7 @@ function noooo() {
 
 function finished(did) {
   var category = messages[globalIndex].category;
-  if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music" || category === "game-drive")
+  if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music" || category === "game-drive" && !did)
     deleteCategory(category,false,did);
   //Splice the break away from the array.
   else {
