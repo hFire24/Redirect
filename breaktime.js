@@ -124,7 +124,7 @@ new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/s
 new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Watch The Price is Right.',"https://pluto.tv/en/live-tv/643f035d5a0cd50008361534","show",1,false,"lazy"),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
-//new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
+new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
 new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game-drive",1,false,"active"),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game-drive",1,false,"lazy"),
@@ -137,7 +137,7 @@ new Breaktime('Play Tanto Cuore.',"pass","game",1,false,"active"),
 //new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
 //new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
-//new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
+new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
 //new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
 new Breaktime('Play Pokemon Scarlet.',"pass","game",1,false,"active"),
   //Miscellaneous
