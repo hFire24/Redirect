@@ -138,8 +138,8 @@ new Breaktime('Play Tanto Cuore.',"pass","game",1,false,"active"),
 //new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
 new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
-//new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
-new Breaktime('Play Pokemon Scarlet.',"pass","game",1,false,"active"),
+new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
+new Breaktime('Play a Nintendo Switch game.',"pass","game",1,false,"active"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
@@ -186,8 +186,7 @@ new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"l
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
-new Breaktime('Do your laundry or put away your clothes.',"pass","misc",3,true,"active"),
-new Breaktime('Play WarioWare: Move It.',"pass","exercise-heavy",2,true,"active")];
+new Breaktime('Do your laundry or put away your clothes.',"pass","misc",3,true,"active")];
 //new Breaktime('Go to the gym to improve your core strength and stamina.',"pass","exercise-heavy",3,true,"active")];
 //new Breaktime('Draw some stuff using an iPad or a drawing tablet.',"pass","art",2,true),
 //new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
