@@ -131,14 +131,14 @@ new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game-drive",1
 new Breaktime('Drive around safely in American Truck Simulator.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game-drive",1,false,"lazy"),
 //new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"lazy"),
-new Breaktime('Play PowerWash Simulator.',"pass","game",1,false,"active"),
+new Breaktime('Play Teardown.',"pass","game",1,false,"active"),
 new Breaktime('Play Rabi-Ribi.',"pass","game",1,false,"active"),
 new Breaktime('Play Tanto Cuore.',"pass","game",1,false,"active"),
 //new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
 //new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
 new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
-new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
+//new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
 new Breaktime('Play a Nintendo Switch game.',"pass","game",1,false,"active"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
@@ -148,7 +148,7 @@ new Breaktime('Review your break messages. Add, edit, or remove them when needed
 new Breaktime('Tackle your search terms list.',"pass","misc",2,false,"lazy"),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL","misc",2,false,"lazy"),
 new Breaktime('Call one of your family members.',"pass","misc",2,false,"lazy"),
-new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"lazy"),
+//new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"lazy"),
   //Goals
 //'Learn how to make chiptune music.',
 //'Learn how to use FL Studio.',
@@ -157,21 +157,24 @@ new Breaktime('Write down what happened on this day in your life.',"pass","misc"
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
+//#### REACTIVATE BELOW ON APRIL 1, 2024 ####
+//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
+//#### REACTIVATE BELOW ON APRIL 22, 2024 ####
+//new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy")];
 //Learn vercel
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
 //'Try to code Card Battle Stadium in C#.',
 //'Try one of these C# coding projects.',
-//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
+
 //new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
 //new Breaktime('Use your money to buy a programming e-book.',"https://www.amazon.com","coding",3,false,"active"),
 /*new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),
+//new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),
 new Breaktime('Check your habit tracker. Try to knock out one of your goals.',"https://docs.google.com/spreadsheets/d/1i--kwCSHETl9cQOt0qsKXCdIZkP6ucvTUeFi21UTQSk/edit?usp=sharing","task",3,false,"active")];
-//new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy")];
 //new Breaktime('Learn C# on Lex on your work laptop.',"pass","coding",3,false,"active")];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
 //Do not upload traced art.
@@ -215,7 +218,7 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false),
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
   //Games
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
-new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
+//new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
 new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
 new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false),
@@ -233,17 +236,19 @@ new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isX
 new Breaktime('Tackle your search terms list.',"pass","misc",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL","misc",2,false),
 new Breaktime('Call one of your family members.',"pass","misc",2,false),
-new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
+//new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
+//#### REACTIVATE BELOW ON APRIL 1, 2024 ####
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
-new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
+//new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
 new Breaktime('Check your habit tracker. Try to knock out one of your goals.',"https://docs.google.com/spreadsheets/d/1i--kwCSHETl9cQOt0qsKXCdIZkP6ucvTUeFi21UTQSk/edit?usp=sharing","task",3,false,"active")];
+//#### REACTIVATE BELOW ON APRIL 22, 2024 ####
 //new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
 //new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 //new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
