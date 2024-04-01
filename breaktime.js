@@ -119,7 +119,7 @@ new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>
 /*new Breaktime('Apply for a job.',"pass","job",4,false),
 new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),*/
   //Anime watching
-new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B00OGM0NXC/ref=atv_dp_share_cu_r","anime",1,false,"lazy"),
+new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B00WJ3K8F8","anime",1,false,"lazy"),
 new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
 new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false,"lazy"),
 new Breaktime('Watch The Price is Right.',"https://pluto.tv/en/live-tv/643f035d5a0cd50008361534","show",1,false,"lazy"),

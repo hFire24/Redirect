@@ -120,7 +120,7 @@ function addBigMessages() {
   '<a href="musicflow/1">Why don\'t you put on some music to help you focus?</a>',
   '<a href="musicflow/1.html">Put on music. If the music isn\'t making you productive, just ramp up the intensity.</a>',
   '<a href="https://music.youtube.com/channel/UC7PFOj9JRgpSQjxTxGINpmw">If things aren\'t going your way, put on some epic music!</a>',
-  '<a href="https://www.thetabernaclechoir.org/listen.html">How about you listen to some heavenly Tabernacle Choir music?</a>',
+  '<a href="https://www.churchofjesuschrist.org/media/radio?lang=eng">How about you listen to some heavenly Tabernacle Choir music?</a>',
     //Games
   '<a href="cyoa/46.html">Why not play one of these short games?</a>',
   'How about you drive fast?... in Need for Speed?',

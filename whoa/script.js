@@ -64,7 +64,7 @@ function loadWebsite() {
   else
     message.innerHTML = '☢' + messages[index] + '☢';
   if(messages[index] === "PLAY TABERNACLE CHOIR MUSIC")
-    link = "https://www.thetabernaclechoir.org/listen.html";
+    link = "https://www.churchofjesuschrist.org/media/radio?lang=eng";
   else if (messages[index] === "<i>PLAY FURY OF THE STORM </i>")
     link = "https://youtu.be/5i7qZxICwgQ";
   else if(index >= messages.indexOf("ERADICATE THE SIN OF LUST") && index <= messages.indexOf("YOU NEED MORE JESUS"))
