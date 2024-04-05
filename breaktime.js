@@ -157,9 +157,8 @@ new Breaktime('Call one of your family members.',"pass","misc",2,false,"lazy"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
-//#### REACTIVATE BELOW ON APRIL 1, 2024 ####
-//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
-//#### REACTIVATE BELOW ON APRIL 22, 2024 ####
+new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
+//#### REACTIVATE BELOW ON APRIL 23, 2024 ####
 //new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy")];
 //Learn vercel
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
@@ -240,15 +239,14 @@ new Breaktime('Call one of your family members.',"pass","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
-//#### REACTIVATE BELOW ON APRIL 1, 2024 ####
-//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
+new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
 //new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
 new Breaktime('Check your habit tracker. Try to knock out one of your goals.',"https://docs.google.com/spreadsheets/d/1i--kwCSHETl9cQOt0qsKXCdIZkP6ucvTUeFi21UTQSk/edit?usp=sharing","task",3,false,"active")];
-//#### REACTIVATE BELOW ON APRIL 22, 2024 ####
+//#### REACTIVATE BELOW ON APRIL 23, 2024 ####
 //new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
 //new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 //new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
