@@ -28,9 +28,9 @@
       <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
     <div class='four-list space'>
-      <a data-tooltip="" class='hfire-link' href='https://www.crunchyroll.com/series/GYMGDZN4Y/when-supernatural-battles-became-commonplace'>1 Supernatural Battles</a>
+      <a data-tooltip="Mid-2010s Comedy Harem" class='hfire-link' href='https://www.crunchyroll.com/series/GYMGDZN4Y/when-supernatural-battles-became-commonplace'>1 Supernatural Battles</a>
       <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.amazon.com/gp/video/detail/B00WJ3K8F8'>2 Pokemon XY</a>
-      <a data-tooltip="" class='hfire-link' href=''>3 ???</a>
+      <a data-tooltip="Iyashikei CGDCT" class='hfire-link' href='https://www.crunchyroll.com/series/GRWEW95KR/laid-back-camp'>3 Laid-Back Camp</a>
       <a data-tooltip="" class="hfire-link" href=''>4 ???</a>
       <a data-tooltip="Long-running sci-fi comedy" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog'>5 Sgt. Frog</a>
       <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>6 ⌛⌛</a>
@@ -48,8 +48,8 @@
       var diceRoll = 0;
       let maxRoll = 6;
       const rollTime = 750;
-      const cannotRoll = [3, 4];
-      const airingNumbers = [];
+      const cannotRoll = [4];
+      const airingNumbers = [3];
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -97,13 +97,12 @@
           switch(diceRoll) {
             case 1:
               diceResults.innerHTML = `You rolled a 1!`;
-              diceRoll = resetDice(1);
               break;
             case 2:
               diceResults.innerHTML = `You rolled a 2!`;
               break;
             case 3:
-              diceResults.innerHTML = `You rolled a 3! Roll again.`;
+              diceResults.innerHTML = `You rolled a 3! Roll again or watch the latest episode.`;
               diceRoll = resetDice(3);
               break;
             case 4:
@@ -114,10 +113,10 @@
               diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = `You rolled a 6!`;
+              diceResults.innerHTML = `You rolled a 6! Watch the anime you haven't watched in the longest time.`;
               break;
             case 7:
-              diceResults.innerHTML = `You rolled a 7! Watch the anime you haven't watched in the longest time.`;
+              diceResults.innerHTML = `You rolled a 7!`;
               break;
             case 8:
               diceResults.innerHTML = `You rolled an 8!`;
