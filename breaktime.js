@@ -114,6 +114,7 @@ var bigBreak = [//relaxation
 new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
+new Breaktime('If you see this during work hours, then get back to work!',"pass","task",3,false,"lazy"),
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false,"active"),
   //Job hunting
 /*new Breaktime('Apply for a job.',"pass","job",4,false),
@@ -126,7 +127,7 @@ new Breaktime('Watch The Price is Right.',"https://pluto.tv/en/live-tv/643f035d5
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
-new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game-drive",1,false,"active"),
+/*new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game-drive",1,false,"active"),
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Drive around safely in American Truck Simulator.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game-drive",1,false,"lazy"),
@@ -135,11 +136,12 @@ new Breaktime('Play Teardown.',"pass","game",1,false,"active"),
 new Breaktime('Play Rabi-Ribi.',"pass","game",1,false,"active"),
 new Breaktime('Play Tanto Cuore.',"pass","game",1,false,"active"),
 //new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
-//new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),
+//new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),*/
+new Breaktime('Play a Nintendo Switch game.',"pass","game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
 new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
 //new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"lazy"),
-new Breaktime('Play a Nintendo Switch game.',"pass","game",1,false,"active"),
+new Breaktime('Play one of these long games.',"gameflow/22.html",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('No routine? Form one.',"pass","plan",2,false,"active"),
 //new Breaktime('Read your patriarchal blessing.',"pass","religion",2,false,"active"),
