@@ -9,6 +9,7 @@ var globalStand = -1;
 
 var bedtimeRemoved = false;
 var consecutivePasses = 0;
+const cPassLimit = 10;
 
 class Breaktime {
   constructor(text,link,category,importance,stand,lazy) {
@@ -162,9 +163,9 @@ new Breaktime('Call one of your family members.',"pass","misc",2,false,"lazy"),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
-new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
+//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 //#### REACTIVATE BELOW ON APRIL 23, 2024 ####
-//new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy")];
+new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
 //Learn vercel
 //new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
 //'Learn a new programming language. Try to code Card Battle Stadium in that language.'
@@ -249,15 +250,14 @@ new Breaktime('Call one of your family members.',"pass","misc",2,false),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
-new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
+//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
 //new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
 //new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
-new Breaktime('Check your habit tracker. Try to knock out one of your goals.',"https://docs.google.com/spreadsheets/d/1i--kwCSHETl9cQOt0qsKXCdIZkP6ucvTUeFi21UTQSk/edit?usp=sharing","task",3,false,"active")];
-//#### REACTIVATE BELOW ON APRIL 23, 2024 ####
-//new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false),
+new Breaktime('Check your habit tracker. Try to knock out one of your goals.',"https://docs.google.com/spreadsheets/d/1i--kwCSHETl9cQOt0qsKXCdIZkP6ucvTUeFi21UTQSk/edit?usp=sharing","task",3,false,"active"),
+new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false)];
 //new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 //new Breaktime('Check in with yourself using the Finch app.',"pass","misc",2,false),
 //new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false)];
@@ -453,7 +453,7 @@ function finished2(calledFromButton,did) {
     }
   }
   else
-    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);
+    consecutivePasses >= cPassLimit ? displayBreak(-2) : displayBreak(-1);
 }
 
 function filtered(newBreak) {
@@ -463,10 +463,10 @@ function filtered(newBreak) {
     location.href = "https://hfire24.github.io/Redirect/cirno.html";
   else if (found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'to nut', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful', 'make love'], newBreakLC))
     location.href = "https://hfire24.github.io/Redirect/whoa/old.html";
-  else if (found(["loli", "flandre", "chino", "koishi", " rem ", " rem.", " rem!", "little girl", "anime girl", "booru", "deviantart", "pixiv", "waifu", 
+  else if (found(["loli", "flandre", "chino", "koishi", " rem ", " rem.", " rem!", " rem,", "little girl", "anime girl", "booru", "deviantart", "pixiv", "novelai", "waifu", 
     "cute", "attractive", "regress", "shrink", "adorable"], newBreakLC) || newBreakLC.endsWith(" rem")) {
     alert("That should not be a priority.");
-    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);
+    consecutivePasses >= cPassLimit ? displayBreak(-2) : displayBreak(-1);
   }
   else if (found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life', 'noose'], newBreakLC)
     && !found(wasteTime, newBreakLC) && !found(["watch", "listen", "read", "play"],newBreakLC) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'], newBreakLC) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'], newBreakLC)
@@ -478,7 +478,7 @@ function filtered(newBreak) {
   }
   else if (found(['bored', 'bore', 'nothing', 'don\'t feel like doing', 'uhh', 'umm', 'hmm', 'lack of interest', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk'], newBreakLC)
     || found(wasteTime,newBreakLC) || newBreak.length === 0)
-    consecutivePasses >= 10 ? displayBreak(-2) : displayBreak(-1);
+    consecutivePasses >= cPassLimit ? displayBreak(-2) : displayBreak(-1);
   else {
     rValue = false;
   }
