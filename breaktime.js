@@ -111,8 +111,6 @@ new Breaktime('Brush your teeth if you haven\'t done so this morning or this eve
 
 var bigBreak = [//relaxation
 //new Breaktime('Listen to one of these long guided meditations. Don\'t forget about <a href="https://app.diagrams.net/#G1UCqHtj3kuSZ1UPVXut0o7vF1XV9e0J8b" target="_blank">the flowchart</a>.',"pass","meditate2",3,false,"lazy"),
-//new Breaktime('Make progress on the Advanced Plan on Balance.',"pass","meditate2",3,false,"lazy"),
-new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
   //Task checking
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
 new Breaktime('If you see this during work hours, then get back to work!',"pass","task",3,false,"lazy"),
@@ -208,7 +206,6 @@ var mobileBreak = [//Relaxation
 //new Breaktime('Listen to this.',"relax.html","meditate",3,false),
 //new Breaktime('Clear your mind.',"relax.html","meditate",3,false),
 new Breaktime('Do a quick body scan.',"pass","meditate",2,false,"lazy"),
-new Breaktime('Make progress on the Energy Plan on Balance.',"pass","meditate2",3,false,"lazy"),
 new Breaktime('Pray a short prayer.',"pass","religion",3,false),
 new Breaktime('Look away from the screen for about 2 minutes.',"pass","relax",3,false),
 new Breaktime('Take a deep breath.',"https://www.google.com/search?q=take+a+deep+breath","relax",3,false),
