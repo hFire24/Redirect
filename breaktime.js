@@ -47,10 +47,10 @@ function loadBreak(number) {
     messages.push(new Breaktime('Stand up and stretch if you can.',"pass","sleep",3,true,"lazy"));
     standup.push(new Breaktime('Wear your pajamas and go to bed.',"pass","sleep",3,true,"lazy"));
   }
-  if (d.getDay() >= 1 && d.getDay() <= 5 && d.getHours() >= 9 && d.getHours() < 17) {
+  /*if (d.getDay() >= 1 && d.getDay() <= 5 && d.getHours() >= 9 && d.getHours() < 17) {
     // Filter out the message that contains "Call one of your family members"
     messages = messages.filter(message => !message.text.includes("Call one of your family members"));
-  }
+  }*/
   if(number === 4) {
     messages = messages.filter(item => item.lazy === "lazy");
     standup = standup.filter(item => item.lazy === "lazy");
@@ -151,7 +151,7 @@ new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isX
 new Breaktime('Review your break messages. Add, edit, or remove them when needed.',"breaktable.html","misc",3,false,"active"),
 new Breaktime('Tackle your search terms list.',"pass","misc",2,false,"lazy"),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL","misc",2,false,"lazy"),
-new Breaktime('Call one of your family members.',"pass","misc",2,false,"lazy"),
+//new Breaktime('Call one of your family members.',"pass","misc",2,false,"lazy"),
 //new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"lazy"),
   //Goals
 //'Learn how to make chiptune music.',
@@ -242,7 +242,7 @@ new Breaktime('Read this quote.',"cyoa/15.html","misc",2,false,"lazy"),
 new Breaktime('Make a new blog post.',"https://dynalist.io/d/T2n7Rgvw-Q0NjTv5isXg1Dsz","misc",1,false),
 new Breaktime('Tackle your search terms list.',"pass","misc",2,false),
 new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?list=WL","misc",2,false),
-new Breaktime('Call one of your family members.',"pass","misc",2,false),
+//new Breaktime('Call one of your family members.',"pass","misc",2,false),
 //new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
