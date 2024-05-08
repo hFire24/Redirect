@@ -392,16 +392,22 @@ function finalTest(inputText,site)
     location.href = "animeslider.html";
   }
   else if(found(['need', 'live without', 'addict'],inputText) && !found(["don't need", "do not need"],inputText)) {
+    var prompt = $("newBreak").value;
+    const punctuationPattern = /[.,?!]$/;
+    if (punctuationPattern.test(prompt)) {
+      punctuation = prompt.slice(-1);
+      prompt = prompt.slice(0, -1);
+    }
     if(inputText.indexOf("need") >= 0 && inputText !== "because i need to" && unknownReason < 1) {
       if(inputText.endsWith("need") || inputText.endsWith("needs"))
       {
         if(inputText.indexOf("because") >= 0)
-          $("question").innerHTML = "So," + $("newBreak").value.substring(inputText.indexOf("because") + 7).replace("my","your") + ". Why?";
+          $("question").innerHTML = "So," + prompt.substring(inputText.indexOf("because") + 7).replace("my","your") + punctuation + " Why?";
         else
-          $("question").innerHTML = "So," + $("newBreak").value.replace("my","your") + ". Why?";
+          $("question").innerHTML = "So," + prompt.replace("my","your") + punctuation + " Why?";
       }
       else
-        $("question").innerHTML = "So, you need" + $("newBreak").value.substring(inputText.indexOf("need") + 4).replace("my","your") + ". Why?";
+        $("question").innerHTML = "So, you need" + prompt.substring(inputText.indexOf("need") + 4).replace("my","your") + punctuation + " Why?";
       unknownReason = 1;
     }
     else if(site === "deviantart")
@@ -413,18 +419,24 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf("want") >= 0 && unknownReason < 1) {
     var wants = ["because i want to", "because i really want to", "because i want to.", "because i really want to."]
+    var prompt = $("newBreak").value;
+    const punctuationPattern = /[.,?!]$/;
+    if (punctuationPattern.test(prompt)) {
+      punctuation = prompt.slice(-1);
+      prompt = prompt.slice(0, -1);
+    }
     if(!foundAtEnd(wants,inputText)) {
       if(inputText.endsWith("want") || inputText.endsWith("wants"))
       {
         if(inputText.indexOf("because") >= 0)
-          $("question").innerHTML = "So," + $("newBreak").value.substring(inputText.indexOf("because") + 7).replace("my","your") + ". Why?";
+          $("question").innerHTML = "So," + prompt.substring(inputText.indexOf("because") + 7).replace("my","your") + punctuation + " Why?";
         else
-          $("question").innerHTML = "So," + $("newBreak").value.replace("my","your") + ". Why?";
+          $("question").innerHTML = "So," + prompt.replace("my","your") + punctuation + " Why?";
       }
       else if(found(['don\'t want', 'do not want'],inputText))
-        $("question").innerHTML = "So, you don't want" + $("newBreak").value.substring(inputText.indexOf("want") + 4).replace("my","your") + ". Why?";
+        $("question").innerHTML = "So, you don't want" + prompt.substring(inputText.indexOf("want") + 4).replace("my","your") + punctuation + " Why?";
       else
-        $("question").innerHTML = "So, you want" + $("newBreak").value.substring(inputText.indexOf("want") + 4).replace("my","your") + ". Why?";
+        $("question").innerHTML = "So, you want" + prompt.substring(inputText.indexOf("want") + 4).replace("my","your") + punctuation + " Why?";
       unknownReason = 1;
     }
     else {

@@ -131,7 +131,7 @@ function addBigMessages() {
   '<a href="https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng">How about you increase your spirituality?</a>',
   'Why not read your patriarchal blessing? It could put you on a better path in life.',
   'Why don\'t you read your journal entries?',
-  'Reading <u>Atomic Habits</u> could lead you towards a better life.',
+  //'Reading <u>Atomic Habits</u> could lead you towards a better life.',
     //Goals
   'How about you learn social skills?',
   'Learning programming is a good idea.',
