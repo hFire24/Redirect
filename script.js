@@ -330,6 +330,10 @@ function randomLink(index,number) {
     link.innerHTML = "<a href='church.html'>Here's how to get ready.</a>";
   else if (message === "May this page suggest you take a short break?" && number !== 7 || message === "Time to take a break.")
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
+  //Load preloaded message if it exists.
+  else if (localStorage.getItem("customMessage") !== null) {
+    loadTaskFromStorage(index,number);
+  }
   else if (linkIndex > 0 && (number < 7 || number > 12)) {
     link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
@@ -567,8 +571,12 @@ function rejectSomething(time) {
     link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <strong onclick='rejectSomething(5)' style='color:red;'>No.</strong>";
   else if(time === 1)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
-  else if(time === 3)
-    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
+  else if(time === 3) {
+    if (localStorage.getItem("customMessage") !== null)
+      loadTaskFromStorage(10,55);
+    else
+      link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
+  }
   else if(time === 5)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:red;'>No.</strong>";
   else if (time === 6) {
@@ -699,4 +707,22 @@ function generalConferenceMonth() {
   else {
     return false;
   }
+}
+
+function loadTaskFromStorage(index,number) {
+  var task = localStorage.getItem("customMessage");
+  const punctuationPattern = /[.,?!]$/;
+  if (!punctuationPattern.test(task)) {
+    task = task.concat(".");
+  }
+  link.innerHTML = "Remember: " + task + " <button class=custom-button onclick=completeTask(" + index + "," + number + ")>Done</button>";
+}
+
+function completeTask(index,number) {
+  clearTask();
+  randomLink(index,number);
+}
+
+function clearTask() {
+  localStorage.removeItem("customMessage");
 }
