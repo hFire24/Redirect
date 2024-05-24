@@ -9,6 +9,7 @@ input.addEventListener("keyup", function (event) {
 var d = new Date();
 var expressDesireForCuteness = false;
 var unknownReason = 0;
+var punctuation = ".";
 
 function finalTest(inputText,site)
 {

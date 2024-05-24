@@ -305,8 +305,8 @@ function randomLink(index,number) {
   //Array for link messages below the heading text
   var linkMessages = ["Immediately close this tab."];
   for (var i = 1; i <= 30; i++)
-    //linkMessages.push("Got something you need to do?");
-    linkMessages.push("How are you feeling?");
+    linkMessages.push("Got something you need to do?");
+    //linkMessages.push("How are you feeling?");
   //Get random link from array
   var linkIndex = Math.floor(Math.random() * linkMessages.length);
   if(number === 9)
@@ -336,7 +336,8 @@ function randomLink(index,number) {
     loadTaskFromStorage(index,number);
   }
   else if (linkIndex > 0 && (number < 7 || number > 12)) {
-    link.innerHTML =  linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
+    link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>"
+    /*link.innerHTML = linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
     {text:"I got something I need to do",value:"custom"},
     {text:"I'm ready to do something else",value:"time"},
@@ -379,7 +380,7 @@ function randomLink(index,number) {
       $("dropdownMenu").appendChild(option);
     }
     if (d.getHours() > 4 && (d.getHours() < 10 || d.getHours() === 10 && d.getMinutes() < 30))
-      $("food-emoji").innerHTML = "🥓";
+      $("food-emoji").innerHTML = "🥓";*/
   }
   else if(number < 7 || number > 12 || removeQuestion)
     link.innerHTML = linkMessages[linkIndex];
@@ -594,7 +595,8 @@ function rejectSomething(time) {
   else if(time === 10)
     link.innerHTML = "<a class='hfire-link' href='cyoa/1.html'>You really are bored.</a>";
   else
-    location.href = "cyoa/1.html";
+    //location.href = "cyoa/1.html";
+    location.href = "hotanddry.html";
 }
 
 function randomTheme(number) {
