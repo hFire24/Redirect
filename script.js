@@ -332,10 +332,12 @@ function randomLink(index,number) {
   else if (message === "May this page suggest you take a short break?" && number !== 7 || message === "Time to take a break.")
     link.innerHTML = "<a href='breaktime.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(3)' style='color:white;'>No.</strong>";
   //Load preloaded message if it exists.
-  else if (localStorage.getItem("customMessage") !== null && !ignoreStorage) {
+  else if (localStorage.getItem("customMessage") !== null && !ignoreStorage && (number < 7 || number > 12)) {
     loadTaskFromStorage(index,number);
   }
   else if (linkIndex > 0 && (number < 7 || number > 12) || ignoreStorage) {
+    if(ignoreStorage)
+      linkIndex = 1;
     link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>"
     /*link.innerHTML = linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
