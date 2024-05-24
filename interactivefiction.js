@@ -358,13 +358,10 @@ function finalTest(inputText,site)
         messages.push('You wish you are a cute anime girl? 🤣🤣',
         'Your ideal self is a cute little kid? 🤣🤣',
         'Life isn\'t about seeking cuteness.',
-        "If you believe DeviantArt is an addiction, you might as well abandon DeviantArt.",
-        "You allowed DeviantArt to corrupt yourself, so don't further corrupt yourself.",
-        "DeviantArt was a source of your many relapses, and relapses are unacceptable.",
-        "DeviantArt's reputation is not very good due to some of its art.",
-        "Like YouTube, DeviantArt can be a major timesink.",
-        "Time is money. Don't let DeviantArt waste more of your time.",
-        "DeviantArt has become a shell of its former self. It's best not to visit it.",
+        "If you believe obsessing over waifus is an addiction, you might as well abandon it.",
+        "You allowed your obsessions to evolve and further corrupt yourself, so stop it.",
+        "Like YouTube, obsessing over waifus can be a major timesink.",
+        "Time is money. Don't let obsessing over waifus waste more of your time.",
         "<span onclick='pushTheButtonDA()'>Click here.</span>");
       }
     }
@@ -377,7 +374,7 @@ function finalTest(inputText,site)
       'Now is not the time to be doing that.',
       'You really don\'t want to use your phone to kill boredom anyway.',
       'There\'s e-books on your phone. Read them.',
-      'You have a phone. Use it to call your grandparents.');
+      'You have a phone. Use it to call your parents.');
     }
     var replace = messages[Math.floor(Math.random() * messages.length)];
     if (replace === $("message").innerHTML)
