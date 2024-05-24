@@ -21,7 +21,7 @@ function finalTest(inputText,site)
     location.href = "struggle.html";
   else if (inputText === 'custom task' || inputText.indexOf("something") >= 0 && inputText.indexOf("do") >= 0 && (found(required,inputText) || inputText.indexOf("specific") >= 0))
     location.href = "custom.html";
-  else if(inputText.indexOf("busy") >= 0)
+  else if(found(["busy","work"],inputText))
     location.href = "busy.html";
   else if (found(["do something","take a break"],inputText))
     location.href = "time.html";
@@ -223,7 +223,7 @@ function finalTest(inputText,site)
   }
   else if(inputText.indexOf('motivat') >= 0)
     location.href = "cyoa/15.html?mood=motivation";
-  else if(found(['productive','to accomplish','get stuff done','work','to achieve','confiden','determined','determina'],inputText)) {
+  else if(found(['productive','to accomplish','get stuff done','to achieve','confiden','determined','determina'],inputText)) {
     $("question").innerHTML = "What sounds more appealing?";
     $("link").innerHTML = "";
     var grid = document.createElement("div")
