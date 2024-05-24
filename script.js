@@ -335,7 +335,7 @@ function randomLink(index,number) {
   else if (localStorage.getItem("customMessage") !== null && !ignoreStorage) {
     loadTaskFromStorage(index,number);
   }
-  else if (linkIndex > 0 && (number < 7 || number > 12)) {
+  else if (linkIndex > 0 && (number < 7 || number > 12) || ignoreStorage) {
     link.innerHTML = "<a href='custom.html'>" + linkMessages[linkIndex] + "</a> <strong onclick='rejectSomething(1)' style='color:white;'>No.</strong>"
     /*link.innerHTML = linkMessages[linkIndex] + " <a href='hotanddry.html' style='color:white;'>...</a><br><select id='dropdownMenu' class='custom-select'></select> <button class='custom-button' onclick='okFeeling()'>OK</button>";
     var feelings = [{text:"Select an emotion",value:"lazy"},
@@ -573,12 +573,8 @@ function rejectSomething(time) {
     link.innerHTML = "<a href='custom.html'>Got something else you need to do?</a> <strong onclick='rejectSomething(5)' style='color:red;'>No.</strong>";
   else if(time === 1)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
-  else if(time === 3) {
-    if (localStorage.getItem("customMessage") !== null && !ignoreStorage)
-      loadTaskFromStorage(10,55);
-    else
-      link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
-  }
+  else if(time === 3)
+    link.innerHTML = "<a href='custom.html'>Got something you need to do?</a> <strong onclick='rejectSomething(2)' style='color:white;'>No.</strong>";
   else if(time === 5)
     link.innerHTML = "<a href='time.html'>Don't do nothing. Do something!</a> <strong onclick='rejectSomething(2)' style='color:red;'>No.</strong>";
   else if (time === 6) {
@@ -718,17 +714,17 @@ function loadTaskFromStorage(index,number) {
   if (!punctuationPattern.test(task)) {
     task = task.concat(".").replace("my","your");
   }
-  link.innerHTML = "Remember: " + task + " <button class=custom-button onclick=completeTask(" + index + "," + number + ")>Done</button> <button class=custom-button onclick=ignoreTask(" + index + "," + number + ")>Ignore</button>";
+  link.innerHTML = "Remember: " + task + " <button class=custom-button onclick=completeTask(" + index + "," + number + ")>Done</button> <button class=custom-button onclick=ignoreTask()>Ignore</button>";
 }
 
 function completeTask(index,number) {
   clearTask();
+  ignoreStorage = true;
   randomLink(index,number);
 }
 
-function ignoreTask(index,number) {
-  ignoreStorage = true;
-  randomLink(index,number);
+function ignoreTask() {
+  location.href = "hotanddry.html";
 }
 
 function clearTask() {
