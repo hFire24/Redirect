@@ -9,6 +9,7 @@ var globalStand = -1;
 
 var bedtimeRemoved = false;
 var consecutivePasses = 0;
+var firstTimeLoading = true;
 const cPassLimit = 10;
 
 class Breaktime {
@@ -57,7 +58,7 @@ function loadBreak(number) {
   }
   console.log(messages);
   console.log(standup);
-  displayBreak(-1);
+  setBreak(-1);
 }
 
 var smallBreak = [//Relaxation
@@ -95,11 +96,11 @@ new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
 //new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
 new Breaktime('Read or listen to the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",3,false,"active")];
-//new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
-//new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
-//new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
-//new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"lazy")];
-//new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];
+/*new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
+new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
+new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
+new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"lazy")];
+new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];*/
 
 var smallStand = [//Health and fitness
 new Breaktime('Refill your bottle and drink water.',"pass","health",3,true,"lazy"),
@@ -133,12 +134,12 @@ new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass",
 new Breaktime('Drive around how you want in BeamNG.drive.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Drive around safely in American Truck Simulator.',"pass","game-drive",1,false,"lazy"),
 new Breaktime('Drive around safely in Euro Truck Simulator 2.',"pass","game-drive",1,false,"lazy"),
-//new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"lazy"),
+new Breaktime('Play Sudoku (Medium).',"https://sudoku.com/medium","game",1,false,"lazy"),
 new Breaktime('Play Teardown.',"pass","game",1,false,"active"),
 new Breaktime('Play Rabi-Ribi.',"pass","game",1,false,"active"),
 new Breaktime('Play Tanto Cuore.',"pass","game",1,false,"active"),
-//new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
-//new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),*/
+new Breaktime('Play 100% Orange Juice.',"pass","game-juice",1,false,"active"),
+new Breaktime('Grind levels in 200% Mixed Juice.',"pass","game-juice",1,false,"active"),*/
 new Breaktime('Play a Nintendo Switch game.',"pass","game",1,false,"active"),
 new Breaktime('Play games on Flashpoint.',"pass","game",1,false,"active"),
 new Breaktime('Play ISLAND (visual novel).',"pass","game",1,false,"active"),
@@ -165,19 +166,18 @@ new Breaktime('Organize iTunes Library.',"pass","music",1,false,"lazy"),
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 //#### REACTIVATE BELOW ON APRIL 23, 2024 ####
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
-//Learn vercel
-//new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
-//'Learn a new programming language. Try to code Card Battle Stadium in that language.'
-//'Try to code Card Battle Stadium in C#.',
-//'Try one of these C# coding projects.',
-
-//new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
-//new Breaktime('Use your money to buy a programming e-book.',"https://www.amazon.com","coding",3,false,"active"),
-/*new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
+/*Learn vercel
+new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
+'Learn a new programming language. Try to code Card Battle Stadium in that language.'
+'Try to code Card Battle Stadium in C#.',
+'Try one of these C# coding projects.',
+new Breaktime('Start learning Godot.',"pass","gamedev",2,false),
+new Breaktime('Use your money to buy a programming e-book.',"https://www.amazon.com","coding",3,false,"active"),
+new Breaktime('Learn PHP on Skillshare.',"pass","coding",3,false),
 new Breaktime('Learn C++ on Skillshare.',"pass","coding",3,false),
-new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),*/
-//'Learn a language with Duolingo.',
-//new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),
+new Breaktime('Learn WPF on Skillshare.',"pass","coding",3,false),
+'Learn a language with Duolingo.',
+//new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false,"active"),*/
 new Breaktime('Check your habit tracker. Try to knock out one of your goals.',"https://docs.google.com/spreadsheets/d/1i--kwCSHETl9cQOt0qsKXCdIZkP6ucvTUeFi21UTQSk/edit?usp=sharing","task",3,false,"active")];
 //new Breaktime('Learn C# on Lex on your work laptop.',"pass","coding",3,false,"active")];
 //new Breaktime('Take this quiz, and draw the result.',"quiz.html","art",1,true),
@@ -193,13 +193,13 @@ new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"l
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
 new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
-new Breaktime('Do your laundry or put away your clothes.',"pass","misc",3,true,"active"),
-new Breaktime('Go to the gym to improve your core strength and stamina.',"pass","exercise-heavy",3,true,"active")];
-//new Breaktime('Draw some stuff using an iPad or a drawing tablet.',"pass","art",2,true),
-//new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
-//new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
-//new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true),
-/*new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
+new Breaktime('Do your laundry or put away your clothes.',"pass","misc",3,true,"active")];
+/*new Breaktime('Go to the gym to improve your core strength and stamina.',"pass","exercise-heavy",3,true,"active")];
+new Breaktime('Draw some stuff using an iPad or a drawing tablet.',"pass","art",2,true),
+new Breaktime('Learn how to use Pygame by reading that book.',"pass","read",2,true),
+new Breaktime('Read one chapter of that green book.',"pass","read",4,true),
+new Breaktime('Solve a Rubik\'s cube.',"pass","game",1,true),
+new Breaktime('Draw anime with a drawing tablet.',"art.html","art",2,true),
 new Breaktime('Clear your workspace and draw anime with a sketchpad.',"art.html","art",2,true),
 new Breaktime('Make progress on this drawing course.',"drawing-progress.html","art",2,true),*/
 
@@ -294,14 +294,10 @@ function loadAllBreaks() {
   }
 }
 
-function displayBreak(index) {
-  //Get rid of the standup element
-  if($("standup")) {
-    $("standup").style.display = "none";
-    $("standup").innerHTML = "";
-  }
+function setBreak(index) {
   if(index === -2) {
     messages.length = 0;
+    deleteBreak();
   }
   if(messages.length === 0) {
     if(index === -2) {
@@ -321,19 +317,64 @@ function displayBreak(index) {
       messages.push(new Breaktime("You're still here? Get back to whatever you should be doing!","pass","done",4,false))
     }
   }
-  //Get random message index from messages array
-  if (index < 0 || index >= messages.length)
-    index = Math.floor(Math.random() * messages.length);
+  if (breakExistsInStorage() && firstTimeLoading) {
+    var canLoadFromStorage = false;
+    var loadedText = localStorage.getItem("breakText");
+    if (localStorage.getItem("breakCat") === "custom") {
+      messages.unshift(new Breaktime(loadedText,"pass","custom",3,false,"lazy"));
+      canLoadFromStorage = true;
+      index = 0;
+    }
+    else if(localStorage.getItem("standBreak") === "true") {
+      standup.forEach((item, standingIndex) => {
+        if (item.text === loadedText) {
+          canLoadFromStorage = true;
+          index = standingIndex + (messages.length - standup.length);
+        }
+      });
+    }
+    else {
+      messages.forEach((item, messageIndex) => {
+        if (item.text === loadedText) {
+          canLoadFromStorage = true;
+          index = messageIndex;
+        }
+      });
+    }
+    if(!canLoadFromStorage) {
+      deleteBreak();
+    }
+  }
+  if (!breakExistsInStorage() || !firstTimeLoading) {
+    //Get random message index from messages array
+    if (index < 0 || index >= messages.length)
+      index = Math.floor(Math.random() * messages.length);
+    // There is at least a 1 in 4 chance of the sleep message appearing at night.
+    if((d.getHours() <= 4 || d.getHours() >= 22) && !Math.floor(Math.random() * 4) && !bedtimeRemoved)
+      index = messages.length - 1;
+  }
+  firstTimeLoading = false;
+  console.log("Message " + index);
+  globalIndex = index;
+  displayBreak(index);
+}
+
+function breakExistsInStorage() {
+  return localStorage.getItem("breakText") !== null
+}
+
+function displayBreak(index) {
+  //Get rid of the standup element
+  if($("standup")) {
+    $("standup").style.display = "none";
+    $("standup").innerHTML = "";
+  }
   var message = $("breakMessage");
   if(!$("breakMessage")) {
     message = document.createElement("a");
     message.id = "breakMessage";
     $("break").appendChild(message);
   }
-  // There is at least a 1 in 4 chance of the sleep message appearing at night.
-  if((d.getHours() <= 4 || d.getHours() >= 22) && !Math.floor(Math.random() * 4) && !bedtimeRemoved)
-    index = messages.length - 1;
-  console.log("Message " + index);
   message.innerHTML = messages[index].text;
   if(messages[index].link === "pushTheButton") {
     message.removeAttribute("href");
@@ -349,7 +390,6 @@ function displayBreak(index) {
       message.target = "_blank";
     }
   }
-  globalIndex = index;
   if(message.innerHTML === 'Stand up and stretch if you can.') {
     var standupMessage = $("standup");
     if(!$("standup")) {
@@ -367,7 +407,6 @@ function displayBreak(index) {
     }
     else
       standupMessage.removeAttribute("href");
-    globalStand = standIndex;
   }
   if(messages[index].category === "job" && messages[index].link === "pass")
     message.addEventListener("click",noooo);
@@ -386,8 +425,12 @@ function displayBreak(index) {
     parent.appendChild(child);
   }
   displayLink();
-  if(standIndex >= 0)
+  if(standIndex >= 0) {
     $("link").style.display = 'none';
+    saveBreak(standup[standIndex]);
+  }
+  else
+    saveBreak(messages[index]);
 }
 
 function displayLink() {
@@ -419,6 +462,14 @@ function noooo() {
   $("vader").play();
 }
 
+function saveBreak(breakObject) {
+  localStorage.setItem("breakText",breakObject.text);
+  localStorage.setItem("breakLink",breakObject.link);
+  localStorage.setItem("breakCat",breakObject.category);
+  localStorage.setItem("standBreak",breakObject.stand);
+  localStorage.setItem("lazyBreak",breakObject.lazy);
+}
+
 function finished(did) {
   var category = messages[globalIndex].category;
   if(category === "plan" || category === "meditate" || category === "homework" || category === "food" || category === "music" || category === "game-drive" && !did)
@@ -447,11 +498,11 @@ function finished2(calledFromButton,did) {
     var custom = prompt("Type in a task, and press \"Submit\" or Enter when done.");
     if(!filtered(custom)) {
       messages.unshift(new Breaktime(custom,"pass","custom",3,false,"lazy"));
-      displayBreak(0);
+      setBreak(0);
     }
   }
   else
-    consecutivePasses >= cPassLimit ? displayBreak(-2) : displayBreak(-1);
+    consecutivePasses >= cPassLimit ? setBreak(-2) : setBreak(-1);
 }
 
 function filtered(newBreak) {
@@ -464,7 +515,7 @@ function filtered(newBreak) {
   else if (found(["loli", "flandre", "chino", "koishi", " rem ", " rem.", " rem!", " rem,", "little girl", "anime girl", "booru", "deviantart", "pixiv", "novelai", "waifu", 
     "cute", "attractive", "regress", "shrink", "adorable"], newBreakLC) || newBreakLC.endsWith(" rem")) {
     alert("That should not be a priority.");
-    consecutivePasses >= cPassLimit ? displayBreak(-2) : displayBreak(-1);
+    consecutivePasses >= cPassLimit ? setBreak(-2) : setBreak(-1);
   }
   else if (found(['suicid', 'to die ', 'be dead', ' kill ', 'murder', 'kill me', 'kill myself', 'perish', 'get rid of myself', 'homicid', 'end my life', 'life to end', 'hang myself', 'destroy myself', 'destroy my life', 'noose'], newBreakLC)
     && !found(wasteTime, newBreakLC) && !found(["watch", "listen", "read", "play"],newBreakLC) || found(['don\'t want', 'do not want', 'give up', 'stop', 'terminate', 'hate'], newBreakLC) && found(['myself', 'life', 'live', 'living', 'exist', 'earth', 'planet', 'world'], newBreakLC)
@@ -476,7 +527,7 @@ function filtered(newBreak) {
   }
   else if (found(['bored', 'bore', 'nothing', 'don\'t feel like doing', 'uhh', 'umm', 'hmm', 'lack of interest', 'don\'t know', 'dunno', 'no idea', 'no reason', 'idk'], newBreakLC)
     || found(wasteTime,newBreakLC) || newBreak.length === 0)
-    consecutivePasses >= cPassLimit ? displayBreak(-2) : displayBreak(-1);
+    consecutivePasses >= cPassLimit ? setBreak(-2) : setBreak(-1);
   else {
     rValue = false;
   }
@@ -530,4 +581,12 @@ async function pushTheButtonBR() {
   await sleep(1750);
   $("breakMessage").style.color = 'inherit';
   window.open("https://emergency.nofap.com/redirect?religious=true&cat=em");
+}
+
+function deleteBreak() {
+  localStorage.removeItem("breakText");
+  localStorage.removeItem("breakLink");
+  localStorage.removeItem("breakCat");
+  localStorage.removeItem("standBreak");
+  localStorage.removeItem("lazyBreak");
 }
