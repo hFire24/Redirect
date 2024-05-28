@@ -77,7 +77,7 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false,"la
   //Music
 new Breaktime('Add a song to your iTunes library.',"pass","misc",1,false,"active"),
 new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.',"pass","misc",1,false,"active"),
-new Breaktime('Analyze a song in your MusicBee library.',"pass","misc",1,false,"lazy"),
+//new Breaktime('Analyze a song in your MusicBee library.',"pass","misc",1,false,"lazy"),
 //new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
@@ -161,6 +161,7 @@ new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?l
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
+new Breaktime('Organize iTunes Library.',"pass","music",1,false,"lazy"),
 //new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 //#### REACTIVATE BELOW ON APRIL 23, 2024 ####
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
