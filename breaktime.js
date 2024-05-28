@@ -407,6 +407,7 @@ function displayBreak(index) {
     }
     else
       standupMessage.removeAttribute("href");
+    globalStand = standIndex;
   }
   if(messages[index].category === "job" && messages[index].link === "pass")
     message.addEventListener("click",noooo);
