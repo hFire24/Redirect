@@ -95,9 +95,9 @@ new Breaktime('Read this quote.',"cyoa/15.html","misc",2,false,"lazy"),
 new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
 //'How can you build an everlasting romantic relationship from scratch?',
 //new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
-new Breaktime('Read or listen to the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",3,false,"active")];
+new Breaktime('Read or listen to the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",3,false,"active"),
+new Breaktime('Read just one page of <u>Indistractable</u>.',"pass","read",3,false,"lazy"),];
 /*new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
-new Breaktime('Read just one page of <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
 new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"lazy")];
 new Breaktime('Write down one thing you are grateful for in the Finch app and thank God for it.',"pass","misc",2,false,"lazy")];*/
@@ -121,13 +121,13 @@ new Breaktime('If you see this during work hours, then get back to work!',"pass"
 new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),*/
   //Anime watching
 new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B00WJ3K8F8","anime",1,false,"lazy"),
-new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
-new Breaktime('Watch anime (1).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch anime (4).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Create an anime story.',"pass","anime",1,false,"lazy"),
+//new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
+new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (4).',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Create an anime story.',"pass","anime",1,false,"lazy"),
 new Breaktime('Watch The Price is Right.',"priceisright.html","show",1,false,"lazy"),
-new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
+//new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
 new Breaktime('Read the Slime Killer manga. One chapter should be fine.',"pass","anime",1,false,"active"),
   //Games
 /*new Breaktime('Drive around how you want in Need for Speed: Hot Pursuit.',"pass","game-drive",1,false,"active"),
@@ -163,8 +163,7 @@ new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJ
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
 new Breaktime('Organize iTunes Library.',"pass","music",1,false,"lazy"),
-//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",3,false,"lazy"),
-//#### REACTIVATE BELOW ON APRIL 23, 2024 ####
+new Breaktime('Read the book <u>Indistractable</u>.',"pass","read",3,false,"lazy"),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
 /*Learn vercel
 new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
@@ -224,14 +223,14 @@ new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 //new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
 new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B00WJ3K8F8","anime",1,false,"lazy"),
-new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
-new Breaktime('Watch anime (1).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Watch anime (4).',"nextanime","anime",1,false,"lazy"),
-new Breaktime('Create an anime story.',"pass","anime",1,false,"lazy"),
+//new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
+new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Watch anime (4).',"nextanime","anime",1,false,"lazy"),
+//new Breaktime('Create an anime story.',"pass","anime",1,false,"lazy"),
 new Breaktime('Watch The Price is Right.',"priceisright.html","show",1,false,"lazy"),
 //new Breaktime('Watch something.',"nextwatch","anime",1,false),
-new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
+//new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
 //new Breaktime('Do one thing to increase your spirituality.',"https://www.churchofjesuschrist.org/study/ensign/1999/03/ten-ideas-to-increase-your-spirituality?lang=eng","religion",3,false),
@@ -248,7 +247,7 @@ new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?l
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
 new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
-//new Breaktime('Read the book <u>Atomic Habits</u>.',"pass","read",2,false),
+new Breaktime('Read the book <u>Indistractable</u>.',"pass","read",2,false),
 //new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
 new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
