@@ -79,7 +79,7 @@ new Breaktime('Make an objective for today.',"objective.html","task",2,false,"la
 new Breaktime('Add a song to your iTunes library.',"pass","misc",1,false,"active"),
 new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.',"pass","misc",1,false,"active"),
 //new Breaktime('Analyze a song in your MusicBee library.',"pass","misc",1,false,"lazy"),
-//new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
+new Breaktime('Analyze a song in your iTunes library.',"pass","misc",1,false,"active"),
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false,"lazy"),
   //Miscellaneous
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false,"lazy"),
