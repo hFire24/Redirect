@@ -190,7 +190,7 @@ new Breaktime('Take a shower if you hadn\'t today, even if it\'s cold in your ro
 new Breaktime('Declutter your room.',"pass","misc",2,true,"active"),
 new Breaktime('Play some Stepmania.',"stepmania.html","exercise-heavy",3,true,"lazy"),
 new Breaktime('Back up your hard drive.',"pass","misc",2,true,"active"),
-new Breaktime('Do the dishes and make rice. You\'ll thank me later.',"pass","misc",3,true,"active"),
+new Breaktime('Do the dishes.',"pass","misc",3,true,"active"),
 new Breaktime('Clean your apartment, especially your kitchen and bathroom.',"https://dynalist.io/d/Prf8EawMGjjO6qiA8xo_-2ED","misc",3,true,"active"),
 new Breaktime('Do your laundry or put away your clothes.',"pass","misc",3,true,"active")];
 /*new Breaktime('Go to the gym to improve your core strength and stamina.',"pass","exercise-heavy",3,true,"active")];
@@ -508,8 +508,10 @@ function finished2(calledFromButton,did) {
 function filtered(newBreak) {
   let rValue = true;
   let newBreakLC = newBreak.toLowerCase();
-  if (newBreakLC.indexOf("cirno") >= 0)
-    location.href = "https://hfire24.github.io/Redirect/cirno.html";
+  if (newBreakLC.indexOf("cirno") >= 0) {
+    alert("Don't be a ⑨.");
+    consecutivePasses >= cPassLimit ? setBreak(-2) : setBreak(-1);
+  }
   else if (found(['fap', 'urbate', 'ejaculat', 'bust a nut', 'to nut', 'lust', 'horny', 'arous', 'sex', 'unclean', 'dirty', 'sinful', 'make love'], newBreakLC))
     location.href = "https://hfire24.github.io/Redirect/whoa/old.html";
   else if (found(["loli", "flandre", "chino", "koishi", " rem ", " rem.", " rem!", " rem,", "little girl", "anime girl", "booru", "deviantart", "pixiv", "novelai", "waifu", 
