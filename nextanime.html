@@ -29,11 +29,15 @@
     <div id='diceResults' class='space'></div>
     <div class='two-list space'>
       <a data-tooltip="Yakuza Babysitter" class='hfire-link' href='https://www.crunchyroll.com/series/G79H2300N/the-yakuzas-guide-to-babysitting'>1 The Yakuza's Guide to Babysitting</a>
-      <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.amazon.com/gp/video/detail/B00WJ3K8F8'>2 Pokemon XY</a>
+      <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.amazon.com/gp/video/detail/B00WPF2GXW'>2 Pokemon XY</a>
+      <a data-tooltip="Shikanoko Nokonoko Koshitantan" class='hfire-link' href='https://www.crunchyroll.com/series/G0XHWM100/my-deer-friend-nokotan'>3 My Deer Friend Nokotan</a>
+      <a data-tooltip="2000s Magical Girl Spin-Off" class='hfire-link' href='https://www.crunchyroll.com/series/GRK5ZZGW6/sasami-magical-girls-club'>4 Sasami Magical Girls Club</a>
     </div>
     <div style="text-align:left;">
       <!--h4 class="no-space">Great for action</h4>
       Fullmetal Alchemist: Brotherhood-->
+      <h4 class="no-space">Great for laughs</h4>
+      My Deer Friend Nokotan, Sasami Magical Girls Club
       <h4 class="no-space">Great for laughs and action</h4>
       Pokemon XY
       <h4 class="no-space">Great for cuteness and toughness</h4>
@@ -41,10 +45,10 @@
     </div>
     <script>
       var diceRoll = 0;
-      let maxRoll = 2;
+      let maxRoll = 4;
       const rollTime = 750;
       const cannotRoll = [];
-      const airingNumbers = [3, 4];
+      const airingNumbers = [3];
       var askToBan = false;
       var watchedFocus = true;
       var askIfWatchedFocus = false;
@@ -101,8 +105,7 @@
               diceRoll = resetDice(3);
               break;
             case 4:
-              diceResults.innerHTML = `You rolled a 4! Roll again or watch the latest episode.`;
-              diceRoll = resetDice(4);
+              diceResults.innerHTML = `You rolled a 4!`;
               break;
             case 5:
               diceResults.innerHTML = `You rolled a 5!`;
