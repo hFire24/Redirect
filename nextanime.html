@@ -27,25 +27,30 @@
       <button class='custom-button' onclick='rollManyDice(4)'>Roll 4 dice</button> 
       <button class='custom-button' onclick='openUtilities()'>Anime Watching Utilities</button></div>
     <div id='diceResults' class='space'></div>
-    <div class='two-list space'>
-      <a data-tooltip="Yakuza Babysitter" class='hfire-link' href='https://www.crunchyroll.com/series/G79H2300N/the-yakuzas-guide-to-babysitting'>1 The Yakuza's Guide to Babysitting</a>
+    <div class='four-list space'>
+      <a data-tooltip="Wish-Granting Witch" class='hfire-link' href='https://www.crunchyroll.com/series/GR49140W6/magimoji-rurumo'>1 Majimoji Rurumo</a>
       <a data-tooltip="It's Pokemon!" class='hfire-link' href='https://www.amazon.com/gp/video/detail/B00WPF2GXW'>2 Pokemon XY</a>
       <a data-tooltip="Shikanoko Nokonoko Koshitantan" class='hfire-link' href='https://www.crunchyroll.com/series/G0XHWM100/my-deer-friend-nokotan'>3 My Deer Friend Nokotan</a>
       <a data-tooltip="2000s Magical Girl Spin-Off" class='hfire-link' href='https://www.crunchyroll.com/series/GRK5ZZGW6/sasami-magical-girls-club'>4 Sasami Magical Girls Club</a>
+      <a data-tooltip="Immersive Isekai" class='hfire-link' href='https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation'>5 Mushoku Tensei</a>
+      <a data-tooltip="The Ultimate Anime?" class='hfire-link' href='https://www.crunchyroll.com/series/GG5H5XQX4/frieren-beyond-journeys-end'>6 Frieren</a>
+      <a data-tooltip="Anime you haven't watched in a while" class='hfire-link' href='https://anilist.co/home'>7 ⏳⏳</a>
     </div>
     <div style="text-align:left;">
       <!--h4 class="no-space">Great for action</h4>
       Fullmetal Alchemist: Brotherhood-->
       <h4 class="no-space">Great for laughs</h4>
-      My Deer Friend Nokotan, Sasami Magical Girls Club
-      <h4 class="no-space">Great for laughs and action</h4>
+      My Deer Friend Nokotan
+      <h4 class="no-space">Great for laughs and magic</h4>
+      Sasami Magical Girls Club, Majimoji Rurumo
+      <h4 class="no-space">Great for laughs and action-adventure</h4>
       Pokemon XY
-      <h4 class="no-space">Great for cuteness and toughness</h4>
-      The Yakuza's Guide to Babysitting
+      <h4 class="no-space">Great for drama and magic</h4>
+      Mushoku Tensei, Frieren: Beyond Journey's End
     </div>
     <script>
       var diceRoll = 0;
-      let maxRoll = 4;
+      let maxRoll = 7;
       const rollTime = 750;
       const cannotRoll = [];
       const airingNumbers = [3];
@@ -111,10 +116,10 @@
               diceResults.innerHTML = `You rolled a 5!`;
               break;
             case 6:
-              diceResults.innerHTML = `You rolled a 6! Watch the anime you haven't watched in the longest time.`;
+              diceResults.innerHTML = `You rolled a 6!`;
               break;
             case 7:
-              diceResults.innerHTML = `You rolled a 7!`;
+              diceResults.innerHTML = `You rolled a 7! Watch the anime you haven't watched in the longest time.`;
               break;
             case 8:
               diceResults.innerHTML = `You rolled an 8!`;
