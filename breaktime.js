@@ -92,11 +92,11 @@ new Breaktime('Read the verse of the day.',"pass","religion",2,false,"lazy"),
 new Breaktime('Explore the world through StreetView.',"https://randomstreetview.com/","misc",1,false,"lazy"),
 new Breaktime('Read this quote.',"cyoa/15.html","misc",2,false,"lazy"),
   //Goals
-new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy"),
+new Breaktime('Click here.',"pushTheButton","misc",2,false,"lazy")];
 //'How can you build an everlasting romantic relationship from scratch?',
 //new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false,"lazy"),
-new Breaktime('Read or listen to the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",3,false,"active"),
-new Breaktime('Read just one page of <u>Indistractable</u>.',"pass","read",3,false,"lazy"),];
+//new Breaktime('Read or listen to the scriptures. Don\'t forget about your study plan.',"https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng","religion",3,false,"active"),
+//new Breaktime('Read just one page of <u>Indistractable</u>.',"pass","read",3,false,"lazy"),
 /*new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 new Breaktime('Check the Imprint app.',"pass","read",2,false,"lazy")];
 new Breaktime('Check Deepstash.',"https://deepstash.com/","read",2,false,"lazy")];
@@ -159,11 +159,11 @@ new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?l
 //'Learn how to use FL Studio.',
 //'Make some friends in real life. Institute is the best starting point.',
 //new Breaktime('Learn social skills.',"https://skl.sh/3TAd4w9","social",2,false,"active"),
-new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
+//new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false,"lazy"),
 new Breaktime('Write in journal.',"pass","misc",3,false,"active"),
 new Breaktime('Learn tech skills.',"techskills.html","coding",3,false,"active"),
 new Breaktime('Organize iTunes Library.',"pass","music",1,false,"lazy"),
-new Breaktime('Read the book <u>Indistractable</u>.',"pass","read",3,false,"lazy"),
+//new Breaktime('Read the book <u>Indistractable</u>.',"pass","read",3,false,"lazy"),
 new Breaktime('Watch at least one video in the "Get Life Advice" playlist.',"https://youtube.com/playlist?list=PLofW9_KJmwwrCjoaKj2cZ57KwEQYZDioX","misc",2,false,"lazy"),
 /*Learn vercel
 new Breaktime('Read the Vue.js guide.',"https://vuejs.org/guide/introduction.html","coding",3,false,"active"),
@@ -246,10 +246,10 @@ new Breaktime('Clear your watch later list.',"https://www.youtube.com/playlist?l
 //new Breaktime('Write down what happened on this day in your life.',"pass","misc",1,false,"active"),
   //Goals
 new Breaktime('Click here.',"pushTheButton","misc",2,false),
-new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
-new Breaktime('Read the book <u>Indistractable</u>.',"pass","read",2,false),
+//new Breaktime('Listen to a General Conference talk.',"https://dynalist.io/d/PQDJvhu4f3DRlgGhkcMQA32T","religion",3,false),
+//new Breaktime('Read the book <u>Indistractable</u>.',"pass","read",2,false),
 //new Breaktime('Use the Mutual app. Swipe up or down.',"pass","social",2,false),
-new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
+//new Breaktime('Read or listen to the scriptures.',"pass","social",3,false,"active"),
 //new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),
 //'Learn a language with Duolingo.',
 //new Breaktime('Check your goals page. Try to knock out one of your goals.',"goals.html","task",3,false),
