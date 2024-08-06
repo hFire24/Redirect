@@ -74,7 +74,7 @@ new Breaktime('Listen to some focus/relaxation music. Wait until you listened to
 new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>You may need to stand up and stretch.',"pass","task",3,false,"active"),
   //Day planning
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false,"active"),
-new Breaktime('Make an objective for today.',"objective.html","task",2,false,"lazy"),
+//new Breaktime('Make an objective for today.',"objective.html","task",2,false,"lazy"),
   //Music
 new Breaktime('Add a song to your iTunes library.',"pass","misc",1,false,"active"),
 new Breaktime('Remove a song from your iTunes library. You may also need to delete it off your iOS devices.',"pass","misc",1,false,"active"),
@@ -215,7 +215,7 @@ new Breaktime('Check your Dynalist, please.<br>Do the first unfinished task.<br>
 //new Breaktime('Check your Notion Habits database, please.<br>Update it and do one of the habits not done today.',"https://www.notion.so/1904690de3a94161838e9601222ebe87?v=0e6af5bbaf3844ceb8ef75e64e2f83c7","task",3,false),
   //Day planning
 new Breaktime('List all the things you want to do, and order them by priority.',"pass","plan",3,false),
-new Breaktime('Make an objective for today.',"objective.html","task",2,false),
+//new Breaktime('Make an objective for today.',"objective.html","task",2,false),
   //Music
 //new Breaktime('Put on some music to help you focus.',"musicflow/1","music",2,false),
   //Games
