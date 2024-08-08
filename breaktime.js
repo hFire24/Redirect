@@ -120,7 +120,7 @@ new Breaktime('If you see this during work hours, then get back to work!',"pass"
 /*new Breaktime('Apply for a job.',"pass","job",4,false),
 new Breaktime('Find a way to learn job interview skills.',"pass","job",3,false),*/
   //Anime watching
-new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B00WJ3K8F8","anime",1,false,"lazy"),
+new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B011FPJLGW","anime",1,false,"lazy"),
 //new Breaktime('Watch Sgt. Frog.',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false,"lazy"),
 new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
@@ -222,14 +222,13 @@ new Breaktime('List all the things you want to do, and order them by priority.',
 new Breaktime('Play one of these short games.',"cyoa/46.html","game",1,false),
 //new Breaktime('Play the NYT Crossword.',"https://www.nytimes.com/crosswords","game",1,false,"active"),
   //Anime
-new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B00WJ3K8F8","anime",1,false,"lazy"),
+new Breaktime('Watch Pokemon.',"https://www.amazon.com/gp/video/detail/B011FPJLGW","anime",1,false,"lazy"),
 //new Breaktime('Watch Sgt. Frog',"https://www.crunchyroll.com/series/GG5H5XMEP/sgt-frog","anime",1,false),
 new Breaktime('Watch anime or create an anime story.',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (3).',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Watch anime (4).',"nextanime","anime",1,false,"lazy"),
 //new Breaktime('Create an anime story.',"pass","anime",1,false,"lazy"),
 new Breaktime('Watch The Price is Right.',"priceisright.html","show",1,false,"lazy"),
-//new Breaktime('Watch something.',"nextwatch","anime",1,false),
 //new Breaktime('Watch the anime you haven\'t been watching for the longest time.',"https://anilist.co/home","anime",1,false,"lazy"),
   //Miscellaneous
 //new Breaktime('Say out loud the thing you need to get done.',"pass","plan",2,false),
